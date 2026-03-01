@@ -24,3 +24,13 @@
   from = "/api/get-report"
   to = "/.netlify/functions/get-report"
   status = 200
+
+[[redirects]]
+  from = "/api/get-progress"
+  to = "/.netlify/functions/get-progress"
+  status = 200
+
+[[redirects]]
+  from = "/api/cancel-run"
+  to = "/.netlify/functions/cancel-run"
+  status = 200
