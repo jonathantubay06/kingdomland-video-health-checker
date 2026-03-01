@@ -13,6 +13,9 @@ on:
           - story
           - music
 
+permissions:
+  contents: write
+
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -49,23 +52,29 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Create orphan data branch if it doesn't exist
-          git fetch origin data || true
+          # Save report files before switching branches
+          mkdir -p /tmp/reports
+          cp video-report.json /tmp/reports/ 2>/dev/null || true
+          cp video-report.csv /tmp/reports/ 2>/dev/null || true
+          cp failed-videos.txt /tmp/reports/ 2>/dev/null || true
+
+          # Create status metadata
+          echo "{\"updatedAt\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\",\"runId\":\"${{ github.run_id }}\",\"mode\":\"${{ github.event.inputs.mode || 'both' }}\"}" > /tmp/reports/status.json
+
+          # Switch to data branch (create if needed)
+          git fetch origin data 2>/dev/null || true
           if git rev-parse --verify origin/data >/dev/null 2>&1; then
             git checkout data
+            # Clean everything except .git
+            git rm -rf . 2>/dev/null || true
           else
             git checkout --orphan data
             git rm -rf . 2>/dev/null || true
           fi
 
-          # Copy report files from the working directory
-          git checkout main -- video-report.json 2>/dev/null || true
-          git checkout main -- video-report.csv 2>/dev/null || true
-          git checkout main -- failed-videos.txt 2>/dev/null || true
+          # Copy only report files
+          cp /tmp/reports/* .
 
-          # Create a status file with metadata
-          echo "{\"updatedAt\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\",\"runId\":\"${{ github.run_id }}\",\"mode\":\"${{ github.event.inputs.mode || 'both' }}\"}" > status.json
-
-          git add -A
+          git add video-report.json video-report.csv failed-videos.txt status.json
           git commit -m "Update video report $(date -u +%Y-%m-%d)" || echo "No changes"
           git push origin data
