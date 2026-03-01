@@ -1,0 +1,26 @@
+[build]
+  publish = "."
+  command = "echo 'Static site - no build needed'"
+
+[functions]
+  directory = "netlify/functions"
+
+# Only deploy from main branch — pushes to 'data' branch won't trigger builds
+[context.production]
+  branch = "main"
+
+# Redirect /api/trigger-check to Netlify Function
+[[redirects]]
+  from = "/api/trigger-check"
+  to = "/.netlify/functions/trigger-check"
+  status = 200
+
+[[redirects]]
+  from = "/api/check-status"
+  to = "/.netlify/functions/check-status"
+  status = 200
+
+[[redirects]]
+  from = "/api/get-report"
+  to = "/.netlify/functions/get-report"
+  status = 200

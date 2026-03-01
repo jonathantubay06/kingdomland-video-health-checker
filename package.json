@@ -1,0 +1,21 @@
+{
+  "name": "kingdomland-video-checker",
+  "version": "1.0.0",
+  "description": "This tool automatically opens a browser, logs into go.kingdomlandkids.com, clicks on every single video (all 125), and checks if it loads. At the end, you get a report showing which ones pass and which ones fail — so you don't have to check them one by one.",
+  "main": "check-videos.js",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node check-videos.js",
+    "check:debug": "node check-videos.js --debug",
+    "check:story": "node check-videos.js --story",
+    "check:music": "node check-videos.js --music"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^4.21.0",
+    "playwright": "^1.58.2"
+  }
+}

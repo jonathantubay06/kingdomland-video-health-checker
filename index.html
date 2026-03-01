@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kingdomland Video Checker</title>
+  <style>
+    /* ============== CSS Reset & Variables ============== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* SentryXP-inspired palette */
+      --color-pass: #71b06c;
+      --color-pass-bg: #dff0dd;
+      --color-pass-border: #b8ddb5;
+      --color-fail: #e05252;
+      --color-fail-bg: #fdeaea;
+      --color-fail-border: #f5bcbc;
+      --color-timeout: #e8a838;
+      --color-timeout-bg: #fdf3de;
+      --color-timeout-border: #f5dda0;
+      --color-info: #4c6bcd;
+      --color-info-bg: #e3f0ff;
+      --color-info-border: #c5d5f5;
+      --color-bg: #f1f3fa;
+      --color-surface: #ffffff;
+      --color-text: #080331;
+      --color-text-muted: #555770;
+      --color-text-light: #8b8fa8;
+      --color-border: #e2e6f8;
+      --color-primary: #4c6bcd;
+      --color-primary-hover: #3a56b0;
+      --color-danger: #e05252;
+      --color-danger-hover: #c93c3c;
+      --shadow-sm: 0 1px 3px rgba(8,3,49,0.06);
+      --shadow-md: 0 4px 6px -1px rgba(8,3,49,0.08), 0 2px 4px -2px rgba(8,3,49,0.05);
+      --shadow-lg: 0 10px 20px -4px rgba(8,3,49,0.12), 0 4px 8px -4px rgba(8,3,49,0.06);
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    .container { max-width: 1320px; margin: 0 auto; padding: 0 24px; }
+
+    /* ============== Header ============== */
+    .app-header {
+      background: linear-gradient(135deg, #4c6bcd, #080331);
+      color: white;
+      padding: 20px 0;
+      box-shadow: var(--shadow-lg);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .header-left h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
+    .header-left .subtitle { font-size: 0.85rem; opacity: 0.8; }
+    .header-controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+    .mode-toggle {
+      display: flex;
+      background: rgba(255,255,255,0.15);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    .mode-btn {
+      padding: 8px 16px;
+      border: none;
+      background: transparent;
+      color: rgba(255,255,255,0.7);
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .mode-btn:hover { background: rgba(255,255,255,0.1); color: white; }
+    .mode-btn.active { background: rgba(255,255,255,0.25); color: white; }
+
+    .btn {
+      padding: 10px 24px;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-run {
+      background: white;
+      color: var(--color-primary);
+    }
+    .btn-run:hover { background: #f0f0ff; transform: translateY(-1px); }
+    .btn-run:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    .btn-stop {
+      background: var(--color-danger);
+      color: white;
+      display: none;
+    }
+    .btn-stop:hover { background: var(--color-danger-hover); }
+    .btn-outline {
+      padding: 8px 18px;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-outline:hover { border-color: #4c6bcd; color: #3a56b0; background: #eef2fc; }
+    .btn-outline:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    /* ============== Main Content ============== */
+    .main-content { padding: 24px 0 48px; }
+
+    /* ============== Summary Cards ============== */
+    .summary-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .stat-card {
+      background: var(--color-surface);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      box-shadow: var(--shadow-sm);
+      border-left: 4px solid var(--color-border);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .stat-card.card-total { border-left-color: var(--color-info); }
+    .stat-card.card-pass { border-left-color: var(--color-pass); }
+    .stat-card.card-fail { border-left-color: var(--color-fail); }
+    .stat-card.card-timeout { border-left-color: var(--color-timeout); }
+    .stat-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); margin-bottom: 4px; }
+    .stat-value { font-size: 2.2rem; font-weight: 700; line-height: 1.1; }
+    .card-total .stat-value { color: var(--color-info); }
+    .card-pass .stat-value { color: var(--color-pass); }
+    .card-fail .stat-value { color: var(--color-fail); }
+    .card-timeout .stat-value { color: var(--color-timeout); }
+
+    /* ============== Progress Section ============== */
+    .progress-section {
+      background: var(--color-surface);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+      display: none;
+    }
+    .progress-section.visible { display: block; }
+
+    .phase-steps {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .phase {
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: var(--color-bg);
+      color: var(--color-text-muted);
+      transition: all 0.3s;
+    }
+    .phase.active { background: #4c6bcd; color: white; }
+    .phase.done { background: var(--color-pass-bg); color: var(--color-pass); }
+    .phase-arrow { color: var(--color-text-light); font-size: 1.2rem; }
+
+    .progress-bar-wrapper {
+      height: 12px;
+      background: var(--color-bg);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #4c6bcd, #7b94e0);
+      border-radius: 6px;
+      transition: width 0.4s ease;
+      width: 0%;
+    }
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      margin-bottom: 8px;
+    }
+    .current-video {
+      font-size: 0.9rem;
+      color: var(--color-text);
+      padding: 8px 12px;
+      background: var(--color-bg);
+      border-radius: var(--radius-sm);
+      min-height: 36px;
+    }
+
+    /* ============== Activity Log ============== */
+    .log-section {
+      background: var(--color-surface);
+      border-radius: var(--radius);
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+    .log-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 24px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s;
+    }
+    .log-header:hover { background: var(--color-bg); }
+    .log-header h3 { font-size: 0.95rem; font-weight: 600; }
+    .log-toggle { font-size: 0.75rem; color: var(--color-text-muted); transition: transform 0.2s; }
+    .log-toggle.open { transform: rotate(180deg); }
+    .log-body {
+      display: none;
+      max-height: 300px;
+      overflow-y: auto;
+      padding: 0 24px 16px;
+      border-top: 1px solid var(--color-border);
+    }
+    .log-body.open { display: block; }
+    .log-entry {
+      font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+      font-size: 0.78rem;
+      padding: 3px 0;
+      color: var(--color-text-muted);
+      border-bottom: 1px solid #f8fafc;
+    }
+    .log-entry.error { color: var(--color-fail); }
+
+    /* ============== Section Breakdown ============== */
+    .section-breakdown {
+      margin-bottom: 24px;
+      display: none;
+    }
+    .section-breakdown.visible { display: block; }
+    .section-breakdown h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 16px; }
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+    }
+    .section-card {
+      background: var(--color-surface);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .section-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .section-name { font-weight: 600; font-size: 0.95rem; }
+    .section-page-badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 10px;
+      text-transform: uppercase;
+    }
+    .badge-story { background: #e2e6f8; color: #3a56b0; }
+    .badge-music { background: #f5e0f0; color: #a14d8a; }
+    .section-bar-wrapper {
+      height: 8px;
+      background: var(--color-fail-bg);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+    .section-bar-fill {
+      height: 100%;
+      background: var(--color-pass);
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+    .section-stats {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+    .section-stats .pass-count { color: var(--color-pass); font-weight: 600; }
+    .section-stats .fail-count { color: var(--color-fail); font-weight: 600; }
+
+    /* ============== Results Table ============== */
+    .results-section {
+      display: none;
+      background: var(--color-surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .results-section.visible { display: block; }
+    .results-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--color-border);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .results-header h2 { font-size: 1.15rem; font-weight: 700; }
+    .table-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .table-controls select, .table-controls input {
+      padding: 7px 12px;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      background: var(--color-surface);
+      color: var(--color-text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .table-controls select:focus, .table-controls input:focus { border-color: var(--color-primary); }
+    .table-controls input { width: 200px; }
+    .result-count { font-size: 0.8rem; color: var(--color-text-muted); }
+
+    .table-wrapper { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    thead th {
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-muted);
+      background: var(--color-bg);
+      border-bottom: 2px solid var(--color-border);
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+    thead th:hover { color: var(--color-primary); }
+    thead th .sort-arrow { margin-left: 4px; font-size: 0.7rem; }
+    tbody tr {
+      border-bottom: 1px solid var(--color-border);
+      transition: background 0.1s;
+      cursor: pointer;
+    }
+    tbody tr:hover { background: #f8fafc; }
+    tbody td {
+      padding: 10px 16px;
+      font-size: 0.88rem;
+      vertical-align: middle;
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .status-PASS { background: var(--color-pass-bg); color: var(--color-pass); border: 1px solid var(--color-pass-border); }
+    .status-FAIL { background: var(--color-fail-bg); color: var(--color-fail); border: 1px solid var(--color-fail-border); }
+    .status-TIMEOUT { background: var(--color-timeout-bg); color: var(--color-timeout); border: 1px solid var(--color-timeout-border); }
+    .detail-row td {
+      padding: 0;
+      cursor: default;
+    }
+    .detail-content {
+      padding: 12px 16px 12px 48px;
+      background: #f8fafc;
+      font-size: 0.82rem;
+      line-height: 1.8;
+    }
+    .detail-content a { color: var(--color-primary); word-break: break-all; }
+    .detail-content strong { color: var(--color-text); }
+
+    /* ============== Download Section ============== */
+    .download-section {
+      display: none;
+      margin-bottom: 24px;
+    }
+    .download-section.visible { display: block; }
+    .download-section h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 16px; }
+    .download-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* ============== Empty State ============== */
+    .empty-state {
+      text-align: center;
+      padding: 80px 24px;
+    }
+    .empty-state-icon { font-size: 4rem; margin-bottom: 16px; }
+    .empty-state h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text); }
+    .empty-state p { color: var(--color-text-muted); font-size: 1rem; max-width: 400px; margin: 0 auto; }
+
+    /* ============== Responsive ============== */
+    @media (max-width: 768px) {
+      .summary-cards { grid-template-columns: repeat(2, 1fr); }
+      .header-inner { flex-direction: column; align-items: flex-start; }
+      .stat-value { font-size: 1.6rem; }
+    }
+
+    /* ============== Spinner ============== */
+    .spinner {
+      display: inline-block;
+      width: 16px; height: 16px;
+      border: 2.5px solid rgba(76,107,205,0.25);
+      border-top-color: #4c6bcd;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+
+    /* ============== Print Styles ============== */
+    #print-report { display: none; }
+
+    @media print {
+      body > *:not(#print-report) { display: none !important; }
+      #print-report { display: block !important; }
+      @page { margin: 0.5in; size: landscape; }
+    }
+    #print-report {
+      padding: 20px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #000;
+    }
+    .print-header { text-align: center; margin-bottom: 24px; border-bottom: 2px solid #333; padding-bottom: 12px; }
+    .print-header h1 { font-size: 1.6rem; margin-bottom: 4px; }
+    .print-header p { font-size: 0.9rem; color: #555; margin: 2px 0; }
+    .print-table { width: 100%; border-collapse: collapse; margin: 12px 0 24px; }
+    .print-table th, .print-table td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 0.8rem; }
+    .print-table th { background: #f3f4f6; font-weight: 600; }
+    .print-fail td { background: #fef2f2; }
+    .print-timeout td { background: #fffbeb; }
+    .print-section-title { font-size: 1.1rem; font-weight: 700; margin: 20px 0 8px; }
+  </style>
+</head>
+<body>
+
+  <!-- ============== HEADER ============== -->
+  <header class="app-header">
+    <div class="container header-inner">
+      <div class="header-left">
+        <h1>Kingdomland Video Checker</h1>
+        <span class="subtitle">go.kingdomlandkids.com</span>
+      </div>
+      <div class="header-controls">
+        <div class="mode-toggle">
+          <button class="mode-btn active" data-mode="both">Both</button>
+          <button class="mode-btn" data-mode="story">Story</button>
+          <button class="mode-btn" data-mode="music">Music</button>
+        </div>
+        <button id="run-btn" class="btn btn-run" onclick="startRun()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          Run Check
+        </button>
+        <button id="stop-btn" class="btn btn-stop" onclick="stopRun()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg>
+          Stop
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============== MAIN CONTENT ============== -->
+  <main class="main-content container">
+
+    <!-- Summary Cards -->
+    <div class="summary-cards">
+      <div class="stat-card card-total">
+        <div class="stat-label">Total Videos</div>
+        <div class="stat-value" id="stat-total">--</div>
+      </div>
+      <div class="stat-card card-pass">
+        <div class="stat-label">Passed</div>
+        <div class="stat-value" id="stat-passed">--</div>
+      </div>
+      <div class="stat-card card-fail">
+        <div class="stat-label">Failed</div>
+        <div class="stat-value" id="stat-failed">--</div>
+      </div>
+      <div class="stat-card card-timeout">
+        <div class="stat-label">Timed Out</div>
+        <div class="stat-value" id="stat-timeout">--</div>
+      </div>
+    </div>
+
+    <!-- Progress Section -->
+    <div class="progress-section" id="progress-section">
+      <div class="phase-steps">
+        <span class="phase" id="phase-login">Login</span>
+        <span class="phase-arrow">&rarr;</span>
+        <span class="phase" id="phase-discovery">Discovery</span>
+        <span class="phase-arrow">&rarr;</span>
+        <span class="phase" id="phase-checking">Checking</span>
+      </div>
+      <div class="progress-bar-wrapper">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <div class="progress-info">
+        <span id="progress-text">Waiting to start...</span>
+        <span id="progress-percent">0%</span>
+      </div>
+      <div class="current-video" id="current-video"></div>
+    </div>
+
+    <!-- Activity Log -->
+    <div class="log-section">
+      <div class="log-header" onclick="toggleLog()">
+        <h3>Activity Log</h3>
+        <span class="log-toggle" id="log-toggle">&#9660;</span>
+      </div>
+      <div class="log-body" id="log-body">
+        <div id="log-entries"></div>
+      </div>
+    </div>
+
+    <!-- Section Breakdown -->
+    <div class="section-breakdown" id="section-breakdown">
+      <h2>Section Breakdown</h2>
+      <div class="section-grid" id="section-grid"></div>
+    </div>
+
+    <!-- Results Table -->
+    <div class="results-section" id="results-section">
+      <div class="results-header">
+        <h2>All Results</h2>
+        <div class="table-controls">
+          <select id="filter-status" onchange="applyFilters()">
+            <option value="all">All Statuses</option>
+            <option value="PASS">Pass</option>
+            <option value="FAIL">Fail</option>
+            <option value="TIMEOUT">Timeout</option>
+          </select>
+          <select id="filter-section" onchange="applyFilters()">
+            <option value="all">All Sections</option>
+          </select>
+          <input type="text" id="filter-search" placeholder="Search by title..." oninput="applyFilters()">
+          <span class="result-count" id="result-count"></span>
+        </div>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th onclick="sortBy('number')" data-col="number"># <span class="sort-arrow"></span></th>
+              <th onclick="sortBy('title')" data-col="title">Title <span class="sort-arrow"></span></th>
+              <th onclick="sortBy('section')" data-col="section">Section <span class="sort-arrow"></span></th>
+              <th onclick="sortBy('page')" data-col="page">Page <span class="sort-arrow"></span></th>
+              <th onclick="sortBy('status')" data-col="status">Status <span class="sort-arrow"></span></th>
+              <th onclick="sortBy('duration')" data-col="duration">Duration <span class="sort-arrow"></span></th>
+              <th onclick="sortBy('loadTimeMs')" data-col="loadTimeMs">Load Time <span class="sort-arrow"></span></th>
+              <th>Error</th>
+            </tr>
+          </thead>
+          <tbody id="results-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Download Section -->
+    <div class="download-section" id="download-section">
+      <h2>Export Report</h2>
+      <div class="download-buttons">
+        <button class="btn-outline" onclick="downloadFile('csv')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px;margin-right:4px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download CSV
+        </button>
+        <button class="btn-outline" onclick="downloadFile('json')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px;margin-right:4px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download JSON
+        </button>
+        <button class="btn-outline" onclick="downloadFile('txt')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px;margin-right:4px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download Failed List
+        </button>
+        <button class="btn-outline" onclick="printReport()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px;margin-right:4px"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          Print Report (PDF)
+        </button>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div class="empty-state" id="empty-state">
+      <div class="empty-state-icon">&#127916;</div>
+      <h2>Ready to Check Videos</h2>
+      <p>Click <strong>Run Check</strong> to scan all videos on the Kingdomland website and verify they load properly.</p>
+    </div>
+
+  </main>
+
+  <!-- ============== PRINT REPORT ============== -->
+  <div id="print-report"></div>
+
+  <!-- ============== JAVASCRIPT ============== -->
+  <script>
+    // ============== State ==============
+    const state = {
+      status: 'idle',
+      mode: 'both',
+      phase: '',
+      totalDiscovered: 0,
+      checkedCount: 0,
+      passedCount: 0,
+      failedCount: 0,
+      timeoutCount: 0,
+      results: [],
+      checkStartTime: null,
+      sectionMap: {},
+    };
+
+    let eventSource = null;
+    let sortColumn = 'number';
+    let sortDir = 'asc';
+    let isLocal = false;       // true = Express server, false = Netlify static
+    let ghRunId = null;        // GitHub Actions run ID for polling
+    let pollTimer = null;
+
+    // ============== Init ==============
+    window.addEventListener('DOMContentLoaded', async () => {
+      // Mode toggle buttons
+      document.querySelectorAll('.mode-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          state.mode = btn.dataset.mode;
+        });
+      });
+
+      // Detect environment: try local server first
+      try {
+        const res = await fetch('/api/status');
+        const data = await res.json();
+
+        // If /api/status responds with a known shape, we're local
+        if (data && typeof data.status === 'string') {
+          isLocal = true;
+          if (data.status === 'running') {
+            state.status = 'running';
+            updateRunButtons();
+            showProgress();
+            connectSSE();
+          } else if (data.hasPreviousReport) {
+            loadPreviousReport();
+          }
+          return;
+        }
+      } catch {
+        // Server not available — Netlify mode
+      }
+
+      // Netlify mode: check if a workflow is running, then load last report
+      isLocal = false;
+      try {
+        const statusRes = await fetch('/api/check-status');
+        if (statusRes.ok) {
+          const ghStatus = await statusRes.json();
+          if (ghStatus.status === 'in_progress' || ghStatus.status === 'queued') {
+            ghRunId = ghStatus.runId;
+            state.status = 'running';
+            updateRunButtons();
+            showCloudProgress('Video check is running on GitHub Actions...', ghStatus.startedAt);
+            startPolling();
+          } else {
+            // Not running — try loading last report
+            await loadCloudReport();
+          }
+        }
+      } catch {
+        // No status available — try loading report
+        await loadCloudReport();
+      }
+    });
+
+    // ============== Run Control ==============
+    async function startRun() {
+      if (isLocal) {
+        await startRunLocal();
+      } else {
+        await startRunCloud();
+      }
+    }
+
+    async function startRunLocal() {
+      try {
+        const res = await fetch('/api/run', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ mode: state.mode }),
+        });
+
+        if (res.status === 409) {
+          alert('A check is already running!');
+          return;
+        }
+
+        resetState();
+        updateRunButtons();
+        updateSummaryCards();
+        showProgress();
+        hideEmpty();
+        connectSSE();
+      } catch (e) {
+        alert('Failed to start: ' + e.message);
+      }
+    }
+
+    async function startRunCloud() {
+      try {
+        const res = await fetch('/api/trigger-check', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ mode: state.mode }),
+        });
+
+        const data = await res.json();
+        if (data.error) {
+          alert('Failed to trigger: ' + data.error);
+          return;
+        }
+
+        ghRunId = data.runId;
+        resetState();
+        updateRunButtons();
+        hideEmpty();
+        showCloudProgress('Video check triggered! Starting on GitHub Actions...');
+        startPolling();
+      } catch (e) {
+        alert('Failed to trigger check: ' + e.message);
+      }
+    }
+
+    function resetState() {
+      state.status = 'running';
+      state.phase = 'login';
+      state.results = [];
+      state.checkedCount = 0;
+      state.passedCount = 0;
+      state.failedCount = 0;
+      state.timeoutCount = 0;
+      state.totalDiscovered = 0;
+      state.checkStartTime = null;
+      state.sectionMap = {};
+      document.getElementById('log-entries').innerHTML = '';
+      document.getElementById('results-tbody').innerHTML = '';
+      document.getElementById('section-grid').innerHTML = '';
+      document.getElementById('filter-section').innerHTML = '<option value="all">All Sections</option>';
+    }
+
+    async function stopRun() {
+      if (isLocal) {
+        try {
+          await fetch('/api/stop', { method: 'POST' });
+        } catch (e) {
+          console.error('Stop failed:', e);
+        }
+      } else {
+        alert('To cancel a GitHub Actions run, visit the Actions tab on your GitHub repo.');
+      }
+    }
+
+    // ============== Cloud Mode (Netlify + GitHub Actions) ==============
+    function showCloudProgress(message, startedAt) {
+      const section = document.getElementById('progress-section');
+      section.classList.add('visible');
+
+      // Show simplified progress for cloud mode
+      document.getElementById('phase-login').classList.add('active');
+      document.getElementById('progress-bar').style.width = '100%';
+      document.getElementById('progress-bar').style.animation = 'pulse 2s ease-in-out infinite';
+      document.getElementById('progress-percent').textContent = '';
+      document.getElementById('progress-text').textContent = message;
+      document.getElementById('current-video').textContent = startedAt
+        ? `Started at ${new Date(startedAt).toLocaleTimeString()}`
+        : 'Waiting for GitHub Actions to pick up the job...';
+    }
+
+    function startPolling() {
+      if (pollTimer) clearInterval(pollTimer);
+      pollTimer = setInterval(pollCloudStatus, 15000); // every 15 seconds
+    }
+
+    async function pollCloudStatus() {
+      try {
+        const url = ghRunId ? `/api/check-status?runId=${ghRunId}` : '/api/check-status';
+        const res = await fetch(url);
+        if (!res.ok) return;
+
+        const data = await res.json();
+
+        if (data.status === 'in_progress') {
+          showCloudProgress('Video check is running on GitHub Actions...', data.startedAt);
+          ['login', 'discovery', 'checking'].forEach(p => {
+            document.getElementById('phase-' + p).classList.remove('active', 'done');
+          });
+          document.getElementById('phase-login').classList.add('done');
+          document.getElementById('phase-discovery').classList.add('active');
+        } else if (data.status === 'completed') {
+          clearInterval(pollTimer);
+          pollTimer = null;
+
+          if (data.conclusion === 'success') {
+            document.getElementById('progress-text').textContent = 'Check complete! Loading report...';
+            await loadCloudReport();
+          } else {
+            state.status = 'idle';
+            updateRunButtons();
+            document.getElementById('progress-section').classList.remove('visible');
+            alert(`Check finished with status: ${data.conclusion}. Check GitHub Actions for details.`);
+          }
+        }
+      } catch (e) {
+        console.error('Polling error:', e);
+      }
+    }
+
+    async function loadCloudReport() {
+      try {
+        const res = await fetch('/api/get-report?file=video-report.json');
+        if (!res.ok) return;
+
+        const report = await res.json();
+        state.results = report.allResults || [];
+        if (report.summary) {
+          state.passedCount = report.summary.passed || 0;
+          state.failedCount = report.summary.failed || 0;
+          state.timeoutCount = report.summary.timeouts || 0;
+        } else {
+          state.passedCount = state.results.filter(r => r.status === 'PASS').length;
+          state.failedCount = state.results.filter(r => r.status === 'FAIL').length;
+          state.timeoutCount = state.results.filter(r => r.status === 'TIMEOUT').length;
+        }
+        state.totalDiscovered = state.results.length;
+        state.checkedCount = state.results.length;
+        state.status = 'complete';
+
+        // Build section map
+        state.sectionMap = {};
+        for (const r of state.results) {
+          const secKey = `${r.page} - ${r.section || 'Unknown'}`;
+          if (!state.sectionMap[secKey]) state.sectionMap[secKey] = { page: r.page, section: r.section || 'Unknown', total: 0, passed: 0, failed: 0, timeout: 0 };
+          state.sectionMap[secKey].total++;
+          if (r.status === 'PASS') state.sectionMap[secKey].passed++;
+          else if (r.status === 'FAIL') state.sectionMap[secKey].failed++;
+          else state.sectionMap[secKey].timeout++;
+        }
+
+        renderCompleteFromState();
+      } catch (e) {
+        console.error('Failed to load cloud report:', e);
+      }
+    }
+
+    // ============== SSE ==============
+    function connectSSE() {
+      if (eventSource) eventSource.close();
+      eventSource = new EventSource('/api/events');
+
+      eventSource.onmessage = (e) => {
+        try {
+          const event = JSON.parse(e.data);
+          handleEvent(event);
+        } catch {}
+      };
+
+      eventSource.onerror = () => {
+        if (state.status === 'running') {
+          setTimeout(() => { if (state.status === 'running') connectSSE(); }, 3000);
+        }
+      };
+    }
+
+    function handleEvent(event) {
+      switch (event.type) {
+        case 'connected':
+          if (event.runStatus === 'running') {
+            state.status = 'running';
+            updateRunButtons();
+            showProgress();
+          }
+          break;
+
+        case 'status':
+          appendLog(event.message);
+          if (event.message.includes('Logging in')) setPhase('login');
+          else if (event.message.includes('Discovering') || event.message.includes('Scanning carousel') || event.message.includes('Scanning tab') || event.message.includes('Scanning default')) setPhase('discovery');
+          else if (event.message.includes('Found') && event.message.includes('total video cards')) {
+            // After discovery, update total
+          }
+          break;
+
+        case 'discovery':
+          setPhase('discovery');
+          updateProgressText(`Discovering: ${event.section} (${event.count} in section, ${event.total} total)`);
+          break;
+
+        case 'discovery-complete':
+          state.totalDiscovered += event.total;
+          updateStat('stat-total', state.totalDiscovered);
+          updateProgressText(`Discovery complete for ${event.page}: ${event.total} videos found`);
+          break;
+
+        case 'check':
+          setPhase('checking');
+          if (!state.checkStartTime) state.checkStartTime = Date.now();
+          state.checkedCount++;
+
+          const r = event.result;
+          state.results.push(r);
+
+          if (r.status === 'PASS') state.passedCount++;
+          else if (r.status === 'FAIL') state.failedCount++;
+          else if (r.status === 'TIMEOUT') state.timeoutCount++;
+
+          // Track sections
+          const secKey = `${r.page} - ${r.section || 'Unknown'}`;
+          if (!state.sectionMap[secKey]) state.sectionMap[secKey] = { page: r.page, section: r.section || 'Unknown', total: 0, passed: 0, failed: 0, timeout: 0 };
+          state.sectionMap[secKey].total++;
+          if (r.status === 'PASS') state.sectionMap[secKey].passed++;
+          else if (r.status === 'FAIL') state.sectionMap[secKey].failed++;
+          else state.sectionMap[secKey].timeout++;
+
+          updateSummaryCards();
+          updateCheckProgress(r);
+          appendResultRow(r);
+          updateSectionBreakdown();
+          break;
+
+        case 'complete':
+          state.status = 'complete';
+          state.results = event.allResults;
+          state.passedCount = event.summary.passed;
+          state.failedCount = event.summary.failed;
+          state.timeoutCount = event.summary.timeouts;
+          if (eventSource) eventSource.close();
+          renderComplete(event.summary, event.allResults);
+          break;
+
+        case 'stopped':
+          state.status = 'idle';
+          if (eventSource) eventSource.close();
+          updateRunButtons();
+          hideProgress();
+          appendLog('Check cancelled by user.');
+          break;
+
+        case 'process-exit':
+          if (state.status !== 'complete') {
+            state.status = 'complete';
+            renderCompleteFromState();
+          }
+          if (eventSource) eventSource.close();
+          break;
+
+        case 'error':
+          appendLog('[ERROR] ' + event.message, true);
+          break;
+      }
+    }
+
+    // ============== Previous Report ==============
+    async function loadPreviousReport() {
+      try {
+        const res = await fetch('/api/report');
+        if (!res.ok) return;
+        const report = await res.json();
+        state.results = report.allResults || [];
+        if (report.summary) {
+          state.passedCount = report.summary.passed || 0;
+          state.failedCount = report.summary.failed || 0;
+          state.timeoutCount = report.summary.timeouts || 0;
+        } else {
+          // Compute from results
+          state.passedCount = state.results.filter(r => r.status === 'PASS').length;
+          state.failedCount = state.results.filter(r => r.status === 'FAIL').length;
+          state.timeoutCount = state.results.filter(r => r.status === 'TIMEOUT').length;
+        }
+        state.totalDiscovered = state.results.length;
+        state.checkedCount = state.results.length;
+        state.status = 'complete';
+
+        // Build section map
+        state.sectionMap = {};
+        for (const r of state.results) {
+          const secKey = `${r.page} - ${r.section || 'Unknown'}`;
+          if (!state.sectionMap[secKey]) state.sectionMap[secKey] = { page: r.page, section: r.section || 'Unknown', total: 0, passed: 0, failed: 0, timeout: 0 };
+          state.sectionMap[secKey].total++;
+          if (r.status === 'PASS') state.sectionMap[secKey].passed++;
+          else if (r.status === 'FAIL') state.sectionMap[secKey].failed++;
+          else state.sectionMap[secKey].timeout++;
+        }
+
+        renderCompleteFromState();
+      } catch (e) {
+        console.error('Failed to load report:', e);
+      }
+    }
+
+    // ============== UI Updates ==============
+    function updateRunButtons() {
+      const runBtn = document.getElementById('run-btn');
+      const stopBtn = document.getElementById('stop-btn');
+      if (state.status === 'running') {
+        runBtn.disabled = true;
+        runBtn.innerHTML = '<span class="spinner"></span> Running...';
+        stopBtn.style.display = 'inline-flex';
+      } else {
+        runBtn.disabled = false;
+        runBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg> Run Check';
+        stopBtn.style.display = 'none';
+      }
+    }
+
+    function updateStat(id, value) {
+      document.getElementById(id).textContent = value;
+    }
+
+    function updateSummaryCards() {
+      updateStat('stat-total', state.totalDiscovered || state.checkedCount || '--');
+      updateStat('stat-passed', state.passedCount || 0);
+      updateStat('stat-failed', state.failedCount || 0);
+      updateStat('stat-timeout', state.timeoutCount || 0);
+    }
+
+    function showProgress() {
+      document.getElementById('progress-section').classList.add('visible');
+      document.getElementById('empty-state').style.display = 'none';
+    }
+    function hideProgress() {
+      document.getElementById('progress-section').classList.remove('visible');
+    }
+    function hideEmpty() {
+      document.getElementById('empty-state').style.display = 'none';
+    }
+
+    function setPhase(phase) {
+      state.phase = phase;
+      ['login', 'discovery', 'checking'].forEach(p => {
+        const el = document.getElementById('phase-' + p);
+        el.classList.remove('active', 'done');
+      });
+
+      if (phase === 'login') {
+        document.getElementById('phase-login').classList.add('active');
+      } else if (phase === 'discovery') {
+        document.getElementById('phase-login').classList.add('done');
+        document.getElementById('phase-discovery').classList.add('active');
+      } else if (phase === 'checking') {
+        document.getElementById('phase-login').classList.add('done');
+        document.getElementById('phase-discovery').classList.add('done');
+        document.getElementById('phase-checking').classList.add('active');
+      }
+    }
+
+    function updateProgressText(text) {
+      document.getElementById('progress-text').textContent = text;
+    }
+
+    function updateCheckProgress(result) {
+      const total = state.totalDiscovered || state.checkedCount;
+      const pct = total > 0 ? Math.round((state.checkedCount / total) * 100) : 0;
+
+      document.getElementById('progress-bar').style.width = pct + '%';
+      document.getElementById('progress-percent').textContent = pct + '%';
+
+      // ETA calculation
+      const elapsed = Date.now() - state.checkStartTime;
+      const avgTime = elapsed / state.checkedCount;
+      const remaining = (total - state.checkedCount) * avgTime;
+      const etaMin = Math.floor(remaining / 60000);
+      const etaSec = Math.floor((remaining % 60000) / 1000);
+      const etaStr = etaMin > 0 ? `${etaMin}m ${etaSec}s` : `${etaSec}s`;
+
+      document.getElementById('progress-text').textContent =
+        `${state.checkedCount}/${total} videos checked` +
+        (state.checkedCount < total ? ` \u2022 ETA: ${etaStr}` : '');
+
+      // Current video
+      const icon = result.status === 'PASS' ? '\u2705' : result.status === 'FAIL' ? '\u274C' : '\u23F1\uFE0F';
+      document.getElementById('current-video').textContent =
+        `${icon} [${result.section || ''}] ${result.title}`;
+
+      // Show results section and section breakdown
+      document.getElementById('results-section').classList.add('visible');
+      document.getElementById('section-breakdown').classList.add('visible');
+    }
+
+    // ============== Activity Log ==============
+    function toggleLog() {
+      const body = document.getElementById('log-body');
+      const toggle = document.getElementById('log-toggle');
+      body.classList.toggle('open');
+      toggle.classList.toggle('open');
+    }
+
+    function appendLog(message, isError = false) {
+      const entries = document.getElementById('log-entries');
+      const div = document.createElement('div');
+      div.className = 'log-entry' + (isError ? ' error' : '');
+      const time = new Date().toLocaleTimeString();
+      div.textContent = `[${time}] ${message}`;
+      entries.appendChild(div);
+
+      // Auto-scroll
+      const body = document.getElementById('log-body');
+      body.scrollTop = body.scrollHeight;
+
+      // Limit entries
+      while (entries.children.length > 200) {
+        entries.removeChild(entries.firstChild);
+      }
+    }
+
+    // ============== Section Breakdown ==============
+    function updateSectionBreakdown() {
+      const grid = document.getElementById('section-grid');
+      grid.innerHTML = '';
+
+      for (const [key, s] of Object.entries(state.sectionMap)) {
+        const rate = s.total > 0 ? Math.round((s.passed / s.total) * 100) : 0;
+        const card = document.createElement('div');
+        card.className = 'section-card';
+        card.innerHTML = `
+          <div class="section-card-header">
+            <span class="section-name">${escHtml(s.section)}</span>
+            <span class="section-page-badge badge-${s.page === 'STORY' ? 'story' : 'music'}">${s.page}</span>
+          </div>
+          <div class="section-bar-wrapper">
+            <div class="section-bar-fill" style="width:${rate}%"></div>
+          </div>
+          <div class="section-stats">
+            <span><span class="pass-count">${s.passed}</span> passed</span>
+            <span><span class="fail-count">${s.failed + s.timeout}</span> failed</span>
+            <span>${rate}%</span>
+          </div>
+        `;
+        grid.appendChild(card);
+      }
+    }
+
+    // ============== Results Table ==============
+    function appendResultRow(r) {
+      const tbody = document.getElementById('results-tbody');
+
+      // Check if this row should be visible based on current filters
+      if (!matchesFilters(r)) return;
+
+      const tr = createResultRow(r);
+      tbody.appendChild(tr);
+
+      // Update section filter options
+      updateSectionFilterOptions();
+      updateResultCount();
+    }
+
+    function createResultRow(r) {
+      const tr = document.createElement('tr');
+      tr.dataset.num = r.number;
+      tr.onclick = () => toggleDetail(r.number);
+
+      const loadTime = r.loadTimeMs ? (r.loadTimeMs / 1000).toFixed(1) + 's' : '-';
+      const errorText = r.error ? (r.error.length > 40 ? r.error.substring(0, 40) + '...' : r.error) : '-';
+
+      tr.innerHTML = `
+        <td>${r.number}</td>
+        <td><strong>${escHtml(r.title)}</strong></td>
+        <td>${escHtml(r.section || '')}</td>
+        <td>${r.page || ''}</td>
+        <td><span class="status-badge status-${r.status}">${r.status}</span></td>
+        <td>${r.duration || '-'}</td>
+        <td>${loadTime}</td>
+        <td style="color:var(--color-text-muted);font-size:0.82rem">${escHtml(errorText)}</td>
+      `;
+      return tr;
+    }
+
+    function toggleDetail(num) {
+      const existing = document.getElementById('detail-' + num);
+      if (existing) { existing.remove(); return; }
+
+      const r = state.results.find(r => r.number === num);
+      if (!r) return;
+
+      const detailRow = document.createElement('tr');
+      detailRow.id = 'detail-' + num;
+      detailRow.className = 'detail-row';
+      detailRow.innerHTML = `
+        <td colspan="8">
+          <div class="detail-content">
+            <div><strong>URL:</strong> <a href="${escHtml(r.url || '')}" target="_blank">${escHtml(r.url || 'N/A')}</a></div>
+            <div><strong>HLS Source:</strong> ${escHtml(r.hlsSrc || 'N/A')}</div>
+            <div><strong>Resolution:</strong> ${r.resolution || 'N/A'}</div>
+            ${r.error ? `<div><strong>Error:</strong> ${escHtml(r.error)}</div>` : ''}
+            ${r.duration ? `<div><strong>Duration:</strong> ${r.duration}</div>` : ''}
+            <div><strong>Load Time:</strong> ${r.loadTimeMs ? (r.loadTimeMs / 1000).toFixed(1) + 's' : 'N/A'}</div>
+          </div>
+        </td>
+      `;
+
+      // Insert after the clicked row
+      const rows = document.getElementById('results-tbody').querySelectorAll('tr');
+      for (const row of rows) {
+        if (row.dataset.num == num) {
+          row.after(detailRow);
+          break;
+        }
+      }
+    }
+
+    // ============== Filtering & Sorting ==============
+    function matchesFilters(r) {
+      const statusFilter = document.getElementById('filter-status').value;
+      const sectionFilter = document.getElementById('filter-section').value;
+      const searchTerm = document.getElementById('filter-search').value.toLowerCase();
+
+      if (statusFilter !== 'all' && r.status !== statusFilter) return false;
+      if (sectionFilter !== 'all' && `${r.page} - ${r.section}` !== sectionFilter) return false;
+      if (searchTerm && !r.title.toLowerCase().includes(searchTerm)) return false;
+      return true;
+    }
+
+    function applyFilters() {
+      renderResultsTable();
+    }
+
+    function sortBy(column) {
+      if (sortColumn === column) {
+        sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+      } else {
+        sortColumn = column;
+        sortDir = 'asc';
+      }
+      updateSortArrows();
+      renderResultsTable();
+    }
+
+    function updateSortArrows() {
+      document.querySelectorAll('thead th').forEach(th => {
+        const arrow = th.querySelector('.sort-arrow');
+        if (!arrow) return;
+        if (th.dataset.col === sortColumn) {
+          arrow.textContent = sortDir === 'asc' ? '\u25B2' : '\u25BC';
+        } else {
+          arrow.textContent = '';
+        }
+      });
+    }
+
+    function renderResultsTable() {
+      let filtered = state.results.filter(r => matchesFilters(r));
+
+      // Sort
+      filtered.sort((a, b) => {
+        let va = a[sortColumn];
+        let vb = b[sortColumn];
+
+        // Handle special columns
+        if (sortColumn === 'duration') {
+          va = parseInt(va) || 0;
+          vb = parseInt(vb) || 0;
+        } else if (sortColumn === 'loadTimeMs') {
+          va = va || 0;
+          vb = vb || 0;
+        } else if (typeof va === 'string') {
+          va = va.toLowerCase();
+          vb = (vb || '').toLowerCase();
+        }
+
+        if (va < vb) return sortDir === 'asc' ? -1 : 1;
+        if (va > vb) return sortDir === 'asc' ? 1 : -1;
+        return 0;
+      });
+
+      const tbody = document.getElementById('results-tbody');
+      tbody.innerHTML = '';
+      for (const r of filtered) {
+        tbody.appendChild(createResultRow(r));
+      }
+
+      updateResultCount(filtered.length);
+    }
+
+    function updateSectionFilterOptions() {
+      const select = document.getElementById('filter-section');
+      const currentVal = select.value;
+      const sections = [...new Set(state.results.map(r => `${r.page} - ${r.section}`))];
+
+      // Only add new options
+      const existingOptions = new Set(Array.from(select.options).map(o => o.value));
+      for (const sec of sections) {
+        if (!existingOptions.has(sec)) {
+          const opt = document.createElement('option');
+          opt.value = sec;
+          opt.textContent = sec;
+          select.appendChild(opt);
+        }
+      }
+      select.value = currentVal;
+    }
+
+    function updateResultCount(count) {
+      const total = state.results.length;
+      const shown = count !== undefined ? count : total;
+      document.getElementById('result-count').textContent =
+        shown === total ? `${total} results` : `${shown} of ${total}`;
+    }
+
+    // ============== Complete State ==============
+    function renderComplete(summary, allResults) {
+      state.status = 'complete';
+      state.results = allResults;
+      state.totalDiscovered = summary.total;
+      state.checkedCount = summary.total;
+      state.passedCount = summary.passed;
+      state.failedCount = summary.failed;
+      state.timeoutCount = summary.timeouts;
+
+      updateRunButtons();
+      updateSummaryCards();
+      hideProgress();
+
+      // Mark all phases done
+      ['login', 'discovery', 'checking'].forEach(p => {
+        const el = document.getElementById('phase-' + p);
+        el.classList.remove('active');
+        el.classList.add('done');
+      });
+
+      // Rebuild section map
+      state.sectionMap = {};
+      for (const r of allResults) {
+        const secKey = `${r.page} - ${r.section || 'Unknown'}`;
+        if (!state.sectionMap[secKey]) state.sectionMap[secKey] = { page: r.page, section: r.section || 'Unknown', total: 0, passed: 0, failed: 0, timeout: 0 };
+        state.sectionMap[secKey].total++;
+        if (r.status === 'PASS') state.sectionMap[secKey].passed++;
+        else if (r.status === 'FAIL') state.sectionMap[secKey].failed++;
+        else state.sectionMap[secKey].timeout++;
+      }
+
+      updateSectionBreakdown();
+      updateSectionFilterOptions();
+      renderResultsTable();
+
+      document.getElementById('results-section').classList.add('visible');
+      document.getElementById('section-breakdown').classList.add('visible');
+      document.getElementById('download-section').classList.add('visible');
+      document.getElementById('empty-state').style.display = 'none';
+
+      appendLog(`Check complete! ${summary.passed}/${summary.total} passed, ${summary.failed} failed, ${summary.timeouts} timed out.`);
+    }
+
+    function renderCompleteFromState() {
+      const summary = {
+        total: state.results.length,
+        passed: state.passedCount,
+        failed: state.failedCount,
+        timeouts: state.timeoutCount,
+      };
+      renderComplete(summary, state.results);
+    }
+
+    // ============== Downloads ==============
+    function downloadFile(format) {
+      if (isLocal) {
+        window.location.href = '/api/download/' + format;
+      } else {
+        const fileMap = { csv: 'video-report.csv', json: 'video-report.json', txt: 'failed-videos.txt' };
+        const file = fileMap[format];
+        if (file) window.location.href = '/api/get-report?file=' + file;
+      }
+    }
+
+    // ============== Print Report ==============
+    function printReport() {
+      const results = state.results;
+      if (!results.length) { alert('No results to print.'); return; }
+
+      const total = results.length;
+      const passed = results.filter(r => r.status === 'PASS').length;
+      const failed = results.filter(r => r.status === 'FAIL').length;
+      const timeouts = results.filter(r => r.status === 'TIMEOUT').length;
+      const rate = total > 0 ? (passed / total * 100).toFixed(1) : 0;
+
+      // Section stats
+      const sections = {};
+      for (const r of results) {
+        const key = `${r.page} - ${r.section || 'Unknown'}`;
+        if (!sections[key]) sections[key] = { page: r.page, section: r.section || 'Unknown', total: 0, passed: 0, failed: 0 };
+        sections[key].total++;
+        if (r.status === 'PASS') sections[key].passed++;
+        else sections[key].failed++;
+      }
+
+      const sectionRows = Object.values(sections).map(s =>
+        `<tr>
+          <td>${escHtml(s.section)}</td><td>${s.page}</td>
+          <td>${s.total}</td><td>${s.passed}</td><td>${s.failed}</td>
+          <td>${s.total > 0 ? Math.round(s.passed / s.total * 100) : 0}%</td>
+        </tr>`
+      ).join('');
+
+      const resultRows = results.map(r =>
+        `<tr class="${r.status === 'FAIL' ? 'print-fail' : r.status === 'TIMEOUT' ? 'print-timeout' : ''}">
+          <td>${r.number}</td>
+          <td>${escHtml(r.title)}</td>
+          <td>${escHtml(r.section || '')}</td>
+          <td>${r.page || ''}</td>
+          <td>${r.status}</td>
+          <td>${r.duration || '-'}</td>
+          <td>${r.error ? escHtml(r.error) : '-'}</td>
+        </tr>`
+      ).join('');
+
+      document.getElementById('print-report').innerHTML = `
+        <div class="print-header">
+          <h1>Kingdomland Video Checker Report</h1>
+          <p>go.kingdomlandkids.com</p>
+          <p>Generated: ${new Date().toLocaleString()}</p>
+        </div>
+
+        <p class="print-section-title">Summary</p>
+        <table class="print-table">
+          <tr><td><strong>Total Videos</strong></td><td>${total}</td></tr>
+          <tr><td><strong>Passed</strong></td><td style="color:green">${passed}</td></tr>
+          <tr><td><strong>Failed</strong></td><td style="color:red">${failed}</td></tr>
+          <tr><td><strong>Timed Out</strong></td><td style="color:orange">${timeouts}</td></tr>
+          <tr><td><strong>Pass Rate</strong></td><td>${rate}%</td></tr>
+        </table>
+
+        <p class="print-section-title">Section Breakdown</p>
+        <table class="print-table">
+          <thead><tr><th>Section</th><th>Page</th><th>Total</th><th>Passed</th><th>Failed</th><th>Rate</th></tr></thead>
+          <tbody>${sectionRows}</tbody>
+        </table>
+
+        <p class="print-section-title">Detailed Results</p>
+        <table class="print-table">
+          <thead><tr><th>#</th><th>Title</th><th>Section</th><th>Page</th><th>Status</th><th>Duration</th><th>Error</th></tr></thead>
+          <tbody>${resultRows}</tbody>
+        </table>
+      `;
+
+      document.getElementById('print-report').style.display = 'block';
+      window.print();
+      setTimeout(() => { document.getElementById('print-report').style.display = 'none'; }, 1000);
+    }
+
+    // ============== Helpers ==============
+    function escHtml(str) {
+      if (!str) return '';
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+  </script>
+</body>
+</html>

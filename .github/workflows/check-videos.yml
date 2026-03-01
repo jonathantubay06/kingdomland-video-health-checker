@@ -1,0 +1,71 @@
+name: Video Health Check
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Check mode'
+        required: false
+        default: 'both'
+        type: choice
+        options:
+          - both
+          - story
+          - music
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install chromium --with-deps
+
+      - name: Run video check
+        env:
+          KL_USERNAME: ${{ secrets.KL_USERNAME }}
+          KL_PASSWORD: ${{ secrets.KL_PASSWORD }}
+        run: |
+          MODE="${{ github.event.inputs.mode || 'both' }}"
+          ARGS=""
+          if [ "$MODE" = "story" ]; then ARGS="--story"; fi
+          if [ "$MODE" = "music" ]; then ARGS="--music"; fi
+          node check-videos.js $ARGS
+
+      - name: Push report to data branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Create orphan data branch if it doesn't exist
+          git fetch origin data || true
+          if git rev-parse --verify origin/data >/dev/null 2>&1; then
+            git checkout data
+          else
+            git checkout --orphan data
+            git rm -rf . 2>/dev/null || true
+          fi
+
+          # Copy report files from the working directory
+          git checkout main -- video-report.json 2>/dev/null || true
+          git checkout main -- video-report.csv 2>/dev/null || true
+          git checkout main -- failed-videos.txt 2>/dev/null || true
+
+          # Create a status file with metadata
+          echo "{\"updatedAt\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\",\"runId\":\"${{ github.run_id }}\",\"mode\":\"${{ github.event.inputs.mode || 'both' }}\"}" > status.json
+
+          git add -A
+          git commit -m "Update video report $(date -u +%Y-%m-%d)" || echo "No changes"
+          git push origin data

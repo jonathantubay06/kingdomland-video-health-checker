@@ -1,0 +1,4 @@
+node_modules/
+video-report.json
+video-report.csv
+failed-videos.txt
