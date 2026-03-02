@@ -1,413 +1,12 @@
 {
-  "timestamp": "2026-03-02T09:07:03.337Z",
+  "timestamp": "2026-03-02T18:03:13.705Z",
   "summary": {
     "total": 122,
-    "passed": 72,
-    "failed": 50,
+    "passed": 122,
+    "failed": 0,
     "timeouts": 0
   },
-  "failedVideos": [
-    {
-      "num": 11,
-      "page": "STORY",
-      "section": "Bible Adventures",
-      "title": "Great God",
-      "url": "https://go.kingdomlandkids.com/watch/b5133472-fdbb-456c-ae42-b13b1fd54f84?category=eaf34a3d-d9e2-4b24-b86a-e0edeb08ac44&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 12,
-      "page": "STORY",
-      "section": "Bible Adventures",
-      "title": "Moses",
-      "url": "https://go.kingdomlandkids.com/watch/1d3177fe-7046-4d74-ba2c-edc330f2b313?category=eaf34a3d-d9e2-4b24-b86a-e0edeb08ac44&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 13,
-      "page": "STORY",
-      "section": "Bible Adventures",
-      "title": "Noah",
-      "url": "https://go.kingdomlandkids.com/watch/72c7e315-206d-4443-a4fb-ec171f5e3824?category=eaf34a3d-d9e2-4b24-b86a-e0edeb08ac44&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 24,
-      "page": "STORY",
-      "section": "Marvelous Light Series",
-      "title": "Creation | S2 EP15",
-      "url": "https://go.kingdomlandkids.com/watch/1f34576d-c7af-4cae-b9be-258d97aa4c91?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 25,
-      "page": "STORY",
-      "section": "Marvelous Light Series",
-      "title": "Daniel and The Lions Den | S2 EP14",
-      "url": "https://go.kingdomlandkids.com/watch/2734beba-d3b4-4a5c-afdf-b3785d105269?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 26,
-      "page": "STORY",
-      "section": "Marvelous Light Series",
-      "title": "Marvelous Light Ep 4",
-      "url": "https://go.kingdomlandkids.com/watch/996b762c-9869-4614-85ed-41464b315fdc?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 27,
-      "page": "STORY",
-      "section": "Marvelous Light Series",
-      "title": "Marvelous Light Ep 3",
-      "url": "https://go.kingdomlandkids.com/watch/f436884d-488e-4e9a-9316-26c81cda9f96?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 28,
-      "page": "STORY",
-      "section": "Marvelous Light Series",
-      "title": "Marvelous Light Episode 2 Moses Part 2",
-      "url": "https://go.kingdomlandkids.com/watch/187d2637-f389-440f-bdbf-b8082681729a?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 29,
-      "page": "STORY",
-      "section": "Marvelous Light Series",
-      "title": "Marvelous Light Episode 1 Moses Part 1",
-      "url": "https://go.kingdomlandkids.com/watch/1d0ec518-70f3-4c8b-b389-26545945675b?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 30,
-      "page": "STORY",
-      "section": "Marvelous Light Series",
-      "title": "Zachaus | S2 EP17",
-      "url": "https://go.kingdomlandkids.com/watch/bb3ff059-4e31-4895-85a6-e5808e87067c?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 31,
-      "page": "STORY",
-      "section": "Marvelous Light Series",
-      "title": "Adam and Eve | S2 EP16",
-      "url": "https://go.kingdomlandkids.com/watch/947510c6-4115-4719-9c12-0fb244d39e3a?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 42,
-      "page": "STORY",
-      "section": "Fun Zone",
-      "title": "Kembe Water Cycles",
-      "url": "https://go.kingdomlandkids.com/watch/d88966cc-8a4c-4eb9-89ac-a81215700b36?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 43,
-      "page": "STORY",
-      "section": "Fun Zone",
-      "title": "Kembe How Money Works",
-      "url": "https://go.kingdomlandkids.com/watch/aabd881e-f155-437a-9bfc-13bf9ba489cd?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 44,
-      "page": "STORY",
-      "section": "Fun Zone",
-      "title": "Unicatz Homie Big Surprise",
-      "url": "https://go.kingdomlandkids.com/watch/50875106-c0bb-437d-bac7-4329047aa784?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 45,
-      "page": "STORY",
-      "section": "Fun Zone",
-      "title": "Kembe Sight Words Part 3",
-      "url": "https://go.kingdomlandkids.com/watch/4d3b7355-6d2d-4535-bbca-4c73a66f81de?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 46,
-      "page": "STORY",
-      "section": "Fun Zone",
-      "title": "Kembe Sight Words Part 2",
-      "url": "https://go.kingdomlandkids.com/watch/6e33429c-f079-4e86-bd8d-af6a97e8be3a?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 57,
-      "page": "STORY",
-      "section": "ABC",
-      "title": "Meera and Ameera",
-      "url": "https://go.kingdomlandkids.com/watch/91b9c45f-1472-4794-a534-14ccda5d750f?category=2d170e57-2540-458f-8968-de5ac7638563&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 58,
-      "page": "STORY",
-      "section": "ABC",
-      "title": "Great Tidy up",
-      "url": "https://go.kingdomlandkids.com/watch/f0c9560b-17d8-45a5-a87b-1b89082f9705?category=2d170e57-2540-458f-8968-de5ac7638563&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 59,
-      "page": "STORY",
-      "section": "ABC",
-      "title": "Brave Bora Motion Book",
-      "url": "https://go.kingdomlandkids.com/watch/adea5180-0077-4b6f-90f7-fe53ce334710?category=2d170e57-2540-458f-8968-de5ac7638563&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 60,
-      "page": "STORY",
-      "section": "ABC",
-      "title": "Auntie Bois Gift Motion Book",
-      "url": "https://go.kingdomlandkids.com/watch/3820a4b0-b2de-42de-9614-6719fba36287?category=2d170e57-2540-458f-8968-de5ac7638563&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 61,
-      "page": "STORY",
-      "section": "ABC",
-      "title": "Alien In My House",
-      "url": "https://go.kingdomlandkids.com/watch/fff66fea-6510-4391-89a0-ff3af6ecbfc0?category=2d170e57-2540-458f-8968-de5ac7638563&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 62,
-      "page": "STORY",
-      "section": "ABC",
-      "title": "Alpha-bots oo Song",
-      "url": "https://go.kingdomlandkids.com/watch/b8b902af-41c4-44f4-b75d-2edd354d5e62?category=2d170e57-2540-458f-8968-de5ac7638563&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 63,
-      "page": "STORY",
-      "section": "ABC",
-      "title": "Alphabots Letter C",
-      "url": "https://go.kingdomlandkids.com/watch/dbb4afee-fe54-4c86-b571-27675b27e4e8?category=2d170e57-2540-458f-8968-de5ac7638563&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 64,
-      "page": "STORY",
-      "section": "ABC",
-      "title": "AlphaBots Letter B",
-      "url": "https://go.kingdomlandkids.com/watch/5e64fb0f-97d7-4b95-98f6-7fea53e33dfd?category=2d170e57-2540-458f-8968-de5ac7638563&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 65,
-      "page": "STORY",
-      "section": "ABC",
-      "title": "AlphaBots Letter A",
-      "url": "https://go.kingdomlandkids.com/watch/3f8139b3-f895-4228-98ac-be010862d8ab?category=2d170e57-2540-458f-8968-de5ac7638563&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 79,
-      "page": "STORY",
-      "section": "Numbers",
-      "title": "Math With Money",
-      "url": "https://go.kingdomlandkids.com/watch/782ad9b1-5cd5-42cc-b8c5-3c28b3077726?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 80,
-      "page": "STORY",
-      "section": "Numbers",
-      "title": "Computation and Algebraic Thinking",
-      "url": "https://go.kingdomlandkids.com/watch/561d091b-276e-4784-aea7-f34632681697?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 81,
-      "page": "STORY",
-      "section": "Numbers",
-      "title": "Comparing Fractions",
-      "url": "https://go.kingdomlandkids.com/watch/7fd6c669-0c47-454e-ba56-d33e411ce106?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 82,
-      "page": "STORY",
-      "section": "Numbers",
-      "title": "Algebraic Thinking",
-      "url": "https://go.kingdomlandkids.com/watch/3b529378-7a47-47da-a3c5-4c21042ddce4?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 83,
-      "page": "STORY",
-      "section": "Numbers",
-      "title": "Adding Mixed Numbers",
-      "url": "https://go.kingdomlandkids.com/watch/33496e0c-01f3-4b8e-9a09-b3da2c8ac0c5?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 84,
-      "page": "STORY",
-      "section": "Numbers",
-      "title": "5 Monkeys Lyric Video",
-      "url": "https://go.kingdomlandkids.com/watch/972c77e5-9877-42f7-bce4-702e50fe391a?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 85,
-      "page": "STORY",
-      "section": "Numbers",
-      "title": "Modeling Multiplication",
-      "url": "https://go.kingdomlandkids.com/watch/6e74aba2-2133-4d87-bf4d-8cdd991ec27b?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=story",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 96,
-      "page": "MUSIC",
-      "section": "Sing-a-long",
-      "title": "Wiggle",
-      "url": "https://go.kingdomlandkids.com/watch/73608d01-5e69-402b-b984-7d0f6f6ab991?from=music",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 106,
-      "page": "MUSIC",
-      "section": "Sing-a-long",
-      "title": "Unicatz Cross the Road",
-      "url": "https://go.kingdomlandkids.com/watch/d8b5b1d5-ea75-4691-a319-ef1ad8c6ecd0?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 107,
-      "page": "MUSIC",
-      "section": "Sing-a-long",
-      "title": "Sound it Out",
-      "url": "https://go.kingdomlandkids.com/watch/ef960175-a650-4f5c-bec3-70fc2c4996ac?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 108,
-      "page": "MUSIC",
-      "section": "Sing-a-long",
-      "title": "School time Litty",
-      "url": "https://go.kingdomlandkids.com/watch/7ceaff00-c99a-4b58-9092-8ab1e7791f51?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 109,
-      "page": "MUSIC",
-      "section": "Sing-a-long",
-      "title": "Rain Rain Go Away",
-      "url": "https://go.kingdomlandkids.com/watch/bf3d8981-2bdc-4fec-aabe-f1fe3b7a3820?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 110,
-      "page": "MUSIC",
-      "section": "Sing-a-long",
-      "title": "Mr. Prather Days of the Week",
-      "url": "https://go.kingdomlandkids.com/watch/36981665-54ff-40b6-af63-c6f3966ef8d8?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 111,
-      "page": "MUSIC",
-      "section": "Sing-a-long",
-      "title": "Make it Out",
-      "url": "https://go.kingdomlandkids.com/watch/d608de21-c7de-483e-b58f-314f3f91b105?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 112,
-      "page": "MUSIC",
-      "section": "Sing-a-long",
-      "title": "Down In My Heart",
-      "url": "https://go.kingdomlandkids.com/watch/47d91fd5-22da-4c57-ae99-6dd4484c7381?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 113,
-      "page": "MUSIC",
-      "section": "Sing-a-long",
-      "title": "Kids Just Want to Have Fun",
-      "url": "https://go.kingdomlandkids.com/watch/f298f79f-d99f-41bb-9814-edc331bfe9ec?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 114,
-      "page": "MUSIC",
-      "section": "Sing-a-long",
-      "title": "Ice Cream Truck",
-      "url": "https://go.kingdomlandkids.com/watch/cd00ba8a-4ace-440e-9e25-4e03d0160387?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 115,
-      "page": "MUSIC",
-      "section": "Sing-a-long",
-      "title": "I'm a Princess | Sing-a-long",
-      "url": "https://go.kingdomlandkids.com/watch/9ec30bd4-0745-402c-9031-86fdf956c8b3?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 116,
-      "page": "MUSIC",
-      "section": "Sing-a-long",
-      "title": "I want to See My Friends | Sing-a-long",
-      "url": "https://go.kingdomlandkids.com/watch/811021ba-ef54-4de6-8dee-217be1a47b64?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 117,
-      "page": "MUSIC",
-      "section": "Sing-a-long",
-      "title": "Great | Sing-a-long",
-      "url": "https://go.kingdomlandkids.com/watch/38a5371c-c8f3-4e32-823b-428f17025f3c?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 118,
-      "page": "MUSIC",
-      "section": "Sing-a-long",
-      "title": "Grandmama | Sing-a-long",
-      "url": "https://go.kingdomlandkids.com/watch/6eebf6d0-36d0-4dcc-8a12-d72b84eb0e18?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 119,
-      "page": "MUSIC",
-      "section": "Sing-a-long",
-      "title": "Good Vibes | Sing-a-long",
-      "url": "https://go.kingdomlandkids.com/watch/e4dc36c7-978f-4994-9c72-9ef3ec9b772d?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 120,
-      "page": "MUSIC",
-      "section": "Sing-a-long",
-      "title": "Good Juju | Sing-a-long |",
-      "url": "https://go.kingdomlandkids.com/watch/ace3209d-784d-47f4-b441-afa566228739?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 121,
-      "page": "MUSIC",
-      "section": "Sing-a-long",
-      "title": "Go Get It",
-      "url": "https://go.kingdomlandkids.com/watch/15a864f7-716b-4e24-97ca-c21537bae9f3?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "error": "No <video> element found after 15s"
-    },
-    {
-      "num": 122,
-      "page": "MUSIC",
-      "section": "Sing-a-long",
-      "title": "Ballin | Sing-a-long",
-      "url": "https://go.kingdomlandkids.com/watch/6b31a1a1-2fb6-470e-9645-a93b4eaa4349?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "error": "No <video> element found after 15s"
-    }
-  ],
+  "failedVideos": [],
   "allResults": [
     {
       "number": 1,
@@ -418,7 +17,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/2b676607-574f-4997-80b5-596d6ef7f9d0/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3446,
+      "loadTimeMs": 3035,
       "duration": "182s",
       "resolution": "640x360"
     },
@@ -431,7 +30,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4303868d-a9c9-40fd-a25c-0892aab1a499/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 888,
+      "loadTimeMs": 877,
       "duration": "150s",
       "resolution": "640x360"
     },
@@ -444,7 +43,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7ed33ba6-5891-4525-95f6-8ef791f89c46/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 809,
+      "loadTimeMs": 832,
       "duration": "258s",
       "resolution": "640x360"
     },
@@ -457,7 +56,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5e4d922f-f256-453c-b524-ae29b659bbaf/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 848,
+      "loadTimeMs": 825,
       "duration": "212s",
       "resolution": "640x360"
     },
@@ -470,7 +69,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/08c3a441-b389-4590-8e3d-588dcc363a70/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 787,
+      "loadTimeMs": 819,
       "duration": "169s",
       "resolution": "640x360"
     },
@@ -483,7 +82,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/fee8eb1b-ec50-48e9-9b12-5cafb197a3a9/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 798,
+      "loadTimeMs": 809,
       "duration": "137s",
       "resolution": "640x360"
     },
@@ -496,7 +95,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/64e95279-c998-41d5-9488-b95fca9d672b/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 801,
+      "loadTimeMs": 870,
       "duration": "115s",
       "resolution": "640x360"
     },
@@ -509,7 +108,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/67b07475-78a7-4515-a23a-bd39e36b3235/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 804,
+      "loadTimeMs": 809,
       "duration": "121s",
       "resolution": "640x360"
     },
@@ -522,7 +121,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/49123b8f-66c7-4555-a2a9-2e9ee20f9c33/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 796,
+      "loadTimeMs": 799,
       "duration": "141s",
       "resolution": "640x360"
     },
@@ -545,12 +144,12 @@
       "section": "Bible Adventures",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/b5133472-fdbb-456c-ae42-b13b1fd54f84?category=eaf34a3d-d9e2-4b24-b86a-e0edeb08ac44&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16588,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/b5133472-fdbb-456c-ae42-b13b1fd54f84/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2155,
+      "duration": "217s",
+      "resolution": "640x360"
     },
     {
       "number": 12,
@@ -558,12 +157,12 @@
       "section": "Bible Adventures",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/1d3177fe-7046-4d74-ba2c-edc330f2b313?category=eaf34a3d-d9e2-4b24-b86a-e0edeb08ac44&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16576,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1d3177fe-7046-4d74-ba2c-edc330f2b313/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2289,
+      "duration": "224s",
+      "resolution": "640x360"
     },
     {
       "number": 13,
@@ -571,12 +170,12 @@
       "section": "Bible Adventures",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/72c7e315-206d-4443-a4fb-ec171f5e3824?category=eaf34a3d-d9e2-4b24-b86a-e0edeb08ac44&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16574,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/72c7e315-206d-4443-a4fb-ec171f5e3824/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2184,
+      "duration": "158s",
+      "resolution": "640x360"
     },
     {
       "number": 14,
@@ -587,7 +186,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d12ae97b-1174-4517-8571-28d92c4318bd/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 913,
+      "loadTimeMs": 808,
       "duration": "512s",
       "resolution": "640x360"
     },
@@ -600,7 +199,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a16895cd-d0a5-430e-ab2b-95f4b014d55c/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 836,
+      "loadTimeMs": 802,
       "duration": "407s",
       "resolution": "640x360"
     },
@@ -613,7 +212,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d0fda75a-c46e-4145-a42b-5f3c4f6b3cdb/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 804,
+      "loadTimeMs": 802,
       "duration": "353s",
       "resolution": "640x360"
     },
@@ -626,7 +225,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9613f537-ebb1-41a0-b98b-2bc2b3700a9e/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1298,
+      "loadTimeMs": 812,
       "duration": "487s",
       "resolution": "640x360"
     },
@@ -639,7 +238,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/fbaf7c54-b693-4a83-8f60-a55a1f5f42e5/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 942,
+      "loadTimeMs": 800,
       "duration": "77s",
       "resolution": "640x360"
     },
@@ -652,7 +251,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/b2367430-3e5c-402c-84ea-9a9b8c8a2efa/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 792,
+      "loadTimeMs": 831,
       "duration": "74s",
       "resolution": "640x360"
     },
@@ -665,7 +264,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a267a5c5-93d7-49c2-972b-fb426033a521/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 855,
+      "loadTimeMs": 791,
       "duration": "135s",
       "resolution": "640x360"
     },
@@ -678,7 +277,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5e7991d1-56fe-47c7-a610-44d1bdd9b713/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 798,
+      "loadTimeMs": 1344,
       "duration": "184s",
       "resolution": "640x360"
     },
@@ -691,7 +290,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/2cb183fc-ce48-4244-9fa0-18a7e2e139ca/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 792,
+      "loadTimeMs": 801,
       "duration": "118s",
       "resolution": "640x360"
     },
@@ -704,7 +303,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9613f537-ebb1-41a0-b98b-2bc2b3700a9e/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 804,
+      "loadTimeMs": 853,
       "duration": "487s",
       "resolution": "640x360"
     },
@@ -714,12 +313,12 @@
       "section": "Marvelous Light Series",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/1f34576d-c7af-4cae-b9be-258d97aa4c91?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16575,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1f34576d-c7af-4cae-b9be-258d97aa4c91/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2336,
+      "duration": "435s",
+      "resolution": "640x360"
     },
     {
       "number": 25,
@@ -727,12 +326,12 @@
       "section": "Marvelous Light Series",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/2734beba-d3b4-4a5c-afdf-b3785d105269?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16582,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/2734beba-d3b4-4a5c-afdf-b3785d105269/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2299,
+      "duration": "434s",
+      "resolution": "640x360"
     },
     {
       "number": 26,
@@ -740,12 +339,12 @@
       "section": "Marvelous Light Series",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/996b762c-9869-4614-85ed-41464b315fdc?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16551,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/996b762c-9869-4614-85ed-41464b315fdc/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2233,
+      "duration": "408s",
+      "resolution": "640x360"
     },
     {
       "number": 27,
@@ -753,12 +352,12 @@
       "section": "Marvelous Light Series",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/f436884d-488e-4e9a-9316-26c81cda9f96?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16550,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f436884d-488e-4e9a-9316-26c81cda9f96/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2289,
+      "duration": "472s",
+      "resolution": "640x360"
     },
     {
       "number": 28,
@@ -766,12 +365,12 @@
       "section": "Marvelous Light Series",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/187d2637-f389-440f-bdbf-b8082681729a?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16552,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/187d2637-f389-440f-bdbf-b8082681729a/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2279,
+      "duration": "625s",
+      "resolution": "640x360"
     },
     {
       "number": 29,
@@ -779,12 +378,12 @@
       "section": "Marvelous Light Series",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/1d0ec518-70f3-4c8b-b389-26545945675b?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16556,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1d0ec518-70f3-4c8b-b389-26545945675b/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2302,
+      "duration": "658s",
+      "resolution": "640x360"
     },
     {
       "number": 30,
@@ -792,12 +391,12 @@
       "section": "Marvelous Light Series",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/bb3ff059-4e31-4895-85a6-e5808e87067c?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16558,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/bb3ff059-4e31-4895-85a6-e5808e87067c/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2534,
+      "duration": "604s",
+      "resolution": "640x360"
     },
     {
       "number": 31,
@@ -805,12 +404,12 @@
       "section": "Marvelous Light Series",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/947510c6-4115-4719-9c12-0fb244d39e3a?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16551,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/947510c6-4115-4719-9c12-0fb244d39e3a/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2351,
+      "duration": "501s",
+      "resolution": "640x360"
     },
     {
       "number": 32,
@@ -821,7 +420,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/211fcc4c-d3da-4900-9a10-e02b21e00824/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 801,
+      "loadTimeMs": 1313,
       "duration": "214s",
       "resolution": "640x360"
     },
@@ -834,7 +433,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4fc58548-9731-4f95-9b24-3f2c72daeac2/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 793,
+      "loadTimeMs": 841,
       "duration": "525s",
       "resolution": "640x360"
     },
@@ -847,7 +446,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/097b7f11-6a19-471f-9bf1-dcdc7ff159ae/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 803,
+      "loadTimeMs": 819,
       "duration": "185s",
       "resolution": "640x360"
     },
@@ -860,7 +459,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1d091d78-7310-4fde-8f53-08a98beca74b/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 809,
+      "loadTimeMs": 814,
       "duration": "646s",
       "resolution": "640x360"
     },
@@ -873,7 +472,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4cf1046b-bcdf-4107-ac19-5cf499782419/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 811,
+      "loadTimeMs": 798,
       "duration": "134s",
       "resolution": "640x360"
     },
@@ -886,7 +485,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5b1e082f-97d0-4c7a-8541-bcfa36d034c6/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 800,
+      "loadTimeMs": 795,
       "duration": "265s",
       "resolution": "640x360"
     },
@@ -899,7 +498,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/2fa58b4d-d8bb-440f-977e-4966b437fbe0/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 829,
+      "loadTimeMs": 802,
       "duration": "333s",
       "resolution": "640x360"
     },
@@ -912,7 +511,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7e2fdf38-be4b-43f9-9764-dac6c88b7761/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 796,
+      "loadTimeMs": 810,
       "duration": "107s",
       "resolution": "640x360"
     },
@@ -925,7 +524,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/edae9ec4-18f4-47a4-9b65-467e10e14f28/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 820,
+      "loadTimeMs": 818,
       "duration": "114s",
       "resolution": "640x360"
     },
@@ -938,7 +537,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1d091d78-7310-4fde-8f53-08a98beca74b/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1355,
+      "loadTimeMs": 802,
       "duration": "646s",
       "resolution": "640x360"
     },
@@ -948,12 +547,12 @@
       "section": "Fun Zone",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/d88966cc-8a4c-4eb9-89ac-a81215700b36?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16569,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d88966cc-8a4c-4eb9-89ac-a81215700b36/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2522,
+      "duration": "104s",
+      "resolution": "640x360"
     },
     {
       "number": 43,
@@ -961,12 +560,12 @@
       "section": "Fun Zone",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/aabd881e-f155-437a-9bfc-13bf9ba489cd?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16565,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/aabd881e-f155-437a-9bfc-13bf9ba489cd/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2260,
+      "duration": "175s",
+      "resolution": "640x360"
     },
     {
       "number": 44,
@@ -974,12 +573,12 @@
       "section": "Fun Zone",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/50875106-c0bb-437d-bac7-4329047aa784?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16553,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/50875106-c0bb-437d-bac7-4329047aa784/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2140,
+      "duration": "85s",
+      "resolution": "640x360"
     },
     {
       "number": 45,
@@ -987,12 +586,12 @@
       "section": "Fun Zone",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/4d3b7355-6d2d-4535-bbca-4c73a66f81de?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16563,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4d3b7355-6d2d-4535-bbca-4c73a66f81de/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2279,
+      "duration": "291s",
+      "resolution": "640x360"
     },
     {
       "number": 46,
@@ -1000,12 +599,12 @@
       "section": "Fun Zone",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/6e33429c-f079-4e86-bd8d-af6a97e8be3a?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16570,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6e33429c-f079-4e86-bd8d-af6a97e8be3a/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2531,
+      "duration": "225s",
+      "resolution": "640x360"
     },
     {
       "number": 47,
@@ -1016,7 +615,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c3e380b8-57ea-4094-b312-7186b4182477/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 799,
+      "loadTimeMs": 815,
       "duration": "160s",
       "resolution": "640x360"
     },
@@ -1029,7 +628,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/866ae349-9baf-4757-aa17-39247e8a4222/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 786,
+      "loadTimeMs": 785,
       "duration": "95s",
       "resolution": "640x360"
     },
@@ -1042,7 +641,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a4e15e08-63a5-4021-b2fe-dc6a01ffd3cd/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 797,
+      "loadTimeMs": 812,
       "duration": "76s",
       "resolution": "640x360"
     },
@@ -1055,7 +654,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/cc438094-dbd9-48e5-a966-d901f9f49b13/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 816,
+      "loadTimeMs": 1304,
       "duration": "379s",
       "resolution": "640x360"
     },
@@ -1081,7 +680,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/8650e80f-132c-4cd1-a562-9317a91a05c0/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 801,
+      "loadTimeMs": 788,
       "duration": "205s",
       "resolution": "640x360"
     },
@@ -1094,7 +693,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/e9635d39-19b0-42db-9be6-11bc1defd3ed/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 798,
+      "loadTimeMs": 803,
       "duration": "157s",
       "resolution": "640x360"
     },
@@ -1107,7 +706,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9ae01ae1-ec60-4b68-8237-1b8484837d7f/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 820,
+      "loadTimeMs": 816,
       "duration": "204s",
       "resolution": "640x360"
     },
@@ -1120,7 +719,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6884d622-637e-4168-a1a0-c6d2c02aad06/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 826,
+      "loadTimeMs": 808,
       "duration": "105s",
       "resolution": "640x360"
     },
@@ -1133,7 +732,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/cc438094-dbd9-48e5-a966-d901f9f49b13/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 803,
+      "loadTimeMs": 815,
       "duration": "379s",
       "resolution": "640x360"
     },
@@ -1143,12 +742,12 @@
       "section": "ABC",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/91b9c45f-1472-4794-a534-14ccda5d750f?category=2d170e57-2540-458f-8968-de5ac7638563&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16546,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/91b9c45f-1472-4794-a534-14ccda5d750f/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2184,
+      "duration": "127s",
+      "resolution": "640x360"
     },
     {
       "number": 58,
@@ -1156,12 +755,12 @@
       "section": "ABC",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/f0c9560b-17d8-45a5-a87b-1b89082f9705?category=2d170e57-2540-458f-8968-de5ac7638563&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16554,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f0c9560b-17d8-45a5-a87b-1b89082f9705/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2292,
+      "duration": "101s",
+      "resolution": "640x360"
     },
     {
       "number": 59,
@@ -1169,12 +768,12 @@
       "section": "ABC",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/adea5180-0077-4b6f-90f7-fe53ce334710?category=2d170e57-2540-458f-8968-de5ac7638563&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16562,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/adea5180-0077-4b6f-90f7-fe53ce334710/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2132,
+      "duration": "113s",
+      "resolution": "640x360"
     },
     {
       "number": 60,
@@ -1182,12 +781,12 @@
       "section": "ABC",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/3820a4b0-b2de-42de-9614-6719fba36287?category=2d170e57-2540-458f-8968-de5ac7638563&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16562,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/3820a4b0-b2de-42de-9614-6719fba36287/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2177,
+      "duration": "174s",
+      "resolution": "640x360"
     },
     {
       "number": 61,
@@ -1195,12 +794,12 @@
       "section": "ABC",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/fff66fea-6510-4391-89a0-ff3af6ecbfc0?category=2d170e57-2540-458f-8968-de5ac7638563&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16548,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/fff66fea-6510-4391-89a0-ff3af6ecbfc0/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2158,
+      "duration": "95s",
+      "resolution": "640x360"
     },
     {
       "number": 62,
@@ -1208,12 +807,12 @@
       "section": "ABC",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/b8b902af-41c4-44f4-b75d-2edd354d5e62?category=2d170e57-2540-458f-8968-de5ac7638563&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16568,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/b8b902af-41c4-44f4-b75d-2edd354d5e62/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2123,
+      "duration": "115s",
+      "resolution": "640x360"
     },
     {
       "number": 63,
@@ -1221,12 +820,12 @@
       "section": "ABC",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/dbb4afee-fe54-4c86-b571-27675b27e4e8?category=2d170e57-2540-458f-8968-de5ac7638563&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16532,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/dbb4afee-fe54-4c86-b571-27675b27e4e8/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2224,
+      "duration": "189s",
+      "resolution": "640x360"
     },
     {
       "number": 64,
@@ -1234,12 +833,12 @@
       "section": "ABC",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/5e64fb0f-97d7-4b95-98f6-7fea53e33dfd?category=2d170e57-2540-458f-8968-de5ac7638563&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16538,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5e64fb0f-97d7-4b95-98f6-7fea53e33dfd/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2169,
+      "duration": "189s",
+      "resolution": "640x360"
     },
     {
       "number": 65,
@@ -1247,12 +846,12 @@
       "section": "ABC",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/3f8139b3-f895-4228-98ac-be010862d8ab?category=2d170e57-2540-458f-8968-de5ac7638563&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16557,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/3f8139b3-f895-4228-98ac-be010862d8ab/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2168,
+      "duration": "173s",
+      "resolution": "640x360"
     },
     {
       "number": 66,
@@ -1263,7 +862,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/58a6703a-fc50-46e9-b2b1-b36949a78246/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 802,
+      "loadTimeMs": 785,
       "duration": "162s",
       "resolution": "640x360"
     },
@@ -1276,7 +875,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f61a23eb-c690-4283-9311-5e9a574e1be1/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 804,
+      "loadTimeMs": 792,
       "duration": "181s",
       "resolution": "640x360"
     },
@@ -1289,7 +888,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5ed8064b-e9d5-4e5b-bb86-bb795e2b1c7a/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 805,
+      "loadTimeMs": 793,
       "duration": "208s",
       "resolution": "640x360"
     },
@@ -1302,7 +901,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/bf0b3073-9b1c-4317-8514-f8ca826fb4b7/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 810,
+      "loadTimeMs": 789,
       "duration": "43s",
       "resolution": "640x360"
     },
@@ -1315,7 +914,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9cf8562f-9214-4f34-8b64-4ac1e8aed89c/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 830,
+      "loadTimeMs": 796,
       "duration": "83s",
       "resolution": "640x360"
     },
@@ -1328,7 +927,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f6a510dd-d13f-45d5-a85b-56b8f7873e50/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 795,
+      "loadTimeMs": 853,
       "duration": "204s",
       "resolution": "640x360"
     },
@@ -1341,7 +940,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c87012b5-2144-4493-ae0c-6adfb46b4957/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 802,
+      "loadTimeMs": 1308,
       "duration": "134s",
       "resolution": "640x360"
     },
@@ -1354,7 +953,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/597b370a-d70f-46cf-a882-4fc0a930f265/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 796,
+      "loadTimeMs": 807,
       "duration": "167s",
       "resolution": "640x360"
     },
@@ -1367,7 +966,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/75a48dfd-1d3a-4d4a-ac6a-f708d82d8fcc/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 784,
+      "loadTimeMs": 800,
       "duration": "213s",
       "resolution": "640x360"
     },
@@ -1380,7 +979,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7108df62-4c23-4990-b2ef-57ddd709371b/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 800,
+      "loadTimeMs": 797,
       "duration": "164s",
       "resolution": "640x360"
     },
@@ -1393,7 +992,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/94b300e1-d14a-47dc-87f0-f022ed6476bc/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 791,
+      "loadTimeMs": 893,
       "duration": "124s",
       "resolution": "640x360"
     },
@@ -1406,7 +1005,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c16a1a0f-2c9e-46f5-a966-e80f3cd76410/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 799,
+      "loadTimeMs": 801,
       "duration": "72s",
       "resolution": "640x360"
     },
@@ -1419,7 +1018,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c87012b5-2144-4493-ae0c-6adfb46b4957/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1309,
+      "loadTimeMs": 806,
       "duration": "134s",
       "resolution": "640x360"
     },
@@ -1429,12 +1028,12 @@
       "section": "Numbers",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/782ad9b1-5cd5-42cc-b8c5-3c28b3077726?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16575,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/782ad9b1-5cd5-42cc-b8c5-3c28b3077726/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2146,
+      "duration": "52s",
+      "resolution": "640x360"
     },
     {
       "number": 80,
@@ -1442,12 +1041,12 @@
       "section": "Numbers",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/561d091b-276e-4784-aea7-f34632681697?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16555,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/561d091b-276e-4784-aea7-f34632681697/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2127,
+      "duration": "63s",
+      "resolution": "640x360"
     },
     {
       "number": 81,
@@ -1455,12 +1054,12 @@
       "section": "Numbers",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/7fd6c669-0c47-454e-ba56-d33e411ce106?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16539,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7fd6c669-0c47-454e-ba56-d33e411ce106/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2176,
+      "duration": "46s",
+      "resolution": "640x360"
     },
     {
       "number": 82,
@@ -1468,12 +1067,12 @@
       "section": "Numbers",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/3b529378-7a47-47da-a3c5-4c21042ddce4?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16553,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/3b529378-7a47-47da-a3c5-4c21042ddce4/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2158,
+      "duration": "47s",
+      "resolution": "640x360"
     },
     {
       "number": 83,
@@ -1481,12 +1080,12 @@
       "section": "Numbers",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/33496e0c-01f3-4b8e-9a09-b3da2c8ac0c5?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16548,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/33496e0c-01f3-4b8e-9a09-b3da2c8ac0c5/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2194,
+      "duration": "36s",
+      "resolution": "640x360"
     },
     {
       "number": 84,
@@ -1494,12 +1093,12 @@
       "section": "Numbers",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/972c77e5-9877-42f7-bce4-702e50fe391a?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16537,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/972c77e5-9877-42f7-bce4-702e50fe391a/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2232,
+      "duration": "116s",
+      "resolution": "640x360"
     },
     {
       "number": 85,
@@ -1507,12 +1106,12 @@
       "section": "Numbers",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/6e74aba2-2133-4d87-bf4d-8cdd991ec27b?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=story",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 16575,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6e74aba2-2133-4d87-bf4d-8cdd991ec27b/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2263,
+      "duration": "33s",
+      "resolution": "640x360"
     },
     {
       "number": 86,
@@ -1523,7 +1122,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/aee40747-e84a-4b21-ac94-2c9a4b2ff088/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 892,
+      "loadTimeMs": 808,
       "duration": "115s",
       "resolution": "640x360"
     },
@@ -1536,7 +1135,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/16817712-d949-4279-871f-cb066723b50e/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 851,
+      "loadTimeMs": 830,
       "duration": "118s",
       "resolution": "640x360"
     },
@@ -1549,7 +1148,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/200efedf-c802-4fd8-ab28-faffbe5d4cc3/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 812,
+      "loadTimeMs": 827,
       "duration": "185s",
       "resolution": "640x360"
     },
@@ -1562,7 +1161,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4780be1a-cf12-4208-889f-64ec142dab8f/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 800,
+      "loadTimeMs": 798,
       "duration": "198s",
       "resolution": "640x360"
     },
@@ -1575,7 +1174,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/03a156fb-9c97-499b-b862-bf0556dbdc64/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 800,
+      "loadTimeMs": 808,
       "duration": "200s",
       "resolution": "640x360"
     },
@@ -1588,7 +1187,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/daa4c238-2ffb-405c-9d13-ec27c1019158/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 790,
+      "loadTimeMs": 795,
       "duration": "165s",
       "resolution": "640x360"
     },
@@ -1601,7 +1200,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/11e1164b-d214-4c1d-8d96-c9430be49734/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 787,
+      "loadTimeMs": 836,
       "duration": "120s",
       "resolution": "640x360"
     },
@@ -1614,7 +1213,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/bfb16737-dd22-43e9-bd73-4890964b3527/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 800,
+      "loadTimeMs": 1298,
       "duration": "93s",
       "resolution": "640x360"
     },
@@ -1627,7 +1226,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c8be5898-a105-4a08-8dec-ba566d96eac1/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 802,
+      "loadTimeMs": 791,
       "duration": "166s",
       "resolution": "640x360"
     },
@@ -1640,7 +1239,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1f732317-d240-4f49-bf56-2f70230d1c02/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 797,
+      "loadTimeMs": 843,
       "duration": "138s",
       "resolution": "640x360"
     },
@@ -1650,12 +1249,12 @@
       "section": "Sing-a-long",
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/73608d01-5e69-402b-b984-7d0f6f6ab991?from=music",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 15316,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/73608d01-5e69-402b-b984-7d0f6f6ab991/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 945,
+      "duration": "149s",
+      "resolution": "640x360"
     },
     {
       "number": 97,
@@ -1666,7 +1265,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c37e431b-b298-4159-9190-6ad62e38ffaf/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 801,
+      "loadTimeMs": 810,
       "duration": "96s",
       "resolution": "640x360"
     },
@@ -1679,7 +1278,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/fde9313a-7641-4798-9eef-cb3bd082775e/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 813,
+      "loadTimeMs": 801,
       "duration": "108s",
       "resolution": "640x360"
     },
@@ -1692,7 +1291,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/005ab49b-8eaf-4ebb-89e6-831cdabb3a94/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 787,
+      "loadTimeMs": 799,
       "duration": "155s",
       "resolution": "640x360"
     },
@@ -1705,7 +1304,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/b595ec1a-b425-479e-8f54-b98d2155a681/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 808,
+      "loadTimeMs": 795,
       "duration": "168s",
       "resolution": "640x360"
     },
@@ -1718,7 +1317,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7a7af214-a722-468d-9a7d-32596ef551bf/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 807,
+      "loadTimeMs": 802,
       "duration": "262s",
       "resolution": "640x360"
     },
@@ -1731,7 +1330,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/19ceb6fc-d588-40ef-90c5-9619a419b20d/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 792,
+      "loadTimeMs": 787,
       "duration": "157s",
       "resolution": "640x360"
     },
@@ -1744,7 +1343,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/56718b15-6dd1-4865-8f62-2c78c5232ade/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 798,
+      "loadTimeMs": 802,
       "duration": "159s",
       "resolution": "640x360"
     },
@@ -1757,7 +1356,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9a9b17a4-90ce-409d-ac17-530484e83196/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 802,
+      "loadTimeMs": 792,
       "duration": "155s",
       "resolution": "640x360"
     },
@@ -1770,7 +1369,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4a9c9d00-18a2-4f89-8200-8611bd6e2a32/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 790,
+      "loadTimeMs": 814,
       "duration": "82s",
       "resolution": "640x360"
     },
@@ -1780,12 +1379,12 @@
       "section": "Sing-a-long",
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/d8b5b1d5-ea75-4691-a319-ef1ad8c6ecd0?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 15346,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d8b5b1d5-ea75-4691-a319-ef1ad8c6ecd0/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 1292,
+      "duration": "127s",
+      "resolution": "640x360"
     },
     {
       "number": 107,
@@ -1793,12 +1392,12 @@
       "section": "Sing-a-long",
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/ef960175-a650-4f5c-bec3-70fc2c4996ac?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 15347,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/ef960175-a650-4f5c-bec3-70fc2c4996ac/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 944,
+      "duration": "142s",
+      "resolution": "640x360"
     },
     {
       "number": 108,
@@ -1806,12 +1405,12 @@
       "section": "Sing-a-long",
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/7ceaff00-c99a-4b58-9092-8ab1e7791f51?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 15333,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7ceaff00-c99a-4b58-9092-8ab1e7791f51/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 976,
+      "duration": "105s",
+      "resolution": "640x360"
     },
     {
       "number": 109,
@@ -1819,12 +1418,12 @@
       "section": "Sing-a-long",
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/bf3d8981-2bdc-4fec-aabe-f1fe3b7a3820?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 15331,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/bf3d8981-2bdc-4fec-aabe-f1fe3b7a3820/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 1002,
+      "duration": "147s",
+      "resolution": "640x360"
     },
     {
       "number": 110,
@@ -1832,12 +1431,12 @@
       "section": "Sing-a-long",
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/36981665-54ff-40b6-af63-c6f3966ef8d8?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 15324,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/36981665-54ff-40b6-af63-c6f3966ef8d8/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 967,
+      "duration": "197s",
+      "resolution": "640x360"
     },
     {
       "number": 111,
@@ -1845,12 +1444,12 @@
       "section": "Sing-a-long",
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/d608de21-c7de-483e-b58f-314f3f91b105?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 15345,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d608de21-c7de-483e-b58f-314f3f91b105/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 956,
+      "duration": "184s",
+      "resolution": "640x360"
     },
     {
       "number": 112,
@@ -1858,12 +1457,12 @@
       "section": "Sing-a-long",
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/47d91fd5-22da-4c57-ae99-6dd4484c7381?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 15330,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/47d91fd5-22da-4c57-ae99-6dd4484c7381/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 952,
+      "duration": "128s",
+      "resolution": "640x360"
     },
     {
       "number": 113,
@@ -1871,12 +1470,12 @@
       "section": "Sing-a-long",
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/f298f79f-d99f-41bb-9814-edc331bfe9ec?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 15321,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f298f79f-d99f-41bb-9814-edc331bfe9ec/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 946,
+      "duration": "196s",
+      "resolution": "640x360"
     },
     {
       "number": 114,
@@ -1884,12 +1483,12 @@
       "section": "Sing-a-long",
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/cd00ba8a-4ace-440e-9e25-4e03d0160387?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 15331,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/cd00ba8a-4ace-440e-9e25-4e03d0160387/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 939,
+      "duration": "96s",
+      "resolution": "640x360"
     },
     {
       "number": 115,
@@ -1897,12 +1496,12 @@
       "section": "Sing-a-long",
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/9ec30bd4-0745-402c-9031-86fdf956c8b3?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 15340,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9ec30bd4-0745-402c-9031-86fdf956c8b3/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 958,
+      "duration": "134s",
+      "resolution": "640x360"
     },
     {
       "number": 116,
@@ -1910,12 +1509,12 @@
       "section": "Sing-a-long",
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/811021ba-ef54-4de6-8dee-217be1a47b64?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 15345,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/811021ba-ef54-4de6-8dee-217be1a47b64/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 1015,
+      "duration": "122s",
+      "resolution": "640x360"
     },
     {
       "number": 117,
@@ -1923,12 +1522,12 @@
       "section": "Sing-a-long",
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/38a5371c-c8f3-4e32-823b-428f17025f3c?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 15353,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/38a5371c-c8f3-4e32-823b-428f17025f3c/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 944,
+      "duration": "216s",
+      "resolution": "640x360"
     },
     {
       "number": 118,
@@ -1936,12 +1535,12 @@
       "section": "Sing-a-long",
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/6eebf6d0-36d0-4dcc-8a12-d72b84eb0e18?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 15344,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6eebf6d0-36d0-4dcc-8a12-d72b84eb0e18/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 954,
+      "duration": "129s",
+      "resolution": "640x360"
     },
     {
       "number": 119,
@@ -1949,12 +1548,12 @@
       "section": "Sing-a-long",
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/e4dc36c7-978f-4994-9c72-9ef3ec9b772d?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 15354,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/e4dc36c7-978f-4994-9c72-9ef3ec9b772d/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 965,
+      "duration": "158s",
+      "resolution": "640x360"
     },
     {
       "number": 120,
@@ -1962,12 +1561,12 @@
       "section": "Sing-a-long",
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/ace3209d-784d-47f4-b441-afa566228739?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 15347,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/ace3209d-784d-47f4-b441-afa566228739/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 925,
+      "duration": "144s",
+      "resolution": "640x360"
     },
     {
       "number": 121,
@@ -1975,12 +1574,12 @@
       "section": "Sing-a-long",
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/15a864f7-716b-4e24-97ca-c21537bae9f3?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 15331,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/15a864f7-716b-4e24-97ca-c21537bae9f3/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 1068,
+      "duration": "140s",
+      "resolution": "640x360"
     },
     {
       "number": 122,
@@ -1988,12 +1587,12 @@
       "section": "Sing-a-long",
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/6b31a1a1-2fb6-470e-9645-a93b4eaa4349?category=4797c99b-5307-4475-83c8-5d2e5271e623&from=music",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 15s",
-      "loadTimeMs": 15340,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6b31a1a1-2fb6-470e-9645-a93b4eaa4349/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 909,
+      "duration": "203s",
+      "resolution": "640x360"
     }
   ]
 }
