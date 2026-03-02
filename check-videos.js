@@ -25,9 +25,9 @@ const CONFIG = {
   loginUrl: 'https://go.kingdomlandkids.com/login',
   musicUrl: 'https://go.kingdomlandkids.com/music',
 
-  // Credentials (env vars for CI, fallback for local dev)
-  username: process.env.KL_USERNAME || 'jonathantubay@ymail.com',
-  password: process.env.KL_PASSWORD || '!J0nthan2025',
+  // Credentials (env vars required — no hardcoded fallbacks for security)
+  username: process.env.KL_USERNAME || '',
+  password: process.env.KL_PASSWORD || '',
 
   // Selectors (verified from actual site inspection)
   emailSelector: 'input[type="text"]',
@@ -37,6 +37,14 @@ const CONFIG = {
   // Timeouts
   videoLoadTimeout: 20000,
   navigationTimeout: 30000,
+
+  // Retry: re-check failed/timed out videos once
+  retryFailures: true,
+  maxRetries: 1,
+
+  // Screenshots on failure
+  screenshotOnFailure: true,
+  screenshotDir: 'screenshots',
 };
 // ====================================
 
@@ -44,6 +52,12 @@ const DEBUG = process.argv.includes('--debug');
 const STORY_ONLY = process.argv.includes('--story');
 const MUSIC_ONLY = process.argv.includes('--music');
 const JSON_STREAM = process.argv.includes('--json-stream');
+
+// Ensure screenshot directory exists
+if (CONFIG.screenshotOnFailure) {
+  const screenshotPath = require('path').join(__dirname, CONFIG.screenshotDir);
+  if (!fs.existsSync(screenshotPath)) fs.mkdirSync(screenshotPath, { recursive: true });
+}
 
 function emit(obj) {
   if (JSON_STREAM) process.stdout.write(JSON.stringify(obj) + '\n');
@@ -58,6 +72,9 @@ function log(msg) {
 }
 
 async function login(page) {
+  if (!CONFIG.username || !CONFIG.password) {
+    throw new Error('Missing credentials. Set KL_USERNAME and KL_PASSWORD environment variables.');
+  }
   log('Logging in to go.kingdomlandkids.com...');
   await page.goto(CONFIG.loginUrl, { waitUntil: 'networkidle', timeout: CONFIG.navigationTimeout });
 
@@ -707,6 +724,7 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = 'STORY') 
       result.error = 'No <video> element found after 15s';
       result.loadTimeMs = Date.now() - startTime;
       logResult(result, videoNum, totalLabel);
+      emit({ type: 'check', result });
       return result;
     }
 
@@ -807,6 +825,16 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = 'STORY') 
     result.loadTimeMs = Date.now() - startTime;
   }
 
+  // Screenshot on failure
+  if (CONFIG.screenshotOnFailure && (result.status === 'FAIL' || result.status === 'TIMEOUT')) {
+    try {
+      const safeName = (result.title || 'unknown').replace(/[^a-zA-Z0-9_-]/g, '_').substring(0, 60);
+      const screenshotFile = `${CONFIG.screenshotDir}/${safeName}_${videoNum}.png`;
+      await page.screenshot({ path: screenshotFile, fullPage: false });
+      result.screenshot = screenshotFile;
+    } catch { /* screenshot failed — not critical */ }
+  }
+
   logResult(result, videoNum, totalLabel);
   emit({ type: 'check', result });
   return result;
@@ -864,6 +892,13 @@ function generateReport(allResults) {
     }
   }
 
+  // Save current report as "previous" for diff comparison (before overwriting)
+  if (fs.existsSync('video-report.json')) {
+    try {
+      fs.copyFileSync('video-report.json', 'previous-report.json');
+    } catch { /* ignore */ }
+  }
+
   // JSON report
   const report = {
     timestamp: new Date().toISOString(),
@@ -874,6 +909,25 @@ function generateReport(allResults) {
   emit({ type: 'complete', summary: report.summary, allResults: report.allResults });
   fs.writeFileSync('video-report.json', JSON.stringify(report, null, 2));
   log('Saved: video-report.json');
+
+  // Append to history for trend tracking
+  const historyEntry = {
+    timestamp: report.timestamp,
+    total: allResults.length,
+    passed: passed.length,
+    failed: failed.length,
+    timeouts: timeouts.length,
+    avgLoadTimeMs: Math.round(allResults.reduce((sum, r) => sum + (r.loadTimeMs || 0), 0) / (allResults.length || 1)),
+  };
+  let history = [];
+  if (fs.existsSync('history.json')) {
+    try { history = JSON.parse(fs.readFileSync('history.json', 'utf-8')); } catch { history = []; }
+  }
+  history.push(historyEntry);
+  // Keep only last 50 entries
+  if (history.length > 50) history = history.slice(-50);
+  fs.writeFileSync('history.json', JSON.stringify(history, null, 2));
+  log('Saved: history.json');
 
   // CSV report
   const csv = 'Number,Page,Section,Title,Status,URL,Error,HLS Source,Duration,Resolution,Load Time (ms)\n' +
@@ -1016,6 +1070,56 @@ async function main() {
     }
   } finally {
     await browser.close();
+  }
+
+  // ===== Retry failed/timed out videos =====
+  if (CONFIG.retryFailures && allResults.length > 0) {
+    const retryTargets = allResults.filter(r => r.status === 'FAIL' || r.status === 'TIMEOUT');
+    if (retryTargets.length > 0 && retryTargets.length <= 20) {
+      log(`\nRetrying ${retryTargets.length} failed/timed out video(s)...`);
+      emit({ type: 'status', message: `Retrying ${retryTargets.length} failed video(s)...` });
+
+      const browser2 = await chromium.launch({ headless: !DEBUG, slowMo: DEBUG ? 200 : 0 });
+      const context2 = await browser2.newContext({ viewport: { width: 1400, height: 900 } });
+      const page2 = await context2.newPage();
+
+      try {
+        await login(page2);
+
+        for (const orig of retryTargets) {
+          const pageUrl = orig.page === 'MUSIC' ? CONFIG.musicUrl : CONFIG.baseUrl;
+
+          if (page2.url().includes('/watch/')) {
+            await page2.goto(pageUrl, { waitUntil: 'networkidle', timeout: CONFIG.navigationTimeout });
+            await page2.waitForTimeout(2000);
+          }
+
+          if (!page2.url().includes(pageUrl.replace(CONFIG.baseUrl, ''))) {
+            await page2.goto(pageUrl, { waitUntil: 'networkidle', timeout: CONFIG.navigationTimeout });
+            await page2.waitForTimeout(2000);
+          }
+
+          if (orig.page === 'MUSIC') await loadAllMusicCards(page2);
+          else await scrollToLoadAll(page2);
+
+          const retryResult = await checkVideo(page2, { title: orig.title, section: orig.section }, orig.number, `${allResults.length} (retry)`, orig.page);
+          retryResult.page = orig.page;
+
+          // If retry passed, update the original result
+          if (retryResult.status === 'PASS') {
+            const idx = allResults.findIndex(r => r.number === orig.number);
+            if (idx !== -1) {
+              allResults[idx] = retryResult;
+              log(`   Retry SUCCESS: ${orig.title}`);
+            }
+          }
+        }
+      } catch (e) {
+        log(`Retry error: ${e.message}`);
+      } finally {
+        await browser2.close();
+      }
+    }
   }
 
   if (allResults.length > 0) {

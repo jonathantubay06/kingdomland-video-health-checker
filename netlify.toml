@@ -34,3 +34,13 @@
   from = "/api/cancel-run"
   to = "/.netlify/functions/cancel-run"
   status = 200
+
+[[redirects]]
+  from = "/api/health-badge"
+  to = "/.netlify/functions/health-badge"
+  status = 200
+
+[[redirects]]
+  from = "/api/webhook-notify"
+  to = "/.netlify/functions/webhook-notify"
+  status = 200

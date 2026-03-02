@@ -12,7 +12,7 @@ exports.handler = async (event) => {
   const file = event.queryStringParameters?.file || 'video-report.json';
 
   // Only allow known files
-  const allowed = ['video-report.json', 'video-report.csv', 'failed-videos.txt', 'status.json'];
+  const allowed = ['video-report.json', 'video-report.csv', 'failed-videos.txt', 'status.json', 'history.json', 'previous-report.json'];
   if (!allowed.includes(file)) {
     return { statusCode: 400, body: JSON.stringify({ error: 'Invalid file' }) };
   }

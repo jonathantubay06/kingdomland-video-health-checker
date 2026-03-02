@@ -17,6 +17,11 @@ const fs = require('fs');
 const app = express();
 app.use(express.json());
 
+// Serve static assets (css/, js/, screenshots/)
+app.use('/css', express.static(path.join(__dirname, 'css')));
+app.use('/js', express.static(path.join(__dirname, 'js')));
+app.use('/screenshots', express.static(path.join(__dirname, 'screenshots')));
+
 // ============== Run State ==============
 const runState = {
   status: 'idle',         // 'idle' | 'running' | 'complete'
@@ -55,13 +60,19 @@ app.post('/api/run', (req, res) => {
     return res.status(409).json({ error: 'A check is already running' });
   }
 
-  const { mode } = req.body || {};
+  const { mode, email, password } = req.body || {};
   const args = ['check-videos.js', '--json-stream'];
   if (mode === 'story') args.push('--story');
   if (mode === 'music') args.push('--music');
 
+  // Pass credentials as env vars to child process (dashboard-provided or from server env)
+  const childEnv = { ...process.env };
+  if (email) childEnv.KL_USERNAME = email;
+  if (password) childEnv.KL_PASSWORD = password;
+
   const child = spawn('node', args, {
     cwd: __dirname,
+    env: childEnv,
     stdio: ['ignore', 'pipe', 'pipe'],
   });
 
@@ -190,6 +201,79 @@ app.get('/api/download/:format', (req, res) => {
   res.setHeader('Content-Disposition', `attachment; filename="${entry.file}"`);
   res.setHeader('Content-Type', entry.mime);
   fs.createReadStream(filePath).pipe(res);
+});
+
+// History data for trend chart
+app.get('/api/history', (req, res) => {
+  const historyPath = path.join(__dirname, 'history.json');
+  if (fs.existsSync(historyPath)) {
+    try {
+      const data = JSON.parse(fs.readFileSync(historyPath, 'utf-8'));
+      return res.json(data);
+    } catch {
+      return res.json([]);
+    }
+  }
+  res.json([]);
+});
+
+// Previous report for diff comparison
+app.get('/api/previous-report', (req, res) => {
+  const prevPath = path.join(__dirname, 'previous-report.json');
+  if (fs.existsSync(prevPath)) {
+    try {
+      const data = JSON.parse(fs.readFileSync(prevPath, 'utf-8'));
+      return res.json(data);
+    } catch {
+      return res.status(500).json({ error: 'Failed to parse previous report' });
+    }
+  }
+  res.status(404).json({ error: 'No previous report available' });
+});
+
+// Health badge (SVG)
+app.get('/api/health-badge', (req, res) => {
+  let label = 'Video Health';
+  let value = 'unknown';
+  let color = '#999';
+
+  const reportPath = path.join(__dirname, 'video-report.json');
+  if (runState.latestResults || fs.existsSync(reportPath)) {
+    try {
+      let summary;
+      if (runState.latestSummary) {
+        summary = runState.latestSummary;
+      } else {
+        const data = JSON.parse(fs.readFileSync(reportPath, 'utf-8'));
+        summary = data.summary;
+      }
+
+      if (summary && summary.total > 0) {
+        const rate = Math.round((summary.passed / summary.total) * 100);
+        value = `${rate}% (${summary.passed}/${summary.total})`;
+        if (rate >= 99) color = '#4c1';
+        else if (rate >= 90) color = '#dfb317';
+        else color = '#e05d44';
+      }
+    } catch { /* ignore */ }
+  }
+
+  const labelWidth = label.length * 6.5 + 10;
+  const valueWidth = value.length * 6.5 + 10;
+  const totalWidth = labelWidth + valueWidth;
+
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${totalWidth}" height="20" role="img">
+  <linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient>
+  <clipPath id="r"><rect width="${totalWidth}" height="20" rx="3" fill="#fff"/></clipPath>
+  <g clip-path="url(#r)"><rect width="${labelWidth}" height="20" fill="#555"/><rect x="${labelWidth}" width="${valueWidth}" height="20" fill="${color}"/><rect width="${totalWidth}" height="20" fill="url(#s)"/></g>
+  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="11">
+    <text x="${labelWidth / 2}" y="14" fill="#010101" fill-opacity=".3">${label}</text><text x="${labelWidth / 2}" y="13">${label}</text>
+    <text x="${labelWidth + valueWidth / 2}" y="14" fill="#010101" fill-opacity=".3">${value}</text><text x="${labelWidth + valueWidth / 2}" y="13">${value}</text>
+  </g></svg>`;
+
+  res.setHeader('Content-Type', 'image/svg+xml');
+  res.setHeader('Cache-Control', 'no-cache, max-age=300');
+  res.send(svg);
 });
 
 // Stop running check

@@ -2,3 +2,7 @@ node_modules/
 video-report.json
 video-report.csv
 failed-videos.txt
+previous-report.json
+history.json
+screenshots/
+.env
