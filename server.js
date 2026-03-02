@@ -60,7 +60,7 @@ app.post('/api/run', (req, res) => {
     return res.status(409).json({ error: 'A check is already running' });
   }
 
-  const { mode, email, password } = req.body || {};
+  const { mode, email, password, failedOnly, titles } = req.body || {};
   const args = ['check-videos.js', '--json-stream'];
   if (mode === 'story') args.push('--story');
   if (mode === 'music') args.push('--music');
@@ -69,6 +69,10 @@ app.post('/api/run', (req, res) => {
   const childEnv = { ...process.env };
   if (email) childEnv.KL_USERNAME = email;
   if (password) childEnv.KL_PASSWORD = password;
+  // Pass failed-only titles filter
+  if (failedOnly && titles && titles.length) {
+    childEnv.CHECK_TITLES = JSON.stringify(titles);
+  }
 
   const child = spawn('node', args, {
     cwd: __dirname,

@@ -53,6 +53,12 @@ const STORY_ONLY = process.argv.includes('--story');
 const MUSIC_ONLY = process.argv.includes('--music');
 const JSON_STREAM = process.argv.includes('--json-stream');
 
+// Titles filter: only check specific videos (used by "Check Failed Only")
+let TITLES_FILTER = null;
+if (process.env.CHECK_TITLES) {
+  try { TITLES_FILTER = new Set(JSON.parse(process.env.CHECK_TITLES)); } catch { TITLES_FILTER = null; }
+}
+
 // Ensure screenshot directory exists
 if (CONFIG.screenshotOnFailure) {
   const screenshotPath = require('path').join(__dirname, CONFIG.screenshotDir);
@@ -973,8 +979,14 @@ async function scanStoryPage(page, pageUrl, allResults, startNum) {
   await page.waitForTimeout(2000);
 
   log('   Phase 1: Discovering all video cards (navigating carousels)...');
-  const cards = await collectStoryCards(page);
+  let cards = await collectStoryCards(page);
   log(`   Found ${cards.length} total video cards on STORY page`);
+
+  // Filter to specific titles if "Check Failed Only" was used
+  if (TITLES_FILTER) {
+    cards = cards.filter(c => TITLES_FILTER.has(c.title));
+    log(`   Filtered to ${cards.length} videos (re-checking failed only)`);
+  }
 
   const sections = [...new Set(cards.map(c => c.section).filter(Boolean))];
   log(`   Sections: ${sections.join(', ')}\n`);
@@ -1011,8 +1023,15 @@ async function scanMusicPage(page, pageUrl, allResults, startNum) {
   await page.waitForTimeout(2000);
 
   log('   Phase 1: Discovering all video cards (View more + tabs)...');
-  const cards = await collectMusicCards(page);
-  log(`   Found ${cards.length} total video cards on MUSIC page\n`);
+  let cards = await collectMusicCards(page);
+  log(`   Found ${cards.length} total video cards on MUSIC page`);
+
+  // Filter to specific titles if "Check Failed Only" was used
+  if (TITLES_FILTER) {
+    cards = cards.filter(c => TITLES_FILTER.has(c.title));
+    log(`   Filtered to ${cards.length} videos (re-checking failed only)`);
+  }
+  log('');
 
   let videoNum = startNum;
   const totalStr = (startNum + cards.length).toString();
