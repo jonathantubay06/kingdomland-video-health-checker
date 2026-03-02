@@ -1,0 +1,10 @@
+[
+  {
+    "timestamp": "2026-03-02T02:36:39.396Z",
+    "total": 122,
+    "passed": 72,
+    "failed": 50,
+    "timeouts": 0,
+    "avgLoadTimeMs": 7122
+  }
+]
