@@ -14,9 +14,9 @@ on:
           - story
           - music
 
-  # Scheduled auto-checks: daily at 8 AM UTC (4 PM PHT)
+  # Scheduled auto-checks: daily at 7 AM PHT (11 PM UTC previous day)
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '0 23 * * *'
 
 permissions:
   contents: write
