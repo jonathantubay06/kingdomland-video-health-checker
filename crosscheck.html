@@ -38,7 +38,7 @@
       <div class="step-number">1</div>
       <div class="step-body">
         <h2>Data Sources</h2>
-        <p class="step-desc">The cross-check compares your latest video check results with the Google Spreadsheet.</p>
+        <p class="step-desc">The cross-check compares your latest video check results (from the <a href="/">Dashboard</a>) with the Google Spreadsheet.</p>
 
         <div class="source-cards">
           <div class="source-card" id="source-website">
@@ -152,11 +152,15 @@
 
         <!-- Apply Changes -->
         <div class="apply-section" id="apply-section" style="display:none">
+          <div class="apply-info-box">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            <span>This <strong>only updates the Status column</strong> in your Google Spreadsheet. It does <strong>not</strong> publish or remove any videos on the live website.</span>
+          </div>
           <button class="btn btn-apply" id="btn-apply" onclick="applyChanges()">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
             <span id="apply-btn-text">Apply Changes to Spreadsheet</span>
           </button>
-          <p class="apply-note">This will update the Status column in your Google Spreadsheet. Requires Apps Script setup.</p>
+          <p class="apply-note">Requires Apps Script setup (see instructions below).</p>
         </div>
       </div>
     </section>
@@ -166,21 +170,92 @@
       <details>
         <summary>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-          Setup: How to enable auto-update for the spreadsheet
+          Setup: How to enable "Apply Changes" (one-time setup)
         </summary>
         <div class="setup-content">
-          <p>To allow this tool to automatically update your Google Spreadsheet, deploy a small Google Apps Script:</p>
-          <ol>
-            <li>Open your spreadsheet in Google Sheets</li>
-            <li>Go to <strong>Extensions &rarr; Apps Script</strong></li>
-            <li>Delete any existing code and paste the script from <code>google-apps-script.js</code> in this project</li>
-            <li>Click <strong>Deploy &rarr; New deployment</strong></li>
-            <li>Select type: <strong>Web app</strong></li>
-            <li>Set "Execute as" to <strong>Me</strong> and "Who has access" to <strong>Anyone</strong></li>
-            <li>Click <strong>Deploy</strong> and copy the web app URL</li>
-            <li>Add it to your <code>.env</code> file as <code>GSHEET_WEBAPP_URL=your-url-here</code></li>
-            <li>Restart the server</li>
-          </ol>
+
+          <div class="setup-what">
+            <h3>What does "Apply Changes" do?</h3>
+            <p>It <strong>only updates the Status column</strong> in your Google Spreadsheet to match reality. For example:</p>
+            <ul>
+              <li>If a video is marked "In PRODUCTION" in the spreadsheet but is <strong>not on the website</strong> &rarr; it changes the status back to "Ready to Live"</li>
+              <li>If a video is on the website but marked "Ready to Live" in the spreadsheet &rarr; it changes the status to "In PRODUCTION"</li>
+            </ul>
+            <p><strong>It does NOT publish or remove any videos on the live Kingdomland website.</strong> It only keeps your spreadsheet tracking in sync.</p>
+          </div>
+
+          <div class="setup-how">
+            <h3>How to set it up (one-time)</h3>
+            <p>You need to deploy a small Google Apps Script inside your spreadsheet so this tool can update it:</p>
+
+            <div class="setup-step">
+              <div class="setup-step-num">1</div>
+              <div class="setup-step-body">
+                <strong>Open the Kingdomland spreadsheet</strong>
+                <p>Go to <a href="https://docs.google.com/spreadsheets/d/1WnDBxVpXdaDQd5PBLGKC1VzuF1DDTODRmyW-TUjqjc0/edit" target="_blank" rel="noopener">your Google Spreadsheet</a> in your browser.</p>
+              </div>
+            </div>
+
+            <div class="setup-step">
+              <div class="setup-step-num">2</div>
+              <div class="setup-step-body">
+                <strong>Open the Apps Script editor</strong>
+                <p>In the spreadsheet menu bar, click <strong>Extensions</strong> &rarr; <strong>Apps Script</strong>. This opens a new tab with the script editor.</p>
+              </div>
+            </div>
+
+            <div class="setup-step">
+              <div class="setup-step-num">3</div>
+              <div class="setup-step-body">
+                <strong>Paste the script code</strong>
+                <p>In the script editor, <strong>delete everything</strong> in the code area. Then open the file <code>google-apps-script.js</code> from this project folder, copy the entire contents, and paste it into the editor.</p>
+                <p class="setup-hint">The file is at: <code>kingdomland-video-checker/google-apps-script.js</code></p>
+              </div>
+            </div>
+
+            <div class="setup-step">
+              <div class="setup-step-num">4</div>
+              <div class="setup-step-body">
+                <strong>Deploy as a Web App</strong>
+                <p>In the script editor, click the blue <strong>Deploy</strong> button (top right) &rarr; <strong>New deployment</strong>.</p>
+                <ul>
+                  <li>Click the gear icon next to "Select type" and choose <strong>Web app</strong></li>
+                  <li>Set <strong>"Execute as"</strong> to <strong>Me</strong> (your Google account)</li>
+                  <li>Set <strong>"Who has access"</strong> to <strong>Anyone</strong></li>
+                  <li>Click <strong>Deploy</strong></li>
+                </ul>
+                <p>Google may ask you to authorize — click <strong>Review permissions</strong>, choose your account, and click <strong>Allow</strong>.</p>
+              </div>
+            </div>
+
+            <div class="setup-step">
+              <div class="setup-step-num">5</div>
+              <div class="setup-step-body">
+                <strong>Copy the Web App URL</strong>
+                <p>After deploying, you'll see a URL like:<br><code>https://script.google.com/macros/s/AKfyc.../exec</code></p>
+                <p>Click the <strong>copy</strong> icon to copy this URL.</p>
+              </div>
+            </div>
+
+            <div class="setup-step">
+              <div class="setup-step-num">6</div>
+              <div class="setup-step-body">
+                <strong>Add the URL to your .env file</strong>
+                <p>Open the <code>.env</code> file in the project folder (<code>kingdomland-video-checker/.env</code>) and add this line:</p>
+                <pre class="setup-code">GSHEET_WEBAPP_URL=https://script.google.com/macros/s/AKfyc.../exec</pre>
+                <p class="setup-hint">Replace the URL with the one you copied in Step 5.</p>
+              </div>
+            </div>
+
+            <div class="setup-step">
+              <div class="setup-step-num">7</div>
+              <div class="setup-step-body">
+                <strong>Restart the server</strong>
+                <p>Stop the running server (press <kbd>Ctrl+C</kbd> in the terminal) and start it again with <code>node server.js</code>. The "Apply Changes" button will now work!</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </details>
     </section>
