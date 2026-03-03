@@ -44,3 +44,19 @@
   from = "/api/webhook-notify"
   to = "/.netlify/functions/webhook-notify"
   status = 200
+
+# Cross-check page uses /api/report (same data as /api/get-report)
+[[redirects]]
+  from = "/api/report"
+  to = "/.netlify/functions/get-report"
+  status = 200
+
+[[redirects]]
+  from = "/api/crosscheck"
+  to = "/.netlify/functions/crosscheck"
+  status = 200
+
+[[redirects]]
+  from = "/api/crosscheck/apply"
+  to = "/.netlify/functions/crosscheck-apply"
+  status = 200
