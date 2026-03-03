@@ -702,7 +702,7 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = 'STORY') 
     // Poll for <video> element to appear in DOM or iframes (some pages render it dynamically)
     let videoAppeared = false;
     let videoFrame = null; // the frame containing the <video> element
-    for (let attempt = 0; attempt < 30; attempt++) {
+    for (let attempt = 0; attempt < 50; attempt++) {
       // Check main page first
       videoAppeared = await page.evaluate(() => !!document.querySelector('video'));
       if (videoAppeared) {
@@ -727,7 +727,7 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = 'STORY') 
 
     if (!videoAppeared) {
       result.status = 'FAIL';
-      result.error = 'No <video> element found after 15s';
+      result.error = 'No <video> element found after 25s';
       result.loadTimeMs = Date.now() - startTime;
       logResult(result, videoNum, totalLabel);
       emit({ type: 'check', result });
