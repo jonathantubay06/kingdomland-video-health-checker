@@ -592,10 +592,34 @@ async function loadAllMusicCards(page) {
 
 /**
  * Try to find and click a card by title in the current DOM.
- * Uses coordinate-based page.mouse.click() for React/Ant Design compatibility
- * (synthetic el.click() inside evaluate doesn't trigger React event handlers).
+ * Uses Playwright's native locator.click() which performs an atomic
+ * scroll-into-view + click without coordinate race conditions.
+ * Falls back to coordinate-based click if the locator approach fails.
  */
 async function tryClickCard(page, title) {
+  // Approach 1: Playwright native locator (atomic, no coordinate race condition)
+  try {
+    // Build a locator that matches cards containing the exact title text
+    const cardLocator = page.locator('[class*="cursor-pointer"]').filter({
+      has: page.locator(`p:text-is("${title.replace(/"/g, '\\"')}")`)
+    }).first();
+
+    if (await cardLocator.isVisible({ timeout: 2000 })) {
+      await cardLocator.click({ timeout: 5000 });
+      return true;
+    }
+  } catch { /* locator approach failed, try fallback */ }
+
+  // Also try matching by img alt text (some cards don't have <p> titles)
+  try {
+    const imgLocator = page.locator(`[class*="cursor-pointer"]:has(img[alt="${title.replace(/"/g, '\\"')}"])`).first();
+    if (await imgLocator.isVisible({ timeout: 1000 })) {
+      await imgLocator.click({ timeout: 5000 });
+      return true;
+    }
+  } catch { /* img alt approach failed, try coordinate fallback */ }
+
+  // Approach 2: Coordinate-based fallback (scroll → re-read coordinates → click)
   const bounds = await page.evaluate((t) => {
     const cards = document.querySelectorAll('[class*="cursor-pointer"]');
     for (const card of cards) {
@@ -604,6 +628,23 @@ async function tryClickCard(page, title) {
       const cardTitle = p?.textContent?.trim() || img?.alt || '';
       if (cardTitle === t) {
         card.scrollIntoView({ behavior: 'instant', block: 'center' });
+        return true;
+      }
+    }
+    return false;
+  }, title);
+
+  if (!bounds) return false;
+  await page.waitForTimeout(400); // generous settle time after scroll
+
+  // Re-read coordinates AFTER scroll has settled (avoids stale-coordinate bug)
+  const coords = await page.evaluate((t) => {
+    const cards = document.querySelectorAll('[class*="cursor-pointer"]');
+    for (const card of cards) {
+      const p = card.querySelector('p');
+      const img = card.querySelector('img');
+      const cardTitle = p?.textContent?.trim() || img?.alt || '';
+      if (cardTitle === t) {
         const rect = card.getBoundingClientRect();
         return { x: rect.x + rect.width / 2, y: rect.y + rect.height / 2 };
       }
@@ -611,9 +652,8 @@ async function tryClickCard(page, title) {
     return null;
   }, title);
 
-  if (!bounds) return false;
-  await page.waitForTimeout(200); // let scrollIntoView settle
-  await page.mouse.click(bounds.x, bounds.y);
+  if (!coords) return false;
+  await page.mouse.click(coords.x, coords.y);
   return true;
 }
 
@@ -698,6 +738,29 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = 'STORY') 
     }
 
     result.url = page.url();
+
+    // Verify the watch page title matches the expected card title
+    try {
+      const watchPageTitle = await page.evaluate(() => {
+        // Try breadcrumb last item, then h1/h2 heading below video
+        const breadcrumbs = document.querySelectorAll('a[href], span');
+        let lastCrumb = '';
+        for (const el of breadcrumbs) {
+          if (el.closest('nav, [class*="breadcrumb"], [class*="Breadcrumb"]')) {
+            const t = el.textContent.trim();
+            if (t && t.length > 1) lastCrumb = t;
+          }
+        }
+        if (lastCrumb) return lastCrumb;
+        // Fallback: look for the title heading below the video
+        const heading = document.querySelector('h1, h2');
+        return heading?.textContent?.trim() || '';
+      });
+      if (watchPageTitle && watchPageTitle !== card.title) {
+        log(`   ⚠ Title mismatch: expected "${card.title}" but watch page shows "${watchPageTitle}"`);
+        result.titleMismatch = watchPageTitle;
+      }
+    } catch { /* non-critical check */ }
 
     // Poll for <video> element to appear in DOM or iframes (some pages render it dynamically)
     let videoAppeared = false;
