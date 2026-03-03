@@ -1,0 +1,138 @@
+/* ============== Dark Mode Theme ============== */
+
+[data-theme="dark"] {
+  --color-pass: #6ec968;
+  --color-pass-bg: #1a2e1a;
+  --color-pass-border: #2d5a2b;
+  --color-fail: #f06565;
+  --color-fail-bg: #2e1a1a;
+  --color-fail-border: #5a2b2b;
+  --color-timeout: #f0b84d;
+  --color-timeout-bg: #2e2a1a;
+  --color-timeout-border: #5a4e2b;
+  --color-info: #7b9cf0;
+  --color-info-bg: #1a2040;
+  --color-info-border: #2b3a5a;
+  --color-bg: #0f1118;
+  --color-surface: #1a1d2e;
+  --color-text: #e8e9f0;
+  --color-text-muted: #9a9cb8;
+  --color-text-light: #6b6e88;
+  --color-border: #2a2d42;
+  --color-primary: #7b9cf0;
+  --color-primary-hover: #5b7cd0;
+  --color-danger: #f06565;
+  --color-danger-hover: #d84545;
+  --color-warning: #f0b84d;
+  --color-warning-bg: #2e2a1a;
+  --color-warning-border: #5a4e2b;
+  --color-warning-hover: #d8a030;
+  --color-response-fast: #6ec968;
+  --color-response-medium: #f0b84d;
+  --color-response-slow: #f06565;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.4), 0 2px 4px -2px rgba(0,0,0,0.3);
+  --shadow-lg: 0 10px 20px -4px rgba(0,0,0,0.5), 0 4px 8px -4px rgba(0,0,0,0.4);
+}
+
+/* ---- Dark mode overrides for hardcoded colors ---- */
+
+/* Dashboard: table hover */
+[data-theme="dark"] .table-wrapper table tbody tr:hover { background: #242840; }
+[data-theme="dark"] .table-wrapper table thead th { background: #141628; }
+
+/* Dashboard: header gradient still looks fine in dark */
+
+/* Dashboard: health banner */
+[data-theme="dark"] .health-banner { background: var(--color-surface); border-color: var(--color-border); }
+
+/* Dashboard: last checked bar */
+[data-theme="dark"] .last-checked-bar { background: var(--color-surface); border-color: var(--color-border); }
+
+/* Dashboard: log section */
+[data-theme="dark"] .log-body { background: #0a0c14; }
+
+/* Dashboard: section breakdown cards */
+[data-theme="dark"] .section-card { background: var(--color-surface); border-color: var(--color-border); }
+
+/* Dashboard: mode toggle */
+[data-theme="dark"] .mode-btn { color: rgba(255,255,255,0.6); }
+[data-theme="dark"] .mode-btn.active { background: rgba(255,255,255,0.2); color: white; }
+
+/* Dashboard: form inputs in modals */
+[data-theme="dark"] .form-group input {
+  background: var(--color-bg);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+/* Dashboard: credentials modal */
+[data-theme="dark"] .modal { background: var(--color-surface); }
+[data-theme="dark"] .modal-header { border-color: var(--color-border); }
+[data-theme="dark"] .credentials-note { background: var(--color-bg); border-color: var(--color-border); }
+
+/* Dashboard: pagination */
+[data-theme="dark"] .pagination-btn { background: var(--color-surface); border-color: var(--color-border); color: var(--color-text); }
+[data-theme="dark"] .page-num { color: var(--color-text-muted); }
+[data-theme="dark"] .page-num.active { background: var(--color-primary); color: white; }
+
+/* Cross-check: table hover */
+[data-theme="dark"] .xc-table tbody tr:hover { background: #242840; }
+
+/* Cross-check: row highlight overrides */
+[data-theme="dark"] .row-revert { background: #2a2518; }
+[data-theme="dark"] .row-promote { background: #182a18; }
+
+/* Cross-check: error text */
+[data-theme="dark"] .error-message { color: #f09090; }
+
+/* Cross-check: empty panel */
+[data-theme="dark"] .empty-panel { color: #6ec968; }
+
+/* Cross-check: setup card code */
+[data-theme="dark"] .setup-content code { color: #b09cf0; }
+
+/* Print report: always light */
+@media print {
+  :root {
+    --color-bg: #f1f3fa;
+    --color-surface: #ffffff;
+    --color-text: #080331;
+    --color-text-muted: #555770;
+    --color-border: #e2e6f8;
+  }
+}
+
+/* ============== Theme Toggle Button ============== */
+.theme-toggle {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.85);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border-color: rgba(255,255,255,0.4);
+}
+
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon { display: none; }
+
+[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+[data-theme="light"] .theme-toggle .icon-moon { display: block; }
+html:not([data-theme]) .theme-toggle .icon-moon { display: block; }
+
+/* Smooth transition for theme switch */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

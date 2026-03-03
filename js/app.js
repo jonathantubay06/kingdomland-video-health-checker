@@ -1496,3 +1496,4 @@ function notifyWebhook() {
     // Silently ignore - endpoint may not exist
   });
 }
+

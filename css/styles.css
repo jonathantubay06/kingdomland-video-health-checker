@@ -128,6 +128,8 @@ body {
 }
 .btn-outline:hover { border-color: #4c6bcd; color: #3a56b0; background: #eef2fc; }
 .btn-outline:disabled { opacity: 0.4; cursor: not-allowed; }
+.header-link { text-decoration: none; color: rgba(255,255,255,0.85); border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.1); font-size: 0.82rem; }
+.header-link:hover { color: white; border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.15); }
 
 /* ============== Main Content ============== */
 .main-content { padding: 24px 0 48px; }
@@ -1449,3 +1451,4 @@ tbody td {
     margin-top: 8px;
   }
 }
+

@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 /**
  * Kingdomland Video Checker — Dashboard Server
  *
@@ -13,6 +15,7 @@ const express = require('express');
 const { spawn } = require('child_process');
 const path = require('path');
 const fs = require('fs');
+const { crosscheck, applyChanges } = require('./crosscheck');
 
 const app = express();
 app.use(express.json());
@@ -52,6 +55,11 @@ function broadcastSSE(event) {
 // Serve dashboard
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+// Serve cross-check page
+app.get('/crosscheck', (req, res) => {
+  res.sendFile(path.join(__dirname, 'crosscheck.html'));
 });
 
 // Start a check run
@@ -278,6 +286,67 @@ app.get('/api/health-badge', (req, res) => {
   res.setHeader('Content-Type', 'image/svg+xml');
   res.setHeader('Cache-Control', 'no-cache, max-age=300');
   res.send(svg);
+});
+
+// ============== Cross-check Endpoints ==============
+
+// Run cross-check comparison
+app.post('/api/crosscheck', async (req, res) => {
+  const spreadsheetId = req.body.spreadsheetId || process.env.GSHEET_SPREADSHEET_ID;
+  if (!spreadsheetId) {
+    return res.status(400).json({ error: 'No spreadsheet ID provided. Set GSHEET_SPREADSHEET_ID in .env or pass spreadsheetId in request.' });
+  }
+
+  // Get website results from request body, current run state, or saved report
+  let websiteResults = req.body.results;
+  if (!websiteResults || !websiteResults.length) {
+    if (runState.latestResults && runState.latestResults.length) {
+      websiteResults = runState.latestResults;
+    } else {
+      const reportPath = path.join(__dirname, 'video-report.json');
+      if (fs.existsSync(reportPath)) {
+        try {
+          const data = JSON.parse(fs.readFileSync(reportPath, 'utf-8'));
+          websiteResults = data.allResults || [];
+        } catch {
+          return res.status(500).json({ error: 'Failed to read saved report' });
+        }
+      }
+    }
+  }
+
+  if (!websiteResults || !websiteResults.length) {
+    return res.status(400).json({ error: 'No video check results available. Run a video check first.' });
+  }
+
+  try {
+    const report = await crosscheck(websiteResults, spreadsheetId);
+    res.json(report);
+  } catch (err) {
+    console.error('Cross-check error:', err);
+    res.status(500).json({ error: `Cross-check failed: ${err.message}` });
+  }
+});
+
+// Apply cross-check changes to spreadsheet
+app.post('/api/crosscheck/apply', async (req, res) => {
+  const webappUrl = req.body.webappUrl || process.env.GSHEET_WEBAPP_URL;
+  if (!webappUrl) {
+    return res.status(400).json({ error: 'No Google Apps Script web app URL configured. Set GSHEET_WEBAPP_URL in .env or deploy the Apps Script first.' });
+  }
+
+  const changes = req.body.changes;
+  if (!changes || !changes.length) {
+    return res.status(400).json({ error: 'No changes to apply' });
+  }
+
+  try {
+    const result = await applyChanges(webappUrl, changes);
+    res.json(result);
+  } catch (err) {
+    console.error('Apply changes error:', err);
+    res.status(500).json({ error: `Failed to apply changes: ${err.message}` });
+  }
 });
 
 // Stop running check
