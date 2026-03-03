@@ -41,6 +41,12 @@
 [data-theme="dark"] .table-wrapper table tbody tr:hover { background: #242840; }
 [data-theme="dark"] .table-wrapper table thead th { background: #141628; }
 
+/* Dashboard: expanded detail row */
+[data-theme="dark"] .detail-content { background: #141628; }
+[data-theme="dark"] .detail-content strong { color: var(--color-text); }
+[data-theme="dark"] .detail-content a { color: var(--color-primary); }
+[data-theme="dark"] .detail-row td { background: var(--color-surface); }
+
 /* Dashboard: header gradient still looks fine in dark */
 
 /* Dashboard: health banner */
@@ -75,6 +81,12 @@
 [data-theme="dark"] .pagination-btn { background: var(--color-surface); border-color: var(--color-border); color: var(--color-text); }
 [data-theme="dark"] .page-num { color: var(--color-text-muted); }
 [data-theme="dark"] .page-num.active { background: var(--color-primary); color: white; }
+
+/* Dashboard: diff list items */
+[data-theme="dark"] .diff-list li { border-bottom-color: var(--color-border); }
+[data-theme="dark"] .diff-list li:hover { background: #242840; }
+[data-theme="dark"] .modal-step { border-bottom-color: var(--color-border); }
+[data-theme="dark"] .log-entry { border-bottom-color: var(--color-border); }
 
 /* Cross-check: table hover */
 [data-theme="dark"] .xc-table tbody tr:hover { background: #242840; }
