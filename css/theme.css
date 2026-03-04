@@ -50,10 +50,20 @@
 /* Dashboard: header gradient still looks fine in dark */
 
 /* Dashboard: health banner */
-[data-theme="dark"] .health-banner { background: var(--color-surface); border-color: var(--color-border); }
+[data-theme="dark"] .health-banner.health-green { background: #1a2e1a; border-color: #2d5a2b; color: #8fd88a; }
+[data-theme="dark"] .health-banner.health-yellow { background: #2e2a1a; border-color: #5a4e2b; color: #f0c66e; }
+[data-theme="dark"] .health-banner.health-red { background: #2e1a1a; border-color: #5a2b2b; color: #f09090; }
+[data-theme="dark"] .health-metric-pill { background: rgba(255,255,255,0.08); }
 
 /* Dashboard: last checked bar */
 [data-theme="dark"] .last-checked-bar { background: var(--color-surface); border-color: var(--color-border); }
+[data-theme="dark"] .last-checked-relative { background: var(--color-bg); }
+
+/* Dashboard: pass rate bar */
+[data-theme="dark"] .pass-rate-bar { background: var(--color-surface); }
+
+/* Dashboard: chart tooltip */
+[data-theme="dark"] .chart-tooltip { background: #1e2035; border-color: var(--color-border); }
 
 /* Dashboard: log section */
 [data-theme="dark"] .log-body { background: #0a0c14; }
@@ -103,6 +113,34 @@
 
 /* Cross-check: setup card code */
 [data-theme="dark"] .setup-content code { color: #b09cf0; }
+
+/* Dashboard: auto-refresh bar */
+[data-theme="dark"] .auto-refresh-bar { background: var(--color-info-bg); border-color: var(--color-info-border); color: var(--color-info); }
+[data-theme="dark"] .auto-refresh-dismiss { color: var(--color-info); }
+
+/* Dashboard: uptime section */
+[data-theme="dark"] .uptime-section { background: var(--color-surface); border-color: var(--color-border); }
+[data-theme="dark"] .uptime-card { background: var(--color-bg); }
+
+/* Dashboard: watchlist */
+[data-theme="dark"] .watchlist-section { background: var(--color-surface); border-color: var(--color-border); }
+[data-theme="dark"] .watchlist-item { background: var(--color-bg); }
+[data-theme="dark"] .watchlist-item:hover { background: #242840; }
+
+/* Dashboard: heatmap */
+[data-theme="dark"] .heatmap-section { background: var(--color-surface); border-color: var(--color-border); }
+
+/* Dashboard: comparison */
+[data-theme="dark"] .comparison-section { background: var(--color-surface); border-color: var(--color-border); }
+[data-theme="dark"] .comparison-selects select { background: var(--color-bg); color: var(--color-text); border-color: var(--color-border); }
+[data-theme="dark"] .comparison-table th { background: var(--color-bg); }
+[data-theme="dark"] .comparison-table tr:hover { background: #242840; }
+
+/* Dashboard: video detail modal */
+[data-theme="dark"] .video-history-list li { border-bottom-color: var(--color-border); }
+
+/* Dashboard: section recheck select */
+[data-theme="dark"] .section-recheck-select { background: var(--color-bg); color: var(--color-text); border-color: var(--color-border); }
 
 /* Print report: always light */
 @media print {

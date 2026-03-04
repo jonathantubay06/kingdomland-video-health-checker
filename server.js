@@ -20,10 +20,25 @@ const { crosscheck, applyChanges } = require('./crosscheck');
 const app = express();
 app.use(express.json());
 
-// Serve static assets (css/, js/, screenshots/)
+// Serve static assets (css/, js/, screenshots/, icons/)
 app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/screenshots', express.static(path.join(__dirname, 'screenshots')));
+app.use('/icons', express.static(path.join(__dirname, 'icons')));
+
+// PWA files
+app.get('/manifest.json', (req, res) => res.sendFile(path.join(__dirname, 'manifest.json')));
+app.get('/sw.js', (req, res) => {
+  res.setHeader('Content-Type', 'application/javascript');
+  res.sendFile(path.join(__dirname, 'sw.js'));
+});
+
+// Notification sound
+app.get('/sounds/:file', (req, res) => {
+  const filePath = path.join(__dirname, 'sounds', req.params.file);
+  if (fs.existsSync(filePath)) res.sendFile(filePath);
+  else res.status(404).end();
+});
 
 // ============== Run State ==============
 const runState = {
@@ -286,6 +301,121 @@ app.get('/api/health-badge', (req, res) => {
   res.setHeader('Content-Type', 'image/svg+xml');
   res.setHeader('Cache-Control', 'no-cache, max-age=300');
   res.send(svg);
+});
+
+// Report last-modified timestamp (for auto-refresh polling)
+app.get('/api/report-timestamp', (req, res) => {
+  const reportPath = path.join(__dirname, 'video-report.json');
+  if (runState.latestResults) {
+    return res.json({ timestamp: runState.startedAt, status: runState.status });
+  }
+  if (fs.existsSync(reportPath)) {
+    try {
+      const stat = fs.statSync(reportPath);
+      return res.json({ timestamp: stat.mtime.toISOString(), status: runState.status });
+    } catch {
+      return res.json({ timestamp: null, status: runState.status });
+    }
+  }
+  res.json({ timestamp: null, status: runState.status });
+});
+
+// Full history with per-video detail (for video detail pages & comparison)
+app.get('/api/history-detail', (req, res) => {
+  const historyPath = path.join(__dirname, 'history.json');
+  if (fs.existsSync(historyPath)) {
+    try {
+      const data = JSON.parse(fs.readFileSync(historyPath, 'utf-8'));
+      return res.json(data);
+    } catch {
+      return res.json([]);
+    }
+  }
+  res.json([]);
+});
+
+// Shareable self-contained HTML report
+app.get('/api/share-report', (req, res) => {
+  const reportPath = path.join(__dirname, 'video-report.json');
+  let report;
+  if (runState.latestResults) {
+    report = {
+      timestamp: runState.startedAt,
+      summary: runState.latestSummary,
+      allResults: runState.latestResults,
+    };
+  } else if (fs.existsSync(reportPath)) {
+    try {
+      report = JSON.parse(fs.readFileSync(reportPath, 'utf-8'));
+    } catch {
+      return res.status(500).json({ error: 'Failed to parse report' });
+    }
+  } else {
+    return res.status(404).json({ error: 'No report available' });
+  }
+
+  const results = report.allResults || [];
+  const summary = report.summary || {};
+  const total = summary.total || results.length;
+  const passed = summary.passed || results.filter(r => r.status === 'PASS').length;
+  const failed = summary.failed || results.filter(r => r.status === 'FAIL').length;
+  const timeouts = summary.timeouts || results.filter(r => r.status === 'TIMEOUT').length;
+  const rate = total > 0 ? Math.round((passed / total) * 100) : 0;
+  const timestamp = report.timestamp ? new Date(report.timestamp).toLocaleString() : new Date().toLocaleString();
+
+  const rows = results.map(r => {
+    const loadTime = r.loadTimeMs ? (r.loadTimeMs / 1000).toFixed(1) + 's' : '-';
+    const statusClass = r.status === 'PASS' ? '#22c55e' : r.status === 'FAIL' ? '#ef4444' : '#f59e0b';
+    return `<tr><td>${r.number}</td><td>${esc(r.title)}</td><td>${esc(r.section || '')}</td><td>${r.page || ''}</td><td style="color:${statusClass};font-weight:600">${r.status}</td><td>${loadTime}</td><td style="color:#888;font-size:0.85em">${esc(r.error || '-')}</td></tr>`;
+  }).join('');
+
+  function esc(s) { return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+
+  const html = `<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Kingdomland Video Report - ${timestamp}</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f1f3fa;color:#080331;line-height:1.5;padding:24px}
+.container{max-width:1200px;margin:0 auto}.header{background:linear-gradient(135deg,#4c6bcd,#080331);color:white;padding:24px 32px;border-radius:12px;margin-bottom:24px}
+.header h1{font-size:1.4rem;margin-bottom:4px}.header p{opacity:0.8;font-size:0.9rem}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}.card{background:white;border-radius:12px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.card-label{font-size:0.8rem;text-transform:uppercase;letter-spacing:0.05em;color:#555;margin-bottom:4px}.card-value{font-size:1.8rem;font-weight:700}
+.card-pass .card-value{color:#22c55e}.card-fail .card-value{color:#ef4444}.card-timeout .card-value{color:#f59e0b}
+.rate-bar{height:8px;background:#e5e7eb;border-radius:4px;margin:16px 0 24px;overflow:hidden}.rate-fill{height:100%;border-radius:4px;transition:width 0.3s}
+table{width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+th{background:#f8f9fc;text-align:left;padding:10px 14px;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.03em;color:#555;border-bottom:1px solid #e2e6f8}
+td{padding:10px 14px;border-bottom:1px solid #f0f2f8;font-size:0.88rem}tr:hover{background:#f8f9fc}
+.footer{text-align:center;padding:20px;color:#888;font-size:0.8rem;margin-top:24px}
+@media(max-width:768px){.cards{grid-template-columns:repeat(2,1fr)}}
+</style></head><body><div class="container">
+<div class="header"><h1>Kingdomland Video Checker Report</h1><p>go.kingdomlandkids.com &middot; ${esc(timestamp)}</p></div>
+<div class="cards">
+<div class="card"><div class="card-label">Total Videos</div><div class="card-value">${total}</div></div>
+<div class="card card-pass"><div class="card-label">Passed</div><div class="card-value">${passed}</div></div>
+<div class="card card-fail"><div class="card-label">Failed</div><div class="card-value">${failed}</div></div>
+<div class="card card-timeout"><div class="card-label">Timed Out</div><div class="card-value">${timeouts}</div></div>
+</div>
+<div style="margin-bottom:24px"><div style="font-size:0.9rem;margin-bottom:6px">Pass Rate: <strong>${rate}%</strong></div>
+<div class="rate-bar"><div class="rate-fill" style="width:${rate}%;background:${rate >= 100 ? '#22c55e' : rate >= 90 ? '#f59e0b' : '#ef4444'}"></div></div></div>
+<table><thead><tr><th>#</th><th>Title</th><th>Section</th><th>Page</th><th>Status</th><th>Load Time</th><th>Error</th></tr></thead><tbody>${rows}</tbody></table>
+<div class="footer">Generated by Kingdomland Video Checker</div>
+</div></body></html>`;
+
+  res.setHeader('Content-Type', 'text/html');
+  res.setHeader('Content-Disposition', `attachment; filename="video-report-${Date.now()}.html"`);
+  res.send(html);
+});
+
+// Screenshots for video thumbnail previews
+app.get('/api/screenshots', (req, res) => {
+  const screenshotDir = path.join(__dirname, 'screenshots');
+  if (!fs.existsSync(screenshotDir)) return res.json([]);
+  try {
+    const files = fs.readdirSync(screenshotDir).filter(f => f.endsWith('.png') || f.endsWith('.jpg'));
+    res.json(files.map(f => ({ filename: f, url: `/screenshots/${f}` })));
+  } catch {
+    res.json([]);
+  }
 });
 
 // ============== Cross-check Endpoints ==============

@@ -987,6 +987,15 @@ function generateReport(allResults) {
     failed: failed.length,
     timeouts: timeouts.length,
     avgLoadTimeMs: Math.round(allResults.reduce((sum, r) => sum + (r.loadTimeMs || 0), 0) / (allResults.length || 1)),
+    // Per-video summary for video detail history
+    videos: allResults.map(r => ({
+      title: r.title,
+      section: r.section || '',
+      page: r.page || '',
+      status: r.status,
+      loadTimeMs: r.loadTimeMs || 0,
+      error: r.error || '',
+    })),
   };
   let history = [];
   if (fs.existsSync('history.json')) {
