@@ -1283,8 +1283,15 @@ function updateRecheckButton() {
   const container = document.getElementById('recheck-actions');
   if (!container) return;
   const failedCount = state.results.filter(r => r.status === 'FAIL' || r.status === 'TIMEOUT').length;
-  if (failedCount > 0 && state.status === 'complete') {
+
+  // Show container whenever we have results
+  if (state.results.length > 0 && state.status === 'complete') {
     container.style.display = 'flex';
+    // Only show the recheck-failed button if there are failures
+    const recheckBtn = container.querySelector('.btn-recheck');
+    if (recheckBtn) {
+      recheckBtn.style.display = failedCount > 0 ? 'inline-flex' : 'none';
+    }
     const countEl = document.getElementById('recheck-count');
     if (countEl) countEl.textContent = failedCount;
   } else {
@@ -2029,25 +2036,28 @@ function updateSectionRecheckDropdown() {
     return;
   }
 
-  select.innerHTML = '<option value="">Re-check by section...</option>';
+  select.innerHTML = '<option value="">Re-check a section...</option>';
+
+  // Failed sections first
   for (const key of sections) {
     const s = state.sectionMap[key];
-    const failCount = s.failed + s.timeout;
+    const failCount = (s.failed || 0) + (s.timeout || 0);
     if (failCount > 0) {
       const opt = document.createElement('option');
       opt.value = key;
-      opt.textContent = `${s.section} (${s.page}) - ${failCount} failed`;
+      opt.textContent = `${s.section} (${s.page}) — ${failCount} failed`;
       select.appendChild(opt);
     }
   }
 
-  // Also add option to recheck any section (even all passed)
+  // Then all-passed sections
   for (const key of sections) {
     const s = state.sectionMap[key];
-    if (s.failed + s.timeout === 0) {
+    const failCount = (s.failed || 0) + (s.timeout || 0);
+    if (failCount === 0) {
       const opt = document.createElement('option');
       opt.value = key;
-      opt.textContent = `${s.section} (${s.page}) - all passed`;
+      opt.textContent = `${s.section} (${s.page}) — ${s.total} videos`;
       select.appendChild(opt);
     }
   }
