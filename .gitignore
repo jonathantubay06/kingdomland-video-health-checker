@@ -6,3 +6,15 @@ previous-report.json
 history.json
 screenshots/
 .env
+
+# Demo/temp files
+demo.gif
+demo.webm
+nul
+
+# IDE/tool settings
+.claude/
+
+# OS files
+.DS_Store
+Thumbs.db
