@@ -14,12 +14,20 @@ exports.handler = async (event) => {
   }
 
   let mode = 'both';
+  let titles = '';
   try {
     const body = JSON.parse(event.body || '{}');
     if (['both', 'story', 'music'].includes(body.mode)) mode = body.mode;
+    // Pass failed video titles filter for "Check Failed Only"
+    if (body.failedOnly && body.titles && body.titles.length) {
+      titles = JSON.stringify(body.titles);
+    }
   } catch {}
 
   try {
+    const inputs = { mode };
+    if (titles) inputs.titles = titles;
+
     const res = await fetch(
       `https://api.github.com/repos/${repo}/actions/workflows/check-videos.yml/dispatches`,
       {
@@ -31,7 +39,7 @@ exports.handler = async (event) => {
         },
         body: JSON.stringify({
           ref: 'main',
-          inputs: { mode },
+          inputs,
         }),
       }
     );

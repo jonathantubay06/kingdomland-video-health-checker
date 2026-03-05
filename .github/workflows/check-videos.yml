@@ -13,6 +13,11 @@ on:
           - both
           - story
           - music
+      titles:
+        description: 'JSON array of video titles to re-check (empty = check all)'
+        required: false
+        default: ''
+        type: string
 
   # Scheduled auto-checks: daily at 7 AM PHT (11 PM UTC previous day)
   schedule:
@@ -56,6 +61,7 @@ jobs:
         env:
           KL_USERNAME: ${{ secrets.KL_USERNAME }}
           KL_PASSWORD: ${{ secrets.KL_PASSWORD }}
+          CHECK_TITLES: ${{ github.event.inputs.titles || '' }}
         run: |
           MODE="${{ github.event.inputs.mode || 'both' }}"
           ARGS=""

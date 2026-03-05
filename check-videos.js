@@ -1066,18 +1066,39 @@ async function scanStoryPage(page, pageUrl, allResults, startNum) {
   let videoNum = startNum;
   const totalStr = (startNum + cards.length).toString();
 
+  let consecutiveFails = 0;
+
   for (const card of cards) {
     videoNum++;
 
-    if (page.url().includes('/watch/')) {
-      await page.goto(pageUrl, { waitUntil: 'networkidle', timeout: CONFIG.navigationTimeout });
-      await page.waitForTimeout(2000);
-      await scrollToLoadAll(page);
+    // Navigate back to story page if we're on a watch page, or if the page
+    // is in a bad state (consecutive failures indicate stale/crashed page)
+    const needsReload = page.url().includes('/watch/') || consecutiveFails >= 2;
+    if (needsReload) {
+      try {
+        await page.goto(pageUrl, { waitUntil: 'networkidle', timeout: CONFIG.navigationTimeout });
+        await page.waitForTimeout(2000);
+        await scrollToLoadAll(page);
+      } catch {
+        log('   ⚠ Failed to reload story page, retrying...');
+        try {
+          await page.goto(pageUrl, { waitUntil: 'domcontentloaded', timeout: CONFIG.navigationTimeout });
+          await page.waitForTimeout(3000);
+          await scrollToLoadAll(page);
+        } catch { /* continue anyway */ }
+      }
+      consecutiveFails = 0;
     }
 
     const result = await checkVideo(page, card, videoNum, totalStr, 'STORY');
     result.page = 'STORY';
     allResults.push(result);
+
+    if (result.status === 'FAIL' || result.status === 'TIMEOUT') {
+      consecutiveFails++;
+    } else {
+      consecutiveFails = 0;
+    }
   }
 
   return videoNum;
@@ -1108,19 +1129,38 @@ async function scanMusicPage(page, pageUrl, allResults, startNum) {
   let videoNum = startNum;
   const totalStr = (startNum + cards.length).toString();
 
+  let consecutiveFails = 0;
+
   for (const card of cards) {
     videoNum++;
 
-    if (page.url().includes('/watch/')) {
-      await page.goto(pageUrl, { waitUntil: 'networkidle', timeout: CONFIG.navigationTimeout });
-      await page.waitForTimeout(2000);
-      // Re-load all cards (click "View more" again after page reload)
-      await loadAllMusicCards(page);
+    const needsReload = page.url().includes('/watch/') || consecutiveFails >= 2;
+    if (needsReload) {
+      try {
+        await page.goto(pageUrl, { waitUntil: 'networkidle', timeout: CONFIG.navigationTimeout });
+        await page.waitForTimeout(2000);
+        // Re-load all cards (click "View more" again after page reload)
+        await loadAllMusicCards(page);
+      } catch {
+        log('   ⚠ Failed to reload music page, retrying...');
+        try {
+          await page.goto(pageUrl, { waitUntil: 'domcontentloaded', timeout: CONFIG.navigationTimeout });
+          await page.waitForTimeout(3000);
+          await loadAllMusicCards(page);
+        } catch { /* continue anyway */ }
+      }
+      consecutiveFails = 0;
     }
 
     const result = await checkVideo(page, card, videoNum, totalStr, 'MUSIC');
     result.page = 'MUSIC';
     allResults.push(result);
+
+    if (result.status === 'FAIL' || result.status === 'TIMEOUT') {
+      consecutiveFails++;
+    } else {
+      consecutiveFails = 0;
+    }
   }
 
   return videoNum;
