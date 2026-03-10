@@ -16,6 +16,7 @@ const { spawn } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 const { crosscheck, applyChanges } = require('./crosscheck');
+const { STATUS, RUN_STATUS } = require('./lib/constants');
 
 const app = express();
 app.use(express.json());
@@ -25,6 +26,9 @@ app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/screenshots', express.static(path.join(__dirname, 'screenshots')));
 app.use('/icons', express.static(path.join(__dirname, 'icons')));
+
+// Favicon
+app.get('/favicon.ico', (req, res) => res.sendFile(path.join(__dirname, 'favicon.ico')));
 
 // PWA files
 app.get('/manifest.json', (req, res) => res.sendFile(path.join(__dirname, 'manifest.json')));
@@ -42,7 +46,7 @@ app.get('/sounds/:file', (req, res) => {
 
 // ============== Run State ==============
 const runState = {
-  status: 'idle',         // 'idle' | 'running' | 'complete'
+  status: RUN_STATUS.IDLE, // 'idle' | 'running' | 'complete'
   process: null,          // ChildProcess reference
   pid: null,
   startedAt: null,
@@ -79,7 +83,7 @@ app.get('/crosscheck', (req, res) => {
 
 // Start a check run
 app.post('/api/run', (req, res) => {
-  if (runState.status === 'running') {
+  if (runState.status === RUN_STATUS.RUNNING) {
     return res.status(409).json({ error: 'A check is already running' });
   }
 
@@ -103,7 +107,7 @@ app.post('/api/run', (req, res) => {
     stdio: ['ignore', 'pipe', 'pipe'],
   });
 
-  runState.status = 'running';
+  runState.status = RUN_STATUS.RUNNING;
   runState.process = child;
   runState.pid = child.pid;
   runState.startedAt = new Date().toISOString();
@@ -140,13 +144,13 @@ app.post('/api/run', (req, res) => {
   });
 
   child.on('close', (code) => {
-    runState.status = 'complete';
+    runState.status = RUN_STATUS.COMPLETE;
     runState.process = null;
     broadcastSSE({ type: 'process-exit', code });
   });
 
   child.on('error', (err) => {
-    runState.status = 'idle';
+    runState.status = RUN_STATUS.IDLE;
     runState.process = null;
     broadcastSSE({ type: 'error', message: `Failed to start: ${err.message}` });
   });
@@ -357,15 +361,15 @@ app.get('/api/share-report', (req, res) => {
   const results = report.allResults || [];
   const summary = report.summary || {};
   const total = summary.total || results.length;
-  const passed = summary.passed || results.filter(r => r.status === 'PASS').length;
-  const failed = summary.failed || results.filter(r => r.status === 'FAIL').length;
-  const timeouts = summary.timeouts || results.filter(r => r.status === 'TIMEOUT').length;
+  const passed = summary.passed || results.filter(r => r.status === STATUS.PASS).length;
+  const failed = summary.failed || results.filter(r => r.status === STATUS.FAIL).length;
+  const timeouts = summary.timeouts || results.filter(r => r.status === STATUS.TIMEOUT).length;
   const rate = total > 0 ? Math.round((passed / total) * 100) : 0;
   const timestamp = report.timestamp ? new Date(report.timestamp).toLocaleString() : new Date().toLocaleString();
 
   const rows = results.map(r => {
     const loadTime = r.loadTimeMs ? (r.loadTimeMs / 1000).toFixed(1) + 's' : '-';
-    const statusClass = r.status === 'PASS' ? '#22c55e' : r.status === 'FAIL' ? '#ef4444' : '#f59e0b';
+    const statusClass = r.status === STATUS.PASS ? '#22c55e' : r.status === STATUS.FAIL ? '#ef4444' : '#f59e0b';
     return `<tr><td>${r.number}</td><td>${esc(r.title)}</td><td>${esc(r.section || '')}</td><td>${r.page || ''}</td><td style="color:${statusClass};font-weight:600">${r.status}</td><td>${loadTime}</td><td style="color:#888;font-size:0.85em">${esc(r.error || '-')}</td></tr>`;
   }).join('');
 
@@ -481,7 +485,7 @@ app.post('/api/crosscheck/apply', async (req, res) => {
 
 // Stop running check
 app.post('/api/stop', (req, res) => {
-  if (runState.status !== 'running' || !runState.process) {
+  if (runState.status !== RUN_STATUS.RUNNING || !runState.process) {
     return res.status(400).json({ error: 'No check is running' });
   }
 
@@ -497,7 +501,7 @@ app.post('/api/stop', (req, res) => {
     // Process may have already exited
   }
 
-  runState.status = 'idle';
+  runState.status = RUN_STATUS.IDLE;
   runState.process = null;
   broadcastSSE({ type: 'stopped', message: 'Check cancelled by user' });
   res.json({ status: 'stopped' });

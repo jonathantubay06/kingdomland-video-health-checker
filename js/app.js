@@ -92,7 +92,7 @@ function openCredentialsModal() {
   }
 
   // Show/hide the "Check Failed Only" button based on whether there are failures
-  const failedCount = state.results.filter(r => r.status === 'FAIL' || r.status === 'TIMEOUT').length;
+  const failedCount = state.results.filter(r => r.status === KL.STATUS.FAIL || r.status === KL.STATUS.TIMEOUT).length;
   const recheckBtn = document.getElementById('cred-recheck-btn');
   const recheckCount = document.getElementById('cred-recheck-count');
   if (failedCount > 0) {
@@ -329,9 +329,9 @@ async function loadCloudReport() {
       state.failedCount = report.summary.failed || 0;
       state.timeoutCount = report.summary.timeouts || 0;
     } else {
-      state.passedCount = state.results.filter(r => r.status === 'PASS').length;
-      state.failedCount = state.results.filter(r => r.status === 'FAIL').length;
-      state.timeoutCount = state.results.filter(r => r.status === 'TIMEOUT').length;
+      state.passedCount = state.results.filter(r => r.status === KL.STATUS.PASS).length;
+      state.failedCount = state.results.filter(r => r.status === KL.STATUS.FAIL).length;
+      state.timeoutCount = state.results.filter(r => r.status === KL.STATUS.TIMEOUT).length;
     }
     state.totalDiscovered = state.results.length;
     state.checkedCount = state.results.length;
@@ -345,8 +345,8 @@ async function loadCloudReport() {
       const secKey = `${r.page} - ${r.section || 'Unknown'}`;
       if (!state.sectionMap[secKey]) state.sectionMap[secKey] = { page: r.page, section: r.section || 'Unknown', total: 0, passed: 0, failed: 0, timeout: 0 };
       state.sectionMap[secKey].total++;
-      if (r.status === 'PASS') state.sectionMap[secKey].passed++;
-      else if (r.status === 'FAIL') state.sectionMap[secKey].failed++;
+      if (r.status === KL.STATUS.PASS) state.sectionMap[secKey].passed++;
+      else if (r.status === KL.STATUS.FAIL) state.sectionMap[secKey].failed++;
       else state.sectionMap[secKey].timeout++;
     }
 
@@ -449,14 +449,14 @@ function handleEvent(event) {
       state.checkedCount++;
       const r = event.result;
       state.results.push(r);
-      if (r.status === 'PASS') state.passedCount++;
-      else if (r.status === 'FAIL') state.failedCount++;
-      else if (r.status === 'TIMEOUT') state.timeoutCount++;
+      if (r.status === KL.STATUS.PASS) state.passedCount++;
+      else if (r.status === KL.STATUS.FAIL) state.failedCount++;
+      else if (r.status === KL.STATUS.TIMEOUT) state.timeoutCount++;
       const secKey = `${r.page} - ${r.section || 'Unknown'}`;
       if (!state.sectionMap[secKey]) state.sectionMap[secKey] = { page: r.page, section: r.section || 'Unknown', total: 0, passed: 0, failed: 0, timeout: 0 };
       state.sectionMap[secKey].total++;
-      if (r.status === 'PASS') state.sectionMap[secKey].passed++;
-      else if (r.status === 'FAIL') state.sectionMap[secKey].failed++;
+      if (r.status === KL.STATUS.PASS) state.sectionMap[secKey].passed++;
+      else if (r.status === KL.STATUS.FAIL) state.sectionMap[secKey].failed++;
       else state.sectionMap[secKey].timeout++;
       updateSummaryCards();
       updateCheckProgress(r);
@@ -504,9 +504,9 @@ async function loadPreviousReport() {
       state.failedCount = report.summary.failed || 0;
       state.timeoutCount = report.summary.timeouts || 0;
     } else {
-      state.passedCount = state.results.filter(r => r.status === 'PASS').length;
-      state.failedCount = state.results.filter(r => r.status === 'FAIL').length;
-      state.timeoutCount = state.results.filter(r => r.status === 'TIMEOUT').length;
+      state.passedCount = state.results.filter(r => r.status === KL.STATUS.PASS).length;
+      state.failedCount = state.results.filter(r => r.status === KL.STATUS.FAIL).length;
+      state.timeoutCount = state.results.filter(r => r.status === KL.STATUS.TIMEOUT).length;
     }
     state.totalDiscovered = state.results.length;
     state.checkedCount = state.results.length;
@@ -520,8 +520,8 @@ async function loadPreviousReport() {
       const secKey = `${r.page} - ${r.section || 'Unknown'}`;
       if (!state.sectionMap[secKey]) state.sectionMap[secKey] = { page: r.page, section: r.section || 'Unknown', total: 0, passed: 0, failed: 0, timeout: 0 };
       state.sectionMap[secKey].total++;
-      if (r.status === 'PASS') state.sectionMap[secKey].passed++;
-      else if (r.status === 'FAIL') state.sectionMap[secKey].failed++;
+      if (r.status === KL.STATUS.PASS) state.sectionMap[secKey].passed++;
+      else if (r.status === KL.STATUS.FAIL) state.sectionMap[secKey].failed++;
       else state.sectionMap[secKey].timeout++;
     }
     renderCompleteFromState();
@@ -632,7 +632,7 @@ function updateCheckProgress(result) {
   document.getElementById('progress-text').textContent =
     `${state.checkedCount}/${total} videos checked` +
     (state.checkedCount < total ? ` \u2022 ETA: ${etaStr}` : '');
-  const icon = result.status === 'PASS' ? '\u2705' : result.status === 'FAIL' ? '\u274C' : '\u23F1\uFE0F';
+  const icon = result.status === KL.STATUS.PASS ? '\u2705' : result.status === KL.STATUS.FAIL ? '\u274C' : '\u23F1\uFE0F';
   document.getElementById('current-video').textContent =
     `${icon} [${result.section || ''}] ${result.title}`;
   document.getElementById('results-section').classList.add('visible');
@@ -986,8 +986,8 @@ function renderComplete(summary, allResults) {
     const secKey = `${r.page} - ${r.section || 'Unknown'}`;
     if (!state.sectionMap[secKey]) state.sectionMap[secKey] = { page: r.page, section: r.section || 'Unknown', total: 0, passed: 0, failed: 0, timeout: 0 };
     state.sectionMap[secKey].total++;
-    if (r.status === 'PASS') state.sectionMap[secKey].passed++;
-    else if (r.status === 'FAIL') state.sectionMap[secKey].failed++;
+    if (r.status === KL.STATUS.PASS) state.sectionMap[secKey].passed++;
+    else if (r.status === KL.STATUS.FAIL) state.sectionMap[secKey].failed++;
     else state.sectionMap[secKey].timeout++;
   }
 
@@ -1062,23 +1062,23 @@ function printReport() {
   const results = state.results;
   if (!results.length) { alert('No results to print.'); return; }
   const total = results.length;
-  const passed = results.filter(r => r.status === 'PASS').length;
-  const failed = results.filter(r => r.status === 'FAIL').length;
-  const timeouts = results.filter(r => r.status === 'TIMEOUT').length;
+  const passed = results.filter(r => r.status === KL.STATUS.PASS).length;
+  const failed = results.filter(r => r.status === KL.STATUS.FAIL).length;
+  const timeouts = results.filter(r => r.status === KL.STATUS.TIMEOUT).length;
   const rate = total > 0 ? (passed / total * 100).toFixed(1) : 0;
   const sections = {};
   for (const r of results) {
     const key = `${r.page} - ${r.section || 'Unknown'}`;
     if (!sections[key]) sections[key] = { page: r.page, section: r.section || 'Unknown', total: 0, passed: 0, failed: 0 };
     sections[key].total++;
-    if (r.status === 'PASS') sections[key].passed++;
+    if (r.status === KL.STATUS.PASS) sections[key].passed++;
     else sections[key].failed++;
   }
   const sectionRows = Object.values(sections).map(s =>
     `<tr><td>${escHtml(s.section)}</td><td>${s.page}</td><td>${s.total}</td><td>${s.passed}</td><td>${s.failed}</td><td>${s.total > 0 ? Math.round(s.passed / s.total * 100) : 0}%</td></tr>`
   ).join('');
   const resultRows = results.map(r =>
-    `<tr class="${r.status === 'FAIL' ? 'print-fail' : r.status === 'TIMEOUT' ? 'print-timeout' : ''}"><td>${r.number}</td><td>${escHtml(r.title)}</td><td>${escHtml(r.section || '')}</td><td>${r.page || ''}</td><td>${r.status}</td><td>${r.duration || '-'}</td><td>${r.error ? escHtml(r.error) : '-'}</td></tr>`
+    `<tr class="${r.status === KL.STATUS.FAIL ? 'print-fail' : r.status === KL.STATUS.TIMEOUT ? 'print-timeout' : ''}"><td>${r.number}</td><td>${escHtml(r.title)}</td><td>${escHtml(r.section || '')}</td><td>${r.page || ''}</td><td>${r.status}</td><td>${r.duration || '-'}</td><td>${r.error ? escHtml(r.error) : '-'}</td></tr>`
   ).join('');
   document.getElementById('print-report').innerHTML = `
     <div class="print-header"><h1>Kingdomland Video Checker Report</h1><p>go.kingdomlandkids.com</p><p>Generated: ${new Date().toLocaleString()}</p></div>
@@ -1227,7 +1227,7 @@ async function recheckFailedWithCreds(email, password, customTitles) {
   if (customTitles && customTitles.length > 0) {
     titles = customTitles;
   } else {
-    const failedResults = state.results.filter(r => r.status === 'FAIL' || r.status === 'TIMEOUT');
+    const failedResults = state.results.filter(r => r.status === KL.STATUS.FAIL || r.status === KL.STATUS.TIMEOUT);
     if (failedResults.length === 0) {
       alert('No failed videos to re-check.');
       return;
@@ -1282,7 +1282,7 @@ async function recheckFailedWithCreds(email, password, customTitles) {
 function updateRecheckButton() {
   const container = document.getElementById('recheck-actions');
   if (!container) return;
-  const failedCount = state.results.filter(r => r.status === 'FAIL' || r.status === 'TIMEOUT').length;
+  const failedCount = state.results.filter(r => r.status === KL.STATUS.FAIL || r.status === KL.STATUS.TIMEOUT).length;
 
   // Show container whenever we have results
   if (state.results.length > 0 && state.status === 'complete') {
@@ -1630,11 +1630,11 @@ async function loadAndShowDiffReport() {
       const prevStatus = prevMap[r.title];
       if (!prevStatus) continue; // New video, skip
 
-      if ((r.status === 'FAIL' || r.status === 'TIMEOUT') && prevStatus === 'PASS') {
+      if ((r.status === KL.STATUS.FAIL || r.status === KL.STATUS.TIMEOUT) && prevStatus === KL.STATUS.PASS) {
         newFailures.push(r);
-      } else if (r.status === 'PASS' && (prevStatus === 'FAIL' || prevStatus === 'TIMEOUT')) {
+      } else if (r.status === KL.STATUS.PASS && (prevStatus === KL.STATUS.FAIL || prevStatus === KL.STATUS.TIMEOUT)) {
         fixed.push(r);
-      } else if ((r.status === 'FAIL' || r.status === 'TIMEOUT') && (prevStatus === 'FAIL' || prevStatus === 'TIMEOUT')) {
+      } else if ((r.status === KL.STATUS.FAIL || r.status === KL.STATUS.TIMEOUT) && (prevStatus === KL.STATUS.FAIL || prevStatus === KL.STATUS.TIMEOUT)) {
         stillFailing.push(r);
       }
     }
@@ -1855,14 +1855,14 @@ async function showVideoDetail(title) {
 
     // Calculate uptime for this video
     const totalChecks = videoHistory.length;
-    const passedChecks = videoHistory.filter(v => v.status === 'PASS').length;
+    const passedChecks = videoHistory.filter(v => v.status === KL.STATUS.PASS).length;
     const uptime = totalChecks > 0 ? (passedChecks / totalChecks * 100).toFixed(1) : 'N/A';
 
     // Build a mini timeline SVG
     const timelineWidth = 600;
     const cellWidth = Math.min(Math.floor(timelineWidth / videoHistory.length), 20);
     const timelineSvg = videoHistory.map((v, i) => {
-      const color = v.status === 'PASS' ? 'var(--color-pass)' : v.status === 'FAIL' ? 'var(--color-fail)' : 'var(--color-timeout)';
+      const color = v.status === KL.STATUS.PASS ? 'var(--color-pass)' : v.status === KL.STATUS.FAIL ? 'var(--color-fail)' : 'var(--color-timeout)';
       return `<rect x="${i * cellWidth}" y="0" width="${Math.max(cellWidth - 1, 2)}" height="20" rx="2" fill="${color}" opacity="0.85"><title>${new Date(v.timestamp).toLocaleDateString()} - ${v.status}</title></rect>`;
     }).join('');
 
@@ -2167,8 +2167,8 @@ function runComparison() {
   }
 
   const rows = changes.map(c => {
-    const colorA = c.statusA === 'PASS' ? 'var(--color-pass)' : c.statusA === 'FAIL' ? 'var(--color-fail)' : c.statusA === 'TIMEOUT' ? 'var(--color-timeout)' : 'var(--color-text-light)';
-    const colorB = c.statusB === 'PASS' ? 'var(--color-pass)' : c.statusB === 'FAIL' ? 'var(--color-fail)' : c.statusB === 'TIMEOUT' ? 'var(--color-timeout)' : 'var(--color-text-light)';
+    const colorA = c.statusA === KL.STATUS.PASS ? 'var(--color-pass)' : c.statusA === KL.STATUS.FAIL ? 'var(--color-fail)' : c.statusA === KL.STATUS.TIMEOUT ? 'var(--color-timeout)' : 'var(--color-text-light)';
+    const colorB = c.statusB === KL.STATUS.PASS ? 'var(--color-pass)' : c.statusB === KL.STATUS.FAIL ? 'var(--color-fail)' : c.statusB === KL.STATUS.TIMEOUT ? 'var(--color-timeout)' : 'var(--color-text-light)';
     return `<tr class="${c.changed ? 'comp-changed' : ''}">
       <td>${escHtml(c.title)}</td>
       <td style="color:${colorA};font-weight:600">${c.statusA}</td>
@@ -2214,7 +2214,7 @@ function generateClientSideReport() {
 
   const rows = results.map(r => {
     const loadTime = r.loadTimeMs ? (r.loadTimeMs / 1000).toFixed(1) + 's' : '-';
-    const statusColor = r.status === 'PASS' ? '#22c55e' : r.status === 'FAIL' ? '#ef4444' : '#f59e0b';
+    const statusColor = r.status === KL.STATUS.PASS ? '#22c55e' : r.status === KL.STATUS.FAIL ? '#ef4444' : '#f59e0b';
     return `<tr><td>${r.number}</td><td>${escHtml(r.title)}</td><td>${escHtml(r.section || '')}</td><td>${r.page || ''}</td><td style="color:${statusColor};font-weight:600">${r.status}</td><td>${loadTime}</td><td style="color:#888;font-size:0.85em">${escHtml(r.error || '-')}</td></tr>`;
   }).join('');
 

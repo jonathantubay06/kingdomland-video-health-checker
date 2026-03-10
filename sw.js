@@ -1,8 +1,9 @@
-const CACHE_NAME = 'kl-checker-v1';
+const CACHE_NAME = 'kl-checker-v2';
 const STATIC_ASSETS = [
   '/',
   '/css/styles.css',
   '/css/theme.css',
+  '/js/constants.js',
   '/js/app.js',
   '/js/theme.js',
   '/manifest.json',

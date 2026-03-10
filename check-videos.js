@@ -18,6 +18,7 @@
 
 const { chromium } = require('playwright');
 const fs = require('fs');
+const { STATUS, PAGE } = require('./lib/constants');
 
 // ============== CONFIG ==============
 const CONFIG = {
@@ -293,7 +294,7 @@ async function collectStoryCards(page) {
 
     const count = allCards.filter(c => c.section === secName).length;
     log(`      -> ${count} videos found`);
-    emit({ type: 'discovery', page: 'STORY', section: secName, count, total: allCards.length });
+    emit({ type: 'discovery', page: PAGE.STORY, section: secName, count, total: allCards.length });
 
     // Reset carousel back to start
     for (let i = 0; i < 60; i++) {
@@ -334,10 +335,10 @@ async function collectStoryCards(page) {
 
   let extraCount = 0;
   for (const c of allPageCards) {
-    const key = `${c.section || 'STORY'}::${c.title}`;
+    const key = `${c.section || PAGE.STORY}::${c.title}`;
     if (!seenKeys.has(key)) {
       seenKeys.add(key);
-      allCards.push({ title: c.title, section: c.section || 'STORY' });
+      allCards.push({ title: c.title, section: c.section || PAGE.STORY });
       extraCount++;
     }
   }
@@ -345,7 +346,7 @@ async function collectStoryCards(page) {
     log(`   Catch-all sweep found ${extraCount} additional video(s)`);
   }
 
-  emit({ type: 'discovery-complete', page: 'STORY', cards: allCards, total: allCards.length });
+  emit({ type: 'discovery-complete', page: PAGE.STORY, cards: allCards, total: allCards.length });
   return allCards;
 }
 
@@ -444,7 +445,7 @@ async function collectMusicCards(page) {
 
   // Step 1: Scroll to load all lazy content
   await scrollToLoadAll(page);
-  await harvestCards('MUSIC');
+  await harvestCards(PAGE.MUSIC);
 
   // Step 2: Find all tabs on the page and click each one
   const tabNames = await page.evaluate(() => {
@@ -522,7 +523,7 @@ async function collectMusicCards(page) {
   for (let i = 0; i < 30; i++) {
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     await page.waitForTimeout(500);
-    await harvestCards('MUSIC');
+    await harvestCards(PAGE.MUSIC);
 
     const clicked = await clickViewMore(page);
     if (!clicked) break;
@@ -550,7 +551,7 @@ async function collectMusicCards(page) {
   }
 
   log(`      -> ${allCards.length} total videos found after full scan`);
-  emit({ type: 'discovery-complete', page: 'MUSIC', cards: allCards, total: allCards.length });
+  emit({ type: 'discovery-complete', page: PAGE.MUSIC, cards: allCards, total: allCards.length });
   return allCards;
 }
 
@@ -699,7 +700,7 @@ async function findAndClickCardMusic(page, title) {
  * Check a single video: find its card, click it, verify the <video> loads.
  * pageType: 'STORY' (carousels) or 'MUSIC' (grid + view more)
  */
-async function checkVideo(page, card, videoNum, totalLabel, pageType = 'STORY') {
+async function checkVideo(page, card, videoNum, totalLabel, pageType = PAGE.STORY) {
   const result = {
     number: videoNum,
     title: card.title,
@@ -707,7 +708,7 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = 'STORY') 
     page: '',
     url: '',
     hlsSrc: '',
-    status: 'UNKNOWN',
+    status: STATUS.UNKNOWN,
     error: null,
     loadTimeMs: null,
     duration: null,
@@ -717,12 +718,12 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = 'STORY') 
   const startTime = Date.now();
 
   try {
-    const clicked = pageType === 'MUSIC'
+    const clicked = pageType === PAGE.MUSIC
       ? await findAndClickCardMusic(page, card.title)
       : await findAndClickCardStory(page, card.title, card.section);
 
     if (!clicked) {
-      result.status = 'FAIL';
+      result.status = STATUS.FAIL;
       result.error = 'Could not find card to click';
       result.loadTimeMs = Date.now() - startTime;
       logResult(result, videoNum, totalLabel);
@@ -789,7 +790,7 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = 'STORY') 
     }
 
     if (!videoAppeared) {
-      result.status = 'FAIL';
+      result.status = STATUS.FAIL;
       result.error = 'No <video> element found after 25s';
       result.loadTimeMs = Date.now() - startTime;
       logResult(result, videoNum, totalLabel);
@@ -868,34 +869,34 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = 'STORY') 
 
     switch (checkResult.status) {
       case 'LOADED':
-        result.status = 'PASS';
+        result.status = STATUS.PASS;
         result.duration = checkResult.duration ? Math.round(checkResult.duration) + 's' : '';
         result.resolution = checkResult.videoWidth ? `${checkResult.videoWidth}x${checkResult.videoHeight}` : '';
         break;
       case 'ERROR':
-        result.status = 'FAIL';
+        result.status = STATUS.FAIL;
         result.error = checkResult.error;
         break;
       case 'TIMEOUT':
-        result.status = 'TIMEOUT';
+        result.status = STATUS.TIMEOUT;
         result.error = checkResult.error;
         break;
       case 'NO_VIDEO':
-        result.status = 'FAIL';
+        result.status = STATUS.FAIL;
         result.error = checkResult.error;
         break;
       default:
-        result.status = 'UNKNOWN';
+        result.status = STATUS.UNKNOWN;
     }
 
   } catch (e) {
-    result.status = 'FAIL';
+    result.status = STATUS.FAIL;
     result.error = e.message;
     result.loadTimeMs = Date.now() - startTime;
   }
 
   // Screenshot on failure
-  if (CONFIG.screenshotOnFailure && (result.status === 'FAIL' || result.status === 'TIMEOUT')) {
+  if (CONFIG.screenshotOnFailure && (result.status === STATUS.FAIL || result.status === STATUS.TIMEOUT)) {
     try {
       const safeName = (result.title || 'unknown').replace(/[^a-zA-Z0-9_-]/g, '_').substring(0, 60);
       const screenshotFile = `${CONFIG.screenshotDir}/${safeName}_${videoNum}.png`;
@@ -910,7 +911,7 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = 'STORY') 
 }
 
 function logResult(r, num, total) {
-  const icon = r.status === 'PASS' ? '\u2705' : r.status === 'FAIL' ? '\u274C' : r.status === 'TIMEOUT' ? '\u23F1\uFE0F' : '\u26A0\uFE0F';
+  const icon = r.status === STATUS.PASS ? '\u2705' : r.status === STATUS.FAIL ? '\u274C' : r.status === STATUS.TIMEOUT ? '\u23F1\uFE0F' : '\u26A0\uFE0F';
   const time = r.loadTimeMs ? `(${(r.loadTimeMs / 1000).toFixed(1)}s)` : '';
   const sec = r.section ? `[${r.section}] ` : '';
   const err = r.error ? ` -- ${r.error}` : '';
@@ -919,9 +920,9 @@ function logResult(r, num, total) {
 }
 
 function generateReport(allResults) {
-  const passed = allResults.filter(r => r.status === 'PASS');
-  const failed = allResults.filter(r => r.status === 'FAIL');
-  const timeouts = allResults.filter(r => r.status === 'TIMEOUT');
+  const passed = allResults.filter(r => r.status === STATUS.PASS);
+  const failed = allResults.filter(r => r.status === STATUS.FAIL);
+  const timeouts = allResults.filter(r => r.status === STATUS.TIMEOUT);
 
   if (!JSON_STREAM) {
     console.log('\n' + '='.repeat(60));
@@ -1090,11 +1091,11 @@ async function scanStoryPage(page, pageUrl, allResults, startNum) {
       consecutiveFails = 0;
     }
 
-    const result = await checkVideo(page, card, videoNum, totalStr, 'STORY');
-    result.page = 'STORY';
+    const result = await checkVideo(page, card, videoNum, totalStr, PAGE.STORY);
+    result.page = PAGE.STORY;
     allResults.push(result);
 
-    if (result.status === 'FAIL' || result.status === 'TIMEOUT') {
+    if (result.status === STATUS.FAIL || result.status === STATUS.TIMEOUT) {
       consecutiveFails++;
     } else {
       consecutiveFails = 0;
@@ -1152,11 +1153,11 @@ async function scanMusicPage(page, pageUrl, allResults, startNum) {
       consecutiveFails = 0;
     }
 
-    const result = await checkVideo(page, card, videoNum, totalStr, 'MUSIC');
-    result.page = 'MUSIC';
+    const result = await checkVideo(page, card, videoNum, totalStr, PAGE.MUSIC);
+    result.page = PAGE.MUSIC;
     allResults.push(result);
 
-    if (result.status === 'FAIL' || result.status === 'TIMEOUT') {
+    if (result.status === STATUS.FAIL || result.status === STATUS.TIMEOUT) {
       consecutiveFails++;
     } else {
       consecutiveFails = 0;
@@ -1205,7 +1206,7 @@ async function main() {
 
   // ===== Retry failed/timed out videos =====
   if (CONFIG.retryFailures && allResults.length > 0) {
-    const retryTargets = allResults.filter(r => r.status === 'FAIL' || r.status === 'TIMEOUT');
+    const retryTargets = allResults.filter(r => r.status === STATUS.FAIL || r.status === STATUS.TIMEOUT);
     if (retryTargets.length > 0 && retryTargets.length <= 20) {
       log(`\nRetrying ${retryTargets.length} failed/timed out video(s)...`);
       emit({ type: 'status', message: `Retrying ${retryTargets.length} failed video(s)...` });
@@ -1218,7 +1219,7 @@ async function main() {
         await login(page2);
 
         for (const orig of retryTargets) {
-          const pageUrl = orig.page === 'MUSIC' ? CONFIG.musicUrl : CONFIG.baseUrl;
+          const pageUrl = orig.page === PAGE.MUSIC ? CONFIG.musicUrl : CONFIG.baseUrl;
 
           if (page2.url().includes('/watch/')) {
             await page2.goto(pageUrl, { waitUntil: 'networkidle', timeout: CONFIG.navigationTimeout });
@@ -1230,14 +1231,14 @@ async function main() {
             await page2.waitForTimeout(2000);
           }
 
-          if (orig.page === 'MUSIC') await loadAllMusicCards(page2);
+          if (orig.page === PAGE.MUSIC) await loadAllMusicCards(page2);
           else await scrollToLoadAll(page2);
 
           const retryResult = await checkVideo(page2, { title: orig.title, section: orig.section }, orig.number, `${allResults.length} (retry)`, orig.page);
           retryResult.page = orig.page;
 
           // If retry passed, update the original result
-          if (retryResult.status === 'PASS') {
+          if (retryResult.status === STATUS.PASS) {
             const idx = allResults.findIndex(r => r.number === orig.number);
             if (idx !== -1) {
               allResults[idx] = retryResult;
