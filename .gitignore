@@ -13,6 +13,9 @@ demo.gif
 demo.webm
 nul
 
+# TypeScript build output
+dist/
+
 # IDE/tool settings
 .claude/
 

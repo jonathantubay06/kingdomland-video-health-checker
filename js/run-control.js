@@ -104,7 +104,7 @@ KL.startRunLocal = async function(email, password) {
 
 KL.startRunCloud = async function(email, password) {
   try {
-    var res = await fetch('/api/trigger-check', {
+    var res = await KL.apiFetch('/api/trigger-check', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ mode: KL.state.mode, email: email, password: password }),
@@ -163,7 +163,7 @@ window.stopRun = async function() {
   } else if (KL.ghRunId) {
     if (!confirm('Cancel the running video check?')) return;
     try {
-      var res = await fetch('/api/cancel-run', {
+      var res = await KL.apiFetch('/api/cancel-run', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ runId: KL.ghRunId }),

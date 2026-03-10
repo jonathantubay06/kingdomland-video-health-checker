@@ -1,5 +1,5 @@
 /**
- * Video Load Checker for go.kingdomlandkids.com
+ * Video Load Checker for go.kingdomlandkids.com (TypeScript version)
  *
  * Navigates through ALL carousel sections (clicking > arrows) to discover
  * every video card, then checks each one loads properly.
@@ -11,51 +11,68 @@
  *   npx playwright install firefox webkit   # optional: multi-browser
  *
  * USAGE:
- *   node check-videos.js                        # headless Chromium (default)
- *   node check-videos.js --debug                # visible browser
- *   node check-videos.js --story                # only STORY page
- *   node check-videos.js --music                # only MUSIC page
- *   node check-videos.js --browser=firefox      # use Firefox
- *   node check-videos.js --browser=webkit       # use WebKit (Safari)
+ *   node dist/src/check-videos.js                    # headless Chromium (default)
+ *   node dist/src/check-videos.js --debug            # visible browser
+ *   node dist/src/check-videos.js --story            # only STORY page
+ *   node dist/src/check-videos.js --music            # only MUSIC page
+ *   node dist/src/check-videos.js --browser=firefox  # use Firefox
+ *   node dist/src/check-videos.js --browser=webkit   # use WebKit (Safari)
  */
 
-const playwright = require('playwright');
-const fs = require('fs');
-const { STATUS, PAGE } = require('./lib/constants');
-const { sendSlackFailureAlert } = require('./lib/slack');
-const db = require('./lib/db');
+import * as playwright from 'playwright';
+import type { Page, Frame, BrowserType } from 'playwright';
+import fs from 'fs';
+import path from 'path';
+import { STATUS, PAGE } from '../lib/constants';
+import type { StatusType, PageType } from '../lib/constants';
+import { sendSlackFailureAlert } from '../lib/slack';
+import * as db from '../lib/db';
+import type { VideoResult, CheckSummary, PerformanceAlert, CheckReport, HistoryEntry } from './types';
 
 // ============== CONFIG ==============
-const CONFIG = {
+interface Config {
+  baseUrl: string;
+  loginUrl: string;
+  musicUrl: string;
+  username: string;
+  password: string;
+  emailSelector: string;
+  passwordSelector: string;
+  loginButtonSelector: string;
+  videoLoadTimeout: number;
+  navigationTimeout: number;
+  retryFailures: boolean;
+  screenshotOnFailure: boolean;
+  screenshotDir: string;
+  performanceThresholds: {
+    warning: number;
+    critical: number;
+  };
+}
+
+const CONFIG: Config = {
   baseUrl: 'https://go.kingdomlandkids.com',
   loginUrl: 'https://go.kingdomlandkids.com/login',
   musicUrl: 'https://go.kingdomlandkids.com/music',
 
-  // Credentials (env vars required — no hardcoded fallbacks for security)
   username: process.env.KL_USERNAME || '',
   password: process.env.KL_PASSWORD || '',
 
-  // Selectors (verified from actual site inspection)
   emailSelector: 'input[type="text"]',
   passwordSelector: 'input[type="password"]',
   loginButtonSelector: 'button[type="submit"]',
 
-  // Timeouts
   videoLoadTimeout: 20000,
   navigationTimeout: 30000,
 
-  // Retry: re-check failed/timed out videos once
   retryFailures: true,
-  maxRetries: 1,
 
-  // Screenshots on failure
   screenshotOnFailure: true,
   screenshotDir: 'screenshots',
 
-  // Performance thresholds (ms)
   performanceThresholds: {
-    warning: parseInt(process.env.PERF_WARN_MS, 10) || 8000,
-    critical: parseInt(process.env.PERF_CRIT_MS, 10) || 15000,
+    warning: parseInt(process.env.PERF_WARN_MS || '', 10) || 8000,
+    critical: parseInt(process.env.PERF_CRIT_MS || '', 10) || 15000,
   },
 };
 // ====================================
@@ -65,33 +82,42 @@ const STORY_ONLY = process.argv.includes('--story');
 const MUSIC_ONLY = process.argv.includes('--music');
 const JSON_STREAM = process.argv.includes('--json-stream');
 
-// Browser engine selection: --browser=firefox|webkit|chromium or BROWSER env var
+// Browser engine selection
 const BROWSER_ARG = (process.argv.find(a => a.startsWith('--browser=')) || '').split('=')[1];
 const BROWSER_NAME = (BROWSER_ARG || process.env.BROWSER || 'chromium').toLowerCase();
-const SUPPORTED_BROWSERS = { chromium: playwright.chromium, firefox: playwright.firefox, webkit: playwright.webkit };
+const SUPPORTED_BROWSERS: Record<string, BrowserType> = {
+  chromium: playwright.chromium,
+  firefox: playwright.firefox,
+  webkit: playwright.webkit,
+};
 const browserEngine = SUPPORTED_BROWSERS[BROWSER_NAME];
 if (!browserEngine) {
   console.error(`Unknown browser: "${BROWSER_NAME}". Supported: chromium, firefox, webkit`);
   process.exit(1);
 }
 
-// Titles filter: only check specific videos (used by "Check Failed Only")
-let TITLES_FILTER = null;
+// Titles filter for "Check Failed Only"
+let TITLES_FILTER: Set<string> | null = null;
 if (process.env.CHECK_TITLES) {
   try { TITLES_FILTER = new Set(JSON.parse(process.env.CHECK_TITLES)); } catch { TITLES_FILTER = null; }
 }
 
 // Ensure screenshot directory exists
 if (CONFIG.screenshotOnFailure) {
-  const screenshotPath = require('path').join(__dirname, CONFIG.screenshotDir);
+  const screenshotPath = path.join(__dirname, '..', CONFIG.screenshotDir);
   if (!fs.existsSync(screenshotPath)) fs.mkdirSync(screenshotPath, { recursive: true });
 }
 
-function emit(obj) {
+interface StreamEvent {
+  type: string;
+  [key: string]: unknown;
+}
+
+function emit(obj: StreamEvent): void {
   if (JSON_STREAM) process.stdout.write(JSON.stringify(obj) + '\n');
 }
 
-function log(msg) {
+function log(msg: string): void {
   if (JSON_STREAM) {
     emit({ type: 'status', message: msg });
   } else {
@@ -99,7 +125,17 @@ function log(msg) {
   }
 }
 
-async function login(page) {
+interface CardInfo {
+  title: string;
+  section: string;
+}
+
+interface CheckVideoResult extends VideoResult {
+  screenshot?: string;
+  titleMismatch?: string;
+}
+
+async function login(page: Page): Promise<void> {
   if (!CONFIG.username || !CONFIG.password) {
     throw new Error('Missing credentials. Set KL_USERNAME and KL_PASSWORD environment variables.');
   }
@@ -123,10 +159,7 @@ async function login(page) {
   log('Logged in as Jonathan Tubay\n');
 }
 
-/**
- * Scroll the page vertically to load all lazy sections.
- */
-async function scrollToLoadAll(page) {
+async function scrollToLoadAll(page: Page): Promise<void> {
   let prevHeight = 0;
   for (let i = 0; i < 30; i++) {
     const height = await page.evaluate(() => document.body.scrollHeight);
@@ -139,31 +172,21 @@ async function scrollToLoadAll(page) {
   await page.waitForTimeout(500);
 }
 
-/**
- * Get all section names (h2 headings) on the current page.
- */
-async function getSectionNames(page) {
+async function getSectionNames(page: Page): Promise<string[]> {
   return await page.evaluate(() => {
     return Array.from(document.querySelectorAll('h2'))
-      .map(h => h.textContent.trim())
+      .map(h => h.textContent?.trim() || '')
       .filter(Boolean);
   });
 }
 
-/**
- * Click the carousel "next" (right >) or "prev" (left <) arrow for a section.
- * Tries multiple strategies to find the arrow button.
- * Returns true if an arrow was found and clicked.
- */
-async function clickCarouselArrow(page, sectionName, direction = 'next') {
-  // Step 1: Find the arrow element and return its bounding box (no clicking inside evaluate)
-  const bounds = await page.evaluate(({ secName, dir }) => {
+async function clickCarouselArrow(page: Page, sectionName: string, direction: 'next' | 'prev' = 'next'): Promise<boolean> {
+  const bounds = await page.evaluate(({ secName, dir }: { secName: string; dir: string }) => {
     const h2s = document.querySelectorAll('h2');
     for (const h2 of h2s) {
-      if (h2.textContent.trim() !== secName) continue;
+      if (h2.textContent?.trim() !== secName) continue;
 
-      // Walk up from the h2 to find the header row that also contains arrow buttons.
-      let headerArea = h2.parentElement;
+      let headerArea: HTMLElement | null = h2.parentElement;
       for (let depth = 0; depth < 5; depth++) {
         if (!headerArea) break;
         const svgCount = headerArea.querySelectorAll('svg').length;
@@ -173,18 +196,16 @@ async function clickCarouselArrow(page, sectionName, direction = 'next') {
       }
       if (!headerArea) return null;
 
-      function getCenter(el) {
-        // Scroll into view first — arrows may be off-screen after page scrolling
-        el.scrollIntoView({ behavior: 'instant', block: 'nearest' });
+      function getCenter(el: Element): { x: number; y: number } {
+        el.scrollIntoView({ behavior: 'instant' as ScrollBehavior, block: 'nearest' });
         const rect = el.getBoundingClientRect();
         return { x: rect.x + rect.width / 2, y: rect.y + rect.height / 2 };
       }
 
-      // --- Strategy 1: buttons/clickable elements with SVG icons ---
       const buttons = Array.from(headerArea.querySelectorAll('button, [role="button"]'));
       const arrowBtns = buttons.filter(btn => {
         const hasSvg = btn.querySelector('svg');
-        const text = btn.textContent.trim();
+        const text = btn.textContent?.trim() || '';
         const isArrowChar = /^[<>‹›←→❮❯\u2039\u203A\u2190\u2192]$/.test(text);
         return hasSvg || isArrowChar;
       });
@@ -193,24 +214,23 @@ async function clickCarouselArrow(page, sectionName, direction = 'next') {
         return getCenter(arrowBtns[idx]);
       }
 
-      // --- Strategy 2: SVGs directly ---
       const svgs = Array.from(headerArea.querySelectorAll('svg'));
       if (svgs.length >= 2) {
         const idx = dir === 'next' ? svgs.length - 1 : 0;
         const target = svgs[idx].closest('button') || svgs[idx].closest('[role="button"]') || svgs[idx].parentElement;
-        return getCenter(target);
+        return target ? getCenter(target) : null;
       }
 
-      // --- Strategy 3: Text-based arrows ---
       const allEls = Array.from(headerArea.querySelectorAll('*'));
       const rightChars = ['>', '\u203A', '\u2192', '\u276F'];
       const leftChars = ['<', '\u2039', '\u2190', '\u276E'];
       const targetChars = dir === 'next' ? rightChars : leftChars;
       for (const el of allEls) {
         if (el.children.length > 0) continue;
-        const text = el.textContent.trim();
+        const text = el.textContent?.trim() || '';
         if (targetChars.includes(text)) {
-          return getCenter(el.closest('button') || el);
+          const clickTarget = el.closest('button') || el;
+          return getCenter(clickTarget);
         }
       }
 
@@ -219,34 +239,28 @@ async function clickCarouselArrow(page, sectionName, direction = 'next') {
     return null;
   }, { secName: sectionName, dir: direction });
 
-  // Step 2: Click at the coordinates using Playwright's native mouse
   if (!bounds) return false;
-  await page.waitForTimeout(100); // let scrollIntoView settle
-  // Re-read position after scroll settled (coordinates may have shifted)
+  await page.waitForTimeout(100);
   await page.mouse.click(bounds.x, bounds.y);
   return true;
 }
 
-/**
- * Get all card titles currently in the DOM for a specific section.
- */
-async function getCardTitlesInSection(page, sectionName) {
-  return await page.evaluate((secName) => {
+async function getCardTitlesInSection(page: Page, sectionName: string): Promise<string[]> {
+  return await page.evaluate((secName: string) => {
     const h2s = document.querySelectorAll('h2');
     for (const h2 of h2s) {
-      if (h2.textContent.trim() !== secName) continue;
+      if (h2.textContent?.trim() !== secName) continue;
 
-      // Walk up from h2 to find the nearest ancestor that contains video cards.
-      let container = h2;
+      let container: HTMLElement | null = h2 as HTMLElement;
       for (let i = 0; i < 10; i++) {
-        container = container.parentElement;
+        container = container!.parentElement;
         if (!container) break;
         if (container.querySelectorAll('[class*="cursor-pointer"] img').length > 0) break;
       }
       if (!container) return [];
 
       const cardEls = container.querySelectorAll('[class*="cursor-pointer"]');
-      const titles = [];
+      const titles: string[] = [];
       for (const card of cardEls) {
         const img = card.querySelector('img');
         if (!img) continue;
@@ -261,22 +275,17 @@ async function getCardTitlesInSection(page, sectionName) {
   }, sectionName);
 }
 
-/**
- * STORY PAGE: Collect ALL video cards by navigating through every carousel.
- * Clicks the ">" arrow repeatedly in each section to discover hidden cards.
- */
-async function collectStoryCards(page) {
+async function collectStoryCards(page: Page): Promise<CardInfo[]> {
   await scrollToLoadAll(page);
 
   const sectionNames = await getSectionNames(page);
-  const allCards = [];
-  const seenKeys = new Set(); // key = "section::title" to allow same title in different sections
+  const allCards: CardInfo[] = [];
+  const seenKeys = new Set<string>();
 
   for (const secName of sectionNames) {
     log(`   Scanning carousel: ${secName}`);
     let noNewCount = 0;
 
-    // Collect cards visible initially
     const initialTitles = await getCardTitlesInSection(page, secName);
     for (const title of initialTitles) {
       const key = `${secName}::${title}`;
@@ -286,12 +295,10 @@ async function collectStoryCards(page) {
       }
     }
 
-    // Click "next" arrow repeatedly to reveal all hidden cards
     for (let clicks = 0; clicks < 80; clicks++) {
       const clicked = await clickCarouselArrow(page, secName, 'next');
       if (!clicked) break;
 
-      // Wait for carousel animation + DOM update
       await page.waitForTimeout(1200);
 
       const titles = await getCardTitlesInSection(page, secName);
@@ -307,7 +314,7 @@ async function collectStoryCards(page) {
 
       if (!foundNew) {
         noNewCount++;
-        if (noNewCount >= 5) break; // be patient — some carousels scroll slowly
+        if (noNewCount >= 5) break;
       } else {
         noNewCount = 0;
       }
@@ -317,7 +324,6 @@ async function collectStoryCards(page) {
     log(`      -> ${count} videos found`);
     emit({ type: 'discovery', page: PAGE.STORY, section: secName, count, total: allCards.length });
 
-    // Reset carousel back to start
     for (let i = 0; i < 60; i++) {
       const prevClicked = await clickCarouselArrow(page, secName, 'prev');
       if (!prevClicked) break;
@@ -325,29 +331,27 @@ async function collectStoryCards(page) {
     }
   }
 
-  // Final catch-all sweep: scan ALL cards on the entire page regardless of section.
-  // This catches cards in featured/banner areas, or sections without h2 headings.
+  // Final catch-all sweep
   await scrollToLoadAll(page);
   const allPageCards = await page.evaluate(() => {
     const cards = document.querySelectorAll('[class*="cursor-pointer"]');
-    const results = [];
+    const results: Array<{ title: string; section: string }> = [];
     for (const card of cards) {
       const img = card.querySelector('img');
       if (!img) continue;
       const title = card.querySelector('p')?.textContent?.trim() || img.alt || '';
       if (!title || title === 'Avatar' || title === 'Search' || title.includes('Logo')) continue;
 
-      // Try to find nearest h2 for section name
       let section = '';
-      let el = card;
+      let el: HTMLElement | null = card as HTMLElement;
       for (let j = 0; j < 15; j++) {
-        el = el.parentElement;
+        el = el!.parentElement;
         if (!el) break;
         const h = el.querySelector(':scope > div > div > h2') ||
                   el.querySelector(':scope > div > h2') ||
                   el.querySelector(':scope > h2') ||
                   el.querySelector('h2');
-        if (h) { section = h.textContent.trim(); break; }
+        if (h) { section = h.textContent?.trim() || ''; break; }
       }
       results.push({ title, section });
     }
@@ -371,12 +375,7 @@ async function collectStoryCards(page) {
   return allCards;
 }
 
-/**
- * Click the "View more" button on the MUSIC page.
- * Uses Playwright's native click (not el.click()) for React/Ant Design compatibility.
- */
-async function clickViewMore(page) {
-  // Playwright locator: matches button or link containing "View more" (case-insensitive)
+async function clickViewMore(page: Page): Promise<boolean> {
   const btn = page.locator('button:has-text("View more"), a:has-text("View more"), button:has-text("Load more"), a:has-text("Load more"), button:has-text("Show more"), a:has-text("Show more")').first();
 
   try {
@@ -391,13 +390,10 @@ async function clickViewMore(page) {
   return false;
 }
 
-/**
- * Collect all card titles currently visible in the MUSIC page grid.
- */
-async function getAllMusicCardTitles(page) {
+async function getAllMusicCardTitles(page: Page): Promise<string[]> {
   return await page.evaluate(() => {
     const cards = document.querySelectorAll('[class*="cursor-pointer"]');
-    const titles = [];
+    const titles: string[] = [];
     for (const card of cards) {
       const img = card.querySelector('img');
       if (!img) continue;
@@ -410,43 +406,30 @@ async function getAllMusicCardTitles(page) {
   });
 }
 
-/**
- * MUSIC PAGE: Collect ALL video cards.
- *
- * Strategy:
- *  1. Scroll to load all lazy sections
- *  2. Find all clickable tabs (EPISODES, RECOMMENDED, etc.) and click each
- *  3. Within each tab, click "View more" repeatedly
- *  4. Also check for carousel sections (same as STORY page) in case music
- *     page has mixed layouts
- *  5. Collect every unique video card found
- */
-async function collectMusicCards(page) {
-  const allCards = [];
-  const seenTitles = new Set();
+async function collectMusicCards(page: Page): Promise<CardInfo[]> {
+  const allCards: CardInfo[] = [];
+  const seenTitles = new Set<string>();
 
-  // Helper: scan the current DOM for all video cards and add new ones
-  async function harvestCards(sourceLabel) {
+  async function harvestCards(sourceLabel: string): Promise<number> {
     const cardData = await page.evaluate(() => {
       const cards = document.querySelectorAll('[class*="cursor-pointer"]');
-      const results = [];
+      const results: Array<{ title: string; section: string }> = [];
       for (const card of cards) {
         const img = card.querySelector('img');
         if (!img) continue;
         const title = card.querySelector('p')?.textContent?.trim() || img.alt || '';
         if (!title || title === 'Avatar' || title === 'Search' || title.includes('Logo')) continue;
 
-        // Walk up to find section h2
         let section = '';
-        let el = card;
+        let el: HTMLElement | null = card as HTMLElement;
         for (let j = 0; j < 15; j++) {
-          el = el.parentElement;
+          el = el!.parentElement;
           if (!el) break;
           const h = el.querySelector(':scope > div > div > h2') ||
                     el.querySelector(':scope > div > h2') ||
                     el.querySelector(':scope > h2') ||
                     el.querySelector('h2');
-          if (h) { section = h.textContent.trim(); break; }
+          if (h) { section = h.textContent?.trim() || ''; break; }
         }
         results.push({ title, section });
       }
@@ -464,18 +447,14 @@ async function collectMusicCards(page) {
     return newCount;
   }
 
-  // Step 1: Scroll to load all lazy content
   await scrollToLoadAll(page);
   await harvestCards(PAGE.MUSIC);
 
-  // Step 2: Find all tabs on the page and click each one
   const tabNames = await page.evaluate(() => {
-    // Look for tab-like elements: buttons/links that look like tabs
     const candidates = document.querySelectorAll('button, a, [role="tab"]');
-    const names = [];
+    const names: string[] = [];
     for (const el of candidates) {
-      const text = el.textContent.trim();
-      // Tabs are usually short labels
+      const text = el.textContent?.trim() || '';
       if (text.length > 0 && text.length < 25) {
         const upper = text.toUpperCase();
         if (upper === 'EPISODES' || upper === 'RECOMMENDED' || upper === 'ALL' ||
@@ -484,10 +463,9 @@ async function collectMusicCards(page) {
         }
       }
     }
-    // Also look for any tab-like UI patterns (aria-role, data attributes)
     const roleTabs = document.querySelectorAll('[role="tab"]');
     for (const tab of roleTabs) {
-      const text = tab.textContent.trim();
+      const text = tab.textContent?.trim() || '';
       if (text && text.length < 25 && !names.includes(text)) names.push(text);
     }
     return [...new Set(names)];
@@ -496,7 +474,6 @@ async function collectMusicCards(page) {
   log(`   Found tabs: ${tabNames.length > 0 ? tabNames.join(', ') : '(none)'}`);
 
   for (const tabName of tabNames) {
-    // Use Playwright native click for React/Ant Design compatibility
     const tabLocator = page.locator(`button:has-text("${tabName}"), a:has-text("${tabName}"), [role="tab"]:has-text("${tabName}")`).first();
     let tabClicked = false;
     try {
@@ -514,19 +491,15 @@ async function collectMusicCards(page) {
     await page.waitForTimeout(1500);
     await scrollToLoadAll(page);
 
-    // Click "View more" repeatedly to load all cards in this tab
     for (let i = 0; i < 30; i++) {
       await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
       await page.waitForTimeout(500);
-
-      const beforeCount = allCards.length;
       await harvestCards(tabName);
 
       const clicked = await clickViewMore(page);
       if (clicked) {
         await page.waitForTimeout(1500);
       } else {
-        // No "View more" — harvest once more and break
         await harvestCards(tabName);
         break;
       }
@@ -535,7 +508,6 @@ async function collectMusicCards(page) {
     log(`      -> ${allCards.length} total videos found so far`);
   }
 
-  // Step 3: Even without tabs, scroll and click "View more" on the default view
   log(`   Scanning default view (no tab click)...`);
   await page.evaluate(() => window.scrollTo(0, 0));
   await page.waitForTimeout(500);
@@ -551,10 +523,8 @@ async function collectMusicCards(page) {
     await page.waitForTimeout(1500);
   }
 
-  // Step 4: Check for carousel sections (in case music page also has carousels)
   const sectionNames = await getSectionNames(page);
   for (const secName of sectionNames) {
-    // Try clicking carousel arrows to find more cards
     let noNewCount = 0;
     for (let clicks = 0; clicks < 40; clicks++) {
       const arrowClicked = await clickCarouselArrow(page, secName, 'next');
@@ -576,15 +546,9 @@ async function collectMusicCards(page) {
   return allCards;
 }
 
-/**
- * MUSIC PAGE: Load all cards by clicking EPISODES tab + "View more" until done.
- * Used before trying to find/click a specific card after navigating back.
- */
-async function loadAllMusicCards(page) {
-  // Scroll to load lazy content
+async function loadAllMusicCards(page: Page): Promise<void> {
   await scrollToLoadAll(page);
 
-  // Click EPISODES tab first (page may default to a different view after navigation)
   const episodesTab = page.locator('button:has-text("EPISODES"), a:has-text("EPISODES"), [role="tab"]:has-text("EPISODES")').first();
   try {
     if (await episodesTab.isVisible({ timeout: 2000 })) {
@@ -592,13 +556,11 @@ async function loadAllMusicCards(page) {
       await page.waitForTimeout(1500);
     }
   } catch {
-    // Tab not found — continue with default view
+    // Tab not found
   }
 
-  // Scroll again after tab switch
   await scrollToLoadAll(page);
 
-  // Click "View more" repeatedly to load all cards
   for (let i = 0; i < 30; i++) {
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     await page.waitForTimeout(500);
@@ -612,16 +574,8 @@ async function loadAllMusicCards(page) {
   await page.waitForTimeout(300);
 }
 
-/**
- * Try to find and click a card by title in the current DOM.
- * Uses Playwright's native locator.click() which performs an atomic
- * scroll-into-view + click without coordinate race conditions.
- * Falls back to coordinate-based click if the locator approach fails.
- */
-async function tryClickCard(page, title) {
-  // Approach 1: Playwright native locator (atomic, no coordinate race condition)
+async function tryClickCard(page: Page, title: string): Promise<boolean> {
   try {
-    // Build a locator that matches cards containing the exact title text
     const cardLocator = page.locator('[class*="cursor-pointer"]').filter({
       has: page.locator(`p:text-is("${title.replace(/"/g, '\\"')}")`)
     }).first();
@@ -630,26 +584,24 @@ async function tryClickCard(page, title) {
       await cardLocator.click({ timeout: 5000 });
       return true;
     }
-  } catch { /* locator approach failed, try fallback */ }
+  } catch { /* locator approach failed */ }
 
-  // Also try matching by img alt text (some cards don't have <p> titles)
   try {
     const imgLocator = page.locator(`[class*="cursor-pointer"]:has(img[alt="${title.replace(/"/g, '\\"')}"])`).first();
     if (await imgLocator.isVisible({ timeout: 1000 })) {
       await imgLocator.click({ timeout: 5000 });
       return true;
     }
-  } catch { /* img alt approach failed, try coordinate fallback */ }
+  } catch { /* img alt approach failed */ }
 
-  // Approach 2: Coordinate-based fallback (scroll → re-read coordinates → click)
-  const bounds = await page.evaluate((t) => {
+  const bounds = await page.evaluate((t: string) => {
     const cards = document.querySelectorAll('[class*="cursor-pointer"]');
     for (const card of cards) {
       const p = card.querySelector('p');
       const img = card.querySelector('img');
       const cardTitle = p?.textContent?.trim() || img?.alt || '';
       if (cardTitle === t) {
-        card.scrollIntoView({ behavior: 'instant', block: 'center' });
+        card.scrollIntoView({ behavior: 'instant' as ScrollBehavior, block: 'center' });
         return true;
       }
     }
@@ -657,10 +609,9 @@ async function tryClickCard(page, title) {
   }, title);
 
   if (!bounds) return false;
-  await page.waitForTimeout(400); // generous settle time after scroll
+  await page.waitForTimeout(400);
 
-  // Re-read coordinates AFTER scroll has settled (avoids stale-coordinate bug)
-  const coords = await page.evaluate((t) => {
+  const coords = await page.evaluate((t: string) => {
     const cards = document.querySelectorAll('[class*="cursor-pointer"]');
     for (const card of cards) {
       const p = card.querySelector('p');
@@ -679,13 +630,9 @@ async function tryClickCard(page, title) {
   return true;
 }
 
-/**
- * STORY PAGE: Navigate the carousel until the card appears, then click it.
- */
-async function findAndClickCardStory(page, title, section) {
+async function findAndClickCardStory(page: Page, title: string, section: string): Promise<boolean> {
   if (await tryClickCard(page, title)) return true;
 
-  // Card not in DOM — click carousel "next" until it appears
   for (let i = 0; i < 60; i++) {
     const clicked = await clickCarouselArrow(page, section, 'next');
     if (!clicked) break;
@@ -695,19 +642,14 @@ async function findAndClickCardStory(page, title, section) {
   return false;
 }
 
-/**
- * MUSIC PAGE: Click "View more" until the card appears, then click it.
- */
-async function findAndClickCardMusic(page, title) {
+async function findAndClickCardMusic(page: Page, title: string): Promise<boolean> {
   if (await tryClickCard(page, title)) return true;
 
-  // Card not loaded yet — scroll and click "View more" until it appears
   for (let i = 0; i < 30; i++) {
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     await page.waitForTimeout(500);
     const hasMore = await clickViewMore(page);
     if (!hasMore) {
-      // No "View more" button, but maybe card loaded via scroll
       if (await tryClickCard(page, title)) return true;
       break;
     }
@@ -717,12 +659,23 @@ async function findAndClickCardMusic(page, title) {
   return false;
 }
 
-/**
- * Check a single video: find its card, click it, verify the <video> loads.
- * pageType: 'STORY' (carousels) or 'MUSIC' (grid + view more)
- */
-async function checkVideo(page, card, videoNum, totalLabel, pageType = PAGE.STORY) {
-  const result = {
+interface VideoCheckResult {
+  status: string;
+  hlsSrc?: string;
+  error?: string;
+  duration?: number;
+  videoWidth?: number;
+  videoHeight?: number;
+}
+
+async function checkVideo(
+  page: Page,
+  card: CardInfo,
+  videoNum: number,
+  totalLabel: string,
+  pageType: string = PAGE.STORY
+): Promise<CheckVideoResult> {
+  const result: CheckVideoResult = {
     number: videoNum,
     title: card.title,
     section: card.section,
@@ -730,9 +683,9 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = PAGE.STOR
     url: '',
     hlsSrc: '',
     status: STATUS.UNKNOWN,
-    error: null,
-    loadTimeMs: null,
-    duration: null,
+    error: '',
+    loadTimeMs: 0,
+    duration: '',
     resolution: '',
   };
 
@@ -752,7 +705,6 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = PAGE.STOR
       return result;
     }
 
-    // Wait for navigation to /watch/ page
     try {
       await page.waitForURL('**/watch/**', { timeout: 10000 });
     } catch {
@@ -761,40 +713,36 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = PAGE.STOR
 
     result.url = page.url();
 
-    // Verify the watch page title matches the expected card title
+    // Verify watch page title
     try {
       const watchPageTitle = await page.evaluate(() => {
-        // Try breadcrumb last item, then h1/h2 heading below video
         const breadcrumbs = document.querySelectorAll('a[href], span');
         let lastCrumb = '';
         for (const el of breadcrumbs) {
           if (el.closest('nav, [class*="breadcrumb"], [class*="Breadcrumb"]')) {
-            const t = el.textContent.trim();
+            const t = el.textContent?.trim() || '';
             if (t && t.length > 1) lastCrumb = t;
           }
         }
         if (lastCrumb) return lastCrumb;
-        // Fallback: look for the title heading below the video
         const heading = document.querySelector('h1, h2');
         return heading?.textContent?.trim() || '';
       });
       if (watchPageTitle && watchPageTitle !== card.title) {
-        log(`   ⚠ Title mismatch: expected "${card.title}" but watch page shows "${watchPageTitle}"`);
+        log(`   \u26A0 Title mismatch: expected "${card.title}" but watch page shows "${watchPageTitle}"`);
         result.titleMismatch = watchPageTitle;
       }
-    } catch { /* non-critical check */ }
+    } catch { /* non-critical */ }
 
-    // Poll for <video> element to appear in DOM or iframes (some pages render it dynamically)
+    // Poll for <video> element
     let videoAppeared = false;
-    let videoFrame = null; // the frame containing the <video> element
+    let videoFrame: Page | Frame = page;
     for (let attempt = 0; attempt < 50; attempt++) {
-      // Check main page first
       videoAppeared = await page.evaluate(() => !!document.querySelector('video'));
       if (videoAppeared) {
         videoFrame = page;
         break;
       }
-      // Check all iframes
       for (const frame of page.frames()) {
         if (frame === page.mainFrame()) continue;
         try {
@@ -807,7 +755,7 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = PAGE.STOR
         } catch { /* frame may not be accessible */ }
       }
       if (videoAppeared) break;
-      await page.waitForTimeout(500); // poll every 500ms, up to 15s total
+      await page.waitForTimeout(500);
     }
 
     if (!videoAppeared) {
@@ -819,8 +767,7 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = PAGE.STOR
       return result;
     }
 
-    // Check whether the <video> actually loads content (using the frame where we found it)
-    const checkResult = await videoFrame.evaluate(async (timeout) => {
+    const checkResult: VideoCheckResult = await videoFrame.evaluate(async (timeout: number) => {
       const vid = document.querySelector('video');
       if (!vid) return { status: 'NO_VIDEO', error: 'No <video> element found' };
 
@@ -838,11 +785,11 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = PAGE.STOR
       }
 
       if (vid.error) {
-        const codes = { 1: 'ABORTED', 2: 'NETWORK', 3: 'DECODE', 4: 'SRC_NOT_SUPPORTED' };
+        const codes: Record<number, string> = { 1: 'ABORTED', 2: 'NETWORK', 3: 'DECODE', 4: 'SRC_NOT_SUPPORTED' };
         return { status: 'ERROR', hlsSrc, error: `MediaError: ${codes[vid.error.code] || vid.error.code}` };
       }
 
-      return new Promise((resolve) => {
+      return new Promise<VideoCheckResult>((resolve) => {
         const timer = setTimeout(() => {
           resolve({
             status: 'TIMEOUT',
@@ -867,11 +814,11 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = PAGE.STOR
           clearTimeout(timer);
           vid.removeEventListener('canplay', success);
           vid.removeEventListener('loadeddata', success);
-          const codes = { 1: 'ABORTED', 2: 'NETWORK', 3: 'DECODE', 4: 'SRC_NOT_SUPPORTED' };
+          const codes: Record<number, string> = { 1: 'ABORTED', 2: 'NETWORK', 3: 'DECODE', 4: 'SRC_NOT_SUPPORTED' };
           resolve({
             status: 'ERROR',
             hlsSrc,
-            error: `MediaError: ${codes[vid.error?.code] || 'Unknown'}`,
+            error: `MediaError: ${codes[vid.error?.code || 0] || 'Unknown'}`,
           });
         };
 
@@ -896,23 +843,23 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = PAGE.STOR
         break;
       case 'ERROR':
         result.status = STATUS.FAIL;
-        result.error = checkResult.error;
+        result.error = checkResult.error || '';
         break;
       case 'TIMEOUT':
         result.status = STATUS.TIMEOUT;
-        result.error = checkResult.error;
+        result.error = checkResult.error || '';
         break;
       case 'NO_VIDEO':
         result.status = STATUS.FAIL;
-        result.error = checkResult.error;
+        result.error = checkResult.error || '';
         break;
       default:
         result.status = STATUS.UNKNOWN;
     }
 
-  } catch (e) {
+  } catch (e: unknown) {
     result.status = STATUS.FAIL;
-    result.error = e.message;
+    result.error = e instanceof Error ? e.message : String(e);
     result.loadTimeMs = Date.now() - startTime;
   }
 
@@ -931,7 +878,7 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = PAGE.STOR
   return result;
 }
 
-function logResult(r, num, total) {
+function logResult(r: CheckVideoResult, num: number, total: string): void {
   const icon = r.status === STATUS.PASS ? '\u2705' : r.status === STATUS.FAIL ? '\u274C' : r.status === STATUS.TIMEOUT ? '\u23F1\uFE0F' : '\u26A0\uFE0F';
   const time = r.loadTimeMs ? `(${(r.loadTimeMs / 1000).toFixed(1)}s)` : '';
   const sec = r.section ? `[${r.section}] ` : '';
@@ -940,7 +887,7 @@ function logResult(r, num, total) {
   log(`   [${num}/${total}] ${icon} ${sec}${r.title}${dur} ${time}${err}`);
 }
 
-function generateReport(allResults) {
+function generateReport(allResults: CheckVideoResult[]): void {
   const passed = allResults.filter(r => r.status === STATUS.PASS);
   const failed = allResults.filter(r => r.status === STATUS.FAIL);
   const timeouts = allResults.filter(r => r.status === STATUS.TIMEOUT);
@@ -983,26 +930,23 @@ function generateReport(allResults) {
     }
   }
 
-  // Save current report as "previous" for diff comparison (before overwriting)
+  // Save current report as "previous"
   if (fs.existsSync('video-report.json')) {
-    try {
-      fs.copyFileSync('video-report.json', 'previous-report.json');
-    } catch { /* ignore */ }
+    try { fs.copyFileSync('video-report.json', 'previous-report.json'); } catch { /* ignore */ }
   }
 
   // Performance threshold analysis
-  const perfAlerts = allResults
+  const perfAlerts: PerformanceAlert[] = allResults
     .filter(r => r.loadTimeMs && r.loadTimeMs > CONFIG.performanceThresholds.warning)
     .map(r => ({
       title: r.title,
       section: r.section || '',
       loadTimeMs: r.loadTimeMs,
-      level: r.loadTimeMs >= CONFIG.performanceThresholds.critical ? 'CRITICAL' : 'WARNING',
+      level: (r.loadTimeMs >= CONFIG.performanceThresholds.critical ? 'CRITICAL' : 'WARNING') as 'CRITICAL' | 'WARNING',
     }))
     .sort((a, b) => b.loadTimeMs - a.loadTimeMs);
 
-  // JSON report
-  const report = {
+  const report: CheckReport = {
     timestamp: new Date().toISOString(),
     browser: BROWSER_NAME,
     summary: { total: allResults.length, passed: passed.length, failed: failed.length, timeouts: timeouts.length },
@@ -1014,23 +958,23 @@ function generateReport(allResults) {
   fs.writeFileSync('video-report.json', JSON.stringify(report, null, 2));
   log('Saved: video-report.json');
 
-  // Save to SQLite database
+  // Save to SQLite
   try {
     db.saveRun(report);
     log('Saved: SQLite database');
-  } catch (err) {
-    log(`SQLite save failed (non-critical): ${err.message}`);
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : String(err);
+    log(`SQLite save failed (non-critical): ${message}`);
   }
 
-  // Append to history for trend tracking
-  const historyEntry = {
+  // Append to history
+  const historyEntry: HistoryEntry = {
     timestamp: report.timestamp,
     total: allResults.length,
     passed: passed.length,
     failed: failed.length,
     timeouts: timeouts.length,
     avgLoadTimeMs: Math.round(allResults.reduce((sum, r) => sum + (r.loadTimeMs || 0), 0) / (allResults.length || 1)),
-    // Per-video summary for video detail history
     videos: allResults.map(r => ({
       title: r.title,
       section: r.section || '',
@@ -1040,12 +984,11 @@ function generateReport(allResults) {
       error: r.error || '',
     })),
   };
-  let history = [];
+  let history: HistoryEntry[] = [];
   if (fs.existsSync('history.json')) {
     try { history = JSON.parse(fs.readFileSync('history.json', 'utf-8')); } catch { history = []; }
   }
   history.push(historyEntry);
-  // Keep only last 50 entries
   if (history.length > 50) history = history.slice(-50);
   fs.writeFileSync('history.json', JSON.stringify(history, null, 2));
   log('Saved: history.json');
@@ -1060,7 +1003,7 @@ function generateReport(allResults) {
   fs.writeFileSync('video-report.csv', csv);
   log('Saved: video-report.csv');
 
-  // Failed videos list (plain text for quick reference)
+  // Failed videos list
   const failedAndTimeout = [...failed, ...timeouts];
   if (failedAndTimeout.length > 0) {
     const lines = [
@@ -1086,25 +1029,22 @@ function generateReport(allResults) {
     console.log(`\nPERFORMANCE ALERTS (>${CONFIG.performanceThresholds.warning / 1000}s warning, >${CONFIG.performanceThresholds.critical / 1000}s critical):`);
     console.log('-'.repeat(40));
     for (const a of perfAlerts) {
-      const icon = a.level === 'CRITICAL' ? '🔴' : '🟡';
+      const icon = a.level === 'CRITICAL' ? '\uD83D\uDD34' : '\uD83D\uDFE1';
       console.log(`  ${icon} [${a.level}] ${a.title} — ${(a.loadTimeMs / 1000).toFixed(1)}s`);
     }
   }
 
-  // Send Slack alert if there are failures or performance issues
+  // Send Slack alert
   if (failed.length > 0 || perfAlerts.length > 0) {
     sendSlackFailureAlert(
       report.failedVideos,
       report.summary,
       perfAlerts
-    ).catch(err => log(`Slack alert failed (non-critical): ${err.message}`));
+    ).catch((err: Error) => log(`Slack alert failed (non-critical): ${err.message}`));
   }
 }
 
-/**
- * Scan STORY page: discover all carousel cards, then check each one.
- */
-async function scanStoryPage(page, pageUrl, allResults, startNum) {
+async function scanStoryPage(page: Page, pageUrl: string, allResults: CheckVideoResult[], startNum: number): Promise<number> {
   if (!JSON_STREAM) console.log('-'.repeat(60));
   log('Scanning STORY page...');
   if (!JSON_STREAM) console.log('-'.repeat(60));
@@ -1116,9 +1056,8 @@ async function scanStoryPage(page, pageUrl, allResults, startNum) {
   let cards = await collectStoryCards(page);
   log(`   Found ${cards.length} total video cards on STORY page`);
 
-  // Filter to specific titles if "Check Failed Only" was used
   if (TITLES_FILTER) {
-    cards = cards.filter(c => TITLES_FILTER.has(c.title));
+    cards = cards.filter(c => TITLES_FILTER!.has(c.title));
     log(`   Filtered to ${cards.length} videos (re-checking failed only)`);
   }
 
@@ -1127,14 +1066,11 @@ async function scanStoryPage(page, pageUrl, allResults, startNum) {
 
   let videoNum = startNum;
   const totalStr = (startNum + cards.length).toString();
-
   let consecutiveFails = 0;
 
   for (const card of cards) {
     videoNum++;
 
-    // Navigate back to story page if we're on a watch page, or if the page
-    // is in a bad state (consecutive failures indicate stale/crashed page)
     const needsReload = page.url().includes('/watch/') || consecutiveFails >= 2;
     if (needsReload) {
       try {
@@ -1142,7 +1078,7 @@ async function scanStoryPage(page, pageUrl, allResults, startNum) {
         await page.waitForTimeout(2000);
         await scrollToLoadAll(page);
       } catch {
-        log('   ⚠ Failed to reload story page, retrying...');
+        log('   \u26A0 Failed to reload story page, retrying...');
         try {
           await page.goto(pageUrl, { waitUntil: 'domcontentloaded', timeout: CONFIG.navigationTimeout });
           await page.waitForTimeout(3000);
@@ -1166,10 +1102,7 @@ async function scanStoryPage(page, pageUrl, allResults, startNum) {
   return videoNum;
 }
 
-/**
- * Scan MUSIC page: discover all grid cards (View more + tabs), then check each.
- */
-async function scanMusicPage(page, pageUrl, allResults, startNum) {
+async function scanMusicPage(page: Page, pageUrl: string, allResults: CheckVideoResult[], startNum: number): Promise<number> {
   if (!JSON_STREAM) console.log('-'.repeat(60));
   log('Scanning MUSIC page...');
   if (!JSON_STREAM) console.log('-'.repeat(60));
@@ -1181,16 +1114,14 @@ async function scanMusicPage(page, pageUrl, allResults, startNum) {
   let cards = await collectMusicCards(page);
   log(`   Found ${cards.length} total video cards on MUSIC page`);
 
-  // Filter to specific titles if "Check Failed Only" was used
   if (TITLES_FILTER) {
-    cards = cards.filter(c => TITLES_FILTER.has(c.title));
+    cards = cards.filter(c => TITLES_FILTER!.has(c.title));
     log(`   Filtered to ${cards.length} videos (re-checking failed only)`);
   }
   log('');
 
   let videoNum = startNum;
   const totalStr = (startNum + cards.length).toString();
-
   let consecutiveFails = 0;
 
   for (const card of cards) {
@@ -1201,10 +1132,9 @@ async function scanMusicPage(page, pageUrl, allResults, startNum) {
       try {
         await page.goto(pageUrl, { waitUntil: 'networkidle', timeout: CONFIG.navigationTimeout });
         await page.waitForTimeout(2000);
-        // Re-load all cards (click "View more" again after page reload)
         await loadAllMusicCards(page);
       } catch {
-        log('   ⚠ Failed to reload music page, retrying...');
+        log('   \u26A0 Failed to reload music page, retrying...');
         try {
           await page.goto(pageUrl, { waitUntil: 'domcontentloaded', timeout: CONFIG.navigationTimeout });
           await page.waitForTimeout(3000);
@@ -1228,7 +1158,7 @@ async function scanMusicPage(page, pageUrl, allResults, startNum) {
   return videoNum;
 }
 
-async function main() {
+async function main(): Promise<void> {
   if (!JSON_STREAM) {
     console.log('\nKingdomland Playwatch -- Video Load Checker');
     console.log('='.repeat(60));
@@ -1241,7 +1171,7 @@ async function main() {
   const browser = await browserEngine.launch({ headless: !DEBUG, slowMo: DEBUG ? 200 : 0 });
   const context = await browser.newContext({ viewport: { width: 1400, height: 900 } });
   const page = await context.newPage();
-  const allResults = [];
+  const allResults: CheckVideoResult[] = [];
   let videoNum = 0;
 
   try {
@@ -1255,9 +1185,10 @@ async function main() {
       videoNum = await scanMusicPage(page, CONFIG.musicUrl, allResults, videoNum);
     }
 
-  } catch (error) {
-    console.error(`\nFatal error: ${error.message}`);
-    if (DEBUG) {
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.error(`\nFatal error: ${message}`);
+    if (DEBUG && error instanceof Error) {
       console.error(error.stack);
       log('Browser stays open 30s for inspection...');
       await page.waitForTimeout(30000);
@@ -1266,7 +1197,7 @@ async function main() {
     await browser.close();
   }
 
-  // ===== Retry failed/timed out videos =====
+  // Retry failed/timed out videos
   if (CONFIG.retryFailures && allResults.length > 0) {
     const retryTargets = allResults.filter(r => r.status === STATUS.FAIL || r.status === STATUS.TIMEOUT);
     if (retryTargets.length > 0 && retryTargets.length <= 20) {
@@ -1299,7 +1230,6 @@ async function main() {
           const retryResult = await checkVideo(page2, { title: orig.title, section: orig.section }, orig.number, `${allResults.length} (retry)`, orig.page);
           retryResult.page = orig.page;
 
-          // If retry passed, update the original result
           if (retryResult.status === STATUS.PASS) {
             const idx = allResults.findIndex(r => r.number === orig.number);
             if (idx !== -1) {
@@ -1308,8 +1238,9 @@ async function main() {
             }
           }
         }
-      } catch (e) {
-        log(`Retry error: ${e.message}`);
+      } catch (e: unknown) {
+        const message = e instanceof Error ? e.message : String(e);
+        log(`Retry error: ${message}`);
       } finally {
         await browser2.close();
       }

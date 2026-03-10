@@ -2,6 +2,17 @@
 
 let crosscheckData = null;
 
+// Authenticated fetch: adds X-API-Key header if configured
+function apiFetch(url, options) {
+  options = options || {};
+  var apiKey = localStorage.getItem('kl-api-key') || '';
+  if (apiKey) {
+    options.headers = options.headers || {};
+    options.headers['X-API-Key'] = apiKey;
+  }
+  return fetch(url, options);
+}
+
 // ============== Init ==============
 window.addEventListener('DOMContentLoaded', async () => {
   await loadWebsiteResults();
@@ -85,7 +96,7 @@ async function runCrosscheck() {
     const ssId = getSpreadsheetId();
     if (ssId) body.spreadsheetId = ssId;
 
-    const res = await fetch('/api/crosscheck', {
+    const res = await apiFetch('/api/crosscheck', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
@@ -301,7 +312,7 @@ async function applyChanges() {
   btnText.textContent = 'Applying...';
 
   try {
-    const res = await fetch('/api/crosscheck/apply', {
+    const res = await apiFetch('/api/crosscheck/apply', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

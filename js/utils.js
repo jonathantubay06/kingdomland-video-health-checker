@@ -11,6 +11,19 @@ KL.escHtml = function(str) {
 // Convenience alias for global scope (used in inline onclick handlers)
 window.escHtml = KL.escHtml;
 
+// Authenticated fetch: adds X-API-Key header if configured in localStorage
+KL.apiFetch = function(url, options) {
+  options = options || {};
+  var apiKey = localStorage.getItem('kl-api-key') || '';
+  if (apiKey) {
+    options.headers = options.headers || {};
+    if (typeof options.headers === 'object' && !(options.headers instanceof Headers)) {
+      options.headers['X-API-Key'] = apiKey;
+    }
+  }
+  return fetch(url, options);
+};
+
 KL.timeAgo = function(dateStr) {
   if (!dateStr) return 'Never';
   const seconds = Math.floor((Date.now() - new Date(dateStr).getTime()) / 1000);

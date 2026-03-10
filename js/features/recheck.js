@@ -40,7 +40,7 @@ KL.recheckFailedWithCreds = async function(email, password, customTitles) {
     }
   } else {
     try {
-      var res = await fetch('/api/trigger-check', {
+      var res = await KL.apiFetch('/api/trigger-check', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ mode: KL.state.mode, failedOnly: true, titles: titles, email: email, password: password }),

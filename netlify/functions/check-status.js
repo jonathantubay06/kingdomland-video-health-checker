@@ -1,7 +1,12 @@
 // Checks the status of a GitHub Actions workflow run
 // Env vars needed: GITHUB_TOKEN, GITHUB_REPO
 
+const { authGuard } = require('../../lib/auth');
+
 exports.handler = async (event) => {
+  const authError = authGuard(event);
+  if (authError) return authError;
+
   const token = process.env.GITHUB_TOKEN;
   const repo = process.env.GITHUB_REPO;
 

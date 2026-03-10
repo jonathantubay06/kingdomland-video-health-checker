@@ -13,7 +13,7 @@ KL.notifyWebhook = function() {
     timestamp: new Date().toISOString(),
   };
 
-  fetch('/api/webhook-notify', {
+  KL.apiFetch('/api/webhook-notify', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(summary),

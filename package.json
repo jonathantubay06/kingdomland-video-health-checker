@@ -9,6 +9,9 @@
     "check:debug": "node check-videos.js --debug",
     "check:story": "node check-videos.js --story",
     "check:music": "node check-videos.js --music",
+    "check:firefox": "node check-videos.js --browser=firefox",
+    "check:webkit": "node check-videos.js --browser=webkit",
+    "build": "tsc",
     "test": "vitest run",
     "test:watch": "vitest",
     "daily-summary": "node daily-summary.js"
@@ -26,6 +29,12 @@
     "web-push": "^3.6.7"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.4.0",
+    "@types/node-cron": "^3.0.11",
+    "@types/web-push": "^3.6.4",
+    "typescript": "^5.9.3",
     "vitest": "^4.0.18"
   }
 }

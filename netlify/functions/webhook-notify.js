@@ -2,7 +2,12 @@
 // Env vars needed: WEBHOOK_URL (optional — Slack, Discord, or any URL)
 //                  SLACK_WEBHOOK_URL (optional — dedicated Slack webhook for Block Kit)
 
+const { authGuard } = require('../../lib/auth');
+
 exports.handler = async (event) => {
+  const authError = authGuard(event);
+  if (authError) return authError;
+
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method not allowed' };
   }

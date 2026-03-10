@@ -5,6 +5,7 @@
 // Env vars needed: GITHUB_TOKEN, GITHUB_REPO, GSHEET_SPREADSHEET_ID
 
 const { crosscheck } = require('../../crosscheck');
+const { authGuard } = require('../../lib/auth');
 
 async function fetchReportFromGitHub(token, repo) {
   const res = await fetch(
@@ -25,6 +26,9 @@ async function fetchReportFromGitHub(token, repo) {
 }
 
 exports.handler = async (event) => {
+  const authError = authGuard(event);
+  if (authError) return authError;
+
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: JSON.stringify({ error: 'Method not allowed' }) };
   }

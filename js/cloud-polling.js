@@ -23,7 +23,7 @@ KL.startPolling = function() {
 KL.pollCloudStatus = async function() {
   try {
     var url = KL.ghRunId ? '/api/check-status?runId=' + KL.ghRunId : '/api/check-status';
-    var res = await fetch(url);
+    var res = await KL.apiFetch(url);
     if (!res.ok) return;
     var data = await res.json();
     if (data.status === 'in_progress') {
@@ -53,7 +53,7 @@ KL.pollCloudStatus = async function() {
 
 KL.loadCloudReport = async function() {
   try {
-    var res = await fetch('/api/get-report?file=video-report.json');
+    var res = await KL.apiFetch('/api/get-report?file=video-report.json');
     if (!res.ok) return;
     var report = await res.json();
     KL.state.results = report.allResults || [];
@@ -104,7 +104,7 @@ window.closeProgressModal = function() {
 KL.fetchProgress = async function() {
   if (!KL.ghRunId) return;
   try {
-    var res = await fetch('/api/get-progress?runId=' + KL.ghRunId);
+    var res = await KL.apiFetch('/api/get-progress?runId=' + KL.ghRunId);
     if (!res.ok) return;
     var data = await res.json();
     var stepsEl = document.getElementById('modal-steps');

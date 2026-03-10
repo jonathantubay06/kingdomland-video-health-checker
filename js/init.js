@@ -41,7 +41,7 @@ window.addEventListener('DOMContentLoaded', async function() {
   // Cloud mode
   KL.isLocal = false;
   try {
-    var statusRes = await fetch('/api/check-status');
+    var statusRes = await KL.apiFetch('/api/check-status');
     if (statusRes.ok) {
       var ghStatus = await statusRes.json();
       if (ghStatus.status === 'in_progress' || ghStatus.status === 'queued') {

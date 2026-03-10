@@ -1,7 +1,12 @@
 // Cancels a GitHub Actions workflow run
 // Env vars needed: GITHUB_TOKEN, GITHUB_REPO
 
+const { authGuard } = require('../../lib/auth');
+
 exports.handler = async (event) => {
+  const authError = authGuard(event);
+  if (authError) return authError;
+
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method not allowed' };
   }

@@ -1,7 +1,12 @@
 // Proxies "Apply Changes" to the Google Apps Script web app.
 // Env vars needed: GSHEET_WEBAPP_URL (optional, can be sent in request body)
 
+const { authGuard } = require('../../lib/auth');
+
 exports.handler = async (event) => {
+  const authError = authGuard(event);
+  if (authError) return authError;
+
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: JSON.stringify({ error: 'Method not allowed' }) };
   }
