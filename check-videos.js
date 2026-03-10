@@ -19,6 +19,7 @@
 const { chromium } = require('playwright');
 const fs = require('fs');
 const { STATUS, PAGE } = require('./lib/constants');
+const { sendSlackFailureAlert } = require('./lib/slack');
 
 // ============== CONFIG ==============
 const CONFIG = {
@@ -46,6 +47,12 @@ const CONFIG = {
   // Screenshots on failure
   screenshotOnFailure: true,
   screenshotDir: 'screenshots',
+
+  // Performance thresholds (ms)
+  performanceThresholds: {
+    warning: parseInt(process.env.PERF_WARN_MS, 10) || 8000,
+    critical: parseInt(process.env.PERF_CRIT_MS, 10) || 15000,
+  },
 };
 // ====================================
 
@@ -969,11 +976,23 @@ function generateReport(allResults) {
     } catch { /* ignore */ }
   }
 
+  // Performance threshold analysis
+  const perfAlerts = allResults
+    .filter(r => r.loadTimeMs && r.loadTimeMs > CONFIG.performanceThresholds.warning)
+    .map(r => ({
+      title: r.title,
+      section: r.section || '',
+      loadTimeMs: r.loadTimeMs,
+      level: r.loadTimeMs >= CONFIG.performanceThresholds.critical ? 'CRITICAL' : 'WARNING',
+    }))
+    .sort((a, b) => b.loadTimeMs - a.loadTimeMs);
+
   // JSON report
   const report = {
     timestamp: new Date().toISOString(),
     summary: { total: allResults.length, passed: passed.length, failed: failed.length, timeouts: timeouts.length },
     failedVideos: failed.map(r => ({ num: r.number, page: r.page, section: r.section, title: r.title, url: r.url, error: r.error })),
+    performanceAlerts: perfAlerts,
     allResults,
   };
   emit({ type: 'complete', summary: report.summary, allResults: report.allResults });
@@ -1037,6 +1056,25 @@ function generateReport(allResults) {
     }
     fs.writeFileSync('failed-videos.txt', lines.join('\n'));
     log('Saved: failed-videos.txt');
+  }
+
+  // Performance threshold console output
+  if (!JSON_STREAM && perfAlerts.length > 0) {
+    console.log(`\nPERFORMANCE ALERTS (>${CONFIG.performanceThresholds.warning / 1000}s warning, >${CONFIG.performanceThresholds.critical / 1000}s critical):`);
+    console.log('-'.repeat(40));
+    for (const a of perfAlerts) {
+      const icon = a.level === 'CRITICAL' ? '🔴' : '🟡';
+      console.log(`  ${icon} [${a.level}] ${a.title} — ${(a.loadTimeMs / 1000).toFixed(1)}s`);
+    }
+  }
+
+  // Send Slack alert if there are failures or performance issues
+  if (failed.length > 0 || perfAlerts.length > 0) {
+    sendSlackFailureAlert(
+      report.failedVideos,
+      report.summary,
+      perfAlerts
+    ).catch(err => log(`Slack alert failed (non-critical): ${err.message}`));
   }
 }
 

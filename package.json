@@ -10,7 +10,8 @@
     "check:story": "node check-videos.js --story",
     "check:music": "node check-videos.js --music",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "daily-summary": "node daily-summary.js"
   },
   "keywords": [],
   "author": "",

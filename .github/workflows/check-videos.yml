@@ -62,6 +62,9 @@ jobs:
           KL_USERNAME: ${{ secrets.KL_USERNAME }}
           KL_PASSWORD: ${{ secrets.KL_PASSWORD }}
           CHECK_TITLES: ${{ github.event.inputs.titles || '' }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          PERF_WARN_MS: ${{ vars.PERF_WARN_MS || '8000' }}
+          PERF_CRIT_MS: ${{ vars.PERF_CRIT_MS || '15000' }}
         run: |
           MODE="${{ github.event.inputs.mode || 'both' }}"
           ARGS=""
@@ -84,11 +87,20 @@ jobs:
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
         run: |
           if [ -n "$WEBHOOK_URL" ] && [ -f video-report.json ]; then
-            SUMMARY=$(node -e "const r=JSON.parse(require('fs').readFileSync('video-report.json','utf-8'));console.log(JSON.stringify(r.summary))")
+            PAYLOAD=$(node -e "const r=JSON.parse(require('fs').readFileSync('video-report.json','utf-8'));console.log(JSON.stringify({summary:r.summary,performanceAlerts:r.performanceAlerts||[],runId:'${{ github.run_id }}',repo:'${{ github.repository }}'}))")
             curl -s -X POST "$WEBHOOK_URL" \
               -H "Content-Type: application/json" \
-              -d "{\"event\":\"check_complete\",\"summary\":${SUMMARY},\"runId\":\"${{ github.run_id }}\",\"repo\":\"${{ github.repository }}\"}" \
+              -d "$PAYLOAD" \
               || echo "Webhook notification failed (non-critical)"
+          fi
+
+      - name: Send daily summary to Slack
+        if: always()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          if [ -n "$SLACK_WEBHOOK_URL" ] && [ -f video-report.json ]; then
+            node daily-summary.js || echo "Daily summary failed (non-critical)"
           fi
 
       - name: Push report to data branch
