@@ -5,6 +5,7 @@ failed-videos.txt
 previous-report.json
 history.json
 screenshots/
+data/
 .env
 
 # Demo/temp files

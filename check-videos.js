@@ -20,6 +20,7 @@ const { chromium } = require('playwright');
 const fs = require('fs');
 const { STATUS, PAGE } = require('./lib/constants');
 const { sendSlackFailureAlert } = require('./lib/slack');
+const db = require('./lib/db');
 
 // ============== CONFIG ==============
 const CONFIG = {
@@ -998,6 +999,14 @@ function generateReport(allResults) {
   emit({ type: 'complete', summary: report.summary, allResults: report.allResults });
   fs.writeFileSync('video-report.json', JSON.stringify(report, null, 2));
   log('Saved: video-report.json');
+
+  // Save to SQLite database
+  try {
+    db.saveRun(report);
+    log('Saved: SQLite database');
+  } catch (err) {
+    log(`SQLite save failed (non-critical): ${err.message}`);
+  }
 
   // Append to history for trend tracking
   const historyEntry = {

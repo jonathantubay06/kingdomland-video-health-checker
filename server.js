@@ -17,6 +17,7 @@ const path = require('path');
 const fs = require('fs');
 const { crosscheck, applyChanges } = require('./crosscheck');
 const { STATUS, RUN_STATUS } = require('./lib/constants');
+const db = require('./lib/db');
 
 const app = express();
 app.use(express.json());
@@ -419,6 +420,51 @@ app.get('/api/screenshots', (req, res) => {
     res.json(files.map(f => ({ filename: f, url: `/screenshots/${f}` })));
   } catch {
     res.json([]);
+  }
+});
+
+// ============== Video Trending (SQLite) ==============
+
+// Performance trend for a specific video
+app.get('/api/video-trend/:title', (req, res) => {
+  try {
+    const days = parseInt(req.query.days, 10) || 30;
+    const data = db.getPerformanceTrend(req.params.title, days);
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Videos with degrading performance
+app.get('/api/degrading-videos', (req, res) => {
+  try {
+    const days = parseInt(req.query.days, 10) || 14;
+    const data = db.getDegradingVideos(days);
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Video check history from DB (with JSON fallback)
+app.get('/api/video-history/:title', (req, res) => {
+  try {
+    const days = parseInt(req.query.days, 10) || 30;
+    const data = db.getVideoHistory(req.params.title, days);
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Migrate JSON data to SQLite (one-time admin action)
+app.post('/api/db/migrate', (req, res) => {
+  try {
+    const count = db.migrateFromJson();
+    res.json({ status: 'ok', imported: count });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
 });
 
