@@ -1,0 +1,99 @@
+{
+  "timestamp": "2025-06-15T10:30:00.000Z",
+  "summary": {
+    "total": 6,
+    "passed": 4,
+    "failed": 1,
+    "timeouts": 1
+  },
+  "failedVideos": [
+    {
+      "num": 3,
+      "page": "STORY",
+      "section": "Season 1",
+      "title": "Broken Video",
+      "url": "https://go.kingdomlandkids.com/video/3",
+      "error": "Video element not found"
+    }
+  ],
+  "allResults": [
+    {
+      "number": 1,
+      "title": "Welcome Song",
+      "section": "Praise & Worship",
+      "page": "MUSIC",
+      "status": "PASS",
+      "url": "https://go.kingdomlandkids.com/video/1",
+      "loadTimeMs": 2400,
+      "error": "",
+      "hlsSrc": "https://cdn.example.com/1.m3u8",
+      "duration": "3:22",
+      "resolution": "1080p"
+    },
+    {
+      "number": 2,
+      "title": "Happy Day",
+      "section": "Praise & Worship",
+      "page": "MUSIC",
+      "status": "PASS",
+      "url": "https://go.kingdomlandkids.com/video/2",
+      "loadTimeMs": 1800,
+      "error": "",
+      "hlsSrc": "https://cdn.example.com/2.m3u8",
+      "duration": "2:45",
+      "resolution": "1080p"
+    },
+    {
+      "number": 3,
+      "title": "Broken Video",
+      "section": "Season 1",
+      "page": "STORY",
+      "status": "FAIL",
+      "url": "https://go.kingdomlandkids.com/video/3",
+      "loadTimeMs": 0,
+      "error": "Video element not found",
+      "hlsSrc": "",
+      "duration": "",
+      "resolution": ""
+    },
+    {
+      "number": 4,
+      "title": "Noah's Ark",
+      "section": "Season 1",
+      "page": "STORY",
+      "status": "PASS",
+      "url": "https://go.kingdomlandkids.com/video/4",
+      "loadTimeMs": 3100,
+      "error": "",
+      "hlsSrc": "https://cdn.example.com/4.m3u8",
+      "duration": "12:30",
+      "resolution": "720p"
+    },
+    {
+      "number": 5,
+      "title": "Slow Loader",
+      "section": "Season 2",
+      "page": "STORY",
+      "status": "TIMEOUT",
+      "url": "https://go.kingdomlandkids.com/video/5",
+      "loadTimeMs": 20000,
+      "error": "Video load timed out after 20s",
+      "hlsSrc": "",
+      "duration": "",
+      "resolution": ""
+    },
+    {
+      "number": 6,
+      "title": "Joyful Noise",
+      "section": "Hymns",
+      "page": "MUSIC",
+      "status": "PASS",
+      "url": "https://go.kingdomlandkids.com/video/6",
+      "loadTimeMs": 1500,
+      "error": "",
+      "hlsSrc": "https://cdn.example.com/6.m3u8",
+      "duration": "4:10",
+      "resolution": "1080p"
+    }
+  ]
+}

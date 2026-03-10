@@ -8,7 +8,9 @@
     "check": "node check-videos.js",
     "check:debug": "node check-videos.js --debug",
     "check:story": "node check-videos.js --story",
-    "check:music": "node check-videos.js --music"
+    "check:music": "node check-videos.js --music",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +20,8 @@
     "dotenv": "^17.3.1",
     "express": "^4.21.0",
     "playwright": "^1.58.2"
+  },
+  "devDependencies": {
+    "vitest": "^4.0.18"
   }
 }

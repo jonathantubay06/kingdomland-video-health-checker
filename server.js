@@ -509,9 +509,13 @@ app.post('/api/stop', (req, res) => {
 
 // ============== Start ==============
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`\n  Kingdomland Video Checker Dashboard`);
-  console.log(`  ────────────────────────────────────`);
-  console.log(`  Running at: http://localhost:${PORT}`);
-  console.log(`  Press Ctrl+C to stop\n`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`\n  Kingdomland Video Checker Dashboard`);
+    console.log(`  ────────────────────────────────────`);
+    console.log(`  Running at: http://localhost:${PORT}`);
+    console.log(`  Press Ctrl+C to stop\n`);
+  });
+}
+
+module.exports = { app, runState };

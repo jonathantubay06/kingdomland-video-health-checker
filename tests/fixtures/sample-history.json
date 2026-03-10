@@ -1,0 +1,38 @@
+[
+  {
+    "timestamp": "2025-06-13T08:00:00.000Z",
+    "total": 125,
+    "passed": 123,
+    "failed": 1,
+    "timeouts": 1,
+    "avgLoadTimeMs": 2800,
+    "videos": [
+      { "title": "Welcome Song", "section": "Praise & Worship", "page": "MUSIC", "status": "PASS", "loadTimeMs": 2400, "error": "" },
+      { "title": "Broken Video", "section": "Season 1", "page": "STORY", "status": "FAIL", "loadTimeMs": 0, "error": "Video element not found" }
+    ]
+  },
+  {
+    "timestamp": "2025-06-14T08:00:00.000Z",
+    "total": 125,
+    "passed": 124,
+    "failed": 0,
+    "timeouts": 1,
+    "avgLoadTimeMs": 2600,
+    "videos": [
+      { "title": "Welcome Song", "section": "Praise & Worship", "page": "MUSIC", "status": "PASS", "loadTimeMs": 2200, "error": "" },
+      { "title": "Broken Video", "section": "Season 1", "page": "STORY", "status": "PASS", "loadTimeMs": 3100, "error": "" }
+    ]
+  },
+  {
+    "timestamp": "2025-06-15T08:00:00.000Z",
+    "total": 125,
+    "passed": 122,
+    "failed": 2,
+    "timeouts": 1,
+    "avgLoadTimeMs": 3100,
+    "videos": [
+      { "title": "Welcome Song", "section": "Praise & Worship", "page": "MUSIC", "status": "PASS", "loadTimeMs": 2500, "error": "" },
+      { "title": "Broken Video", "section": "Season 1", "page": "STORY", "status": "FAIL", "loadTimeMs": 0, "error": "Video element not found" }
+    ]
+  }
+]
