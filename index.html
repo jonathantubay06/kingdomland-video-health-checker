@@ -383,8 +383,36 @@
   <div id="print-report"></div>
 
   <!-- ============== JAVASCRIPT ============== -->
+  <!-- Core (load order matters) -->
   <script src="js/constants.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/ui-updates.js"></script>
+  <script src="js/section-breakdown.js"></script>
+  <script src="js/results-table.js"></script>
+  <script src="js/pagination.js"></script>
+  <script src="js/downloads.js"></script>
+  <script src="js/sse.js"></script>
+  <script src="js/cloud-polling.js"></script>
+  <script src="js/run-control.js"></script>
+  <script src="js/complete-state.js"></script>
+  <!-- Features -->
+  <script src="js/features/health.js"></script>
+  <script src="js/features/recheck.js"></script>
+  <script src="js/features/trend-chart.js"></script>
+  <script src="js/features/diff-report.js"></script>
+  <script src="js/features/auto-refresh.js"></script>
+  <script src="js/features/uptime.js"></script>
+  <script src="js/features/video-detail.js"></script>
+  <script src="js/features/watchlist.js"></script>
+  <script src="js/features/sound.js"></script>
+  <script src="js/features/section-recheck.js"></script>
+  <script src="js/features/comparison.js"></script>
+  <script src="js/features/shareable-report.js"></script>
+  <script src="js/features/heatmap.js"></script>
+  <script src="js/features/webhook.js"></script>
+  <!-- Init (must be last) -->
+  <script src="js/init.js"></script>
   <script>
     // Register Service Worker for PWA
     if ('serviceWorker' in navigator) {
