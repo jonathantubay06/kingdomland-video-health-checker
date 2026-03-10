@@ -16,8 +16,19 @@ const { spawn } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 const { crosscheck, applyChanges } = require('./crosscheck');
+const cron = require('node-cron');
+const webpush = require('web-push');
 const { STATUS, RUN_STATUS } = require('./lib/constants');
 const db = require('./lib/db');
+
+// Configure VAPID for push notifications
+if (process.env.VAPID_PUBLIC_KEY && process.env.VAPID_PRIVATE_KEY) {
+  webpush.setVapidDetails(
+    process.env.VAPID_SUBJECT || 'mailto:admin@kingdomlandkids.com',
+    process.env.VAPID_PUBLIC_KEY,
+    process.env.VAPID_PRIVATE_KEY
+  );
+}
 
 const app = express();
 app.use(express.json());
@@ -468,6 +479,136 @@ app.post('/api/db/migrate', (req, res) => {
   }
 });
 
+// ============== Schedule Config ==============
+let scheduledTask = null;
+const scheduleConfigPath = path.join(__dirname, 'data', 'schedule-config.json');
+
+function loadScheduleConfig() {
+  try {
+    if (fs.existsSync(scheduleConfigPath)) {
+      return JSON.parse(fs.readFileSync(scheduleConfigPath, 'utf-8'));
+    }
+  } catch { /* ignore */ }
+  return { enabled: false, cron: '0 6 * * *' };
+}
+
+function saveScheduleConfig(config) {
+  const dir = path.dirname(scheduleConfigPath);
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(scheduleConfigPath, JSON.stringify(config, null, 2));
+}
+
+function applySchedule(config) {
+  if (scheduledTask) { scheduledTask.stop(); scheduledTask = null; }
+  if (!config.enabled || !config.cron) return;
+  if (!cron.validate(config.cron)) { console.error('Invalid cron:', config.cron); return; }
+  scheduledTask = cron.schedule(config.cron, () => {
+    if (runState.status === RUN_STATUS.RUNNING) return; // skip if already running
+    console.log('[Scheduled] Auto-check triggered at', new Date().toISOString());
+    // Use saved credentials from env or skip
+    const email = process.env.KL_EMAIL;
+    const password = process.env.KL_PASSWORD;
+    if (!email || !password) {
+      console.log('[Scheduled] No KL_EMAIL/KL_PASSWORD set, skipping scheduled check');
+      return;
+    }
+    const child = spawn('node', ['check-videos.js', '--mode=both'], {
+      cwd: __dirname,
+      env: { ...process.env, KL_EMAIL: email, KL_PASSWORD: password },
+    });
+    child.stdout.on('data', d => process.stdout.write('[Scheduled] ' + d));
+    child.stderr.on('data', d => process.stderr.write('[Scheduled] ' + d));
+  });
+  console.log('Schedule active:', config.cron);
+}
+
+app.get('/api/config/schedule', (req, res) => {
+  res.json(loadScheduleConfig());
+});
+
+app.post('/api/config/schedule', (req, res) => {
+  const config = { enabled: !!req.body.enabled, cron: req.body.cron || '0 6 * * *' };
+  if (config.cron && !cron.validate(config.cron)) {
+    return res.status(400).json({ error: 'Invalid cron expression' });
+  }
+  saveScheduleConfig(config);
+  applySchedule(config);
+  res.json({ status: 'ok', config });
+});
+
+// ============== Push Notifications ==============
+const subscriptionsPath = path.join(__dirname, 'data', 'push-subscriptions.json');
+
+function loadSubscriptions() {
+  try {
+    if (fs.existsSync(subscriptionsPath)) {
+      return JSON.parse(fs.readFileSync(subscriptionsPath, 'utf-8'));
+    }
+  } catch { /* ignore */ }
+  return [];
+}
+
+function saveSubscriptions(subs) {
+  const dir = path.dirname(subscriptionsPath);
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(subscriptionsPath, JSON.stringify(subs, null, 2));
+}
+
+app.get('/api/notifications/vapid-key', (req, res) => {
+  if (!process.env.VAPID_PUBLIC_KEY) {
+    return res.status(404).json({ error: 'VAPID keys not configured' });
+  }
+  res.json({ publicKey: process.env.VAPID_PUBLIC_KEY });
+});
+
+app.post('/api/notifications/subscribe', (req, res) => {
+  const { subscription, prefs } = req.body;
+  if (!subscription || !subscription.endpoint) {
+    return res.status(400).json({ error: 'Invalid subscription' });
+  }
+  const subs = loadSubscriptions();
+  const existing = subs.findIndex(s => s.subscription.endpoint === subscription.endpoint);
+  if (existing !== -1) {
+    subs[existing] = { subscription, prefs: prefs || { failures: true } };
+  } else {
+    subs.push({ subscription, prefs: prefs || { failures: true } });
+  }
+  saveSubscriptions(subs);
+  res.json({ status: 'subscribed' });
+});
+
+app.post('/api/notifications/unsubscribe', (req, res) => {
+  const { endpoint } = req.body;
+  if (!endpoint) return res.status(400).json({ error: 'No endpoint' });
+  const subs = loadSubscriptions().filter(s => s.subscription.endpoint !== endpoint);
+  saveSubscriptions(subs);
+  res.json({ status: 'unsubscribed' });
+});
+
+app.put('/api/notifications/settings', (req, res) => {
+  // Update prefs for all subscriptions from this client (simplified: updates all)
+  const { prefs } = req.body;
+  const subs = loadSubscriptions();
+  subs.forEach(s => { s.prefs = prefs; });
+  saveSubscriptions(subs);
+  res.json({ status: 'ok' });
+});
+
+app.post('/api/notifications/test', (req, res) => {
+  if (!process.env.VAPID_PUBLIC_KEY) {
+    return res.status(404).json({ error: 'VAPID keys not configured' });
+  }
+  const payload = JSON.stringify({
+    title: 'Video Checker Test',
+    body: 'Push notifications are working!',
+    icon: '/icons/icon-192.png',
+    tag: 'test',
+  });
+  const subs = loadSubscriptions();
+  Promise.all(subs.map(s => webpush.sendNotification(s.subscription, payload).catch(() => {})));
+  res.json({ status: 'sent', count: subs.length });
+});
+
 // ============== Cross-check Endpoints ==============
 
 // Run cross-check comparison
@@ -561,6 +702,8 @@ if (require.main === module) {
     console.log(`  ────────────────────────────────────`);
     console.log(`  Running at: http://localhost:${PORT}`);
     console.log(`  Press Ctrl+C to stop\n`);
+    // Apply saved schedule on startup
+    applySchedule(loadScheduleConfig());
   });
 }
 

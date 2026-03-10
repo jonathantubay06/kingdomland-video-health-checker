@@ -13,8 +13,9 @@ KL.appendResultRow = function(r) {
 KL.createResultRow = function(r) {
   const tr = document.createElement('tr');
   tr.dataset.num = r.number;
+  if (KL.isFalsePositive && KL.isFalsePositive(r.title)) tr.classList.add('false-positive');
   tr.onclick = function(e) {
-    if (e.target.classList.contains('star-btn') || e.target.classList.contains('video-title-link')) return;
+    if (e.target.classList.contains('star-btn') || e.target.classList.contains('video-title-link') || e.target.classList.contains('row-checkbox')) return;
     KL.toggleDetail(r.number);
   };
   const loadTime = r.loadTimeMs ? (r.loadTimeMs / 1000).toFixed(1) + 's' : '-';
@@ -36,7 +37,10 @@ KL.createResultRow = function(r) {
     ? '<span class="screenshot-indicator" title="Has screenshot">&#128247;</span>'
     : '';
 
+  const isSelected = KL.state.selectedTitles && KL.state.selectedTitles.indexOf(r.title) !== -1;
+
   tr.innerHTML = `
+    <td><input type="checkbox" class="row-checkbox" data-title="${KL.escHtml(r.title)}" onclick="event.stopPropagation();KL.toggleBulkSelect(this)" ${isSelected ? 'checked' : ''}></td>
     <td><button class="${starClass}" data-title="${KL.escHtml(r.title)}" onclick="event.stopPropagation();toggleWatchlist('${KL.escHtml(r.title).replace(/'/g, "\\'")}')">${starChar}</button></td>
     <td>${r.number}</td>
     <td><strong><span class="video-title-link" onclick="event.stopPropagation();showVideoDetail('${KL.escHtml(r.title).replace(/'/g, "\\'")}')">${KL.escHtml(r.title)}</span></strong> ${screenshotIcon}</td>
@@ -64,7 +68,7 @@ KL.toggleDetail = function(num) {
   detailRow.id = 'detail-' + num;
   detailRow.className = 'detail-row';
   detailRow.innerHTML = `
-    <td colspan="10">
+    <td colspan="11">
       <div class="detail-content">
         <div><strong>URL:</strong> <a href="${KL.escHtml(r.url || '')}" target="_blank">${KL.escHtml(r.url || 'N/A')}</a></div>
         <div><strong>HLS Source:</strong> ${KL.escHtml(r.hlsSrc || 'N/A')}</div>

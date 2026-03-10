@@ -1,4 +1,4 @@
-const CACHE_NAME = 'kl-checker-v3';
+const CACHE_NAME = 'kl-checker-v4';
 const STATIC_ASSETS = [
   '/',
   '/css/styles.css',
@@ -29,6 +29,9 @@ const STATIC_ASSETS = [
   '/js/features/shareable-report.js',
   '/js/features/heatmap.js',
   '/js/features/webhook.js',
+  '/js/features/bulk-actions.js',
+  '/js/features/schedule-config.js',
+  '/js/features/push-notifications.js',
   '/js/init.js',
   '/js/theme.js',
   '/manifest.json',
@@ -69,6 +72,38 @@ self.addEventListener('fetch', (e) => {
         return response;
       }).catch(() => cached);
       return cached || fetchPromise;
+    })
+  );
+});
+
+// Push notifications
+self.addEventListener('push', (e) => {
+  if (!e.data) return;
+  try {
+    const data = e.data.json();
+    e.waitUntil(
+      self.registration.showNotification(data.title || 'Video Checker', {
+        body: data.body || '',
+        icon: data.icon || '/icons/icon-192.png',
+        badge: '/icons/icon-96.png',
+        tag: data.tag || 'video-checker',
+        data: data.url || '/',
+      })
+    );
+  } catch { /* ignore malformed push */ }
+});
+
+self.addEventListener('notificationclick', (e) => {
+  e.notification.close();
+  const url = e.notification.data || '/';
+  e.waitUntil(
+    clients.matchAll({ type: 'window', includeUncontrolled: true }).then(windowClients => {
+      for (const client of windowClients) {
+        if (client.url.includes(self.location.origin) && 'focus' in client) {
+          return client.focus();
+        }
+      }
+      return clients.openWindow(url);
     })
   );
 });

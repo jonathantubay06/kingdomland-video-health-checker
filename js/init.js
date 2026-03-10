@@ -14,6 +14,12 @@ window.addEventListener('DOMContentLoaded', async function() {
   // Initialize sound UI
   KL.updateSoundUI();
 
+  // Initialize schedule settings UI
+  if (KL.initScheduleUI) KL.initScheduleUI();
+
+  // Initialize push notifications UI
+  if (KL.initPushUI) KL.initPushUI();
+
   // Try local mode first
   try {
     var res = await fetch('/api/status');

@@ -215,6 +215,7 @@
         <table>
           <thead>
             <tr>
+              <th style="width:28px"><input type="checkbox" id="select-all-checkbox" title="Select all" onclick="KL.selectAllVisible(this.checked)"></th>
               <th style="width:32px" title="Watchlist">&#9734;</th>
               <th onclick="sortBy('number')" data-col="number"># <span class="sort-arrow"></span></th>
               <th onclick="sortBy('title')" data-col="title">Title <span class="sort-arrow"></span></th>
@@ -251,6 +252,12 @@
     <!-- Check Comparison View -->
     <div class="comparison-section" id="comparison-section" style="display:none"></div>
 
+    <!-- Schedule Settings -->
+    <div class="settings-section" id="schedule-section" style="display:none"></div>
+
+    <!-- Push Notifications -->
+    <div class="settings-section" id="push-notifications-section" style="display:none"></div>
+
     <!-- Download Section -->
     <div class="download-section" id="download-section">
       <h2>Export Report</h2>
@@ -276,6 +283,16 @@
           Share as HTML
         </button>
       </div>
+    </div>
+
+    <!-- Bulk Actions Bar -->
+    <div class="bulk-actions-bar" id="bulk-actions-bar" style="display:none">
+      <span id="bulk-count">0 selected</span>
+      <button class="btn btn-sm" onclick="KL.selectAllFailed()" title="Select all failed videos">Select Failed</button>
+      <button class="btn btn-sm btn-run" onclick="KL.bulkRecheck()" title="Recheck selected videos">Recheck Selected</button>
+      <button class="btn btn-sm" onclick="KL.bulkMarkFalsePositive()" title="Mark as false positive">Mark False Positive</button>
+      <button class="btn btn-sm" onclick="KL.bulkClearFalsePositive()" title="Clear false positive">Clear False Positive</button>
+      <button class="btn btn-sm" onclick="KL.clearBulkSelection()" title="Clear selection">&times;</button>
     </div>
 
     <!-- Empty State -->
@@ -411,6 +428,9 @@
   <script src="js/features/shareable-report.js"></script>
   <script src="js/features/heatmap.js"></script>
   <script src="js/features/webhook.js"></script>
+  <script src="js/features/bulk-actions.js"></script>
+  <script src="js/features/schedule-config.js"></script>
+  <script src="js/features/push-notifications.js"></script>
   <!-- Init (must be last) -->
   <script src="js/init.js"></script>
   <script>
