@@ -19,9 +19,14 @@ on:
         default: ''
         type: string
 
-  # Scheduled auto-checks: daily at 7 AM PHT (11 PM UTC previous day)
+  # Scheduled auto-checks: 3x daily (Philippine Time = UTC+8)
+  #   Morning:  8 AM PHT  = 0:00 UTC
+  #   Lunch:   12 PM PHT  = 4:00 UTC
+  #   Night:    8 PM PHT  = 12:00 UTC
   schedule:
-    - cron: '0 23 * * *'
+    - cron: '0 0 * * *'
+    - cron: '0 4 * * *'
+    - cron: '0 12 * * *'
 
 permissions:
   contents: write
