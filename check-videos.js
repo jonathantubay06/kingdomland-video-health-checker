@@ -578,6 +578,7 @@ async function collectMusicCards(page) {
 
 /**
  * MUSIC PAGE: Load all cards by clicking EPISODES tab + "View more" until done.
+ * Also pre-scrolls carousel sections so carousel cards are in the DOM.
  * Used before trying to find/click a specific card after navigating back.
  */
 async function loadAllMusicCards(page) {
@@ -606,6 +607,17 @@ async function loadAllMusicCards(page) {
     const clicked = await clickViewMore(page);
     if (!clicked) break;
     await page.waitForTimeout(1500);
+  }
+
+  // Also pre-scroll carousel sections so carousel-only cards are in the DOM
+  // (e.g. "Sing-a-long" section with Baby Shark)
+  const sectionNames = await getSectionNames(page);
+  for (const secName of sectionNames) {
+    for (let clicks = 0; clicks < 20; clicks++) {
+      const arrowClicked = await clickCarouselArrow(page, secName, 'next');
+      if (!arrowClicked) break;
+      await page.waitForTimeout(500);
+    }
   }
 
   await page.evaluate(() => window.scrollTo(0, 0));
@@ -697,11 +709,13 @@ async function findAndClickCardStory(page, title, section) {
 
 /**
  * MUSIC PAGE: Click "View more" until the card appears, then click it.
+ * Falls back to carousel arrow navigation if the card is in a carousel section
+ * (e.g. "Sing-a-long") that isn't loaded via the grid/View-more pattern.
  */
-async function findAndClickCardMusic(page, title) {
+async function findAndClickCardMusic(page, title, section) {
   if (await tryClickCard(page, title)) return true;
 
-  // Card not loaded yet — scroll and click "View more" until it appears
+  // Strategy 1: Grid-based — scroll and click "View more" until it appears
   for (let i = 0; i < 30; i++) {
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     await page.waitForTimeout(500);
@@ -714,6 +728,31 @@ async function findAndClickCardMusic(page, title) {
     await page.waitForTimeout(1500);
     if (await tryClickCard(page, title)) return true;
   }
+
+  // Strategy 2: Carousel-based — card may be in a carousel section (like Sing-a-long).
+  // Navigate carousel arrows for the card's section until it appears.
+  if (section) {
+    // First try the card's own section
+    for (let i = 0; i < 40; i++) {
+      const arrowClicked = await clickCarouselArrow(page, section, 'next');
+      if (!arrowClicked) break;
+      await page.waitForTimeout(800);
+      if (await tryClickCard(page, title)) return true;
+    }
+  }
+
+  // Strategy 3: Try all visible carousel sections (card's section name might differ slightly)
+  const sectionNames = await getSectionNames(page);
+  for (const secName of sectionNames) {
+    if (secName === section) continue; // already tried above
+    for (let i = 0; i < 40; i++) {
+      const arrowClicked = await clickCarouselArrow(page, secName, 'next');
+      if (!arrowClicked) break;
+      await page.waitForTimeout(800);
+      if (await tryClickCard(page, title)) return true;
+    }
+  }
+
   return false;
 }
 
@@ -740,7 +779,7 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = PAGE.STOR
 
   try {
     const clicked = pageType === PAGE.MUSIC
-      ? await findAndClickCardMusic(page, card.title)
+      ? await findAndClickCardMusic(page, card.title, card.section)
       : await findAndClickCardStory(page, card.title, card.section);
 
     if (!clicked) {
