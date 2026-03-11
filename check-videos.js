@@ -609,15 +609,14 @@ async function loadAllMusicCards(page) {
     await page.waitForTimeout(1500);
   }
 
-  // Also pre-scroll carousel sections so carousel-only cards are in the DOM
-  // (e.g. "Sing-a-long" section with Baby Shark)
-  const sectionNames = await getSectionNames(page);
-  for (const secName of sectionNames) {
-    for (let clicks = 0; clicks < 20; clicks++) {
-      const arrowClicked = await clickCarouselArrow(page, secName, 'next');
-      if (!arrowClicked) break;
-      await page.waitForTimeout(500);
-    }
+  // Progressive scroll to trigger lazy-loaded content (large card grids).
+  // Some pages only render cards when they are near the viewport.
+  const pageHeight = await page.evaluate(() => document.body.scrollHeight);
+  const viewportHeight = await page.evaluate(() => window.innerHeight);
+  const step = Math.floor(viewportHeight * 0.6);
+  for (let y = 0; y <= pageHeight; y += step) {
+    await page.evaluate((scrollY) => window.scrollTo(0, scrollY), y);
+    await page.waitForTimeout(300);
   }
 
   await page.evaluate(() => window.scrollTo(0, 0));
@@ -708,20 +707,22 @@ async function findAndClickCardStory(page, title, section) {
 }
 
 /**
- * MUSIC PAGE: Click "View more" until the card appears, then click it.
- * Falls back to carousel arrow navigation if the card is in a carousel section
- * (e.g. "Sing-a-long") that isn't loaded via the grid/View-more pattern.
+ * MUSIC PAGE: Find and click a card by progressively scrolling through the page.
+ *
+ * Modern music page uses large cards in a grid layout. Cards may only be
+ * rendered in the DOM when they are near the viewport (virtual/lazy rendering).
+ * We must scroll step-by-step through the entire page, checking at each
+ * position, rather than assuming all cards exist in the DOM simultaneously.
  */
 async function findAndClickCardMusic(page, title, section) {
   if (await tryClickCard(page, title)) return true;
 
-  // Strategy 1: Grid-based — scroll and click "View more" until it appears
+  // Strategy 1: Grid-based — scroll and click "View more" to load more content
   for (let i = 0; i < 30; i++) {
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     await page.waitForTimeout(500);
     const hasMore = await clickViewMore(page);
     if (!hasMore) {
-      // No "View more" button, but maybe card loaded via scroll
       if (await tryClickCard(page, title)) return true;
       break;
     }
@@ -729,24 +730,28 @@ async function findAndClickCardMusic(page, title, section) {
     if (await tryClickCard(page, title)) return true;
   }
 
-  // Strategy 2: Carousel-based — card may be in a carousel section (like Sing-a-long).
-  // Navigate carousel arrows for the card's section until it appears.
-  if (section) {
-    // First try the card's own section
-    for (let i = 0; i < 40; i++) {
-      const arrowClicked = await clickCarouselArrow(page, section, 'next');
-      if (!arrowClicked) break;
-      await page.waitForTimeout(800);
-      if (await tryClickCard(page, title)) return true;
-    }
+  // Strategy 2: Progressive scroll — handle large cards and virtual/lazy rendering.
+  // Cards may only exist in the DOM when near the viewport. Scroll from top to
+  // bottom in steps, checking for the card at each position.
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForTimeout(300);
+
+  const dims = await page.evaluate(() => ({
+    pageHeight: document.body.scrollHeight,
+    viewportHeight: window.innerHeight
+  }));
+  const step = Math.floor(dims.viewportHeight * 0.5); // 50% viewport overlap
+
+  for (let scrollY = 0; scrollY <= dims.pageHeight + step; scrollY += step) {
+    await page.evaluate((y) => window.scrollTo(0, y), scrollY);
+    await page.waitForTimeout(400);
+    if (await tryClickCard(page, title)) return true;
   }
 
-  // Strategy 3: Try all visible carousel sections (card's section name might differ slightly)
-  const sectionNames = await getSectionNames(page);
-  for (const secName of sectionNames) {
-    if (secName === section) continue; // already tried above
+  // Strategy 3: Carousel fallback — in case a section uses carousel arrows
+  if (section) {
     for (let i = 0; i < 40; i++) {
-      const arrowClicked = await clickCarouselArrow(page, secName, 'next');
+      const arrowClicked = await clickCarouselArrow(page, section, 'next');
       if (!arrowClicked) break;
       await page.waitForTimeout(800);
       if (await tryClickCard(page, title)) return true;
