@@ -127,7 +127,7 @@ jobs:
           # Switch to data branch (create if needed)
           git fetch origin data 2>/dev/null || true
           if git rev-parse --verify origin/data >/dev/null 2>&1; then
-            git checkout data
+            git switch data
             git rm -rf . 2>/dev/null || true
           else
             git checkout --orphan data
