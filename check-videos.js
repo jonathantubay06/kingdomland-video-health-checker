@@ -571,6 +571,11 @@ async function collectMusicCards(page) {
     }
   }
 
+  // Scroll back to top so the first card (e.g. Baby Shark) is visible
+  // when checking starts — avoids first-attempt failure from stale scroll position
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForTimeout(300);
+
   log(`      -> ${allCards.length} total videos found after full scan`);
   emit({ type: 'discovery-complete', page: PAGE.MUSIC, cards: allCards, total: allCards.length });
   return allCards;
