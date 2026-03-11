@@ -7540,5 +7540,1031 @@
         "error": ""
       }
     ]
+  },
+  {
+    "timestamp": "2026-03-11T03:13:41.784Z",
+    "total": 127,
+    "passed": 109,
+    "failed": 18,
+    "timeouts": 0,
+    "avgLoadTimeMs": 2390,
+    "videos": [
+      {
+        "title": "Unicatz Homie Big Surprise",
+        "section": "Fun Zone",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4588,
+        "error": ""
+      },
+      {
+        "title": "Kembe How Money Works",
+        "section": "Fun Zone",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 2026,
+        "error": ""
+      },
+      {
+        "title": "Kembe Water Cycles",
+        "section": "Fun Zone",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1766,
+        "error": ""
+      },
+      {
+        "title": "12th Street Counting by 2s and 3s",
+        "section": "Fun Zone",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1707,
+        "error": ""
+      },
+      {
+        "title": "12th Street Counting By 2s",
+        "section": "Fun Zone",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1810,
+        "error": ""
+      },
+      {
+        "title": "12th Street Counting By 3s",
+        "section": "Fun Zone",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1785,
+        "error": ""
+      },
+      {
+        "title": "Gabby Globber (GG) Planets",
+        "section": "Fun Zone",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1775,
+        "error": ""
+      },
+      {
+        "title": "Kembe Tries Playing",
+        "section": "Fun Zone",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 2251,
+        "error": ""
+      },
+      {
+        "title": "Gabby Action Short",
+        "section": "Fun Zone",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1698,
+        "error": ""
+      },
+      {
+        "title": "Gabby Galactic Fire Cats Safety",
+        "section": "Fun Zone",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1768,
+        "error": ""
+      },
+      {
+        "title": "Unicatz Musical Chairs",
+        "section": "Fun Zone",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4608,
+        "error": ""
+      },
+      {
+        "title": "Black History Beats (BHB) Jackie Robinson",
+        "section": "Fun Zone",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4168,
+        "error": ""
+      },
+      {
+        "title": "Black History Beats (BHB) Bessie Coleman",
+        "section": "Fun Zone",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4170,
+        "error": ""
+      },
+      {
+        "title": "Black History Beats (BHB) MLK",
+        "section": "Fun Zone",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4064,
+        "error": ""
+      },
+      {
+        "title": "Unicatz Music Video",
+        "section": "Fun Zone",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4194,
+        "error": ""
+      },
+      {
+        "title": "Unicatz Strut Your Stuff",
+        "section": "Fun Zone",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4123,
+        "error": ""
+      },
+      {
+        "title": "Kembe Sight Words Part 3",
+        "section": "Fun Zone",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4162,
+        "error": ""
+      },
+      {
+        "title": "Kembe Sight Words Part 2",
+        "section": "Fun Zone",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4211,
+        "error": ""
+      },
+      {
+        "title": "Kembe Sight Words Part 1",
+        "section": "Fun Zone",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4208,
+        "error": ""
+      },
+      {
+        "title": "Unicatz Transformations",
+        "section": "Fun Zone",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4190,
+        "error": ""
+      },
+      {
+        "title": "12th Street",
+        "section": "Fun Zone",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4746,
+        "error": ""
+      },
+      {
+        "title": "Daniel and The Lions Den | S2 EP14",
+        "section": "Marvelous Light Series",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 2117,
+        "error": ""
+      },
+      {
+        "title": "Creation | S2 EP15",
+        "section": "Marvelous Light Series",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1749,
+        "error": ""
+      },
+      {
+        "title": "Adam and Eve | S2 EP16",
+        "section": "Marvelous Light Series",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 2419,
+        "error": ""
+      },
+      {
+        "title": "Zachaus | S2 EP17",
+        "section": "Marvelous Light Series",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 2115,
+        "error": ""
+      },
+      {
+        "title": "Paul and Saul | S2 EP19",
+        "section": "Marvelous Light Series",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1568,
+        "error": ""
+      },
+      {
+        "title": "Marvelous Light Episode 4 David Vs Goliath Part 2",
+        "section": "Marvelous Light Series",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 2265,
+        "error": ""
+      },
+      {
+        "title": "Marvelous Light Episode 3 David Vs Goliath Part 1",
+        "section": "Marvelous Light Series",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1816,
+        "error": ""
+      },
+      {
+        "title": "Marvelous Light Episode 2 Moses Part 2",
+        "section": "Marvelous Light Series",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1815,
+        "error": ""
+      },
+      {
+        "title": "Marvelous Light Episode 1 Moses Part 1",
+        "section": "Marvelous Light Series",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 2274,
+        "error": ""
+      },
+      {
+        "title": "Grandpa 10 Commandments",
+        "section": "Marvelous Light Series",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1700,
+        "error": ""
+      },
+      {
+        "title": "Noah",
+        "section": "Bible Adventures",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1735,
+        "error": ""
+      },
+      {
+        "title": "Moses",
+        "section": "Bible Adventures",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1733,
+        "error": ""
+      },
+      {
+        "title": "Great God",
+        "section": "Bible Adventures",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 2177,
+        "error": ""
+      },
+      {
+        "title": "In His Hand",
+        "section": "Bible Adventures",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1783,
+        "error": ""
+      },
+      {
+        "title": "Introduction Bible Fruits of Virtue",
+        "section": "Bible Adventures",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1730,
+        "error": ""
+      },
+      {
+        "title": "Gentleness",
+        "section": "Bible Adventures",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1631,
+        "error": ""
+      },
+      {
+        "title": "Goodness",
+        "section": "Bible Adventures",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1721,
+        "error": ""
+      },
+      {
+        "title": "Faithfulness",
+        "section": "Bible Adventures",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 2058,
+        "error": ""
+      },
+      {
+        "title": "Love",
+        "section": "Bible Adventures",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1786,
+        "error": ""
+      },
+      {
+        "title": "John the Baptist",
+        "section": "Bible Adventures",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1677,
+        "error": ""
+      },
+      {
+        "title": "Jesus Miracles",
+        "section": "Bible Adventures",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4047,
+        "error": ""
+      },
+      {
+        "title": "Easter",
+        "section": "Bible Adventures",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4149,
+        "error": ""
+      },
+      {
+        "title": "Alphabots OO Song",
+        "section": "ABC",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 2056,
+        "error": ""
+      },
+      {
+        "title": "Alien In My House",
+        "section": "ABC",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 2054,
+        "error": ""
+      },
+      {
+        "title": "Auntie Bois Gift Motion Book",
+        "section": "ABC",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1716,
+        "error": ""
+      },
+      {
+        "title": "Brave Bora Motion Book",
+        "section": "ABC",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1663,
+        "error": ""
+      },
+      {
+        "title": "Great Tidy up",
+        "section": "ABC",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 2251,
+        "error": ""
+      },
+      {
+        "title": "AlphaBots Letter B",
+        "section": "ABC",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 2098,
+        "error": ""
+      },
+      {
+        "title": "AlphaBots Letter A",
+        "section": "ABC",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1786,
+        "error": ""
+      },
+      {
+        "title": "Meera and Ameera",
+        "section": "ABC",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 2256,
+        "error": ""
+      },
+      {
+        "title": "Alphabots Letter C",
+        "section": "ABC",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1967,
+        "error": ""
+      },
+      {
+        "title": "Chiu's Power Read-Along | ABCs | KingdomLand",
+        "section": "ABC",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 2120,
+        "error": ""
+      },
+      {
+        "title": "Lost in the Internet",
+        "section": "ABC",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4556,
+        "error": ""
+      },
+      {
+        "title": "Disagreement of Occupations | ABCs",
+        "section": "ABC",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4139,
+        "error": ""
+      },
+      {
+        "title": "Unicatz Alphabet Song",
+        "section": "ABC",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4215,
+        "error": ""
+      },
+      {
+        "title": "H3 5 Vowels",
+        "section": "ABC",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4184,
+        "error": ""
+      },
+      {
+        "title": "Malar's Big House Read-Along",
+        "section": "ABC",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4074,
+        "error": ""
+      },
+      {
+        "title": "MFT ABC Song",
+        "section": "ABC",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4160,
+        "error": ""
+      },
+      {
+        "title": "AlphaBots the Alphabet Part 1",
+        "section": "ABC",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4193,
+        "error": ""
+      },
+      {
+        "title": "AlphaBots the Alphabet Part 2",
+        "section": "ABC",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4160,
+        "error": ""
+      },
+      {
+        "title": "H3 ABC",
+        "section": "ABC",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4217,
+        "error": ""
+      },
+      {
+        "title": "5 Monkeys Lyric Video",
+        "section": "Numbers",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1687,
+        "error": ""
+      },
+      {
+        "title": "Adding Mixed Numbers",
+        "section": "Numbers",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1657,
+        "error": ""
+      },
+      {
+        "title": "Algebraic Thinking",
+        "section": "Numbers",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1783,
+        "error": ""
+      },
+      {
+        "title": "Comparing Fractions",
+        "section": "Numbers",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 2227,
+        "error": ""
+      },
+      {
+        "title": "Computation and Algebraic Thinking",
+        "section": "Numbers",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1673,
+        "error": ""
+      },
+      {
+        "title": "Math With Money",
+        "section": "Numbers",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1571,
+        "error": ""
+      },
+      {
+        "title": "Modeling Multiplication",
+        "section": "Numbers",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1697,
+        "error": ""
+      },
+      {
+        "title": "Number Lines",
+        "section": "Numbers",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1720,
+        "error": ""
+      },
+      {
+        "title": "Number Sense",
+        "section": "Numbers",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1938,
+        "error": ""
+      },
+      {
+        "title": "H3 Colors and Numbers",
+        "section": "Numbers",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1640,
+        "error": ""
+      },
+      {
+        "title": "Gabby Globber (GG) Counts by 5s",
+        "section": "Numbers",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4213,
+        "error": ""
+      },
+      {
+        "title": "Gabby Globber (GG) Counting by 5s and 10s",
+        "section": "Numbers",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4616,
+        "error": ""
+      },
+      {
+        "title": "Unicatz Count to 20",
+        "section": "Numbers",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4092,
+        "error": ""
+      },
+      {
+        "title": "Measure Area and Volume",
+        "section": "Numbers",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4171,
+        "error": ""
+      },
+      {
+        "title": "H3 Count it Up",
+        "section": "Numbers",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4384,
+        "error": ""
+      },
+      {
+        "title": "Gabby Globber (GG) Counts by 10s",
+        "section": "Numbers",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4669,
+        "error": ""
+      },
+      {
+        "title": "Kembe Comparing Sizes",
+        "section": "Numbers",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4157,
+        "error": ""
+      },
+      {
+        "title": "MFT Colors of the Rainbow",
+        "section": "Life Skills",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1731,
+        "error": ""
+      },
+      {
+        "title": "MFT Loopty Loo",
+        "section": "Life Skills",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 2117,
+        "error": ""
+      },
+      {
+        "title": "Mr. Prather Opposites",
+        "section": "Life Skills",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1773,
+        "error": ""
+      },
+      {
+        "title": "Mr. Prather Days and Months",
+        "section": "Life Skills",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1862,
+        "error": ""
+      },
+      {
+        "title": "Little Agent Three Amigas",
+        "section": "Life Skills",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 2034,
+        "error": ""
+      },
+      {
+        "title": "Little Agent Big Hair Blues",
+        "section": "Life Skills",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1716,
+        "error": ""
+      },
+      {
+        "title": "Little Agent Candy Critters",
+        "section": "Life Skills",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1689,
+        "error": ""
+      },
+      {
+        "title": "Little Agent Hippocampus",
+        "section": "Life Skills",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1712,
+        "error": ""
+      },
+      {
+        "title": "Little Agent Hoverboard",
+        "section": "Life Skills",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 2168,
+        "error": ""
+      },
+      {
+        "title": "Little Agent Itchy Monster",
+        "section": "Life Skills",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 1765,
+        "error": ""
+      },
+      {
+        "title": "Mental Health and God",
+        "section": "Life Skills",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4523,
+        "error": ""
+      },
+      {
+        "title": "A Rotten Day: Finding Joy in God",
+        "section": "Marvelous Light Series",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4573,
+        "error": ""
+      },
+      {
+        "title": "Grandpa Hebrew Brothers",
+        "section": "Marvelous Light Series",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4324,
+        "error": ""
+      },
+      {
+        "title": "Grandpa David",
+        "section": "Marvelous Light Series",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4039,
+        "error": ""
+      },
+      {
+        "title": "Grandpa Moses",
+        "section": "Marvelous Light Series",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4126,
+        "error": ""
+      },
+      {
+        "title": "Daniel and The Lions Den | S2 EP13",
+        "section": "Marvelous Light Series",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4704,
+        "error": ""
+      },
+      {
+        "title": "Paul and Saul | S2 EP20",
+        "section": "Marvelous Light Series",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4890,
+        "error": ""
+      },
+      {
+        "title": "Jonah and the Whale | S2 EP11",
+        "section": "Marvelous Light Series",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4245,
+        "error": ""
+      },
+      {
+        "title": "Jonah and the Whale | S2 EP12",
+        "section": "Marvelous Light Series",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4536,
+        "error": ""
+      },
+      {
+        "title": "Marvelous Light Episode 5 Three Hebrew Boys",
+        "section": "Marvelous Light Series",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4192,
+        "error": ""
+      },
+      {
+        "title": "Marvelous Light Christmas Episode",
+        "section": "Marvelous Light Series",
+        "page": "STORY",
+        "status": "PASS",
+        "loadTimeMs": 4231,
+        "error": ""
+      },
+      {
+        "title": "Baby Shark",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "FAIL",
+        "loadTimeMs": 517,
+        "error": "Could not find card to click"
+      },
+      {
+        "title": "Mary Had a Little Lamb",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "PASS",
+        "loadTimeMs": 2225,
+        "error": ""
+      },
+      {
+        "title": "Row Your Boat",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "PASS",
+        "loadTimeMs": 1242,
+        "error": ""
+      },
+      {
+        "title": "Affirmation",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "PASS",
+        "loadTimeMs": 534,
+        "error": ""
+      },
+      {
+        "title": "Believe",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "PASS",
+        "loadTimeMs": 532,
+        "error": ""
+      },
+      {
+        "title": "Basketball",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "PASS",
+        "loadTimeMs": 531,
+        "error": ""
+      },
+      {
+        "title": "Clap Your Hands",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "PASS",
+        "loadTimeMs": 567,
+        "error": ""
+      },
+      {
+        "title": "Ini Mini Miny Mo",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "PASS",
+        "loadTimeMs": 569,
+        "error": ""
+      },
+      {
+        "title": "Wiggle",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "PASS",
+        "loadTimeMs": 580,
+        "error": ""
+      },
+      {
+        "title": "Unicatz Pause Dance",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "PASS",
+        "loadTimeMs": 565,
+        "error": ""
+      },
+      {
+        "title": "Ice Cream Truck",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "FAIL",
+        "loadTimeMs": 523,
+        "error": "Could not find card to click"
+      },
+      {
+        "title": "I'm a Princess | Sing-a-long",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "FAIL",
+        "loadTimeMs": 519,
+        "error": "Could not find card to click"
+      },
+      {
+        "title": "Down In My Heart",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "FAIL",
+        "loadTimeMs": 519,
+        "error": "Could not find card to click"
+      },
+      {
+        "title": "Mr. Prather Days of the Week",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "FAIL",
+        "loadTimeMs": 517,
+        "error": "Could not find card to click"
+      },
+      {
+        "title": "Make it Out",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "FAIL",
+        "loadTimeMs": 536,
+        "error": "Could not find card to click"
+      },
+      {
+        "title": "Rain Rain Go Away",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "FAIL",
+        "loadTimeMs": 515,
+        "error": "Could not find card to click"
+      },
+      {
+        "title": "School time Litty",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "FAIL",
+        "loadTimeMs": 534,
+        "error": "Could not find card to click"
+      },
+      {
+        "title": "Sound it Out",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "FAIL",
+        "loadTimeMs": 524,
+        "error": "Could not find card to click"
+      },
+      {
+        "title": "Unicatz Cross the Road",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "FAIL",
+        "loadTimeMs": 514,
+        "error": "Could not find card to click"
+      },
+      {
+        "title": "Kids Just Want to Have Fun",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "FAIL",
+        "loadTimeMs": 537,
+        "error": "Could not find card to click"
+      },
+      {
+        "title": "Go Get It",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "FAIL",
+        "loadTimeMs": 517,
+        "error": "Could not find card to click"
+      },
+      {
+        "title": "Ballin | Sing-a-long",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "FAIL",
+        "loadTimeMs": 540,
+        "error": "Could not find card to click"
+      },
+      {
+        "title": "Great | Sing-a-long",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "FAIL",
+        "loadTimeMs": 515,
+        "error": "Could not find card to click"
+      },
+      {
+        "title": "Grandmama | Sing-a-long",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "FAIL",
+        "loadTimeMs": 536,
+        "error": "Could not find card to click"
+      },
+      {
+        "title": "Good Vibes | Sing-a-long",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "FAIL",
+        "loadTimeMs": 520,
+        "error": "Could not find card to click"
+      },
+      {
+        "title": "I want to See My Friends | Sing-a-long",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "FAIL",
+        "loadTimeMs": 541,
+        "error": "Could not find card to click"
+      },
+      {
+        "title": "Good Juju | Sing-a-long |",
+        "section": "Sing-a-long",
+        "page": "MUSIC",
+        "status": "FAIL",
+        "loadTimeMs": 515,
+        "error": "Could not find card to click"
+      }
+    ]
   }
 ]
