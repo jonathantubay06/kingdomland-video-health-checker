@@ -151,78 +151,197 @@ async function getSectionNames(page) {
 }
 
 /**
- * Click the carousel "next" (right >) or "prev" (left <) arrow for a section.
- * Tries multiple strategies to find the arrow button.
- * Returns true if an arrow was found and clicked.
+ * Find the arrow button element for a section and return its bounding box.
+ * Returns null if not found.
  */
-async function clickCarouselArrow(page, sectionName, direction = 'next') {
-  // Step 1: Find the arrow element and return its bounding box (no clicking inside evaluate)
-  const bounds = await page.evaluate(({ secName, dir }) => {
+async function findArrowButton(page, sectionName, direction) {
+  return await page.evaluate(({ secName, dir }) => {
+    const ariaLabel = dir === 'next' ? 'Scroll right' : 'Scroll left';
+
+    // First try: aria-label buttons near the section heading
+    const allBtns = Array.from(document.querySelectorAll(`[aria-label="${ariaLabel}"]`));
+    for (const btn of allBtns) {
+      // Verify this button belongs to our section
+      let el = btn;
+      for (let d = 0; d < 15; d++) {
+        el = el.parentElement;
+        if (!el) break;
+        const h2 = el.querySelector('h2');
+        if (h2 && h2.textContent.trim() === secName) {
+          btn.scrollIntoView({ behavior: 'instant', block: 'nearest' });
+          const r = btn.getBoundingClientRect();
+          return { x: r.left + r.width / 2, y: r.top + r.height / 2, found: 'aria' };
+        }
+      }
+    }
+
+    // Second try: walk from h2 up to find header area with arrow buttons
     const h2s = document.querySelectorAll('h2');
     for (const h2 of h2s) {
       if (h2.textContent.trim() !== secName) continue;
+      h2.scrollIntoView({ behavior: 'instant', block: 'center' });
 
-      // Walk up from the h2 to find the header row that also contains arrow buttons.
       let headerArea = h2.parentElement;
-      for (let depth = 0; depth < 5; depth++) {
+      for (let depth = 0; depth < 10; depth++) {
         if (!headerArea) break;
-        const svgCount = headerArea.querySelectorAll('svg').length;
         const btnCount = headerArea.querySelectorAll('button, [role="button"]').length;
-        if (svgCount >= 2 || btnCount >= 2) break;
+        const svgCount = headerArea.querySelectorAll('svg').length;
+        if (btnCount >= 2 || svgCount >= 2) break;
         headerArea = headerArea.parentElement;
       }
       if (!headerArea) return null;
 
-      function getCenter(el) {
-        // Scroll into view first — arrows may be off-screen after page scrolling
-        el.scrollIntoView({ behavior: 'instant', block: 'nearest' });
-        const rect = el.getBoundingClientRect();
-        return { x: rect.x + rect.width / 2, y: rect.y + rect.height / 2 };
-      }
-
-      // --- Strategy 1: buttons/clickable elements with SVG icons ---
       const buttons = Array.from(headerArea.querySelectorAll('button, [role="button"]'));
       const arrowBtns = buttons.filter(btn => {
         const hasSvg = btn.querySelector('svg');
         const text = btn.textContent.trim();
-        const isArrowChar = /^[<>‹›←→❮❯\u2039\u203A\u2190\u2192]$/.test(text);
-        return hasSvg || isArrowChar;
+        const isArrow = /^[<>‹›←→❮❯\u2039\u203A\u2190\u2192]$/.test(text);
+        return hasSvg || isArrow;
       });
       if (arrowBtns.length >= 2) {
-        const idx = dir === 'next' ? arrowBtns.length - 1 : 0;
-        return getCenter(arrowBtns[idx]);
+        const target = arrowBtns[dir === 'next' ? arrowBtns.length - 1 : 0];
+        target.scrollIntoView({ behavior: 'instant', block: 'nearest' });
+        const r = target.getBoundingClientRect();
+        return { x: r.left + r.width / 2, y: r.top + r.height / 2, found: 'btn' };
       }
 
-      // --- Strategy 2: SVGs directly ---
       const svgs = Array.from(headerArea.querySelectorAll('svg'));
       if (svgs.length >= 2) {
-        const idx = dir === 'next' ? svgs.length - 1 : 0;
-        const target = svgs[idx].closest('button') || svgs[idx].closest('[role="button"]') || svgs[idx].parentElement;
-        return getCenter(target);
+        const svg = svgs[dir === 'next' ? svgs.length - 1 : 0];
+        const target = svg.closest('button') || svg.closest('[role="button"]') || svg.parentElement;
+        target.scrollIntoView({ behavior: 'instant', block: 'nearest' });
+        const r = target.getBoundingClientRect();
+        return { x: r.left + r.width / 2, y: r.top + r.height / 2, found: 'svg' };
       }
-
-      // --- Strategy 3: Text-based arrows ---
-      const allEls = Array.from(headerArea.querySelectorAll('*'));
-      const rightChars = ['>', '\u203A', '\u2192', '\u276F'];
-      const leftChars = ['<', '\u2039', '\u2190', '\u276E'];
-      const targetChars = dir === 'next' ? rightChars : leftChars;
-      for (const el of allEls) {
-        if (el.children.length > 0) continue;
-        const text = el.textContent.trim();
-        if (targetChars.includes(text)) {
-          return getCenter(el.closest('button') || el);
-        }
-      }
-
-      return null;
     }
     return null;
   }, { secName: sectionName, dir: direction });
+}
 
-  // Step 2: Click at the coordinates using Playwright's native mouse
+/**
+ * Click the carousel "next" (right >) or "prev" (left <) arrow for a section.
+ * Strategy 1: React fiber — call onClick directly (bypasses synthetic event issues).
+ * Strategy 2: Playwright locator click on aria-label button.
+ * Strategy 3: Coordinate-based mouse click (fallback).
+ * Returns true if an arrow was found and triggered.
+ */
+async function clickCarouselArrow(page, sectionName, direction = 'next') {
+  const ariaLabel = direction === 'next' ? 'Scroll right' : 'Scroll left';
+
+  // Hover over section heading first so CSS :hover renders the arrows
+  const h2Pos = await page.evaluate((secName) => {
+    const h2s = document.querySelectorAll('h2');
+    for (const h2 of h2s) {
+      if (h2.textContent.trim() !== secName) continue;
+      h2.scrollIntoView({ behavior: 'instant', block: 'center' });
+      const r = h2.getBoundingClientRect();
+      return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+    }
+    return null;
+  }, sectionName);
+
+  if (h2Pos) {
+    await page.mouse.move(h2Pos.x, h2Pos.y);
+    await page.waitForTimeout(300);
+  }
+
+  // Strategy 1: Call React's onClick handler directly via fiber (most reliable for React apps)
+  const fiberResult = await page.evaluate(({ secName, ariaLbl }) => {
+    function callReactOnClick(el) {
+      // Walk the React fiber tree to find and call the onClick handler
+      const fiberKey = Object.keys(el).find(k =>
+        k.startsWith('__reactFiber') || k.startsWith('__reactInternalInstance')
+      );
+      if (!fiberKey) return false;
+      let node = el[fiberKey];
+      for (let i = 0; i < 30; i++) {
+        if (!node) break;
+        const props = node.memoizedProps;
+        if (props && typeof props.onClick === 'function') {
+          props.onClick({
+            preventDefault: () => {},
+            stopPropagation: () => {},
+            type: 'click',
+            target: el,
+            currentTarget: el,
+            nativeEvent: { preventDefault: () => {} },
+          });
+          return true;
+        }
+        node = node.return;
+      }
+      return false;
+    }
+
+    // Try aria-label buttons near our section first
+    const allBtns = Array.from(document.querySelectorAll(`[aria-label="${ariaLbl}"]`));
+    for (const btn of allBtns) {
+      let el = btn;
+      for (let d = 0; d < 15; d++) {
+        el = el.parentElement;
+        if (!el) break;
+        const h2 = el.querySelector('h2');
+        if (h2 && h2.textContent.trim() === secName) {
+          if (callReactOnClick(btn)) return 'fiber-aria';
+          btn.click(); // fallback to native click (isTrusted=false but worth trying)
+          return 'native-aria';
+        }
+      }
+    }
+
+    // Try walking from h2
+    const h2s = document.querySelectorAll('h2');
+    for (const h2 of h2s) {
+      if (h2.textContent.trim() !== secName) continue;
+      let headerArea = h2.parentElement;
+      for (let d = 0; d < 10; d++) {
+        if (!headerArea) break;
+        const buttons = Array.from(headerArea.querySelectorAll('button, [role="button"]'));
+        const arrowBtns = buttons.filter(b => b.querySelector('svg') ||
+          /^[<>‹›←→❮❯\u2039\u203A\u2190\u2192]$/.test(b.textContent.trim()));
+        if (arrowBtns.length >= 2) {
+          const target = arrowBtns[ariaLbl.includes('right') ? arrowBtns.length - 1 : 0];
+          if (callReactOnClick(target)) return 'fiber-btn';
+          target.click();
+          return 'native-btn';
+        }
+        headerArea = headerArea.parentElement;
+      }
+    }
+    return null;
+  }, { secName: sectionName, ariaLbl: ariaLabel });
+
+  if (fiberResult) return true;
+
+  // Strategy 2: Playwright locator — find all matching aria-label buttons, pick ours
+  const allArrows = page.locator(`[aria-label="${ariaLabel}"]`);
+  const count = await allArrows.count();
+  for (let i = 0; i < count; i++) {
+    const btn = allArrows.nth(i);
+    const isOurs = await btn.evaluate((el, secName) => {
+      let node = el.parentElement;
+      for (let d = 0; d < 15; d++) {
+        if (!node) return false;
+        const h2 = node.querySelector('h2');
+        if (h2 && h2.textContent.trim() === secName) return true;
+        node = node.parentElement;
+      }
+      return false;
+    }, sectionName);
+    if (isOurs) {
+      try {
+        await btn.scrollIntoViewIfNeeded();
+        await page.waitForTimeout(100);
+        await btn.click({ force: true, timeout: 2000 });
+        return true;
+      } catch (_) { /* fall through */ }
+    }
+  }
+
+  // Strategy 3: Coordinate-based fallback
+  const bounds = await findArrowButton(page, sectionName, direction);
   if (!bounds) return false;
-  await page.waitForTimeout(100); // let scrollIntoView settle
-  // Re-read position after scroll settled (coordinates may have shifted)
+  await page.waitForTimeout(150);
   await page.mouse.click(bounds.x, bounds.y);
   return true;
 }
