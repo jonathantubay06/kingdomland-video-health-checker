@@ -127,14 +127,28 @@ async function login(page) {
  * Scroll the page vertically to load all lazy sections.
  */
 async function scrollToLoadAll(page) {
+  // Scroll down in steps, waiting for React sections to lazy-load.
+  // Require 3 consecutive same-height checks before stopping — React apps
+  // may take a moment to render new sections after each scroll.
   let prevHeight = 0;
-  for (let i = 0; i < 30; i++) {
-    const height = await page.evaluate(() => document.body.scrollHeight);
-    if (height === prevHeight) break;
-    prevHeight = height;
-    await page.evaluate(() => window.scrollBy(0, 800));
-    await page.waitForTimeout(600);
+  let sameCount = 0;
+  for (let i = 0; i < 60; i++) {
+    const height = await page.evaluate(() => {
+      window.scrollBy(0, 600);
+      return document.body.scrollHeight;
+    });
+    if (height === prevHeight) {
+      sameCount++;
+      if (sameCount >= 3) break;
+    } else {
+      sameCount = 0;
+      prevHeight = height;
+    }
+    await page.waitForTimeout(800);
   }
+  // Final push to absolute bottom in case last sections load right at the edge
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  await page.waitForTimeout(1000);
   await page.evaluate(() => window.scrollTo(0, 0));
   await page.waitForTimeout(500);
 }
@@ -338,7 +352,56 @@ async function clickCarouselArrow(page, sectionName, direction = 'next') {
     }
   }
 
-  // Strategy 3: Coordinate-based fallback
+  // Strategy 3: Native drag/swipe on the card area itself.
+  // The carousel uses CSS transforms (not scrollLeft), so we drag on the visible
+  // card elements directly — works with any carousel library (Embla, Swiper, custom).
+  const cardAreaBounds = await page.evaluate((secName) => {
+    const h2s = document.querySelectorAll('h2');
+    for (const h2 of h2s) {
+      if (h2.textContent.trim() !== secName) continue;
+      // Walk up from h2 to find a container that holds cursor-pointer cards
+      let el = h2.parentElement;
+      for (let i = 0; i < 12; i++) {
+        if (!el) break;
+        const cards = Array.from(el.querySelectorAll('[class*="cursor-pointer"]'))
+          .filter(c => c.querySelector('img'));
+        if (cards.length >= 2) {
+          // Use the bounding rect of the card row area (2nd card center so we avoid edge)
+          const card = cards[1];
+          card.scrollIntoView({ behavior: 'instant', block: 'center' });
+          const r = card.getBoundingClientRect();
+          // Return the center of the visible card strip
+          return { x: r.left + r.width / 2, y: r.top + r.height / 2, w: r.width };
+        }
+        el = el.parentElement;
+      }
+    }
+    return null;
+  }, sectionName);
+
+  if (cardAreaBounds) {
+    // Drag left (swipe left = advance carousel), drag right = go back
+    const dragDist = Math.max(cardAreaBounds.w, 250);
+    const startX = direction === 'next'
+      ? cardAreaBounds.x + dragDist * 0.4
+      : cardAreaBounds.x - dragDist * 0.4;
+    const endX = direction === 'next'
+      ? cardAreaBounds.x - dragDist * 0.4
+      : cardAreaBounds.x + dragDist * 0.4;
+    const y = cardAreaBounds.y;
+
+    await page.mouse.move(startX, y);
+    await page.mouse.down();
+    const steps = 15;
+    for (let i = 1; i <= steps; i++) {
+      await page.mouse.move(startX + (endX - startX) * i / steps, y);
+      await page.waitForTimeout(12);
+    }
+    await page.mouse.up();
+    return true;
+  }
+
+  // Strategy 4: Coordinate-based button click (last resort)
   const bounds = await findArrowButton(page, sectionName, direction);
   if (!bounds) return false;
   await page.waitForTimeout(150);
@@ -426,7 +489,7 @@ async function collectStoryCards(page) {
 
       if (!foundNew) {
         noNewCount++;
-        if (noNewCount >= 5) break; // be patient — some carousels scroll slowly
+        if (noNewCount >= 12) break; // batch loads after ~7 clicks; need patience to reach trigger
       } else {
         noNewCount = 0;
       }
@@ -631,12 +694,13 @@ async function collectMusicCards(page) {
 
     log(`   Scanning tab: ${tabName}`);
     await page.waitForTimeout(1500);
-    await scrollToLoadAll(page);
+    // NOTE: do NOT call scrollToLoadAll here — the scrollTo(0,0) at its end
+    // causes React to deactivate the tab and reset to the default view.
 
     // Click "View more" repeatedly to load all cards in this tab
     for (let i = 0; i < 30; i++) {
       await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-      await page.waitForTimeout(500);
+      await page.waitForTimeout(800);
 
       const beforeCount = allCards.length;
       await harvestCards(tabName);
@@ -648,6 +712,29 @@ async function collectMusicCards(page) {
         // No "View more" — harvest once more and break
         await harvestCards(tabName);
         break;
+      }
+    }
+
+    // Also navigate carousel arrows on this tab (virtual/infinite carousels)
+    let noNewCount = 0;
+    for (let clicks = 0; clicks < 80; clicks++) {
+      // Click ANY "Scroll right" arrow on the page (music tabs have no h2 headings)
+      const arrowClicked = await page.evaluate(() => {
+        const btn = document.querySelector('[aria-label="Scroll right"]');
+        if (!btn) return false;
+        btn.scrollIntoView({ behavior: 'instant', block: 'nearest' });
+        btn.click();
+        return true;
+      });
+      if (!arrowClicked) break;
+      await page.waitForTimeout(1200);
+
+      const newFound = await harvestCards(tabName);
+      if (newFound === 0) {
+        noNewCount++;
+        if (noNewCount >= 12) break;
+      } else {
+        noNewCount = 0;
       }
     }
 
@@ -670,23 +757,53 @@ async function collectMusicCards(page) {
     await page.waitForTimeout(1500);
   }
 
-  // Step 4: Check for carousel sections (in case music page also has carousels)
+  // Step 4: Check for carousel sections (same approach as STORY page)
   const sectionNames = await getSectionNames(page);
   for (const secName of sectionNames) {
-    // Try clicking carousel arrows to find more cards
+    log(`   Scanning carousel: ${secName}`);
     let noNewCount = 0;
-    for (let clicks = 0; clicks < 40; clicks++) {
+
+    // Collect cards visible initially in this section
+    const initialTitles = await getCardTitlesInSection(page, secName);
+    for (const title of initialTitles) {
+      if (!seenTitles.has(title)) {
+        seenTitles.add(title);
+        allCards.push({ title, section: secName });
+      }
+    }
+
+    // Click "next" arrow repeatedly — same patience as story scanner
+    for (let clicks = 0; clicks < 80; clicks++) {
       const arrowClicked = await clickCarouselArrow(page, secName, 'next');
       if (!arrowClicked) break;
-      await page.waitForTimeout(800);
+      await page.waitForTimeout(1200);
 
-      const newFound = await harvestCards(secName);
-      if (newFound === 0) {
+      const titles = await getCardTitlesInSection(page, secName);
+      let foundNew = false;
+      for (const title of titles) {
+        if (!seenTitles.has(title)) {
+          seenTitles.add(title);
+          allCards.push({ title, section: secName });
+          foundNew = true;
+        }
+      }
+
+      if (!foundNew) {
         noNewCount++;
-        if (noNewCount >= 3) break;
+        if (noNewCount >= 12) break;
       } else {
         noNewCount = 0;
       }
+    }
+
+    const count = allCards.filter(c => c.section === secName).length;
+    log(`      -> ${count} videos found`);
+
+    // Reset carousel back to start
+    for (let i = 0; i < 60; i++) {
+      const prevClicked = await clickCarouselArrow(page, secName, 'prev');
+      if (!prevClicked) break;
+      await page.waitForTimeout(150);
     }
   }
 
