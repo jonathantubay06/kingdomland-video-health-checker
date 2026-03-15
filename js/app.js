@@ -319,10 +319,29 @@ async function pollCloudStatus() {
 }
 
 async function loadCloudReport() {
+  // Try video-report.json first; fall back to previous-report.json if empty/invalid
+  let report = null;
+  for (const file of ['video-report.json', 'previous-report.json']) {
+    try {
+      const res = await fetch(`/api/get-report?file=${file}`);
+      if (!res.ok) continue;
+      const text = await res.text();
+      if (!text || !text.trim()) continue;
+      const parsed = JSON.parse(text);
+      if (parsed && (parsed.allResults?.length > 0)) {
+        report = parsed;
+        if (file === 'previous-report.json') {
+          // Mark as stale so the UI knows this isn't the latest run
+          report._stale = true;
+        }
+        break;
+      }
+    } catch {}
+  }
+
+  if (!report) return;
+
   try {
-    const res = await fetch('/api/get-report?file=video-report.json');
-    if (!res.ok) return;
-    const report = await res.json();
     state.results = report.allResults || [];
     if (report.summary) {
       state.passedCount = report.summary.passed || 0;
@@ -339,6 +358,7 @@ async function loadCloudReport() {
 
     // Store the timestamp from the report
     state.reportTimestamp = report.timestamp || null;
+    state.reportStale = report._stale || false;
 
     state.sectionMap = {};
     for (const r of state.results) {
@@ -1197,12 +1217,15 @@ function updateLastChecked() {
   const absolute = date.toLocaleDateString(undefined, options);
   const relative = timeAgo(date);
 
+  const staleNote = state.reportStale
+    ? ' <span class="stale-badge" title="Latest run had no results — showing previous report">(previous run)</span>'
+    : '';
   el.innerHTML = `
     <div class="last-checked-label">
       <span class="check-icon">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
       </span>
-      <span>Last checked: <span class="last-checked-datetime">${escHtml(absolute)}</span></span>
+      <span>Last checked: <span class="last-checked-datetime">${escHtml(absolute)}</span>${staleNote}</span>
       <span class="last-checked-relative">${escHtml(relative)}</span>
     </div>
   `;
