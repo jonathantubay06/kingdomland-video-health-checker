@@ -67,15 +67,7 @@ window.printReport = function() {
   var badgeText = failed === 0 ? '✓ All ' + total + ' Videos OK' : '✗ ' + failed + ' Failed';
   var dateStr = new Date().toISOString().slice(0, 10);
 
-  var container = document.getElementById('print-report');
-  container.innerHTML =
-    '<style>' +
-    '@page{size:11in 8.5in;margin:0.5in}' +
-    'body{font-family:"Segoe UI",Arial,sans-serif;color:#111;background:#fff}' +
-    'table{width:100%;border-collapse:collapse}' +
-    'th{background:#f3f4f6;font-weight:600;text-transform:uppercase;font-size:0.68rem;letter-spacing:0.04em;color:#374151;padding:6px 8px;border-bottom:2px solid #d1d5db;text-align:left}' +
-    'td{padding:5px 8px;font-size:0.72rem;color:#374151;border-bottom:1px solid #f0f0f0}' +
-    '</style>' +
+  var body =
     '<div style="display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid #4f46e5;padding-bottom:12px;margin-bottom:20px">' +
       '<div><h1 style="font-size:1.4rem;margin:0 0 2px;color:#1e1b4b">Kingdomland Video Check Report</h1>' +
       '<p style="font-size:0.8rem;color:#6b7280;margin:0">go.kingdomlandkids.com &middot; Generated: ' + new Date().toLocaleString() + '</p></div>' +
@@ -96,11 +88,21 @@ window.printReport = function() {
     '<div style="font-size:0.9rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#374151;margin:0 0 8px;border-left:3px solid #4f46e5;padding-left:8px">Detailed Results</div>' +
     '<table><thead><tr><th>#</th><th>Title</th><th>Section</th><th>Page</th><th>Status</th><th>Load Time</th><th>Error</th></tr></thead><tbody>' + resultRows + '</tbody></table>';
 
-  var origTitle = document.title;
-  document.title = 'KDL-Video-Check-' + dateStr;
-  window.print();
-  setTimeout(function() {
-    container.innerHTML = '';
-    document.title = origTitle;
-  }, 1000);
+  var win = window.open('', '_blank');
+  win.document.write(
+    '<!DOCTYPE html><html><head>' +
+    '<meta charset="utf-8">' +
+    '<title>KDL-Video-Check-' + dateStr + '</title>' +
+    '<style>' +
+    '@page{size:11in 8.5in;margin:0.5in}' +
+    'body{font-family:"Segoe UI",Arial,sans-serif;color:#111;background:#fff;margin:0;padding:24px 28px;-webkit-print-color-adjust:exact;print-color-adjust:exact}' +
+    'table{width:100%;border-collapse:collapse}' +
+    'th{background:#f3f4f6;font-weight:600;text-transform:uppercase;font-size:0.68rem;letter-spacing:0.04em;color:#374151;padding:6px 8px;border-bottom:2px solid #d1d5db;text-align:left}' +
+    'td{padding:5px 8px;font-size:0.72rem;color:#374151;border-bottom:1px solid #f0f0f0}' +
+    '</style>' +
+    '</head><body>' + body + '</body></html>'
+  );
+  win.document.close();
+  win.focus();
+  setTimeout(function() { win.print(); }, 500);
 };
