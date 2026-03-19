@@ -627,19 +627,99 @@ tbody td {
   @page { margin: 0.5in; size: 11in 8.5in; }
 }
 #print-report {
-  padding: 20px;
+  padding: 24px 28px;
   font-family: 'Segoe UI', Arial, sans-serif;
-  color: #000;
+  color: #111;
+  background: #fff;
 }
-.print-header { text-align: center; margin-bottom: 24px; border-bottom: 2px solid #333; padding-bottom: 12px; }
-.print-header h1 { font-size: 1.6rem; margin-bottom: 4px; }
-.print-header p { font-size: 0.9rem; color: #555; margin: 2px 0; }
-.print-table { width: 100%; border-collapse: collapse; margin: 12px 0 24px; }
-.print-table th, .print-table td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 0.8rem; }
-.print-table th { background: #f3f4f6; font-weight: 600; }
-.print-fail td { background: #fef2f2; }
-.print-timeout td { background: #fffbeb; }
-.print-section-title { font-size: 1.1rem; font-weight: 700; margin: 20px 0 8px; }
+
+/* Header */
+.print-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 3px solid #4f46e5;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+.print-header-left h1 { font-size: 1.4rem; margin: 0 0 2px; color: #1e1b4b; }
+.print-header-left p { font-size: 0.8rem; color: #6b7280; margin: 0; }
+.print-header-right { text-align: right; font-size: 0.78rem; color: #6b7280; }
+.print-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.print-badge.pass { background: #dcfce7; color: #15803d; }
+.print-badge.fail { background: #fef2f2; color: #dc2626; }
+
+/* Stat row */
+.print-stats {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.print-stat-card {
+  flex: 1;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: #f9fafb;
+}
+.print-stat-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; margin-bottom: 4px; }
+.print-stat-value { font-size: 1.5rem; font-weight: 700; color: #111; }
+.print-stat-value.green { color: #16a34a; }
+.print-stat-value.red { color: #dc2626; }
+
+/* Section breakdown cards */
+.print-section-title { font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #374151; margin: 18px 0 10px; border-left: 3px solid #4f46e5; padding-left: 8px; }
+.print-section-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.print-section-card {
+  flex: 1 1 calc(25% - 8px);
+  min-width: 160px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: #f9fafb;
+}
+.print-section-name { font-size: 0.82rem; font-weight: 700; color: #1e1b4b; margin-bottom: 2px; }
+.print-section-tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+.print-section-tag.story { background: #ede9fe; color: #6d28d9; }
+.print-section-tag.music { background: #fce7f3; color: #be185d; }
+.print-section-bar-bg { height: 5px; background: #e5e7eb; border-radius: 3px; margin-bottom: 6px; }
+.print-section-bar { height: 5px; background: #22c55e; border-radius: 3px; }
+.print-section-bar.has-fail { background: #ef4444; }
+.print-section-counts { font-size: 0.72rem; color: #6b7280; display: flex; justify-content: space-between; }
+.print-section-counts .green { color: #16a34a; font-weight: 600; }
+.print-section-counts .red { color: #dc2626; font-weight: 600; }
+
+/* Results table */
+.print-table { width: 100%; border-collapse: collapse; margin: 8px 0 20px; font-size: 0.72rem; }
+.print-table th { background: #f3f4f6; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: #374151; padding: 6px 8px; border-bottom: 2px solid #d1d5db; text-align: left; }
+.print-table td { padding: 5px 8px; border-bottom: 1px solid #f0f0f0; color: #374151; }
+.print-table tr:nth-child(even) td { background: #f9fafb; }
+.print-fail td { background: #fef2f2 !important; }
+.print-timeout td { background: #fffbeb !important; }
+.print-status-pass { color: #16a34a; font-weight: 600; }
+.print-status-fail { color: #dc2626; font-weight: 600; }
+.print-status-timeout { color: #d97706; font-weight: 600; }
 
 
 /* ========================================================================

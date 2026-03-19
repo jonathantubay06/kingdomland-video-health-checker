@@ -1086,28 +1086,75 @@ function printReport() {
   const failed = results.filter(r => r.status === KL.STATUS.FAIL).length;
   const timeouts = results.filter(r => r.status === KL.STATUS.TIMEOUT).length;
   const rate = total > 0 ? (passed / total * 100).toFixed(1) : 0;
+
+  // Build sections map
   const sections = {};
   for (const r of results) {
-    const key = `${r.page} - ${r.section || 'Unknown'}`;
+    const key = `${r.page}::${r.section || 'Unknown'}`;
     if (!sections[key]) sections[key] = { page: r.page, section: r.section || 'Unknown', total: 0, passed: 0, failed: 0 };
     sections[key].total++;
     if (r.status === KL.STATUS.PASS) sections[key].passed++;
     else sections[key].failed++;
   }
-  const sectionRows = Object.values(sections).map(s =>
-    `<tr><td>${escHtml(s.section)}</td><td>${s.page}</td><td>${s.total}</td><td>${s.passed}</td><td>${s.failed}</td><td>${s.total > 0 ? Math.round(s.passed / s.total * 100) : 0}%</td></tr>`
-  ).join('');
-  const resultRows = results.map(r =>
-    `<tr class="${r.status === KL.STATUS.FAIL ? 'print-fail' : r.status === KL.STATUS.TIMEOUT ? 'print-timeout' : ''}"><td>${r.number}</td><td>${escHtml(r.title)}</td><td>${escHtml(r.section || '')}</td><td>${r.page || ''}</td><td>${r.status}</td><td>${r.duration || '-'}</td><td>${r.error ? escHtml(r.error) : '-'}</td></tr>`
-  ).join('');
+
+  // Section cards
+  const sectionCards = Object.values(sections).map(s => {
+    const pct = s.total > 0 ? Math.round(s.passed / s.total * 100) : 0;
+    const tagClass = s.page === 'MUSIC' ? 'music' : 'story';
+    const barClass = s.failed > 0 ? 'has-fail' : '';
+    return `
+      <div class="print-section-card">
+        <div class="print-section-name">${escHtml(s.section)}</div>
+        <span class="print-section-tag ${tagClass}">${s.page}</span>
+        <div class="print-section-bar-bg"><div class="print-section-bar ${barClass}" style="width:${pct}%"></div></div>
+        <div class="print-section-counts">
+          <span class="green">${s.passed} passed</span>
+          <span class="red">${s.failed > 0 ? s.failed + ' failed' : '0 failed'}</span>
+          <span>${pct}%</span>
+        </div>
+      </div>`;
+  }).join('');
+
+  // Results table rows — only show failures + timeouts first, then all
+  const failedResults = results.filter(r => r.status !== KL.STATUS.PASS);
+  const resultRows = results.map((r, i) => {
+    const statusClass = r.status === KL.STATUS.PASS ? 'print-status-pass' : r.status === KL.STATUS.FAIL ? 'print-status-fail' : 'print-status-timeout';
+    const rowClass = r.status === KL.STATUS.FAIL ? 'print-fail' : r.status === KL.STATUS.TIMEOUT ? 'print-timeout' : '';
+    return `<tr class="${rowClass}"><td>${i + 1}</td><td>${escHtml(r.title)}</td><td>${escHtml(r.section || '')}</td><td>${r.page || ''}</td><td class="${statusClass}">${r.status}</td><td>${r.duration || '-'}</td>${r.error ? `<td style="color:#dc2626;font-size:0.68rem">${escHtml(r.error)}</td>` : '<td>-</td>'}</tr>`;
+  }).join('');
+
+  const overallBadge = failed === 0
+    ? `<span class="print-badge pass">✓ All ${total} Videos OK</span>`
+    : `<span class="print-badge fail">✗ ${failed} Failed</span>`;
+
   document.getElementById('print-report').innerHTML = `
-    <div class="print-header"><h1>Kingdomland Video Checker Report</h1><p>go.kingdomlandkids.com</p><p>Generated: ${new Date().toLocaleString()}</p></div>
-    <p class="print-section-title">Summary</p>
-    <table class="print-table"><tr><td><strong>Total Videos</strong></td><td>${total}</td></tr><tr><td><strong>Passed</strong></td><td style="color:green">${passed}</td></tr><tr><td><strong>Failed</strong></td><td style="color:red">${failed}</td></tr><tr><td><strong>Timed Out</strong></td><td style="color:orange">${timeouts}</td></tr><tr><td><strong>Pass Rate</strong></td><td>${rate}%</td></tr></table>
+    <div class="print-header">
+      <div class="print-header-left">
+        <h1>Kingdomland Video Check Report</h1>
+        <p>go.kingdomlandkids.com &nbsp;·&nbsp; Generated: ${new Date().toLocaleString()}</p>
+      </div>
+      <div class="print-header-right">
+        ${overallBadge}
+        <div>Pass Rate: <strong>${rate}%</strong></div>
+      </div>
+    </div>
+
+    <div class="print-stats">
+      <div class="print-stat-card"><div class="print-stat-label">Total Videos</div><div class="print-stat-value">${total}</div></div>
+      <div class="print-stat-card"><div class="print-stat-label">Passed</div><div class="print-stat-value green">${passed}</div></div>
+      <div class="print-stat-card"><div class="print-stat-label">Failed</div><div class="print-stat-value red">${failed}</div></div>
+      <div class="print-stat-card"><div class="print-stat-label">Timed Out</div><div class="print-stat-value">${timeouts}</div></div>
+      <div class="print-stat-card"><div class="print-stat-label">Pass Rate</div><div class="print-stat-value">${rate}%</div></div>
+    </div>
+
     <p class="print-section-title">Section Breakdown</p>
-    <table class="print-table"><thead><tr><th>Section</th><th>Page</th><th>Total</th><th>Passed</th><th>Failed</th><th>Rate</th></tr></thead><tbody>${sectionRows}</tbody></table>
+    <div class="print-section-grid">${sectionCards}</div>
+
     <p class="print-section-title">Detailed Results</p>
-    <table class="print-table"><thead><tr><th>#</th><th>Title</th><th>Section</th><th>Page</th><th>Status</th><th>Duration</th><th>Error</th></tr></thead><tbody>${resultRows}</tbody></table>
+    <table class="print-table">
+      <thead><tr><th>#</th><th>Title</th><th>Section</th><th>Page</th><th>Status</th><th>Load Time</th><th>Error</th></tr></thead>
+      <tbody>${resultRows}</tbody>
+    </table>
   `;
   document.getElementById('print-report').style.display = 'block';
   const origTitle = document.title;
