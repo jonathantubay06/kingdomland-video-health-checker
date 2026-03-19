@@ -1110,8 +1110,14 @@ function printReport() {
     <table class="print-table"><thead><tr><th>#</th><th>Title</th><th>Section</th><th>Page</th><th>Status</th><th>Duration</th><th>Error</th></tr></thead><tbody>${resultRows}</tbody></table>
   `;
   document.getElementById('print-report').style.display = 'block';
+  const origTitle = document.title;
+  const dateStr = new Date().toISOString().slice(0, 10);
+  document.title = `KDL-Video-Check-${dateStr}`;
   window.print();
-  setTimeout(() => { document.getElementById('print-report').style.display = 'none'; }, 1000);
+  setTimeout(() => {
+    document.getElementById('print-report').style.display = 'none';
+    document.title = origTitle;
+  }, 1000);
 }
 
 // ============== Helpers ==============
