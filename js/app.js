@@ -69,6 +69,8 @@ window.addEventListener('DOMContentLoaded', async () => {
       } else {
         await loadCloudReport();
       }
+    } else {
+      await loadCloudReport();
     }
   } catch {
     await loadCloudReport();
