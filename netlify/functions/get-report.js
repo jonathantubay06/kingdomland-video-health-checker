@@ -42,7 +42,19 @@ exports.handler = async (event) => {
     }
 
     const data = await res.json();
-    const content = Buffer.from(data.content, 'base64').toString('utf-8');
+
+    // GitHub Contents API returns empty content for files > 1MB — fall back to download_url
+    let content;
+    if (data.content) {
+      content = Buffer.from(data.content, 'base64').toString('utf-8');
+    } else if (data.download_url) {
+      const dlRes = await fetch(data.download_url, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      content = await dlRes.text();
+    } else {
+      return { statusCode: 404, body: JSON.stringify({ error: 'File content unavailable' }) };
+    }
 
     // For JSON file, return as JSON; for others, return as text
     const isJson = file.endsWith('.json');
