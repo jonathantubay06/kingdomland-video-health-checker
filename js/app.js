@@ -1,27 +1,30 @@
 // ============== State ==============
+// `state` is the local app state — populated in both local and cloud mode.
+// NOTE: KL.state (in js/features/*.js) is a SEPARATE object used by feature modules.
+// Both are kept in sync in renderComplete() and loadCloudReport().
 const state = {
-  status: 'idle',
-  mode: 'both',
-  phase: '',
+  status: 'idle',      // 'idle' | 'running' | 'complete'
+  mode: 'both',        // 'both' | 'story' | 'music' — which pages to check
+  phase: '',           // current check phase: 'login' | 'discovery' | 'checking'
   totalDiscovered: 0,
   checkedCount: 0,
   passedCount: 0,
   failedCount: 0,
   timeoutCount: 0,
-  results: [],
+  results: [],         // array of VideoResult objects from the latest check
   checkStartTime: null,
-  sectionMap: {},
+  sectionMap: {},      // keyed by "<page> - <section>", built in renderComplete()
 };
 
-let eventSource = null;
+let eventSource = null;       // SSE connection for local live progress
 let sortColumn = 'number';
 let sortDir = 'asc';
-let isLocal = false;
-let savedCredentials = null; // session-only credential cache
+let isLocal = false;          // true = running against local server.js, false = Netlify/cloud
+let savedCredentials = null;  // session-only credential cache (never persisted)
 let currentPage = 1;
 let pageSize = 25;
-let lastFilteredResults = []; // cached for pagination
-let ghRunId = null;
+let lastFilteredResults = []; // cached filtered+sorted results for pagination
+let ghRunId = null;           // GitHub Actions run ID for cloud progress polling
 let pollTimer = null;
 let progressTimer = null;
 
@@ -601,6 +604,20 @@ function updateSummaryCards() {
     }
     passRateValue.textContent = rate + '%';
     if (passRateSubtitle) passRateSubtitle.textContent = `${rate}% of total`;
+
+    // Slow videos pill (>20s threshold, ~10s real — matches heatmap "Very Slow" band)
+    const slowPill = document.getElementById('slow-videos-pill');
+    if (slowPill) {
+      const allResults = (state.results && state.results.length) ? state.results : ((window.KL && KL.state) ? KL.state.results : []);
+      const slowCount = allResults.filter(r => r.loadTimeMs && r.loadTimeMs > 20000).length;
+      if (slowCount > 0) {
+        slowPill.textContent = `⚠ ${slowCount} slow`;
+        slowPill.style.display = 'inline-flex';
+        slowPill.title = `${slowCount} video${slowCount > 1 ? 's' : ''} took >20s (Playwright) — likely ~10s+ for real users. See heatmap below.`;
+      } else {
+        slowPill.style.display = 'none';
+      }
+    }
   } else {
     passRateBar.style.display = 'none';
     if (passRateSubtitle) passRateSubtitle.textContent = '';
@@ -737,8 +754,8 @@ function createResultRow(r) {
   // Response time color class
   let loadTimeClass = '';
   if (r.loadTimeMs) {
-    if (r.loadTimeMs < 3000) loadTimeClass = 'load-fast';
-    else if (r.loadTimeMs < 8000) loadTimeClass = 'load-medium';
+    if (r.loadTimeMs < 5000) loadTimeClass = 'load-fast';
+    else if (r.loadTimeMs < 12000) loadTimeClass = 'load-medium';
     else loadTimeClass = 'load-slow';
   }
 
@@ -984,6 +1001,9 @@ function changePageSize() {
 }
 
 // ============== Complete State ==============
+// Called when a check finishes (local SSE) OR when cloud report is loaded.
+// Populates both `state` (this file) and `KL.state` (feature modules) via
+// updateHealthSummary(), renderHeatmap(), etc. which read from KL.state.
 function renderComplete(summary, allResults) {
   state.status = 'complete';
   state.results = allResults;
@@ -1422,10 +1442,16 @@ function updateHealthBadge() {
   const badgeUrl = window.location.origin + '/api/health-badge';
 
   el.innerHTML = `
-    <div class="health-badge-preview">${svg}</div>
-    <div class="health-badge-url">
-      <span>Badge URL:</span>
-      <input type="text" value="${escHtml(badgeUrl)}" readonly onclick="this.select()" style="font-size:0.8rem;padding:2px 6px;border:1px solid var(--color-border);border-radius:4px;background:var(--color-bg-secondary);color:var(--color-text);width:300px;">
+    <div class="badge-card">
+      <div class="badge-card-preview">${svg}</div>
+      <div class="badge-card-url">
+        <label>Badge URL</label>
+        <div class="badge-url-row">
+          <input type="text" id="badge-url-input" value="${escHtml(badgeUrl)}" readonly onclick="this.select()">
+          <button class="btn-copy-badge" onclick="(function(){navigator.clipboard.writeText('${escHtml(badgeUrl)}').then(function(){var b=document.querySelector('.btn-copy-badge');b.textContent='Copied!';setTimeout(function(){b.textContent='Copy';},1500);});})()" title="Copy to clipboard">Copy</button>
+        </div>
+        <p class="badge-card-hint">Embed this URL in your README or status page to show live video health.</p>
+      </div>
     </div>
   `;
   el.style.display = 'block';
@@ -1790,7 +1816,11 @@ function updateAutoRefreshUI() {
   if (!bar) return;
   if (autoRefreshEnabled && state.status !== 'running') {
     bar.style.display = 'flex';
-    text.textContent = 'Auto-refresh active — checking for new results every 5 minutes';
+    // Cloud: reflects that checks run via GitHub Actions, not locally.
+    // Local: reflects active polling of the local server.
+    text.textContent = isLocal
+      ? 'Auto-refresh active — checking for new results every 5 minutes'
+      : 'Monitoring for new results from GitHub Actions every 5 min';
   } else {
     bar.style.display = 'none';
   }
@@ -2357,17 +2387,17 @@ function renderHeatmap() {
 
   // Color scale based on load time
   const getColor = (ms) => {
-    if (ms < 2000) return { bg: '#dcfce7', text: '#166534', border: '#bbf7d0' }; // fast green
-    if (ms < 4000) return { bg: '#fef9c3', text: '#854d0e', border: '#fef08a' }; // medium yellow
-    if (ms < 8000) return { bg: '#fed7aa', text: '#9a3412', border: '#fdba74' }; // slow orange
-    return { bg: '#fecaca', text: '#991b1b', border: '#fca5a5' }; // very slow red
+    if (ms < 3000) return { bg: '#dcfce7', text: '#166534', border: '#bbf7d0' }; // fast green
+    if (ms < 6000) return { bg: '#fef9c3', text: '#854d0e', border: '#fef08a' }; // medium yellow
+    if (ms < 12000) return { bg: '#fed7aa', text: '#9a3412', border: '#fdba74' }; // slow orange
+    return { bg: '#fecaca', text: '#991b1b', border: '#fca5a5' }; // very slow red (>12s ≈ >6s real)
   };
 
   // Dark mode color scale
   const getDarkColor = (ms) => {
-    if (ms < 2000) return { bg: '#14532d', text: '#86efac', border: '#166534' };
-    if (ms < 4000) return { bg: '#422006', text: '#fde047', border: '#854d0e' };
-    if (ms < 8000) return { bg: '#431407', text: '#fb923c', border: '#9a3412' };
+    if (ms < 3000) return { bg: '#14532d', text: '#86efac', border: '#166534' };
+    if (ms < 6000) return { bg: '#422006', text: '#fde047', border: '#854d0e' };
+    if (ms < 12000) return { bg: '#431407', text: '#fb923c', border: '#9a3412' };
     return { bg: '#450a0a', text: '#fca5a5', border: '#991b1b' };
   };
 
@@ -2391,10 +2421,11 @@ function renderHeatmap() {
     </div>
     <div class="heatmap-grid">${cells}</div>
     <div class="heatmap-legend">
-      <span class="heatmap-legend-item"><span class="heatmap-legend-dot" style="background:#22c55e"></span> Fast (&lt;2s)</span>
-      <span class="heatmap-legend-item"><span class="heatmap-legend-dot" style="background:#eab308"></span> Medium (2-4s)</span>
-      <span class="heatmap-legend-item"><span class="heatmap-legend-dot" style="background:#f97316"></span> Slow (4-8s)</span>
-      <span class="heatmap-legend-item"><span class="heatmap-legend-dot" style="background:#ef4444"></span> Very Slow (&gt;8s)</span>
+      <span class="heatmap-legend-item"><span class="heatmap-legend-dot" style="background:#22c55e"></span> Fast (&lt;3s)</span>
+      <span class="heatmap-legend-item"><span class="heatmap-legend-dot" style="background:#eab308"></span> Medium (3-6s)</span>
+      <span class="heatmap-legend-item"><span class="heatmap-legend-dot" style="background:#f97316"></span> Slow (6-12s)</span>
+      <span class="heatmap-legend-item"><span class="heatmap-legend-dot" style="background:#ef4444"></span> Very Slow (&gt;12s)</span>
+      <span class="heatmap-legend-note">* Playwright adds ~2× overhead vs real browser</span>
     </div>
   `;
   section.style.display = 'block';

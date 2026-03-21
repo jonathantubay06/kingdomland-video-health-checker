@@ -68,6 +68,8 @@ body {
   flex-wrap: wrap;
   gap: 16px;
 }
+.header-left { display: flex; align-items: center; gap: 12px; }
+.header-logo { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
 .header-left h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
 .header-left .subtitle { font-size: 0.85rem; opacity: 0.8; }
 .header-controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
@@ -225,6 +227,21 @@ body {
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
+.slow-videos-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(234, 179, 8, 0.15);
+  color: #d97706;
+  border: 1px solid rgba(234, 179, 8, 0.35);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.slow-videos-pill:hover { background: rgba(234, 179, 8, 0.25); }
 
 /* ============== Progress Section ============== */
 .progress-section {
@@ -359,12 +376,34 @@ body {
   display: none;
 }
 .section-breakdown.visible { display: block; }
-.section-breakdown h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 16px; }
+.section-breakdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.section-breakdown-header h2 { font-size: 1.15rem; font-weight: 700; margin: 0; }
+.section-recheck-select {
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+  outline: none;
+}
+.section-recheck-select:focus { border-color: var(--color-primary); }
 .section-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 }
+@media (max-width: 1100px) { .section-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 800px)  { .section-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px)  { .section-grid { grid-template-columns: 1fr; } }
 .section-card {
   background: var(--color-surface);
   border-radius: var(--radius);
@@ -525,6 +564,8 @@ tbody td {
   .summary-cards { grid-template-columns: repeat(2, 1fr); }
   .header-inner { flex-direction: column; align-items: flex-start; }
   .stat-value { font-size: 1.6rem; }
+  /* Header title fits on one line when stacked vertically */
+  .header-left h1 { font-size: 1.25rem; letter-spacing: -0.01em; white-space: nowrap; }
 }
 
 /* ============== Spinner ============== */
@@ -974,6 +1015,59 @@ tbody td {
   background: var(--color-fail);
 }
 
+.badge-card {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.badge-card-preview { flex-shrink: 0; }
+.badge-card-url { flex: 1; min-width: 200px; }
+.badge-card-url label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  display: block;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.badge-url-row { display: flex; gap: 8px; align-items: center; }
+.badge-url-row input {
+  flex: 1;
+  padding: 7px 12px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.badge-url-row input:focus { border-color: var(--color-primary); }
+.btn-copy-badge {
+  padding: 7px 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-primary);
+  background: transparent;
+  color: var(--color-primary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+.btn-copy-badge:hover { background: var(--color-primary); color: #fff; }
+.badge-card-hint {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin: 6px 0 0;
+}
 .health-badge-embed {
   margin-top: 10px;
 }
@@ -1477,6 +1571,27 @@ tbody td {
   .screenshot-thumb {
     max-width: 120px;
   }
+
+  /* Header: shrink title so it fits on one line */
+  .header-left h1 { font-size: 1.1rem; letter-spacing: -0.01em; }
+  .header-left .subtitle { font-size: 0.75rem; }
+  .header-logo { width: 30px; height: 30px; }
+
+  /* Badge URL: stack input + Copy button vertically */
+  .badge-url-row { flex-direction: column; align-items: stretch; }
+  .badge-url-row input { width: 100%; min-width: 0; }
+  .btn-copy-badge { width: 100%; justify-content: center; }
+
+  /* Section breakdown header: stack on very small screens */
+  .section-breakdown-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .section-recheck-select { width: 100%; }
+
+  /* Heatmap legend: full-width wrap */
+  .heatmap-legend { gap: 6px; }
+  .heatmap-legend-note { width: 100%; margin-top: 4px; }
+
+  /* Container: tighter padding on small phones */
+  .container { padding: 0 12px; }
 }
 
 /* ============== Credentials Modal ============== */
@@ -1987,21 +2102,42 @@ tbody td {
 }
 .heatmap-legend {
   display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+/* Playwright explanation note shown above the color dots */
+.heatmap-legend-playwright-note {
+  display: flex;
   align-items: center;
-  gap: 16px;
-  margin-top: 12px;
+  gap: 5px;
   font-size: 0.75rem;
   color: var(--color-text-muted);
+  opacity: 0.85;
+  font-style: italic;
+}
+.heatmap-legend-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 .heatmap-legend-item {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
 }
 .heatmap-legend-dot {
   width: 12px;
   height: 12px;
   border-radius: 3px;
+  flex-shrink: 0;
+}
+/* Real-browser equivalent time shown in muted smaller text */
+.heatmap-legend-real {
+  opacity: 0.6;
+  font-size: 0.7rem;
 }
 
 /* ============== Comparison Section ============== */
@@ -2161,72 +2297,31 @@ tr.false-positive {
 .settings-section h3 {
   margin-bottom: 12px;
 }
-.schedule-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.schedule-toggle {
+/* Schedule: read-only info row showing the GitHub Actions cron times */
+.schedule-info-row {
   display: flex;
   align-items: center;
   gap: 8px;
-  cursor: pointer;
-}
-.schedule-options {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-  margin-top: 4px;
-}
-.schedule-options .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.schedule-options select,
-.schedule-options input[type="text"] {
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: 1px solid var(--border);
-  background: var(--bg);
-  color: var(--color-text);
   font-size: 0.9rem;
 }
 .schedule-note {
   margin-top: 8px;
   color: var(--color-text-muted);
 }
+.schedule-note code {
+  font-size: 0.8rem;
+  background: rgba(255,255,255,0.07);
+  padding: 1px 4px;
+  border-radius: 3px;
+}
 
-/* ============== Push Notifications ============== */
-.push-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.push-status {
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
-}
-.push-status-active {
-  color: var(--color-pass);
-  font-weight: 600;
-}
-.push-prefs {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.push-prefs label {
+/* Push notifications: dimmed "not available" state */
+.push-unavailable {
   display: flex;
   align-items: center;
-  gap: 6px;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-.push-actions {
-  display: flex;
   gap: 8px;
-  margin-top: 4px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  opacity: 0.6;
 }
 

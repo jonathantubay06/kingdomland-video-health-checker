@@ -52,6 +52,21 @@ KL.updateHealthSummary = function() {
       '<div class="health-banner-metrics" id="health-metrics"></div>' +
     '</div>';
   el.style.display = 'flex';
+
+  // Update slow videos pill here (not in app.js updateSummaryCards) because
+  // KL.state.results is populated AFTER updateSummaryCards() runs — this is the
+  // first reliable point where all results are available in KL.state.
+  var slowPill = document.getElementById('slow-videos-pill');
+  if (slowPill) {
+    var slowCount = KL.state.results.filter(function(r) { return r.loadTimeMs && r.loadTimeMs > 20000; }).length;
+    if (slowCount > 0) {
+      slowPill.textContent = '\u26a0 ' + slowCount + ' slow';
+      slowPill.style.display = 'inline-flex';
+      slowPill.title = slowCount + ' video' + (slowCount !== 1 ? 's' : '') + ' took >20s (Playwright) \u2014 likely ~10s+ for real users. See heatmap below.';
+    } else {
+      slowPill.style.display = 'none';
+    }
+  }
 };
 
 KL.updateLastChecked = function() {
@@ -125,10 +140,16 @@ KL.updateHealthBadge = function() {
   var badgeUrl = window.location.origin + '/api/health-badge';
 
   el.innerHTML =
-    '<div class="health-badge-preview">' + svg + '</div>' +
-    '<div class="health-badge-url">' +
-      '<span>Badge URL:</span>' +
-      '<input type="text" value="' + KL.escHtml(badgeUrl) + '" readonly onclick="this.select()" style="font-size:0.8rem;padding:2px 6px;border:1px solid var(--color-border);border-radius:4px;background:var(--color-bg-secondary);color:var(--color-text);width:300px;">' +
+    '<div class="badge-card">' +
+      '<div class="badge-card-preview">' + svg + '</div>' +
+      '<div class="badge-card-url">' +
+        '<label>Badge URL</label>' +
+        '<div class="badge-url-row">' +
+          '<input type="text" id="badge-url-input" value="' + KL.escHtml(badgeUrl) + '" readonly onclick="this.select()">' +
+          '<button class="btn-copy-badge" onclick="(function(){navigator.clipboard.writeText(\'' + KL.escHtml(badgeUrl) + '\').then(function(){var b=document.querySelector(\'.btn-copy-badge\');b.textContent=\'Copied!\';setTimeout(function(){b.textContent=\'Copy\';},1500);});})()" title="Copy to clipboard">Copy</button>' +
+        '</div>' +
+        '<p class="badge-card-hint">Embed this URL in your README or status page to show live video health.</p>' +
+      '</div>' +
     '</div>';
   el.style.display = 'block';
 
