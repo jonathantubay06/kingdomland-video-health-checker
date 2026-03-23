@@ -9,6 +9,9 @@ window.downloadFile = function(format) {
     var file = fileMap[format];
     if (file) window.location.href = '/api/get-report?file=' + file;
   }
+  // Toast feedback so user knows the download triggered
+  var labels = { csv: 'CSV', json: 'JSON', txt: 'Failed list' };
+  if (window.showToast) showToast('Downloading ' + (labels[format] || format) + '…', 'info', 2000);
 };
 
 window.printReport = function() {

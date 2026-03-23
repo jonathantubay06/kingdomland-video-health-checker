@@ -16,6 +16,27 @@
 </head>
 <body>
 
+  <!-- ============== INTRO OVERLAY ============== -->
+  <!-- Full-screen splash shown once per session. Dismissed on click or auto after 4s. -->
+  <!-- Dashboard loads behind it so Enter feels instant. -->
+  <div id="intro-overlay">
+    <div class="intro-bg-glow"></div>
+    <div class="intro-content">
+      <div class="intro-logo-wrap">
+        <img src="/icons/icon-192.svg" class="intro-logo" alt="Kingdomland">
+      </div>
+      <h2 class="intro-title">Kingdomland<br>Video Checker</h2>
+      <p class="intro-tagline">Monitoring every video. Every day.</p>
+      <button class="intro-enter-btn" id="intro-enter-btn">
+        Enter Dashboard
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </button>
+      <p class="intro-skip">or wait <span id="intro-countdown">4</span>s</p>
+    </div>
+  </div>
+  <!-- Skip intro immediately if already seen this session (avoids flash on reload) -->
+  <script>if(sessionStorage.getItem('kl-intro-seen')){document.getElementById('intro-overlay').style.display='none';}</script>
+
   <!-- ============== HEADER ============== -->
   <header class="app-header">
     <div class="container header-inner">
@@ -213,7 +234,7 @@
           <select id="filter-section" onchange="applyFilters()">
             <option value="all">All Sections</option>
           </select>
-          <input type="text" id="filter-search" placeholder="Search by title..." oninput="applyFilters()">
+          <input type="text" id="filter-search" placeholder="Search by title..." oninput="debouncedApplyFilters()" title="Press / to focus">
           <span class="result-count" id="result-count"></span>
         </div>
       </div>
@@ -301,11 +322,33 @@
       <button class="btn btn-sm" onclick="KL.clearBulkSelection()" title="Clear selection">&times;</button>
     </div>
 
-    <!-- Empty State -->
+    <!-- Empty State — shown before any check has run -->
     <div class="empty-state" id="empty-state">
-      <div class="empty-state-icon">&#127916;</div>
+      <div class="empty-state-illustration">🎬</div>
       <h2>Ready to Check Videos</h2>
-      <p>Click <strong>Run Check</strong> to scan all videos on the Kingdomland website and verify they load properly.</p>
+      <p>Click <strong>Run Check</strong> above to scan all <strong>132 videos</strong> on go.kingdomlandkids.com and verify they load properly.</p>
+      <div class="empty-state-features">
+        <div class="empty-state-feature">
+          <div class="empty-state-feature-icon">🗺️</div>
+          <span>132 videos<br>across 18+ sections</span>
+        </div>
+        <div class="empty-state-feature">
+          <div class="empty-state-feature-icon">🌡️</div>
+          <span>Load time<br>heatmap</span>
+        </div>
+        <div class="empty-state-feature">
+          <div class="empty-state-feature-icon">📊</div>
+          <span>Section<br>breakdown</span>
+        </div>
+        <div class="empty-state-feature">
+          <div class="empty-state-feature-icon">📈</div>
+          <span>Run history<br>&amp; trends</span>
+        </div>
+        <div class="empty-state-feature">
+          <div class="empty-state-feature-icon">⏰</div>
+          <span>Auto-checks<br>3× daily</span>
+        </div>
+      </div>
     </div>
 
   </main>
@@ -404,6 +447,36 @@
 
   <!-- ============== PRINT REPORT ============== -->
   <div id="print-report"></div>
+
+  <!-- ============== TOAST CONTAINER ============== -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- ============== FLOATING BUTTONS ============== -->
+  <!-- Jump to failures: shown when failures exist and user has scrolled past summary -->
+  <button class="jump-failures-btn" id="jump-failures-btn" onclick="jumpToFirstFailure()" style="display:none">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+    Jump to failures
+  </button>
+  <!-- Back to top: appears after scrolling 400px -->
+  <button class="back-to-top-btn" id="back-to-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none" title="Back to top">↑</button>
+
+  <!-- ============== KEYBOARD SHORTCUTS MODAL ============== -->
+  <div class="modal-overlay" id="shortcuts-modal" onclick="if(event.target===this)this.style.display='none'" style="display:none">
+    <div class="modal" style="max-width:400px">
+      <div class="modal-header">
+        <h3 class="modal-title">Keyboard Shortcuts</h3>
+        <button class="modal-close" onclick="document.getElementById('shortcuts-modal').style.display='none'">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="shortcuts-list">
+          <div class="shortcut-row"><span class="shortcut-desc">Run a new check</span><span class="kbd">R</span></div>
+          <div class="shortcut-row"><span class="shortcut-desc">Focus search box</span><span class="kbd">/</span></div>
+          <div class="shortcut-row"><span class="shortcut-desc">Close any modal</span><span class="kbd">Esc</span></div>
+          <div class="shortcut-row"><span class="shortcut-desc">Show this overlay</span><span class="kbd">?</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ============== JAVASCRIPT ============== -->
   <!-- Core (load order matters) -->

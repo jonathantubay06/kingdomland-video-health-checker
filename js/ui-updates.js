@@ -16,7 +16,15 @@ KL.updateRunButtons = function() {
 };
 
 KL.updateStat = function(id, value) {
-  document.getElementById(id).textContent = value;
+  const el = document.getElementById(id);
+  if (!el) return;
+  // Animate numeric values on completion; strings (like '--') are set directly
+  const num = parseInt(value, 10);
+  if (!isNaN(num) && KL.state.status === 'complete' && KL.animateCounter) {
+    KL.animateCounter(el, num);
+  } else {
+    el.textContent = value;
+  }
 };
 
 KL.updateSummaryCards = function() {
@@ -48,6 +56,29 @@ KL.updateSummaryCards = function() {
     }
     passRateValue.textContent = rate + '%';
     if (passRateSubtitle) passRateSubtitle.textContent = `${rate}% of total`;
+
+    // PASSED card celebration shimmer — glowing shimmer when every video passes
+    var passCard = document.querySelector('.stat-card.card-pass');
+    if (passCard) {
+      if (KL.state.failedCount === 0 && KL.state.timeoutCount === 0 && total > 0) {
+        passCard.classList.add('celebrate');
+      } else {
+        passCard.classList.remove('celebrate');
+      }
+    }
+
+    // Slow videos pill — shows ⚠ N slow when videos exceed the Very Slow heatmap threshold (>20s Playwright)
+    const slowPill = document.getElementById('slow-videos-pill');
+    if (slowPill) {
+      const slowCount = KL.state.results.filter(function(r) { return r.loadTimeMs && r.loadTimeMs > 20000; }).length;
+      if (slowCount > 0) {
+        slowPill.textContent = '⚠ ' + slowCount + ' slow';
+        slowPill.style.display = 'inline-flex';
+        slowPill.title = slowCount + ' video' + (slowCount > 1 ? 's' : '') + ' took >20s (Playwright) — likely ~10s+ for real users. See heatmap below.';
+      } else {
+        slowPill.style.display = 'none';
+      }
+    }
   } else {
     passRateBar.style.display = 'none';
     if (passRateSubtitle) passRateSubtitle.textContent = '';

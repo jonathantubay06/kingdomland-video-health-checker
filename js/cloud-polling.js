@@ -51,41 +51,98 @@ KL.pollCloudStatus = async function() {
   }
 };
 
-KL.loadCloudReport = async function() {
+// localStorage cache keys — 5-min TTL so repeat page loads feel instant
+var KL_CACHE_KEY = 'kl_report_cache';
+var KL_CACHE_TTL = 5 * 60 * 1000;
+
+KL._saveReportCache = function(report) {
+  try { localStorage.setItem(KL_CACHE_KEY, JSON.stringify({ data: report, ts: Date.now() })); } catch(e) {}
+};
+
+KL._loadReportCache = function() {
   try {
-    var res = await KL.apiFetch('/api/get-report?file=video-report.json');
-    if (!res.ok) return;
-    var report = await res.json();
-    KL.state.results = report.allResults || [];
-    if (report.summary) {
-      KL.state.passedCount = report.summary.passed || 0;
-      KL.state.failedCount = report.summary.failed || 0;
-      KL.state.timeoutCount = report.summary.timeouts || 0;
-    } else {
-      KL.state.passedCount = KL.state.results.filter(function(r) { return r.status === KL.STATUS.PASS; }).length;
-      KL.state.failedCount = KL.state.results.filter(function(r) { return r.status === KL.STATUS.FAIL; }).length;
-      KL.state.timeoutCount = KL.state.results.filter(function(r) { return r.status === KL.STATUS.TIMEOUT; }).length;
-    }
-    KL.state.totalDiscovered = KL.state.results.length;
-    KL.state.checkedCount = KL.state.results.length;
-    KL.state.status = 'complete';
-    KL.state.reportTimestamp = report.timestamp || null;
+    var raw = localStorage.getItem(KL_CACHE_KEY);
+    if (!raw) return null;
+    var parsed = JSON.parse(raw);
+    if (Date.now() - parsed.ts > KL_CACHE_TTL) { localStorage.removeItem(KL_CACHE_KEY); return null; }
+    return parsed.data;
+  } catch(e) { return null; }
+};
 
-    KL.state.sectionMap = {};
-    for (var i = 0; i < KL.state.results.length; i++) {
-      var r = KL.state.results[i];
-      var secKey = r.page + ' - ' + (r.section || 'Unknown');
-      if (!KL.state.sectionMap[secKey]) KL.state.sectionMap[secKey] = { page: r.page, section: r.section || 'Unknown', total: 0, passed: 0, failed: 0, timeout: 0 };
-      KL.state.sectionMap[secKey].total++;
-      if (r.status === KL.STATUS.PASS) KL.state.sectionMap[secKey].passed++;
-      else if (r.status === KL.STATUS.FAIL) KL.state.sectionMap[secKey].failed++;
-      else KL.state.sectionMap[secKey].timeout++;
-    }
+KL._clearReportCache = function() {
+  try { localStorage.removeItem(KL_CACHE_KEY); } catch(e) {}
+};
 
-    KL.renderCompleteFromState();
-  } catch (e) {
-    console.error('Failed to load cloud report:', e);
+KL.loadCloudReport = async function() {
+  // Show skeleton loaders on summary cards while fetching
+  ['stat-total', 'stat-passed', 'stat-failed', 'stat-timeout'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.classList.add('skeleton');
+  });
+
+  var report = null;
+
+  // 1. Try localStorage cache first — instant load on repeat page visits
+  var cached = KL._loadReportCache();
+  if (cached && cached.allResults && cached.allResults.length > 0) {
+    report = cached;
+  } else {
+    // 2. Fetch from Netlify; fall back to previous-report.json if current is empty
+    var filesToTry = ['video-report.json', 'previous-report.json'];
+    for (var fi = 0; fi < filesToTry.length; fi++) {
+      try {
+        var res = await KL.apiFetch('/api/get-report?file=' + filesToTry[fi]);
+        if (!res.ok) continue;
+        var text = await res.text();
+        if (!text || !text.trim()) continue;
+        var parsed = JSON.parse(text);
+        if (parsed && parsed.allResults && parsed.allResults.length > 0) {
+          report = parsed;
+          if (filesToTry[fi] === 'previous-report.json') report._stale = true;
+          // Cache fresh (non-stale) reports for next visit
+          if (!report._stale) KL._saveReportCache(report);
+          break;
+        }
+      } catch(e) {}
+    }
   }
+
+  // Remove skeletons regardless of outcome
+  ['stat-total', 'stat-passed', 'stat-failed', 'stat-timeout'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.classList.remove('skeleton');
+  });
+
+  if (!report) return;
+
+  KL.state.reportStale = report._stale || false;
+  KL.state.results = report.allResults || [];
+  if (report.summary) {
+    KL.state.passedCount = report.summary.passed || 0;
+    KL.state.failedCount = report.summary.failed || 0;
+    KL.state.timeoutCount = report.summary.timeouts || 0;
+  } else {
+    KL.state.passedCount = KL.state.results.filter(function(r) { return r.status === KL.STATUS.PASS; }).length;
+    KL.state.failedCount = KL.state.results.filter(function(r) { return r.status === KL.STATUS.FAIL; }).length;
+    KL.state.timeoutCount = KL.state.results.filter(function(r) { return r.status === KL.STATUS.TIMEOUT; }).length;
+  }
+  KL.state.totalDiscovered = KL.state.results.length;
+  KL.state.checkedCount = KL.state.results.length;
+  KL.state.status = 'complete';
+  KL.state.reportTimestamp = report.timestamp || null;
+
+  KL.state.sectionMap = {};
+  for (var i = 0; i < KL.state.results.length; i++) {
+    var r = KL.state.results[i];
+    var secKey = r.page + ' - ' + (r.section || 'Unknown');
+    if (!KL.state.sectionMap[secKey]) KL.state.sectionMap[secKey] = { page: r.page, section: r.section || 'Unknown', total: 0, passed: 0, failed: 0, timeout: 0 };
+    KL.state.sectionMap[secKey].total++;
+    if (r.status === KL.STATUS.PASS) KL.state.sectionMap[secKey].passed++;
+    else if (r.status === KL.STATUS.FAIL) KL.state.sectionMap[secKey].failed++;
+    else KL.state.sectionMap[secKey].timeout++;
+  }
+
+  KL.renderCompleteFromState();
 };
 
 window.openProgressModal = function() {

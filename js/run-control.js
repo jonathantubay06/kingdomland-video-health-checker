@@ -126,6 +126,8 @@ KL.startRunCloud = async function(email, password) {
 };
 
 KL.resetState = function() {
+  // Invalidate the localStorage report cache so stale data isn't shown after a new run
+  if (KL._clearReportCache) KL._clearReportCache();
   KL.state.status = 'running';
   KL.state.phase = 'login';
   KL.state.results = [];

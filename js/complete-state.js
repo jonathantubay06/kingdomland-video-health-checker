@@ -59,6 +59,9 @@ KL.renderComplete = function(summary, allResults) {
   var hasFailures = KL.state.failedCount > 0 || KL.state.timeoutCount > 0;
   KL.playNotificationSound(!hasFailures);
 
+  // Confetti burst on a perfect run — fires 600ms after complete so banner is visible
+  if (!hasFailures && KL.triggerConfetti) setTimeout(KL.triggerConfetti, 600);
+
   KL.updateSectionRecheckDropdown();
   KL.loadComparisonData().then(function() { KL.renderComparisonSection(); });
   KL.renderHeatmap();

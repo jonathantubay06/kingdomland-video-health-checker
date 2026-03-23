@@ -33,7 +33,9 @@ KL.renderHeatmap = function() {
     var colors = isDark ? getDarkColor(r.loadTimeMs) : getColor(r.loadTimeMs);
     var loadTime = (r.loadTimeMs / 1000).toFixed(1) + 's';
     var titleShort = r.title.length > 18 ? r.title.substring(0, 16) + '...' : r.title;
-    return '<div class="heatmap-cell" style="background:' + colors.bg + ';color:' + colors.text + ';border:1px solid ' + colors.border + '"' +
+    // Add speed class so CSS can pulse slow/very-slow cells independently
+    var speedClass = r.loadTimeMs >= 20000 ? ' heatmap-very-slow' : r.loadTimeMs >= 12000 ? ' heatmap-slow' : '';
+    return '<div class="heatmap-cell' + speedClass + '" style="background:' + colors.bg + ';color:' + colors.text + ';border:1px solid ' + colors.border + '"' +
       ' onclick="showVideoDetail(\'' + KL.escHtml(r.title).replace(/'/g, "\\'") + '\')" title="' + KL.escHtml(r.title) + ' - ' + loadTime + '">' +
       '<div class="heatmap-cell-title">' + KL.escHtml(titleShort) + '</div>' +
       '<div class="heatmap-cell-time">' + loadTime + '</div></div>';
@@ -42,7 +44,7 @@ KL.renderHeatmap = function() {
   section.innerHTML =
     '<div class="heatmap-header">' +
       '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg> Response Time Heatmap</div>' +
-    '<div class="heatmap-grid">' + cells + '</div>' +
+    '<div class="heatmap-grid" id="heatmap-grid">' + cells + '</div>' +
     '<div class="heatmap-legend">' +
       '<span class="heatmap-legend-playwright-note">' +
         '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>' +
@@ -56,4 +58,13 @@ KL.renderHeatmap = function() {
       '</div>' +
     '</div>';
   section.style.display = 'block';
+
+  // Stagger cells in only when the heatmap scrolls into view — not on DOM insertion.
+  // This way the wave animation plays as the user reaches the section.
+  KL.onEnterViewport(section, function() {
+    var cellEls = section.querySelectorAll('.heatmap-cell');
+    cellEls.forEach(function(cell, i) {
+      setTimeout(function() { cell.classList.add('visible'); }, Math.min(i * 12, 1500));
+    });
+  });
 };

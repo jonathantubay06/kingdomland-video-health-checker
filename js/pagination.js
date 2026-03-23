@@ -16,6 +16,16 @@ window.applyFilters = function() {
   KL.renderResultsTable();
 };
 
+// Debounced version used by the search input's oninput — waits 300ms after last keystroke
+// before rebuilding the table, avoiding a re-render on every character typed.
+window.debouncedApplyFilters = (function() {
+  var timer;
+  return function() {
+    clearTimeout(timer);
+    timer = setTimeout(window.applyFilters, 300);
+  };
+})();
+
 window.sortBy = function(column) {
   if (KL.sortColumn === column) {
     KL.sortDir = KL.sortDir === 'asc' ? 'desc' : 'asc';
@@ -71,10 +81,25 @@ KL.renderResultsTable = function() {
   var tbody = document.getElementById('results-tbody');
   tbody.innerHTML = '';
   for (var i = 0; i < pageResults.length; i++) {
-    tbody.appendChild(KL.createResultRow(pageResults[i]));
+    var tr = KL.createResultRow(pageResults[i]);
+    tr.classList.add('row-animated');
+    // Cap stagger at 600ms so long tables don't wait forever
+    tr.style.animationDelay = Math.min(i * 28, 600) + 'ms';
+    tbody.appendChild(tr);
   }
   KL.updateResultCount(filtered.length, start + 1, Math.min(end, filtered.length));
   KL.renderPagination(totalPages);
+
+  // Flash the count so the user sees it changed after filtering
+  var countEl = document.getElementById('result-count');
+  if (countEl) {
+    countEl.classList.remove('result-count-flash');
+    void countEl.offsetWidth; // force reflow to restart animation
+    countEl.classList.add('result-count-flash');
+    countEl.addEventListener('animationend', function() {
+      countEl.classList.remove('result-count-flash');
+    }, { once: true });
+  }
 };
 
 KL.updateSectionFilterOptions = function() {

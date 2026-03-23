@@ -211,6 +211,8 @@ async function startRunCloud(email, password) {
 }
 
 function resetState() {
+  // Invalidate the localStorage cache so the new run's results aren't masked by old ones
+  try { localStorage.removeItem(CACHE_KEY); } catch {}
   state.status = 'running';
   state.phase = 'login';
   state.results = [];
@@ -324,25 +326,46 @@ async function pollCloudStatus() {
 }
 
 async function loadCloudReport() {
-  // Try video-report.json first; fall back to previous-report.json if empty/invalid
+  // Show skeleton loaders on the summary cards while fetching
+  ['stat-total', 'stat-passed', 'stat-failed', 'stat-timeout'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.add('skeleton');
+  });
+
+  // 1. Try localStorage cache first — instant load on repeat visits
+  const cached = loadReportFromCache();
   let report = null;
-  for (const file of ['video-report.json', 'previous-report.json']) {
-    try {
-      const res = await fetch(`/api/get-report?file=${file}`);
-      if (!res.ok) continue;
-      const text = await res.text();
-      if (!text || !text.trim()) continue;
-      const parsed = JSON.parse(text);
-      if (parsed && (parsed.allResults?.length > 0)) {
-        report = parsed;
-        if (file === 'previous-report.json') {
-          // Mark as stale so the UI knows this isn't the latest run
-          report._stale = true;
+
+  if (cached && cached.allResults?.length > 0) {
+    report = cached;
+  } else {
+    // 2. Fetch from Netlify; try current report then previous as fallback
+    for (const file of ['video-report.json', 'previous-report.json']) {
+      try {
+        const res = await fetch(`/api/get-report?file=${file}`);
+        if (!res.ok) continue;
+        const text = await res.text();
+        if (!text || !text.trim()) continue;
+        const parsed = JSON.parse(text);
+        if (parsed && (parsed.allResults?.length > 0)) {
+          report = parsed;
+          if (file === 'previous-report.json') {
+            // Mark as stale so the UI knows this isn't the latest run
+            report._stale = true;
+          }
+          // Save to cache for next page load
+          if (!report._stale) saveReportToCache(report);
+          break;
         }
-        break;
-      }
-    } catch {}
+      } catch {}
+    }
   }
+
+  // Remove skeleton regardless of outcome
+  ['stat-total', 'stat-passed', 'stat-failed', 'stat-timeout'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.remove('skeleton');
+  });
 
   if (!report) return;
 
@@ -571,7 +594,15 @@ function updateRunButtons() {
 }
 
 function updateStat(id, value) {
-  document.getElementById(id).textContent = value;
+  const el = document.getElementById(id);
+  if (!el) return;
+  // Animate numeric values; leave strings (e.g. '--') as-is
+  const num = parseInt(value, 10);
+  if (!isNaN(num) && state.status === 'complete') {
+    animateCounter(el, num);
+  } else {
+    el.textContent = value;
+  }
 }
 
 function updateSummaryCards() {
@@ -708,7 +739,8 @@ function appendLog(message, isError = false) {
 function updateSectionBreakdown() {
   const grid = document.getElementById('section-grid');
   grid.innerHTML = '';
-  for (const [key, s] of Object.entries(state.sectionMap)) {
+  const entries = Object.entries(state.sectionMap);
+  entries.forEach(([key, s], i) => {
     const rate = s.total > 0 ? Math.round((s.passed / s.total) * 100) : 0;
     const card = document.createElement('div');
     card.className = 'section-card';
@@ -726,8 +758,10 @@ function updateSectionBreakdown() {
         <span>${rate}%</span>
       </div>
     `;
+    // Stagger entrance: set CSS animation-delay inline so each card slides in after the previous
+    card.style.animationDelay = (i * 35) + 'ms';
     grid.appendChild(card);
-  }
+  });
 }
 
 // ============== Results Table ==============
@@ -743,6 +777,9 @@ function appendResultRow(r) {
 function createResultRow(r) {
   const tr = document.createElement('tr');
   tr.dataset.num = r.number;
+  // Subtle row tinting for failed/timeout rows to make them easier to spot
+  if (r.status === KL.STATUS.FAIL) tr.classList.add('row-fail');
+  else if (r.status === KL.STATUS.TIMEOUT) tr.classList.add('row-timeout');
   tr.onclick = (e) => {
     // Don't toggle detail when clicking star or title link
     if (e.target.classList.contains('star-btn') || e.target.classList.contains('video-title-link')) return;
@@ -797,6 +834,14 @@ function toggleDetail(num) {
   const detailRow = document.createElement('tr');
   detailRow.id = 'detail-' + num;
   detailRow.className = 'detail-row';
+  // "Open Page" button — links directly to the video's page on the KDL site
+  const openPageBtn = r.url
+    ? `<a href="${escHtml(r.url)}" target="_blank" rel="noopener" class="btn-open-page">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        Open Video Page
+      </a>`
+    : '';
+
   detailRow.innerHTML = `
     <td colspan="10">
       <div class="detail-content">
@@ -807,6 +852,7 @@ function toggleDetail(num) {
         ${r.duration ? `<div><strong>Duration:</strong> ${r.duration}</div>` : ''}
         <div><strong>Load Time:</strong> ${r.loadTimeMs ? (r.loadTimeMs / 1000).toFixed(1) + 's' : 'N/A'}</div>
         ${screenshotHtml}
+        ${openPageBtn}
       </div>
     </td>
   `;
@@ -1097,6 +1143,9 @@ function downloadFile(format) {
     const file = fileMap[format];
     if (file) window.location.href = '/api/get-report?file=' + file;
   }
+  // Toast feedback so user knows the download started
+  const labels = { csv: 'CSV', json: 'JSON', txt: 'Failed list' };
+  showToast(`Downloading ${labels[format] || format}…`, 'info', 2000);
 }
 
 // ============== Print Report ==============
@@ -1182,6 +1231,7 @@ function printReport() {
   const origTitle = document.title;
   const dateStr = new Date().toISOString().slice(0, 10);
   document.title = `KDL-Video-Check-${dateStr}`;
+  showToast('Opening print dialog…', 'info', 2000);
   window.print();
   setTimeout(() => {
     document.getElementById('print-report').style.display = 'none';
@@ -1196,6 +1246,120 @@ function escHtml(str) {
   div.textContent = str;
   return div.innerHTML;
 }
+
+// ============== Toast Notifications ==============
+// Lightweight, non-blocking feedback messages that auto-dismiss.
+// Usage: showToast('Copied!', 'success') | showToast('Error', 'error') | showToast('Info', 'info')
+function showToast(message, type = 'info', duration = 2800) {
+  const container = document.getElementById('toast-container');
+  if (!container) return;
+
+  const icons = { success: '✓', error: '✕', info: 'ℹ' };
+  const toast = document.createElement('div');
+  toast.className = `toast toast-${type}`;
+  toast.innerHTML = `<span class="toast-icon">${icons[type] || 'ℹ'}</span><span>${escHtml(message)}</span>`;
+  container.appendChild(toast);
+
+  // Auto-dismiss
+  setTimeout(() => {
+    toast.classList.add('removing');
+    toast.addEventListener('animationend', () => toast.remove(), { once: true });
+  }, duration);
+}
+
+// ============== Debounce Utility ==============
+// Wraps applyFilters so keystroke search doesn't rebuild the table on every character.
+function debounce(fn, delay) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
+// 300ms debounce — used by the search input's oninput handler
+const debouncedApplyFilters = debounce(applyFilters, 300);
+
+// ============== localStorage Report Cache ==============
+// In cloud mode, caches the last fetched report for 5 minutes so refreshes are instant.
+const CACHE_KEY = 'kl_report_cache';
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes in ms
+
+function saveReportToCache(report) {
+  try {
+    localStorage.setItem(CACHE_KEY, JSON.stringify({ data: report, ts: Date.now() }));
+  } catch {}
+}
+
+function loadReportFromCache() {
+  try {
+    const raw = localStorage.getItem(CACHE_KEY);
+    if (!raw) return null;
+    const { data, ts } = JSON.parse(raw);
+    if (Date.now() - ts > CACHE_TTL) { localStorage.removeItem(CACHE_KEY); return null; }
+    return data;
+  } catch { return null; }
+}
+
+// ============== Counter Animation ==============
+// Counts a stat-value element from 0 to its target number over ~600ms.
+function animateCounter(el, target) {
+  if (!el || isNaN(target) || target === 0) { el.textContent = target; return; }
+  const duration = 600;
+  const start = performance.now();
+  el.classList.add('counting');
+
+  function step(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    // Ease-out cubic: decelerates into the final value
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(eased * target);
+    if (progress < 1) requestAnimationFrame(step);
+    else { el.textContent = target; el.classList.remove('counting'); }
+  }
+  requestAnimationFrame(step);
+}
+
+// ============== Keyboard Shortcuts ==============
+// R = run check, / = focus search, Esc = close modals
+document.addEventListener('keydown', (e) => {
+  // Skip if user is typing in an input/textarea/select
+  const tag = document.activeElement?.tagName;
+  if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') {
+    if (e.key === 'Escape') document.activeElement.blur();
+    return;
+  }
+
+  switch (e.key) {
+    case 'r':
+    case 'R':
+      // R: trigger Run Check (same as clicking the button)
+      if (!e.ctrlKey && !e.metaKey && state.status !== 'running') {
+        e.preventDefault();
+        startRun();
+      }
+      break;
+    case '/':
+      // /: focus the search box
+      e.preventDefault();
+      const searchInput = document.getElementById('filter-search');
+      if (searchInput) { searchInput.focus(); searchInput.select(); }
+      break;
+    case 'Escape':
+      // Esc: close any open modal
+      ['progress-modal', 'credentials-modal', 'video-detail-modal', 'comparison-modal'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && (el.classList.contains('open') || el.style.display !== 'none')) {
+          el.classList.remove('open');
+          el.style.display = 'none';
+        }
+      });
+      // Also close screenshot lightbox
+      const lb = document.getElementById('screenshot-lightbox');
+      if (lb) lb.style.display = 'none';
+      break;
+  }
+});
 
 // ====================================================================
 // NEW FEATURES
@@ -1218,27 +1382,30 @@ function updateHealthSummary() {
   let icon = '';
 
   if (rate === 100) {
-    message = `All ${total} videos are working perfectly!`;
-    detail = '100% pass rate';
+    // Celebrate the perfect run — kids can watch without issues
+    message = `All ${total} videos are healthy`;
+    detail = `100% pass rate — every video loads perfectly`;
     level = 'green';
     icon = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>';
   } else if (rate > 95) {
+    // Mostly fine — small number of issues
     level = 'yellow';
     const notWorking = failed + timeouts;
     const parts = [];
     if (failed > 0) parts.push(`${failed} failed`);
     if (timeouts > 0) parts.push(`${timeouts} timed out`);
     message = `${passed} of ${total} videos working`;
-    detail = `${notWorking} video${notWorking !== 1 ? 's' : ''} with issues: ${parts.join(', ')}`;
+    detail = `${notWorking} video${notWorking !== 1 ? 's' : ''} need${notWorking === 1 ? 's' : ''} attention — ${parts.join(', ')}`;
     icon = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>';
   } else {
+    // Significant failures — needs immediate action
     level = 'red';
     const notWorking = failed + timeouts;
     const parts = [];
     if (failed > 0) parts.push(`${failed} failed`);
     if (timeouts > 0) parts.push(`${timeouts} timed out`);
-    message = `${notWorking} videos are not working`;
-    detail = parts.join(', ');
+    message = `${notWorking} video${notWorking !== 1 ? 's' : ''} need${notWorking === 1 ? 's' : ''} immediate attention`;
+    detail = `${parts.join(', ')} — scroll down to see affected videos`;
     icon = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>';
   }
 
@@ -1448,7 +1615,7 @@ function updateHealthBadge() {
         <label>Badge URL</label>
         <div class="badge-url-row">
           <input type="text" id="badge-url-input" value="${escHtml(badgeUrl)}" readonly onclick="this.select()">
-          <button class="btn-copy-badge" onclick="(function(){navigator.clipboard.writeText('${escHtml(badgeUrl)}').then(function(){var b=document.querySelector('.btn-copy-badge');b.textContent='Copied!';setTimeout(function(){b.textContent='Copy';},1500);});})()" title="Copy to clipboard">Copy</button>
+          <button class="btn-copy-badge" onclick="(function(){navigator.clipboard.writeText('${escHtml(badgeUrl)}').then(function(){showToast('Badge URL copied!','success');});})()" title="Copy to clipboard">Copy</button>
         </div>
         <p class="badge-card-hint">Embed this URL in your README or status page to show live video health.</p>
       </div>

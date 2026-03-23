@@ -117,6 +117,16 @@ KL.loadAndShowTrendChart = async function() {
         '<div class="trend-chart-summary">' + totalChecks + ' checks &middot; Avg pass rate: ' + avgPassRate.toFixed(1) + '%</div>' +
       '</div>';
 
+    // Trigger bar-grow animation when chart scrolls into view
+    container.style.display = 'block';
+    KL.onEnterViewport(container, function() {
+      var bars = container.querySelectorAll('.chart-bar');
+      bars.forEach(function(bar, i) {
+        bar.style.animationDelay = (i * 45) + 'ms';
+      });
+      container.classList.add('trend-chart-ready');
+    });
+
     // Attach tooltip listeners
     var tooltip = document.getElementById('chart-tooltip');
     var canvasEl = container.querySelector('.trend-chart-canvas');

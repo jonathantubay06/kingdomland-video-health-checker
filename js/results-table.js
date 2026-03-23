@@ -14,6 +14,9 @@ KL.createResultRow = function(r) {
   const tr = document.createElement('tr');
   tr.dataset.num = r.number;
   if (KL.isFalsePositive && KL.isFalsePositive(r.title)) tr.classList.add('false-positive');
+  // Subtle row tinting to make failures/timeouts easier to spot while scanning
+  if (r.status === KL.STATUS.FAIL) tr.classList.add('row-fail');
+  else if (r.status === KL.STATUS.TIMEOUT) tr.classList.add('row-timeout');
   tr.onclick = function(e) {
     if (e.target.classList.contains('star-btn') || e.target.classList.contains('video-title-link') || e.target.classList.contains('row-checkbox')) return;
     KL.toggleDetail(r.number);
@@ -64,6 +67,13 @@ KL.toggleDetail = function(num) {
     ? '<div style="margin-top:8px"><strong>Screenshot:</strong><br><img src="' + KL.escHtml(r.screenshot) + '" class="screenshot-thumb" alt="Failure screenshot" onclick="window.open(this.src,\'_blank\')"></div>'
     : '';
 
+  // "Open Video Page" button — direct link to the actual page on go.kingdomlandkids.com
+  const openPageBtn = r.url
+    ? '<a href="' + KL.escHtml(r.url) + '" target="_blank" rel="noopener" class="btn-open-page">' +
+        '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>' +
+        ' Open Video Page</a>'
+    : '';
+
   const detailRow = document.createElement('tr');
   detailRow.id = 'detail-' + num;
   detailRow.className = 'detail-row';
@@ -77,6 +87,7 @@ KL.toggleDetail = function(num) {
         ${r.duration ? '<div><strong>Duration:</strong> ' + r.duration + '</div>' : ''}
         <div><strong>Load Time:</strong> ${r.loadTimeMs ? (r.loadTimeMs / 1000).toFixed(1) + 's' : 'N/A'}</div>
         ${screenshotHtml}
+        ${openPageBtn}
       </div>
     </td>
   `;
