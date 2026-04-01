@@ -36,8 +36,8 @@ const CONFIG = {
   password: process.env.KL_PASSWORD || '',
 
   // Selectors (verified from actual site inspection)
-  emailSelector: 'input[type="text"]',
-  passwordSelector: 'input[type="password"]',
+  emailSelector: '#login_email',
+  passwordSelector: '#login_password',
   loginButtonSelector: 'button[type="submit"]',
 
   // Timeouts
@@ -114,16 +114,94 @@ async function login(page) {
     return;
   }
 
-  await page.fill(CONFIG.emailSelector, CONFIG.username);
-  await page.fill(CONFIG.passwordSelector, CONFIG.password);
-  await page.click(CONFIG.loginButtonSelector);
-  await page.waitForTimeout(5000);
+  // Type credentials slowly to trigger form events
+  await page.locator(CONFIG.emailSelector).click();
+  await page.type(CONFIG.emailSelector, CONFIG.username, { delay: 50 });
+  await page.waitForTimeout(800);
 
-  if (page.url().includes('/login')) {
-    throw new Error('Login failed — still on login page. Check credentials.');
+  await page.locator(CONFIG.passwordSelector).click();
+  await page.type(CONFIG.passwordSelector, CONFIG.password, { delay: 50 });
+  await page.waitForTimeout(800);
+
+  // Click submit button and wait for navigation in parallel
+  try {
+    await Promise.all([
+      page.waitForNavigation({ waitUntil: 'load', timeout: 10000 }),
+      page.click(CONFIG.loginButtonSelector)
+    ]);
+  } catch (err) {
+    throw new Error(`Login failed — navigation error: ${err.message}`);
   }
 
-  log('Logged in as Jonathan Tubay\n');
+
+  log('Logged in successfully!');
+
+  // Handle profile selection
+  await handleProfileSelection(page);
+  log('');
+}
+
+/**
+ * Handle the "Who's Watching?" profile selection page.
+ * Clicks on the first available profile.
+ */
+async function handleProfileSelection(page) {
+  // Wait a bit for page to stabilize
+  await page.waitForTimeout(1000);
+
+  // Check if we're on a profile selection page - use multiple checks
+  const pageInfo = await page.evaluate(() => {
+    return {
+      url: window.location.pathname,
+      hasWatchingText: document.body.textContent.includes("Who's Watching"),
+      hasProfileCard: !!document.querySelector('[class*="profileCard"]'),
+      bodyText: document.body.textContent.substring(0, 200)
+    };
+  });
+
+  log(`   Debug: URL=${pageInfo.url}, HasWatching=${pageInfo.hasWatchingText}, HasCard=${pageInfo.hasProfileCard}`);
+
+  const onProfilePage = pageInfo.hasWatchingText || pageInfo.hasProfileCard || pageInfo.url.includes('/profile');
+
+  if (!onProfilePage) {
+    log('   (Already past profile selection)');
+    return; // Already past profile selection
+  }
+
+  log('   Selecting first profile...');
+
+  // Try to find the profile card
+  const profileCardFound = await page.locator('[class*="profileCard"]').first().isVisible().catch(() => false);
+  log(`   Debug: Profile card found: ${profileCardFound}, URL: ${page.url()}`);
+
+  // Click the first profile card div using Playwright click (proper event handling)
+  try {
+    await Promise.all([
+      page.waitForNavigation({ waitUntil: 'load', timeout: 10000 }),
+      page.locator('[class*="profileCard"]').first().click()
+    ]);
+    log('   Profile selected and navigated!');
+  } catch (e) {
+    log('   Error selecting profile: ' + e.message);
+    // Try simpler selector as fallback
+    try {
+      log('   Trying fallback: clicking any div in the page...');
+      await page.click('[class*="profileCard"]');
+    } catch (e2) {
+      log('   Fallback also failed: ' + e2.message);
+    }
+  }
+
+  // Wait for navigation away from profile selection (as backup)
+  try {
+    await page.waitForURL(url => {
+      const path = url.toString();
+      return !path.includes('/profile') && !path.includes('watching');
+    }, { timeout: 5000 }).catch(() => {});
+  } catch (e) {
+    // Non-critical, continue anyway
+    log('   (profile selection completed or skipped)');
+  }
 }
 
 /**
@@ -362,11 +440,11 @@ async function clickCarouselArrow(page, sectionName, direction = 'next') {
     const h2s = document.querySelectorAll('h2');
     for (const h2 of h2s) {
       if (h2.textContent.trim() !== secName) continue;
-      // Walk up from h2 to find a container that holds cursor-pointer cards
+      // Walk up from h2 to find a container that holds video cards
       let el = h2.parentElement;
       for (let i = 0; i < 12; i++) {
         if (!el) break;
-        const cards = Array.from(el.querySelectorAll('[class*="cursor-pointer"]'))
+        const cards = Array.from(el.querySelectorAll('[data-video-card="true"]'))
           .filter(c => c.querySelector('img'));
         if (cards.length >= 2) {
           // Use the bounding rect of the card row area (2nd card center so we avoid edge)
@@ -426,16 +504,16 @@ async function getCardTitlesInSection(page, sectionName) {
       for (let i = 0; i < 10; i++) {
         container = container.parentElement;
         if (!container) break;
-        if (container.querySelectorAll('[class*="cursor-pointer"] img').length > 0) break;
+        if (container.querySelectorAll('[data-video-card="true"] img').length > 0) break;
       }
       if (!container) return [];
 
-      const cardEls = container.querySelectorAll('[class*="cursor-pointer"]');
+      const cardEls = container.querySelectorAll('[data-video-card="true"]');
       const titles = [];
       for (const card of cardEls) {
         const img = card.querySelector('img');
         if (!img) continue;
-        const title = card.querySelector('p')?.textContent?.trim() || img.alt || '';
+        const title = card.querySelector('h3')?.textContent?.trim() || card.querySelector('p')?.textContent?.trim() || img.alt || '';
         if (title && title !== 'Avatar' && title !== 'Search' && !title.includes('Logo')) {
           titles.push(title);
         }
@@ -510,16 +588,16 @@ async function collectStoryCards(page) {
     }
   }
 
-  // Final catch-all sweep: scan ALL cards on the entire page regardless of section.
-  // This catches cards in featured/banner areas, or sections without h2 headings.
+  // Comprehensive grid scan: find ALL video cards by scrolling and searching the entire page
+  // This catches cards in grid layouts, scrollable sections, and featured areas
   await scrollToLoadAll(page);
   const allPageCards = await page.evaluate(() => {
-    const cards = document.querySelectorAll('[class*="cursor-pointer"]');
+    const cards = document.querySelectorAll('[data-video-card="true"]');
     const results = [];
     for (const card of cards) {
       const img = card.querySelector('img');
       if (!img) continue;
-      const title = card.querySelector('p')?.textContent?.trim() || img.alt || '';
+      const title = card.querySelector('h3')?.textContent?.trim() || card.querySelector('p')?.textContent?.trim() || img.alt || '';
       if (!title || title === 'Avatar' || title === 'Search' || title.includes('Logo')) continue;
 
       // Try to find nearest h2 for section name
@@ -549,7 +627,7 @@ async function collectStoryCards(page) {
     }
   }
   if (extraCount > 0) {
-    log(`   Catch-all sweep found ${extraCount} additional video(s)`);
+    log(`   Grid scan found ${extraCount} total video(s) via scrolling`);
   }
 
   emit({ type: 'discovery-complete', page: PAGE.STORY, cards: allCards, total: allCards.length });
@@ -581,12 +659,12 @@ async function clickViewMore(page) {
  */
 async function getAllMusicCardTitles(page) {
   return await page.evaluate(() => {
-    const cards = document.querySelectorAll('[class*="cursor-pointer"]');
+    const cards = document.querySelectorAll('[data-video-card="true"]');
     const titles = [];
     for (const card of cards) {
       const img = card.querySelector('img');
       if (!img) continue;
-      const title = card.querySelector('p')?.textContent?.trim() || img.alt || '';
+      const title = card.querySelector('h3')?.textContent?.trim() || card.querySelector('p')?.textContent?.trim() || img.alt || '';
       if (title && title !== 'Avatar' && title !== 'Search' && !title.includes('Logo')) {
         titles.push(title);
       }
@@ -613,12 +691,12 @@ async function collectMusicCards(page) {
   // Helper: scan the current DOM for all video cards and add new ones
   async function harvestCards(sourceLabel) {
     const cardData = await page.evaluate(() => {
-      const cards = document.querySelectorAll('[class*="cursor-pointer"]');
+      const cards = document.querySelectorAll('[data-video-card="true"]');
       const results = [];
       for (const card of cards) {
         const img = card.querySelector('img');
         if (!img) continue;
-        const title = card.querySelector('p')?.textContent?.trim() || img.alt || '';
+        const title = card.querySelector('h3')?.textContent?.trim() || card.querySelector('p')?.textContent?.trim() || img.alt || '';
         if (!title || title === 'Avatar' || title === 'Search' || title.includes('Logo')) continue;
 
         // Walk up to find section h2
@@ -877,8 +955,8 @@ async function tryClickCard(page, title) {
   // Approach 1: Playwright native locator (atomic, no coordinate race condition)
   try {
     // Build a locator that matches cards containing the exact title text
-    const cardLocator = page.locator('[class*="cursor-pointer"]').filter({
-      has: page.locator(`p:text-is("${title.replace(/"/g, '\\"')}")`)
+    const cardLocator = page.locator('[data-video-card="true"]').filter({
+      has: page.locator(`h3:text-is("${title.replace(/"/g, '\\"')}"), p:text-is("${title.replace(/"/g, '\\"')}")`)
     }).first();
 
     if (await cardLocator.isVisible({ timeout: 2000 })) {
@@ -889,7 +967,7 @@ async function tryClickCard(page, title) {
 
   // Also try matching by img alt text (some cards don't have <p> titles)
   try {
-    const imgLocator = page.locator(`[class*="cursor-pointer"]:has(img[alt="${title.replace(/"/g, '\\"')}"])`).first();
+    const imgLocator = page.locator(`[data-video-card="true"]:has(img[alt="${title.replace(/"/g, '\\"')}"])`).first();
     if (await imgLocator.isVisible({ timeout: 1000 })) {
       await imgLocator.click({ timeout: 5000 });
       return true;
@@ -898,11 +976,12 @@ async function tryClickCard(page, title) {
 
   // Approach 2: Coordinate-based fallback (scroll → re-read coordinates → click)
   const bounds = await page.evaluate((t) => {
-    const cards = document.querySelectorAll('[class*="cursor-pointer"]');
+    const cards = document.querySelectorAll('[data-video-card="true"]');
     for (const card of cards) {
+      const h3 = card.querySelector('h3');
       const p = card.querySelector('p');
       const img = card.querySelector('img');
-      const cardTitle = p?.textContent?.trim() || img?.alt || '';
+      const cardTitle = h3?.textContent?.trim() || p?.textContent?.trim() || img?.alt || '';
       if (cardTitle === t) {
         card.scrollIntoView({ behavior: 'instant', block: 'center' });
         return true;
@@ -916,11 +995,12 @@ async function tryClickCard(page, title) {
 
   // Re-read coordinates AFTER scroll has settled (avoids stale-coordinate bug)
   const coords = await page.evaluate((t) => {
-    const cards = document.querySelectorAll('[class*="cursor-pointer"]');
+    const cards = document.querySelectorAll('[data-video-card="true"]');
     for (const card of cards) {
+      const h3 = card.querySelector('h3');
       const p = card.querySelector('p');
       const img = card.querySelector('img');
-      const cardTitle = p?.textContent?.trim() || img?.alt || '';
+      const cardTitle = h3?.textContent?.trim() || p?.textContent?.trim() || img?.alt || '';
       if (cardTitle === t) {
         const rect = card.getBoundingClientRect();
         return { x: rect.x + rect.width / 2, y: rect.y + rect.height / 2 };
@@ -1390,6 +1470,41 @@ function generateReport(allResults) {
 }
 
 /**
+ * Click the "Categorized content" tab and harvest all video cards from it.
+ * Each category has a carousel (continuous loop) — reuses collectStoryCards
+ * which handles carousel arrow-clicking and loop detection.
+ * Returns an array of { title, section } objects.
+ */
+async function discoverCategorizedContent(page) {
+  try {
+    // Wait for the page to fully render (React hydration) before looking for the tab
+    // The content tabs appear after the page has loaded and hydrated
+    const catTab = page.locator('button:has-text("Categorized content")').first();
+    try {
+      await catTab.waitFor({ state: 'visible', timeout: 15000 });
+    } catch {
+      log('   Warning: "Categorized content" tab not found after 15s, page may not have loaded');
+      return [];
+    }
+
+    await catTab.click();
+    await page.waitForTimeout(3000);
+
+    // Reuse collectStoryCards — it handles scrolling, section detection,
+    // carousel arrow-clicking (with loop detection after 12 no-new clicks),
+    // and a final grid scan sweep
+    log(`   Scanning categorized content tab (carousels per category)...`);
+    const cards = await collectStoryCards(page);
+    log(`   Categorized content tab: found ${cards.length} video cards`);
+
+    return cards;
+  } catch (e) {
+    log(`   Note: Could not scan categorized content tab: ${e.message}`);
+    return [];
+  }
+}
+
+/**
  * Scan STORY page: discover all carousel cards, then check each one.
  */
 async function scanStoryPage(page, pageUrl, allResults, startNum) {
@@ -1397,11 +1512,19 @@ async function scanStoryPage(page, pageUrl, allResults, startNum) {
   log('Scanning STORY page...');
   if (!JSON_STREAM) console.log('-'.repeat(60));
 
-  await page.goto(pageUrl, { waitUntil: 'networkidle', timeout: CONFIG.navigationTimeout });
-  await page.waitForTimeout(2000);
+  // Navigate to home page — always do a fresh load to ensure full render
+  try {
+    await page.goto(pageUrl, { waitUntil: 'networkidle', timeout: CONFIG.navigationTimeout });
+    await page.waitForTimeout(3000);
+  } catch (e) {
+    log(`   Warning: Navigation to ${pageUrl} failed: ${e.message}, continuing with current page...`);
+    await page.waitForTimeout(3000);
+  }
 
-  log('   Phase 1: Discovering all video cards (navigating carousels)...');
-  let cards = await collectStoryCards(page);
+  // Switch to "Categorized content" tab which shows ALL standard videos in carousels per category
+  log('   Switching to Categorized content tab...');
+  let cards = await discoverCategorizedContent(page);
+
   log(`   Found ${cards.length} total video cards on STORY page`);
 
   // Filter to specific titles if "Check Failed Only" was used
@@ -1428,6 +1551,12 @@ async function scanStoryPage(page, pageUrl, allResults, startNum) {
       try {
         await page.goto(pageUrl, { waitUntil: 'networkidle', timeout: CONFIG.navigationTimeout });
         await page.waitForTimeout(2000);
+        // Switch to categorized content tab which shows all videos
+        const catTab = page.locator('button:has-text("Categorized content")').first();
+        if (await catTab.isVisible({ timeout: 3000 })) {
+          await catTab.click();
+          await page.waitForTimeout(3000);
+        }
         await scrollToLoadAll(page);
       } catch {
         log('   ⚠ Failed to reload story page, retrying...');
@@ -1465,7 +1594,7 @@ async function scanMusicPage(page, pageUrl, allResults, startNum) {
   await page.goto(pageUrl, { waitUntil: 'networkidle', timeout: CONFIG.navigationTimeout });
   await page.waitForTimeout(2000);
 
-  log('   Phase 1: Discovering all video cards (View more + tabs)...');
+  log('   Phase 1: Discovering all video cards (scrolling & grid scan)...');
   let cards = await collectMusicCards(page);
   log(`   Found ${cards.length} total video cards on MUSIC page`);
 
