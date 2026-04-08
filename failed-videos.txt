@@ -1,8 +1,12 @@
 FAILED VIDEOS — go.kingdomlandkids.com
-Generated: 4/8/2026, 6:44:39 AM
-Total failed: 1 | Timed out: 0
+Generated: 4/8/2026, 2:41:20 PM
+Total failed: 2 | Timed out: 0
 ============================================================
 
 [FAIL] #1 [STORY] Fun Zone > AlphaBots the Alphabet Part 2
+  URL:   https://go.kingdomlandkids.com/
+  Error: No <video> element found after 25s
+
+[FAIL] #2 [STORY] Fun Zone > AlphaBots the Alphabet Part 1
   URL:   https://go.kingdomlandkids.com/
   Error: No <video> element found after 25s
