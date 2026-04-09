@@ -19,6 +19,7 @@
  *   node check-videos.js --browser=webkit       # use WebKit (Safari)
  */
 
+try { require('dotenv').config(); } catch (_) {}
 const playwright = require('playwright');
 const fs = require('fs');
 const { STATUS, PAGE } = require('./lib/constants');
@@ -1014,6 +1015,7 @@ async function tryClickCard(page, title) {
   return true;
 }
 
+
 /**
  * STORY PAGE: Navigate the carousel until the card appears, then click it.
  */
@@ -1107,6 +1109,35 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = PAGE.STOR
   const startTime = Date.now();
 
   try {
+    // PRE-CLICK: Extract video ID from React fiber BEFORE clicking (card is in DOM now)
+    const preClickVideoIds = await page.evaluate((t) => {
+      const cards = document.querySelectorAll('[data-video-card="true"]');
+      for (const c of cards) {
+        const h3 = c.querySelector('h3');
+        const p = c.querySelector('p');
+        const img = c.querySelector('img');
+        const cardTitle = h3?.textContent?.trim() || p?.textContent?.trim() || img?.alt || '';
+        if (cardTitle === t) {
+          const fiberKey = Object.keys(c).find(k => k.startsWith('__reactFiber'));
+          if (!fiberKey) return null;
+          let fiber = c[fiberKey];
+          let videoId = null, categoryId = null;
+          for (let i = 0; i < 20 && fiber; i++) {
+            const mp = fiber.memoizedProps || {};
+            const pp = fiber.pendingProps || {};
+            for (const props of [mp, pp]) {
+              if (props.video?.id) videoId = props.video.id;
+              if (props.category?.id) categoryId = props.category.id;
+            }
+            if (videoId && categoryId) break;
+            fiber = fiber.return;
+          }
+          return videoId ? { videoId, categoryId } : null;
+        }
+      }
+      return null;
+    }, card.title).catch(() => null);
+
     const clicked = pageType === PAGE.MUSIC
       ? await findAndClickCardMusic(page, card.title, card.section)
       : await findAndClickCardStory(page, card.title, card.section);
@@ -1124,10 +1155,34 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = PAGE.STOR
     try {
       await page.waitForURL('**/watch/**', { timeout: 10000 });
     } catch {
-      await page.waitForTimeout(3000);
+      // Not on /watch/ yet — use pre-extracted video ID to navigate directly
+      if (!page.url().includes('/watch/') && preClickVideoIds?.videoId) {
+        const watchUrl = `${CONFIG.baseUrl}/watch/${preClickVideoIds.videoId}` +
+          (preClickVideoIds.categoryId ? `?category=${preClickVideoIds.categoryId}&from=home` : '');
+        log(`   ⚠ Card click didn't navigate. Using direct URL: ${watchUrl}`);
+        try {
+          await page.goto(watchUrl, { waitUntil: 'networkidle', timeout: 15000 });
+        } catch (navErr) {
+          log(`   ⚠ Direct navigation failed: ${navErr.message}`);
+        }
+      }
+      if (!page.url().includes('/watch/')) {
+        await page.waitForTimeout(3000);
+      }
     }
 
     result.url = page.url();
+
+    // Early bail: if still not on a /watch/ page, no point waiting 25s for video
+    if (!page.url().includes('/watch/')) {
+      log(`   ⚠ Never reached /watch/ page (final URL: ${page.url()})`);
+      result.status = STATUS.FAIL;
+      result.error = `Card click did not navigate to /watch/ page (URL: ${page.url()})`;
+      result.loadTimeMs = Date.now() - startTime;
+      logResult(result, videoNum, totalLabel);
+      emit({ type: 'check', result });
+      return result;
+    }
 
     // Verify the watch page title matches the expected card title
     try {
