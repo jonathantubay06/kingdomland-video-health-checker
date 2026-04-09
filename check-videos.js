@@ -1179,29 +1179,44 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = PAGE.STOR
     }
 
     if (!videoAppeared) {
-      // Fallback: some videos show a static thumbnail first and need a click to load the player
+      // Fallback: try clicking play overlay or video area to trigger player initialization
       try {
-        const playOverlay = page.locator('[data-testid="play-overlay"], .play-button, [class*="play"], video, [aria-label*="play"], [aria-label*="Play"]').first();
+        const playOverlay = page.locator('[data-testid="play-overlay"], .play-button, [class*="play"], [aria-label*="play"], [aria-label*="Play"]').first();
         if (await playOverlay.isVisible({ timeout: 2000 })) {
           await playOverlay.click();
-          await page.waitForTimeout(3000);
+          await page.waitForTimeout(5000);
           videoAppeared = await page.evaluate(() => !!document.querySelector('video'));
           if (videoAppeared) videoFrame = page;
         }
       } catch { /* fallback failed */ }
 
-      // Also try clicking the center of the video area
+      // Also try clicking the main video/poster area
       if (!videoAppeared) {
         try {
-          await page.click('.relative.w-full, [class*="videoPlayer"], [class*="video-container"]', { timeout: 2000 });
-          await page.waitForTimeout(3000);
-          videoAppeared = await page.evaluate(() => !!document.querySelector('video'));
-          if (videoAppeared) videoFrame = page;
+          // Click the large poster image or video container on the watch page
+          const poster = page.locator('.aspect-\\[16\\/9\\], [class*="aspect"], [class*="videoPlayer"], [class*="video-container"], img[class*="object-cover"]').first();
+          if (await poster.isVisible({ timeout: 2000 })) {
+            await poster.click();
+            await page.waitForTimeout(5000);
+            videoAppeared = await page.evaluate(() => !!document.querySelector('video'));
+            if (videoAppeared) videoFrame = page;
+          }
         } catch { /* click failed */ }
       }
     }
 
     if (!videoAppeared) {
+      // Debug: log what's on the page to help diagnose
+      const pageDebug = await page.evaluate(() => ({
+        url: location.href,
+        hasVideo: !!document.querySelector('video'),
+        hasIframe: !!document.querySelector('iframe'),
+        hasCanvas: !!document.querySelector('canvas'),
+        hasImg: document.querySelectorAll('img').length,
+        bodyText: document.body?.textContent?.substring(0, 200) || '',
+      })).catch(() => ({}));
+      log(`   Debug: watch page state: URL=${pageDebug.url}, video=${pageDebug.hasVideo}, iframe=${pageDebug.hasIframe}, canvas=${pageDebug.hasCanvas}`);
+
       result.status = STATUS.FAIL;
       result.error = 'No <video> element found after 25s';
       result.loadTimeMs = Date.now() - startTime;
