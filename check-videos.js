@@ -1179,6 +1179,29 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = PAGE.STOR
     }
 
     if (!videoAppeared) {
+      // Fallback: some videos show a static thumbnail first and need a click to load the player
+      try {
+        const playOverlay = page.locator('[data-testid="play-overlay"], .play-button, [class*="play"], video, [aria-label*="play"], [aria-label*="Play"]').first();
+        if (await playOverlay.isVisible({ timeout: 2000 })) {
+          await playOverlay.click();
+          await page.waitForTimeout(3000);
+          videoAppeared = await page.evaluate(() => !!document.querySelector('video'));
+          if (videoAppeared) videoFrame = page;
+        }
+      } catch { /* fallback failed */ }
+
+      // Also try clicking the center of the video area
+      if (!videoAppeared) {
+        try {
+          await page.click('.relative.w-full, [class*="videoPlayer"], [class*="video-container"]', { timeout: 2000 });
+          await page.waitForTimeout(3000);
+          videoAppeared = await page.evaluate(() => !!document.querySelector('video'));
+          if (videoAppeared) videoFrame = page;
+        } catch { /* click failed */ }
+      }
+    }
+
+    if (!videoAppeared) {
       result.status = STATUS.FAIL;
       result.error = 'No <video> element found after 25s';
       result.loadTimeMs = Date.now() - startTime;
