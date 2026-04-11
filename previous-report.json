@@ -1,477 +1,414 @@
 {
-  "timestamp": "2026-04-10T14:17:35.605Z",
+  "timestamp": "2026-04-11T02:51:36.303Z",
   "browser": "chromium",
   "summary": {
-    "total": 154,
-    "passed": 154,
+    "total": 157,
+    "passed": 157,
     "failed": 0,
     "timeouts": 0
   },
   "failedVideos": [],
   "performanceAlerts": [
     {
-      "title": "AlphaBots the Alphabet Part 2",
-      "section": "Fun Zone",
-      "loadTimeMs": 25386,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Kembe Water Cycles",
-      "section": "Fun Zone",
-      "loadTimeMs": 23549,
-      "level": "CRITICAL"
-    },
-    {
       "title": "Gabby Globber (GG) Planets",
       "section": "Fun Zone",
-      "loadTimeMs": 23537,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "12th Street Counting By 2s",
-      "section": "Fun Zone",
-      "loadTimeMs": 23529,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Kembe How Money Works",
-      "section": "Fun Zone",
-      "loadTimeMs": 23461,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Kembe Sight Words Part 3",
-      "section": "Fun Zone",
-      "loadTimeMs": 23431,
+      "loadTimeMs": 34434,
       "level": "CRITICAL"
     },
     {
       "title": "Kembe Comparing Sizes",
       "section": "Fun Zone",
-      "loadTimeMs": 23374,
+      "loadTimeMs": 34033,
       "level": "CRITICAL"
     },
     {
-      "title": "12th Street Counting By 3s",
+      "title": "Kembe How Money Works",
       "section": "Fun Zone",
-      "loadTimeMs": 23346,
+      "loadTimeMs": 33325,
       "level": "CRITICAL"
     },
     {
       "title": "12th Street Counting by 2s and 3s",
       "section": "Fun Zone",
-      "loadTimeMs": 22909,
+      "loadTimeMs": 32506,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "12th Street Counting By 2s",
+      "section": "Fun Zone",
+      "loadTimeMs": 32482,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Kembe Water Cycles",
+      "section": "Fun Zone",
+      "loadTimeMs": 32458,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Kembe Sight Words Part 2",
+      "section": "Fun Zone",
+      "loadTimeMs": 32422,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "12th Street Counting By 3s",
+      "section": "Fun Zone",
+      "loadTimeMs": 32310,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Kembe Sight Words Part 3",
+      "section": "Fun Zone",
+      "loadTimeMs": 32295,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Marvelous Light Episode 1 Moses Part 1",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 27660,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Gabby Galactic Fire Cats Safety",
+      "section": "Fun Zone",
+      "loadTimeMs": 27456,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "12th Street",
+      "section": "Fun Zone",
+      "loadTimeMs": 26627,
       "level": "CRITICAL"
     },
     {
       "title": "Gabby Action Short",
       "section": "Fun Zone",
-      "loadTimeMs": 15242,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Paul and Saul | S2 EP19",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 15234,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Kembe Sight Words Part 1",
-      "section": "Fun Zone",
-      "loadTimeMs": 15228,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "H3 Stretching 5",
-      "section": "Fun Zone",
-      "loadTimeMs": 15224,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "H3 Stretching  1",
-      "section": "Fun Zone",
-      "loadTimeMs": 15216,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Adam and Eve | S2 EP16",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 15210,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Paul and Saul | S2 EP20",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 15206,
+      "loadTimeMs": 25617,
       "level": "CRITICAL"
     },
     {
       "title": "H3 Stretching 3",
       "section": "Fun Zone",
-      "loadTimeMs": 15190,
+      "loadTimeMs": 25123,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "H3 Stretching 5",
+      "section": "Fun Zone",
+      "loadTimeMs": 24352,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Black History Beats (BHB) MLK",
+      "section": "Fun Zone",
+      "loadTimeMs": 24344,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "H3 Stretching 2",
+      "section": "Fun Zone",
+      "loadTimeMs": 24228,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Kembe Sight Words Part 1",
+      "section": "Fun Zone",
+      "loadTimeMs": 24181,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "H3 Stretching 4",
+      "section": "Fun Zone",
+      "loadTimeMs": 24154,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "H3 Stretching  1",
+      "section": "Fun Zone",
+      "loadTimeMs": 24128,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Wake Up Kid",
+      "section": "Fun Zone",
+      "loadTimeMs": 23882,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Paul and Saul | S2 EP20",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 18667,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Unicatz Music Video",
+      "section": "Fun Zone",
+      "loadTimeMs": 17894,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Black History Beats (BHB) Jackie Robinson",
+      "section": "Fun Zone",
+      "loadTimeMs": 17838,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "A Rotten Day: Finding Joy in God",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 16351,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Unicatz Musical Chairs",
+      "section": "Fun Zone",
+      "loadTimeMs": 16183,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Black History Beats (BHB) Bessie Coleman",
+      "section": "Fun Zone",
+      "loadTimeMs": 16177,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Unicatz Strut Your Stuff",
+      "section": "Fun Zone",
+      "loadTimeMs": 16168,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Adam and Eve | S2 EP16",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 16120,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Unicatz Transformations",
+      "section": "Fun Zone",
+      "loadTimeMs": 15963,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Zachaus | S2 EP17",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 15848,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Kembe Tries Playing",
+      "section": "Fun Zone",
+      "loadTimeMs": 15685,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Paul and Saul | S2 EP19",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 15652,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Unicatz Homie Big Surprise",
+      "section": "Fun Zone",
+      "loadTimeMs": 15599,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Mr. Prather Days and Months",
+      "section": "Fun Zone",
+      "loadTimeMs": 15479,
       "level": "CRITICAL"
     },
     {
       "title": "Unicatz Learning is Fun",
       "section": "Fun Zone",
-      "loadTimeMs": 14816,
-      "level": "WARNING"
-    },
-    {
-      "title": "Kembe Sight Words Part 2",
-      "section": "Fun Zone",
-      "loadTimeMs": 14743,
-      "level": "WARNING"
-    },
-    {
-      "title": "Wake Up Kid",
-      "section": "Fun Zone",
-      "loadTimeMs": 14715,
-      "level": "WARNING"
-    },
-    {
-      "title": "H3 Stretching 4",
-      "section": "Fun Zone",
-      "loadTimeMs": 14706,
-      "level": "WARNING"
-    },
-    {
-      "title": "Zachaus | S2 EP17",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 14636,
-      "level": "WARNING"
-    },
-    {
-      "title": "A Rotten Day: Finding Joy in God",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 14582,
-      "level": "WARNING"
-    },
-    {
-      "title": "H3 Stretching 2",
-      "section": "Fun Zone",
-      "loadTimeMs": 14567,
-      "level": "WARNING"
-    },
-    {
-      "title": "Unicatz Strut Your Stuff",
-      "section": "Fun Zone",
-      "loadTimeMs": 11102,
-      "level": "WARNING"
-    },
-    {
-      "title": "Unicatz Musical Chairs",
-      "section": "Fun Zone",
-      "loadTimeMs": 11087,
-      "level": "WARNING"
-    },
-    {
-      "title": "Unicatz Transformations",
-      "section": "Fun Zone",
-      "loadTimeMs": 11080,
-      "level": "WARNING"
-    },
-    {
-      "title": "Marvelous Light Episode 8 Meet Jesus Part 1",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 11016,
-      "level": "WARNING"
-    },
-    {
-      "title": "Marvelous Light Easter Episode",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 10928,
-      "level": "WARNING"
-    },
-    {
-      "title": "Jonah and the Whale | S2 EP12",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 10919,
-      "level": "WARNING"
-    },
-    {
-      "title": "Black History Beats (BHB) Jackie Robinson",
-      "section": "Fun Zone",
-      "loadTimeMs": 10918,
-      "level": "WARNING"
-    },
-    {
-      "title": "Black History Beats (BHB) MLK",
-      "section": "Fun Zone",
-      "loadTimeMs": 10918,
-      "level": "WARNING"
-    },
-    {
-      "title": "Unicatz Count to 20",
-      "section": "Numbers",
-      "loadTimeMs": 10812,
-      "level": "WARNING"
-    },
-    {
-      "title": "H3 Colors and Numbers",
-      "section": "Numbers",
-      "loadTimeMs": 10719,
-      "level": "WARNING"
-    },
-    {
-      "title": "Creation | S2 EP15",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 10624,
-      "level": "WARNING"
-    },
-    {
-      "title": "Marvelous Light Episode 7 Noah Part 2",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 10445,
-      "level": "WARNING"
+      "loadTimeMs": 15456,
+      "level": "CRITICAL"
     },
     {
       "title": "Unicatz Alphabet Song",
       "section": "ABC",
-      "loadTimeMs": 10443,
+      "loadTimeMs": 12651,
       "level": "WARNING"
     },
     {
-      "title": "Unicatz Music Video",
+      "title": "Fire Safety School Drills",
       "section": "Fun Zone",
-      "loadTimeMs": 10411,
+      "loadTimeMs": 12614,
       "level": "WARNING"
     },
     {
-      "title": "Daniel and The Lions Den | S2 EP14",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 10396,
-      "level": "WARNING"
-    },
-    {
-      "title": "Gabby Globber (GG) Counts by 5s",
-      "section": "Numbers",
-      "loadTimeMs": 10322,
-      "level": "WARNING"
-    },
-    {
-      "title": "Daniel and The Lions Den | S2 EP13",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 10288,
-      "level": "WARNING"
-    },
-    {
-      "title": "H3 5 Vowels",
-      "section": "ABC",
-      "loadTimeMs": 10253,
-      "level": "WARNING"
-    },
-    {
-      "title": "Grandpa 10 Commandments",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 10244,
-      "level": "WARNING"
-    },
-    {
-      "title": "Black History Beats (BHB) Bessie Coleman",
+      "title": "Little Agent Clothes Mountain",
       "section": "Fun Zone",
-      "loadTimeMs": 10240,
-      "level": "WARNING"
-    },
-    {
-      "title": "H3 Count it Up",
-      "section": "Numbers",
-      "loadTimeMs": 10213,
-      "level": "WARNING"
-    },
-    {
-      "title": "Love",
-      "section": "Bible Adventures",
-      "loadTimeMs": 9965,
-      "level": "WARNING"
-    },
-    {
-      "title": "Unicatz Homie Big Surprise",
-      "section": "Fun Zone",
-      "loadTimeMs": 9814,
-      "level": "WARNING"
-    },
-    {
-      "title": "Marvelous Light Episode 9 Meet Jesus Part 2",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 9734,
+      "loadTimeMs": 11810,
       "level": "WARNING"
     },
     {
       "title": "Gabby Globber (GG) Counting by 5s and 10s",
       "section": "Numbers",
-      "loadTimeMs": 9587,
-      "level": "WARNING"
-    },
-    {
-      "title": "Gabby Globber (GG) Counts by 10s",
-      "section": "Numbers",
-      "loadTimeMs": 9409,
+      "loadTimeMs": 11742,
       "level": "WARNING"
     },
     {
       "title": "Faithfulness",
       "section": "Bible Adventures",
-      "loadTimeMs": 9397,
+      "loadTimeMs": 11716,
+      "level": "WARNING"
+    },
+    {
+      "title": "Jonah and the Whale | S2 EP12",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 11601,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Big Hair Blues",
+      "section": "Fun Zone",
+      "loadTimeMs": 11573,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Candy Critters",
+      "section": "Fun Zone",
+      "loadTimeMs": 11571,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Easter Episode",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 11350,
+      "level": "WARNING"
+    },
+    {
+      "title": "Gabby Globber (GG) Counts by 5s",
+      "section": "Numbers",
+      "loadTimeMs": 11312,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Three Amigas",
+      "section": "Fun Zone",
+      "loadTimeMs": 11301,
       "level": "WARNING"
     },
     {
       "title": "Little Agent The Letter Twins",
-      "section": "Life Skills",
-      "loadTimeMs": 9379,
+      "section": "Fun Zone",
+      "loadTimeMs": 11173,
       "level": "WARNING"
     },
     {
-      "title": "12th Street",
-      "section": "Fun Zone",
-      "loadTimeMs": 8986,
+      "title": "H3 Count it Up",
+      "section": "Numbers",
+      "loadTimeMs": 10826,
       "level": "WARNING"
     },
     {
-      "title": "Kembe Tries Playing",
+      "title": "H3 5 Vowels",
+      "section": "ABC",
+      "loadTimeMs": 10805,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Episode 9 Meet Jesus Part 2",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 10447,
+      "level": "WARNING"
+    },
+    {
+      "title": "Love",
+      "section": "Bible Adventures",
+      "loadTimeMs": 10420,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Itchy Monster",
       "section": "Fun Zone",
-      "loadTimeMs": 8868,
+      "loadTimeMs": 10410,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Episode 8 Meet Jesus Part 1",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 10397,
+      "level": "WARNING"
+    },
+    {
+      "title": "Daniel and The Lions Den | S2 EP13",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 10385,
+      "level": "WARNING"
+    },
+    {
+      "title": "Unicatz Joy of Learning",
+      "section": "Fun Zone",
+      "loadTimeMs": 10363,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Hippocampus",
+      "section": "Fun Zone",
+      "loadTimeMs": 10344,
       "level": "WARNING"
     },
     {
       "title": "Jonah and the Whale | S2 EP11",
       "section": "Marvelous Light Series",
-      "loadTimeMs": 8849,
+      "loadTimeMs": 10274,
       "level": "WARNING"
     },
     {
-      "title": "Mental Health and God",
-      "section": "Life Skills",
-      "loadTimeMs": 8543,
+      "title": "H3 Colors and Numbers",
+      "section": "Numbers",
+      "loadTimeMs": 10141,
       "level": "WARNING"
     },
     {
-      "title": "Little Agent Clothes Mountain",
-      "section": "Life Skills",
-      "loadTimeMs": 8516,
+      "title": "Gabby Globber (GG) Counts by 10s",
+      "section": "Numbers",
+      "loadTimeMs": 10121,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Hoverboard",
+      "section": "Fun Zone",
+      "loadTimeMs": 9912,
+      "level": "WARNING"
+    },
+    {
+      "title": "Creation | S2 EP15",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9912,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Episode 7 Noah Part 2",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9889,
+      "level": "WARNING"
+    },
+    {
+      "title": "Grandpa 10 Commandments",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9882,
+      "level": "WARNING"
+    },
+    {
+      "title": "Daniel and The Lions Den | S2 EP14",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9879,
+      "level": "WARNING"
+    },
+    {
+      "title": "Unicatz Count to 20",
+      "section": "Numbers",
+      "loadTimeMs": 9826,
       "level": "WARNING"
     }
   ],
   "allResults": [
     {
       "number": 1,
-      "title": "AlphaBots the Alphabet Part 2",
-      "section": "Fun Zone",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/8650e80f-132c-4cd1-a562-9317a91a05c0?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/8650e80f-132c-4cd1-a562-9317a91a05c0/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 25386,
-      "duration": "205s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 2,
-      "title": "AlphaBots the Alphabet Part 1",
-      "section": "Fun Zone",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/e9635d39-19b0-42db-9be6-11bc1defd3ed?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/e9635d39-19b0-42db-9be6-11bc1defd3ed/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 1740,
-      "duration": "157s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 3,
-      "title": "Alphabots Letter C",
-      "section": "Fun Zone",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/dbb4afee-fe54-4c86-b571-27675b27e4e8?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/dbb4afee-fe54-4c86-b571-27675b27e4e8/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 1978,
-      "duration": "189s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 4,
-      "title": "AlphaBots Letter B",
-      "section": "Fun Zone",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/5e64fb0f-97d7-4b95-98f6-7fea53e33dfd?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5e64fb0f-97d7-4b95-98f6-7fea53e33dfd/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 1784,
-      "duration": "189s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 5,
-      "title": "AlphaBots Letter A",
-      "section": "Fun Zone",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/3f8139b3-f895-4228-98ac-be010862d8ab?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/3f8139b3-f895-4228-98ac-be010862d8ab/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 1669,
-      "duration": "173s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 6,
-      "title": "Alphabots OO Song",
-      "section": "Fun Zone",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/b8b902af-41c4-44f4-b75d-2edd354d5e62?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/b8b902af-41c4-44f4-b75d-2edd354d5e62/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 1614,
-      "duration": "115s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 7,
-      "title": "MFT Loopty Loo",
-      "section": "Fun Zone",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/03a156fb-9c97-499b-b862-bf0556dbdc64?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/03a156fb-9c97-499b-b862-bf0556dbdc64/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 1642,
-      "duration": "200s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 8,
-      "title": "MFT Colors of the Rainbow",
-      "section": "Fun Zone",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/daa4c238-2ffb-405c-9d13-ec27c1019158?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/daa4c238-2ffb-405c-9d13-ec27c1019158/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 1641,
-      "duration": "165s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 9,
-      "title": "MFT ABC Song",
-      "section": "Fun Zone",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/9ae01ae1-ec60-4b68-8237-1b8484837d7f?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9ae01ae1-ec60-4b68-8237-1b8484837d7f/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 1519,
-      "duration": "204s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 10,
       "title": "Gabby Galactic Fire Cats Safety",
       "section": "Fun Zone",
       "page": "STORY",
@@ -479,12 +416,272 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1d091d78-7310-4fde-8f53-08a98beca74b/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1637,
+      "loadTimeMs": 27456,
       "duration": "646s",
       "resolution": "640x360"
     },
     {
+      "number": 2,
+      "title": "AlphaBots the Alphabet Part 2",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/8650e80f-132c-4cd1-a562-9317a91a05c0?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/8650e80f-132c-4cd1-a562-9317a91a05c0/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2697,
+      "duration": "205s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 3,
+      "title": "AlphaBots the Alphabet Part 1",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/e9635d39-19b0-42db-9be6-11bc1defd3ed?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/e9635d39-19b0-42db-9be6-11bc1defd3ed/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2946,
+      "duration": "157s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 4,
+      "title": "Alphabots Letter C",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/dbb4afee-fe54-4c86-b571-27675b27e4e8?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/dbb4afee-fe54-4c86-b571-27675b27e4e8/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 3305,
+      "duration": "189s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 5,
+      "title": "AlphaBots Letter B",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/5e64fb0f-97d7-4b95-98f6-7fea53e33dfd?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5e64fb0f-97d7-4b95-98f6-7fea53e33dfd/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2563,
+      "duration": "189s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 6,
+      "title": "AlphaBots Letter A",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/3f8139b3-f895-4228-98ac-be010862d8ab?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/3f8139b3-f895-4228-98ac-be010862d8ab/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2669,
+      "duration": "173s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 7,
+      "title": "Alphabots OO Song",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/b8b902af-41c4-44f4-b75d-2edd354d5e62?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/b8b902af-41c4-44f4-b75d-2edd354d5e62/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2527,
+      "duration": "115s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 8,
+      "title": "MFT Loopty Loo",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/03a156fb-9c97-499b-b862-bf0556dbdc64?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/03a156fb-9c97-499b-b862-bf0556dbdc64/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 3085,
+      "duration": "200s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 9,
+      "title": "MFT Colors of the Rainbow",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/daa4c238-2ffb-405c-9d13-ec27c1019158?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/daa4c238-2ffb-405c-9d13-ec27c1019158/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2298,
+      "duration": "165s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 10,
+      "title": "MFT ABC Song",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/9ae01ae1-ec60-4b68-8237-1b8484837d7f?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9ae01ae1-ec60-4b68-8237-1b8484837d7f/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 2526,
+      "duration": "204s",
+      "resolution": "640x360"
+    },
+    {
       "number": 11,
+      "title": "Little Agent Three Amigas",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/16817712-d949-4279-871f-cb066723b50e?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/16817712-d949-4279-871f-cb066723b50e/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 11301,
+      "duration": "118s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 12,
+      "title": "Little Agent Big Hair Blues",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/aee40747-e84a-4b21-ac94-2c9a4b2ff088?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/aee40747-e84a-4b21-ac94-2c9a4b2ff088/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 11573,
+      "duration": "115s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 13,
+      "title": "Little Agent Candy Critters",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/1f732317-d240-4f49-bf56-2f70230d1c02?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1f732317-d240-4f49-bf56-2f70230d1c02/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 11571,
+      "duration": "138s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 14,
+      "title": "Little Agent Hippocampus",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/c8be5898-a105-4a08-8dec-ba566d96eac1?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c8be5898-a105-4a08-8dec-ba566d96eac1/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 10344,
+      "duration": "166s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 15,
+      "title": "Little Agent Hoverboard",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/bfb16737-dd22-43e9-bd73-4890964b3527?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/bfb16737-dd22-43e9-bd73-4890964b3527/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 9912,
+      "duration": "93s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 16,
+      "title": "Little Agent Itchy Monster",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/11e1164b-d214-4c1d-8d96-c9430be49734?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/11e1164b-d214-4c1d-8d96-c9430be49734/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 10410,
+      "duration": "120s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 17,
+      "title": "Little Agent The Letter Twins",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/a8f1f906-9ced-4289-a7fe-1834f4385c36?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a8f1f906-9ced-4289-a7fe-1834f4385c36/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 11173,
+      "duration": "98s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 18,
+      "title": "Fire Safety School Drills",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/02b7eba5-06ac-4543-81fd-a5691dee7340?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/02b7eba5-06ac-4543-81fd-a5691dee7340/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 12614,
+      "duration": "230s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 19,
+      "title": "Little Agent Clothes Mountain",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/59a6f62f-b6c9-4f35-84fb-47ab941bffc9?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/59a6f62f-b6c9-4f35-84fb-47ab941bffc9/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 11810,
+      "duration": "170s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 20,
+      "title": "Unicatz Joy of Learning",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/56ab3fea-b6c9-430c-92c2-38bc52fcd51f?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/56ab3fea-b6c9-430c-92c2-38bc52fcd51f/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 10363,
+      "duration": "85s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 21,
+      "title": "Mr. Prather Days and Months",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/200efedf-c802-4fd8-ab28-faffbe5d4cc3?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/200efedf-c802-4fd8-ab28-faffbe5d4cc3/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 15479,
+      "duration": "185s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 22,
       "title": "Kembe Tries Playing",
       "section": "Fun Zone",
       "page": "STORY",
@@ -492,12 +689,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5b1e082f-97d0-4c7a-8541-bcfa36d034c6/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 8868,
+      "loadTimeMs": 15685,
       "duration": "265s",
       "resolution": "640x360"
     },
     {
-      "number": 12,
+      "number": 23,
       "title": "Unicatz Music Video",
       "section": "Fun Zone",
       "page": "STORY",
@@ -505,12 +702,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/097b7f11-6a19-471f-9bf1-dcdc7ff159ae/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10411,
+      "loadTimeMs": 17894,
       "duration": "185s",
       "resolution": "640x360"
     },
     {
-      "number": 13,
+      "number": 24,
       "title": "Unicatz Strut Your Stuff",
       "section": "Fun Zone",
       "page": "STORY",
@@ -518,12 +715,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4fc58548-9731-4f95-9b24-3f2c72daeac2/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 11102,
+      "loadTimeMs": 16168,
       "duration": "525s",
       "resolution": "640x360"
     },
     {
-      "number": 14,
+      "number": 25,
       "title": "Unicatz Homie Big Surprise",
       "section": "Fun Zone",
       "page": "STORY",
@@ -531,12 +728,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/50875106-c0bb-437d-bac7-4329047aa784/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9814,
+      "loadTimeMs": 15599,
       "duration": "85s",
       "resolution": "640x360"
     },
     {
-      "number": 15,
+      "number": 26,
       "title": "Unicatz Transformations",
       "section": "Fun Zone",
       "page": "STORY",
@@ -544,64 +741,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d991ff04-d635-4f78-b5c6-ceeb236d0020/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 11080,
+      "loadTimeMs": 15963,
       "duration": "760s",
       "resolution": "640x360"
     },
     {
-      "number": 16,
-      "title": "Black History Beats (BHB) Jackie Robinson",
-      "section": "Fun Zone",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/5ed8064b-e9d5-4e5b-bb86-bb795e2b1c7a?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5ed8064b-e9d5-4e5b-bb86-bb795e2b1c7a/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 10918,
-      "duration": "208s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 17,
-      "title": "Black History Beats (BHB) Bessie Coleman",
-      "section": "Fun Zone",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/f61a23eb-c690-4283-9311-5e9a574e1be1?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f61a23eb-c690-4283-9311-5e9a574e1be1/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 10240,
-      "duration": "181s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 18,
-      "title": "Black History Beats (BHB) MLK",
-      "section": "Fun Zone",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/58a6703a-fc50-46e9-b2b1-b36949a78246?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/58a6703a-fc50-46e9-b2b1-b36949a78246/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 10918,
-      "duration": "162s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 19,
-      "title": "12th Street",
-      "section": "Fun Zone",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/595946c3-d135-4359-b6e2-b16c9d047a2c?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/595946c3-d135-4359-b6e2-b16c9d047a2c/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 8986,
-      "duration": "311s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 20,
+      "number": 27,
       "title": "Unicatz Musical Chairs",
       "section": "Fun Zone",
       "page": "STORY",
@@ -609,12 +754,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/991b8193-96e1-4c66-85be-7efc47d12836/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 11087,
+      "loadTimeMs": 16183,
       "duration": "149s",
       "resolution": "640x360"
     },
     {
-      "number": 21,
+      "number": 28,
       "title": "Unicatz Learning is Fun",
       "section": "Fun Zone",
       "page": "STORY",
@@ -622,12 +767,64 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/07d1e6f2-76b6-437d-b51f-08ed6332392c/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 14816,
+      "loadTimeMs": 15456,
       "duration": "100s",
       "resolution": "640x360"
     },
     {
-      "number": 22,
+      "number": 29,
+      "title": "Black History Beats (BHB) Jackie Robinson",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/5ed8064b-e9d5-4e5b-bb86-bb795e2b1c7a?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5ed8064b-e9d5-4e5b-bb86-bb795e2b1c7a/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 17838,
+      "duration": "208s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 30,
+      "title": "Black History Beats (BHB) Bessie Coleman",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/f61a23eb-c690-4283-9311-5e9a574e1be1?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f61a23eb-c690-4283-9311-5e9a574e1be1/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 16177,
+      "duration": "181s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 31,
+      "title": "Black History Beats (BHB) MLK",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/58a6703a-fc50-46e9-b2b1-b36949a78246?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/58a6703a-fc50-46e9-b2b1-b36949a78246/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 24344,
+      "duration": "162s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 32,
+      "title": "12th Street",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/595946c3-d135-4359-b6e2-b16c9d047a2c?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/595946c3-d135-4359-b6e2-b16c9d047a2c/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 26627,
+      "duration": "311s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 33,
       "title": "Gabby Action Short",
       "section": "Fun Zone",
       "page": "STORY",
@@ -635,12 +832,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4cf1046b-bcdf-4107-ac19-5cf499782419/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15242,
+      "loadTimeMs": 25617,
       "duration": "134s",
       "resolution": "640x360"
     },
     {
-      "number": 23,
+      "number": 34,
       "title": "Wake Up Kid",
       "section": "Fun Zone",
       "page": "STORY",
@@ -648,12 +845,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/87bc81c7-fa6d-4f5a-9c49-4ef0e1cd5c88/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 14715,
+      "loadTimeMs": 23882,
       "duration": "636s",
       "resolution": "640x360"
     },
     {
-      "number": 24,
+      "number": 35,
       "title": "H3 Stretching  1",
       "section": "Fun Zone",
       "page": "STORY",
@@ -661,12 +858,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c43462a5-4e70-412e-aec6-5be27c9294ec/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15216,
+      "loadTimeMs": 24128,
       "duration": "240s",
       "resolution": "640x360"
     },
     {
-      "number": 25,
+      "number": 36,
       "title": "H3 Stretching 2",
       "section": "Fun Zone",
       "page": "STORY",
@@ -674,12 +871,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a9e12c6a-0f54-433e-9475-aff2f3fc425d/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 14567,
+      "loadTimeMs": 24228,
       "duration": "340s",
       "resolution": "640x360"
     },
     {
-      "number": 26,
+      "number": 37,
       "title": "H3 Stretching 3",
       "section": "Fun Zone",
       "page": "STORY",
@@ -687,12 +884,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c7cbac55-00db-4e83-8b9b-37bbccb898f5/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15190,
+      "loadTimeMs": 25123,
       "duration": "207s",
       "resolution": "640x360"
     },
     {
-      "number": 27,
+      "number": 38,
       "title": "H3 Stretching 4",
       "section": "Fun Zone",
       "page": "STORY",
@@ -700,12 +897,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/8f758903-51eb-4766-9862-7993e58141a3/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 14706,
+      "loadTimeMs": 24154,
       "duration": "267s",
       "resolution": "640x360"
     },
     {
-      "number": 28,
+      "number": 39,
       "title": "H3 Stretching 5",
       "section": "Fun Zone",
       "page": "STORY",
@@ -713,12 +910,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c128f883-fd2c-4f72-87ee-091ed6ff4d7f/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15224,
+      "loadTimeMs": 24352,
       "duration": "408s",
       "resolution": "640x360"
     },
     {
-      "number": 29,
+      "number": 40,
       "title": "Kembe Sight Words Part 1",
       "section": "Fun Zone",
       "page": "STORY",
@@ -726,12 +923,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/211fcc4c-d3da-4900-9a10-e02b21e00824/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15228,
+      "loadTimeMs": 24181,
       "duration": "214s",
       "resolution": "640x360"
     },
     {
-      "number": 30,
+      "number": 41,
       "title": "Kembe Sight Words Part 2",
       "section": "Fun Zone",
       "page": "STORY",
@@ -739,12 +936,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6e33429c-f079-4e86-bd8d-af6a97e8be3a/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 14743,
+      "loadTimeMs": 32422,
       "duration": "225s",
       "resolution": "640x360"
     },
     {
-      "number": 31,
+      "number": 42,
       "title": "Kembe Sight Words Part 3",
       "section": "Fun Zone",
       "page": "STORY",
@@ -752,12 +949,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4d3b7355-6d2d-4535-bbca-4c73a66f81de/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23431,
+      "loadTimeMs": 32295,
       "duration": "291s",
       "resolution": "640x360"
     },
     {
-      "number": 32,
+      "number": 43,
       "title": "Kembe Comparing Sizes",
       "section": "Fun Zone",
       "page": "STORY",
@@ -765,12 +962,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/597b370a-d70f-46cf-a882-4fc0a930f265/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23374,
+      "loadTimeMs": 34033,
       "duration": "167s",
       "resolution": "640x360"
     },
     {
-      "number": 33,
+      "number": 44,
       "title": "Kembe How Money Works",
       "section": "Fun Zone",
       "page": "STORY",
@@ -778,12 +975,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/aabd881e-f155-437a-9bfc-13bf9ba489cd/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23461,
+      "loadTimeMs": 33325,
       "duration": "175s",
       "resolution": "640x360"
     },
     {
-      "number": 34,
+      "number": 45,
       "title": "Kembe Water Cycles",
       "section": "Fun Zone",
       "page": "STORY",
@@ -791,12 +988,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d88966cc-8a4c-4eb9-89ac-a81215700b36/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23549,
+      "loadTimeMs": 32458,
       "duration": "104s",
       "resolution": "640x360"
     },
     {
-      "number": 35,
+      "number": 46,
       "title": "12th Street Counting by 2s and 3s",
       "section": "Fun Zone",
       "page": "STORY",
@@ -804,12 +1001,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9573c0a3-55c0-43f5-95a0-98817502ac0f/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 22909,
+      "loadTimeMs": 32506,
       "duration": "186s",
       "resolution": "640x360"
     },
     {
-      "number": 36,
+      "number": 47,
       "title": "12th Street Counting By 2s",
       "section": "Fun Zone",
       "page": "STORY",
@@ -817,12 +1014,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/edae9ec4-18f4-47a4-9b65-467e10e14f28/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23529,
+      "loadTimeMs": 32482,
       "duration": "114s",
       "resolution": "640x360"
     },
     {
-      "number": 37,
+      "number": 48,
       "title": "12th Street Counting By 3s",
       "section": "Fun Zone",
       "page": "STORY",
@@ -830,12 +1027,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7e2fdf38-be4b-43f9-9764-dac6c88b7761/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23346,
+      "loadTimeMs": 32310,
       "duration": "107s",
       "resolution": "640x360"
     },
     {
-      "number": 38,
+      "number": 49,
       "title": "Gabby Globber (GG) Planets",
       "section": "Fun Zone",
       "page": "STORY",
@@ -843,12 +1040,25 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/2fa58b4d-d8bb-440f-977e-4966b437fbe0/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23537,
+      "loadTimeMs": 34434,
       "duration": "333s",
       "resolution": "640x360"
     },
     {
-      "number": 39,
+      "number": 50,
+      "title": "Mental Health and God",
+      "section": "Fun Zone",
+      "page": "STORY",
+      "url": "https://go.kingdomlandkids.com/watch/5e4d922f-f256-453c-b524-ae29b659bbaf?from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5e4d922f-f256-453c-b524-ae29b659bbaf/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 3019,
+      "duration": "212s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 51,
       "title": "Marvelous Light Episode 1 Moses Part 1",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -856,12 +1066,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1d0ec518-70f3-4c8b-b389-26545945675b/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1479,
+      "loadTimeMs": 27660,
       "duration": "658s",
       "resolution": "640x360"
     },
     {
-      "number": 40,
+      "number": 52,
       "title": "Marvelous Light Episode 2 Moses Part 2",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -869,12 +1079,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/187d2637-f389-440f-bdbf-b8082681729a/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1898,
+      "loadTimeMs": 2651,
       "duration": "625s",
       "resolution": "640x360"
     },
     {
-      "number": 41,
+      "number": 53,
       "title": "Grandpa Moses",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -882,12 +1092,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/fbaf7c54-b693-4a83-8f60-a55a1f5f42e5/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1639,
+      "loadTimeMs": 2377,
       "duration": "77s",
       "resolution": "640x360"
     },
     {
-      "number": 42,
+      "number": 54,
       "title": "Marvelous Light Episode 3 David Vs Goliath Part 1",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -895,12 +1105,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f436884d-488e-4e9a-9316-26c81cda9f96/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1459,
+      "loadTimeMs": 3132,
       "duration": "472s",
       "resolution": "640x360"
     },
     {
-      "number": 43,
+      "number": 55,
       "title": "Marvelous Light Episode 4 David Vs Goliath Part 2",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -908,12 +1118,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/996b762c-9869-4614-85ed-41464b315fdc/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2113,
+      "loadTimeMs": 2637,
       "duration": "408s",
       "resolution": "640x360"
     },
     {
-      "number": 44,
+      "number": 56,
       "title": "Grandpa David",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -921,12 +1131,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/b2367430-3e5c-402c-84ea-9a9b8c8a2efa/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1663,
+      "loadTimeMs": 2549,
       "duration": "74s",
       "resolution": "640x360"
     },
     {
-      "number": 45,
+      "number": 57,
       "title": "Marvelous Light Episode 5 Three Hebrew Boys",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -934,12 +1144,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d31a737b-5e14-48a6-b108-3b9956d4f0d7/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1361,
+      "loadTimeMs": 2906,
       "duration": "135s",
       "resolution": "640x360"
     },
     {
-      "number": 46,
+      "number": 58,
       "title": "Grandpa Hebrew Brothers",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -947,12 +1157,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a267a5c5-93d7-49c2-972b-fb426033a521/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1674,
+      "loadTimeMs": 2554,
       "duration": "135s",
       "resolution": "640x360"
     },
     {
-      "number": 47,
+      "number": 59,
       "title": "Marvelous Light Christmas Episode",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -960,12 +1170,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/bc901b64-febc-4ace-af92-6f419cab026f/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1860,
+      "loadTimeMs": 2600,
       "duration": "302s",
       "resolution": "640x360"
     },
     {
-      "number": 48,
+      "number": 60,
       "title": "Marvelous Light Episode 6 Noah Part 1",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -973,12 +1183,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/11ad7290-a7b1-465e-bc1a-18eff346fc28/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2148,
+      "loadTimeMs": 2840,
       "duration": "395s",
       "resolution": "640x360"
     },
     {
-      "number": 49,
+      "number": 61,
       "title": "Marvelous Light Episode 7 Noah Part 2",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -986,12 +1196,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/739479bc-ba0e-4c88-9915-bb85961e53a1/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10445,
+      "loadTimeMs": 9889,
       "duration": "349s",
       "resolution": "640x360"
     },
     {
-      "number": 50,
+      "number": 62,
       "title": "Grandpa 10 Commandments",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -999,12 +1209,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/2cb183fc-ce48-4244-9fa0-18a7e2e139ca/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10244,
+      "loadTimeMs": 9882,
       "duration": "118s",
       "resolution": "640x360"
     },
     {
-      "number": 51,
+      "number": 63,
       "title": "Marvelous Light Episode 8 Meet Jesus Part 1",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -1012,12 +1222,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/b57d0b33-1699-4a8e-9deb-add4d2ecf120/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 11016,
+      "loadTimeMs": 10397,
       "duration": "443s",
       "resolution": "640x360"
     },
     {
-      "number": 52,
+      "number": 64,
       "title": "Marvelous Light Episode 9 Meet Jesus Part 2",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -1025,12 +1235,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/be3ee1b4-02e4-4f36-80d5-2cf4ebfe587d/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9734,
+      "loadTimeMs": 10447,
       "duration": "371s",
       "resolution": "640x360"
     },
     {
-      "number": 53,
+      "number": 65,
       "title": "Marvelous Light Easter Episode",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -1038,12 +1248,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/8fdb17dc-2ad5-42fd-af0d-592f7c4cb14d/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10928,
+      "loadTimeMs": 11350,
       "duration": "676s",
       "resolution": "640x360"
     },
     {
-      "number": 54,
+      "number": 66,
       "title": "Jonah and the Whale | S2 EP11",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -1051,12 +1261,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a16895cd-d0a5-430e-ab2b-95f4b014d55c/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 8849,
+      "loadTimeMs": 10274,
       "duration": "407s",
       "resolution": "640x360"
     },
     {
-      "number": 55,
+      "number": 67,
       "title": "Jonah and the Whale | S2 EP12",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -1064,12 +1274,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d12ae97b-1174-4517-8571-28d92c4318bd/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10919,
+      "loadTimeMs": 11601,
       "duration": "512s",
       "resolution": "640x360"
     },
     {
-      "number": 56,
+      "number": 68,
       "title": "Daniel and The Lions Den | S2 EP13",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -1077,12 +1287,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9613f537-ebb1-41a0-b98b-2bc2b3700a9e/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10288,
+      "loadTimeMs": 10385,
       "duration": "487s",
       "resolution": "640x360"
     },
     {
-      "number": 57,
+      "number": 69,
       "title": "Daniel and The Lions Den | S2 EP14",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -1090,12 +1300,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/2734beba-d3b4-4a5c-afdf-b3785d105269/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10396,
+      "loadTimeMs": 9879,
       "duration": "434s",
       "resolution": "640x360"
     },
     {
-      "number": 58,
+      "number": 70,
       "title": "Creation | S2 EP15",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -1103,12 +1313,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1f34576d-c7af-4cae-b9be-258d97aa4c91/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10624,
+      "loadTimeMs": 9912,
       "duration": "435s",
       "resolution": "640x360"
     },
     {
-      "number": 59,
+      "number": 71,
       "title": "Adam and Eve | S2 EP16",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -1116,12 +1326,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/947510c6-4115-4719-9c12-0fb244d39e3a/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15210,
+      "loadTimeMs": 16120,
       "duration": "501s",
       "resolution": "640x360"
     },
     {
-      "number": 60,
+      "number": 72,
       "title": "Zachaus | S2 EP17",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -1129,12 +1339,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/bb3ff059-4e31-4895-85a6-e5808e87067c/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 14636,
+      "loadTimeMs": 15848,
       "duration": "604s",
       "resolution": "640x360"
     },
     {
-      "number": 61,
+      "number": 73,
       "title": "Paul and Saul | S2 EP19",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -1142,12 +1352,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1760b966-7558-45c3-89bd-8826a716f0ed/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15234,
+      "loadTimeMs": 15652,
       "duration": "451s",
       "resolution": "640x360"
     },
     {
-      "number": 62,
+      "number": 74,
       "title": "Paul and Saul | S2 EP20",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -1155,12 +1365,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d0fda75a-c46e-4145-a42b-5f3c4f6b3cdb/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15206,
+      "loadTimeMs": 18667,
       "duration": "353s",
       "resolution": "640x360"
     },
     {
-      "number": 63,
+      "number": 75,
       "title": "A Rotten Day: Finding Joy in God",
       "section": "Marvelous Light Series",
       "page": "STORY",
@@ -1168,12 +1378,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5e7991d1-56fe-47c7-a610-44d1bdd9b713/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 14582,
+      "loadTimeMs": 16351,
       "duration": "184s",
       "resolution": "640x360"
     },
     {
-      "number": 64,
+      "number": 76,
       "title": "Easter",
       "section": "Bible Adventures",
       "page": "STORY",
@@ -1181,12 +1391,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/2b676607-574f-4997-80b5-596d6ef7f9d0/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1499,
+      "loadTimeMs": 2758,
       "duration": "182s",
       "resolution": "640x360"
     },
     {
-      "number": 65,
+      "number": 77,
       "title": "Jesus Miracles",
       "section": "Bible Adventures",
       "page": "STORY",
@@ -1194,12 +1404,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4303868d-a9c9-40fd-a25c-0892aab1a499/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1507,
+      "loadTimeMs": 2357,
       "duration": "150s",
       "resolution": "640x360"
     },
     {
-      "number": 66,
+      "number": 78,
       "title": "John the Baptist",
       "section": "Bible Adventures",
       "page": "STORY",
@@ -1207,12 +1417,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7ed33ba6-5891-4525-95f6-8ef791f89c46/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1740,
+      "loadTimeMs": 2537,
       "duration": "258s",
       "resolution": "640x360"
     },
     {
-      "number": 67,
+      "number": 79,
       "title": "Noah",
       "section": "Bible Adventures",
       "page": "STORY",
@@ -1220,12 +1430,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/72c7e315-206d-4443-a4fb-ec171f5e3824/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1896,
+      "loadTimeMs": 2470,
       "duration": "158s",
       "resolution": "640x360"
     },
     {
-      "number": 68,
+      "number": 80,
       "title": "Moses",
       "section": "Bible Adventures",
       "page": "STORY",
@@ -1233,25 +1443,25 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1d3177fe-7046-4d74-ba2c-edc330f2b313/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2121,
+      "loadTimeMs": 2731,
       "duration": "224s",
       "resolution": "640x360"
     },
     {
-      "number": 69,
-      "title": "Great God",
+      "number": 81,
+      "title": "GREAT GOD",
       "section": "Bible Adventures",
       "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/b5133472-fdbb-456c-ae42-b13b1fd54f84?category=eaf34a3d-d9e2-4b24-b86a-e0edeb08ac44&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/b5133472-fdbb-456c-ae42-b13b1fd54f84/master.m3u8",
+      "url": "https://go.kingdomlandkids.com/watch/14e63165-8bcb-4ee3-859c-a057da824db8?category=eaf34a3d-d9e2-4b24-b86a-e0edeb08ac44&from=home",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/14e63165-8bcb-4ee3-859c-a057da824db8/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1506,
+      "loadTimeMs": 2796,
       "duration": "217s",
       "resolution": "640x360"
     },
     {
-      "number": 70,
+      "number": 82,
       "title": "In His Hand",
       "section": "Bible Adventures",
       "page": "STORY",
@@ -1259,12 +1469,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1430c542-bb99-4b58-99e7-128b1030fb06/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1514,
+      "loadTimeMs": 2326,
       "duration": "108s",
       "resolution": "640x360"
     },
     {
-      "number": 71,
+      "number": 83,
       "title": "Introduction Bible Fruits of Virtue",
       "section": "Bible Adventures",
       "page": "STORY",
@@ -1272,12 +1482,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/49123b8f-66c7-4555-a2a9-2e9ee20f9c33/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2089,
+      "loadTimeMs": 2449,
       "duration": "141s",
       "resolution": "640x360"
     },
     {
-      "number": 72,
+      "number": 84,
       "title": "Gentleness",
       "section": "Bible Adventures",
       "page": "STORY",
@@ -1285,12 +1495,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/67b07475-78a7-4515-a23a-bd39e36b3235/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1480,
+      "loadTimeMs": 2808,
       "duration": "121s",
       "resolution": "640x360"
     },
     {
-      "number": 73,
+      "number": 85,
       "title": "Goodness",
       "section": "Bible Adventures",
       "page": "STORY",
@@ -1298,12 +1508,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/64e95279-c998-41d5-9488-b95fca9d672b/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1614,
+      "loadTimeMs": 2516,
       "duration": "115s",
       "resolution": "640x360"
     },
     {
-      "number": 74,
+      "number": 86,
       "title": "Faithfulness",
       "section": "Bible Adventures",
       "page": "STORY",
@@ -1311,12 +1521,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/fee8eb1b-ec50-48e9-9b12-5cafb197a3a9/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9397,
+      "loadTimeMs": 11716,
       "duration": "137s",
       "resolution": "640x360"
     },
     {
-      "number": 75,
+      "number": 87,
       "title": "Love",
       "section": "Bible Adventures",
       "page": "STORY",
@@ -1324,12 +1534,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/08c3a441-b389-4590-8e3d-588dcc363a70/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9965,
+      "loadTimeMs": 10420,
       "duration": "169s",
       "resolution": "640x360"
     },
     {
-      "number": 76,
+      "number": 88,
       "title": "Alien In My House",
       "section": "ABC",
       "page": "STORY",
@@ -1337,12 +1547,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/fff66fea-6510-4391-89a0-ff3af6ecbfc0/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1544,
+      "loadTimeMs": 2282,
       "duration": "95s",
       "resolution": "640x360"
     },
     {
-      "number": 77,
+      "number": 89,
       "title": "Auntie Bois Gift Motion Book",
       "section": "ABC",
       "page": "STORY",
@@ -1350,12 +1560,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/3820a4b0-b2de-42de-9614-6719fba36287/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1262,
+      "loadTimeMs": 2942,
       "duration": "174s",
       "resolution": "640x360"
     },
     {
-      "number": 78,
+      "number": 90,
       "title": "Brave Bora Motion Book",
       "section": "ABC",
       "page": "STORY",
@@ -1363,12 +1573,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/adea5180-0077-4b6f-90f7-fe53ce334710/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2176,
+      "loadTimeMs": 2344,
       "duration": "113s",
       "resolution": "640x360"
     },
     {
-      "number": 79,
+      "number": 91,
       "title": "Great Tidy up",
       "section": "ABC",
       "page": "STORY",
@@ -1376,12 +1586,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f0c9560b-17d8-45a5-a87b-1b89082f9705/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1490,
+      "loadTimeMs": 2499,
       "duration": "101s",
       "resolution": "640x360"
     },
     {
-      "number": 80,
+      "number": 92,
       "title": "Lost in the Internet",
       "section": "ABC",
       "page": "STORY",
@@ -1389,12 +1599,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/cc438094-dbd9-48e5-a966-d901f9f49b13/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1516,
+      "loadTimeMs": 2421,
       "duration": "379s",
       "resolution": "640x360"
     },
     {
-      "number": 81,
+      "number": 93,
       "title": "Meera and Ameera",
       "section": "ABC",
       "page": "STORY",
@@ -1402,12 +1612,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/91b9c45f-1472-4794-a534-14ccda5d750f/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1634,
+      "loadTimeMs": 2329,
       "duration": "127s",
       "resolution": "640x360"
     },
     {
-      "number": 82,
+      "number": 94,
       "title": "Chiu's Power Read-Along | ABCs | KingdomLand",
       "section": "ABC",
       "page": "STORY",
@@ -1415,12 +1625,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/899e5572-e6df-4dcd-8263-ceca77877975/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1964,
+      "loadTimeMs": 2853,
       "duration": "125s",
       "resolution": "640x360"
     },
     {
-      "number": 83,
+      "number": 95,
       "title": "Malar's Big House Read-Along",
       "section": "ABC",
       "page": "STORY",
@@ -1428,12 +1638,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6884d622-637e-4168-a1a0-c6d2c02aad06/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1800,
+      "loadTimeMs": 2610,
       "duration": "105s",
       "resolution": "640x360"
     },
     {
-      "number": 84,
+      "number": 96,
       "title": "H3 ABC",
       "section": "ABC",
       "page": "STORY",
@@ -1441,12 +1651,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/409f00e2-5336-4ec8-8b9e-e8fef82cfdef/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1381,
+      "loadTimeMs": 2366,
       "duration": "109s",
       "resolution": "640x360"
     },
     {
-      "number": 85,
+      "number": 97,
       "title": "Disagreement of Occupations | ABCs",
       "section": "ABC",
       "page": "STORY",
@@ -1454,12 +1664,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a4e15e08-63a5-4021-b2fe-dc6a01ffd3cd/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1639,
+      "loadTimeMs": 2370,
       "duration": "76s",
       "resolution": "640x360"
     },
     {
-      "number": 86,
+      "number": 98,
       "title": "Unicatz Alphabet Song",
       "section": "ABC",
       "page": "STORY",
@@ -1467,12 +1677,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/866ae349-9baf-4757-aa17-39247e8a4222/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10443,
+      "loadTimeMs": 12651,
       "duration": "95s",
       "resolution": "640x360"
     },
     {
-      "number": 87,
+      "number": 99,
       "title": "H3 5 Vowels",
       "section": "ABC",
       "page": "STORY",
@@ -1480,12 +1690,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c3e380b8-57ea-4094-b312-7186b4182477/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10253,
+      "loadTimeMs": 10805,
       "duration": "160s",
       "resolution": "640x360"
     },
     {
-      "number": 88,
+      "number": 100,
       "title": "5 Monkeys Lyric Video",
       "section": "Numbers",
       "page": "STORY",
@@ -1493,12 +1703,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/972c77e5-9877-42f7-bce4-702e50fe391a/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1611,
+      "loadTimeMs": 2357,
       "duration": "116s",
       "resolution": "640x360"
     },
     {
-      "number": 89,
+      "number": 101,
       "title": "Adding Mixed Numbers",
       "section": "Numbers",
       "page": "STORY",
@@ -1506,12 +1716,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/33496e0c-01f3-4b8e-9a09-b3da2c8ac0c5/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1542,
+      "loadTimeMs": 2486,
       "duration": "36s",
       "resolution": "640x360"
     },
     {
-      "number": 90,
+      "number": 102,
       "title": "Algebraic Thinking",
       "section": "Numbers",
       "page": "STORY",
@@ -1519,12 +1729,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/3b529378-7a47-47da-a3c5-4c21042ddce4/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1482,
+      "loadTimeMs": 2536,
       "duration": "47s",
       "resolution": "640x360"
     },
     {
-      "number": 91,
+      "number": 103,
       "title": "Comparing Fractions",
       "section": "Numbers",
       "page": "STORY",
@@ -1532,12 +1742,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7fd6c669-0c47-454e-ba56-d33e411ce106/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1556,
+      "loadTimeMs": 2344,
       "duration": "46s",
       "resolution": "640x360"
     },
     {
-      "number": 92,
+      "number": 104,
       "title": "Computation and Algebraic Thinking",
       "section": "Numbers",
       "page": "STORY",
@@ -1545,12 +1755,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/561d091b-276e-4784-aea7-f34632681697/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1623,
+      "loadTimeMs": 2925,
       "duration": "63s",
       "resolution": "640x360"
     },
     {
-      "number": 93,
+      "number": 105,
       "title": "Math With Money",
       "section": "Numbers",
       "page": "STORY",
@@ -1558,12 +1768,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/782ad9b1-5cd5-42cc-b8c5-3c28b3077726/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1967,
+      "loadTimeMs": 2520,
       "duration": "52s",
       "resolution": "640x360"
     },
     {
-      "number": 94,
+      "number": 106,
       "title": "Measure Area and Volume",
       "section": "Numbers",
       "page": "STORY",
@@ -1571,12 +1781,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/bf0b3073-9b1c-4317-8514-f8ca826fb4b7/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1625,
+      "loadTimeMs": 2282,
       "duration": "43s",
       "resolution": "640x360"
     },
     {
-      "number": 95,
+      "number": 107,
       "title": "Modeling Multiplication",
       "section": "Numbers",
       "page": "STORY",
@@ -1584,12 +1794,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6e74aba2-2133-4d87-bf4d-8cdd991ec27b/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1474,
+      "loadTimeMs": 2268,
       "duration": "33s",
       "resolution": "640x360"
     },
     {
-      "number": 96,
+      "number": 108,
       "title": "Number Lines",
       "section": "Numbers",
       "page": "STORY",
@@ -1597,12 +1807,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/2e3eadcc-ae4b-42b7-ae54-9aec7ff550f7/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1613,
+      "loadTimeMs": 2807,
       "duration": "73s",
       "resolution": "640x360"
     },
     {
-      "number": 97,
+      "number": 109,
       "title": "Number Sense",
       "section": "Numbers",
       "page": "STORY",
@@ -1610,12 +1820,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c16a1a0f-2c9e-46f5-a966-e80f3cd76410/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2121,
+      "loadTimeMs": 2275,
       "duration": "72s",
       "resolution": "640x360"
     },
     {
-      "number": 98,
+      "number": 110,
       "title": "H3 Colors and Numbers",
       "section": "Numbers",
       "page": "STORY",
@@ -1623,12 +1833,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/94b300e1-d14a-47dc-87f0-f022ed6476bc/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10719,
+      "loadTimeMs": 10141,
       "duration": "124s",
       "resolution": "640x360"
     },
     {
-      "number": 99,
+      "number": 111,
       "title": "H3 Count it Up",
       "section": "Numbers",
       "page": "STORY",
@@ -1636,12 +1846,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7108df62-4c23-4990-b2ef-57ddd709371b/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10213,
+      "loadTimeMs": 10826,
       "duration": "164s",
       "resolution": "640x360"
     },
     {
-      "number": 100,
+      "number": 112,
       "title": "Gabby Globber (GG) Counts by 5s",
       "section": "Numbers",
       "page": "STORY",
@@ -1649,12 +1859,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c87012b5-2144-4493-ae0c-6adfb46b4957/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10322,
+      "loadTimeMs": 11312,
       "duration": "134s",
       "resolution": "640x360"
     },
     {
-      "number": 101,
+      "number": 113,
       "title": "Gabby Globber (GG) Counts by 10s",
       "section": "Numbers",
       "page": "STORY",
@@ -1662,12 +1872,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/75a48dfd-1d3a-4d4a-ac6a-f708d82d8fcc/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9409,
+      "loadTimeMs": 10121,
       "duration": "213s",
       "resolution": "640x360"
     },
     {
-      "number": 102,
+      "number": 114,
       "title": "Gabby Globber (GG) Counting by 5s and 10s",
       "section": "Numbers",
       "page": "STORY",
@@ -1675,12 +1885,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f6a510dd-d13f-45d5-a85b-56b8f7873e50/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9587,
+      "loadTimeMs": 11742,
       "duration": "204s",
       "resolution": "640x360"
     },
     {
-      "number": 103,
+      "number": 115,
       "title": "Unicatz Count to 20",
       "section": "Numbers",
       "page": "STORY",
@@ -1688,12 +1898,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9cf8562f-9214-4f34-8b64-4ac1e8aed89c/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10812,
+      "loadTimeMs": 9826,
       "duration": "83s",
       "resolution": "640x360"
     },
     {
-      "number": 104,
+      "number": 116,
       "title": "Mr. Prather Opposites",
       "section": "Life Skills",
       "page": "STORY",
@@ -1701,168 +1911,51 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4780be1a-cf12-4208-889f-64ec142dab8f/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1507,
+      "loadTimeMs": 3135,
       "duration": "198s",
       "resolution": "640x360"
     },
     {
-      "number": 105,
-      "title": "Mr. Prather Days and Months",
-      "section": "Life Skills",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/200efedf-c802-4fd8-ab28-faffbe5d4cc3?category=ca990b10-a156-4731-83b9-b3b1115f87d9&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/200efedf-c802-4fd8-ab28-faffbe5d4cc3/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 1617,
-      "duration": "185s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 106,
-      "title": "Little Agent Three Amigas",
-      "section": "Life Skills",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/16817712-d949-4279-871f-cb066723b50e?category=ca990b10-a156-4731-83b9-b3b1115f87d9&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/16817712-d949-4279-871f-cb066723b50e/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 1623,
-      "duration": "118s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 107,
-      "title": "Little Agent Big Hair Blues",
-      "section": "Life Skills",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/aee40747-e84a-4b21-ac94-2c9a4b2ff088?category=ca990b10-a156-4731-83b9-b3b1115f87d9&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/aee40747-e84a-4b21-ac94-2c9a4b2ff088/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 1476,
-      "duration": "115s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 108,
-      "title": "Little Agent Candy Critters",
-      "section": "Life Skills",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/1f732317-d240-4f49-bf56-2f70230d1c02?category=ca990b10-a156-4731-83b9-b3b1115f87d9&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1f732317-d240-4f49-bf56-2f70230d1c02/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 1495,
-      "duration": "138s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 109,
-      "title": "Little Agent Hippocampus",
-      "section": "Life Skills",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/c8be5898-a105-4a08-8dec-ba566d96eac1?category=ca990b10-a156-4731-83b9-b3b1115f87d9&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c8be5898-a105-4a08-8dec-ba566d96eac1/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 1266,
-      "duration": "166s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 110,
-      "title": "Little Agent Hoverboard",
-      "section": "Life Skills",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/bfb16737-dd22-43e9-bd73-4890964b3527?category=ca990b10-a156-4731-83b9-b3b1115f87d9&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/bfb16737-dd22-43e9-bd73-4890964b3527/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 1537,
-      "duration": "93s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 111,
-      "title": "Little Agent Itchy Monster",
-      "section": "Life Skills",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/11e1164b-d214-4c1d-8d96-c9430be49734?category=ca990b10-a156-4731-83b9-b3b1115f87d9&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/11e1164b-d214-4c1d-8d96-c9430be49734/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 1946,
-      "duration": "120s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 112,
-      "title": "Fire Safety School Drills",
-      "section": "Life Skills",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/02b7eba5-06ac-4543-81fd-a5691dee7340?category=ca990b10-a156-4731-83b9-b3b1115f87d9&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/02b7eba5-06ac-4543-81fd-a5691dee7340/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 1621,
-      "duration": "230s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 113,
-      "title": "Unicatz Joy of Learning",
-      "section": "Life Skills",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/56ab3fea-b6c9-430c-92c2-38bc52fcd51f?category=ca990b10-a156-4731-83b9-b3b1115f87d9&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/56ab3fea-b6c9-430c-92c2-38bc52fcd51f/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 1641,
-      "duration": "85s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 114,
-      "title": "Little Agent Clothes Mountain",
-      "section": "Life Skills",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/59a6f62f-b6c9-4f35-84fb-47ab941bffc9?category=ca990b10-a156-4731-83b9-b3b1115f87d9&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/59a6f62f-b6c9-4f35-84fb-47ab941bffc9/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 8516,
-      "duration": "170s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 115,
-      "title": "Little Agent The Letter Twins",
-      "section": "Life Skills",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/a8f1f906-9ced-4289-a7fe-1834f4385c36?category=ca990b10-a156-4731-83b9-b3b1115f87d9&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a8f1f906-9ced-4289-a7fe-1834f4385c36/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 9379,
-      "duration": "98s",
-      "resolution": "640x360"
-    },
-    {
-      "number": 116,
-      "title": "Mental Health and God",
-      "section": "Life Skills",
-      "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/5e4d922f-f256-453c-b524-ae29b659bbaf?category=ca990b10-a156-4731-83b9-b3b1115f87d9&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5e4d922f-f256-453c-b524-ae29b659bbaf/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 8543,
-      "duration": "212s",
-      "resolution": "640x360"
-    },
-    {
       "number": 117,
+      "title": "Shape Song",
+      "section": "MUSIC",
+      "page": "MUSIC",
+      "url": "https://go.kingdomlandkids.com/watch/da00b9bc-56c8-4870-94a5-47e21f5fa32d?from=music",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/da00b9bc-56c8-4870-94a5-47e21f5fa32d/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 5099,
+      "duration": "89s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 118,
+      "title": "Behave In School",
+      "section": "MUSIC",
+      "page": "MUSIC",
+      "url": "https://go.kingdomlandkids.com/watch/a71d30fd-a3dc-403d-a400-bfef3ef1158b?from=music",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a71d30fd-a3dc-403d-a400-bfef3ef1158b/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 4945,
+      "duration": "95s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 119,
+      "title": "Animal Groove",
+      "section": "MUSIC",
+      "page": "MUSIC",
+      "url": "https://go.kingdomlandkids.com/watch/f28bf741-f881-420a-b059-cc6ae871d831?from=music",
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f28bf741-f881-420a-b059-cc6ae871d831/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 5285,
+      "duration": "39s",
+      "resolution": "640x360"
+    },
+    {
+      "number": 120,
       "title": "H3 Whoa Challenge",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -1870,12 +1963,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4a5fe7d4-f436-404f-9f50-1bb42130148c/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4025,
+      "loadTimeMs": 4848,
       "duration": "128s",
       "resolution": "640x360"
     },
     {
-      "number": 118,
+      "number": 121,
       "title": "H3 Windshield",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -1883,12 +1976,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/86d6a0a7-e639-4194-8806-c2ee81c56d6a/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4055,
+      "loadTimeMs": 5322,
       "duration": "176s",
       "resolution": "640x360"
     },
     {
-      "number": 119,
+      "number": 122,
       "title": "H3 Teacher",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -1896,12 +1989,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/ae8329d3-a352-40d3-8504-849c451d1b6e/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3732,
+      "loadTimeMs": 4402,
       "duration": "125s",
       "resolution": "640x360"
     },
     {
-      "number": 120,
+      "number": 123,
       "title": "H3 Smile Kids",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -1909,12 +2002,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/fb08a001-9fbd-4ab5-8731-4f272eb66779/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3496,
+      "loadTimeMs": 4886,
       "duration": "189s",
       "resolution": "640x360"
     },
     {
-      "number": 121,
+      "number": 124,
       "title": "H3 Ring Around The Rosey",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -1922,12 +2015,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4c2d526f-5b6c-4a1e-bd4e-f4737acd37a3/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4095,
+      "loadTimeMs": 4607,
       "duration": "178s",
       "resolution": "640x360"
     },
     {
-      "number": 122,
+      "number": 125,
       "title": "H3 Focused And Ready To Learn",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -1935,12 +2028,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7dc61f58-c70a-43dd-a08d-c6c54685de1b/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4262,
+      "loadTimeMs": 4329,
       "duration": "157s",
       "resolution": "640x360"
     },
     {
-      "number": 123,
+      "number": 126,
       "title": "H3 Champion",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -1948,12 +2041,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/ebbc4628-14fa-429d-9a57-a34837dc5c59/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3946,
+      "loadTimeMs": 4912,
       "duration": "151s",
       "resolution": "640x360"
     },
     {
-      "number": 124,
+      "number": 127,
       "title": "H3 Bubble Head",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -1961,12 +2054,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/986b7f31-1651-49a1-844a-f425dd5d27cb/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3498,
+      "loadTimeMs": 4824,
       "duration": "125s",
       "resolution": "640x360"
     },
     {
-      "number": 125,
+      "number": 128,
       "title": "H3 Born to Be Wild",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -1974,12 +2067,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a67e0f96-6278-4684-a586-04a1a0d4a387/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3485,
+      "loadTimeMs": 4877,
       "duration": "168s",
       "resolution": "640x360"
     },
     {
-      "number": 126,
+      "number": 129,
       "title": "Little Light",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -1987,12 +2080,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6651775f-92b1-4154-959f-7bc567d23f72/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3930,
+      "loadTimeMs": 4262,
       "duration": "143s",
       "resolution": "640x360"
     },
     {
-      "number": 127,
+      "number": 130,
       "title": "He Loves Me",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2000,12 +2093,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/522acb5d-ea56-4719-8912-3490956465a6/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3470,
+      "loadTimeMs": 4269,
       "duration": "151s",
       "resolution": "640x360"
     },
     {
-      "number": 128,
+      "number": 131,
       "title": "Wiggle",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2013,12 +2106,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/73608d01-5e69-402b-b984-7d0f6f6ab991/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4104,
+      "loadTimeMs": 4383,
       "duration": "149s",
       "resolution": "640x360"
     },
     {
-      "number": 129,
+      "number": 132,
       "title": "Row Your Boat",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2026,12 +2119,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c37e431b-b298-4159-9190-6ad62e38ffaf/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3942,
+      "loadTimeMs": 4362,
       "duration": "96s",
       "resolution": "640x360"
     },
     {
-      "number": 130,
+      "number": 133,
       "title": "Mary Had a Little Lamb",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2039,12 +2132,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/fde9313a-7641-4798-9eef-cb3bd082775e/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3342,
+      "loadTimeMs": 5312,
       "duration": "108s",
       "resolution": "640x360"
     },
     {
-      "number": 131,
+      "number": 134,
       "title": "Ini Mini Miny Mo",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2052,12 +2145,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/005ab49b-8eaf-4ebb-89e6-831cdabb3a94/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3777,
+      "loadTimeMs": 4901,
       "duration": "155s",
       "resolution": "640x360"
     },
     {
-      "number": 132,
+      "number": 135,
       "title": "Clap Your Hands",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2065,12 +2158,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/b595ec1a-b425-479e-8f54-b98d2155a681/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3885,
+      "loadTimeMs": 4401,
       "duration": "168s",
       "resolution": "640x360"
     },
     {
-      "number": 133,
+      "number": 136,
       "title": "Basketball",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2078,12 +2171,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7a7af214-a722-468d-9a7d-32596ef551bf/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4306,
+      "loadTimeMs": 4570,
       "duration": "262s",
       "resolution": "640x360"
     },
     {
-      "number": 134,
+      "number": 137,
       "title": "Baby Shark",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2091,12 +2184,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/19ceb6fc-d588-40ef-90c5-9619a419b20d/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3308,
+      "loadTimeMs": 5092,
       "duration": "157s",
       "resolution": "640x360"
     },
     {
-      "number": 135,
+      "number": 138,
       "title": "Believe",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2104,12 +2197,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/56718b15-6dd1-4865-8f62-2c78c5232ade/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3502,
+      "loadTimeMs": 4808,
       "duration": "159s",
       "resolution": "640x360"
     },
     {
-      "number": 136,
+      "number": 139,
       "title": "Affirmation",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2117,12 +2210,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9a9b17a4-90ce-409d-ac17-530484e83196/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3898,
+      "loadTimeMs": 4647,
       "duration": "155s",
       "resolution": "640x360"
     },
     {
-      "number": 137,
+      "number": 140,
       "title": "Unicatz Pause Dance",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2130,12 +2223,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4a9c9d00-18a2-4f89-8200-8611bd6e2a32/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3885,
+      "loadTimeMs": 4780,
       "duration": "82s",
       "resolution": "640x360"
     },
     {
-      "number": 138,
+      "number": 141,
       "title": "Unicatz Cross the Road",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2143,12 +2236,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d8b5b1d5-ea75-4691-a319-ef1ad8c6ecd0/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3286,
+      "loadTimeMs": 2368,
       "duration": "127s",
       "resolution": "640x360"
     },
     {
-      "number": 139,
+      "number": 142,
       "title": "Sound it Out",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2156,12 +2249,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/ef960175-a650-4f5c-bec3-70fc2c4996ac/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3913,
+      "loadTimeMs": 2734,
       "duration": "142s",
       "resolution": "640x360"
     },
     {
-      "number": 140,
+      "number": 143,
       "title": "School time Litty",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2169,12 +2262,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7ceaff00-c99a-4b58-9092-8ab1e7791f51/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3473,
+      "loadTimeMs": 5620,
       "duration": "105s",
       "resolution": "640x360"
     },
     {
-      "number": 141,
+      "number": 144,
       "title": "Rain Rain Go Away",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2182,12 +2275,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/bf3d8981-2bdc-4fec-aabe-f1fe3b7a3820/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4315,
+      "loadTimeMs": 4413,
       "duration": "147s",
       "resolution": "640x360"
     },
     {
-      "number": 142,
+      "number": 145,
       "title": "Mr. Prather Days of the Week",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2195,12 +2288,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/36981665-54ff-40b6-af63-c6f3966ef8d8/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3933,
+      "loadTimeMs": 4358,
       "duration": "197s",
       "resolution": "640x360"
     },
     {
-      "number": 143,
+      "number": 146,
       "title": "Make it Out",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2208,12 +2301,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d608de21-c7de-483e-b58f-314f3f91b105/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3277,
+      "loadTimeMs": 4805,
       "duration": "184s",
       "resolution": "640x360"
     },
     {
-      "number": 144,
+      "number": 147,
       "title": "Down In My Heart",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2221,12 +2314,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/47d91fd5-22da-4c57-ae99-6dd4484c7381/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3762,
+      "loadTimeMs": 4775,
       "duration": "128s",
       "resolution": "640x360"
     },
     {
-      "number": 145,
+      "number": 148,
       "title": "Kids Just Want to Have Fun",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2234,12 +2327,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f298f79f-d99f-41bb-9814-edc331bfe9ec/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4037,
+      "loadTimeMs": 4294,
       "duration": "196s",
       "resolution": "640x360"
     },
     {
-      "number": 146,
+      "number": 149,
       "title": "Ice Cream Truck",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2247,12 +2340,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/cd00ba8a-4ace-440e-9e25-4e03d0160387/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3485,
+      "loadTimeMs": 4359,
       "duration": "96s",
       "resolution": "640x360"
     },
     {
-      "number": 147,
+      "number": 150,
       "title": "I'm a Princess | Sing-a-long",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2260,12 +2353,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9ec30bd4-0745-402c-9031-86fdf956c8b3/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4015,
+      "loadTimeMs": 4596,
       "duration": "134s",
       "resolution": "640x360"
     },
     {
-      "number": 148,
+      "number": 151,
       "title": "I want to See My Friends | Sing-a-long",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2273,12 +2366,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/811021ba-ef54-4de6-8dee-217be1a47b64/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4086,
+      "loadTimeMs": 4853,
       "duration": "122s",
       "resolution": "640x360"
     },
     {
-      "number": 149,
+      "number": 152,
       "title": "Great | Sing-a-long",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2286,12 +2379,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/38a5371c-c8f3-4e32-823b-428f17025f3c/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3424,
+      "loadTimeMs": 4314,
       "duration": "216s",
       "resolution": "640x360"
     },
     {
-      "number": 150,
+      "number": 153,
       "title": "Grandmama | Sing-a-long",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2299,12 +2392,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6eebf6d0-36d0-4dcc-8a12-d72b84eb0e18/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4110,
+      "loadTimeMs": 4353,
       "duration": "129s",
       "resolution": "640x360"
     },
     {
-      "number": 151,
+      "number": 154,
       "title": "Good Vibes | Sing-a-long",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2312,12 +2405,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/e4dc36c7-978f-4994-9c72-9ef3ec9b772d/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3311,
+      "loadTimeMs": 4799,
       "duration": "158s",
       "resolution": "640x360"
     },
     {
-      "number": 152,
+      "number": 155,
       "title": "Good Juju | Sing-a-long |",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2325,12 +2418,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/ace3209d-784d-47f4-b441-afa566228739/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3971,
+      "loadTimeMs": 4879,
       "duration": "144s",
       "resolution": "640x360"
     },
     {
-      "number": 153,
+      "number": 156,
       "title": "Go Get It",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2338,12 +2431,12 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/15a864f7-716b-4e24-97ca-c21537bae9f3/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3896,
+      "loadTimeMs": 4584,
       "duration": "140s",
       "resolution": "640x360"
     },
     {
-      "number": 154,
+      "number": 157,
       "title": "Ballin | Sing-a-long",
       "section": "MUSIC",
       "page": "MUSIC",
@@ -2351,7 +2444,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6b31a1a1-2fb6-470e-9645-a93b4eaa4349/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3551,
+      "loadTimeMs": 4349,
       "duration": "203s",
       "resolution": "640x360"
     }
