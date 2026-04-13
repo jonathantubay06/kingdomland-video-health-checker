@@ -1090,6 +1090,15 @@ function renderComplete(summary, allResults) {
 
   appendLog(`Check complete! ${summary.passed}/${summary.total} passed, ${summary.failed} failed, ${summary.timeouts} timed out.`);
 
+  // Save run total to localStorage for drift detection
+  try {
+    var hist = JSON.parse(localStorage.getItem('kl_history') || '[]');
+    hist.push({ total: summary.total, passed: summary.passed, failed: summary.failed, ts: Date.now() });
+    if (hist.length > 50) hist = hist.slice(-50);
+    localStorage.setItem('kl_history', JSON.stringify(hist));
+  } catch {}
+
+
   // NEW: Update health summary, last checked, diff report, trend chart, badge, response times, webhook
   updateHealthSummary();
   updateLastChecked();
@@ -1421,7 +1430,39 @@ function updateHealthSummary() {
     </div>
   `;
   el.style.display = 'flex';
+
+  // 🎉 Confetti on perfect 100% pass rate
+  if (rate === 100 && total > 0 && KL.triggerConfetti) {
+    setTimeout(KL.triggerConfetti, 400);
+  }
+
+  // 📊 Count drift alert
+  KL.showCountDriftAlert(total);
 }
+
+// ============== Count Drift Alert ==============
+KL.showCountDriftAlert = function(currentTotal) {
+  var container = document.getElementById('drift-alert-container');
+  if (!container) return;
+  container.innerHTML = '';
+  // Get previous total from history
+  var history = [];
+  try { history = JSON.parse(localStorage.getItem('kl_history') || '[]'); } catch {}
+  if (!history.length) return;
+  // Find last run that wasn't a filtered recheck (has a meaningful total)
+  var prevRun = null;
+  for (var i = history.length - 2; i >= 0; i--) {
+    if (history[i].total && history[i].total > 10) { prevRun = history[i]; break; }
+  }
+  if (!prevRun || !prevRun.total || prevRun.total === currentTotal) return;
+  var diff = currentTotal - prevRun.total;
+  var cls = diff > 0 ? 'drift-increase' : 'drift-decrease';
+  var icon = diff > 0 ? '📈' : '📉';
+  var label = diff > 0
+    ? icon + ' ' + diff + ' new video' + (Math.abs(diff) !== 1 ? 's' : '') + ' added (was ' + prevRun.total + ', now ' + currentTotal + ')'
+    : icon + ' ' + Math.abs(diff) + ' video' + (Math.abs(diff) !== 1 ? 's' : '') + ' removed (was ' + prevRun.total + ', now ' + currentTotal + ')';
+  container.innerHTML = '<div class="drift-alert ' + cls + '">' + label + '</div>';
+};
 
 // ============== 2. Last Checked Timestamp ==============
 function timeAgo(date) {

@@ -2,6 +2,7 @@
 window.KL = window.KL || {};
 
 window.recheckFailed = function() {
+  window._credModalMode = 'recheck';
   KL.openCredentialsModal();
 };
 

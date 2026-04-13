@@ -42,11 +42,20 @@ KL.createResultRow = function(r) {
 
   const isSelected = KL.state.selectedTitles && KL.state.selectedTitles.indexOf(r.title) !== -1;
 
+  const thumbHtml = r.thumbnailUrl
+    ? `<img class="result-thumb" src="${KL.escHtml(r.thumbnailUrl)}" alt="" loading="lazy" onerror="this.style.display='none'">`
+    : `<div class="result-thumb-placeholder"></div>`;
+
   tr.innerHTML = `
     <td><input type="checkbox" class="row-checkbox" data-title="${KL.escHtml(r.title)}" onclick="event.stopPropagation();KL.toggleBulkSelect(this)" ${isSelected ? 'checked' : ''}></td>
     <td><button class="${starClass}" data-title="${KL.escHtml(r.title)}" onclick="event.stopPropagation();toggleWatchlist('${KL.escHtml(r.title).replace(/'/g, "\\'")}')">${starChar}</button></td>
     <td>${r.number}</td>
-    <td><strong><span class="video-title-link" onclick="event.stopPropagation();showVideoDetail('${KL.escHtml(r.title).replace(/'/g, "\\'")}')">${KL.escHtml(r.title)}</span></strong> ${screenshotIcon}</td>
+    <td>
+      <div class="result-title-cell">
+        ${thumbHtml}
+        <strong><span class="video-title-link" onclick="event.stopPropagation();showVideoDetail('${KL.escHtml(r.title).replace(/'/g, "\\'")}')">${KL.escHtml(r.title)}</span></strong> ${screenshotIcon}
+      </div>
+    </td>
     <td>${KL.escHtml(r.section || '')}</td>
     <td>${r.page || ''}</td>
     <td><span class="status-badge status-${r.status}">${r.status}</span></td>

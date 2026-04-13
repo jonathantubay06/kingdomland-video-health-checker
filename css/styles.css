@@ -1,48 +1,52 @@
 /* ============== CSS Reset & Variables ============== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
 :root {
-  /* SentryXP-inspired palette */
-  --color-pass: #71b06c;
-  --color-pass-bg: #dff0dd;
-  --color-pass-border: #b8ddb5;
+  /* KingdomLand Kids palette */
+  --color-pass: #4caf76;
+  --color-pass-bg: #e6f7ed;
+  --color-pass-border: #a8dbbe;
   --color-fail: #e05252;
   --color-fail-bg: #fdeaea;
   --color-fail-border: #f5bcbc;
   --color-timeout: #e8a838;
   --color-timeout-bg: #fdf3de;
   --color-timeout-border: #f5dda0;
-  --color-info: #4c6bcd;
-  --color-info-bg: #e3f0ff;
-  --color-info-border: #c5d5f5;
-  --color-bg: #f1f3fa;
+  --color-info: #6c47d4;
+  --color-info-bg: #f0ebff;
+  --color-info-border: #c9b8f5;
+  --color-bg: #f4f2fb;
   --color-surface: #ffffff;
-  --color-text: #080331;
-  --color-text-muted: #555770;
-  --color-text-light: #8b8fa8;
-  --color-border: #e2e6f8;
-  --color-primary: #4c6bcd;
-  --color-primary-hover: #3a56b0;
+  --color-text: #1a0a3b;
+  --color-text-muted: #5a5178;
+  --color-text-light: #9b92b8;
+  --color-border: #e4dff5;
+  /* KDL primary purple + gold accent */
+  --color-primary: #6c47d4;
+  --color-primary-hover: #5535b8;
+  --color-gold: #f5a623;
+  --color-gold-hover: #e09010;
   --color-danger: #e05252;
   --color-danger-hover: #c93c3c;
-  --shadow-sm: 0 1px 3px rgba(8,3,49,0.06);
-  --shadow-md: 0 4px 6px -1px rgba(8,3,49,0.08), 0 2px 4px -2px rgba(8,3,49,0.05);
-  --shadow-lg: 0 10px 20px -4px rgba(8,3,49,0.12), 0 4px 8px -4px rgba(8,3,49,0.06);
-  --radius: 12px;
-  --radius-sm: 8px;
+  --shadow-sm: 0 1px 3px rgba(26,10,59,0.07);
+  --shadow-md: 0 4px 12px -2px rgba(26,10,59,0.10), 0 2px 4px -2px rgba(26,10,59,0.06);
+  --shadow-lg: 0 10px 24px -4px rgba(26,10,59,0.14), 0 4px 8px -4px rgba(26,10,59,0.07);
+  --radius: 14px;
+  --radius-sm: 9px;
 
-  /* New feature variables */
   --color-warning: #e8a838;
   --color-warning-bg: #fdf3de;
   --color-warning-border: #f5dda0;
   --color-warning-hover: #d49520;
-  --color-response-fast: #71b06c;
+  --color-response-fast: #4caf76;
   --color-response-medium: #e8a838;
   --color-response-slow: #e05252;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   background: var(--color-bg);
   color: var(--color-text);
   line-height: 1.5;
@@ -53,7 +57,7 @@ body {
 
 /* ============== Header ============== */
 .app-header {
-  background: linear-gradient(135deg, #4c6bcd, #080331);
+  background: linear-gradient(135deg, #6c47d4 0%, #3b1fa0 55%, #1a0a3b 100%);
   color: white;
   padding: 20px 0;
   box-shadow: var(--shadow-lg);
@@ -2985,4 +2989,136 @@ body, .app-header, .stat-card, .section-card, .modal,
   .toast-container { bottom: 16px; right: 16px; left: 16px; }
   .toast { max-width: 100%; }
   .empty-state-features { gap: 16px; }
+}
+
+/* ============================================================
+   KingdomLand Additions — Thumbnails, Animations, Branding
+   ============================================================ */
+
+/* ---- Thumbnail in results table ---- */
+.result-title-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.result-thumb {
+  width: 56px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 5px;
+  flex-shrink: 0;
+  background: var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.result-thumb:hover {
+  transform: scale(1.08);
+  box-shadow: var(--shadow-md);
+}
+.result-thumb-placeholder {
+  width: 56px;
+  height: 32px;
+  border-radius: 5px;
+  flex-shrink: 0;
+  background: var(--color-border);
+}
+
+/* ---- Animated progress bar shimmer ---- */
+.progress-bar {
+  position: relative;
+  overflow: hidden;
+}
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.35) 50%, transparent 100%);
+  animation: progress-shimmer 1.6s ease-in-out infinite;
+  transform: translateX(-100%);
+}
+@keyframes progress-shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+/* ---- Result row reveal animation ---- */
+@keyframes row-reveal {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+#results-tbody tr {
+  animation: row-reveal 0.22s ease both;
+}
+
+/* ---- Counter roll-up (number flip) ---- */
+@keyframes num-pop {
+  0%   { transform: translateY(6px) scale(0.88); opacity: 0; }
+  60%  { transform: translateY(-2px) scale(1.06); opacity: 1; }
+  100% { transform: translateY(0)    scale(1);    opacity: 1; }
+}
+.stat-value.counting { animation: num-pop 0.28s cubic-bezier(0.34,1.4,0.64,1) both; }
+
+/* ---- Gold accent for run button ---- */
+.btn-run {
+  background: linear-gradient(135deg, var(--color-primary), #8b5cf6);
+  border-color: transparent;
+}
+.btn-run:hover {
+  background: linear-gradient(135deg, var(--color-primary-hover), #7c3aed);
+  border-color: transparent;
+}
+
+/* ---- Recheck button gold accent ---- */
+.btn-recheck {
+  background: linear-gradient(135deg, var(--color-gold), #f97316);
+  border-color: transparent;
+  color: #fff;
+}
+.btn-recheck:hover {
+  background: linear-gradient(135deg, var(--color-gold-hover), #ea6c05);
+  border-color: transparent;
+}
+
+/* ---- Count drift alert banner ---- */
+.drift-alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: var(--color-info-bg);
+  border: 1px solid var(--color-info-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-primary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  animation: fade-up 0.4s ease;
+}
+.drift-alert.drift-increase { background: var(--color-pass-bg); border-color: var(--color-pass-border); color: #1a6e38; }
+.drift-alert.drift-decrease { background: var(--color-fail-bg); border-color: var(--color-fail-border); color: var(--color-fail); }
+
+/* ---- Mobile responsive improvements ---- */
+@media (max-width: 768px) {
+  .result-thumb, .result-thumb-placeholder { display: none; }
+  .table-wrapper table thead th:nth-child(6),
+  .table-wrapper table tbody td:nth-child(6) { display: none; } /* hide page col */
+  .table-wrapper table thead th:nth-child(8),
+  .table-wrapper table tbody td:nth-child(8) { display: none; } /* hide duration col */
+  .header-left h1 { font-size: 1.1rem; }
+  .stat-cards { grid-template-columns: repeat(2, 1fr); }
+  .section-grid { grid-template-columns: 1fr 1fr; }
+  .recheck-actions { flex-wrap: wrap; }
+  .filter-bar { flex-wrap: wrap; }
+  .filter-bar select, .filter-bar input { min-width: 0; flex: 1 1 120px; }
+  .header-controls { gap: 8px; }
+  .mode-toggle { display: none; } /* use full-width toggle below header on mobile */
+}
+@media (max-width: 480px) {
+  .container { padding: 0 12px; }
+  .stat-cards { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .section-grid { grid-template-columns: 1fr; }
+  .table-wrapper table thead th:nth-child(5),
+  .table-wrapper table tbody td:nth-child(5) { display: none; } /* hide section col too */
+  .table-wrapper { font-size: 0.8rem; }
+  .stat-value { font-size: 1.6rem; }
 }

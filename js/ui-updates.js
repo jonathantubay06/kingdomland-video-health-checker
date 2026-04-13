@@ -18,10 +18,28 @@ KL.updateRunButtons = function() {
 KL.updateStat = function(id, value) {
   const el = document.getElementById(id);
   if (!el) return;
-  // Animate numeric values on completion; strings (like '--') are set directly
   const num = parseInt(value, 10);
-  if (!isNaN(num) && KL.state.status === 'complete' && KL.animateCounter) {
-    KL.animateCounter(el, num);
+  if (!isNaN(num) && KL.state.status === 'complete') {
+    // Roll-up counter animation
+    const start = parseInt(el.textContent, 10) || 0;
+    const diff = num - start;
+    if (diff !== 0) {
+      const duration = Math.min(600, Math.abs(diff) * 18);
+      const startTime = performance.now();
+      el.classList.remove('counting');
+      void el.offsetWidth; // reflow to restart animation
+      el.classList.add('counting');
+      const tick = (now) => {
+        const t = Math.min(1, (now - startTime) / duration);
+        const ease = 1 - Math.pow(1 - t, 3);
+        el.textContent = Math.round(start + diff * ease);
+        if (t < 1) requestAnimationFrame(tick);
+        else { el.textContent = num; el.classList.remove('counting'); }
+      };
+      requestAnimationFrame(tick);
+    } else {
+      el.textContent = num;
+    }
   } else {
     el.textContent = value;
   }

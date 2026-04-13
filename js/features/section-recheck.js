@@ -51,5 +51,6 @@ KL.recheckSection = function(sectionKey) {
   if (sectionVideos.length === 0) return;
 
   window._sectionRecheckTitles = sectionVideos.map(function(r) { return r.title; });
+  window._credModalMode = 'recheck';
   KL.openCredentialsModal();
 };

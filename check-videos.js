@@ -1099,6 +1099,7 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = PAGE.STOR
     page: '',
     url: '',
     hlsSrc: '',
+    thumbnailUrl: '',
     status: STATUS.UNKNOWN,
     error: null,
     loadTimeMs: null,
@@ -1132,11 +1133,22 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = PAGE.STOR
             if (videoId && categoryId) break;
             fiber = fiber.return;
           }
-          return videoId ? { videoId, categoryId } : null;
+          // Also grab thumbnail URL from the card's img srcset
+          const thumbImg = c.querySelector('img');
+          let thumbnailUrl = null;
+          if (thumbImg) {
+            const srcset = thumbImg.getAttribute('srcset') || '';
+            const match = srcset.match(/url=([^&\s,]+)/);
+            if (match) thumbnailUrl = decodeURIComponent(match[1]);
+            if (!thumbnailUrl) thumbnailUrl = thumbImg.src || null;
+          }
+          return videoId ? { videoId, categoryId, thumbnailUrl } : { videoId: null, categoryId: null, thumbnailUrl };
         }
       }
       return null;
     }, card.title).catch(() => null);
+
+    if (preClickVideoIds?.thumbnailUrl) result.thumbnailUrl = preClickVideoIds.thumbnailUrl;
 
     const clicked = pageType === PAGE.MUSIC
       ? await findAndClickCardMusic(page, card.title, card.section)

@@ -26,6 +26,20 @@ KL.openCredentialsModal = function() {
     recheckBtn.style.display = 'none';
   }
 
+  // Update primary button label and behavior based on modal mode
+  var isRecheck = window._credModalMode === 'recheck';
+  var primaryBtn = document.querySelector('#credentials-form .cred-btn-primary');
+  if (primaryBtn) {
+    if (isRecheck) {
+      var recheckLabel = window._sectionRecheckTitles && window._sectionRecheckTitles.length > 0
+        ? 'Re-check Section (' + window._sectionRecheckTitles.length + ' videos)'
+        : 'Re-check Failed (' + failedCount + ')';
+      primaryBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg> ' + recheckLabel;
+    } else {
+      primaryBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg> Check All Videos';
+    }
+  }
+
   setTimeout(function() {
     var emailInput = document.getElementById('cred-email');
     if (emailInput.value) document.getElementById('cred-password').focus();
@@ -35,6 +49,13 @@ KL.openCredentialsModal = function() {
 
 window.closeCredentialsModal = function() {
   document.getElementById('credentials-modal').style.display = 'none';
+  window._credModalMode = null;
+  window._sectionRecheckTitles = null;
+  // Reset primary button back to default label
+  var primaryBtn = document.querySelector('#credentials-form .cred-btn-primary');
+  if (primaryBtn) {
+    primaryBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg> Check All Videos';
+  }
 };
 
 window.togglePasswordVisibility = function() {
@@ -65,13 +86,17 @@ window.submitCredentials = function(e, failedOnly) {
     KL.savedCredentials = { email: email, password: password };
   }
 
+  // Read and clear modal mode before closing
+  var isRecheck = failedOnly || window._credModalMode === 'recheck';
+  window._credModalMode = null;
+
   closeCredentialsModal();
 
   if (window._sectionRecheckTitles && window._sectionRecheckTitles.length > 0) {
     var titles = window._sectionRecheckTitles;
     window._sectionRecheckTitles = null;
     KL.recheckFailedWithCreds(email, password, titles);
-  } else if (failedOnly) {
+  } else if (isRecheck) {
     KL.recheckFailedWithCreds(email, password);
   } else if (KL.isLocal) {
     KL.startRunLocal(email, password);
