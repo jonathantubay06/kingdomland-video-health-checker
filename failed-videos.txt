@@ -1,0 +1,8 @@
+FAILED VIDEOS — go.kingdomlandkids.com
+Generated: 4/13/2026, 7:20:21 AM
+Total failed: 1 | Timed out: 0
+============================================================
+
+[FAIL] #102 [STORY] Numbers > Algebraic Thinking
+  URL:   https://go.kingdomlandkids.com/watch/3b529378-7a47-47da-a3c5-4c21042ddce4?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=home
+  Error: No <video> element found after 25s
