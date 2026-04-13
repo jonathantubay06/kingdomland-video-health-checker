@@ -1,417 +1,408 @@
 {
-  "timestamp": "2026-04-13T07:20:21.760Z",
+  "timestamp": "2026-04-13T12:38:23.766Z",
   "browser": "chromium",
   "summary": {
     "total": 165,
-    "passed": 164,
-    "failed": 1,
+    "passed": 165,
+    "failed": 0,
     "timeouts": 0
   },
-  "failedVideos": [
-    {
-      "num": 102,
-      "page": "STORY",
-      "section": "Numbers",
-      "title": "Algebraic Thinking",
-      "url": "https://go.kingdomlandkids.com/watch/3b529378-7a47-47da-a3c5-4c21042ddce4?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=home",
-      "error": "No <video> element found after 25s"
-    }
-  ],
+  "failedVideos": [],
   "performanceAlerts": [
-    {
-      "title": "Kembe Comparing Sizes",
-      "section": "Fun Zone",
-      "loadTimeMs": 33802,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "12th Street Counting by 2s and 3s",
-      "section": "Fun Zone",
-      "loadTimeMs": 32915,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Mental Health and God",
-      "section": "Fun Zone",
-      "loadTimeMs": 31723,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Gabby Globber (GG) Planets",
-      "section": "Fun Zone",
-      "loadTimeMs": 31595,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Kembe Water Cycles",
-      "section": "Fun Zone",
-      "loadTimeMs": 31592,
-      "level": "CRITICAL"
-    },
     {
       "title": "Kembe Sight Words Part 3",
       "section": "Fun Zone",
-      "loadTimeMs": 31587,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Kembe Sight Words Part 2",
-      "section": "Fun Zone",
-      "loadTimeMs": 31544,
+      "loadTimeMs": 32084,
       "level": "CRITICAL"
     },
     {
       "title": "12th Street Counting By 3s",
       "section": "Fun Zone",
-      "loadTimeMs": 31147,
+      "loadTimeMs": 32050,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Kembe Comparing Sizes",
+      "section": "Fun Zone",
+      "loadTimeMs": 31937,
       "level": "CRITICAL"
     },
     {
       "title": "Kembe How Money Works",
       "section": "Fun Zone",
-      "loadTimeMs": 31144,
+      "loadTimeMs": 31937,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "12th Street Counting by 2s and 3s",
+      "section": "Fun Zone",
+      "loadTimeMs": 31839,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Mental Health and God",
+      "section": "Fun Zone",
+      "loadTimeMs": 31830,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Kembe Water Cycles",
+      "section": "Fun Zone",
+      "loadTimeMs": 31815,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Kembe Sight Words Part 2",
+      "section": "Fun Zone",
+      "loadTimeMs": 31810,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Gabby Globber (GG) Planets",
+      "section": "Fun Zone",
+      "loadTimeMs": 31798,
       "level": "CRITICAL"
     },
     {
       "title": "12th Street Counting By 2s",
       "section": "Fun Zone",
-      "loadTimeMs": 31048,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Algebraic Thinking",
-      "section": "Numbers",
-      "loadTimeMs": 30198,
+      "loadTimeMs": 31388,
       "level": "CRITICAL"
     },
     {
       "title": "Gabby Galactic Fire Cats Safety",
       "section": "Fun Zone",
-      "loadTimeMs": 25504,
+      "loadTimeMs": 26748,
       "level": "CRITICAL"
     },
     {
       "title": "12th Street",
       "section": "Fun Zone",
-      "loadTimeMs": 23889,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "H3 Stretching  1",
-      "section": "Fun Zone",
-      "loadTimeMs": 23766,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "H3 Stretching 5",
-      "section": "Fun Zone",
-      "loadTimeMs": 23426,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Black History Beats (BHB) MLK",
-      "section": "Fun Zone",
-      "loadTimeMs": 23415,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Wake Up Kid",
-      "section": "Fun Zone",
-      "loadTimeMs": 23411,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "H3 Stretching 2",
-      "section": "Fun Zone",
-      "loadTimeMs": 23407,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Gabby Action Short",
-      "section": "Fun Zone",
-      "loadTimeMs": 23388,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "H3 Stretching 4",
-      "section": "Fun Zone",
-      "loadTimeMs": 23009,
+      "loadTimeMs": 23944,
       "level": "CRITICAL"
     },
     {
       "title": "Kembe Sight Words Part 1",
       "section": "Fun Zone",
-      "loadTimeMs": 22906,
+      "loadTimeMs": 23943,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "H3 Stretching 4",
+      "section": "Fun Zone",
+      "loadTimeMs": 23915,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Gabby Action Short",
+      "section": "Fun Zone",
+      "loadTimeMs": 23881,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "H3 Stretching 5",
+      "section": "Fun Zone",
+      "loadTimeMs": 23875,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Black History Beats (BHB) MLK",
+      "section": "Fun Zone",
+      "loadTimeMs": 23720,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Wake Up Kid",
+      "section": "Fun Zone",
+      "loadTimeMs": 23658,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "H3 Stretching  1",
+      "section": "Fun Zone",
+      "loadTimeMs": 23658,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "H3 Stretching 2",
+      "section": "Fun Zone",
+      "loadTimeMs": 23403,
       "level": "CRITICAL"
     },
     {
       "title": "H3 Stretching 3",
       "section": "Fun Zone",
-      "loadTimeMs": 22400,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Unicatz Transformations",
-      "section": "Fun Zone",
-      "loadTimeMs": 16507,
+      "loadTimeMs": 23105,
       "level": "CRITICAL"
     },
     {
       "title": "Unicatz Musical Chairs",
       "section": "Fun Zone",
-      "loadTimeMs": 15695,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Kembe Tries Playing",
-      "section": "Fun Zone",
-      "loadTimeMs": 15304,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "A Rotten Day: Finding Joy in God",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 15217,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Unicatz Homie Big Surprise",
-      "section": "Fun Zone",
-      "loadTimeMs": 15216,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Unicatz Music Video",
-      "section": "Fun Zone",
-      "loadTimeMs": 15203,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Zachaus | S2 EP17",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 15198,
+      "loadTimeMs": 17444,
       "level": "CRITICAL"
     },
     {
       "title": "Adam and Eve | S2 EP16",
       "section": "Marvelous Light Series",
-      "loadTimeMs": 15197,
+      "loadTimeMs": 15833,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "A Rotten Day: Finding Joy in God",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 15720,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Unicatz Homie Big Surprise",
+      "section": "Fun Zone",
+      "loadTimeMs": 15698,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Unicatz Music Video",
+      "section": "Fun Zone",
+      "loadTimeMs": 15658,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Unicatz Learning is Fun",
+      "section": "Fun Zone",
+      "loadTimeMs": 15570,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Zachaus | S2 EP17",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 15510,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Mr. Prather Days and Months",
+      "section": "Fun Zone",
+      "loadTimeMs": 15480,
       "level": "CRITICAL"
     },
     {
       "title": "Black History Beats (BHB) Jackie Robinson",
       "section": "Fun Zone",
-      "loadTimeMs": 15190,
+      "loadTimeMs": 15472,
       "level": "CRITICAL"
     },
     {
       "title": "Paul and Saul | S2 EP20",
       "section": "Marvelous Light Series",
-      "loadTimeMs": 15190,
+      "loadTimeMs": 15434,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Unicatz Transformations",
+      "section": "Fun Zone",
+      "loadTimeMs": 15431,
       "level": "CRITICAL"
     },
     {
       "title": "Paul and Saul | S2 EP19",
       "section": "Marvelous Light Series",
-      "loadTimeMs": 14922,
-      "level": "WARNING"
+      "loadTimeMs": 15384,
+      "level": "CRITICAL"
     },
     {
       "title": "Unicatz Strut Your Stuff",
       "section": "Fun Zone",
-      "loadTimeMs": 14731,
-      "level": "WARNING"
+      "loadTimeMs": 15141,
+      "level": "CRITICAL"
     },
     {
       "title": "Black History Beats (BHB) Bessie Coleman",
       "section": "Fun Zone",
-      "loadTimeMs": 14712,
+      "loadTimeMs": 14976,
       "level": "WARNING"
     },
     {
-      "title": "Unicatz Learning is Fun",
+      "title": "Kembe Tries Playing",
       "section": "Fun Zone",
-      "loadTimeMs": 14690,
-      "level": "WARNING"
-    },
-    {
-      "title": "Mr. Prather Days and Months",
-      "section": "Fun Zone",
-      "loadTimeMs": 14525,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent Hoverboard",
-      "section": "Fun Zone",
-      "loadTimeMs": 10901,
-      "level": "WARNING"
-    },
-    {
-      "title": "Daniel and The Lions Den | S2 EP14",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 10899,
+      "loadTimeMs": 14889,
       "level": "WARNING"
     },
     {
       "title": "Daniel and The Lions Den | S2 EP13",
       "section": "Marvelous Light Series",
-      "loadTimeMs": 10894,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent The Letter Twins",
-      "section": "Fun Zone",
-      "loadTimeMs": 10889,
-      "level": "WARNING"
-    },
-    {
-      "title": "Gabby Globber (GG) Counts by 10s",
-      "section": "Numbers",
-      "loadTimeMs": 10832,
-      "level": "WARNING"
-    },
-    {
-      "title": "H3 5 Vowels",
-      "section": "ABC",
-      "loadTimeMs": 10785,
-      "level": "WARNING"
-    },
-    {
-      "title": "H3 Count it Up",
-      "section": "Numbers",
-      "loadTimeMs": 10749,
-      "level": "WARNING"
-    },
-    {
-      "title": "Marvelous Light Easter Episode",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 10720,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent Clothes Mountain",
-      "section": "Fun Zone",
-      "loadTimeMs": 10578,
-      "level": "WARNING"
-    },
-    {
-      "title": "Marvelous Light Episode 8 Meet Jesus Part 1",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 10500,
-      "level": "WARNING"
-    },
-    {
-      "title": "Creation | S2 EP15",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 10441,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent Itchy Monster",
-      "section": "Fun Zone",
-      "loadTimeMs": 10433,
-      "level": "WARNING"
-    },
-    {
-      "title": "Marvelous Light Episode 7 Noah Part 2",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 10399,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent Three Amigas",
-      "section": "Fun Zone",
-      "loadTimeMs": 10351,
-      "level": "WARNING"
-    },
-    {
-      "title": "Love",
-      "section": "Bible Adventures",
-      "loadTimeMs": 10267,
-      "level": "WARNING"
-    },
-    {
-      "title": "Faithfulness",
-      "section": "Bible Adventures",
-      "loadTimeMs": 10245,
-      "level": "WARNING"
-    },
-    {
-      "title": "Unicatz Alphabet Song",
-      "section": "ABC",
-      "loadTimeMs": 10229,
+      "loadTimeMs": 11414,
       "level": "WARNING"
     },
     {
       "title": "Gabby Globber (GG) Counting by 5s and 10s",
       "section": "Numbers",
-      "loadTimeMs": 10093,
+      "loadTimeMs": 11325,
       "level": "WARNING"
     },
     {
-      "title": "Gabby Globber (GG) Counts by 5s",
-      "section": "Numbers",
-      "loadTimeMs": 10091,
+      "title": "Faithfulness",
+      "section": "Bible Adventures",
+      "loadTimeMs": 11313,
       "level": "WARNING"
     },
     {
-      "title": "Unicatz Count to 20",
-      "section": "Numbers",
-      "loadTimeMs": 10076,
-      "level": "WARNING"
-    },
-    {
-      "title": "Marvelous Light Episode 9 Meet Jesus Part 2",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 10023,
-      "level": "WARNING"
-    },
-    {
-      "title": "Fire Safety School Drills",
-      "section": "Fun Zone",
-      "loadTimeMs": 9994,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent Big Hair Blues",
-      "section": "Fun Zone",
-      "loadTimeMs": 9708,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent Candy Critters",
-      "section": "Fun Zone",
-      "loadTimeMs": 9608,
-      "level": "WARNING"
-    },
-    {
-      "title": "Grandpa 10 Commandments",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 9468,
-      "level": "WARNING"
-    },
-    {
-      "title": "Jonah and the Whale | S2 EP11",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 9234,
-      "level": "WARNING"
-    },
-    {
-      "title": "Unicatz Joy of Learning",
-      "section": "Fun Zone",
-      "loadTimeMs": 9006,
-      "level": "WARNING"
-    },
-    {
-      "title": "Jonah and the Whale | S2 EP12",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 8966,
+      "title": "Unicatz Alphabet Song",
+      "section": "ABC",
+      "loadTimeMs": 11305,
       "level": "WARNING"
     },
     {
       "title": "H3 Colors and Numbers",
       "section": "Numbers",
-      "loadTimeMs": 8682,
+      "loadTimeMs": 11235,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent The Letter Twins",
+      "section": "Fun Zone",
+      "loadTimeMs": 11202,
+      "level": "WARNING"
+    },
+    {
+      "title": "Unicatz Count to 20",
+      "section": "Numbers",
+      "loadTimeMs": 11083,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 5 Vowels",
+      "section": "ABC",
+      "loadTimeMs": 11027,
+      "level": "WARNING"
+    },
+    {
+      "title": "Unicatz Joy of Learning",
+      "section": "Fun Zone",
+      "loadTimeMs": 10696,
+      "level": "WARNING"
+    },
+    {
+      "title": "Jonah and the Whale | S2 EP12",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 10657,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Itchy Monster",
+      "section": "Fun Zone",
+      "loadTimeMs": 10638,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Hoverboard",
+      "section": "Fun Zone",
+      "loadTimeMs": 10603,
+      "level": "WARNING"
+    },
+    {
+      "title": "Love",
+      "section": "Bible Adventures",
+      "loadTimeMs": 10569,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 Count it Up",
+      "section": "Numbers",
+      "loadTimeMs": 10547,
+      "level": "WARNING"
+    },
+    {
+      "title": "Grandpa 10 Commandments",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 10160,
+      "level": "WARNING"
+    },
+    {
+      "title": "Daniel and The Lions Den | S2 EP14",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 10082,
+      "level": "WARNING"
+    },
+    {
+      "title": "Jonah and the Whale | S2 EP11",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 10057,
+      "level": "WARNING"
+    },
+    {
+      "title": "Fire Safety School Drills",
+      "section": "Fun Zone",
+      "loadTimeMs": 9992,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Hippocampus",
+      "section": "Fun Zone",
+      "loadTimeMs": 9983,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Candy Critters",
+      "section": "Fun Zone",
+      "loadTimeMs": 9978,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Episode 9 Meet Jesus Part 2",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9959,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Clothes Mountain",
+      "section": "Fun Zone",
+      "loadTimeMs": 9952,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Three Amigas",
+      "section": "Fun Zone",
+      "loadTimeMs": 9801,
+      "level": "WARNING"
+    },
+    {
+      "title": "Gabby Globber (GG) Counts by 5s",
+      "section": "Numbers",
+      "loadTimeMs": 9677,
+      "level": "WARNING"
+    },
+    {
+      "title": "Gabby Globber (GG) Counts by 10s",
+      "section": "Numbers",
+      "loadTimeMs": 9658,
+      "level": "WARNING"
+    },
+    {
+      "title": "Creation | S2 EP15",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9496,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Episode 7 Noah Part 2",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9279,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Episode 8 Meet Jesus Part 1",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9247,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Easter Episode",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9239,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Big Hair Blues",
+      "section": "Fun Zone",
+      "loadTimeMs": 9176,
       "level": "WARNING"
     }
   ],
@@ -425,7 +416,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1d091d78-7310-4fde-8f53-08a98beca74b/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 25504,
+      "loadTimeMs": 26748,
       "duration": "646s",
       "resolution": "640x360"
     },
@@ -438,7 +429,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/8650e80f-132c-4cd1-a562-9317a91a05c0/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1741,
+      "loadTimeMs": 2492,
       "duration": "205s",
       "resolution": "640x360"
     },
@@ -451,7 +442,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/e9635d39-19b0-42db-9be6-11bc1defd3ed/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1754,
+      "loadTimeMs": 2656,
       "duration": "157s",
       "resolution": "640x360"
     },
@@ -464,7 +455,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/dbb4afee-fe54-4c86-b571-27675b27e4e8/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1661,
+      "loadTimeMs": 2146,
       "duration": "189s",
       "resolution": "640x360"
     },
@@ -477,7 +468,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5e64fb0f-97d7-4b95-98f6-7fea53e33dfd/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1704,
+      "loadTimeMs": 2320,
       "duration": "189s",
       "resolution": "640x360"
     },
@@ -490,7 +481,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/3f8139b3-f895-4228-98ac-be010862d8ab/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1638,
+      "loadTimeMs": 2160,
       "duration": "173s",
       "resolution": "640x360"
     },
@@ -503,7 +494,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/b8b902af-41c4-44f4-b75d-2edd354d5e62/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1143,
+      "loadTimeMs": 1896,
       "duration": "115s",
       "resolution": "640x360"
     },
@@ -516,7 +507,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/03a156fb-9c97-499b-b862-bf0556dbdc64/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1674,
+      "loadTimeMs": 1908,
       "duration": "200s",
       "resolution": "640x360"
     },
@@ -529,7 +520,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/daa4c238-2ffb-405c-9d13-ec27c1019158/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1623,
+      "loadTimeMs": 1827,
       "duration": "165s",
       "resolution": "640x360"
     },
@@ -542,7 +533,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9ae01ae1-ec60-4b68-8237-1b8484837d7f/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1636,
+      "loadTimeMs": 2347,
       "duration": "204s",
       "resolution": "640x360"
     },
@@ -555,7 +546,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/16817712-d949-4279-871f-cb066723b50e/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10351,
+      "loadTimeMs": 9801,
       "duration": "118s",
       "resolution": "640x360"
     },
@@ -568,7 +559,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/aee40747-e84a-4b21-ac94-2c9a4b2ff088/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9708,
+      "loadTimeMs": 9176,
       "duration": "115s",
       "resolution": "640x360"
     },
@@ -581,7 +572,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1f732317-d240-4f49-bf56-2f70230d1c02/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9608,
+      "loadTimeMs": 9978,
       "duration": "138s",
       "resolution": "640x360"
     },
@@ -594,7 +585,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c8be5898-a105-4a08-8dec-ba566d96eac1/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 7874,
+      "loadTimeMs": 9983,
       "duration": "166s",
       "resolution": "640x360"
     },
@@ -607,7 +598,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/bfb16737-dd22-43e9-bd73-4890964b3527/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10901,
+      "loadTimeMs": 10603,
       "duration": "93s",
       "resolution": "640x360"
     },
@@ -620,7 +611,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/11e1164b-d214-4c1d-8d96-c9430be49734/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10433,
+      "loadTimeMs": 10638,
       "duration": "120s",
       "resolution": "640x360"
     },
@@ -633,7 +624,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a8f1f906-9ced-4289-a7fe-1834f4385c36/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10889,
+      "loadTimeMs": 11202,
       "duration": "98s",
       "resolution": "640x360"
     },
@@ -646,7 +637,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/02b7eba5-06ac-4543-81fd-a5691dee7340/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9994,
+      "loadTimeMs": 9992,
       "duration": "230s",
       "resolution": "640x360"
     },
@@ -659,7 +650,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/59a6f62f-b6c9-4f35-84fb-47ab941bffc9/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10578,
+      "loadTimeMs": 9952,
       "duration": "170s",
       "resolution": "640x360"
     },
@@ -672,7 +663,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/56ab3fea-b6c9-430c-92c2-38bc52fcd51f/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9006,
+      "loadTimeMs": 10696,
       "duration": "85s",
       "resolution": "640x360"
     },
@@ -685,7 +676,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/200efedf-c802-4fd8-ab28-faffbe5d4cc3/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 14525,
+      "loadTimeMs": 15480,
       "duration": "185s",
       "resolution": "640x360"
     },
@@ -698,7 +689,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5b1e082f-97d0-4c7a-8541-bcfa36d034c6/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15304,
+      "loadTimeMs": 14889,
       "duration": "265s",
       "resolution": "640x360"
     },
@@ -711,7 +702,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/097b7f11-6a19-471f-9bf1-dcdc7ff159ae/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15203,
+      "loadTimeMs": 15658,
       "duration": "185s",
       "resolution": "640x360"
     },
@@ -724,7 +715,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4fc58548-9731-4f95-9b24-3f2c72daeac2/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 14731,
+      "loadTimeMs": 15141,
       "duration": "525s",
       "resolution": "640x360"
     },
@@ -737,7 +728,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/50875106-c0bb-437d-bac7-4329047aa784/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15216,
+      "loadTimeMs": 15698,
       "duration": "85s",
       "resolution": "640x360"
     },
@@ -750,7 +741,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d991ff04-d635-4f78-b5c6-ceeb236d0020/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 16507,
+      "loadTimeMs": 15431,
       "duration": "760s",
       "resolution": "640x360"
     },
@@ -763,7 +754,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/991b8193-96e1-4c66-85be-7efc47d12836/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15695,
+      "loadTimeMs": 17444,
       "duration": "149s",
       "resolution": "640x360"
     },
@@ -776,7 +767,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/07d1e6f2-76b6-437d-b51f-08ed6332392c/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 14690,
+      "loadTimeMs": 15570,
       "duration": "100s",
       "resolution": "640x360"
     },
@@ -789,7 +780,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5ed8064b-e9d5-4e5b-bb86-bb795e2b1c7a/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15190,
+      "loadTimeMs": 15472,
       "duration": "208s",
       "resolution": "640x360"
     },
@@ -802,7 +793,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f61a23eb-c690-4283-9311-5e9a574e1be1/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 14712,
+      "loadTimeMs": 14976,
       "duration": "181s",
       "resolution": "640x360"
     },
@@ -815,7 +806,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/58a6703a-fc50-46e9-b2b1-b36949a78246/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23415,
+      "loadTimeMs": 23720,
       "duration": "162s",
       "resolution": "640x360"
     },
@@ -828,7 +819,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/595946c3-d135-4359-b6e2-b16c9d047a2c/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23889,
+      "loadTimeMs": 23944,
       "duration": "311s",
       "resolution": "640x360"
     },
@@ -841,7 +832,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4cf1046b-bcdf-4107-ac19-5cf499782419/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23388,
+      "loadTimeMs": 23881,
       "duration": "134s",
       "resolution": "640x360"
     },
@@ -854,7 +845,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/87bc81c7-fa6d-4f5a-9c49-4ef0e1cd5c88/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23411,
+      "loadTimeMs": 23658,
       "duration": "636s",
       "resolution": "640x360"
     },
@@ -867,7 +858,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c43462a5-4e70-412e-aec6-5be27c9294ec/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23766,
+      "loadTimeMs": 23658,
       "duration": "240s",
       "resolution": "640x360"
     },
@@ -880,7 +871,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a9e12c6a-0f54-433e-9475-aff2f3fc425d/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23407,
+      "loadTimeMs": 23403,
       "duration": "340s",
       "resolution": "640x360"
     },
@@ -893,7 +884,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c7cbac55-00db-4e83-8b9b-37bbccb898f5/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 22400,
+      "loadTimeMs": 23105,
       "duration": "207s",
       "resolution": "640x360"
     },
@@ -906,7 +897,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/8f758903-51eb-4766-9862-7993e58141a3/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23009,
+      "loadTimeMs": 23915,
       "duration": "267s",
       "resolution": "640x360"
     },
@@ -919,7 +910,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c128f883-fd2c-4f72-87ee-091ed6ff4d7f/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23426,
+      "loadTimeMs": 23875,
       "duration": "408s",
       "resolution": "640x360"
     },
@@ -932,7 +923,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/211fcc4c-d3da-4900-9a10-e02b21e00824/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 22906,
+      "loadTimeMs": 23943,
       "duration": "214s",
       "resolution": "640x360"
     },
@@ -945,7 +936,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6e33429c-f079-4e86-bd8d-af6a97e8be3a/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 31544,
+      "loadTimeMs": 31810,
       "duration": "225s",
       "resolution": "640x360"
     },
@@ -958,7 +949,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4d3b7355-6d2d-4535-bbca-4c73a66f81de/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 31587,
+      "loadTimeMs": 32084,
       "duration": "291s",
       "resolution": "640x360"
     },
@@ -971,7 +962,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/597b370a-d70f-46cf-a882-4fc0a930f265/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 33802,
+      "loadTimeMs": 31937,
       "duration": "167s",
       "resolution": "640x360"
     },
@@ -984,7 +975,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/aabd881e-f155-437a-9bfc-13bf9ba489cd/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 31144,
+      "loadTimeMs": 31937,
       "duration": "175s",
       "resolution": "640x360"
     },
@@ -997,7 +988,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d88966cc-8a4c-4eb9-89ac-a81215700b36/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 31592,
+      "loadTimeMs": 31815,
       "duration": "104s",
       "resolution": "640x360"
     },
@@ -1010,7 +1001,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9573c0a3-55c0-43f5-95a0-98817502ac0f/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 32915,
+      "loadTimeMs": 31839,
       "duration": "186s",
       "resolution": "640x360"
     },
@@ -1023,7 +1014,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/edae9ec4-18f4-47a4-9b65-467e10e14f28/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 31048,
+      "loadTimeMs": 31388,
       "duration": "114s",
       "resolution": "640x360"
     },
@@ -1036,7 +1027,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7e2fdf38-be4b-43f9-9764-dac6c88b7761/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 31147,
+      "loadTimeMs": 32050,
       "duration": "107s",
       "resolution": "640x360"
     },
@@ -1049,7 +1040,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/2fa58b4d-d8bb-440f-977e-4966b437fbe0/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 31595,
+      "loadTimeMs": 31798,
       "duration": "333s",
       "resolution": "640x360"
     },
@@ -1062,7 +1053,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5e4d922f-f256-453c-b524-ae29b659bbaf/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 31723,
+      "loadTimeMs": 31830,
       "duration": "212s",
       "resolution": "640x360"
     },
@@ -1075,7 +1066,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1d0ec518-70f3-4c8b-b389-26545945675b/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1645,
+      "loadTimeMs": 1851,
       "duration": "658s",
       "resolution": "640x360"
     },
@@ -1088,7 +1079,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/187d2637-f389-440f-bdbf-b8082681729a/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1670,
+      "loadTimeMs": 2520,
       "duration": "625s",
       "resolution": "640x360"
     },
@@ -1101,7 +1092,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/fbaf7c54-b693-4a83-8f60-a55a1f5f42e5/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1649,
+      "loadTimeMs": 2283,
       "duration": "77s",
       "resolution": "640x360"
     },
@@ -1114,7 +1105,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f436884d-488e-4e9a-9316-26c81cda9f96/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1622,
+      "loadTimeMs": 1828,
       "duration": "472s",
       "resolution": "640x360"
     },
@@ -1127,7 +1118,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/996b762c-9869-4614-85ed-41464b315fdc/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1420,
+      "loadTimeMs": 1888,
       "duration": "408s",
       "resolution": "640x360"
     },
@@ -1140,7 +1131,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/b2367430-3e5c-402c-84ea-9a9b8c8a2efa/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2125,
+      "loadTimeMs": 2357,
       "duration": "74s",
       "resolution": "640x360"
     },
@@ -1153,7 +1144,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d31a737b-5e14-48a6-b108-3b9956d4f0d7/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1633,
+      "loadTimeMs": 2161,
       "duration": "135s",
       "resolution": "640x360"
     },
@@ -1166,7 +1157,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a267a5c5-93d7-49c2-972b-fb426033a521/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2108,
+      "loadTimeMs": 2189,
       "duration": "135s",
       "resolution": "640x360"
     },
@@ -1179,7 +1170,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/bc901b64-febc-4ace-af92-6f419cab026f/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1356,
+      "loadTimeMs": 2032,
       "duration": "302s",
       "resolution": "640x360"
     },
@@ -1192,7 +1183,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/11ad7290-a7b1-465e-bc1a-18eff346fc28/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1639,
+      "loadTimeMs": 1832,
       "duration": "395s",
       "resolution": "640x360"
     },
@@ -1205,7 +1196,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/739479bc-ba0e-4c88-9915-bb85961e53a1/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10399,
+      "loadTimeMs": 9279,
       "duration": "349s",
       "resolution": "640x360"
     },
@@ -1218,7 +1209,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/2cb183fc-ce48-4244-9fa0-18a7e2e139ca/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9468,
+      "loadTimeMs": 10160,
       "duration": "118s",
       "resolution": "640x360"
     },
@@ -1231,7 +1222,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/b57d0b33-1699-4a8e-9deb-add4d2ecf120/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10500,
+      "loadTimeMs": 9247,
       "duration": "443s",
       "resolution": "640x360"
     },
@@ -1244,7 +1235,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/be3ee1b4-02e4-4f36-80d5-2cf4ebfe587d/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10023,
+      "loadTimeMs": 9959,
       "duration": "371s",
       "resolution": "640x360"
     },
@@ -1257,7 +1248,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/8fdb17dc-2ad5-42fd-af0d-592f7c4cb14d/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10720,
+      "loadTimeMs": 9239,
       "duration": "676s",
       "resolution": "640x360"
     },
@@ -1270,7 +1261,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a16895cd-d0a5-430e-ab2b-95f4b014d55c/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9234,
+      "loadTimeMs": 10057,
       "duration": "407s",
       "resolution": "640x360"
     },
@@ -1283,7 +1274,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d12ae97b-1174-4517-8571-28d92c4318bd/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 8966,
+      "loadTimeMs": 10657,
       "duration": "512s",
       "resolution": "640x360"
     },
@@ -1296,7 +1287,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9613f537-ebb1-41a0-b98b-2bc2b3700a9e/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10894,
+      "loadTimeMs": 11414,
       "duration": "487s",
       "resolution": "640x360"
     },
@@ -1309,7 +1300,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/2734beba-d3b4-4a5c-afdf-b3785d105269/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10899,
+      "loadTimeMs": 10082,
       "duration": "434s",
       "resolution": "640x360"
     },
@@ -1322,7 +1313,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1f34576d-c7af-4cae-b9be-258d97aa4c91/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10441,
+      "loadTimeMs": 9496,
       "duration": "435s",
       "resolution": "640x360"
     },
@@ -1335,7 +1326,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/947510c6-4115-4719-9c12-0fb244d39e3a/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15197,
+      "loadTimeMs": 15833,
       "duration": "501s",
       "resolution": "640x360"
     },
@@ -1348,7 +1339,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/bb3ff059-4e31-4895-85a6-e5808e87067c/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15198,
+      "loadTimeMs": 15510,
       "duration": "604s",
       "resolution": "640x360"
     },
@@ -1361,7 +1352,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1760b966-7558-45c3-89bd-8826a716f0ed/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 14922,
+      "loadTimeMs": 15384,
       "duration": "451s",
       "resolution": "640x360"
     },
@@ -1374,7 +1365,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d0fda75a-c46e-4145-a42b-5f3c4f6b3cdb/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15190,
+      "loadTimeMs": 15434,
       "duration": "353s",
       "resolution": "640x360"
     },
@@ -1387,7 +1378,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5e7991d1-56fe-47c7-a610-44d1bdd9b713/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15217,
+      "loadTimeMs": 15720,
       "duration": "184s",
       "resolution": "640x360"
     },
@@ -1400,7 +1391,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/2b676607-574f-4997-80b5-596d6ef7f9d0/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1557,
+      "loadTimeMs": 1856,
       "duration": "182s",
       "resolution": "640x360"
     },
@@ -1413,7 +1404,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4303868d-a9c9-40fd-a25c-0892aab1a499/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1248,
+      "loadTimeMs": 1956,
       "duration": "150s",
       "resolution": "640x360"
     },
@@ -1426,7 +1417,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7ed33ba6-5891-4525-95f6-8ef791f89c46/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1205,
+      "loadTimeMs": 1935,
       "duration": "258s",
       "resolution": "640x360"
     },
@@ -1439,7 +1430,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/72c7e315-206d-4443-a4fb-ec171f5e3824/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1629,
+      "loadTimeMs": 2310,
       "duration": "158s",
       "resolution": "640x360"
     },
@@ -1452,7 +1443,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1d3177fe-7046-4d74-ba2c-edc330f2b313/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1256,
+      "loadTimeMs": 1870,
       "duration": "224s",
       "resolution": "640x360"
     },
@@ -1465,7 +1456,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/14e63165-8bcb-4ee3-859c-a057da824db8/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1110,
+      "loadTimeMs": 2121,
       "duration": "217s",
       "resolution": "640x360"
     },
@@ -1478,7 +1469,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1430c542-bb99-4b58-99e7-128b1030fb06/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1764,
+      "loadTimeMs": 2128,
       "duration": "108s",
       "resolution": "640x360"
     },
@@ -1491,7 +1482,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/49123b8f-66c7-4555-a2a9-2e9ee20f9c33/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1921,
+      "loadTimeMs": 1948,
       "duration": "141s",
       "resolution": "640x360"
     },
@@ -1504,7 +1495,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/67b07475-78a7-4515-a23a-bd39e36b3235/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1654,
+      "loadTimeMs": 1873,
       "duration": "121s",
       "resolution": "640x360"
     },
@@ -1517,7 +1508,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/64e95279-c998-41d5-9488-b95fca9d672b/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1385,
+      "loadTimeMs": 1958,
       "duration": "115s",
       "resolution": "640x360"
     },
@@ -1530,7 +1521,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/fee8eb1b-ec50-48e9-9b12-5cafb197a3a9/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10245,
+      "loadTimeMs": 11313,
       "duration": "137s",
       "resolution": "640x360"
     },
@@ -1543,7 +1534,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/08c3a441-b389-4590-8e3d-588dcc363a70/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10267,
+      "loadTimeMs": 10569,
       "duration": "169s",
       "resolution": "640x360"
     },
@@ -1556,7 +1547,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/fff66fea-6510-4391-89a0-ff3af6ecbfc0/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1441,
+      "loadTimeMs": 1897,
       "duration": "95s",
       "resolution": "640x360"
     },
@@ -1569,7 +1560,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/3820a4b0-b2de-42de-9614-6719fba36287/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1403,
+      "loadTimeMs": 2351,
       "duration": "174s",
       "resolution": "640x360"
     },
@@ -1582,7 +1573,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/adea5180-0077-4b6f-90f7-fe53ce334710/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1624,
+      "loadTimeMs": 1824,
       "duration": "113s",
       "resolution": "640x360"
     },
@@ -1595,7 +1586,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f0c9560b-17d8-45a5-a87b-1b89082f9705/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1860,
+      "loadTimeMs": 1839,
       "duration": "101s",
       "resolution": "640x360"
     },
@@ -1608,7 +1599,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/cc438094-dbd9-48e5-a966-d901f9f49b13/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1258,
+      "loadTimeMs": 1984,
       "duration": "379s",
       "resolution": "640x360"
     },
@@ -1621,7 +1612,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/91b9c45f-1472-4794-a534-14ccda5d750f/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1419,
+      "loadTimeMs": 1839,
       "duration": "127s",
       "resolution": "640x360"
     },
@@ -1634,7 +1625,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/899e5572-e6df-4dcd-8263-ceca77877975/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1468,
+      "loadTimeMs": 2102,
       "duration": "125s",
       "resolution": "640x360"
     },
@@ -1647,7 +1638,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6884d622-637e-4168-a1a0-c6d2c02aad06/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1504,
+      "loadTimeMs": 2351,
       "duration": "105s",
       "resolution": "640x360"
     },
@@ -1660,7 +1651,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/409f00e2-5336-4ec8-8b9e-e8fef82cfdef/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1327,
+      "loadTimeMs": 2303,
       "duration": "109s",
       "resolution": "640x360"
     },
@@ -1673,7 +1664,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a4e15e08-63a5-4021-b2fe-dc6a01ffd3cd/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1601,
+      "loadTimeMs": 1862,
       "duration": "76s",
       "resolution": "640x360"
     },
@@ -1686,7 +1677,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/866ae349-9baf-4757-aa17-39247e8a4222/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10229,
+      "loadTimeMs": 11305,
       "duration": "95s",
       "resolution": "640x360"
     },
@@ -1699,7 +1690,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c3e380b8-57ea-4094-b312-7186b4182477/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10785,
+      "loadTimeMs": 11027,
       "duration": "160s",
       "resolution": "640x360"
     },
@@ -1712,7 +1703,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/972c77e5-9877-42f7-bce4-702e50fe391a/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1463,
+      "loadTimeMs": 1899,
       "duration": "116s",
       "resolution": "640x360"
     },
@@ -1725,7 +1716,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/33496e0c-01f3-4b8e-9a09-b3da2c8ac0c5/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1286,
+      "loadTimeMs": 1853,
       "duration": "36s",
       "resolution": "640x360"
     },
@@ -1735,12 +1726,12 @@
       "section": "Numbers",
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/3b529378-7a47-47da-a3c5-4c21042ddce4?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=home",
-      "hlsSrc": "",
-      "status": "FAIL",
-      "error": "No <video> element found after 25s",
-      "loadTimeMs": 30198,
-      "duration": null,
-      "resolution": ""
+      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/3b529378-7a47-47da-a3c5-4c21042ddce4/master.m3u8",
+      "status": "PASS",
+      "error": null,
+      "loadTimeMs": 1838,
+      "duration": "47s",
+      "resolution": "640x360"
     },
     {
       "number": 103,
@@ -1751,7 +1742,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7fd6c669-0c47-454e-ba56-d33e411ce106/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1486,
+      "loadTimeMs": 2302,
       "duration": "46s",
       "resolution": "640x360"
     },
@@ -1764,7 +1755,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/561d091b-276e-4784-aea7-f34632681697/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1155,
+      "loadTimeMs": 1839,
       "duration": "63s",
       "resolution": "640x360"
     },
@@ -1777,7 +1768,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/782ad9b1-5cd5-42cc-b8c5-3c28b3077726/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1708,
+      "loadTimeMs": 1804,
       "duration": "52s",
       "resolution": "640x360"
     },
@@ -1790,7 +1781,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/bf0b3073-9b1c-4317-8514-f8ca826fb4b7/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2116,
+      "loadTimeMs": 1907,
       "duration": "43s",
       "resolution": "640x360"
     },
@@ -1803,7 +1794,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6e74aba2-2133-4d87-bf4d-8cdd991ec27b/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1610,
+      "loadTimeMs": 1818,
       "duration": "33s",
       "resolution": "640x360"
     },
@@ -1816,7 +1807,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/2e3eadcc-ae4b-42b7-ae54-9aec7ff550f7/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1627,
+      "loadTimeMs": 2329,
       "duration": "73s",
       "resolution": "640x360"
     },
@@ -1829,7 +1820,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c16a1a0f-2c9e-46f5-a966-e80f3cd76410/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1646,
+      "loadTimeMs": 1811,
       "duration": "72s",
       "resolution": "640x360"
     },
@@ -1842,7 +1833,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/94b300e1-d14a-47dc-87f0-f022ed6476bc/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 8682,
+      "loadTimeMs": 11235,
       "duration": "124s",
       "resolution": "640x360"
     },
@@ -1855,7 +1846,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7108df62-4c23-4990-b2ef-57ddd709371b/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10749,
+      "loadTimeMs": 10547,
       "duration": "164s",
       "resolution": "640x360"
     },
@@ -1868,7 +1859,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c87012b5-2144-4493-ae0c-6adfb46b4957/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10091,
+      "loadTimeMs": 9677,
       "duration": "134s",
       "resolution": "640x360"
     },
@@ -1881,7 +1872,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/75a48dfd-1d3a-4d4a-ac6a-f708d82d8fcc/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10832,
+      "loadTimeMs": 9658,
       "duration": "213s",
       "resolution": "640x360"
     },
@@ -1894,7 +1885,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f6a510dd-d13f-45d5-a85b-56b8f7873e50/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10093,
+      "loadTimeMs": 11325,
       "duration": "204s",
       "resolution": "640x360"
     },
@@ -1907,7 +1898,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9cf8562f-9214-4f34-8b64-4ac1e8aed89c/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10076,
+      "loadTimeMs": 11083,
       "duration": "83s",
       "resolution": "640x360"
     },
@@ -1920,7 +1911,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4780be1a-cf12-4208-889f-64ec142dab8f/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1839,
+      "loadTimeMs": 1806,
       "duration": "198s",
       "resolution": "640x360"
     },
@@ -1933,7 +1924,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5eafe2c8-c699-45c3-9369-e23a3f0cc7fc/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1430,
+      "loadTimeMs": 2725,
       "duration": "148s",
       "resolution": "640x360"
     },
@@ -1946,7 +1937,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/affcdc4c-2bf7-47ff-b6aa-9a8234898f06/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1720,
+      "loadTimeMs": 2275,
       "duration": "51s",
       "resolution": "640x360"
     },
@@ -1959,7 +1950,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/e003a444-fcb4-44a3-ba21-23c9757aa229/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1467,
+      "loadTimeMs": 2285,
       "duration": "41s",
       "resolution": "640x360"
     },
@@ -1972,7 +1963,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a16a03a7-626f-4ca2-8f0c-e43026b8c453/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1404,
+      "loadTimeMs": 2576,
       "duration": "50s",
       "resolution": "640x360"
     },
@@ -1985,7 +1976,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/ac07a96d-7891-4085-ac87-0ac01de404df/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1907,
+      "loadTimeMs": 2113,
       "duration": "54s",
       "resolution": "640x360"
     },
@@ -1998,7 +1989,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/94c0a0bc-a353-43d1-8af0-179fca33f958/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1499,
+      "loadTimeMs": 2048,
       "duration": "46s",
       "resolution": "640x360"
     },
@@ -2011,7 +2002,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/451892aa-f26f-4816-be5c-19f43d13b84a/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1503,
+      "loadTimeMs": 2670,
       "duration": "65s",
       "resolution": "640x360"
     },
@@ -2024,7 +2015,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/050744d0-67a5-43b4-99ad-f78e455f6406/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1447,
+      "loadTimeMs": 2176,
       "duration": "299s",
       "resolution": "640x360"
     },
@@ -2037,7 +2028,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/da00b9bc-56c8-4870-94a5-47e21f5fa32d/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3657,
+      "loadTimeMs": 4632,
       "duration": "89s",
       "resolution": "640x360"
     },
@@ -2050,7 +2041,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a71d30fd-a3dc-403d-a400-bfef3ef1158b/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3762,
+      "loadTimeMs": 3850,
       "duration": "95s",
       "resolution": "640x360"
     },
@@ -2063,7 +2054,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f28bf741-f881-420a-b059-cc6ae871d831/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3877,
+      "loadTimeMs": 4422,
       "duration": "39s",
       "resolution": "640x360"
     },
@@ -2076,7 +2067,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4a5fe7d4-f436-404f-9f50-1bb42130148c/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3848,
+      "loadTimeMs": 3861,
       "duration": "128s",
       "resolution": "640x360"
     },
@@ -2089,7 +2080,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/86d6a0a7-e639-4194-8806-c2ee81c56d6a/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3273,
+      "loadTimeMs": 4681,
       "duration": "176s",
       "resolution": "640x360"
     },
@@ -2102,7 +2093,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/ae8329d3-a352-40d3-8504-849c451d1b6e/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3782,
+      "loadTimeMs": 3860,
       "duration": "125s",
       "resolution": "640x360"
     },
@@ -2115,7 +2106,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/fb08a001-9fbd-4ab5-8731-4f272eb66779/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3769,
+      "loadTimeMs": 3829,
       "duration": "189s",
       "resolution": "640x360"
     },
@@ -2128,7 +2119,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4c2d526f-5b6c-4a1e-bd4e-f4737acd37a3/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4000,
+      "loadTimeMs": 4353,
       "duration": "178s",
       "resolution": "640x360"
     },
@@ -2141,7 +2132,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7dc61f58-c70a-43dd-a08d-c6c54685de1b/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3633,
+      "loadTimeMs": 3810,
       "duration": "157s",
       "resolution": "640x360"
     },
@@ -2154,7 +2145,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/ebbc4628-14fa-429d-9a57-a34837dc5c59/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3893,
+      "loadTimeMs": 4304,
       "duration": "151s",
       "resolution": "640x360"
     },
@@ -2167,7 +2158,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/986b7f31-1651-49a1-844a-f425dd5d27cb/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3547,
+      "loadTimeMs": 3810,
       "duration": "125s",
       "resolution": "640x360"
     },
@@ -2180,7 +2171,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a67e0f96-6278-4684-a586-04a1a0d4a387/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3300,
+      "loadTimeMs": 3913,
       "duration": "168s",
       "resolution": "640x360"
     },
@@ -2193,7 +2184,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6651775f-92b1-4154-959f-7bc567d23f72/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3601,
+      "loadTimeMs": 4579,
       "duration": "143s",
       "resolution": "640x360"
     },
@@ -2206,7 +2197,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/522acb5d-ea56-4719-8912-3490956465a6/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3900,
+      "loadTimeMs": 4353,
       "duration": "151s",
       "resolution": "640x360"
     },
@@ -2219,7 +2210,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/73608d01-5e69-402b-b984-7d0f6f6ab991/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3527,
+      "loadTimeMs": 3891,
       "duration": "149s",
       "resolution": "640x360"
     },
@@ -2232,7 +2223,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c37e431b-b298-4159-9190-6ad62e38ffaf/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3283,
+      "loadTimeMs": 3888,
       "duration": "96s",
       "resolution": "640x360"
     },
@@ -2245,7 +2236,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/fde9313a-7641-4798-9eef-cb3bd082775e/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3356,
+      "loadTimeMs": 3886,
       "duration": "108s",
       "resolution": "640x360"
     },
@@ -2258,7 +2249,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/005ab49b-8eaf-4ebb-89e6-831cdabb3a94/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3886,
+      "loadTimeMs": 4565,
       "duration": "155s",
       "resolution": "640x360"
     },
@@ -2271,7 +2262,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/b595ec1a-b425-479e-8f54-b98d2155a681/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4034,
+      "loadTimeMs": 3904,
       "duration": "168s",
       "resolution": "640x360"
     },
@@ -2284,7 +2275,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7a7af214-a722-468d-9a7d-32596ef551bf/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3377,
+      "loadTimeMs": 4429,
       "duration": "262s",
       "resolution": "640x360"
     },
@@ -2297,7 +2288,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/19ceb6fc-d588-40ef-90c5-9619a419b20d/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3758,
+      "loadTimeMs": 4980,
       "duration": "157s",
       "resolution": "640x360"
     },
@@ -2310,7 +2301,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/56718b15-6dd1-4865-8f62-2c78c5232ade/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3336,
+      "loadTimeMs": 3868,
       "duration": "159s",
       "resolution": "640x360"
     },
@@ -2323,7 +2314,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9a9b17a4-90ce-409d-ac17-530484e83196/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3736,
+      "loadTimeMs": 3838,
       "duration": "155s",
       "resolution": "640x360"
     },
@@ -2336,7 +2327,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4a9c9d00-18a2-4f89-8200-8611bd6e2a32/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3912,
+      "loadTimeMs": 3904,
       "duration": "82s",
       "resolution": "640x360"
     },
@@ -2349,7 +2340,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d8b5b1d5-ea75-4691-a319-ef1ad8c6ecd0/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3254,
+      "loadTimeMs": 4352,
       "duration": "127s",
       "resolution": "640x360"
     },
@@ -2362,7 +2353,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/ef960175-a650-4f5c-bec3-70fc2c4996ac/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4033,
+      "loadTimeMs": 3847,
       "duration": "142s",
       "resolution": "640x360"
     },
@@ -2375,7 +2366,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7ceaff00-c99a-4b58-9092-8ab1e7791f51/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3190,
+      "loadTimeMs": 4453,
       "duration": "105s",
       "resolution": "640x360"
     },
@@ -2388,7 +2379,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/bf3d8981-2bdc-4fec-aabe-f1fe3b7a3820/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3843,
+      "loadTimeMs": 3876,
       "duration": "147s",
       "resolution": "640x360"
     },
@@ -2401,7 +2392,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/36981665-54ff-40b6-af63-c6f3966ef8d8/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3364,
+      "loadTimeMs": 4614,
       "duration": "197s",
       "resolution": "640x360"
     },
@@ -2414,7 +2405,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d608de21-c7de-483e-b58f-314f3f91b105/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3925,
+      "loadTimeMs": 3822,
       "duration": "184s",
       "resolution": "640x360"
     },
@@ -2427,7 +2418,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/47d91fd5-22da-4c57-ae99-6dd4484c7381/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3902,
+      "loadTimeMs": 4322,
       "duration": "128s",
       "resolution": "640x360"
     },
@@ -2440,7 +2431,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f298f79f-d99f-41bb-9814-edc331bfe9ec/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3852,
+      "loadTimeMs": 4369,
       "duration": "196s",
       "resolution": "640x360"
     },
@@ -2453,7 +2444,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/cd00ba8a-4ace-440e-9e25-4e03d0160387/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3770,
+      "loadTimeMs": 4101,
       "duration": "96s",
       "resolution": "640x360"
     },
@@ -2466,7 +2457,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9ec30bd4-0745-402c-9031-86fdf956c8b3/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3299,
+      "loadTimeMs": 3789,
       "duration": "134s",
       "resolution": "640x360"
     },
@@ -2479,7 +2470,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/811021ba-ef54-4de6-8dee-217be1a47b64/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4301,
+      "loadTimeMs": 3903,
       "duration": "122s",
       "resolution": "640x360"
     },
@@ -2492,7 +2483,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/38a5371c-c8f3-4e32-823b-428f17025f3c/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3155,
+      "loadTimeMs": 4362,
       "duration": "216s",
       "resolution": "640x360"
     },
@@ -2505,7 +2496,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6eebf6d0-36d0-4dcc-8a12-d72b84eb0e18/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3256,
+      "loadTimeMs": 4095,
       "duration": "129s",
       "resolution": "640x360"
     },
@@ -2518,7 +2509,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/e4dc36c7-978f-4994-9c72-9ef3ec9b772d/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3665,
+      "loadTimeMs": 3841,
       "duration": "158s",
       "resolution": "640x360"
     },
@@ -2531,7 +2522,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/ace3209d-784d-47f4-b441-afa566228739/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3182,
+      "loadTimeMs": 3842,
       "duration": "144s",
       "resolution": "640x360"
     },
@@ -2544,7 +2535,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/15a864f7-716b-4e24-97ca-c21537bae9f3/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4101,
+      "loadTimeMs": 3884,
       "duration": "140s",
       "resolution": "640x360"
     },
@@ -2557,7 +2548,7 @@
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6b31a1a1-2fb6-470e-9645-a93b4eaa4349/master.m3u8",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3264,
+      "loadTimeMs": 4268,
       "duration": "203s",
       "resolution": "640x360"
     }
