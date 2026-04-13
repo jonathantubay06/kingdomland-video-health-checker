@@ -112,8 +112,9 @@ body {
 .btn-run {
   background: white;
   color: var(--color-primary);
+  font-weight: 700;
 }
-.btn-run:hover { background: #f0f0ff; transform: translateY(-1px); }
+.btn-run:hover { background: #f0ebff; transform: translateY(-1px); }
 .btn-run:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
 .btn-stop {
   background: var(--color-danger);
@@ -3063,14 +3064,19 @@ body, .app-header, .stat-card, .section-card, .modal,
 }
 .stat-value.counting { animation: num-pop 0.28s cubic-bezier(0.34,1.4,0.64,1) both; }
 
-/* ---- Gold accent for run button ---- */
+/* ---- Run button: white on dark header for max contrast ---- */
 .btn-run {
-  background: linear-gradient(135deg, var(--color-primary), #8b5cf6);
+  background: white;
+  color: var(--color-primary);
   border-color: transparent;
+  font-weight: 700;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
 }
-.btn-run:hover {
-  background: linear-gradient(135deg, var(--color-primary-hover), #7c3aed);
-  border-color: transparent;
+.btn-run:hover:not(:disabled) {
+  background: #f0ebff;
+  color: #4c2db0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.3);
 }
 
 /* ---- Recheck button gold accent ---- */
