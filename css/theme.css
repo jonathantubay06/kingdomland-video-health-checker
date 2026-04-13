@@ -186,3 +186,37 @@ html:not([data-theme]) .theme-toggle .icon-moon { display: block; }
 body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* ---- Dark mode overrides for fun/polish CSS ---- */
+
+/* Stat card gradient backgrounds: replace #fff with dark surface */
+[data-theme="dark"] .stat-card.card-total   { background: linear-gradient(145deg, #1a1d2e 30%, #1f1a40 100%) !important; }
+[data-theme="dark"] .stat-card.card-pass    { background: linear-gradient(145deg, #1a1d2e 30%, #132513 100%) !important; }
+[data-theme="dark"] .stat-card.card-fail    { background: linear-gradient(145deg, #1a1d2e 30%, #2e1515 100%) !important; }
+[data-theme="dark"] .stat-card.card-timeout { background: linear-gradient(145deg, #1a1d2e 30%, #2a2010 100%) !important; }
+
+/* Stat gradient numbers: brighter in dark mode */
+[data-theme="dark"] .card-total .stat-value   { background: linear-gradient(135deg, #a78bfa, #c4b5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+[data-theme="dark"] .card-pass .stat-value    { background: linear-gradient(135deg, #4ade80, #86efac); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+[data-theme="dark"] .card-fail .stat-value    { background: linear-gradient(135deg, #f87171, #fca5a5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+[data-theme="dark"] .card-timeout .stat-value { background: linear-gradient(135deg, #fbbf24, #fde68a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* Body dot pattern: use white dots in dark mode */
+[data-theme="dark"] body::after {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+}
+
+/* Pass rate bar: keep gradient green in dark mode */
+[data-theme="dark"] #pass-rate-fill {
+  background: linear-gradient(90deg, #4ade80, #22c55e) !important;
+}
+
+/* Health green banner shimmer: dark variant */
+[data-theme="dark"] .health-banner.health-green {
+  animation: none;
+}
+
+/* Table row hover with colored glow — dark mode */
+[data-theme="dark"] #results-tbody tr:not(.row-fail):not(.row-timeout):hover { background: #1e2438; box-shadow: inset 3px 0 0 #4ade80; }
+[data-theme="dark"] #results-tbody tr.row-fail:hover    { background: #2a1818; box-shadow: inset 3px 0 0 #f87171; }
+[data-theme="dark"] #results-tbody tr.row-timeout:hover { background: #2a2010; box-shadow: inset 3px 0 0 #fbbf24; }
