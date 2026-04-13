@@ -58,11 +58,11 @@ KL.updateHealthSummary = function() {
   // first reliable point where all results are available in KL.state.
   var slowPill = document.getElementById('slow-videos-pill');
   if (slowPill) {
-    var slowCount = KL.state.results.filter(function(r) { return r.loadTimeMs && r.loadTimeMs > 20000; }).length;
+    var slowCount = KL.state.results.filter(function(r) { return r.loadTimeMs && r.loadTimeMs > 50000; }).length;
     if (slowCount > 0) {
       slowPill.textContent = '\u26a0 ' + slowCount + ' slow';
       slowPill.style.display = 'inline-flex';
-      slowPill.title = slowCount + ' video' + (slowCount !== 1 ? 's' : '') + ' took >20s (Playwright) \u2014 likely ~10s+ for real users. See heatmap below.';
+      slowPill.title = slowCount + ' video' + (slowCount !== 1 ? 's' : '') + ' took >50s (Playwright) \u2014 likely >17s for real users. See heatmap below.';
     } else {
       slowPill.style.display = 'none';
     }

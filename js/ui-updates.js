@@ -88,11 +88,11 @@ KL.updateSummaryCards = function() {
     // Slow videos pill — shows ⚠ N slow when videos exceed the Very Slow heatmap threshold (>20s Playwright)
     const slowPill = document.getElementById('slow-videos-pill');
     if (slowPill) {
-      const slowCount = KL.state.results.filter(function(r) { return r.loadTimeMs && r.loadTimeMs > 20000; }).length;
+      const slowCount = KL.state.results.filter(function(r) { return r.loadTimeMs && r.loadTimeMs > 50000; }).length;
       if (slowCount > 0) {
         slowPill.textContent = '⚠ ' + slowCount + ' slow';
         slowPill.style.display = 'inline-flex';
-        slowPill.title = slowCount + ' video' + (slowCount > 1 ? 's' : '') + ' took >20s (Playwright) — likely ~10s+ for real users. See heatmap below.';
+        slowPill.title = slowCount + ' video' + (slowCount > 1 ? 's' : '') + ' took >50s (Playwright) — likely >17s for real users. See heatmap below.';
       } else {
         slowPill.style.display = 'none';
       }
