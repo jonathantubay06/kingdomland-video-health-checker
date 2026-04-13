@@ -3133,3 +3133,144 @@ body, .app-header, .stat-card, .section-card, .modal,
   .table-wrapper { font-size: 0.8rem; }
   .stat-value { font-size: 1.6rem; }
 }
+
+/* ============================================================
+   FUN / VISUAL POLISH
+   ============================================================ */
+
+/* -- Subtle dot grid on page background -- */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(108,71,212,0.055) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* -- Header: animated drifting dot overlay + gradient title -- */
+.app-header { position: relative; overflow: hidden; }
+.app-header::before {
+  content: '';
+  position: absolute;
+  inset: -40px;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.10) 1.5px, transparent 1.5px);
+  background-size: 30px 30px;
+  animation: header-dots-drift 30s linear infinite;
+  pointer-events: none;
+}
+@keyframes header-dots-drift {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(30px, 30px); }
+}
+.header-left h1 {
+  background: linear-gradient(120deg, #ffffff 0%, #e0ccff 45%, #ffd580 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* -- Run Check button: gold gradient CTA -- */
+.btn-run {
+  background: linear-gradient(135deg, #f5a623 0%, #f97316 100%) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+  font-weight: 800 !important;
+  box-shadow: 0 3px 14px rgba(245,166,35,0.40) !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.18);
+}
+.btn-run:hover:not(:disabled) {
+  background: linear-gradient(135deg, #e09010 0%, #e8620a 100%) !important;
+  box-shadow: 0 5px 20px rgba(245,166,35,0.55) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* -- Stat cards: tinted gradient backgrounds -- */
+.stat-card.card-total   { background: linear-gradient(145deg, #fff 30%, #f0ebff 100%); }
+.stat-card.card-pass    { background: linear-gradient(145deg, #fff 30%, #e6f7ed 100%); }
+.stat-card.card-fail    { background: linear-gradient(145deg, #fff 30%, #fdeaea 100%); }
+.stat-card.card-timeout { background: linear-gradient(145deg, #fff 30%, #fdf3de 100%); }
+
+/* -- Stat icons: bigger & rounder -- */
+.stat-icon {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 12px !important;
+}
+
+/* -- Stat numbers: gradient text -- */
+.card-total .stat-value {
+  background: linear-gradient(135deg, #6c47d4, #a78bfa);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.card-pass .stat-value {
+  background: linear-gradient(135deg, #16a34a, #4ade80);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.card-fail .stat-value {
+  background: linear-gradient(135deg, #dc2626, #f87171);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.card-timeout .stat-value {
+  background: linear-gradient(135deg, #d97706, #fbbf24);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+/* -- Stat cards: colored top stripe -- */
+.stat-card.card-total   { border-top: 3px solid #6c47d4; border-left: none; }
+.stat-card.card-pass    { border-top: 3px solid #16a34a; border-left: none; }
+.stat-card.card-fail    { border-top: 3px solid #dc2626; border-left: none; }
+.stat-card.card-timeout { border-top: 3px solid #d97706; border-left: none; }
+
+/* -- Status badges: more vibrant & pill-shaped -- */
+.status-badge {
+  padding: 4px 12px !important;
+  border-radius: 20px !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em;
+}
+.status-PASS    { background: #dcfce7 !important; color: #15803d !important; border-color: #86efac !important; }
+.status-FAIL    { background: #fee2e2 !important; color: #b91c1c !important; border-color: #fca5a5 !important; }
+.status-TIMEOUT { background: #fef3c7 !important; color: #b45309 !important; border-color: #fcd34d !important; }
+
+/* -- Table rows: colored left glow on hover by status -- */
+#results-tbody tr:hover { background: #faf8ff; }
+#results-tbody tr.row-fail:hover    { background: #fff5f5; box-shadow: inset 3px 0 0 var(--color-fail); }
+#results-tbody tr.row-timeout:hover { background: #fffbf0; box-shadow: inset 3px 0 0 var(--color-timeout); }
+#results-tbody tr:not(.row-fail):not(.row-timeout):hover {
+  box-shadow: inset 3px 0 0 var(--color-pass);
+}
+
+/* -- Section cards: colored top stripe cycling through brand colors -- */
+.section-card { border-top: 3px solid transparent; border-radius: var(--radius) !important; transition: transform 0.18s, box-shadow 0.18s; }
+.section-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.section-grid .section-card:nth-child(6n+1) { border-top-color: #6c47d4; }
+.section-grid .section-card:nth-child(6n+2) { border-top-color: #22c55e; }
+.section-grid .section-card:nth-child(6n+3) { border-top-color: #f5a623; }
+.section-grid .section-card:nth-child(6n+4) { border-top-color: #ef4444; }
+.section-grid .section-card:nth-child(6n+5) { border-top-color: #3b82f6; }
+.section-grid .section-card:nth-child(6n+6) { border-top-color: #ec4899; }
+
+/* -- Section bar: gradient fill -- */
+.section-bar-fill {
+  background: linear-gradient(90deg, #22c55e, #16a34a) !important;
+}
+
+/* -- Health banner 100%: shimmer gradient -- */
+.health-banner.health-green {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #f0fdf4 100%);
+  background-size: 200% 100%;
+  animation: banner-shimmer 4s ease-in-out infinite;
+}
+@keyframes banner-shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+/* -- Pass rate fill: gradient -- */
+#pass-rate-fill {
+  background: linear-gradient(90deg, #22c55e, #16a34a) !important;
+  transition: width 0.6s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
