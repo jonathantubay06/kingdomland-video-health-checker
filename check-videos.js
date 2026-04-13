@@ -1261,6 +1261,24 @@ async function checkVideo(page, card, videoNum, totalLabel, pageType = PAGE.STOR
     }
 
     if (!videoAppeared) {
+      // Last resort: reload the watch page (sometimes the player fails to initialize on first load)
+      if (page.url().includes('/watch/') && preClickVideoIds?.videoId) {
+        log(`   ⚠ No <video> found — reloading watch page...`);
+        try {
+          const reloadUrl = `${CONFIG.baseUrl}/watch/${preClickVideoIds.videoId}` +
+            (preClickVideoIds.categoryId ? `?category=${preClickVideoIds.categoryId}&from=home` : '');
+          await page.goto(reloadUrl, { waitUntil: 'networkidle', timeout: 15000 });
+          // Quick poll for video after reload (10s)
+          for (let i = 0; i < 20; i++) {
+            videoAppeared = await page.evaluate(() => !!document.querySelector('video'));
+            if (videoAppeared) { videoFrame = page; break; }
+            await page.waitForTimeout(500);
+          }
+        } catch { /* reload failed */ }
+      }
+    }
+
+    if (!videoAppeared) {
       // Debug: log what's on the page to help diagnose
       const pageDebug = await page.evaluate(() => ({
         url: location.href,
