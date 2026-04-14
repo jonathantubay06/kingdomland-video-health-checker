@@ -1,408 +1,425 @@
 {
-  "timestamp": "2026-04-13T19:29:32.593Z",
+  "timestamp": "2026-04-14T00:56:22.560Z",
   "browser": "chromium",
   "summary": {
     "total": 165,
-    "passed": 165,
-    "failed": 0,
+    "passed": 163,
+    "failed": 2,
     "timeouts": 0
   },
-  "failedVideos": [],
-  "performanceAlerts": [
+  "failedVideos": [
     {
-      "title": "12th Street Counting By 3s",
+      "num": 49,
+      "page": "STORY",
       "section": "Fun Zone",
-      "loadTimeMs": 32253,
-      "level": "CRITICAL"
+      "title": "Gabby Globber (GG) Planets",
+      "url": "",
+      "error": "Could not find card to click"
     },
+    {
+      "num": 50,
+      "page": "STORY",
+      "section": "Fun Zone",
+      "title": "Mental Health and God",
+      "url": "",
+      "error": "Could not find card to click"
+    }
+  ],
+  "performanceAlerts": [
     {
       "title": "Gabby Globber (GG) Planets",
       "section": "Fun Zone",
-      "loadTimeMs": 32182,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "12th Street Counting by 2s and 3s",
-      "section": "Fun Zone",
-      "loadTimeMs": 32171,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Kembe Water Cycles",
-      "section": "Fun Zone",
-      "loadTimeMs": 32167,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "12th Street Counting By 2s",
-      "section": "Fun Zone",
-      "loadTimeMs": 32154,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Kembe Sight Words Part 3",
-      "section": "Fun Zone",
-      "loadTimeMs": 32153,
+      "loadTimeMs": 49032,
       "level": "CRITICAL"
     },
     {
       "title": "Mental Health and God",
       "section": "Fun Zone",
-      "loadTimeMs": 32136,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Kembe How Money Works",
-      "section": "Fun Zone",
-      "loadTimeMs": 32130,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Kembe Comparing Sizes",
-      "section": "Fun Zone",
-      "loadTimeMs": 32023,
+      "loadTimeMs": 48996,
       "level": "CRITICAL"
     },
     {
       "title": "Kembe Sight Words Part 2",
       "section": "Fun Zone",
-      "loadTimeMs": 31905,
+      "loadTimeMs": 31986,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Kembe Sight Words Part 3",
+      "section": "Fun Zone",
+      "loadTimeMs": 31674,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "12th Street Counting by 2s and 3s",
+      "section": "Fun Zone",
+      "loadTimeMs": 31635,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "12th Street Counting By 3s",
+      "section": "Fun Zone",
+      "loadTimeMs": 31629,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "12th Street Counting By 2s",
+      "section": "Fun Zone",
+      "loadTimeMs": 31607,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Kembe How Money Works",
+      "section": "Fun Zone",
+      "loadTimeMs": 31602,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Kembe Water Cycles",
+      "section": "Fun Zone",
+      "loadTimeMs": 31590,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Kembe Comparing Sizes",
+      "section": "Fun Zone",
+      "loadTimeMs": 31260,
       "level": "CRITICAL"
     },
     {
       "title": "Gabby Galactic Fire Cats Safety",
       "section": "Fun Zone",
-      "loadTimeMs": 27031,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "H3 Stretching 3",
-      "section": "Fun Zone",
-      "loadTimeMs": 24053,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "H3 Stretching 4",
-      "section": "Fun Zone",
-      "loadTimeMs": 24017,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Kembe Sight Words Part 1",
-      "section": "Fun Zone",
-      "loadTimeMs": 24007,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "12th Street",
-      "section": "Fun Zone",
-      "loadTimeMs": 23984,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Wake Up Kid",
-      "section": "Fun Zone",
-      "loadTimeMs": 23907,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Black History Beats (BHB) MLK",
-      "section": "Fun Zone",
-      "loadTimeMs": 23813,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "H3 Stretching 2",
-      "section": "Fun Zone",
-      "loadTimeMs": 23766,
+      "loadTimeMs": 25824,
       "level": "CRITICAL"
     },
     {
       "title": "Gabby Action Short",
       "section": "Fun Zone",
-      "loadTimeMs": 23759,
+      "loadTimeMs": 23939,
       "level": "CRITICAL"
     },
     {
-      "title": "H3 Stretching 5",
+      "title": "H3 Stretching 3",
       "section": "Fun Zone",
-      "loadTimeMs": 23732,
+      "loadTimeMs": 23755,
       "level": "CRITICAL"
     },
     {
-      "title": "H3 Stretching  1",
+      "title": "H3 Stretching 4",
+      "section": "Fun Zone",
+      "loadTimeMs": 23722,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "H3 Stretching 2",
+      "section": "Fun Zone",
+      "loadTimeMs": 23615,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Black History Beats (BHB) MLK",
       "section": "Fun Zone",
       "loadTimeMs": 23520,
       "level": "CRITICAL"
     },
     {
-      "title": "Unicatz Musical Chairs",
+      "title": "H3 Stretching 5",
       "section": "Fun Zone",
-      "loadTimeMs": 15845,
+      "loadTimeMs": 23516,
       "level": "CRITICAL"
     },
     {
-      "title": "Mr. Prather Days and Months",
+      "title": "Wake Up Kid",
       "section": "Fun Zone",
-      "loadTimeMs": 15838,
+      "loadTimeMs": 23514,
       "level": "CRITICAL"
     },
     {
-      "title": "Unicatz Learning is Fun",
+      "title": "H3 Stretching  1",
       "section": "Fun Zone",
-      "loadTimeMs": 15831,
+      "loadTimeMs": 23475,
       "level": "CRITICAL"
     },
     {
-      "title": "Black History Beats (BHB) Bessie Coleman",
+      "title": "12th Street",
       "section": "Fun Zone",
-      "loadTimeMs": 15824,
+      "loadTimeMs": 23472,
       "level": "CRITICAL"
     },
     {
-      "title": "Unicatz Homie Big Surprise",
+      "title": "Kembe Sight Words Part 1",
       "section": "Fun Zone",
-      "loadTimeMs": 15804,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Kembe Tries Playing",
-      "section": "Fun Zone",
-      "loadTimeMs": 15796,
+      "loadTimeMs": 23452,
       "level": "CRITICAL"
     },
     {
       "title": "A Rotten Day: Finding Joy in God",
       "section": "Marvelous Light Series",
-      "loadTimeMs": 15795,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Unicatz Music Video",
-      "section": "Fun Zone",
-      "loadTimeMs": 15792,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Paul and Saul | S2 EP19",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 15785,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Adam and Eve | S2 EP16",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 15587,
+      "loadTimeMs": 17966,
       "level": "CRITICAL"
     },
     {
       "title": "Unicatz Strut Your Stuff",
       "section": "Fun Zone",
-      "loadTimeMs": 15343,
+      "loadTimeMs": 16460,
       "level": "CRITICAL"
     },
     {
-      "title": "Unicatz Transformations",
+      "title": "Kembe Tries Playing",
       "section": "Fun Zone",
-      "loadTimeMs": 15304,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Zachaus | S2 EP17",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 15199,
+      "loadTimeMs": 15780,
       "level": "CRITICAL"
     },
     {
       "title": "Paul and Saul | S2 EP20",
       "section": "Marvelous Light Series",
-      "loadTimeMs": 15121,
+      "loadTimeMs": 15757,
       "level": "CRITICAL"
     },
     {
       "title": "Black History Beats (BHB) Jackie Robinson",
       "section": "Fun Zone",
-      "loadTimeMs": 15075,
+      "loadTimeMs": 15650,
       "level": "CRITICAL"
     },
     {
-      "title": "Daniel and The Lions Den | S2 EP14",
+      "title": "Unicatz Musical Chairs",
+      "section": "Fun Zone",
+      "loadTimeMs": 15578,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Adam and Eve | S2 EP16",
       "section": "Marvelous Light Series",
-      "loadTimeMs": 11555,
+      "loadTimeMs": 15556,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Unicatz Learning is Fun",
+      "section": "Fun Zone",
+      "loadTimeMs": 15451,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Unicatz Homie Big Surprise",
+      "section": "Fun Zone",
+      "loadTimeMs": 15299,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Black History Beats (BHB) Bessie Coleman",
+      "section": "Fun Zone",
+      "loadTimeMs": 15295,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Zachaus | S2 EP17",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 15271,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Unicatz Transformations",
+      "section": "Fun Zone",
+      "loadTimeMs": 15214,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Unicatz Music Video",
+      "section": "Fun Zone",
+      "loadTimeMs": 15081,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Mr. Prather Days and Months",
+      "section": "Fun Zone",
+      "loadTimeMs": 15015,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Paul and Saul | S2 EP19",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 15014,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "H3 Count it Up",
+      "section": "Numbers",
+      "loadTimeMs": 12180,
       "level": "WARNING"
     },
     {
       "title": "Creation | S2 EP15",
       "section": "Marvelous Light Series",
-      "loadTimeMs": 11513,
-      "level": "WARNING"
-    },
-    {
-      "title": "Marvelous Light Easter Episode",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 11494,
-      "level": "WARNING"
-    },
-    {
-      "title": "Gabby Globber (GG) Counts by 10s",
-      "section": "Numbers",
-      "loadTimeMs": 11453,
-      "level": "WARNING"
-    },
-    {
-      "title": "Unicatz Count to 20",
-      "section": "Numbers",
-      "loadTimeMs": 11437,
-      "level": "WARNING"
-    },
-    {
-      "title": "Faithfulness",
-      "section": "Bible Adventures",
-      "loadTimeMs": 11397,
-      "level": "WARNING"
-    },
-    {
-      "title": "Unicatz Alphabet Song",
-      "section": "ABC",
-      "loadTimeMs": 11388,
-      "level": "WARNING"
-    },
-    {
-      "title": "H3 Colors and Numbers",
-      "section": "Numbers",
-      "loadTimeMs": 10803,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent Candy Critters",
-      "section": "Fun Zone",
-      "loadTimeMs": 10761,
-      "level": "WARNING"
-    },
-    {
-      "title": "Fire Safety School Drills",
-      "section": "Fun Zone",
-      "loadTimeMs": 10750,
-      "level": "WARNING"
-    },
-    {
-      "title": "H3 Count it Up",
-      "section": "Numbers",
-      "loadTimeMs": 10174,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent Big Hair Blues",
-      "section": "Fun Zone",
-      "loadTimeMs": 10110,
-      "level": "WARNING"
-    },
-    {
-      "title": "Jonah and the Whale | S2 EP11",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 10109,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent Three Amigas",
-      "section": "Fun Zone",
-      "loadTimeMs": 10081,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent Itchy Monster",
-      "section": "Fun Zone",
-      "loadTimeMs": 10068,
-      "level": "WARNING"
-    },
-    {
-      "title": "Gabby Globber (GG) Counts by 5s",
-      "section": "Numbers",
-      "loadTimeMs": 10066,
-      "level": "WARNING"
-    },
-    {
-      "title": "Marvelous Light Episode 8 Meet Jesus Part 1",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 10063,
-      "level": "WARNING"
-    },
-    {
-      "title": "Marvelous Light Episode 7 Noah Part 2",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 9959,
-      "level": "WARNING"
-    },
-    {
-      "title": "Jonah and the Whale | S2 EP12",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 9910,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent Hippocampus",
-      "section": "Fun Zone",
-      "loadTimeMs": 9896,
-      "level": "WARNING"
-    },
-    {
-      "title": "Daniel and The Lions Den | S2 EP13",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 9708,
-      "level": "WARNING"
-    },
-    {
-      "title": "Unicatz Joy of Learning",
-      "section": "Fun Zone",
-      "loadTimeMs": 9621,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent Clothes Mountain",
-      "section": "Fun Zone",
-      "loadTimeMs": 9561,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent Hoverboard",
-      "section": "Fun Zone",
-      "loadTimeMs": 9556,
-      "level": "WARNING"
-    },
-    {
-      "title": "H3 5 Vowels",
-      "section": "ABC",
-      "loadTimeMs": 9469,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent The Letter Twins",
-      "section": "Fun Zone",
-      "loadTimeMs": 9392,
-      "level": "WARNING"
-    },
-    {
-      "title": "Grandpa 10 Commandments",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 9352,
-      "level": "WARNING"
-    },
-    {
-      "title": "Marvelous Light Episode 9 Meet Jesus Part 2",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 9313,
-      "level": "WARNING"
-    },
-    {
-      "title": "Gabby Globber (GG) Counting by 5s and 10s",
-      "section": "Numbers",
-      "loadTimeMs": 9281,
+      "loadTimeMs": 11820,
       "level": "WARNING"
     },
     {
       "title": "Love",
       "section": "Bible Adventures",
-      "loadTimeMs": 9256,
+      "loadTimeMs": 11550,
+      "level": "WARNING"
+    },
+    {
+      "title": "Faithfulness",
+      "section": "Bible Adventures",
+      "loadTimeMs": 11330,
+      "level": "WARNING"
+    },
+    {
+      "title": "Daniel and The Lions Den | S2 EP14",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 11303,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Clothes Mountain",
+      "section": "Fun Zone",
+      "loadTimeMs": 11285,
+      "level": "WARNING"
+    },
+    {
+      "title": "Gabby Globber (GG) Counts by 10s",
+      "section": "Numbers",
+      "loadTimeMs": 11234,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 Colors and Numbers",
+      "section": "Numbers",
+      "loadTimeMs": 11134,
+      "level": "WARNING"
+    },
+    {
+      "title": "Gabby Globber (GG) Counts by 5s",
+      "section": "Numbers",
+      "loadTimeMs": 11095,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Hoverboard",
+      "section": "Fun Zone",
+      "loadTimeMs": 10999,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 5 Vowels",
+      "section": "ABC",
+      "loadTimeMs": 10839,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent The Letter Twins",
+      "section": "Fun Zone",
+      "loadTimeMs": 10757,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Episode 7 Noah Part 2",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 10750,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Three Amigas",
+      "section": "Fun Zone",
+      "loadTimeMs": 10476,
+      "level": "WARNING"
+    },
+    {
+      "title": "Grandpa 10 Commandments",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 10444,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Episode 9 Meet Jesus Part 2",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 10422,
+      "level": "WARNING"
+    },
+    {
+      "title": "Unicatz Alphabet Song",
+      "section": "ABC",
+      "loadTimeMs": 10328,
+      "level": "WARNING"
+    },
+    {
+      "title": "Fire Safety School Drills",
+      "section": "Fun Zone",
+      "loadTimeMs": 10300,
+      "level": "WARNING"
+    },
+    {
+      "title": "Jonah and the Whale | S2 EP11",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 10004,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Easter Episode",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9970,
+      "level": "WARNING"
+    },
+    {
+      "title": "Unicatz Joy of Learning",
+      "section": "Fun Zone",
+      "loadTimeMs": 9804,
+      "level": "WARNING"
+    },
+    {
+      "title": "Gabby Globber (GG) Counting by 5s and 10s",
+      "section": "Numbers",
+      "loadTimeMs": 9737,
+      "level": "WARNING"
+    },
+    {
+      "title": "Unicatz Count to 20",
+      "section": "Numbers",
+      "loadTimeMs": 9727,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Hippocampus",
+      "section": "Fun Zone",
+      "loadTimeMs": 9705,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Episode 8 Meet Jesus Part 1",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9603,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Big Hair Blues",
+      "section": "Fun Zone",
+      "loadTimeMs": 9564,
+      "level": "WARNING"
+    },
+    {
+      "title": "Daniel and The Lions Den | S2 EP13",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9511,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Itchy Monster",
+      "section": "Fun Zone",
+      "loadTimeMs": 9217,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Candy Critters",
+      "section": "Fun Zone",
+      "loadTimeMs": 9126,
+      "level": "WARNING"
+    },
+    {
+      "title": "Jonah and the Whale | S2 EP12",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 8440,
       "level": "WARNING"
     }
   ],
@@ -414,9 +431,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/1d091d78-7310-4fde-8f53-08a98beca74b?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1d091d78-7310-4fde-8f53-08a98beca74b/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/1d091d78-7310-4fde-8f53-08a98beca74b/5a33620b-7ec5-4e03-aea6-32aa4f2ed3fb.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 27031,
+      "loadTimeMs": 25824,
       "duration": "646s",
       "resolution": "640x360"
     },
@@ -427,9 +445,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/8650e80f-132c-4cd1-a562-9317a91a05c0?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/8650e80f-132c-4cd1-a562-9317a91a05c0/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/8650e80f-132c-4cd1-a562-9317a91a05c0/PLAYWATCH_ALPHALetterL-Z_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2348,
+      "loadTimeMs": 1800,
       "duration": "205s",
       "resolution": "640x360"
     },
@@ -440,9 +459,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/e9635d39-19b0-42db-9be6-11bc1defd3ed?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/e9635d39-19b0-42db-9be6-11bc1defd3ed/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/e9635d39-19b0-42db-9be6-11bc1defd3ed/PLAYWATCH_ALPHALetterA-K_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3152,
+      "loadTimeMs": 1811,
       "duration": "157s",
       "resolution": "640x360"
     },
@@ -453,9 +473,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/dbb4afee-fe54-4c86-b571-27675b27e4e8?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/dbb4afee-fe54-4c86-b571-27675b27e4e8/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/dbb4afee-fe54-4c86-b571-27675b27e4e8/PLAYWATCH_VID_ALPHALetterC_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2189,
+      "loadTimeMs": 2424,
       "duration": "189s",
       "resolution": "640x360"
     },
@@ -466,9 +487,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/5e64fb0f-97d7-4b95-98f6-7fea53e33dfd?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5e64fb0f-97d7-4b95-98f6-7fea53e33dfd/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/5e64fb0f-97d7-4b95-98f6-7fea53e33dfd/PLAYWATCH_VID_ALPHALetterB_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2258,
+      "loadTimeMs": 1787,
       "duration": "189s",
       "resolution": "640x360"
     },
@@ -479,9 +501,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/3f8139b3-f895-4228-98ac-be010862d8ab?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/3f8139b3-f895-4228-98ac-be010862d8ab/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/3f8139b3-f895-4228-98ac-be010862d8ab/PLAYWATCH_VID_ALPHALetterA_VidPreview (1).png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2036,
+      "loadTimeMs": 1704,
       "duration": "173s",
       "resolution": "640x360"
     },
@@ -492,9 +515,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/b8b902af-41c4-44f4-b75d-2edd354d5e62?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/b8b902af-41c4-44f4-b75d-2edd354d5e62/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/b8b902af-41c4-44f4-b75d-2edd354d5e62/PLAYWATCH_VID_ALPHAoo_VidPreview (1).png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2100,
+      "loadTimeMs": 1686,
       "duration": "115s",
       "resolution": "640x360"
     },
@@ -505,9 +529,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/03a156fb-9c97-499b-b862-bf0556dbdc64?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/03a156fb-9c97-499b-b862-bf0556dbdc64/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/03a156fb-9c97-499b-b862-bf0556dbdc64/PLAYWATCH_VID_MFTLOOPYLOO_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2225,
+      "loadTimeMs": 2138,
       "duration": "200s",
       "resolution": "640x360"
     },
@@ -518,9 +543,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/daa4c238-2ffb-405c-9d13-ec27c1019158?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/daa4c238-2ffb-405c-9d13-ec27c1019158/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/daa4c238-2ffb-405c-9d13-ec27c1019158/PLAYWATCH_VID_MFTCOLORS_VidPreview (1).png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2270,
+      "loadTimeMs": 1681,
       "duration": "165s",
       "resolution": "640x360"
     },
@@ -531,9 +557,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/9ae01ae1-ec60-4b68-8237-1b8484837d7f?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9ae01ae1-ec60-4b68-8237-1b8484837d7f/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/9ae01ae1-ec60-4b68-8237-1b8484837d7f/PLAYWATCH_MFTABC_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2236,
+      "loadTimeMs": 2454,
       "duration": "204s",
       "resolution": "640x360"
     },
@@ -544,9 +571,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/16817712-d949-4279-871f-cb066723b50e?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/16817712-d949-4279-871f-cb066723b50e/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10081,
+      "loadTimeMs": 10476,
       "duration": "118s",
       "resolution": "640x360"
     },
@@ -557,9 +585,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/aee40747-e84a-4b21-ac94-2c9a4b2ff088?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/aee40747-e84a-4b21-ac94-2c9a4b2ff088/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10110,
+      "loadTimeMs": 9564,
       "duration": "115s",
       "resolution": "640x360"
     },
@@ -570,9 +599,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/1f732317-d240-4f49-bf56-2f70230d1c02?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1f732317-d240-4f49-bf56-2f70230d1c02/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10761,
+      "loadTimeMs": 9126,
       "duration": "138s",
       "resolution": "640x360"
     },
@@ -583,9 +613,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/c8be5898-a105-4a08-8dec-ba566d96eac1?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c8be5898-a105-4a08-8dec-ba566d96eac1/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9896,
+      "loadTimeMs": 9705,
       "duration": "166s",
       "resolution": "640x360"
     },
@@ -596,9 +627,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/bfb16737-dd22-43e9-bd73-4890964b3527?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/bfb16737-dd22-43e9-bd73-4890964b3527/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9556,
+      "loadTimeMs": 10999,
       "duration": "93s",
       "resolution": "640x360"
     },
@@ -609,9 +641,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/11e1164b-d214-4c1d-8d96-c9430be49734?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/11e1164b-d214-4c1d-8d96-c9430be49734/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10068,
+      "loadTimeMs": 9217,
       "duration": "120s",
       "resolution": "640x360"
     },
@@ -622,9 +655,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/a8f1f906-9ced-4289-a7fe-1834f4385c36?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a8f1f906-9ced-4289-a7fe-1834f4385c36/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9392,
+      "loadTimeMs": 10757,
       "duration": "98s",
       "resolution": "640x360"
     },
@@ -635,9 +669,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/02b7eba5-06ac-4543-81fd-a5691dee7340?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/02b7eba5-06ac-4543-81fd-a5691dee7340/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10750,
+      "loadTimeMs": 10300,
       "duration": "230s",
       "resolution": "640x360"
     },
@@ -648,9 +683,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/59a6f62f-b6c9-4f35-84fb-47ab941bffc9?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/59a6f62f-b6c9-4f35-84fb-47ab941bffc9/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9561,
+      "loadTimeMs": 11285,
       "duration": "170s",
       "resolution": "640x360"
     },
@@ -661,9 +697,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/56ab3fea-b6c9-430c-92c2-38bc52fcd51f?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/56ab3fea-b6c9-430c-92c2-38bc52fcd51f/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9621,
+      "loadTimeMs": 9804,
       "duration": "85s",
       "resolution": "640x360"
     },
@@ -674,9 +711,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/200efedf-c802-4fd8-ab28-faffbe5d4cc3?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/200efedf-c802-4fd8-ab28-faffbe5d4cc3/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15838,
+      "loadTimeMs": 15015,
       "duration": "185s",
       "resolution": "640x360"
     },
@@ -687,9 +725,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/5b1e082f-97d0-4c7a-8541-bcfa36d034c6?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5b1e082f-97d0-4c7a-8541-bcfa36d034c6/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15796,
+      "loadTimeMs": 15780,
       "duration": "265s",
       "resolution": "640x360"
     },
@@ -700,9 +739,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/097b7f11-6a19-471f-9bf1-dcdc7ff159ae?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/097b7f11-6a19-471f-9bf1-dcdc7ff159ae/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15792,
+      "loadTimeMs": 15081,
       "duration": "185s",
       "resolution": "640x360"
     },
@@ -713,9 +753,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/4fc58548-9731-4f95-9b24-3f2c72daeac2?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4fc58548-9731-4f95-9b24-3f2c72daeac2/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15343,
+      "loadTimeMs": 16460,
       "duration": "525s",
       "resolution": "640x360"
     },
@@ -726,9 +767,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/50875106-c0bb-437d-bac7-4329047aa784?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/50875106-c0bb-437d-bac7-4329047aa784/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15804,
+      "loadTimeMs": 15299,
       "duration": "85s",
       "resolution": "640x360"
     },
@@ -739,9 +781,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/d991ff04-d635-4f78-b5c6-ceeb236d0020?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d991ff04-d635-4f78-b5c6-ceeb236d0020/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15304,
+      "loadTimeMs": 15214,
       "duration": "760s",
       "resolution": "640x360"
     },
@@ -752,9 +795,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/991b8193-96e1-4c66-85be-7efc47d12836?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/991b8193-96e1-4c66-85be-7efc47d12836/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15845,
+      "loadTimeMs": 15578,
       "duration": "149s",
       "resolution": "640x360"
     },
@@ -765,9 +809,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/07d1e6f2-76b6-437d-b51f-08ed6332392c?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/07d1e6f2-76b6-437d-b51f-08ed6332392c/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15831,
+      "loadTimeMs": 15451,
       "duration": "100s",
       "resolution": "640x360"
     },
@@ -778,9 +823,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/5ed8064b-e9d5-4e5b-bb86-bb795e2b1c7a?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5ed8064b-e9d5-4e5b-bb86-bb795e2b1c7a/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15075,
+      "loadTimeMs": 15650,
       "duration": "208s",
       "resolution": "640x360"
     },
@@ -791,9 +837,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/f61a23eb-c690-4283-9311-5e9a574e1be1?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f61a23eb-c690-4283-9311-5e9a574e1be1/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15824,
+      "loadTimeMs": 15295,
       "duration": "181s",
       "resolution": "640x360"
     },
@@ -804,9 +851,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/58a6703a-fc50-46e9-b2b1-b36949a78246?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/58a6703a-fc50-46e9-b2b1-b36949a78246/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23813,
+      "loadTimeMs": 23520,
       "duration": "162s",
       "resolution": "640x360"
     },
@@ -817,9 +865,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/595946c3-d135-4359-b6e2-b16c9d047a2c?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/595946c3-d135-4359-b6e2-b16c9d047a2c/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23984,
+      "loadTimeMs": 23472,
       "duration": "311s",
       "resolution": "640x360"
     },
@@ -830,9 +879,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/4cf1046b-bcdf-4107-ac19-5cf499782419?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4cf1046b-bcdf-4107-ac19-5cf499782419/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23759,
+      "loadTimeMs": 23939,
       "duration": "134s",
       "resolution": "640x360"
     },
@@ -843,9 +893,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/87bc81c7-fa6d-4f5a-9c49-4ef0e1cd5c88?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/87bc81c7-fa6d-4f5a-9c49-4ef0e1cd5c88/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23907,
+      "loadTimeMs": 23514,
       "duration": "636s",
       "resolution": "640x360"
     },
@@ -856,9 +907,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/c43462a5-4e70-412e-aec6-5be27c9294ec?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c43462a5-4e70-412e-aec6-5be27c9294ec/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23520,
+      "loadTimeMs": 23475,
       "duration": "240s",
       "resolution": "640x360"
     },
@@ -869,9 +921,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/a9e12c6a-0f54-433e-9475-aff2f3fc425d?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a9e12c6a-0f54-433e-9475-aff2f3fc425d/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23766,
+      "loadTimeMs": 23615,
       "duration": "340s",
       "resolution": "640x360"
     },
@@ -882,9 +935,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/c7cbac55-00db-4e83-8b9b-37bbccb898f5?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c7cbac55-00db-4e83-8b9b-37bbccb898f5/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 24053,
+      "loadTimeMs": 23755,
       "duration": "207s",
       "resolution": "640x360"
     },
@@ -895,9 +949,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/8f758903-51eb-4766-9862-7993e58141a3?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/8f758903-51eb-4766-9862-7993e58141a3/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 24017,
+      "loadTimeMs": 23722,
       "duration": "267s",
       "resolution": "640x360"
     },
@@ -908,9 +963,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/c128f883-fd2c-4f72-87ee-091ed6ff4d7f?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c128f883-fd2c-4f72-87ee-091ed6ff4d7f/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23732,
+      "loadTimeMs": 23516,
       "duration": "408s",
       "resolution": "640x360"
     },
@@ -921,9 +977,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/211fcc4c-d3da-4900-9a10-e02b21e00824?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/211fcc4c-d3da-4900-9a10-e02b21e00824/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 24007,
+      "loadTimeMs": 23452,
       "duration": "214s",
       "resolution": "640x360"
     },
@@ -934,9 +991,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/6e33429c-f079-4e86-bd8d-af6a97e8be3a?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6e33429c-f079-4e86-bd8d-af6a97e8be3a/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 31905,
+      "loadTimeMs": 31986,
       "duration": "225s",
       "resolution": "640x360"
     },
@@ -947,9 +1005,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/4d3b7355-6d2d-4535-bbca-4c73a66f81de?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4d3b7355-6d2d-4535-bbca-4c73a66f81de/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 32153,
+      "loadTimeMs": 31674,
       "duration": "291s",
       "resolution": "640x360"
     },
@@ -960,9 +1019,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/597b370a-d70f-46cf-a882-4fc0a930f265?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/597b370a-d70f-46cf-a882-4fc0a930f265/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 32023,
+      "loadTimeMs": 31260,
       "duration": "167s",
       "resolution": "640x360"
     },
@@ -973,9 +1033,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/aabd881e-f155-437a-9bfc-13bf9ba489cd?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/aabd881e-f155-437a-9bfc-13bf9ba489cd/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 32130,
+      "loadTimeMs": 31602,
       "duration": "175s",
       "resolution": "640x360"
     },
@@ -986,9 +1047,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/d88966cc-8a4c-4eb9-89ac-a81215700b36?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d88966cc-8a4c-4eb9-89ac-a81215700b36/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 32167,
+      "loadTimeMs": 31590,
       "duration": "104s",
       "resolution": "640x360"
     },
@@ -999,9 +1061,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/9573c0a3-55c0-43f5-95a0-98817502ac0f?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9573c0a3-55c0-43f5-95a0-98817502ac0f/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 32171,
+      "loadTimeMs": 31635,
       "duration": "186s",
       "resolution": "640x360"
     },
@@ -1012,9 +1075,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/edae9ec4-18f4-47a4-9b65-467e10e14f28?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/edae9ec4-18f4-47a4-9b65-467e10e14f28/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 32154,
+      "loadTimeMs": 31607,
       "duration": "114s",
       "resolution": "640x360"
     },
@@ -1025,9 +1089,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/7e2fdf38-be4b-43f9-9764-dac6c88b7761?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7e2fdf38-be4b-43f9-9764-dac6c88b7761/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 32253,
+      "loadTimeMs": 31629,
       "duration": "107s",
       "resolution": "640x360"
     },
@@ -1036,26 +1101,28 @@
       "title": "Gabby Globber (GG) Planets",
       "section": "Fun Zone",
       "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/2fa58b4d-d8bb-440f-977e-4966b437fbe0?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/2fa58b4d-d8bb-440f-977e-4966b437fbe0/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 32182,
-      "duration": "333s",
-      "resolution": "640x360"
+      "url": "",
+      "hlsSrc": "",
+      "thumbnailUrl": "",
+      "status": "FAIL",
+      "error": "Could not find card to click",
+      "loadTimeMs": 49032,
+      "duration": null,
+      "resolution": ""
     },
     {
       "number": 50,
       "title": "Mental Health and God",
       "section": "Fun Zone",
       "page": "STORY",
-      "url": "https://go.kingdomlandkids.com/watch/5e4d922f-f256-453c-b524-ae29b659bbaf?category=d2ade55c-36e4-4232-82af-bead98e52ccd&from=home",
-      "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5e4d922f-f256-453c-b524-ae29b659bbaf/master.m3u8",
-      "status": "PASS",
-      "error": null,
-      "loadTimeMs": 32136,
-      "duration": "212s",
-      "resolution": "640x360"
+      "url": "",
+      "hlsSrc": "",
+      "thumbnailUrl": "",
+      "status": "FAIL",
+      "error": "Could not find card to click",
+      "loadTimeMs": 48996,
+      "duration": null,
+      "resolution": ""
     },
     {
       "number": 51,
@@ -1064,9 +1131,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/1d0ec518-70f3-4c8b-b389-26545945675b?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1d0ec518-70f3-4c8b-b389-26545945675b/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/1d0ec518-70f3-4c8b-b389-26545945675b/Episode 1 and 2 titles copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2027,
+      "loadTimeMs": 1275,
       "duration": "658s",
       "resolution": "640x360"
     },
@@ -1077,9 +1145,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/187d2637-f389-440f-bdbf-b8082681729a?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/187d2637-f389-440f-bdbf-b8082681729a/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/187d2637-f389-440f-bdbf-b8082681729a/1 full moses story copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2266,
+      "loadTimeMs": 1680,
       "duration": "625s",
       "resolution": "640x360"
     },
@@ -1090,9 +1159,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/fbaf7c54-b693-4a83-8f60-a55a1f5f42e5?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/fbaf7c54-b693-4a83-8f60-a55a1f5f42e5/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/fbaf7c54-b693-4a83-8f60-a55a1f5f42e5/Enders Title Cards copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2009,
+      "loadTimeMs": 1439,
       "duration": "77s",
       "resolution": "640x360"
     },
@@ -1103,9 +1173,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/f436884d-488e-4e9a-9316-26c81cda9f96?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f436884d-488e-4e9a-9316-26c81cda9f96/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/f436884d-488e-4e9a-9316-26c81cda9f96/KINGDOM_MLDavidGoliathPt1_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2338,
+      "loadTimeMs": 2906,
       "duration": "472s",
       "resolution": "640x360"
     },
@@ -1116,9 +1187,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/996b762c-9869-4614-85ed-41464b315fdc?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/996b762c-9869-4614-85ed-41464b315fdc/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/996b762c-9869-4614-85ed-41464b315fdc/KINGDOM_MLDavidGoliathPt2_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2015,
+      "loadTimeMs": 2149,
       "duration": "408s",
       "resolution": "640x360"
     },
@@ -1129,9 +1201,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/b2367430-3e5c-402c-84ea-9a9b8c8a2efa?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/b2367430-3e5c-402c-84ea-9a9b8c8a2efa/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/b2367430-3e5c-402c-84ea-9a9b8c8a2efa/Enders Title Cards Hebrew Brothers (1).jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2001,
+      "loadTimeMs": 1839,
       "duration": "74s",
       "resolution": "640x360"
     },
@@ -1142,9 +1215,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/d31a737b-5e14-48a6-b108-3b9956d4f0d7?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d31a737b-5e14-48a6-b108-3b9956d4f0d7/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/d31a737b-5e14-48a6-b108-3b9956d4f0d7/3 Hebrew Brothers 2.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2230,
+      "loadTimeMs": 1174,
       "duration": "135s",
       "resolution": "640x360"
     },
@@ -1155,9 +1229,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/a267a5c5-93d7-49c2-972b-fb426033a521?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a267a5c5-93d7-49c2-972b-fb426033a521/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/a267a5c5-93d7-49c2-972b-fb426033a521/Enders Title Cards copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2007,
+      "loadTimeMs": 2471,
       "duration": "135s",
       "resolution": "640x360"
     },
@@ -1168,9 +1243,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/bc901b64-febc-4ace-af92-6f419cab026f?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/bc901b64-febc-4ace-af92-6f419cab026f/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/bc901b64-febc-4ace-af92-6f419cab026f/KINGDOM_MLChristmas_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1999,
+      "loadTimeMs": 2474,
       "duration": "302s",
       "resolution": "640x360"
     },
@@ -1181,9 +1257,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/11ad7290-a7b1-465e-bc1a-18eff346fc28?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/11ad7290-a7b1-465e-bc1a-18eff346fc28/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/11ad7290-a7b1-465e-bc1a-18eff346fc28/KINGDOM_MLNoahPt1_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2056,
+      "loadTimeMs": 2967,
       "duration": "395s",
       "resolution": "640x360"
     },
@@ -1194,9 +1271,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/739479bc-ba0e-4c88-9915-bb85961e53a1?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/739479bc-ba0e-4c88-9915-bb85961e53a1/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9959,
+      "loadTimeMs": 10750,
       "duration": "349s",
       "resolution": "640x360"
     },
@@ -1207,9 +1285,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/2cb183fc-ce48-4244-9fa0-18a7e2e139ca?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/2cb183fc-ce48-4244-9fa0-18a7e2e139ca/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9352,
+      "loadTimeMs": 10444,
       "duration": "118s",
       "resolution": "640x360"
     },
@@ -1220,9 +1299,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/b57d0b33-1699-4a8e-9deb-add4d2ecf120?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/b57d0b33-1699-4a8e-9deb-add4d2ecf120/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10063,
+      "loadTimeMs": 9603,
       "duration": "443s",
       "resolution": "640x360"
     },
@@ -1233,9 +1313,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/be3ee1b4-02e4-4f36-80d5-2cf4ebfe587d?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/be3ee1b4-02e4-4f36-80d5-2cf4ebfe587d/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9313,
+      "loadTimeMs": 10422,
       "duration": "371s",
       "resolution": "640x360"
     },
@@ -1246,9 +1327,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/8fdb17dc-2ad5-42fd-af0d-592f7c4cb14d?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/8fdb17dc-2ad5-42fd-af0d-592f7c4cb14d/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 11494,
+      "loadTimeMs": 9970,
       "duration": "676s",
       "resolution": "640x360"
     },
@@ -1259,9 +1341,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/a16895cd-d0a5-430e-ab2b-95f4b014d55c?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a16895cd-d0a5-430e-ab2b-95f4b014d55c/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10109,
+      "loadTimeMs": 10004,
       "duration": "407s",
       "resolution": "640x360"
     },
@@ -1272,9 +1355,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/d12ae97b-1174-4517-8571-28d92c4318bd?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d12ae97b-1174-4517-8571-28d92c4318bd/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9910,
+      "loadTimeMs": 8440,
       "duration": "512s",
       "resolution": "640x360"
     },
@@ -1285,9 +1369,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/9613f537-ebb1-41a0-b98b-2bc2b3700a9e?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9613f537-ebb1-41a0-b98b-2bc2b3700a9e/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9708,
+      "loadTimeMs": 9511,
       "duration": "487s",
       "resolution": "640x360"
     },
@@ -1298,9 +1383,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/2734beba-d3b4-4a5c-afdf-b3785d105269?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/2734beba-d3b4-4a5c-afdf-b3785d105269/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 11555,
+      "loadTimeMs": 11303,
       "duration": "434s",
       "resolution": "640x360"
     },
@@ -1311,9 +1397,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/1f34576d-c7af-4cae-b9be-258d97aa4c91?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1f34576d-c7af-4cae-b9be-258d97aa4c91/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 11513,
+      "loadTimeMs": 11820,
       "duration": "435s",
       "resolution": "640x360"
     },
@@ -1324,9 +1411,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/947510c6-4115-4719-9c12-0fb244d39e3a?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/947510c6-4115-4719-9c12-0fb244d39e3a/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15587,
+      "loadTimeMs": 15556,
       "duration": "501s",
       "resolution": "640x360"
     },
@@ -1337,9 +1425,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/bb3ff059-4e31-4895-85a6-e5808e87067c?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/bb3ff059-4e31-4895-85a6-e5808e87067c/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15199,
+      "loadTimeMs": 15271,
       "duration": "604s",
       "resolution": "640x360"
     },
@@ -1350,9 +1439,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/1760b966-7558-45c3-89bd-8826a716f0ed?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1760b966-7558-45c3-89bd-8826a716f0ed/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15785,
+      "loadTimeMs": 15014,
       "duration": "451s",
       "resolution": "640x360"
     },
@@ -1363,9 +1453,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/d0fda75a-c46e-4145-a42b-5f3c4f6b3cdb?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d0fda75a-c46e-4145-a42b-5f3c4f6b3cdb/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15121,
+      "loadTimeMs": 15757,
       "duration": "353s",
       "resolution": "640x360"
     },
@@ -1376,9 +1467,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/5e7991d1-56fe-47c7-a610-44d1bdd9b713?category=7131cf32-14d8-4fe0-bca5-8b013567ac80&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5e7991d1-56fe-47c7-a610-44d1bdd9b713/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15795,
+      "loadTimeMs": 17966,
       "duration": "184s",
       "resolution": "640x360"
     },
@@ -1389,9 +1481,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/2b676607-574f-4997-80b5-596d6ef7f9d0?category=eaf34a3d-d9e2-4b24-b86a-e0edeb08ac44&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/2b676607-574f-4997-80b5-596d6ef7f9d0/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/2b676607-574f-4997-80b5-596d6ef7f9d0/KINGDOM_BBSCreation_Thumb (1).png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2219,
+      "loadTimeMs": 2699,
       "duration": "182s",
       "resolution": "640x360"
     },
@@ -1402,9 +1495,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/4303868d-a9c9-40fd-a25c-0892aab1a499?category=eaf34a3d-d9e2-4b24-b86a-e0edeb08ac44&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4303868d-a9c9-40fd-a25c-0892aab1a499/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4303868d-a9c9-40fd-a25c-0892aab1a499/KINGDOM_JesusMiracles_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2005,
+      "loadTimeMs": 1736,
       "duration": "150s",
       "resolution": "640x360"
     },
@@ -1415,9 +1509,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/7ed33ba6-5891-4525-95f6-8ef791f89c46?category=eaf34a3d-d9e2-4b24-b86a-e0edeb08ac44&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7ed33ba6-5891-4525-95f6-8ef791f89c46/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/7ed33ba6-5891-4525-95f6-8ef791f89c46/KINGDOM_BBSJohntheBaptist_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2229,
+      "loadTimeMs": 1452,
       "duration": "258s",
       "resolution": "640x360"
     },
@@ -1428,9 +1523,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/72c7e315-206d-4443-a4fb-ec171f5e3824?category=eaf34a3d-d9e2-4b24-b86a-e0edeb08ac44&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/72c7e315-206d-4443-a4fb-ec171f5e3824/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/72c7e315-206d-4443-a4fb-ec171f5e3824/KINGDOM_BBSNoahArk_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2242,
+      "loadTimeMs": 1951,
       "duration": "158s",
       "resolution": "640x360"
     },
@@ -1441,9 +1537,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/1d3177fe-7046-4d74-ba2c-edc330f2b313?category=eaf34a3d-d9e2-4b24-b86a-e0edeb08ac44&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1d3177fe-7046-4d74-ba2c-edc330f2b313/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/1d3177fe-7046-4d74-ba2c-edc330f2b313/KINGDOM_BBSMoses_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2216,
+      "loadTimeMs": 1681,
       "duration": "224s",
       "resolution": "640x360"
     },
@@ -1454,9 +1551,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/14e63165-8bcb-4ee3-859c-a057da824db8?category=eaf34a3d-d9e2-4b24-b86a-e0edeb08ac44&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/14e63165-8bcb-4ee3-859c-a057da824db8/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/14e63165-8bcb-4ee3-859c-a057da824db8/KINGDOM_SONGGreatGod_Thumb2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2255,
+      "loadTimeMs": 1565,
       "duration": "217s",
       "resolution": "640x360"
     },
@@ -1467,9 +1565,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/1430c542-bb99-4b58-99e7-128b1030fb06?category=eaf34a3d-d9e2-4b24-b86a-e0edeb08ac44&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/1430c542-bb99-4b58-99e7-128b1030fb06/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/1430c542-bb99-4b58-99e7-128b1030fb06/KINGDOM_SONGHisHands_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2493,
+      "loadTimeMs": 2069,
       "duration": "108s",
       "resolution": "640x360"
     },
@@ -1480,9 +1579,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/49123b8f-66c7-4555-a2a9-2e9ee20f9c33?category=eaf34a3d-d9e2-4b24-b86a-e0edeb08ac44&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/49123b8f-66c7-4555-a2a9-2e9ee20f9c33/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/49123b8f-66c7-4555-a2a9-2e9ee20f9c33/Intro title copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2016,
+      "loadTimeMs": 1729,
       "duration": "141s",
       "resolution": "640x360"
     },
@@ -1493,9 +1593,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/67b07475-78a7-4515-a23a-bd39e36b3235?category=eaf34a3d-d9e2-4b24-b86a-e0edeb08ac44&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/67b07475-78a7-4515-a23a-bd39e36b3235/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/67b07475-78a7-4515-a23a-bd39e36b3235/KINGDOM_FOVGentleness_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2054,
+      "loadTimeMs": 1870,
       "duration": "121s",
       "resolution": "640x360"
     },
@@ -1506,9 +1607,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/64e95279-c998-41d5-9488-b95fca9d672b?category=eaf34a3d-d9e2-4b24-b86a-e0edeb08ac44&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/64e95279-c998-41d5-9488-b95fca9d672b/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/64e95279-c998-41d5-9488-b95fca9d672b/KINGDOM_FOVGoodness_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2250,
+      "loadTimeMs": 1982,
       "duration": "115s",
       "resolution": "640x360"
     },
@@ -1519,9 +1621,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/fee8eb1b-ec50-48e9-9b12-5cafb197a3a9?category=eaf34a3d-d9e2-4b24-b86a-e0edeb08ac44&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/fee8eb1b-ec50-48e9-9b12-5cafb197a3a9/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 11397,
+      "loadTimeMs": 11330,
       "duration": "137s",
       "resolution": "640x360"
     },
@@ -1532,9 +1635,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/08c3a441-b389-4590-8e3d-588dcc363a70?category=eaf34a3d-d9e2-4b24-b86a-e0edeb08ac44&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/08c3a441-b389-4590-8e3d-588dcc363a70/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9256,
+      "loadTimeMs": 11550,
       "duration": "169s",
       "resolution": "640x360"
     },
@@ -1545,9 +1649,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/fff66fea-6510-4391-89a0-ff3af6ecbfc0?category=2d170e57-2540-458f-8968-de5ac7638563&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/fff66fea-6510-4391-89a0-ff3af6ecbfc0/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/fff66fea-6510-4391-89a0-ff3af6ecbfc0/PLAYWATCH_VID_AlienHouse_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2256,
+      "loadTimeMs": 1597,
       "duration": "95s",
       "resolution": "640x360"
     },
@@ -1558,9 +1663,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/3820a4b0-b2de-42de-9614-6719fba36287?category=2d170e57-2540-458f-8968-de5ac7638563&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/3820a4b0-b2de-42de-9614-6719fba36287/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/3820a4b0-b2de-42de-9614-6719fba36287/PLAYWATCH_VID_AuntieGift_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1976,
+      "loadTimeMs": 1709,
       "duration": "174s",
       "resolution": "640x360"
     },
@@ -1571,9 +1677,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/adea5180-0077-4b6f-90f7-fe53ce334710?category=2d170e57-2540-458f-8968-de5ac7638563&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/adea5180-0077-4b6f-90f7-fe53ce334710/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/adea5180-0077-4b6f-90f7-fe53ce334710/PLAYWATCH_VID_BraveBoa_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1956,
+      "loadTimeMs": 2179,
       "duration": "113s",
       "resolution": "640x360"
     },
@@ -1584,9 +1691,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/f0c9560b-17d8-45a5-a87b-1b89082f9705?category=2d170e57-2540-458f-8968-de5ac7638563&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f0c9560b-17d8-45a5-a87b-1b89082f9705/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/f0c9560b-17d8-45a5-a87b-1b89082f9705/PLAYWATCH_GreatTidy_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2472,
+      "loadTimeMs": 2563,
       "duration": "101s",
       "resolution": "640x360"
     },
@@ -1597,9 +1705,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/cc438094-dbd9-48e5-a966-d901f9f49b13?category=2d170e57-2540-458f-8968-de5ac7638563&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/cc438094-dbd9-48e5-a966-d901f9f49b13/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/cc438094-dbd9-48e5-a966-d901f9f49b13/PLAYWATCH_LostInternet_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2229,
+      "loadTimeMs": 1994,
       "duration": "379s",
       "resolution": "640x360"
     },
@@ -1610,9 +1719,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/91b9c45f-1472-4794-a534-14ccda5d750f?category=2d170e57-2540-458f-8968-de5ac7638563&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/91b9c45f-1472-4794-a534-14ccda5d750f/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/91b9c45f-1472-4794-a534-14ccda5d750f/PLAYWATCH_Meera_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2030,
+      "loadTimeMs": 1747,
       "duration": "127s",
       "resolution": "640x360"
     },
@@ -1623,9 +1733,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/899e5572-e6df-4dcd-8263-ceca77877975?category=2d170e57-2540-458f-8968-de5ac7638563&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/899e5572-e6df-4dcd-8263-ceca77877975/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/899e5572-e6df-4dcd-8263-ceca77877975/PLAYWATCH_Chiu_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2321,
+      "loadTimeMs": 1789,
       "duration": "125s",
       "resolution": "640x360"
     },
@@ -1636,9 +1747,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/6884d622-637e-4168-a1a0-c6d2c02aad06?category=2d170e57-2540-458f-8968-de5ac7638563&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6884d622-637e-4168-a1a0-c6d2c02aad06/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/6884d622-637e-4168-a1a0-c6d2c02aad06/PLAYWATCH_Malar_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2489,
+      "loadTimeMs": 2043,
       "duration": "105s",
       "resolution": "640x360"
     },
@@ -1649,9 +1761,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/409f00e2-5336-4ec8-8b9e-e8fef82cfdef?category=2d170e57-2540-458f-8968-de5ac7638563&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/409f00e2-5336-4ec8-8b9e-e8fef82cfdef/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/409f00e2-5336-4ec8-8b9e-e8fef82cfdef/PLAYWATCH_VID_H3ABC_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2001,
+      "loadTimeMs": 1695,
       "duration": "109s",
       "resolution": "640x360"
     },
@@ -1662,9 +1775,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/a4e15e08-63a5-4021-b2fe-dc6a01ffd3cd?category=2d170e57-2540-458f-8968-de5ac7638563&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a4e15e08-63a5-4021-b2fe-dc6a01ffd3cd/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/a4e15e08-63a5-4021-b2fe-dc6a01ffd3cd/Dissagreement among Occupations Title.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1984,
+      "loadTimeMs": 1697,
       "duration": "76s",
       "resolution": "640x360"
     },
@@ -1675,9 +1789,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/866ae349-9baf-4757-aa17-39247e8a4222?category=2d170e57-2540-458f-8968-de5ac7638563&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/866ae349-9baf-4757-aa17-39247e8a4222/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 11388,
+      "loadTimeMs": 10328,
       "duration": "95s",
       "resolution": "640x360"
     },
@@ -1688,9 +1803,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/c3e380b8-57ea-4094-b312-7186b4182477?category=2d170e57-2540-458f-8968-de5ac7638563&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c3e380b8-57ea-4094-b312-7186b4182477/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9469,
+      "loadTimeMs": 10839,
       "duration": "160s",
       "resolution": "640x360"
     },
@@ -1701,9 +1817,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/972c77e5-9877-42f7-bce4-702e50fe391a?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/972c77e5-9877-42f7-bce4-702e50fe391a/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/972c77e5-9877-42f7-bce4-702e50fe391a/PLAYWATCH_5Monkeys_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2235,
+      "loadTimeMs": 2184,
       "duration": "116s",
       "resolution": "640x360"
     },
@@ -1714,9 +1831,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/33496e0c-01f3-4b8e-9a09-b3da2c8ac0c5?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/33496e0c-01f3-4b8e-9a09-b3da2c8ac0c5/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/33496e0c-01f3-4b8e-9a09-b3da2c8ac0c5/PLAYWATCH_VID_AddingMixedNumbers_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2234,
+      "loadTimeMs": 1807,
       "duration": "36s",
       "resolution": "640x360"
     },
@@ -1727,9 +1845,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/3b529378-7a47-47da-a3c5-4c21042ddce4?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/3b529378-7a47-47da-a3c5-4c21042ddce4/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/3b529378-7a47-47da-a3c5-4c21042ddce4/PLAYWATCH_VID_AlgebraThinking_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2477,
+      "loadTimeMs": 2629,
       "duration": "47s",
       "resolution": "640x360"
     },
@@ -1740,9 +1859,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/7fd6c669-0c47-454e-ba56-d33e411ce106?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7fd6c669-0c47-454e-ba56-d33e411ce106/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/7fd6c669-0c47-454e-ba56-d33e411ce106/PLAYWATCH_VID_CompFractions_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2466,
+      "loadTimeMs": 1276,
       "duration": "46s",
       "resolution": "640x360"
     },
@@ -1753,9 +1873,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/561d091b-276e-4784-aea7-f34632681697?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/561d091b-276e-4784-aea7-f34632681697/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/561d091b-276e-4784-aea7-f34632681697/PLAYWATCH_VID_CompAlgebraThinking_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2245,
+      "loadTimeMs": 1671,
       "duration": "63s",
       "resolution": "640x360"
     },
@@ -1766,9 +1887,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/782ad9b1-5cd5-42cc-b8c5-3c28b3077726?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/782ad9b1-5cd5-42cc-b8c5-3c28b3077726/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/782ad9b1-5cd5-42cc-b8c5-3c28b3077726/PLAYWATCH_MathWithMoney_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2012,
+      "loadTimeMs": 2395,
       "duration": "52s",
       "resolution": "640x360"
     },
@@ -1779,9 +1901,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/bf0b3073-9b1c-4317-8514-f8ca826fb4b7?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/bf0b3073-9b1c-4317-8514-f8ca826fb4b7/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/bf0b3073-9b1c-4317-8514-f8ca826fb4b7/PLAYWATCH_MeasureAreaVolume_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2531,
+      "loadTimeMs": 1521,
       "duration": "43s",
       "resolution": "640x360"
     },
@@ -1792,9 +1915,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/6e74aba2-2133-4d87-bf4d-8cdd991ec27b?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6e74aba2-2133-4d87-bf4d-8cdd991ec27b/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/6e74aba2-2133-4d87-bf4d-8cdd991ec27b/PLAYWATCH_ModelingMultiples_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1969,
+      "loadTimeMs": 1859,
       "duration": "33s",
       "resolution": "640x360"
     },
@@ -1805,9 +1929,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/2e3eadcc-ae4b-42b7-ae54-9aec7ff550f7?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/2e3eadcc-ae4b-42b7-ae54-9aec7ff550f7/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/2e3eadcc-ae4b-42b7-ae54-9aec7ff550f7/PLAYWATCH_VID_NumberLines_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2479,
+      "loadTimeMs": 2215,
       "duration": "73s",
       "resolution": "640x360"
     },
@@ -1818,9 +1943,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/c16a1a0f-2c9e-46f5-a966-e80f3cd76410?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c16a1a0f-2c9e-46f5-a966-e80f3cd76410/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/c16a1a0f-2c9e-46f5-a966-e80f3cd76410/PLAYWATCH_VID_NumberSense_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2220,
+      "loadTimeMs": 1625,
       "duration": "72s",
       "resolution": "640x360"
     },
@@ -1831,9 +1957,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/94b300e1-d14a-47dc-87f0-f022ed6476bc?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/94b300e1-d14a-47dc-87f0-f022ed6476bc/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10803,
+      "loadTimeMs": 11134,
       "duration": "124s",
       "resolution": "640x360"
     },
@@ -1844,9 +1971,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/7108df62-4c23-4990-b2ef-57ddd709371b?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7108df62-4c23-4990-b2ef-57ddd709371b/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10174,
+      "loadTimeMs": 12180,
       "duration": "164s",
       "resolution": "640x360"
     },
@@ -1857,9 +1985,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/c87012b5-2144-4493-ae0c-6adfb46b4957?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c87012b5-2144-4493-ae0c-6adfb46b4957/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10066,
+      "loadTimeMs": 11095,
       "duration": "134s",
       "resolution": "640x360"
     },
@@ -1870,9 +1999,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/75a48dfd-1d3a-4d4a-ac6a-f708d82d8fcc?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/75a48dfd-1d3a-4d4a-ac6a-f708d82d8fcc/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 11453,
+      "loadTimeMs": 11234,
       "duration": "213s",
       "resolution": "640x360"
     },
@@ -1883,9 +2013,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/f6a510dd-d13f-45d5-a85b-56b8f7873e50?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f6a510dd-d13f-45d5-a85b-56b8f7873e50/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9281,
+      "loadTimeMs": 9737,
       "duration": "204s",
       "resolution": "640x360"
     },
@@ -1896,9 +2027,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/9cf8562f-9214-4f34-8b64-4ac1e8aed89c?category=e6c7a3ea-823c-4c67-ba7f-52e9ae413d8f&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9cf8562f-9214-4f34-8b64-4ac1e8aed89c/master.m3u8",
+      "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 11437,
+      "loadTimeMs": 9727,
       "duration": "83s",
       "resolution": "640x360"
     },
@@ -1909,9 +2041,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/4780be1a-cf12-4208-889f-64ec142dab8f?category=ca990b10-a156-4731-83b9-b3b1115f87d9&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4780be1a-cf12-4208-889f-64ec142dab8f/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4780be1a-cf12-4208-889f-64ec142dab8f/PLAYWATCH_VID_PRATHEROPPOSITES_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1980,
+      "loadTimeMs": 1756,
       "duration": "198s",
       "resolution": "640x360"
     },
@@ -1922,9 +2055,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/5eafe2c8-c699-45c3-9369-e23a3f0cc7fc?category=84641078-16f0-4ac2-85b0-1be5a0356969&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/5eafe2c8-c699-45c3-9369-e23a3f0cc7fc/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/5eafe2c8-c699-45c3-9369-e23a3f0cc7fc/Anime_boy_hero_202604011307.jpeg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2340,
+      "loadTimeMs": 1175,
       "duration": "148s",
       "resolution": "640x360"
     },
@@ -1935,9 +2069,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/affcdc4c-2bf7-47ff-b6aa-9a8234898f06?category=84641078-16f0-4ac2-85b0-1be5a0356969&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/affcdc4c-2bf7-47ff-b6aa-9a8234898f06/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/affcdc4c-2bf7-47ff-b6aa-9a8234898f06/Memory_Man_pointing_202604011306.jpeg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2420,
+      "loadTimeMs": 1686,
       "duration": "51s",
       "resolution": "640x360"
     },
@@ -1948,9 +2083,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/e003a444-fcb4-44a3-ba21-23c9757aa229?category=84641078-16f0-4ac2-85b0-1be5a0356969&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/e003a444-fcb4-44a3-ba21-23c9757aa229/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/e003a444-fcb4-44a3-ba21-23c9757aa229/Memory_Man_running_202604011307.jpeg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2357,
+      "loadTimeMs": 1672,
       "duration": "41s",
       "resolution": "640x360"
     },
@@ -1961,9 +2097,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/a16a03a7-626f-4ca2-8f0c-e43026b8c453?category=84641078-16f0-4ac2-85b0-1be5a0356969&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a16a03a7-626f-4ca2-8f0c-e43026b8c453/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/a16a03a7-626f-4ca2-8f0c-e43026b8c453/Memory_Man_helping_202604011313.jpeg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2619,
+      "loadTimeMs": 2182,
       "duration": "50s",
       "resolution": "640x360"
     },
@@ -1974,9 +2111,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/ac07a96d-7891-4085-ac87-0ac01de404df?category=84641078-16f0-4ac2-85b0-1be5a0356969&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/ac07a96d-7891-4085-ac87-0ac01de404df/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/ac07a96d-7891-4085-ac87-0ac01de404df/Memory_Man_holding_202604011336.jpeg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2555,
+      "loadTimeMs": 1716,
       "duration": "54s",
       "resolution": "640x360"
     },
@@ -1987,9 +2125,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/94c0a0bc-a353-43d1-8af0-179fca33f958?category=84641078-16f0-4ac2-85b0-1be5a0356969&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/94c0a0bc-a353-43d1-8af0-179fca33f958/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/94c0a0bc-a353-43d1-8af0-179fca33f958/Memory_Man_Jesus_202604011315.jpeg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2490,
+      "loadTimeMs": 1221,
       "duration": "46s",
       "resolution": "640x360"
     },
@@ -2000,9 +2139,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/451892aa-f26f-4816-be5c-19f43d13b84a?category=84641078-16f0-4ac2-85b0-1be5a0356969&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/451892aa-f26f-4816-be5c-19f43d13b84a/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/451892aa-f26f-4816-be5c-19f43d13b84a/Memory_Man_Love_202604011347.jpeg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2479,
+      "loadTimeMs": 1255,
       "duration": "65s",
       "resolution": "640x360"
     },
@@ -2013,9 +2153,10 @@
       "page": "STORY",
       "url": "https://go.kingdomlandkids.com/watch/050744d0-67a5-43b4-99ad-f78e455f6406?category=84641078-16f0-4ac2-85b0-1be5a0356969&from=home",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/050744d0-67a5-43b4-99ad-f78e455f6406/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/050744d0-67a5-43b4-99ad-f78e455f6406/Memory_Man_Peace_202604011310.jpeg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2397,
+      "loadTimeMs": 1707,
       "duration": "299s",
       "resolution": "640x360"
     },
@@ -2026,9 +2167,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/da00b9bc-56c8-4870-94a5-47e21f5fa32d?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/da00b9bc-56c8-4870-94a5-47e21f5fa32d/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/da00b9bc-56c8-4870-94a5-47e21f5fa32d/Shape song.jpeg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4531,
+      "loadTimeMs": 4377,
       "duration": "89s",
       "resolution": "640x360"
     },
@@ -2039,9 +2181,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/a71d30fd-a3dc-403d-a400-bfef3ef1158b?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a71d30fd-a3dc-403d-a400-bfef3ef1158b/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/a71d30fd-a3dc-403d-a400-bfef3ef1158b/Behave In school.jpeg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3758,
+      "loadTimeMs": 4689,
       "duration": "95s",
       "resolution": "640x360"
     },
@@ -2052,9 +2195,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/f28bf741-f881-420a-b059-cc6ae871d831?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f28bf741-f881-420a-b059-cc6ae871d831/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/f28bf741-f881-420a-b059-cc6ae871d831/Animal .jpeg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4500,
+      "loadTimeMs": 4594,
       "duration": "39s",
       "resolution": "640x360"
     },
@@ -2065,9 +2209,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/4a5fe7d4-f436-404f-9f50-1bb42130148c?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4a5fe7d4-f436-404f-9f50-1bb42130148c/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4a5fe7d4-f436-404f-9f50-1bb42130148c/Whoa Title Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4499,
+      "loadTimeMs": 4393,
       "duration": "128s",
       "resolution": "640x360"
     },
@@ -2078,9 +2223,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/86d6a0a7-e639-4194-8806-c2ee81c56d6a?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/86d6a0a7-e639-4194-8806-c2ee81c56d6a/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/86d6a0a7-e639-4194-8806-c2ee81c56d6a/Windshield WipersTitle Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4033,
+      "loadTimeMs": 4075,
       "duration": "176s",
       "resolution": "640x360"
     },
@@ -2091,9 +2237,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/ae8329d3-a352-40d3-8504-849c451d1b6e?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/ae8329d3-a352-40d3-8504-849c451d1b6e/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/ae8329d3-a352-40d3-8504-849c451d1b6e/TEacher Title Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3968,
+      "loadTimeMs": 4147,
       "duration": "125s",
       "resolution": "640x360"
     },
@@ -2104,9 +2251,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/fb08a001-9fbd-4ab5-8731-4f272eb66779?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/fb08a001-9fbd-4ab5-8731-4f272eb66779/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/fb08a001-9fbd-4ab5-8731-4f272eb66779/SMILE KIDS Title Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4528,
+      "loadTimeMs": 3465,
       "duration": "189s",
       "resolution": "640x360"
     },
@@ -2117,9 +2265,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/4c2d526f-5b6c-4a1e-bd4e-f4737acd37a3?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4c2d526f-5b6c-4a1e-bd4e-f4737acd37a3/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4c2d526f-5b6c-4a1e-bd4e-f4737acd37a3/Ring Around the Rosey  Title Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4015,
+      "loadTimeMs": 3698,
       "duration": "178s",
       "resolution": "640x360"
     },
@@ -2130,9 +2279,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/7dc61f58-c70a-43dd-a08d-c6c54685de1b?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7dc61f58-c70a-43dd-a08d-c6c54685de1b/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/7dc61f58-c70a-43dd-a08d-c6c54685de1b/FR2L Title Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4571,
+      "loadTimeMs": 3939,
       "duration": "157s",
       "resolution": "640x360"
     },
@@ -2143,9 +2293,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/ebbc4628-14fa-429d-9a57-a34837dc5c59?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/ebbc4628-14fa-429d-9a57-a34837dc5c59/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/ebbc4628-14fa-429d-9a57-a34837dc5c59/CHAMPION Title Card copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4583,
+      "loadTimeMs": 4689,
       "duration": "151s",
       "resolution": "640x360"
     },
@@ -2156,9 +2307,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/986b7f31-1651-49a1-844a-f425dd5d27cb?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/986b7f31-1651-49a1-844a-f425dd5d27cb/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/986b7f31-1651-49a1-844a-f425dd5d27cb/Bobble heads Title Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3975,
+      "loadTimeMs": 4074,
       "duration": "125s",
       "resolution": "640x360"
     },
@@ -2169,9 +2321,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/a67e0f96-6278-4684-a586-04a1a0d4a387?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/a67e0f96-6278-4684-a586-04a1a0d4a387/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/a67e0f96-6278-4684-a586-04a1a0d4a387/Born 2 Be Wild Title Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4512,
+      "loadTimeMs": 2062,
       "duration": "168s",
       "resolution": "640x360"
     },
@@ -2182,9 +2335,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/6651775f-92b1-4154-959f-7bc567d23f72?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6651775f-92b1-4154-959f-7bc567d23f72/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/6651775f-92b1-4154-959f-7bc567d23f72/KINGDOM_SONGLightofMine_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4025,
+      "loadTimeMs": 4592,
       "duration": "143s",
       "resolution": "640x360"
     },
@@ -2195,9 +2349,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/522acb5d-ea56-4719-8912-3490956465a6?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/522acb5d-ea56-4719-8912-3490956465a6/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/522acb5d-ea56-4719-8912-3490956465a6/KINGDOM_JesusLovesme_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4492,
+      "loadTimeMs": 3843,
       "duration": "151s",
       "resolution": "640x360"
     },
@@ -2208,9 +2363,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/73608d01-5e69-402b-b984-7d0f6f6ab991?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/73608d01-5e69-402b-b984-7d0f6f6ab991/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/73608d01-5e69-402b-b984-7d0f6f6ab991/PLAYWATCH_Wiggles_Thumb copy 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4547,
+      "loadTimeMs": 3679,
       "duration": "149s",
       "resolution": "640x360"
     },
@@ -2221,9 +2377,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/c37e431b-b298-4159-9190-6ad62e38ffaf?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/c37e431b-b298-4159-9190-6ad62e38ffaf/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/c37e431b-b298-4159-9190-6ad62e38ffaf/PLAYWATCH_RowYourBoat_Thumb copy 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3983,
+      "loadTimeMs": 3897,
       "duration": "96s",
       "resolution": "640x360"
     },
@@ -2234,9 +2391,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/fde9313a-7641-4798-9eef-cb3bd082775e?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/fde9313a-7641-4798-9eef-cb3bd082775e/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/fde9313a-7641-4798-9eef-cb3bd082775e/PLAYWATCH_MaryHadALittleLamb_Thumb copy 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4537,
+      "loadTimeMs": 4244,
       "duration": "108s",
       "resolution": "640x360"
     },
@@ -2247,9 +2405,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/005ab49b-8eaf-4ebb-89e6-831cdabb3a94?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/005ab49b-8eaf-4ebb-89e6-831cdabb3a94/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/005ab49b-8eaf-4ebb-89e6-831cdabb3a94/PLAYWATCH_VID_IniMiniMoe_VidPreview copy 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4542,
+      "loadTimeMs": 4094,
       "duration": "155s",
       "resolution": "640x360"
     },
@@ -2260,9 +2419,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/b595ec1a-b425-479e-8f54-b98d2155a681?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/b595ec1a-b425-479e-8f54-b98d2155a681/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/b595ec1a-b425-479e-8f54-b98d2155a681/PLAYWATCH_ClapThoseHands_Thumb copy 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4010,
+      "loadTimeMs": 3824,
       "duration": "168s",
       "resolution": "640x360"
     },
@@ -2273,9 +2433,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/7a7af214-a722-468d-9a7d-32596ef551bf?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7a7af214-a722-468d-9a7d-32596ef551bf/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/7a7af214-a722-468d-9a7d-32596ef551bf/PLAYWATCH_Basketball_Thumb copy 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4490,
+      "loadTimeMs": 3673,
       "duration": "262s",
       "resolution": "640x360"
     },
@@ -2286,9 +2447,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/19ceb6fc-d588-40ef-90c5-9619a419b20d?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/19ceb6fc-d588-40ef-90c5-9619a419b20d/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/19ceb6fc-d588-40ef-90c5-9619a419b20d/PLAYWATCH_BabyShark_Thumb copy 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3991,
+      "loadTimeMs": 3507,
       "duration": "157s",
       "resolution": "640x360"
     },
@@ -2299,9 +2461,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/56718b15-6dd1-4865-8f62-2c78c5232ade?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/56718b15-6dd1-4865-8f62-2c78c5232ade/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/56718b15-6dd1-4865-8f62-2c78c5232ade/PLAYWATCH_VID_H3BELIEVE_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4003,
+      "loadTimeMs": 3797,
       "duration": "159s",
       "resolution": "640x360"
     },
@@ -2312,9 +2475,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/9a9b17a4-90ce-409d-ac17-530484e83196?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9a9b17a4-90ce-409d-ac17-530484e83196/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/9a9b17a4-90ce-409d-ac17-530484e83196/PLAYWATCH_VID_H3AFFIRIMATIONS_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4006,
+      "loadTimeMs": 2096,
       "duration": "155s",
       "resolution": "640x360"
     },
@@ -2325,9 +2489,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/4a9c9d00-18a2-4f89-8200-8611bd6e2a32?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/4a9c9d00-18a2-4f89-8200-8611bd6e2a32/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4a9c9d00-18a2-4f89-8200-8611bd6e2a32/PLAYWATCH_PauseDance_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4487,
+      "loadTimeMs": 3858,
       "duration": "82s",
       "resolution": "640x360"
     },
@@ -2338,9 +2503,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/d8b5b1d5-ea75-4691-a319-ef1ad8c6ecd0?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d8b5b1d5-ea75-4691-a319-ef1ad8c6ecd0/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/d8b5b1d5-ea75-4691-a319-ef1ad8c6ecd0/PLAYWATCH_CrosingStreet_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3976,
+      "loadTimeMs": 3477,
       "duration": "127s",
       "resolution": "640x360"
     },
@@ -2351,9 +2517,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/ef960175-a650-4f5c-bec3-70fc2c4996ac?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/ef960175-a650-4f5c-bec3-70fc2c4996ac/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/ef960175-a650-4f5c-bec3-70fc2c4996ac/PLAYWATCH_SoundItOut_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1960,
+      "loadTimeMs": 3611,
       "duration": "142s",
       "resolution": "640x360"
     },
@@ -2364,9 +2531,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/7ceaff00-c99a-4b58-9092-8ab1e7791f51?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/7ceaff00-c99a-4b58-9092-8ab1e7791f51/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/7ceaff00-c99a-4b58-9092-8ab1e7791f51/PLAYWATCH_SchooltimeItty_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4251,
+      "loadTimeMs": 3998,
       "duration": "105s",
       "resolution": "640x360"
     },
@@ -2377,9 +2545,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/bf3d8981-2bdc-4fec-aabe-f1fe3b7a3820?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/bf3d8981-2bdc-4fec-aabe-f1fe3b7a3820/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/bf3d8981-2bdc-4fec-aabe-f1fe3b7a3820/PLAYWATCH_VID_RainRain_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4026,
+      "loadTimeMs": 3948,
       "duration": "147s",
       "resolution": "640x360"
     },
@@ -2390,9 +2559,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/36981665-54ff-40b6-af63-c6f3966ef8d8?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/36981665-54ff-40b6-af63-c6f3966ef8d8/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/36981665-54ff-40b6-af63-c6f3966ef8d8/PLAYWATCH_DaysOfTheWeek_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4469,
+      "loadTimeMs": 3724,
       "duration": "197s",
       "resolution": "640x360"
     },
@@ -2403,9 +2573,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/d608de21-c7de-483e-b58f-314f3f91b105?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/d608de21-c7de-483e-b58f-314f3f91b105/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/d608de21-c7de-483e-b58f-314f3f91b105/PLAYWATCH_MakeItOut_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4518,
+      "loadTimeMs": 3197,
       "duration": "184s",
       "resolution": "640x360"
     },
@@ -2416,9 +2587,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/47d91fd5-22da-4c57-ae99-6dd4484c7381?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/47d91fd5-22da-4c57-ae99-6dd4484c7381/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/47d91fd5-22da-4c57-ae99-6dd4484c7381/KINGDOM_SONGDowninHisHeart_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3980,
+      "loadTimeMs": 4074,
       "duration": "128s",
       "resolution": "640x360"
     },
@@ -2429,9 +2601,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/f298f79f-d99f-41bb-9814-edc331bfe9ec?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/f298f79f-d99f-41bb-9814-edc331bfe9ec/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/f298f79f-d99f-41bb-9814-edc331bfe9ec/PLAYWATCH_KidsJustwantFun_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4249,
+      "loadTimeMs": 3903,
       "duration": "196s",
       "resolution": "640x360"
     },
@@ -2442,9 +2615,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/cd00ba8a-4ace-440e-9e25-4e03d0160387?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/cd00ba8a-4ace-440e-9e25-4e03d0160387/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/cd00ba8a-4ace-440e-9e25-4e03d0160387/PLAYWATCH_VID_IceCreamTruck_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4222,
+      "loadTimeMs": 3733,
       "duration": "96s",
       "resolution": "640x360"
     },
@@ -2455,9 +2629,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/9ec30bd4-0745-402c-9031-86fdf956c8b3?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/9ec30bd4-0745-402c-9031-86fdf956c8b3/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/9ec30bd4-0745-402c-9031-86fdf956c8b3/PLAYWATCH_VID_ImPrinces_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4263,
+      "loadTimeMs": 4205,
       "duration": "134s",
       "resolution": "640x360"
     },
@@ -2468,9 +2643,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/811021ba-ef54-4de6-8dee-217be1a47b64?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/811021ba-ef54-4de6-8dee-217be1a47b64/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/811021ba-ef54-4de6-8dee-217be1a47b64/PLAYWATCH_VID_I wantoSeeMyFriends_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2010,
+      "loadTimeMs": 3680,
       "duration": "122s",
       "resolution": "640x360"
     },
@@ -2481,9 +2657,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/38a5371c-c8f3-4e32-823b-428f17025f3c?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/38a5371c-c8f3-4e32-823b-428f17025f3c/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/38a5371c-c8f3-4e32-823b-428f17025f3c/PLAYWATCH_Great_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4471,
+      "loadTimeMs": 3462,
       "duration": "216s",
       "resolution": "640x360"
     },
@@ -2494,9 +2671,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/6eebf6d0-36d0-4dcc-8a12-d72b84eb0e18?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6eebf6d0-36d0-4dcc-8a12-d72b84eb0e18/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/6eebf6d0-36d0-4dcc-8a12-d72b84eb0e18/PLAYWATCH_GrandMa_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2224,
+      "loadTimeMs": 4741,
       "duration": "129s",
       "resolution": "640x360"
     },
@@ -2507,9 +2685,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/e4dc36c7-978f-4994-9c72-9ef3ec9b772d?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/e4dc36c7-978f-4994-9c72-9ef3ec9b772d/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/e4dc36c7-978f-4994-9c72-9ef3ec9b772d/PLAYWATCH_Goodvibes_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4490,
+      "loadTimeMs": 4461,
       "duration": "158s",
       "resolution": "640x360"
     },
@@ -2520,9 +2699,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/ace3209d-784d-47f4-b441-afa566228739?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/ace3209d-784d-47f4-b441-afa566228739/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/ace3209d-784d-47f4-b441-afa566228739/PLAYWATCH_GoodJuJu_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4522,
+      "loadTimeMs": 3315,
       "duration": "144s",
       "resolution": "640x360"
     },
@@ -2533,9 +2713,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/15a864f7-716b-4e24-97ca-c21537bae9f3?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/15a864f7-716b-4e24-97ca-c21537bae9f3/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/15a864f7-716b-4e24-97ca-c21537bae9f3/PLAYWATCH_GoGetIt_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3982,
+      "loadTimeMs": 3882,
       "duration": "140s",
       "resolution": "640x360"
     },
@@ -2546,9 +2727,10 @@
       "page": "MUSIC",
       "url": "https://go.kingdomlandkids.com/watch/6b31a1a1-2fb6-470e-9645-a93b4eaa4349?from=music",
       "hlsSrc": "https://d394daiw0g5hmq.cloudfront.net/videos/hls/6b31a1a1-2fb6-470e-9645-a93b4eaa4349/master.m3u8",
+      "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/6b31a1a1-2fb6-470e-9645-a93b4eaa4349/PLAYWATCH_VID_Ballin_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4488,
+      "loadTimeMs": 4431,
       "duration": "203s",
       "resolution": "640x360"
     }
