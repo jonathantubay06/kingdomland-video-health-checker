@@ -60018,19 +60018,19 @@
     ]
   },
   {
-    "timestamp": "2026-04-14T02:52:32.885Z",
+    "timestamp": "2026-04-14T03:00:07.021Z",
     "total": 165,
     "passed": 165,
     "failed": 0,
     "timeouts": 0,
-    "avgLoadTimeMs": 8180,
+    "avgLoadTimeMs": 7634,
     "videos": [
       {
         "title": "Gabby Galactic Fire Cats Safety",
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 27200,
+        "loadTimeMs": 23394,
         "error": ""
       },
       {
@@ -60038,7 +60038,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2458,
+        "loadTimeMs": 1726,
         "error": ""
       },
       {
@@ -60046,7 +60046,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2577,
+        "loadTimeMs": 1703,
         "error": ""
       },
       {
@@ -60054,7 +60054,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2652,
+        "loadTimeMs": 1708,
         "error": ""
       },
       {
@@ -60062,7 +60062,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 3134,
+        "loadTimeMs": 1696,
         "error": ""
       },
       {
@@ -60070,7 +60070,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 3237,
+        "loadTimeMs": 1333,
         "error": ""
       },
       {
@@ -60078,7 +60078,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2569,
+        "loadTimeMs": 1682,
         "error": ""
       },
       {
@@ -60086,7 +60086,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2355,
+        "loadTimeMs": 1257,
         "error": ""
       },
       {
@@ -60094,7 +60094,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2235,
+        "loadTimeMs": 1709,
         "error": ""
       },
       {
@@ -60102,7 +60102,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2126,
+        "loadTimeMs": 1416,
         "error": ""
       },
       {
@@ -60110,7 +60110,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 11672,
+        "loadTimeMs": 6170,
         "error": ""
       },
       {
@@ -60118,7 +60118,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 11803,
+        "loadTimeMs": 7134,
         "error": ""
       },
       {
@@ -60126,7 +60126,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 9722,
+        "loadTimeMs": 7118,
         "error": ""
       },
       {
@@ -60134,7 +60134,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 10137,
+        "loadTimeMs": 6114,
         "error": ""
       },
       {
@@ -60142,7 +60142,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 9688,
+        "loadTimeMs": 6711,
         "error": ""
       },
       {
@@ -60150,7 +60150,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 9627,
+        "loadTimeMs": 6810,
         "error": ""
       },
       {
@@ -60158,7 +60158,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 9668,
+        "loadTimeMs": 6669,
         "error": ""
       },
       {
@@ -60166,7 +60166,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 10681,
+        "loadTimeMs": 6825,
         "error": ""
       },
       {
@@ -60174,7 +60174,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 11268,
+        "loadTimeMs": 6337,
         "error": ""
       },
       {
@@ -60182,7 +60182,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 10437,
+        "loadTimeMs": 6292,
         "error": ""
       },
       {
@@ -60190,7 +60190,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 16173,
+        "loadTimeMs": 14831,
         "error": ""
       },
       {
@@ -60198,7 +60198,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 16023,
+        "loadTimeMs": 14371,
         "error": ""
       },
       {
@@ -60206,7 +60206,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 15507,
+        "loadTimeMs": 14738,
         "error": ""
       },
       {
@@ -60214,7 +60214,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 16170,
+        "loadTimeMs": 15085,
         "error": ""
       },
       {
@@ -60222,7 +60222,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 15389,
+        "loadTimeMs": 14528,
         "error": ""
       },
       {
@@ -60230,7 +60230,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 16266,
+        "loadTimeMs": 14398,
         "error": ""
       },
       {
@@ -60238,7 +60238,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 15946,
+        "loadTimeMs": 14781,
         "error": ""
       },
       {
@@ -60246,7 +60246,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 16587,
+        "loadTimeMs": 16663,
         "error": ""
       },
       {
@@ -60254,7 +60254,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 16240,
+        "loadTimeMs": 16155,
         "error": ""
       },
       {
@@ -60262,7 +60262,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 15856,
+        "loadTimeMs": 14357,
         "error": ""
       },
       {
@@ -60270,7 +60270,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 23689,
+        "loadTimeMs": 23054,
         "error": ""
       },
       {
@@ -60278,7 +60278,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 23735,
+        "loadTimeMs": 22913,
         "error": ""
       },
       {
@@ -60286,7 +60286,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 23755,
+        "loadTimeMs": 22490,
         "error": ""
       },
       {
@@ -60294,7 +60294,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 23728,
+        "loadTimeMs": 23066,
         "error": ""
       },
       {
@@ -60302,7 +60302,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 23876,
+        "loadTimeMs": 22685,
         "error": ""
       },
       {
@@ -60310,7 +60310,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 23596,
+        "loadTimeMs": 22958,
         "error": ""
       },
       {
@@ -60318,7 +60318,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 23844,
+        "loadTimeMs": 22558,
         "error": ""
       },
       {
@@ -60326,7 +60326,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 23691,
+        "loadTimeMs": 23529,
         "error": ""
       },
       {
@@ -60334,7 +60334,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 23641,
+        "loadTimeMs": 22943,
         "error": ""
       },
       {
@@ -60342,7 +60342,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 24600,
+        "loadTimeMs": 23052,
         "error": ""
       },
       {
@@ -60350,7 +60350,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 31905,
+        "loadTimeMs": 31630,
         "error": ""
       },
       {
@@ -60358,7 +60358,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 33901,
+        "loadTimeMs": 30801,
         "error": ""
       },
       {
@@ -60366,7 +60366,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 32850,
+        "loadTimeMs": 31145,
         "error": ""
       },
       {
@@ -60374,7 +60374,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 32015,
+        "loadTimeMs": 31111,
         "error": ""
       },
       {
@@ -60382,7 +60382,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 32260,
+        "loadTimeMs": 30652,
         "error": ""
       },
       {
@@ -60390,7 +60390,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 32904,
+        "loadTimeMs": 31683,
         "error": ""
       },
       {
@@ -60398,7 +60398,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 31758,
+        "loadTimeMs": 30678,
         "error": ""
       },
       {
@@ -60406,7 +60406,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 31838,
+        "loadTimeMs": 32143,
         "error": ""
       },
       {
@@ -60414,7 +60414,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 31754,
+        "loadTimeMs": 31097,
         "error": ""
       },
       {
@@ -60422,7 +60422,7 @@
         "section": "Fun Zone",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 33523,
+        "loadTimeMs": 30646,
         "error": ""
       },
       {
@@ -60430,7 +60430,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2394,
+        "loadTimeMs": 2317,
         "error": ""
       },
       {
@@ -60438,7 +60438,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2495,
+        "loadTimeMs": 1649,
         "error": ""
       },
       {
@@ -60446,7 +60446,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2574,
+        "loadTimeMs": 2183,
         "error": ""
       },
       {
@@ -60454,7 +60454,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2369,
+        "loadTimeMs": 34020,
         "error": ""
       },
       {
@@ -60462,7 +60462,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2422,
+        "loadTimeMs": 1692,
         "error": ""
       },
       {
@@ -60470,7 +60470,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2645,
+        "loadTimeMs": 2178,
         "error": ""
       },
       {
@@ -60478,7 +60478,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2907,
+        "loadTimeMs": 1666,
         "error": ""
       },
       {
@@ -60486,7 +60486,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2270,
+        "loadTimeMs": 2289,
         "error": ""
       },
       {
@@ -60494,7 +60494,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2370,
+        "loadTimeMs": 2681,
         "error": ""
       },
       {
@@ -60502,7 +60502,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2322,
+        "loadTimeMs": 1282,
         "error": ""
       },
       {
@@ -60510,7 +60510,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 7454,
+        "loadTimeMs": 7094,
         "error": ""
       },
       {
@@ -60518,7 +60518,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 7778,
+        "loadTimeMs": 6582,
         "error": ""
       },
       {
@@ -60526,7 +60526,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 7800,
+        "loadTimeMs": 8813,
         "error": ""
       },
       {
@@ -60534,7 +60534,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 8740,
+        "loadTimeMs": 9425,
         "error": ""
       },
       {
@@ -60542,7 +60542,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 7774,
+        "loadTimeMs": 6091,
         "error": ""
       },
       {
@@ -60550,7 +60550,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 7961,
+        "loadTimeMs": 9758,
         "error": ""
       },
       {
@@ -60558,7 +60558,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 7338,
+        "loadTimeMs": 6357,
         "error": ""
       },
       {
@@ -60566,7 +60566,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 7273,
+        "loadTimeMs": 6593,
         "error": ""
       },
       {
@@ -60574,7 +60574,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 6947,
+        "loadTimeMs": 6590,
         "error": ""
       },
       {
@@ -60582,7 +60582,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 8093,
+        "loadTimeMs": 6650,
         "error": ""
       },
       {
@@ -60590,7 +60590,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 15952,
+        "loadTimeMs": 14253,
         "error": ""
       },
       {
@@ -60598,7 +60598,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 16930,
+        "loadTimeMs": 15162,
         "error": ""
       },
       {
@@ -60606,7 +60606,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 15426,
+        "loadTimeMs": 15583,
         "error": ""
       },
       {
@@ -60614,7 +60614,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 15983,
+        "loadTimeMs": 14955,
         "error": ""
       },
       {
@@ -60622,7 +60622,7 @@
         "section": "Marvelous Light Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 15901,
+        "loadTimeMs": 15080,
         "error": ""
       },
       {
@@ -60630,7 +60630,7 @@
         "section": "Bible Adventures",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2245,
+        "loadTimeMs": 1188,
         "error": ""
       },
       {
@@ -60638,7 +60638,7 @@
         "section": "Bible Adventures",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2315,
+        "loadTimeMs": 1276,
         "error": ""
       },
       {
@@ -60646,7 +60646,7 @@
         "section": "Bible Adventures",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2517,
+        "loadTimeMs": 2686,
         "error": ""
       },
       {
@@ -60654,7 +60654,7 @@
         "section": "Bible Adventures",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2510,
+        "loadTimeMs": 2067,
         "error": ""
       },
       {
@@ -60662,7 +60662,7 @@
         "section": "Bible Adventures",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2023,
+        "loadTimeMs": 1233,
         "error": ""
       },
       {
@@ -60670,7 +60670,7 @@
         "section": "Bible Adventures",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2494,
+        "loadTimeMs": 1389,
         "error": ""
       },
       {
@@ -60678,7 +60678,7 @@
         "section": "Bible Adventures",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 3129,
+        "loadTimeMs": 1193,
         "error": ""
       },
       {
@@ -60686,7 +60686,7 @@
         "section": "Bible Adventures",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2767,
+        "loadTimeMs": 1257,
         "error": ""
       },
       {
@@ -60694,7 +60694,7 @@
         "section": "Bible Adventures",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2622,
+        "loadTimeMs": 2733,
         "error": ""
       },
       {
@@ -60702,7 +60702,7 @@
         "section": "Bible Adventures",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2563,
+        "loadTimeMs": 2240,
         "error": ""
       },
       {
@@ -60710,7 +60710,7 @@
         "section": "Bible Adventures",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 7469,
+        "loadTimeMs": 6161,
         "error": ""
       },
       {
@@ -60718,7 +60718,7 @@
         "section": "Bible Adventures",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 7293,
+        "loadTimeMs": 7092,
         "error": ""
       },
       {
@@ -60726,7 +60726,7 @@
         "section": "ABC",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 3306,
+        "loadTimeMs": 2190,
         "error": ""
       },
       {
@@ -60734,7 +60734,7 @@
         "section": "ABC",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 1574,
+        "loadTimeMs": 1666,
         "error": ""
       },
       {
@@ -60742,7 +60742,7 @@
         "section": "ABC",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2586,
+        "loadTimeMs": 1177,
         "error": ""
       },
       {
@@ -60750,7 +60750,7 @@
         "section": "ABC",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2337,
+        "loadTimeMs": 1693,
         "error": ""
       },
       {
@@ -60758,7 +60758,7 @@
         "section": "ABC",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2409,
+        "loadTimeMs": 1252,
         "error": ""
       },
       {
@@ -60766,7 +60766,7 @@
         "section": "ABC",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2564,
+        "loadTimeMs": 1273,
         "error": ""
       },
       {
@@ -60774,7 +60774,7 @@
         "section": "ABC",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2718,
+        "loadTimeMs": 1689,
         "error": ""
       },
       {
@@ -60782,7 +60782,7 @@
         "section": "ABC",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2774,
+        "loadTimeMs": 1715,
         "error": ""
       },
       {
@@ -60790,7 +60790,7 @@
         "section": "ABC",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2762,
+        "loadTimeMs": 1242,
         "error": ""
       },
       {
@@ -60798,7 +60798,7 @@
         "section": "ABC",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 3306,
+        "loadTimeMs": 1684,
         "error": ""
       },
       {
@@ -60806,7 +60806,7 @@
         "section": "ABC",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 7671,
+        "loadTimeMs": 10325,
         "error": ""
       },
       {
@@ -60814,7 +60814,7 @@
         "section": "ABC",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 7116,
+        "loadTimeMs": 8155,
         "error": ""
       },
       {
@@ -60822,7 +60822,7 @@
         "section": "Numbers",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2938,
+        "loadTimeMs": 1226,
         "error": ""
       },
       {
@@ -60830,7 +60830,7 @@
         "section": "Numbers",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2154,
+        "loadTimeMs": 1258,
         "error": ""
       },
       {
@@ -60838,7 +60838,7 @@
         "section": "Numbers",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 3449,
+        "loadTimeMs": 1676,
         "error": ""
       },
       {
@@ -60846,7 +60846,7 @@
         "section": "Numbers",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2762,
+        "loadTimeMs": 1706,
         "error": ""
       },
       {
@@ -60854,7 +60854,7 @@
         "section": "Numbers",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2441,
+        "loadTimeMs": 1692,
         "error": ""
       },
       {
@@ -60862,7 +60862,7 @@
         "section": "Numbers",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2191,
+        "loadTimeMs": 1369,
         "error": ""
       },
       {
@@ -60870,7 +60870,7 @@
         "section": "Numbers",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2184,
+        "loadTimeMs": 2274,
         "error": ""
       },
       {
@@ -60878,7 +60878,7 @@
         "section": "Numbers",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2190,
+        "loadTimeMs": 1195,
         "error": ""
       },
       {
@@ -60886,7 +60886,7 @@
         "section": "Numbers",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2765,
+        "loadTimeMs": 1676,
         "error": ""
       },
       {
@@ -60894,7 +60894,7 @@
         "section": "Numbers",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2026,
+        "loadTimeMs": 1734,
         "error": ""
       },
       {
@@ -60902,7 +60902,7 @@
         "section": "Numbers",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 7389,
+        "loadTimeMs": 6570,
         "error": ""
       },
       {
@@ -60910,7 +60910,7 @@
         "section": "Numbers",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 8645,
+        "loadTimeMs": 6331,
         "error": ""
       },
       {
@@ -60918,7 +60918,7 @@
         "section": "Numbers",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 7090,
+        "loadTimeMs": 6081,
         "error": ""
       },
       {
@@ -60926,7 +60926,7 @@
         "section": "Numbers",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 7322,
+        "loadTimeMs": 9647,
         "error": ""
       },
       {
@@ -60934,7 +60934,7 @@
         "section": "Numbers",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 7073,
+        "loadTimeMs": 10640,
         "error": ""
       },
       {
@@ -60942,7 +60942,7 @@
         "section": "Numbers",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 8362,
+        "loadTimeMs": 7130,
         "error": ""
       },
       {
@@ -60950,7 +60950,7 @@
         "section": "Life Skills",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2251,
+        "loadTimeMs": 1334,
         "error": ""
       },
       {
@@ -60958,7 +60958,7 @@
         "section": "Memory Man Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 1356,
+        "loadTimeMs": 2186,
         "error": ""
       },
       {
@@ -60966,7 +60966,7 @@
         "section": "Memory Man Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 2182,
+        "loadTimeMs": 1176,
         "error": ""
       },
       {
@@ -60974,7 +60974,7 @@
         "section": "Memory Man Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 1201,
+        "loadTimeMs": 1677,
         "error": ""
       },
       {
@@ -60982,7 +60982,7 @@
         "section": "Memory Man Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 1235,
+        "loadTimeMs": 2198,
         "error": ""
       },
       {
@@ -60990,7 +60990,7 @@
         "section": "Memory Man Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 1671,
+        "loadTimeMs": 1188,
         "error": ""
       },
       {
@@ -60998,7 +60998,7 @@
         "section": "Memory Man Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 1685,
+        "loadTimeMs": 1340,
         "error": ""
       },
       {
@@ -61006,7 +61006,7 @@
         "section": "Memory Man Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 1175,
+        "loadTimeMs": 1913,
         "error": ""
       },
       {
@@ -61014,7 +61014,7 @@
         "section": "Memory Man Series",
         "page": "STORY",
         "status": "PASS",
-        "loadTimeMs": 1265,
+        "loadTimeMs": 1684,
         "error": ""
       },
       {
@@ -61022,7 +61022,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2478,
+        "loadTimeMs": 4215,
         "error": ""
       },
       {
@@ -61030,7 +61030,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2668,
+        "loadTimeMs": 3177,
         "error": ""
       },
       {
@@ -61038,7 +61038,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2918,
+        "loadTimeMs": 1257,
         "error": ""
       },
       {
@@ -61046,7 +61046,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2140,
+        "loadTimeMs": 1659,
         "error": ""
       },
       {
@@ -61054,7 +61054,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 4428,
+        "loadTimeMs": 2690,
         "error": ""
       },
       {
@@ -61062,7 +61062,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2244,
+        "loadTimeMs": 1158,
         "error": ""
       },
       {
@@ -61070,7 +61070,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2097,
+        "loadTimeMs": 1675,
         "error": ""
       },
       {
@@ -61078,7 +61078,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 1934,
+        "loadTimeMs": 1173,
         "error": ""
       },
       {
@@ -61086,7 +61086,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2110,
+        "loadTimeMs": 1351,
         "error": ""
       },
       {
@@ -61094,7 +61094,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 3209,
+        "loadTimeMs": 1195,
         "error": ""
       },
       {
@@ -61102,7 +61102,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2361,
+        "loadTimeMs": 1245,
         "error": ""
       },
       {
@@ -61110,7 +61110,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2471,
+        "loadTimeMs": 4172,
         "error": ""
       },
       {
@@ -61118,7 +61118,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2026,
+        "loadTimeMs": 4194,
         "error": ""
       },
       {
@@ -61126,7 +61126,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2086,
+        "loadTimeMs": 3814,
         "error": ""
       },
       {
@@ -61134,7 +61134,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 4706,
+        "loadTimeMs": 3674,
         "error": ""
       },
       {
@@ -61142,7 +61142,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 3114,
+        "loadTimeMs": 3176,
         "error": ""
       },
       {
@@ -61150,7 +61150,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 4165,
+        "loadTimeMs": 4177,
         "error": ""
       },
       {
@@ -61158,7 +61158,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2091,
+        "loadTimeMs": 3822,
         "error": ""
       },
       {
@@ -61166,7 +61166,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 1828,
+        "loadTimeMs": 3792,
         "error": ""
       },
       {
@@ -61174,7 +61174,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2083,
+        "loadTimeMs": 3347,
         "error": ""
       },
       {
@@ -61182,7 +61182,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2401,
+        "loadTimeMs": 1341,
         "error": ""
       },
       {
@@ -61190,7 +61190,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2180,
+        "loadTimeMs": 1165,
         "error": ""
       },
       {
@@ -61198,7 +61198,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2111,
+        "loadTimeMs": 1254,
         "error": ""
       },
       {
@@ -61206,7 +61206,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2553,
+        "loadTimeMs": 3862,
         "error": ""
       },
       {
@@ -61214,7 +61214,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2581,
+        "loadTimeMs": 3412,
         "error": ""
       },
       {
@@ -61222,7 +61222,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2170,
+        "loadTimeMs": 3831,
         "error": ""
       },
       {
@@ -61230,7 +61230,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2640,
+        "loadTimeMs": 3241,
         "error": ""
       },
       {
@@ -61238,7 +61238,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2774,
+        "loadTimeMs": 3254,
         "error": ""
       },
       {
@@ -61246,7 +61246,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2596,
+        "loadTimeMs": 3202,
         "error": ""
       },
       {
@@ -61254,7 +61254,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2044,
+        "loadTimeMs": 3883,
         "error": ""
       },
       {
@@ -61262,7 +61262,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 2103,
+        "loadTimeMs": 3796,
         "error": ""
       },
       {
@@ -61270,7 +61270,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 4658,
+        "loadTimeMs": 3330,
         "error": ""
       },
       {
@@ -61278,7 +61278,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 5400,
+        "loadTimeMs": 3782,
         "error": ""
       },
       {
@@ -61286,7 +61286,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 4197,
+        "loadTimeMs": 3703,
         "error": ""
       },
       {
@@ -61294,7 +61294,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 4335,
+        "loadTimeMs": 3178,
         "error": ""
       },
       {
@@ -61302,7 +61302,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 4586,
+        "loadTimeMs": 3750,
         "error": ""
       },
       {
@@ -61310,7 +61310,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 3612,
+        "loadTimeMs": 3675,
         "error": ""
       },
       {
@@ -61318,7 +61318,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 4383,
+        "loadTimeMs": 3197,
         "error": ""
       },
       {
@@ -61326,7 +61326,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 4182,
+        "loadTimeMs": 3675,
         "error": ""
       },
       {
@@ -61334,7 +61334,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 4163,
+        "loadTimeMs": 3748,
         "error": ""
       },
       {
@@ -61342,7 +61342,7 @@
         "section": "MUSIC",
         "page": "MUSIC",
         "status": "PASS",
-        "loadTimeMs": 4400,
+        "loadTimeMs": 3321,
         "error": ""
       }
     ]
