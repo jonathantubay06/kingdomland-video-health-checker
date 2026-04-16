@@ -1,0 +1,193 @@
+FAILED VIDEOS — go.kingdomlandkids.com
+Generated: 4/16/2026, 7:13:45 AM
+Total failed: 63 | Timed out: 0
+============================================================
+
+[FAIL] #110 [STORY] History Heroes > Little Agent Three Amigas
+  Error: Could not find card to click
+
+[FAIL] #111 [STORY] History Heroes > Little Agent Big Hair Blues
+  Error: Could not find card to click
+
+[FAIL] #112 [STORY] History Heroes > Little Agent Candy Critters
+  Error: Could not find card to click
+
+[FAIL] #113 [STORY] History Heroes > Little Agent Hippocampus
+  Error: Could not find card to click
+
+[FAIL] #114 [STORY] History Heroes > Little Agent Hoverboard
+  Error: Could not find card to click
+
+[FAIL] #115 [STORY] History Heroes > Little Agent Itchy Monster
+  Error: Could not find card to click
+
+[FAIL] #116 [STORY] History Heroes > Little Agent The Letter Twins
+  Error: Could not find card to click
+
+[FAIL] #117 [STORY] History Heroes > Fire Safety School Drills
+  Error: Could not find card to click
+
+[FAIL] #118 [STORY] History Heroes > Little Agent Clothes Mountain
+  Error: Could not find card to click
+
+[FAIL] #119 [STORY] History Heroes > Unicatz Joy of Learning
+  Error: Could not find card to click
+
+[FAIL] #120 [STORY] History Heroes > Mr. Prather Days and Months
+  Error: Could not find card to click
+
+[FAIL] #121 [STORY] History Heroes > Kembe Tries Playing
+  Error: Could not find card to click
+
+[FAIL] #122 [STORY] History Heroes > Unicatz Music Video
+  Error: Could not find card to click
+
+[FAIL] #123 [STORY] History Heroes > Unicatz Strut Your Stuff
+  Error: Could not find card to click
+
+[FAIL] #124 [STORY] History Heroes > Unicatz Homie Big Surprise
+  Error: Could not find card to click
+
+[FAIL] #125 [STORY] History Heroes > Unicatz Transformations
+  Error: Could not find card to click
+
+[FAIL] #126 [STORY] History Heroes > Unicatz Musical Chairs
+  Error: Could not find card to click
+
+[FAIL] #127 [STORY] History Heroes > Unicatz Learning is Fun
+  Error: Could not find card to click
+
+[FAIL] #128 [STORY] History Heroes > Black History Beats (BHB) Jackie Robinson
+  Error: Could not find card to click
+
+[FAIL] #129 [STORY] History Heroes > Black History Beats (BHB) Bessie Coleman
+  Error: Could not find card to click
+
+[FAIL] #130 [STORY] History Heroes > Black History Beats (BHB) MLK
+  Error: Could not find card to click
+
+[FAIL] #131 [STORY] History Heroes > 12th Street
+  Error: Could not find card to click
+
+[FAIL] #132 [STORY] History Heroes > Gabby Action Short
+  Error: Could not find card to click
+
+[FAIL] #133 [STORY] History Heroes > Wake Up Kid
+  Error: Could not find card to click
+
+[FAIL] #134 [STORY] History Heroes > H3 Stretching  1
+  Error: Could not find card to click
+
+[FAIL] #135 [STORY] History Heroes > H3 Stretching 2
+  Error: Could not find card to click
+
+[FAIL] #136 [STORY] History Heroes > H3 Stretching 3
+  Error: Could not find card to click
+
+[FAIL] #137 [STORY] History Heroes > H3 Stretching 4
+  Error: Could not find card to click
+
+[FAIL] #138 [STORY] History Heroes > H3 Stretching 5
+  Error: Could not find card to click
+
+[FAIL] #139 [STORY] History Heroes > Kembe Sight Words Part 1
+  Error: Could not find card to click
+
+[FAIL] #140 [STORY] History Heroes > Kembe Sight Words Part 2
+  Error: Could not find card to click
+
+[FAIL] #141 [STORY] History Heroes > Kembe Sight Words Part 3
+  Error: Could not find card to click
+
+[FAIL] #142 [STORY] History Heroes > Kembe Comparing Sizes
+  Error: Could not find card to click
+
+[FAIL] #143 [STORY] History Heroes > Kembe How Money Works
+  Error: Could not find card to click
+
+[FAIL] #144 [STORY] History Heroes > Kembe Water Cycles
+  Error: Could not find card to click
+
+[FAIL] #145 [STORY] History Heroes > 12th Street Counting by 2s and 3s
+  Error: Could not find card to click
+
+[FAIL] #146 [STORY] History Heroes > 12th Street Counting By 2s
+  Error: Could not find card to click
+
+[FAIL] #147 [STORY] History Heroes > 12th Street Counting By 3s
+  Error: Could not find card to click
+
+[FAIL] #148 [STORY] History Heroes > Gabby Globber (GG) Planets
+  Error: Could not find card to click
+
+[FAIL] #149 [STORY] History Heroes > Mental Health and God
+  Error: Could not find card to click
+
+[FAIL] #160 [STORY] History Heroes > Marvelous Light Episode 7 Noah Part 2
+  Error: Could not find card to click
+
+[FAIL] #161 [STORY] History Heroes > Grandpa 10 Commandments
+  Error: Could not find card to click
+
+[FAIL] #162 [STORY] History Heroes > Marvelous Light Episode 8 Meet Jesus Part 1
+  Error: Could not find card to click
+
+[FAIL] #163 [STORY] History Heroes > Marvelous Light Episode 9 Meet Jesus Part 2
+  Error: Could not find card to click
+
+[FAIL] #164 [STORY] History Heroes > Marvelous Light Easter Episode
+  Error: Could not find card to click
+
+[FAIL] #165 [STORY] History Heroes > Jonah and the Whale | S2 EP11
+  Error: Could not find card to click
+
+[FAIL] #166 [STORY] History Heroes > Jonah and the Whale | S2 EP12
+  Error: Could not find card to click
+
+[FAIL] #167 [STORY] History Heroes > Daniel and The Lions Den | S2 EP13
+  Error: Could not find card to click
+
+[FAIL] #168 [STORY] History Heroes > Daniel and The Lions Den | S2 EP14
+  Error: Could not find card to click
+
+[FAIL] #169 [STORY] History Heroes > Creation | S2 EP15
+  Error: Could not find card to click
+
+[FAIL] #170 [STORY] History Heroes > Adam and Eve | S2 EP16
+  Error: Could not find card to click
+
+[FAIL] #171 [STORY] History Heroes > Zachaus | S2 EP17
+  Error: Could not find card to click
+
+[FAIL] #172 [STORY] History Heroes > Paul and Saul | S2 EP19
+  Error: Could not find card to click
+
+[FAIL] #173 [STORY] History Heroes > Paul and Saul | S2 EP20
+  Error: Could not find card to click
+
+[FAIL] #174 [STORY] History Heroes > A Rotten Day: Finding Joy in God
+  Error: Could not find card to click
+
+[FAIL] #185 [STORY] History Heroes > Faithfulness
+  Error: Could not find card to click
+
+[FAIL] #186 [STORY] History Heroes > Love
+  Error: Could not find card to click
+
+[FAIL] #189 [STORY] History Heroes > Brave Bora Motion Book
+  Error: Could not find card to click
+
+[FAIL] #190 [STORY] History Heroes > Great Tidy up
+  Error: Could not find card to click
+
+[FAIL] #197 [STORY] History Heroes > Unicatz Alphabet Song
+  Error: Could not find card to click
+
+[FAIL] #198 [STORY] History Heroes > H3 5 Vowels
+  Error: Could not find card to click
+
+[FAIL] #210 [MUSIC] MUSIC > Shape Song
+  Error: Could not find card to click
+
+[FAIL] #211 [MUSIC] MUSIC > Behave In School
+  Error: Could not find card to click
