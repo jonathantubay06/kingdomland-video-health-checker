@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-23T07:10:44.142Z",
+  "timestamp": "2026-04-23T08:20:18.670Z",
   "browser": "chromium",
   "summary": {
     "total": 157,
@@ -10,387 +10,393 @@
   "failedVideos": [],
   "performanceAlerts": [
     {
-      "title": "Gabby Globber (GG) Planets",
-      "section": "Fun Zone",
-      "loadTimeMs": 33908,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "12th Street Counting by 2s and 3s",
-      "section": "Fun Zone",
-      "loadTimeMs": 32124,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Kembe Comparing Sizes",
-      "section": "Fun Zone",
-      "loadTimeMs": 32091,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Kembe Sight Words Part 2",
-      "section": "Fun Zone",
-      "loadTimeMs": 32088,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Kembe Sight Words Part 3",
-      "section": "Fun Zone",
-      "loadTimeMs": 32032,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Kembe Water Cycles",
-      "section": "Fun Zone",
-      "loadTimeMs": 31952,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "12th Street Counting By 2s",
-      "section": "Fun Zone",
-      "loadTimeMs": 31926,
-      "level": "CRITICAL"
-    },
-    {
       "title": "Mental Health and God",
       "section": "Fun Zone",
-      "loadTimeMs": 31868,
+      "loadTimeMs": 32392,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Gabby Globber (GG) Planets",
+      "section": "Fun Zone",
+      "loadTimeMs": 32379,
       "level": "CRITICAL"
     },
     {
       "title": "Kembe How Money Works",
       "section": "Fun Zone",
-      "loadTimeMs": 31820,
+      "loadTimeMs": 32355,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Kembe Comparing Sizes",
+      "section": "Fun Zone",
+      "loadTimeMs": 32111,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Kembe Water Cycles",
+      "section": "Fun Zone",
+      "loadTimeMs": 32084,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Kembe Sight Words Part 2",
+      "section": "Fun Zone",
+      "loadTimeMs": 32054,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "12th Street Counting by 2s and 3s",
+      "section": "Fun Zone",
+      "loadTimeMs": 32045,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Kembe Sight Words Part 3",
+      "section": "Fun Zone",
+      "loadTimeMs": 31735,
       "level": "CRITICAL"
     },
     {
       "title": "12th Street Counting By 3s",
       "section": "Fun Zone",
-      "loadTimeMs": 31772,
+      "loadTimeMs": 31733,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "12th Street Counting By 2s",
+      "section": "Fun Zone",
+      "loadTimeMs": 31476,
       "level": "CRITICAL"
     },
     {
       "title": "Gabby Galactic Fire Cats Safety",
       "section": "Fun Zone",
-      "loadTimeMs": 27059,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "H3 Stretching  1",
-      "section": "Fun Zone",
-      "loadTimeMs": 26188,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Black History Beats (BHB) MLK",
-      "section": "Fun Zone",
-      "loadTimeMs": 25492,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "12th Street",
-      "section": "Fun Zone",
-      "loadTimeMs": 24654,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "H3 Stretching 2",
-      "section": "Fun Zone",
-      "loadTimeMs": 24168,
+      "loadTimeMs": 26130,
       "level": "CRITICAL"
     },
     {
       "title": "Wake Up Kid",
       "section": "Fun Zone",
-      "loadTimeMs": 23999,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Kembe Sight Words Part 1",
-      "section": "Fun Zone",
-      "loadTimeMs": 23978,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Gabby Action Short",
-      "section": "Fun Zone",
-      "loadTimeMs": 23964,
+      "loadTimeMs": 24236,
       "level": "CRITICAL"
     },
     {
       "title": "H3 Stretching 4",
       "section": "Fun Zone",
-      "loadTimeMs": 23942,
+      "loadTimeMs": 24209,
       "level": "CRITICAL"
     },
     {
-      "title": "H3 Stretching 5",
+      "title": "H3 Stretching  1",
       "section": "Fun Zone",
-      "loadTimeMs": 23904,
+      "loadTimeMs": 24191,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "H3 Stretching 2",
+      "section": "Fun Zone",
+      "loadTimeMs": 24174,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Gabby Action Short",
+      "section": "Fun Zone",
+      "loadTimeMs": 23965,
       "level": "CRITICAL"
     },
     {
       "title": "H3 Stretching 3",
       "section": "Fun Zone",
-      "loadTimeMs": 23712,
+      "loadTimeMs": 23930,
       "level": "CRITICAL"
     },
     {
-      "title": "Adam and Eve | S2 EP16",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 17681,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Unicatz Learning is Fun",
+      "title": "H3 Stretching 5",
       "section": "Fun Zone",
-      "loadTimeMs": 17479,
+      "loadTimeMs": 23619,
       "level": "CRITICAL"
     },
     {
-      "title": "Black History Beats (BHB) Jackie Robinson",
+      "title": "Black History Beats (BHB) MLK",
       "section": "Fun Zone",
-      "loadTimeMs": 16979,
+      "loadTimeMs": 23540,
       "level": "CRITICAL"
     },
     {
-      "title": "Unicatz Transformations",
+      "title": "Kembe Sight Words Part 1",
       "section": "Fun Zone",
-      "loadTimeMs": 16517,
+      "loadTimeMs": 23441,
       "level": "CRITICAL"
     },
     {
-      "title": "Unicatz Homie Big Surprise",
+      "title": "12th Street",
       "section": "Fun Zone",
-      "loadTimeMs": 16216,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Zachaus | S2 EP17",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 16152,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Black History Beats (BHB) Bessie Coleman",
-      "section": "Fun Zone",
-      "loadTimeMs": 15870,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Paul and Saul | S2 EP19",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 15816,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Unicatz Musical Chairs",
-      "section": "Fun Zone",
-      "loadTimeMs": 15784,
-      "level": "CRITICAL"
-    },
-    {
-      "title": "Kembe Tries Playing",
-      "section": "Fun Zone",
-      "loadTimeMs": 15731,
+      "loadTimeMs": 23286,
       "level": "CRITICAL"
     },
     {
       "title": "Mr. Prather Days and Months",
       "section": "Fun Zone",
-      "loadTimeMs": 15730,
+      "loadTimeMs": 16065,
       "level": "CRITICAL"
     },
     {
-      "title": "Paul and Saul | S2 EP20",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 15710,
+      "title": "Unicatz Learning is Fun",
+      "section": "Fun Zone",
+      "loadTimeMs": 16005,
       "level": "CRITICAL"
     },
     {
       "title": "Unicatz Music Video",
       "section": "Fun Zone",
-      "loadTimeMs": 15457,
+      "loadTimeMs": 15816,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Adam and Eve | S2 EP16",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 15765,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Black History Beats (BHB) Bessie Coleman",
+      "section": "Fun Zone",
+      "loadTimeMs": 15751,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Kembe Tries Playing",
+      "section": "Fun Zone",
+      "loadTimeMs": 15566,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Paul and Saul | S2 EP19",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 15564,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Unicatz Homie Big Surprise",
+      "section": "Fun Zone",
+      "loadTimeMs": 15551,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Unicatz Transformations",
+      "section": "Fun Zone",
+      "loadTimeMs": 15547,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Paul and Saul | S2 EP20",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 15530,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Unicatz Musical Chairs",
+      "section": "Fun Zone",
+      "loadTimeMs": 15344,
+      "level": "CRITICAL"
+    },
+    {
+      "title": "Zachaus | S2 EP17",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 15275,
       "level": "CRITICAL"
     },
     {
       "title": "A Rotten Day: Finding Joy in God",
       "section": "Marvelous Light Series",
-      "loadTimeMs": 15257,
+      "loadTimeMs": 15165,
       "level": "CRITICAL"
+    },
+    {
+      "title": "Black History Beats (BHB) Jackie Robinson",
+      "section": "Fun Zone",
+      "loadTimeMs": 14960,
+      "level": "WARNING"
     },
     {
       "title": "Unicatz Strut Your Stuff",
       "section": "Fun Zone",
-      "loadTimeMs": 15147,
-      "level": "CRITICAL"
+      "loadTimeMs": 14883,
+      "level": "WARNING"
     },
     {
       "title": "Little Agent Candy Critters",
       "section": "Fun Zone",
-      "loadTimeMs": 11332,
-      "level": "WARNING"
-    },
-    {
-      "title": "Creation | S2 EP15",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 11317,
-      "level": "WARNING"
-    },
-    {
-      "title": "Faithfulness",
-      "section": "Bible Adventures",
-      "loadTimeMs": 11277,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent Three Amigas",
-      "section": "Fun Zone",
-      "loadTimeMs": 11206,
+      "loadTimeMs": 12158,
       "level": "WARNING"
     },
     {
       "title": "Fire Safety School Drills",
       "section": "Fun Zone",
-      "loadTimeMs": 11122,
-      "level": "WARNING"
-    },
-    {
-      "title": "Love",
-      "section": "Bible Adventures",
-      "loadTimeMs": 11085,
-      "level": "WARNING"
-    },
-    {
-      "title": "Marvelous Light Episode 8 Meet Jesus Part 1",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 10988,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent Big Hair Blues",
-      "section": "Fun Zone",
-      "loadTimeMs": 10937,
-      "level": "WARNING"
-    },
-    {
-      "title": "Gabby Globber (GG) Counts by 5s",
-      "section": "Numbers",
-      "loadTimeMs": 10917,
-      "level": "WARNING"
-    },
-    {
-      "title": "H3 Colors and Numbers",
-      "section": "Numbers",
-      "loadTimeMs": 10911,
-      "level": "WARNING"
-    },
-    {
-      "title": "Unicatz Alphabet Song",
-      "section": "ABC",
-      "loadTimeMs": 10835,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent The Letter Twins",
-      "section": "Fun Zone",
-      "loadTimeMs": 10785,
-      "level": "WARNING"
-    },
-    {
-      "title": "H3 5 Vowels",
-      "section": "ABC",
-      "loadTimeMs": 10772,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent Clothes Mountain",
-      "section": "Fun Zone",
-      "loadTimeMs": 10746,
-      "level": "WARNING"
-    },
-    {
-      "title": "Grandpa 10 Commandments",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 10492,
-      "level": "WARNING"
-    },
-    {
-      "title": "H3 Count it Up",
-      "section": "Numbers",
-      "loadTimeMs": 10432,
-      "level": "WARNING"
-    },
-    {
-      "title": "Marvelous Light Episode 9 Meet Jesus Part 2",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 10419,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent Hoverboard",
-      "section": "Fun Zone",
-      "loadTimeMs": 10418,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent Itchy Monster",
-      "section": "Fun Zone",
-      "loadTimeMs": 10392,
-      "level": "WARNING"
-    },
-    {
-      "title": "Little Agent Hippocampus",
-      "section": "Fun Zone",
-      "loadTimeMs": 10238,
-      "level": "WARNING"
-    },
-    {
-      "title": "Marvelous Light Episode 7 Noah Part 2",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 10179,
-      "level": "WARNING"
-    },
-    {
-      "title": "Daniel and The Lions Den | S2 EP13",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 9995,
-      "level": "WARNING"
-    },
-    {
-      "title": "Gabby Globber (GG) Counting by 5s and 10s",
-      "section": "Numbers",
-      "loadTimeMs": 9980,
-      "level": "WARNING"
-    },
-    {
-      "title": "Daniel and The Lions Den | S2 EP14",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 9766,
-      "level": "WARNING"
-    },
-    {
-      "title": "Jonah and the Whale | S2 EP11",
-      "section": "Marvelous Light Series",
-      "loadTimeMs": 9761,
-      "level": "WARNING"
-    },
-    {
-      "title": "Unicatz Count to 20",
-      "section": "Numbers",
-      "loadTimeMs": 9476,
-      "level": "WARNING"
-    },
-    {
-      "title": "Gabby Globber (GG) Counts by 10s",
-      "section": "Numbers",
-      "loadTimeMs": 9406,
+      "loadTimeMs": 11841,
       "level": "WARNING"
     },
     {
       "title": "Marvelous Light Easter Episode",
       "section": "Marvelous Light Series",
-      "loadTimeMs": 9393,
+      "loadTimeMs": 11663,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 Colors and Numbers",
+      "section": "Numbers",
+      "loadTimeMs": 11413,
+      "level": "WARNING"
+    },
+    {
+      "title": "Unicatz Alphabet Song",
+      "section": "ABC",
+      "loadTimeMs": 11327,
+      "level": "WARNING"
+    },
+    {
+      "title": "Faithfulness",
+      "section": "Bible Adventures",
+      "loadTimeMs": 11313,
+      "level": "WARNING"
+    },
+    {
+      "title": "Unicatz Count to 20",
+      "section": "Numbers",
+      "loadTimeMs": 11297,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Episode 9 Meet Jesus Part 2",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 11212,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 5 Vowels",
+      "section": "ABC",
+      "loadTimeMs": 11123,
+      "level": "WARNING"
+    },
+    {
+      "title": "Love",
+      "section": "Bible Adventures",
+      "loadTimeMs": 11074,
+      "level": "WARNING"
+    },
+    {
+      "title": "Gabby Globber (GG) Counts by 10s",
+      "section": "Numbers",
+      "loadTimeMs": 10857,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 Count it Up",
+      "section": "Numbers",
+      "loadTimeMs": 10843,
+      "level": "WARNING"
+    },
+    {
+      "title": "Unicatz Joy of Learning",
+      "section": "Fun Zone",
+      "loadTimeMs": 10469,
+      "level": "WARNING"
+    },
+    {
+      "title": "Daniel and The Lions Den | S2 EP13",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 10422,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Episode 7 Noah Part 2",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 10346,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Three Amigas",
+      "section": "Fun Zone",
+      "loadTimeMs": 10311,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Big Hair Blues",
+      "section": "Fun Zone",
+      "loadTimeMs": 10301,
+      "level": "WARNING"
+    },
+    {
+      "title": "Jonah and the Whale | S2 EP11",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 10262,
+      "level": "WARNING"
+    },
+    {
+      "title": "Gabby Globber (GG) Counting by 5s and 10s",
+      "section": "Numbers",
+      "loadTimeMs": 10247,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Itchy Monster",
+      "section": "Fun Zone",
+      "loadTimeMs": 10055,
+      "level": "WARNING"
+    },
+    {
+      "title": "Gabby Globber (GG) Counts by 5s",
+      "section": "Numbers",
+      "loadTimeMs": 9973,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Hoverboard",
+      "section": "Fun Zone",
+      "loadTimeMs": 9918,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Hippocampus",
+      "section": "Fun Zone",
+      "loadTimeMs": 9862,
+      "level": "WARNING"
+    },
+    {
+      "title": "Daniel and The Lions Den | S2 EP14",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9833,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Episode 8 Meet Jesus Part 1",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9824,
+      "level": "WARNING"
+    },
+    {
+      "title": "Grandpa 10 Commandments",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9786,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent Clothes Mountain",
+      "section": "Fun Zone",
+      "loadTimeMs": 9701,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Agent The Letter Twins",
+      "section": "Fun Zone",
+      "loadTimeMs": 9635,
+      "level": "WARNING"
+    },
+    {
+      "title": "Creation | S2 EP15",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9592,
       "level": "WARNING"
     }
   ],
@@ -405,7 +411,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/1d091d78-7310-4fde-8f53-08a98beca74b/5a33620b-7ec5-4e03-aea6-32aa4f2ed3fb.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 27059,
+      "loadTimeMs": 26130,
       "duration": "646s",
       "resolution": "640x360"
     },
@@ -419,7 +425,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/8650e80f-132c-4cd1-a562-9317a91a05c0/PLAYWATCH_ALPHALetterL-Z_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2248,
+      "loadTimeMs": 2282,
       "duration": "205s",
       "resolution": "640x360"
     },
@@ -433,7 +439,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/e9635d39-19b0-42db-9be6-11bc1defd3ed/PLAYWATCH_ALPHALetterA-K_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2195,
+      "loadTimeMs": 3002,
       "duration": "157s",
       "resolution": "640x360"
     },
@@ -447,7 +453,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/dbb4afee-fe54-4c86-b571-27675b27e4e8/PLAYWATCH_VID_ALPHALetterC_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2050,
+      "loadTimeMs": 2686,
       "duration": "189s",
       "resolution": "640x360"
     },
@@ -461,7 +467,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/5e64fb0f-97d7-4b95-98f6-7fea53e33dfd/PLAYWATCH_VID_ALPHALetterB_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1913,
+      "loadTimeMs": 2757,
       "duration": "189s",
       "resolution": "640x360"
     },
@@ -475,7 +481,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/3f8139b3-f895-4228-98ac-be010862d8ab/PLAYWATCH_VID_ALPHALetterA_VidPreview (1).png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2395,
+      "loadTimeMs": 1705,
       "duration": "173s",
       "resolution": "640x360"
     },
@@ -489,7 +495,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/b8b902af-41c4-44f4-b75d-2edd354d5e62/PLAYWATCH_VID_ALPHAoo_VidPreview (1).png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1872,
+      "loadTimeMs": 2186,
       "duration": "115s",
       "resolution": "640x360"
     },
@@ -503,7 +509,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/03a156fb-9c97-499b-b862-bf0556dbdc64/PLAYWATCH_VID_MFTLOOPYLOO_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1896,
+      "loadTimeMs": 2434,
       "duration": "200s",
       "resolution": "640x360"
     },
@@ -517,7 +523,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/daa4c238-2ffb-405c-9d13-ec27c1019158/PLAYWATCH_VID_MFTCOLORS_VidPreview (1).png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1960,
+      "loadTimeMs": 2118,
       "duration": "165s",
       "resolution": "640x360"
     },
@@ -531,7 +537,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/9ae01ae1-ec60-4b68-8237-1b8484837d7f/PLAYWATCH_MFTABC_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2164,
+      "loadTimeMs": 2176,
       "duration": "204s",
       "resolution": "640x360"
     },
@@ -545,7 +551,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 11206,
+      "loadTimeMs": 10311,
       "duration": "118s",
       "resolution": "640x360"
     },
@@ -559,7 +565,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10937,
+      "loadTimeMs": 10301,
       "duration": "115s",
       "resolution": "640x360"
     },
@@ -573,7 +579,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 11332,
+      "loadTimeMs": 12158,
       "duration": "138s",
       "resolution": "640x360"
     },
@@ -587,7 +593,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10238,
+      "loadTimeMs": 9862,
       "duration": "166s",
       "resolution": "640x360"
     },
@@ -601,7 +607,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10418,
+      "loadTimeMs": 9918,
       "duration": "93s",
       "resolution": "640x360"
     },
@@ -615,7 +621,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10392,
+      "loadTimeMs": 10055,
       "duration": "120s",
       "resolution": "640x360"
     },
@@ -629,7 +635,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10785,
+      "loadTimeMs": 9635,
       "duration": "98s",
       "resolution": "640x360"
     },
@@ -643,7 +649,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 11122,
+      "loadTimeMs": 11841,
       "duration": "230s",
       "resolution": "640x360"
     },
@@ -657,7 +663,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10746,
+      "loadTimeMs": 9701,
       "duration": "170s",
       "resolution": "640x360"
     },
@@ -671,7 +677,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 6760,
+      "loadTimeMs": 10469,
       "duration": "85s",
       "resolution": "640x360"
     },
@@ -685,7 +691,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15730,
+      "loadTimeMs": 16065,
       "duration": "185s",
       "resolution": "640x360"
     },
@@ -699,7 +705,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15731,
+      "loadTimeMs": 15566,
       "duration": "265s",
       "resolution": "640x360"
     },
@@ -713,7 +719,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15457,
+      "loadTimeMs": 15816,
       "duration": "185s",
       "resolution": "640x360"
     },
@@ -727,7 +733,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15147,
+      "loadTimeMs": 14883,
       "duration": "525s",
       "resolution": "640x360"
     },
@@ -741,7 +747,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 16216,
+      "loadTimeMs": 15551,
       "duration": "85s",
       "resolution": "640x360"
     },
@@ -755,7 +761,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 16517,
+      "loadTimeMs": 15547,
       "duration": "760s",
       "resolution": "640x360"
     },
@@ -769,7 +775,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15784,
+      "loadTimeMs": 15344,
       "duration": "149s",
       "resolution": "640x360"
     },
@@ -783,7 +789,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 17479,
+      "loadTimeMs": 16005,
       "duration": "100s",
       "resolution": "640x360"
     },
@@ -797,7 +803,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 16979,
+      "loadTimeMs": 14960,
       "duration": "208s",
       "resolution": "640x360"
     },
@@ -811,7 +817,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15870,
+      "loadTimeMs": 15751,
       "duration": "181s",
       "resolution": "640x360"
     },
@@ -825,7 +831,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 25492,
+      "loadTimeMs": 23540,
       "duration": "162s",
       "resolution": "640x360"
     },
@@ -839,7 +845,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 24654,
+      "loadTimeMs": 23286,
       "duration": "311s",
       "resolution": "640x360"
     },
@@ -853,7 +859,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23964,
+      "loadTimeMs": 23965,
       "duration": "134s",
       "resolution": "640x360"
     },
@@ -867,7 +873,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23999,
+      "loadTimeMs": 24236,
       "duration": "636s",
       "resolution": "640x360"
     },
@@ -881,7 +887,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 26188,
+      "loadTimeMs": 24191,
       "duration": "240s",
       "resolution": "640x360"
     },
@@ -895,7 +901,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 24168,
+      "loadTimeMs": 24174,
       "duration": "340s",
       "resolution": "640x360"
     },
@@ -909,7 +915,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23712,
+      "loadTimeMs": 23930,
       "duration": "207s",
       "resolution": "640x360"
     },
@@ -923,7 +929,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23942,
+      "loadTimeMs": 24209,
       "duration": "267s",
       "resolution": "640x360"
     },
@@ -937,7 +943,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23904,
+      "loadTimeMs": 23619,
       "duration": "408s",
       "resolution": "640x360"
     },
@@ -951,7 +957,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 23978,
+      "loadTimeMs": 23441,
       "duration": "214s",
       "resolution": "640x360"
     },
@@ -965,7 +971,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 32088,
+      "loadTimeMs": 32054,
       "duration": "225s",
       "resolution": "640x360"
     },
@@ -979,7 +985,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 32032,
+      "loadTimeMs": 31735,
       "duration": "291s",
       "resolution": "640x360"
     },
@@ -993,7 +999,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 32091,
+      "loadTimeMs": 32111,
       "duration": "167s",
       "resolution": "640x360"
     },
@@ -1007,7 +1013,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 31820,
+      "loadTimeMs": 32355,
       "duration": "175s",
       "resolution": "640x360"
     },
@@ -1021,7 +1027,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 31952,
+      "loadTimeMs": 32084,
       "duration": "104s",
       "resolution": "640x360"
     },
@@ -1035,7 +1041,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 32124,
+      "loadTimeMs": 32045,
       "duration": "186s",
       "resolution": "640x360"
     },
@@ -1049,7 +1055,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 31926,
+      "loadTimeMs": 31476,
       "duration": "114s",
       "resolution": "640x360"
     },
@@ -1063,7 +1069,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 31772,
+      "loadTimeMs": 31733,
       "duration": "107s",
       "resolution": "640x360"
     },
@@ -1077,7 +1083,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 33908,
+      "loadTimeMs": 32379,
       "duration": "333s",
       "resolution": "640x360"
     },
@@ -1091,7 +1097,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 31868,
+      "loadTimeMs": 32392,
       "duration": "212s",
       "resolution": "640x360"
     },
@@ -1105,7 +1111,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/1d0ec518-70f3-4c8b-b389-26545945675b/Episode 1 and 2 titles copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1949,
+      "loadTimeMs": 2437,
       "duration": "658s",
       "resolution": "640x360"
     },
@@ -1119,7 +1125,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/187d2637-f389-440f-bdbf-b8082681729a/1 full moses story copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1895,
+      "loadTimeMs": 2049,
       "duration": "625s",
       "resolution": "640x360"
     },
@@ -1133,7 +1139,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/fbaf7c54-b693-4a83-8f60-a55a1f5f42e5/Enders Title Cards copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2163,
+      "loadTimeMs": 2238,
       "duration": "77s",
       "resolution": "640x360"
     },
@@ -1147,7 +1153,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/f436884d-488e-4e9a-9316-26c81cda9f96/KINGDOM_MLDavidGoliathPt1_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2425,
+      "loadTimeMs": 2467,
       "duration": "472s",
       "resolution": "640x360"
     },
@@ -1161,7 +1167,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/996b762c-9869-4614-85ed-41464b315fdc/KINGDOM_MLDavidGoliathPt2_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2009,
+      "loadTimeMs": 1510,
       "duration": "408s",
       "resolution": "640x360"
     },
@@ -1175,7 +1181,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/b2367430-3e5c-402c-84ea-9a9b8c8a2efa/Enders Title Cards Hebrew Brothers (1).jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1864,
+      "loadTimeMs": 2445,
       "duration": "74s",
       "resolution": "640x360"
     },
@@ -1189,7 +1195,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/d31a737b-5e14-48a6-b108-3b9956d4f0d7/3 Hebrew Brothers 2.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1870,
+      "loadTimeMs": 1745,
       "duration": "135s",
       "resolution": "640x360"
     },
@@ -1203,7 +1209,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/a267a5c5-93d7-49c2-972b-fb426033a521/Enders Title Cards copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1897,
+      "loadTimeMs": 1970,
       "duration": "135s",
       "resolution": "640x360"
     },
@@ -1217,7 +1223,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/bc901b64-febc-4ace-af92-6f419cab026f/KINGDOM_MLChristmas_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2329,
+      "loadTimeMs": 1955,
       "duration": "302s",
       "resolution": "640x360"
     },
@@ -1231,7 +1237,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/11ad7290-a7b1-465e-bc1a-18eff346fc28/KINGDOM_MLNoahPt1_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2672,
+      "loadTimeMs": 2720,
       "duration": "395s",
       "resolution": "640x360"
     },
@@ -1245,7 +1251,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10179,
+      "loadTimeMs": 10346,
       "duration": "349s",
       "resolution": "640x360"
     },
@@ -1259,7 +1265,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10492,
+      "loadTimeMs": 9786,
       "duration": "118s",
       "resolution": "640x360"
     },
@@ -1273,7 +1279,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10988,
+      "loadTimeMs": 9824,
       "duration": "443s",
       "resolution": "640x360"
     },
@@ -1287,7 +1293,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10419,
+      "loadTimeMs": 11212,
       "duration": "371s",
       "resolution": "640x360"
     },
@@ -1301,7 +1307,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9393,
+      "loadTimeMs": 11663,
       "duration": "676s",
       "resolution": "640x360"
     },
@@ -1315,7 +1321,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9761,
+      "loadTimeMs": 10262,
       "duration": "407s",
       "resolution": "640x360"
     },
@@ -1329,7 +1335,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 6962,
+      "loadTimeMs": 7511,
       "duration": "512s",
       "resolution": "640x360"
     },
@@ -1343,7 +1349,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9995,
+      "loadTimeMs": 10422,
       "duration": "487s",
       "resolution": "640x360"
     },
@@ -1357,7 +1363,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9766,
+      "loadTimeMs": 9833,
       "duration": "434s",
       "resolution": "640x360"
     },
@@ -1371,7 +1377,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 11317,
+      "loadTimeMs": 9592,
       "duration": "435s",
       "resolution": "640x360"
     },
@@ -1385,7 +1391,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 17681,
+      "loadTimeMs": 15765,
       "duration": "501s",
       "resolution": "640x360"
     },
@@ -1399,7 +1405,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 16152,
+      "loadTimeMs": 15275,
       "duration": "604s",
       "resolution": "640x360"
     },
@@ -1413,7 +1419,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15816,
+      "loadTimeMs": 15564,
       "duration": "451s",
       "resolution": "640x360"
     },
@@ -1427,7 +1433,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15710,
+      "loadTimeMs": 15530,
       "duration": "353s",
       "resolution": "640x360"
     },
@@ -1441,7 +1447,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 15257,
+      "loadTimeMs": 15165,
       "duration": "184s",
       "resolution": "640x360"
     },
@@ -1455,7 +1461,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/2b676607-574f-4997-80b5-596d6ef7f9d0/KINGDOM_BBSCreation_Thumb (1).png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2075,
+      "loadTimeMs": 2310,
       "duration": "182s",
       "resolution": "640x360"
     },
@@ -1469,7 +1475,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4303868d-a9c9-40fd-a25c-0892aab1a499/KINGDOM_JesusMiracles_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2466,
+      "loadTimeMs": 2148,
       "duration": "150s",
       "resolution": "640x360"
     },
@@ -1483,7 +1489,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/7ed33ba6-5891-4525-95f6-8ef791f89c46/KINGDOM_BBSJohntheBaptist_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1919,
+      "loadTimeMs": 2151,
       "duration": "258s",
       "resolution": "640x360"
     },
@@ -1497,7 +1503,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/72c7e315-206d-4443-a4fb-ec171f5e3824/KINGDOM_BBSNoahArk_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2404,
+      "loadTimeMs": 2158,
       "duration": "158s",
       "resolution": "640x360"
     },
@@ -1511,7 +1517,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/1d3177fe-7046-4d74-ba2c-edc330f2b313/KINGDOM_BBSMoses_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2117,
+      "loadTimeMs": 2063,
       "duration": "224s",
       "resolution": "640x360"
     },
@@ -1525,7 +1531,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/14e63165-8bcb-4ee3-859c-a057da824db8/KINGDOM_SONGGreatGod_Thumb2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1925,
+      "loadTimeMs": 1715,
       "duration": "217s",
       "resolution": "640x360"
     },
@@ -1539,7 +1545,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/1430c542-bb99-4b58-99e7-128b1030fb06/KINGDOM_SONGHisHands_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2349,
+      "loadTimeMs": 2159,
       "duration": "108s",
       "resolution": "640x360"
     },
@@ -1553,7 +1559,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/49123b8f-66c7-4555-a2a9-2e9ee20f9c33/Intro title copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2356,
+      "loadTimeMs": 2467,
       "duration": "141s",
       "resolution": "640x360"
     },
@@ -1567,7 +1573,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/67b07475-78a7-4515-a23a-bd39e36b3235/KINGDOM_FOVGentleness_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1912,
+      "loadTimeMs": 2635,
       "duration": "121s",
       "resolution": "640x360"
     },
@@ -1581,7 +1587,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/64e95279-c998-41d5-9488-b95fca9d672b/KINGDOM_FOVGoodness_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1847,
+      "loadTimeMs": 2502,
       "duration": "115s",
       "resolution": "640x360"
     },
@@ -1595,7 +1601,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 11277,
+      "loadTimeMs": 11313,
       "duration": "137s",
       "resolution": "640x360"
     },
@@ -1609,7 +1615,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 11085,
+      "loadTimeMs": 11074,
       "duration": "169s",
       "resolution": "640x360"
     },
@@ -1623,7 +1629,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/fff66fea-6510-4391-89a0-ff3af6ecbfc0/PLAYWATCH_VID_AlienHouse_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2494,
+      "loadTimeMs": 2158,
       "duration": "95s",
       "resolution": "640x360"
     },
@@ -1637,7 +1643,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/3820a4b0-b2de-42de-9614-6719fba36287/PLAYWATCH_VID_AuntieGift_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1902,
+      "loadTimeMs": 2204,
       "duration": "174s",
       "resolution": "640x360"
     },
@@ -1651,7 +1657,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/adea5180-0077-4b6f-90f7-fe53ce334710/PLAYWATCH_VID_BraveBoa_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2313,
+      "loadTimeMs": 1927,
       "duration": "113s",
       "resolution": "640x360"
     },
@@ -1665,7 +1671,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/f0c9560b-17d8-45a5-a87b-1b89082f9705/PLAYWATCH_GreatTidy_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1868,
+      "loadTimeMs": 2665,
       "duration": "101s",
       "resolution": "640x360"
     },
@@ -1679,7 +1685,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/cc438094-dbd9-48e5-a966-d901f9f49b13/PLAYWATCH_LostInternet_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1897,
+      "loadTimeMs": 2307,
       "duration": "379s",
       "resolution": "640x360"
     },
@@ -1693,7 +1699,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/91b9c45f-1472-4794-a534-14ccda5d750f/PLAYWATCH_Meera_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1860,
+      "loadTimeMs": 2133,
       "duration": "127s",
       "resolution": "640x360"
     },
@@ -1707,7 +1713,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/899e5572-e6df-4dcd-8263-ceca77877975/PLAYWATCH_Chiu_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2483,
+      "loadTimeMs": 2190,
       "duration": "125s",
       "resolution": "640x360"
     },
@@ -1721,7 +1727,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/6884d622-637e-4168-a1a0-c6d2c02aad06/PLAYWATCH_Malar_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1866,
+      "loadTimeMs": 2446,
       "duration": "105s",
       "resolution": "640x360"
     },
@@ -1735,7 +1741,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/409f00e2-5336-4ec8-8b9e-e8fef82cfdef/PLAYWATCH_VID_H3ABC_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1962,
+      "loadTimeMs": 1546,
       "duration": "109s",
       "resolution": "640x360"
     },
@@ -1749,7 +1755,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/a4e15e08-63a5-4021-b2fe-dc6a01ffd3cd/Dissagreement among Occupations Title.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1892,
+      "loadTimeMs": 2704,
       "duration": "76s",
       "resolution": "640x360"
     },
@@ -1763,7 +1769,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10835,
+      "loadTimeMs": 11327,
       "duration": "95s",
       "resolution": "640x360"
     },
@@ -1777,7 +1783,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10772,
+      "loadTimeMs": 11123,
       "duration": "160s",
       "resolution": "640x360"
     },
@@ -1791,7 +1797,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/972c77e5-9877-42f7-bce4-702e50fe391a/PLAYWATCH_5Monkeys_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2077,
+      "loadTimeMs": 1666,
       "duration": "116s",
       "resolution": "640x360"
     },
@@ -1805,7 +1811,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/33496e0c-01f3-4b8e-9a09-b3da2c8ac0c5/PLAYWATCH_VID_AddingMixedNumbers_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2624,
+      "loadTimeMs": 1700,
       "duration": "36s",
       "resolution": "640x360"
     },
@@ -1819,7 +1825,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/3b529378-7a47-47da-a3c5-4c21042ddce4/PLAYWATCH_VID_AlgebraThinking_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2495,
+      "loadTimeMs": 1908,
       "duration": "47s",
       "resolution": "640x360"
     },
@@ -1833,7 +1839,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/7fd6c669-0c47-454e-ba56-d33e411ce106/PLAYWATCH_VID_CompFractions_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1847,
+      "loadTimeMs": 1671,
       "duration": "46s",
       "resolution": "640x360"
     },
@@ -1847,7 +1853,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/561d091b-276e-4784-aea7-f34632681697/PLAYWATCH_VID_CompAlgebraThinking_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1870,
+      "loadTimeMs": 1641,
       "duration": "63s",
       "resolution": "640x360"
     },
@@ -1861,7 +1867,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/782ad9b1-5cd5-42cc-b8c5-3c28b3077726/PLAYWATCH_MathWithMoney_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2349,
+      "loadTimeMs": 1854,
       "duration": "52s",
       "resolution": "640x360"
     },
@@ -1875,7 +1881,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/bf0b3073-9b1c-4317-8514-f8ca826fb4b7/PLAYWATCH_MeasureAreaVolume_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2121,
+      "loadTimeMs": 1895,
       "duration": "43s",
       "resolution": "640x360"
     },
@@ -1889,7 +1895,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/6e74aba2-2133-4d87-bf4d-8cdd991ec27b/PLAYWATCH_ModelingMultiples_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1947,
+      "loadTimeMs": 2391,
       "duration": "33s",
       "resolution": "640x360"
     },
@@ -1903,7 +1909,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/2e3eadcc-ae4b-42b7-ae54-9aec7ff550f7/PLAYWATCH_VID_NumberLines_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1886,
+      "loadTimeMs": 2212,
       "duration": "73s",
       "resolution": "640x360"
     },
@@ -1917,7 +1923,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/c16a1a0f-2c9e-46f5-a966-e80f3cd76410/PLAYWATCH_VID_NumberSense_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 1864,
+      "loadTimeMs": 1656,
       "duration": "72s",
       "resolution": "640x360"
     },
@@ -1931,7 +1937,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10911,
+      "loadTimeMs": 11413,
       "duration": "124s",
       "resolution": "640x360"
     },
@@ -1945,7 +1951,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10432,
+      "loadTimeMs": 10843,
       "duration": "164s",
       "resolution": "640x360"
     },
@@ -1959,7 +1965,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 10917,
+      "loadTimeMs": 9973,
       "duration": "134s",
       "resolution": "640x360"
     },
@@ -1973,7 +1979,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9406,
+      "loadTimeMs": 10857,
       "duration": "213s",
       "resolution": "640x360"
     },
@@ -1987,7 +1993,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9980,
+      "loadTimeMs": 10247,
       "duration": "204s",
       "resolution": "640x360"
     },
@@ -2001,7 +2007,7 @@
       "thumbnailUrl": "",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 9476,
+      "loadTimeMs": 11297,
       "duration": "83s",
       "resolution": "640x360"
     },
@@ -2015,7 +2021,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4780be1a-cf12-4208-889f-64ec142dab8f/PLAYWATCH_VID_PRATHEROPPOSITES_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 2393,
+      "loadTimeMs": 1746,
       "duration": "198s",
       "resolution": "640x360"
     },
@@ -2029,7 +2035,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/da00b9bc-56c8-4870-94a5-47e21f5fa32d/Shape song.jpeg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4582,
+      "loadTimeMs": 4491,
       "duration": "89s",
       "resolution": "640x360"
     },
@@ -2043,7 +2049,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/a71d30fd-a3dc-403d-a400-bfef3ef1158b/Behave In school.jpeg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4749,
+      "loadTimeMs": 4263,
       "duration": "95s",
       "resolution": "640x360"
     },
@@ -2057,7 +2063,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/f28bf741-f881-420a-b059-cc6ae871d831/Animal .jpeg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5112,
+      "loadTimeMs": 4778,
       "duration": "39s",
       "resolution": "640x360"
     },
@@ -2071,7 +2077,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4a5fe7d4-f436-404f-9f50-1bb42130148c/Whoa Title Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4664,
+      "loadTimeMs": 4038,
       "duration": "128s",
       "resolution": "640x360"
     },
@@ -2085,7 +2091,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/86d6a0a7-e639-4194-8806-c2ee81c56d6a/Windshield WipersTitle Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4446,
+      "loadTimeMs": 4769,
       "duration": "176s",
       "resolution": "640x360"
     },
@@ -2099,7 +2105,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/ae8329d3-a352-40d3-8504-849c451d1b6e/TEacher Title Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5202,
+      "loadTimeMs": 4892,
       "duration": "125s",
       "resolution": "640x360"
     },
@@ -2113,7 +2119,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/fb08a001-9fbd-4ab5-8731-4f272eb66779/SMILE KIDS Title Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4381,
+      "loadTimeMs": 3731,
       "duration": "189s",
       "resolution": "640x360"
     },
@@ -2127,7 +2133,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4c2d526f-5b6c-4a1e-bd4e-f4737acd37a3/Ring Around the Rosey  Title Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4874,
+      "loadTimeMs": 4591,
       "duration": "178s",
       "resolution": "640x360"
     },
@@ -2141,7 +2147,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/7dc61f58-c70a-43dd-a08d-c6c54685de1b/FR2L Title Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3950,
+      "loadTimeMs": 3755,
       "duration": "157s",
       "resolution": "640x360"
     },
@@ -2155,7 +2161,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/ebbc4628-14fa-429d-9a57-a34837dc5c59/CHAMPION Title Card copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4643,
+      "loadTimeMs": 4657,
       "duration": "151s",
       "resolution": "640x360"
     },
@@ -2169,7 +2175,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/986b7f31-1651-49a1-844a-f425dd5d27cb/Bobble heads Title Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5654,
+      "loadTimeMs": 4140,
       "duration": "125s",
       "resolution": "640x360"
     },
@@ -2183,7 +2189,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/a67e0f96-6278-4684-a586-04a1a0d4a387/Born 2 Be Wild Title Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4894,
+      "loadTimeMs": 4140,
       "duration": "168s",
       "resolution": "640x360"
     },
@@ -2197,7 +2203,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/6651775f-92b1-4154-959f-7bc567d23f72/KINGDOM_SONGLightofMine_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4157,
+      "loadTimeMs": 4870,
       "duration": "143s",
       "resolution": "640x360"
     },
@@ -2211,7 +2217,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/522acb5d-ea56-4719-8912-3490956465a6/KINGDOM_JesusLovesme_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4623,
+      "loadTimeMs": 4392,
       "duration": "151s",
       "resolution": "640x360"
     },
@@ -2225,7 +2231,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/73608d01-5e69-402b-b984-7d0f6f6ab991/PLAYWATCH_Wiggles_Thumb copy 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4640,
+      "loadTimeMs": 4655,
       "duration": "149s",
       "resolution": "640x360"
     },
@@ -2239,7 +2245,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/c37e431b-b298-4159-9190-6ad62e38ffaf/PLAYWATCH_RowYourBoat_Thumb copy 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5075,
+      "loadTimeMs": 4172,
       "duration": "96s",
       "resolution": "640x360"
     },
@@ -2253,7 +2259,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/fde9313a-7641-4798-9eef-cb3bd082775e/PLAYWATCH_MaryHadALittleLamb_Thumb copy 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5006,
+      "loadTimeMs": 4184,
       "duration": "108s",
       "resolution": "640x360"
     },
@@ -2267,7 +2273,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/005ab49b-8eaf-4ebb-89e6-831cdabb3a94/PLAYWATCH_VID_IniMiniMoe_VidPreview copy 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4861,
+      "loadTimeMs": 3779,
       "duration": "155s",
       "resolution": "640x360"
     },
@@ -2281,7 +2287,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/b595ec1a-b425-479e-8f54-b98d2155a681/PLAYWATCH_ClapThoseHands_Thumb copy 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4671,
+      "loadTimeMs": 4034,
       "duration": "168s",
       "resolution": "640x360"
     },
@@ -2295,7 +2301,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/7a7af214-a722-468d-9a7d-32596ef551bf/PLAYWATCH_Basketball_Thumb copy 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4181,
+      "loadTimeMs": 4179,
       "duration": "262s",
       "resolution": "640x360"
     },
@@ -2309,7 +2315,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/19ceb6fc-d588-40ef-90c5-9619a419b20d/PLAYWATCH_BabyShark_Thumb copy 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4679,
+      "loadTimeMs": 4238,
       "duration": "157s",
       "resolution": "640x360"
     },
@@ -2323,7 +2329,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/56718b15-6dd1-4865-8f62-2c78c5232ade/PLAYWATCH_VID_H3BELIEVE_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4191,
+      "loadTimeMs": 3991,
       "duration": "159s",
       "resolution": "640x360"
     },
@@ -2337,7 +2343,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/9a9b17a4-90ce-409d-ac17-530484e83196/PLAYWATCH_VID_H3AFFIRIMATIONS_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4366,
+      "loadTimeMs": 4430,
       "duration": "155s",
       "resolution": "640x360"
     },
@@ -2351,7 +2357,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4a9c9d00-18a2-4f89-8200-8611bd6e2a32/PLAYWATCH_PauseDance_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4625,
+      "loadTimeMs": 4153,
       "duration": "82s",
       "resolution": "640x360"
     },
@@ -2365,7 +2371,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/d8b5b1d5-ea75-4691-a319-ef1ad8c6ecd0/PLAYWATCH_CrosingStreet_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3742,
+      "loadTimeMs": 4619,
       "duration": "127s",
       "resolution": "640x360"
     },
@@ -2379,7 +2385,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/ef960175-a650-4f5c-bec3-70fc2c4996ac/PLAYWATCH_SoundItOut_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3853,
+      "loadTimeMs": 3676,
       "duration": "142s",
       "resolution": "640x360"
     },
@@ -2393,7 +2399,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/7ceaff00-c99a-4b58-9092-8ab1e7791f51/PLAYWATCH_SchooltimeItty_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4591,
+      "loadTimeMs": 3744,
       "duration": "105s",
       "resolution": "640x360"
     },
@@ -2407,7 +2413,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/bf3d8981-2bdc-4fec-aabe-f1fe3b7a3820/PLAYWATCH_VID_RainRain_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3944,
+      "loadTimeMs": 3972,
       "duration": "147s",
       "resolution": "640x360"
     },
@@ -2421,7 +2427,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/36981665-54ff-40b6-af63-c6f3966ef8d8/PLAYWATCH_DaysOfTheWeek_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4501,
+      "loadTimeMs": 3929,
       "duration": "197s",
       "resolution": "640x360"
     },
@@ -2435,7 +2441,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/d608de21-c7de-483e-b58f-314f3f91b105/PLAYWATCH_MakeItOut_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4388,
+      "loadTimeMs": 3718,
       "duration": "184s",
       "resolution": "640x360"
     },
@@ -2449,7 +2455,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/47d91fd5-22da-4c57-ae99-6dd4484c7381/KINGDOM_SONGDowninHisHeart_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3894,
+      "loadTimeMs": 4834,
       "duration": "128s",
       "resolution": "640x360"
     },
@@ -2463,7 +2469,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/f298f79f-d99f-41bb-9814-edc331bfe9ec/PLAYWATCH_KidsJustwantFun_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3887,
+      "loadTimeMs": 4627,
       "duration": "196s",
       "resolution": "640x360"
     },
@@ -2477,7 +2483,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/cd00ba8a-4ace-440e-9e25-4e03d0160387/PLAYWATCH_VID_IceCreamTruck_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4399,
+      "loadTimeMs": 4558,
       "duration": "96s",
       "resolution": "640x360"
     },
@@ -2491,7 +2497,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/9ec30bd4-0745-402c-9031-86fdf956c8b3/PLAYWATCH_VID_ImPrinces_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4153,
+      "loadTimeMs": 3505,
       "duration": "134s",
       "resolution": "640x360"
     },
@@ -2505,7 +2511,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/811021ba-ef54-4de6-8dee-217be1a47b64/PLAYWATCH_VID_I wantoSeeMyFriends_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3860,
+      "loadTimeMs": 4247,
       "duration": "122s",
       "resolution": "640x360"
     },
@@ -2519,7 +2525,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/38a5371c-c8f3-4e32-823b-428f17025f3c/PLAYWATCH_Great_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4449,
+      "loadTimeMs": 4306,
       "duration": "216s",
       "resolution": "640x360"
     },
@@ -2533,7 +2539,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/6eebf6d0-36d0-4dcc-8a12-d72b84eb0e18/PLAYWATCH_GrandMa_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4420,
+      "loadTimeMs": 4673,
       "duration": "129s",
       "resolution": "640x360"
     },
@@ -2547,7 +2553,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/e4dc36c7-978f-4994-9c72-9ef3ec9b772d/PLAYWATCH_Goodvibes_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4339,
+      "loadTimeMs": 4700,
       "duration": "158s",
       "resolution": "640x360"
     },
@@ -2561,7 +2567,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/ace3209d-784d-47f4-b441-afa566228739/PLAYWATCH_GoodJuJu_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4914,
+      "loadTimeMs": 4139,
       "duration": "144s",
       "resolution": "640x360"
     },
@@ -2575,7 +2581,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/15a864f7-716b-4e24-97ca-c21537bae9f3/PLAYWATCH_GoGetIt_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4375,
+      "loadTimeMs": 4143,
       "duration": "140s",
       "resolution": "640x360"
     },
@@ -2589,7 +2595,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/6b31a1a1-2fb6-470e-9645-a93b4eaa4349/PLAYWATCH_VID_Ballin_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4832,
+      "loadTimeMs": 4440,
       "duration": "203s",
       "resolution": "640x360"
     }
