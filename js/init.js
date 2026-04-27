@@ -143,9 +143,12 @@ window.addEventListener('DOMContentLoaded', async function() {
       } else {
         // No active run — load latest report from the data branch
         await KL.loadCloudReport();
+        // Start watcher: polls every 30s to detect when next run fires
+        KL.startRunWatcher();
       }
     }
   } catch (e) {
     await KL.loadCloudReport();
+    KL.startRunWatcher();
   }
 });

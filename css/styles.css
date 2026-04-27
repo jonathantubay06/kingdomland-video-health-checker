@@ -3134,6 +3134,22 @@ body, .app-header, .stat-card, .section-card, .modal,
   .stat-value { font-size: 1.6rem; }
 }
 
+/* ---- Run watcher live dot ---- */
+.watcher-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  margin-right: 5px;
+  vertical-align: middle;
+  animation: watcher-pulse 2s ease-in-out infinite;
+}
+@keyframes watcher-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.75); }
+}
+
 /* ============================================================
    FUN / VISUAL POLISH
    ============================================================ */

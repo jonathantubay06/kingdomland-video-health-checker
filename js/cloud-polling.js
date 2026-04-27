@@ -45,6 +45,8 @@ KL.pollCloudStatus = async function() {
         document.getElementById('progress-section').classList.remove('visible');
         alert('Check finished with status: ' + data.conclusion + '. Check GitHub Actions for details.');
       }
+      // Resume watching for the next run
+      KL.restartRunWatcherAfterRun && KL.restartRunWatcherAfterRun();
     }
   } catch (e) {
     console.error('Polling error:', e);
