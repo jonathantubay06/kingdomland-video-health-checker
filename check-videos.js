@@ -134,6 +134,9 @@ async function login(page) {
     throw new Error(`Login failed — navigation error: ${err.message}`);
   }
 
+  // After login, the SPA may still be doing a client-side redirect.
+  // Wait for network idle so page.evaluate() doesn't hit a torn-down context.
+  await page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => {});
 
   log('Logged in successfully!');
 
@@ -147,18 +150,31 @@ async function login(page) {
  * Clicks on the first available profile.
  */
 async function handleProfileSelection(page) {
-  // Wait a bit for page to stabilize
-  await page.waitForTimeout(1000);
+  // Wait for page to fully stabilize after login redirect
+  await page.waitForLoadState('domcontentloaded', { timeout: 10000 }).catch(() => {});
+  await page.waitForTimeout(1200);
 
-  // Check if we're on a profile selection page - use multiple checks
-  const pageInfo = await page.evaluate(() => {
-    return {
-      url: window.location.pathname,
-      hasWatchingText: document.body.textContent.includes("Who's Watching"),
-      hasProfileCard: !!document.querySelector('[class*="profileCard"]'),
-      bodyText: document.body.textContent.substring(0, 200)
-    };
-  });
+  // Check if we're on a profile selection page — retry if context is still navigating
+  let pageInfo = null;
+  for (let attempt = 0; attempt < 4; attempt++) {
+    try {
+      pageInfo = await page.evaluate(() => ({
+        url: window.location.pathname,
+        hasWatchingText: document.body.textContent.includes("Who's Watching"),
+        hasProfileCard: !!document.querySelector('[class*="profileCard"]'),
+        bodyText: document.body.textContent.substring(0, 200)
+      }));
+      break; // success
+    } catch (evalErr) {
+      if (evalErr.message.includes('Execution context was destroyed') && attempt < 3) {
+        log(`   (context navigating, retrying in 1.5s… attempt ${attempt + 1})`);
+        await page.waitForLoadState('networkidle', { timeout: 8000 }).catch(() => {});
+        await page.waitForTimeout(1500);
+      } else {
+        throw evalErr;
+      }
+    }
+  }
 
   log(`   Debug: URL=${pageInfo.url}, HasWatching=${pageInfo.hasWatchingText}, HasCard=${pageInfo.hasProfileCard}`);
 
