@@ -10,11 +10,13 @@ on:
         default: ''
         type: string
 
-  # Scheduled auto-checks: 3x daily (Philippine Time = UTC+8)
-  #   Morning:  8 AM PHT  = 0:00 UTC
-  #   Lunch:   12 PM PHT  = 4:00 UTC
-  #   Night:    8 PM PHT  = 12:00 UTC
+  # Scheduled auto-checks: 4x daily (Philippine Time = UTC+8)
+  #   Midnight: 12 AM PHT = 16:00 UTC (previous day)
+  #   Morning:   8 AM PHT =  0:00 UTC
+  #   Lunch:    12 PM PHT =  4:00 UTC
+  #   Night:     8 PM PHT = 12:00 UTC
   schedule:
+    - cron: '0 16 * * *'
     - cron: '0 0 * * *'
     - cron: '0 4 * * *'
     - cron: '0 12 * * *'

@@ -1,6 +1,6 @@
 // Schedule info — read-only display of the GitHub Actions cron schedule.
-// The schedule is managed via .github/workflows/check-videos.yml (cron: '0 0,4,12 * * *')
-// which runs at 00:00, 04:00, and 12:00 UTC = 8AM, 12PM, 8PM Philippine Time (UTC+8).
+// The schedule is managed via .github/workflows/check-videos.yml — runs 4× daily
+// at 16:00, 00:00, 04:00, 12:00 UTC = 12AM, 8AM, 12PM, 8PM Philippine Time (UTC+8).
 // There is no in-app schedule editor — changes require editing the workflow YAML.
 window.KL = window.KL || {};
 
@@ -16,8 +16,8 @@ KL.initScheduleUI = function() {
     '<h3>Schedule</h3>' +
     '<div class="schedule-info-row">' +
       clockSvg +
-      '<span>Runs automatically: <strong>8AM &middot; 12PM &middot; 8PM PH time</strong></span>' +
+      '<span>Runs automatically: <strong>12AM &middot; 8AM &middot; 12PM &middot; 8PM PH time</strong></span>' +
     '</div>' +
-    '<p class="schedule-note"><small>Managed via GitHub Actions cron (<code>0 0,4,12 * * *</code> UTC). ' +
+    '<p class="schedule-note"><small>Managed via GitHub Actions cron (<code>0 0,4,12,16 * * *</code> UTC). ' +
       'To change the schedule, edit <code>.github/workflows/check-videos.yml</code>.</small></p>';
 };
