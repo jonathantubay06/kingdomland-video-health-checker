@@ -14,7 +14,7 @@ KL.updateSectionBreakdown = function() {
     card.innerHTML = `
       <div class="section-card-header">
         <span class="section-name">${KL.escHtml(s.section)}</span>
-        <span class="section-page-badge badge-${s.page === 'STORY' ? 'story' : 'music'}">${s.page}</span>
+        <span class="section-page-badge badge-${s.page === 'STORY' ? 'story' : s.page === 'MUSIC' ? 'music' : 'home'}">${s.page}</span>
       </div>
       <div class="section-bar-wrapper">
         <div class="section-bar-fill" style="width:0%"></div>

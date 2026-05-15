@@ -99,10 +99,8 @@ app.post('/api/run', (req, res) => {
     return res.status(409).json({ error: 'A check is already running' });
   }
 
-  const { mode, email, password, failedOnly, titles } = req.body || {};
+  const { email, password, failedOnly, titles } = req.body || {};
   const args = ['check-videos.js', '--json-stream'];
-  if (mode === 'story') args.push('--story');
-  if (mode === 'music') args.push('--music');
 
   // Pass credentials as env vars to child process (dashboard-provided or from server env)
   const childEnv = { ...process.env };
@@ -512,7 +510,7 @@ function applySchedule(config) {
       console.log('[Scheduled] No KL_EMAIL/KL_PASSWORD set, skipping scheduled check');
       return;
     }
-    const child = spawn('node', ['check-videos.js', '--mode=both'], {
+    const child = spawn('node', ['check-videos.js'], {
       cwd: __dirname,
       env: { ...process.env, KL_EMAIL: email, KL_PASSWORD: password },
     });

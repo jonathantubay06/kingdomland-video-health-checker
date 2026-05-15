@@ -88,15 +88,6 @@ window.addEventListener('DOMContentLoaded', async function() {
     if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
 
-  // Mode selector buttons (Both / Story / Music)
-  document.querySelectorAll('.mode-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.mode-btn').forEach(function(b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      KL.state.mode = btn.dataset.mode;
-    });
-  });
-
   // Initialize sound UI
   KL.updateSoundUI();
 

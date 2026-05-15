@@ -4,7 +4,6 @@
 // Both are kept in sync in renderComplete() and loadCloudReport().
 const state = {
   status: 'idle',      // 'idle' | 'running' | 'complete'
-  mode: 'both',        // 'both' | 'story' | 'music' — which pages to check
   phase: '',           // current check phase: 'login' | 'discovery' | 'checking'
   totalDiscovered: 0,
   checkedCount: 0,
@@ -30,13 +29,6 @@ let progressTimer = null;
 
 // ============== Init ==============
 window.addEventListener('DOMContentLoaded', async () => {
-  document.querySelectorAll('.mode-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      state.mode = btn.dataset.mode;
-    });
-  });
 
   // Feature 6: Initialize sound UI
   updateSoundUI();
@@ -170,7 +162,7 @@ async function startRunLocal(email, password) {
     const res = await fetch('/api/run', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ mode: state.mode, email, password }),
+      body: JSON.stringify({ email, password }),
     });
     if (res.status === 409) {
       alert('A check is already running!');
@@ -192,7 +184,7 @@ async function startRunCloud(email, password) {
     const res = await fetch('/api/trigger-check', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ mode: state.mode, email, password }),
+      body: JSON.stringify({ email, password }),
     });
     const data = await res.json();
     if (data.error) {
@@ -747,7 +739,7 @@ function updateSectionBreakdown() {
     card.innerHTML = `
       <div class="section-card-header">
         <span class="section-name">${escHtml(s.section)}</span>
-        <span class="section-page-badge badge-${s.page === 'STORY' ? 'story' : 'music'}">${s.page}</span>
+        <span class="section-page-badge badge-${s.page === 'STORY' ? 'story' : s.page === 'MUSIC' ? 'music' : 'home'}">${s.page}</span>
       </div>
       <div class="section-bar-wrapper">
         <div class="section-bar-fill" style="width:${rate}%"></div>
@@ -1180,7 +1172,7 @@ function printReport() {
   // Section cards
   const sectionCards = Object.values(sections).map(s => {
     const pct = s.total > 0 ? Math.round(s.passed / s.total * 100) : 0;
-    const tagClass = s.page === 'MUSIC' ? 'music' : 'story';
+    const tagClass = s.page === 'MUSIC' ? 'music' : s.page === 'STORY' ? 'story' : 'home';
     const barClass = s.failed > 0 ? 'has-fail' : '';
     return `
       <div class="print-section-card">
@@ -1546,7 +1538,7 @@ async function recheckFailedWithCreds(email, password, customTitles) {
       const res = await fetch('/api/run', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ mode: state.mode, failedOnly: true, titles, email, password }),
+        body: JSON.stringify({ failedOnly: true, titles, email, password }),
       });
       if (res.status === 409) {
         alert('A check is already running!');
@@ -1566,7 +1558,7 @@ async function recheckFailedWithCreds(email, password, customTitles) {
       const res = await fetch('/api/trigger-check', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ mode: state.mode, failedOnly: true, titles, email, password }),
+        body: JSON.stringify({ failedOnly: true, titles, email, password }),
       });
       const data = await res.json();
       if (data.error) {

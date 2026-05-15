@@ -4,15 +4,6 @@ on:
   # Manual trigger
   workflow_dispatch:
     inputs:
-      mode:
-        description: 'Check mode'
-        required: false
-        default: 'both'
-        type: choice
-        options:
-          - both
-          - story
-          - music
       titles:
         description: 'JSON array of video titles to re-check (empty = check all)'
         required: false
@@ -70,12 +61,7 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           PERF_WARN_MS: ${{ vars.PERF_WARN_MS || '8000' }}
           PERF_CRIT_MS: ${{ vars.PERF_CRIT_MS || '15000' }}
-        run: |
-          MODE="${{ github.event.inputs.mode || 'both' }}"
-          ARGS=""
-          if [ "$MODE" = "story" ]; then ARGS="--story"; fi
-          if [ "$MODE" = "music" ]; then ARGS="--music"; fi
-          node check-videos.js $ARGS
+        run: node check-videos.js
 
       - name: Upload failure screenshots
         if: always()
@@ -127,7 +113,7 @@ jobs:
           cp previous-report.json /tmp/reports/ 2>/dev/null || true
 
           # Create status metadata
-          echo "{\"updatedAt\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\",\"runId\":\"${{ github.run_id }}\",\"mode\":\"${{ github.event.inputs.mode || 'both' }}\"}" > /tmp/reports/status.json
+          echo "{\"updatedAt\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\",\"runId\":\"${{ github.run_id }}\"}" > /tmp/reports/status.json
 
           # Switch to data branch (create if needed)
           git fetch origin data 2>/dev/null || true

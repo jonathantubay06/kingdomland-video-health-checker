@@ -35,8 +35,9 @@ describe('lib/constants', () => {
   });
 
   describe('PAGE', () => {
-    it('exports STORY and MUSIC page identifiers', () => {
+    it('exports HOME identifier plus legacy STORY/MUSIC aliases', () => {
       expect(PAGE).toEqual({
+        HOME: 'HOME',
         STORY: 'STORY',
         MUSIC: 'MUSIC',
       });
@@ -47,6 +48,7 @@ describe('lib/constants', () => {
     // Verify the objects exist and have expected shape
     expect(Object.keys(STATUS)).toHaveLength(4);
     expect(Object.keys(RUN_STATUS)).toHaveLength(3);
-    expect(Object.keys(PAGE)).toHaveLength(2);
+    // HOME (new UI) + STORY/MUSIC (legacy aliases for historical reports)
+    expect(Object.keys(PAGE)).toHaveLength(3);
   });
 });

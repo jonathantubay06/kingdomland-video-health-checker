@@ -35,8 +35,9 @@ window.printReport = function() {
 
   var sectionCards = Object.values(sections).map(function(s) {
     var pct = s.total > 0 ? Math.round(s.passed / s.total * 100) : 0;
-    var tagColor = s.page === 'MUSIC' ? '#be185d' : '#6d28d9';
-    var tagBg = s.page === 'MUSIC' ? '#fce7f3' : '#ede9fe';
+    // Color by page: MUSIC=pink, STORY=purple, HOME (new UI)=gold
+    var tagColor = s.page === 'MUSIC' ? '#be185d' : s.page === 'STORY' ? '#6d28d9' : '#92400e';
+    var tagBg    = s.page === 'MUSIC' ? '#fce7f3' : s.page === 'STORY' ? '#ede9fe' : '#fef3c7';
     var barColor = s.failed > 0 ? '#ef4444' : '#22c55e';
     return '<div style="flex:1 1 calc(25% - 8px);min-width:160px;border:1px solid #e5e7eb;border-radius:8px;padding:10px 12px;background:#f9fafb">' +
       '<div style="font-size:0.82rem;font-weight:700;color:#1e1b4b;margin-bottom:3px">' + KL.escHtml(s.section) + '</div>' +

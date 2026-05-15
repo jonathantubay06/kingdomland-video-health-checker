@@ -14,7 +14,10 @@ export const RUN_STATUS = {
   COMPLETE: 'complete',
 } as const;
 
+// New UI: single Home page. STORY/MUSIC kept as legacy aliases
+// so historical reports still render in the dashboard.
 export const PAGE = {
+  HOME: 'HOME',
   STORY: 'STORY',
   MUSIC: 'MUSIC',
 } as const;

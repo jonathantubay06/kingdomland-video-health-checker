@@ -24,7 +24,7 @@ KL.recheckFailedWithCreds = async function(email, password, customTitles) {
       var res = await fetch('/api/run', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ mode: KL.state.mode, failedOnly: true, titles: titles, email: email, password: password }),
+        body: JSON.stringify({ failedOnly: true, titles: titles, email: email, password: password }),
       });
       if (res.status === 409) {
         alert('A check is already running!');
@@ -44,7 +44,7 @@ KL.recheckFailedWithCreds = async function(email, password, customTitles) {
       var res = await KL.apiFetch('/api/trigger-check', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ mode: KL.state.mode, failedOnly: true, titles: titles, email: email, password: password }),
+        body: JSON.stringify({ failedOnly: true, titles: titles, email: email, password: password }),
       });
       var data = await res.json();
       if (data.error) {
