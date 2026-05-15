@@ -18,11 +18,9 @@ exports.handler = async (event) => {
     return { statusCode: 500, body: JSON.stringify({ error: 'Server not configured' }) };
   }
 
-  let mode = 'both';
   let titles = '';
   try {
     const body = JSON.parse(event.body || '{}');
-    if (['both', 'story', 'music'].includes(body.mode)) mode = body.mode;
     // Pass failed video titles filter for "Check Failed Only"
     if (body.failedOnly && body.titles && body.titles.length) {
       titles = JSON.stringify(body.titles);
@@ -30,7 +28,7 @@ exports.handler = async (event) => {
   } catch {}
 
   try {
-    const inputs = { mode };
+    const inputs = {};
     if (titles) inputs.titles = titles;
 
     const res = await fetch(
