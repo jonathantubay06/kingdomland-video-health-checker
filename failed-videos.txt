@@ -1,8 +1,0 @@
-FAILED VIDEOS — go.kingdomlandkids.com
-Generated: 5/17/2026, 4:52:55 PM
-Total failed: 1 | Timed out: 0
-============================================================
-
-[FAIL] #186 [HOME] AlphaBots Letter A
-  URL:   https://go.kingdomlandkids.com/subscription
-  Error: Did not land on /watch/ (got https://go.kingdomlandkids.com/subscription)
