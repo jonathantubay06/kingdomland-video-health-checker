@@ -413,6 +413,25 @@ body {
 .badge-story { background: #e2e6f8; color: #3a56b0; }
 .badge-music { background: #f5e0f0; color: #a14d8a; }
 .badge-home  { background: #fef3c7; color: #92400e; } /* New UI: single HOME page */
+
+/* Integrity warning pills (audio / mismatch detection) — informational only */
+.integrity-pill {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 10px;
+  margin-left: 6px;
+  vertical-align: middle;
+  letter-spacing: 0.02em;
+  cursor: help;
+}
+.pill-silent     { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
+.pill-audio-warn { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+.pill-mismatch   { background: #fef3c7; color: #b45309; border: 1px solid #fcd34d; }
+[data-theme="dark"] .pill-silent     { background: #2e1515; color: #f87171; border-color: #5a2b2b; }
+[data-theme="dark"] .pill-audio-warn { background: #2a2010; color: #fbbf24; border-color: #5a4e2b; }
+[data-theme="dark"] .pill-mismatch   { background: #2a2010; color: #fbbf24; border-color: #5a4e2b; }
 .section-bar-wrapper {
   height: 8px;
   background: var(--color-fail-bg);

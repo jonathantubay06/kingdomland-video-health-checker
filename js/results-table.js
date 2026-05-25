@@ -40,6 +40,20 @@ KL.createResultRow = function(r) {
     ? '<span class="screenshot-indicator" title="Has screenshot">&#128247;</span>'
     : '';
 
+  // Integrity warning pills — informational only, doesn't affect PASS/FAIL
+  let warningPills = '';
+  if (r.hasAudio === false) {
+    warningPills += `<span class="integrity-pill pill-silent" title="${KL.escHtml(r.audioWarning || 'No audio detected')}">🔇 silent</span>`;
+  } else if (r.audioWarning) {
+    warningPills += `<span class="integrity-pill pill-audio-warn" title="${KL.escHtml(r.audioWarning)}">🔉 audio</span>`;
+  }
+  if (r.titleMismatch) {
+    warningPills += `<span class="integrity-pill pill-mismatch" title="${KL.escHtml(r.titleMismatch)}">⚠ title</span>`;
+  }
+  if (r.thumbnailMismatch) {
+    warningPills += `<span class="integrity-pill pill-mismatch" title="${KL.escHtml(r.thumbnailMismatch)}">⚠ thumb</span>`;
+  }
+
   const isSelected = KL.state.selectedTitles && KL.state.selectedTitles.indexOf(r.title) !== -1;
 
   const thumbHtml = r.thumbnailUrl
@@ -53,7 +67,7 @@ KL.createResultRow = function(r) {
     <td>
       <div class="result-title-cell">
         ${thumbHtml}
-        <strong><span class="video-title-link" onclick="event.stopPropagation();showVideoDetail('${KL.escHtml(r.title).replace(/'/g, "\\'")}')">${KL.escHtml(r.title)}</span></strong> ${screenshotIcon}
+        <strong><span class="video-title-link" onclick="event.stopPropagation();showVideoDetail('${KL.escHtml(r.title).replace(/'/g, "\\'")}')">${KL.escHtml(r.title)}</span></strong> ${screenshotIcon}${warningPills}
       </div>
     </td>
     <td>${KL.escHtml(r.section || '')}</td>

@@ -284,6 +284,11 @@ async function checkVideo(page, card, videoNum, totalLabel) {
     loadTimeMs: null,
     duration: null,
     resolution: '',
+    // Integrity flags (informational, never affect PASS/FAIL)
+    hasAudio: null,            // true | false | null (unknown)
+    audioWarning: null,        // human-readable note if audio is missing/muted
+    titleMismatch: null,       // "expected X, got Y" if watch page disagrees with card
+    thumbnailMismatch: null,   // UUID mismatch between card thumb and watch-page poster
   };
   const startTime = Date.now();
 
@@ -473,6 +478,14 @@ async function checkVideo(page, card, videoNum, totalLabel) {
       default:
         result.status = STATUS.UNKNOWN;
     }
+
+    // ---- INTEGRITY CHECKS (informational only — never flip PASS to FAIL) ----
+    // Only run when the video is PASSing — no point checking audio on a broken video.
+    if (result.status === STATUS.PASS) {
+      try {
+        await runIntegrityChecks(page, videoFrame, card, result, checkResult.hlsSrc);
+      } catch { /* integrity checks are best-effort, never affect status */ }
+    }
   } catch (e) {
     result.status = STATUS.FAIL;
     result.error = e.message;
@@ -500,7 +513,129 @@ function logResult(r, num, total) {
   const sec = r.section ? `[${r.section}] ` : '';
   const err = r.error ? ` -- ${r.error}` : '';
   const dur = r.duration ? ` [${r.duration}]` : '';
-  log(`   [${num}/${total}] ${icon} ${sec}${r.title}${dur} ${time}${err}`);
+  // Soft warnings (informational only — never affect PASS/FAIL)
+  const warns = [];
+  if (r.hasAudio === false) warns.push('🔇 silent');
+  if (r.titleMismatch) warns.push('⚠ title mismatch');
+  if (r.thumbnailMismatch) warns.push('⚠ thumb mismatch');
+  const warnStr = warns.length ? ` ${warns.join(' ')}` : '';
+  log(`   [${num}/${total}] ${icon} ${sec}${r.title}${dur} ${time}${warnStr}${err}`);
+}
+
+/**
+ * Integrity checks — INFORMATIONAL ONLY. Never flips PASS to FAIL.
+ * All operations wrapped in try/catch so any failure here is silent.
+ * Mutates result by adding: hasAudio, audioWarning, titleMismatch, thumbnailMismatch
+ */
+async function runIntegrityChecks(page, videoFrame, card, result, hlsSrc) {
+  // ---- AUDIO DETECTION ----
+  // Read what the browser knows about audio tracks on the <video> element
+  try {
+    const audioInfo = await videoFrame.evaluate(() => {
+      const vid = document.querySelector('video');
+      if (!vid) return null;
+      return {
+        audioTracksLength: vid.audioTracks ? vid.audioTracks.length : null,
+        muted: vid.muted,
+        volume: vid.volume,
+        // Chrome-specific: bytes of audio actually decoded
+        webkitAudioDecodedByteCount: typeof vid.webkitAudioDecodedByteCount === 'number' ? vid.webkitAudioDecodedByteCount : null,
+        // Firefox-specific
+        mozHasAudio: typeof vid.mozHasAudio === 'boolean' ? vid.mozHasAudio : null,
+      };
+    }).catch(() => null);
+
+    // Decide audio presence from any available signal
+    let hasAudio = null; // null = unknown
+    if (audioInfo) {
+      if (audioInfo.mozHasAudio === true || audioInfo.audioTracksLength > 0 || audioInfo.webkitAudioDecodedByteCount > 0) {
+        hasAudio = true;
+      } else if (audioInfo.audioTracksLength === 0 || audioInfo.mozHasAudio === false) {
+        // Browser explicitly says no audio
+        hasAudio = false;
+      }
+    }
+
+    // Cross-check: fetch the HLS manifest and look for an audio media line.
+    // Use Playwright's request context (inherits cookies/auth) for the fetch.
+    if (hlsSrc && hasAudio !== true) {
+      try {
+        const resp = await page.context().request.get(hlsSrc, { timeout: 5000 });
+        if (resp.ok()) {
+          const text = await resp.text();
+          if (/^#EXT-X-MEDIA:.*TYPE=AUDIO/m.test(text) || /\.aac|\.mp3/i.test(text)) {
+            hasAudio = true;
+          } else if (hasAudio === null) {
+            // Master manifest may reference a separate variant — check if any URI ends in /audio/
+            if (/audio/i.test(text)) hasAudio = true;
+            else hasAudio = false;
+          }
+        }
+      } catch { /* manifest fetch failed — leave hasAudio as-is */ }
+    }
+
+    result.hasAudio = hasAudio;
+    if (hasAudio === false) {
+      result.audioWarning = 'No audio track detected';
+    } else if (audioInfo && audioInfo.muted === true && audioInfo.volume === 0) {
+      result.audioWarning = 'Audio present but muted by default';
+    }
+  } catch { /* audio check failed silently */ }
+
+  // ---- TITLE MISMATCH ----
+  // Compare the watch page heading with the card title we discovered.
+  try {
+    const watchTitle = await page.evaluate(() => {
+      // Prefer the h1; fall back to breadcrumb's last item
+      const h1 = document.querySelector('h1');
+      if (h1) {
+        const t = h1.textContent.trim();
+        if (t && t.length < 120) return t;
+      }
+      const crumbs = document.querySelectorAll('nav a, [class*="breadcrumb" i] a, [class*="breadcrumb" i] span');
+      let last = '';
+      crumbs.forEach(el => {
+        const t = (el.textContent || '').trim();
+        if (t && t.length > 1 && t.length < 80) last = t;
+      });
+      return last;
+    }).catch(() => '');
+
+    if (watchTitle && card.title) {
+      // Normalize: lowercase + collapse whitespace + strip punctuation for fuzzy compare
+      const norm = s => s.toLowerCase().replace(/[^\w\s]/g, '').replace(/\s+/g, ' ').trim();
+      const a = norm(watchTitle);
+      const b = norm(card.title);
+      // Exact match OR one contains the other (handles "Marvelous Light Episode 3" vs "Marvelous Light Ep 3")
+      if (a !== b && !a.includes(b) && !b.includes(a)) {
+        result.titleMismatch = `expected "${card.title}", watch page shows "${watchTitle}"`;
+      }
+    }
+  } catch { /* title check failed silently */ }
+
+  // ---- THUMBNAIL MISMATCH ----
+  // Compare the card thumbnail UUID with the watch-page poster/video UUID.
+  // Both should reference the same video UUID.
+  try {
+    if (card.thumbnailUrl && card.videoId) {
+      const watchPoster = await page.evaluate(() => {
+        const vid = document.querySelector('video');
+        const posterUrl = vid?.poster || '';
+        // Also check any large image on the page that might be a poster
+        const imgs = document.querySelectorAll('img');
+        const altPoster = imgs.length ? imgs[0].src : '';
+        return posterUrl || altPoster;
+      }).catch(() => '');
+
+      if (watchPoster) {
+        const uuidPattern = /([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/i;
+        const posterUuid = (watchPoster.match(uuidPattern) || [])[1];
+        if (posterUuid && posterUuid.toLowerCase() !== card.videoId.toLowerCase()) {
+          result.thumbnailMismatch = `card UUID ${card.videoId} ≠ poster UUID ${posterUuid}`;
+        }
+      }
+    }
+  } catch { /* thumbnail check failed silently */ }
 }
 
 // ============================================================
@@ -512,6 +647,11 @@ function generateReport(allResults) {
   const failed = allResults.filter(r => r.status === STATUS.FAIL);
   const timeouts = allResults.filter(r => r.status === STATUS.TIMEOUT);
 
+  // Integrity flag summaries (informational)
+  const silentVideos      = allResults.filter(r => r.hasAudio === false);
+  const titleMismatches   = allResults.filter(r => r.titleMismatch);
+  const thumbMismatches   = allResults.filter(r => r.thumbnailMismatch);
+
   if (!JSON_STREAM) {
     console.log('\n' + '='.repeat(60));
     console.log('VIDEO LOAD REPORT -- go.kingdomlandkids.com');
@@ -521,6 +661,13 @@ function generateReport(allResults) {
     console.log(`Loaded OK:  ${passed.length}`);
     console.log(`Failed:     ${failed.length}`);
     console.log(`Timed out:  ${timeouts.length}`);
+    if (silentVideos.length > 0 || titleMismatches.length > 0 || thumbMismatches.length > 0) {
+      console.log('-'.repeat(60));
+      console.log('INTEGRITY WARNINGS (PASSing videos with anomalies):');
+      if (silentVideos.length > 0)    console.log(`  🔇 Silent:           ${silentVideos.length}`);
+      if (titleMismatches.length > 0) console.log(`  ⚠ Title mismatch:   ${titleMismatches.length}`);
+      if (thumbMismatches.length > 0) console.log(`  ⚠ Thumb mismatch:   ${thumbMismatches.length}`);
+    }
     console.log('-'.repeat(60));
 
     if (failed.length > 0) {
