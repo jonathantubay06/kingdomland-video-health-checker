@@ -97,6 +97,27 @@ KL.toggleDetail = function(num) {
         ' Open Video Page</a>'
     : '';
 
+  // Audio status display (always shown if the field exists on the result)
+  let audioHtml = '';
+  if (r.hasAudio === true) {
+    audioHtml = '<div><strong>Audio:</strong> <span style="color:#22c55e">✅ Detected</span>'
+      + (r.audioWarning ? ' <span style="color:#f59e0b">(' + KL.escHtml(r.audioWarning) + ')</span>' : '')
+      + '</div>';
+  } else if (r.hasAudio === false) {
+    audioHtml = '<div><strong>Audio:</strong> <span style="color:#ef4444">🔇 No audio track detected</span></div>';
+  } else if (r.hasAudio === null && r.audioWarning) {
+    audioHtml = '<div><strong>Audio:</strong> <span style="color:#f59e0b">⚠ ' + KL.escHtml(r.audioWarning) + '</span></div>';
+  }
+
+  // Content integrity mismatches (only shown when present)
+  let mismatchHtml = '';
+  if (r.titleMismatch) {
+    mismatchHtml += '<div><strong>Title mismatch:</strong> <span style="color:#f59e0b">' + KL.escHtml(r.titleMismatch) + '</span></div>';
+  }
+  if (r.thumbnailMismatch) {
+    mismatchHtml += '<div><strong>Thumbnail mismatch:</strong> <span style="color:#f59e0b">' + KL.escHtml(r.thumbnailMismatch) + '</span></div>';
+  }
+
   const detailRow = document.createElement('tr');
   detailRow.id = 'detail-' + num;
   detailRow.className = 'detail-row';
@@ -109,6 +130,8 @@ KL.toggleDetail = function(num) {
         ${r.error ? '<div><strong>Error:</strong> ' + KL.escHtml(r.error) + '</div>' : ''}
         ${r.duration ? '<div><strong>Duration:</strong> ' + r.duration + '</div>' : ''}
         <div><strong>Load Time:</strong> ${r.loadTimeMs ? (r.loadTimeMs / 1000).toFixed(1) + 's' : 'N/A'}</div>
+        ${audioHtml}
+        ${mismatchHtml}
         ${screenshotHtml}
         ${openPageBtn}
       </div>
