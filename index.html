@@ -425,6 +425,20 @@
     </div>
   </div>
 
+  <!-- ============== RUN INVESTIGATION MODAL ============== -->
+  <!-- Opens when a chart bar is clicked. Shows the per-run failure breakdown. -->
+  <div class="modal-overlay" id="run-investigation-modal" onclick="if(event.target===this)closeRunInvestigation()" style="display:none">
+    <div class="modal video-detail-modal">
+      <div class="modal-header">
+        <h2 id="run-investigation-title">Run Investigation</h2>
+        <button class="modal-close" onclick="closeRunInvestigation()">&times;</button>
+      </div>
+      <div class="modal-body" id="run-investigation-body">
+        <p>Loading...</p>
+      </div>
+    </div>
+  </div>
+
   <!-- ============== COMPARISON MODAL ============== -->
   <div class="modal-overlay" id="comparison-modal" onclick="if(event.target===this)closeComparisonModal()" style="display:none">
     <div class="modal comparison-modal">

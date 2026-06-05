@@ -1851,6 +1851,14 @@ async function loadAndShowTrendChart() {
       area.addEventListener('mouseleave', () => {
         tooltip.classList.remove('visible');
       });
+      // Click handler: open Run Investigation modal showing failure breakdown
+      area.style.cursor = 'pointer';
+      area.title = 'Click to investigate this run';
+      area.addEventListener('click', (e) => {
+        const idx = parseInt(area.dataset.idx);
+        const h = history[idx];
+        if (h && window.openRunInvestigation) window.openRunInvestigation(h);
+      });
     });
 
     container.style.display = 'block';
