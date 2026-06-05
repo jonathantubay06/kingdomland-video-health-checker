@@ -158,7 +158,20 @@ KL.loadAndShowTrendChart = async function() {
       area.addEventListener('mouseleave', function() {
         tooltip.classList.remove('visible');
       });
+      // Click a bar → open the Run Investigation modal (failure breakdown + error explanations)
+      area.style.cursor = 'pointer';
+      area.addEventListener('click', function() {
+        var idx = parseInt(area.dataset.idx);
+        var h = history[idx];
+        if (h && window.openRunInvestigation) window.openRunInvestigation(h);
+      });
     });
+
+    // Hint that bars are clickable
+    var hint = document.createElement('div');
+    hint.className = 'trend-chart-hint';
+    hint.textContent = '💡 Click any bar to investigate that run';
+    container.querySelector('.trend-chart-footer') && container.querySelector('.trend-chart-footer').appendChild(hint);
 
     container.style.display = 'block';
   } catch (e) {

@@ -486,6 +486,15 @@ body {
 [data-theme="dark"] .slow-diagnosis.sd-error .sd-list { color: #fca5a5; }
 [data-theme="dark"] .sd-badge-error { background: #2e1515; color: #f87171; border-color: #5a2b2b; }
 
+/* Clickable-bars hint under the Check History chart */
+.trend-chart-hint {
+  font-size: 0.72rem;
+  color: var(--color-text-light);
+  margin-top: 6px;
+  width: 100%;
+  text-align: right;
+}
+
 /* Run Investigation modal (opened by clicking a chart bar) */
 .run-investigation { font-size: 0.88rem; }
 .ri-header {
