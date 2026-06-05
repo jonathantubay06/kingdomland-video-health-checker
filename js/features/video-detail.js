@@ -62,12 +62,21 @@ window.showVideoDetail = async function(title) {
         '</li>';
     }).join('');
 
+    // Build slow-video diagnostic from the LATEST run's data on this video
+    var currentResult = (KL.state.results || []).find(function(r) { return r.title === title; });
+    var diagnosisHtml = '';
+    if (currentResult && KL.diagnoseSlowVideo) {
+      var diagnosis = KL.diagnoseSlowVideo(currentResult, videoHistory, KL.state.results || []);
+      diagnosisHtml = KL.renderSlowDiagnosis ? KL.renderSlowDiagnosis(diagnosis) : '';
+    }
+
     body.innerHTML =
       '<div style="margin-bottom:16px;display:flex;gap:20px;font-size:0.85rem">' +
         '<div><strong>Total checks:</strong> ' + totalChecks + '</div>' +
         '<div><strong>Uptime:</strong> ' + uptime + '%</div>' +
         '<div><strong>Passed:</strong> ' + passedChecks + '/' + totalChecks + '</div>' +
       '</div>' +
+      diagnosisHtml +
       '<div class="video-history-chart" style="overflow-x:auto">' +
         '<svg width="' + (videoHistory.length * cellWidth) + '" height="20" viewBox="0 0 ' + (videoHistory.length * cellWidth) + ' 20">' + timelineSvg + '</svg>' +
       '</div>' +
