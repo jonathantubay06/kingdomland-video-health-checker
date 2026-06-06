@@ -32,7 +32,33 @@ KL.renderIncidentBanner = function() {
     return; // don't also show recovery
   }
 
-  // ---- 2. RECOVERY ----
+  // ---- 2. STALE DATA (dead-man's switch, made visible) ----
+  // If the newest report is older than the threshold, the scheduled checker
+  // may have stopped running. Max normal gap between runs is 8h, so 12h = stale.
+  var STALE_HOURS = 12;
+  var ts = KL.state.reportTimestamp;
+  if (ts) {
+    var ageHrs = (Date.now() - new Date(ts).getTime()) / 3600000;
+    if (!isNaN(ageHrs) && ageHrs > STALE_HOURS) {
+      var ageLabel = ageHrs >= 48 ? Math.round(ageHrs / 24) + ' days'
+                   : Math.round(ageHrs) + ' hours';
+      container.innerHTML =
+        '<div class="incident-banner incident-stale">' +
+          '<div class="incident-icon">⚠️</div>' +
+          '<div class="incident-body">' +
+            '<div class="incident-title">Stale data — checker may have stopped</div>' +
+            '<div class="incident-detail">' +
+              'The last successful check was <strong>' + ageLabel + ' ago</strong>. ' +
+              'Checks normally run every few hours (4× daily). If this keeps growing, ' +
+              'the scheduled GitHub Actions job may be broken — the numbers below could be out of date.' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+      return; // stale takes priority over recovery
+    }
+  }
+
+  // ---- 3. RECOVERY ----
   // Compare the latest two history entries: prev had issues, current is clean.
   KL._maybeShowRecoveryBanner(container);
 };
