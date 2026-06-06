@@ -118,6 +118,7 @@ KL.loadCloudReport = async function() {
   if (!report) return;
 
   KL.state.reportStale = report._stale || false;
+  KL.state.outage = report.outage || null;
   KL.state.results = report.allResults || [];
   if (report.summary) {
     KL.state.passedCount = report.summary.passed || 0;

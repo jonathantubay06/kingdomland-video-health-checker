@@ -486,6 +486,77 @@ body {
 [data-theme="dark"] .slow-diagnosis.sd-error .sd-list { color: #fca5a5; }
 [data-theme="dark"] .sd-badge-error { background: #2e1515; color: #f87171; border-color: #5a2b2b; }
 
+/* Incident banner (outage / recovery) — top-of-dashboard notification */
+.incident-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  animation: incident-slide-in 0.4s cubic-bezier(0.34, 1.2, 0.64, 1) both;
+}
+@keyframes incident-slide-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.incident-outage {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  border: 1px solid #fca5a5;
+  border-left: 5px solid #ef4444;
+}
+.incident-recovery {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 1px solid #86efac;
+  border-left: 5px solid #22c55e;
+}
+.incident-icon { font-size: 1.5rem; flex-shrink: 0; line-height: 1.2; }
+.incident-body { flex: 1; min-width: 0; }
+.incident-title { font-weight: 800; font-size: 1rem; margin-bottom: 3px; }
+.incident-outage .incident-title { color: #b91c1c; }
+.incident-recovery .incident-title { color: #15803d; }
+.incident-detail { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.45; }
+.incident-error { margin-top: 6px; }
+.incident-error code { font-size: 0.78rem; color: #b91c1c; word-break: break-word; }
+.incident-investigate {
+  flex-shrink: 0;
+  align-self: center;
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+}
+.incident-investigate:hover { background: #dc2626; transform: translateY(-1px); }
+.incident-dismiss {
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+.incident-dismiss:hover { background: rgba(0,0,0,0.06); }
+[data-theme="dark"] .incident-outage {
+  background: linear-gradient(135deg, #2a1313 0%, #2e1515 100%);
+  border-color: #5a2b2b;
+  border-left-color: #ef4444;
+}
+[data-theme="dark"] .incident-recovery {
+  background: linear-gradient(135deg, #132513 0%, #1a2e1a 100%);
+  border-color: #2d5a2b;
+  border-left-color: #22c55e;
+}
+[data-theme="dark"] .incident-outage .incident-title { color: #f87171; }
+[data-theme="dark"] .incident-recovery .incident-title { color: #86efac; }
+[data-theme="dark"] .incident-error code { color: #f87171; }
+
 /* Clickable-bars hint under the Check History chart */
 .trend-chart-hint {
   font-size: 0.72rem;

@@ -44,6 +44,7 @@ KL.renderComplete = function(summary, allResults) {
 
   // Features triggered on complete
   KL.updateHealthSummary();
+  if (KL.renderIncidentBanner) KL.renderIncidentBanner();
   KL.updateLastChecked();
   KL.updateHealthBadge();
   KL.updateAvgResponseTime();
@@ -97,6 +98,7 @@ KL.loadPreviousReport = async function() {
     KL.state.checkedCount = KL.state.results.length;
     KL.state.status = 'complete';
     KL.state.reportTimestamp = report.timestamp || null;
+    KL.state.outage = report.outage || null;
 
     KL.state.sectionMap = {};
     for (var i = 0; i < KL.state.results.length; i++) {
