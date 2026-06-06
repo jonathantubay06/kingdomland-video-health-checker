@@ -1,0 +1,39 @@
+name: Checker Heartbeat (dead-man's switch)
+
+# Runs INDEPENDENTLY of the main video check. If the main checker stops
+# producing reports (broken workflow, expired secret, Actions quota), this
+# job notices the staleness and alerts — because the main checker can't
+# report on its own failure to run.
+
+on:
+  schedule:
+    # Every 6 hours, offset by 2h from the main check times (0,4,12,16 UTC)
+    # so it samples between runs: 2,8,14,20 UTC.
+    - cron: '0 2,8,14,20 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main (for heartbeat.js)
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch latest history from data branch
+        run: |
+          git fetch origin data 2>/dev/null || true
+          git show origin/data:history.json > history.json 2>/dev/null || echo "[]" > history.json
+
+      - name: Check freshness and alert if stale
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          STALE_HOURS: ${{ vars.HEARTBEAT_STALE_HOURS || '12' }}
+        run: node heartbeat.js

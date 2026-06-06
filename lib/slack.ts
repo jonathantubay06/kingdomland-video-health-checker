@@ -160,3 +160,69 @@ export async function sendSlackDailySummary(
   const fallback = `Daily Video Health: ${rate}% (${summary.passed}/${summary.total})`;
   return postToSlack(blocks, fallback);
 }
+
+/**
+ * Send a SINGLE consolidated alert when a mass outage is detected
+ * (most/all videos failing with the same error). Replaces per-video spam.
+ */
+export async function sendSlackOutageAlert(error: string, checkedCount: number, totalCount: number): Promise<boolean> {
+  const blocks: SlackBlock[] = [
+    {
+      type: 'header',
+      text: { type: 'plain_text', text: ':rotating_light: Video Outage Detected', emoji: true },
+    },
+    {
+      type: 'section',
+      text: {
+        type: 'mrkdwn',
+        text: `*All ${checkedCount} videos checked failed with the same error.* This is almost certainly a CDN / streaming-server outage, not individual video problems. Remaining checks were skipped to save time.`,
+      },
+    },
+    {
+      type: 'section',
+      fields: [
+        { type: 'mrkdwn', text: `*Error:*\n\`${error || 'Unknown'}\`` },
+        { type: 'mrkdwn', text: `*Scope:*\n~${totalCount} videos affected` },
+      ],
+    },
+    {
+      type: 'context',
+      elements: [
+        { type: 'mrkdwn', text: `go.kingdomlandkids.com  |  ${new Date().toLocaleString()}` },
+      ],
+    },
+  ];
+  const fallback = `:rotating_light: OUTAGE: all videos failing — ${error || 'unknown error'}`;
+  return postToSlack(blocks, fallback);
+}
+
+/**
+ * Send a recovery alert when a check returns to healthy after the
+ * previous check had failures/outage. Closes the incident loop.
+ */
+export async function sendSlackRecoveryAlert(summary: CheckSummary, prev: { failed?: number; timeouts?: number }): Promise<boolean> {
+  const prevIssues = (prev.failed || 0) + (prev.timeouts || 0);
+  const rate = summary.total > 0 ? Math.round((summary.passed / summary.total) * 100) : 0;
+
+  const blocks: SlackBlock[] = [
+    {
+      type: 'header',
+      text: { type: 'plain_text', text: ':white_check_mark: Recovered — Videos Back Online', emoji: true },
+    },
+    {
+      type: 'section',
+      text: {
+        type: 'mrkdwn',
+        text: `Videos are working again. The previous check had *${prevIssues} issue${prevIssues === 1 ? '' : 's'}*; this check is *${summary.passed}/${summary.total} passing* (${rate}%).`,
+      },
+    },
+    {
+      type: 'context',
+      elements: [
+        { type: 'mrkdwn', text: `go.kingdomlandkids.com  |  ${new Date().toLocaleString()}` },
+      ],
+    },
+  ];
+  const fallback = `:white_check_mark: Recovered: ${summary.passed}/${summary.total} passing`;
+  return postToSlack(blocks, fallback);
+}

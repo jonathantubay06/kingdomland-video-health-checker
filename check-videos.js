@@ -20,7 +20,7 @@ try { require('dotenv').config(); } catch (_) {}
 const playwright = require('playwright');
 const fs = require('fs');
 const { STATUS, PAGE } = require('./lib/constants');
-const { sendSlackFailureAlert } = require('./lib/slack');
+const { sendSlackFailureAlert, sendSlackOutageAlert, sendSlackRecoveryAlert } = require('./lib/slack');
 const db = require('./lib/db');
 
 // ============== CONFIG ==============
@@ -709,12 +709,15 @@ function generateReport(allResults) {
     }))
     .sort((a, b) => b.loadTimeMs - a.loadTimeMs);
 
+  const outage = global.__KL_OUTAGE__ || null;
+
   const report = {
     timestamp: new Date().toISOString(),
     browser: BROWSER_NAME,
     summary: { total: allResults.length, passed: passed.length, failed: failed.length, timeouts: timeouts.length },
     failedVideos: failed.map(r => ({ num: r.number, page: r.page, section: r.section, title: r.title, url: r.url, error: r.error })),
     performanceAlerts: perfAlerts,
+    outage: outage ? { detected: true, error: outage.error, checkedBeforeAbort: outage.checkedCount } : null,
     allResults,
   };
   emit({ type: 'complete', summary: report.summary, allResults: report.allResults });
@@ -744,6 +747,8 @@ function generateReport(allResults) {
   if (fs.existsSync('history.json')) {
     try { history = JSON.parse(fs.readFileSync('history.json', 'utf-8')); } catch { history = []; }
   }
+  // Capture the PREVIOUS run (last entry before we append this one) for recovery detection
+  const prevRun = history.length > 0 ? history[history.length - 1] : null;
   history.push(historyEntry);
   if (history.length > 50) history = history.slice(-50);
   fs.writeFileSync('history.json', JSON.stringify(history, null, 2));
@@ -786,10 +791,35 @@ function generateReport(allResults) {
     }
   }
 
-  if (failed.length > 0 || perfAlerts.length > 0) {
+  // ===== Slack alerts =====
+  if (outage) {
+    // #1 Single consolidated outage alert (instead of N per-video failure lines)
+    if (!JSON_STREAM) {
+      console.log('-'.repeat(60));
+      console.log(`🚨 OUTAGE: ${outage.checkedCount} videos checked, all failed with the same error.`);
+      console.log(`   "${outage.error}"`);
+      console.log(`   Treated all ${allResults.length} videos as down. Per-video alerts suppressed.`);
+    }
+    sendSlackOutageAlert(outage.error, outage.checkedCount, allResults.length)
+      .catch(err => log(`Slack outage alert failed (non-critical): ${err.message}`));
+  } else if (failed.length > 0 || perfAlerts.length > 0) {
+    // Normal failure alert (only when NOT an outage)
     sendSlackFailureAlert(report.failedVideos, report.summary, perfAlerts)
       .catch(err => log(`Slack alert failed (non-critical): ${err.message}`));
   }
+
+  // #2 Recovery alert — current run is healthy, but the PREVIOUS run had issues
+  if (!outage && failed.length === 0 && timeouts.length === 0 && prevRun) {
+    const prevIssues = (prevRun.failed || 0) + (prevRun.timeouts || 0);
+    if (prevIssues > 0) {
+      log(`✅ Recovery detected — previous run had ${prevIssues} issue(s), now back to 100%.`);
+      sendSlackRecoveryAlert(report.summary, { failed: prevRun.failed, timeouts: prevRun.timeouts })
+        .catch(err => log(`Slack recovery alert failed (non-critical): ${err.message}`));
+    }
+  }
+
+  // Clear outage state so it doesn't leak into any subsequent run in the same process
+  global.__KL_OUTAGE__ = null;
 }
 
 // ============================================================
@@ -830,10 +860,64 @@ async function main() {
     }
 
     const totalStr = cards.length.toString();
+    // Outage detection: if the first N videos ALL fail with the same error,
+    // it's a CDN/streaming outage — abort early and synthesize the rest as
+    // outage-failures (saves ~24 min of pointless checking during an outage).
+    const OUTAGE_THRESHOLD = 15;
+    let outageDetected = false;
+
     for (const card of cards) {
       videoNum++;
       const result = await checkVideo(page, card, videoNum, totalStr);
       allResults.push(result);
+
+      // Only evaluate while we have NOT yet seen a single pass
+      const passedSoFar = allResults.filter(r => r.status === STATUS.PASS).length;
+      if (!outageDetected && passedSoFar === 0 && allResults.length >= OUTAGE_THRESHOLD) {
+        const errs = new Set(allResults.map(r => r.error || ''));
+        if (errs.size === 1) {
+          const outageError = [...errs][0];
+          outageDetected = true;
+          log('');
+          log(`🚨 OUTAGE DETECTED: first ${allResults.length} videos ALL failed with the same error:`);
+          log(`   "${outageError}"`);
+          log(`   Aborting remaining ${cards.length - allResults.length} checks — this is a platform-wide issue, not individual videos.`);
+
+          // Synthesize the remaining cards as outage-skipped failures so the
+          // report total stays accurate and the trend chart shows a full red bar.
+          const remaining = cards.slice(allResults.length);
+          for (const skipCard of remaining) {
+            videoNum++;
+            allResults.push({
+              number: videoNum,
+              title: skipCard.title,
+              section: '',
+              page: PAGE.HOME,
+              url: '',
+              hlsSrc: '',
+              thumbnailUrl: skipCard.thumbnailUrl || '',
+              status: STATUS.FAIL,
+              error: 'Skipped — outage detected (' + outageError + ')',
+              loadTimeMs: null,
+              duration: null,
+              resolution: '',
+              hasAudio: null, audioWarning: null, titleMismatch: null, thumbnailMismatch: null,
+              outageSkipped: true,
+            });
+          }
+          break;
+        }
+      }
+    }
+
+    // Stash outage state for the report stage
+    if (outageDetected) {
+      const firstError = (allResults.find(r => !r.outageSkipped) || {}).error || 'Unknown error';
+      global.__KL_OUTAGE__ = {
+        error: firstError,
+        checkedCount: allResults.filter(r => !r.outageSkipped).length,
+        totalCount: cards.length,
+      };
     }
 
   } catch (error) {
@@ -848,7 +932,8 @@ async function main() {
   }
 
   // ===== Retry failed/timed out videos =====
-  if (CONFIG.retryFailures && allResults.length > 0) {
+  // Skip retries entirely during an outage — every video is down, retrying is pointless.
+  if (CONFIG.retryFailures && allResults.length > 0 && !global.__KL_OUTAGE__) {
     const retryTargets = allResults.filter(r => r.status === STATUS.FAIL || r.status === STATUS.TIMEOUT);
     if (retryTargets.length > 0 && retryTargets.length <= 20) {
       log(`\nRetrying ${retryTargets.length} failed/timed out video(s)...`);
