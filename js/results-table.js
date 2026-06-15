@@ -118,6 +118,46 @@ KL.toggleDetail = function(num) {
     mismatchHtml += '<div><strong>Thumbnail mismatch:</strong> <span style="color:#f59e0b">' + KL.escHtml(r.thumbnailMismatch) + '</span></div>';
   }
 
+  // Failure diagnosis (HTTP status / plain-English cause) — only on failures
+  let diagnosisHtml = '';
+  if (r.failureDiagnosis) {
+    diagnosisHtml = '<div style="margin-top:6px;padding:8px 10px;background:rgba(239,68,68,0.08);border-radius:6px">'
+      + '<strong>Diagnosis:</strong> ' + KL.escHtml(r.failureDiagnosis)
+      + (r.httpStatus != null ? ' <span style="opacity:0.7">(HTTP ' + r.httpStatus + ')</span>' : '')
+      + '</div>';
+  }
+
+  // Captured errors during load (network/console/JS) — only when present
+  let capturedHtml = '';
+  if (r.capturedErrors) {
+    var ce = r.capturedErrors;
+    var parts = [];
+    if (ce.network && ce.network.length) {
+      parts.push('<div><strong>Failed requests:</strong><ul style="margin:4px 0 0 16px;font-size:0.8rem">'
+        + ce.network.map(function(n){ return '<li>HTTP ' + n.status + ' — ' + KL.escHtml(n.url) + '</li>'; }).join('')
+        + '</ul></div>');
+    }
+    if (ce.requestsFailed && ce.requestsFailed.length) {
+      parts.push('<div><strong>Network errors:</strong><ul style="margin:4px 0 0 16px;font-size:0.8rem">'
+        + ce.requestsFailed.map(function(n){ return '<li>' + KL.escHtml(n.reason) + ' — ' + KL.escHtml(n.url) + '</li>'; }).join('')
+        + '</ul></div>');
+    }
+    if (ce.console && ce.console.length) {
+      parts.push('<div><strong>Console errors:</strong><ul style="margin:4px 0 0 16px;font-size:0.8rem">'
+        + ce.console.map(function(c){ return '<li>' + KL.escHtml(c) + '</li>'; }).join('')
+        + '</ul></div>');
+    }
+    if (ce.pageErrors && ce.pageErrors.length) {
+      parts.push('<div><strong>JS exceptions:</strong><ul style="margin:4px 0 0 16px;font-size:0.8rem">'
+        + ce.pageErrors.map(function(c){ return '<li>' + KL.escHtml(c) + '</li>'; }).join('')
+        + '</ul></div>');
+    }
+    if (parts.length) {
+      capturedHtml = '<div style="margin-top:6px;padding:8px 10px;background:rgba(0,0,0,0.04);border-radius:6px">'
+        + '<strong>Captured during load:</strong>' + parts.join('') + '</div>';
+    }
+  }
+
   const detailRow = document.createElement('tr');
   detailRow.id = 'detail-' + num;
   detailRow.className = 'detail-row';
@@ -132,6 +172,8 @@ KL.toggleDetail = function(num) {
         <div><strong>Load Time:</strong> ${r.loadTimeMs ? (r.loadTimeMs / 1000).toFixed(1) + 's' : 'N/A'}</div>
         ${audioHtml}
         ${mismatchHtml}
+        ${diagnosisHtml}
+        ${capturedHtml}
         ${screenshotHtml}
         ${openPageBtn}
       </div>

@@ -294,8 +294,12 @@ async function checkVideo(page, card, videoNum, totalLabel) {
     httpContentType: null,
     httpBodySnippet: null,
     failureDiagnosis: null,    // plain-English: rate-limit vs outage vs missing
+    capturedErrors: null,      // { network, requestsFailed, console, pageErrors } on failure
   };
   const startTime = Date.now();
+
+  // Capture network/console/JS errors during this video's load (detached in finally)
+  const capture = attachErrorCapture(page);
 
   try {
     // ---- Navigate to /watch/{uuid} directly (skip clicking the card) ----
@@ -505,6 +509,23 @@ async function checkVideo(page, card, videoNum, totalLabel) {
     result.status = STATUS.FAIL;
     result.error = e.message;
     result.loadTimeMs = Date.now() - startTime;
+  } finally {
+    // Attach captured network/console/JS errors on failure, then detach listeners.
+    try {
+      if (result.status === STATUS.FAIL || result.status === STATUS.TIMEOUT) {
+        const snap = capture.snapshot();
+        if (snap) result.capturedErrors = snap;
+        // Refine: master playlist was OK (200/valid) but sub-resources failed →
+        // the video genuinely can't play, even though the top manifest looked fine.
+        if (snap && snap.network && /200 with a valid manifest/.test(result.failureDiagnosis || '')) {
+          const cdnFails = snap.network.filter(n => /cloudfront|\.m3u8|\.ts|\.m4s/i.test(n.url));
+          if (cdnFails.length) {
+            result.failureDiagnosis = `🔴 The master playlist loaded (200) but ${cdnFails.length} video segment/variant request(s) failed (e.g. HTTP ${cdnFails[0].status}). The video genuinely cannot play for viewers.`;
+          }
+        }
+      }
+    } catch { /* best-effort */ }
+    capture.detach();
   }
 
   // Screenshot on failure
@@ -520,6 +541,88 @@ async function checkVideo(page, card, videoNum, totalLabel) {
   logResult(result, videoNum, totalLabel);
   emit({ type: 'check', result });
   return result;
+}
+
+/**
+ * Attach passive listeners to capture errors during a video's load:
+ *   - network responses with status >= 400 (segments, variant playlists, APIs)
+ *   - failed requests (DNS/TLS/connection errors)
+ *   - console.error messages from the page
+ *   - uncaught JS exceptions (pageerror)
+ * Returns { snapshot(), detach() }. Caller must detach() when done.
+ * Only relevant (CDN / kingdomlandkids / video / api) URLs are kept, capped.
+ */
+function attachErrorCapture(page) {
+  // Match by HOSTNAME (not full URL) so analytics calls that embed the site URL
+  // in a query param (e.g. Google Analytics ?dl=...kingdomlandkids...) don't match.
+  const isRelevant = (u) => {
+    try {
+      const url = new URL(u);
+      const host = url.hostname;
+      // Exclude known analytics / tracking / error-reporting hosts
+      if (/google|doubleclick|analytics|gstatic|facebook|segment|sentry|hotjar|mixpanel|clarity|cookiebot/i.test(host)) return false;
+      // Keep: the streaming CDN, the app domain, or any HLS asset
+      if (/cloudfront\.net$|kingdomlandkids\.com$/i.test(host)) return true;
+      if (/\.(m3u8|ts|m4s)(\?|$)/i.test(url.pathname)) return true;
+      return false;
+    } catch { return false; }
+  };
+
+  const net = [];        // { url, status }
+  const failedReqs = []; // { url, reason }
+  const consoleErrs = [];
+  const pageErrs = [];
+
+  const onResponse = (resp) => {
+    try {
+      const s = resp.status();
+      const u = resp.url();
+      if (s >= 400 && isRelevant(u) && net.length < 15) net.push({ url: u.slice(0, 160), status: s });
+    } catch { /* ignore */ }
+  };
+  const onRequestFailed = (req) => {
+    try {
+      const u = req.url();
+      if (isRelevant(u) && failedReqs.length < 15) {
+        const f = req.failure();
+        failedReqs.push({ url: u.slice(0, 160), reason: (f && f.errorText) || 'request failed' });
+      }
+    } catch { /* ignore */ }
+  };
+  const onConsole = (msg) => {
+    try {
+      if (msg.type() === 'error' && consoleErrs.length < 8) consoleErrs.push((msg.text() || '').slice(0, 200));
+    } catch { /* ignore */ }
+  };
+  const onPageError = (err) => {
+    try { if (pageErrs.length < 5) pageErrs.push(String((err && err.message) || err).slice(0, 200)); } catch { /* ignore */ }
+  };
+
+  page.on('response', onResponse);
+  page.on('requestfailed', onRequestFailed);
+  page.on('console', onConsole);
+  page.on('pageerror', onPageError);
+
+  return {
+    snapshot() {
+      const seen = new Set();
+      const netDedup = net.filter(n => { const k = n.status + n.url; if (seen.has(k)) return false; seen.add(k); return true; });
+      const out = {};
+      if (netDedup.length) out.network = netDedup;
+      if (failedReqs.length) out.requestsFailed = failedReqs;
+      if (consoleErrs.length) out.console = [...new Set(consoleErrs)];
+      if (pageErrs.length) out.pageErrors = [...new Set(pageErrs)];
+      return Object.keys(out).length ? out : null;
+    },
+    detach() {
+      try {
+        page.off('response', onResponse);
+        page.off('requestfailed', onRequestFailed);
+        page.off('console', onConsole);
+        page.off('pageerror', onPageError);
+      } catch { /* ignore */ }
+    },
+  };
 }
 
 /**
