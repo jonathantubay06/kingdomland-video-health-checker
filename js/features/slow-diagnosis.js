@@ -272,9 +272,12 @@ KL.diagnoseRun = function(historyEntry) {
   const byError = {};
   for (const v of failed) {
     const err = (v.error || '(no error message)').trim();
-    if (!byError[err]) byError[err] = { error: err, count: 0, examples: [] };
+    if (!byError[err]) byError[err] = { error: err, count: 0, examples: [], httpDiagnosis: null, httpStatus: null };
     byError[err].count++;
     if (byError[err].examples.length < 5) byError[err].examples.push(v.title);
+    // Capture the real HTTP diagnosis (definitive cause) from the first video that has one
+    if (!byError[err].httpDiagnosis && v.failureDiagnosis) byError[err].httpDiagnosis = v.failureDiagnosis;
+    if (byError[err].httpStatus == null && v.httpStatus != null) byError[err].httpStatus = v.httpStatus;
   }
   const errorGroups = Object.values(byError).sort((a, b) => b.count - a.count);
 
@@ -318,11 +321,17 @@ KL.renderRunInvestigation = function(historyEntry, diagnosis) {
     html += '<h4 class="ri-section-title">Error breakdown</h4>';
     html += '<div class="ri-error-groups">';
     for (const g of diagnosis.errorGroups) {
-      const explanation = KL.explainMediaError(g.error);
       html += '<div class="ri-error-group">';
       html += '<div class="ri-error-header"><span class="ri-error-count">' + g.count + '</span><code>' + KL.escHtml(g.error) + '</code></div>';
-      if (explanation) {
-        html += '<div class="ri-error-explanation">💡 ' + KL.escHtml(explanation) + '</div>';
+      // Prefer the REAL HTTP diagnosis (definitive: rate-limit vs outage vs missing);
+      // fall back to the generic media-error explanation for older reports.
+      if (g.httpDiagnosis) {
+        html += '<div class="ri-error-explanation ri-http-diagnosis">' + KL.escHtml(g.httpDiagnosis) + '</div>';
+      } else {
+        const explanation = KL.explainMediaError(g.error);
+        if (explanation) {
+          html += '<div class="ri-error-explanation">💡 ' + KL.escHtml(explanation) + '</div>';
+        }
       }
       if (g.examples.length > 0) {
         html += '<div class="ri-error-examples"><strong>Sample videos:</strong> ' + g.examples.map(t => KL.escHtml(t)).join(', ');

@@ -289,6 +289,11 @@ async function checkVideo(page, card, videoNum, totalLabel) {
     audioWarning: null,        // human-readable note if audio is missing/muted
     titleMismatch: null,       // "expected X, got Y" if watch page disagrees with card
     thumbnailMismatch: null,   // UUID mismatch between card thumb and watch-page poster
+    // HTTP failure diagnosis (only populated on FAIL/TIMEOUT)
+    httpStatus: null,          // real HTTP status of the HLS manifest
+    httpContentType: null,
+    httpBodySnippet: null,
+    failureDiagnosis: null,    // plain-English: rate-limit vs outage vs missing
   };
   const startTime = Date.now();
 
@@ -486,6 +491,16 @@ async function checkVideo(page, card, videoNum, totalLabel) {
         await runIntegrityChecks(page, videoFrame, card, result, checkResult.hlsSrc);
       } catch { /* integrity checks are best-effort, never affect status */ }
     }
+
+    // ---- HTTP DIAGNOSIS on failure (tells us WHY: outage vs rate-limit vs missing) ----
+    // Directly fetch the HLS manifest and record the real HTTP status + body snippet.
+    // This distinguishes a genuine CDN outage (5xx / error page) from the checker
+    // simply being rate-limited / bot-blocked (403) — where real users are unaffected.
+    if (result.status === STATUS.FAIL || result.status === STATUS.TIMEOUT) {
+      try {
+        await probeManifest(page, card, result);
+      } catch { /* diagnosis is best-effort */ }
+    }
   } catch (e) {
     result.status = STATUS.FAIL;
     result.error = e.message;
@@ -507,6 +522,62 @@ async function checkVideo(page, card, videoNum, totalLabel) {
   return result;
 }
 
+/**
+ * On failure, fetch the HLS manifest directly to learn WHY it failed.
+ * Records the real HTTP status + a body snippet on the result, and a
+ * plain-English classification. Uses Playwright's request context so it
+ * inherits the logged-in session's cookies/auth.
+ *
+ * Mutates result with: httpStatus, httpContentType, httpBodySnippet, failureDiagnosis
+ */
+async function probeManifest(page, card, result) {
+  // Determine the manifest URL: prefer the one the player used, else construct it.
+  let manifestUrl = result.hlsSrc || '';
+  if (!manifestUrl && card.videoId) {
+    manifestUrl = `https://d394daiw0g5hmq.cloudfront.net/videos/hls/${card.videoId}/master.m3u8`;
+  }
+  if (!manifestUrl) {
+    result.failureDiagnosis = 'No manifest URL available to probe.';
+    return;
+  }
+
+  try {
+    const resp = await page.context().request.get(manifestUrl, { timeout: 8000 });
+    const status = resp.status();
+    const contentType = (resp.headers()['content-type'] || '').toLowerCase();
+    let body = '';
+    try { body = (await resp.text()).slice(0, 300); } catch { /* body may be binary */ }
+
+    result.httpStatus = status;
+    result.httpContentType = contentType;
+    result.httpBodySnippet = body.replace(/\s+/g, ' ').trim().slice(0, 200);
+
+    // Classify
+    const looksLikeManifest = /^#EXTM3U/.test(body.trim());
+    if (status === 403 || status === 401) {
+      // CloudFront returns 403 AccessDenied both for rate-limiting/WAF blocks AND
+      // for genuinely inaccessible objects — so 403 alone isn't conclusive. The
+      // outage-level pattern (all videos at once + self-recovery) is the tiebreaker.
+      result.failureDiagnosis = `🤖 HTTP ${status} (CDN refused the request). When this hits ALL videos at once and then recovers on its own, it's typically rate-limiting / bot-protection against the automated checker (real users usually fine) or a transient CDN access issue — not individual broken videos. If only a few videos show this, those specific files may be inaccessible.`;
+    } else if (status === 429) {
+      result.failureDiagnosis = `🤖 HTTP 429 Too Many Requests — the checker is being rate-limited. Real users likely unaffected. Consider spacing out checks.`;
+    } else if (status >= 500) {
+      result.failureDiagnosis = `🔴 HTTP ${status} — the streaming origin/CDN returned a server error. This is a GENUINE outage that affects real viewers.`;
+    } else if (status === 404) {
+      result.failureDiagnosis = `⚠️ HTTP 404 — the video manifest was not found. The video may have been removed or its files are missing.`;
+    } else if (status === 200 && !looksLikeManifest) {
+      result.failureDiagnosis = `🔴 HTTP 200 but the body is NOT a valid HLS manifest (got ${contentType || 'unknown content'}). The CDN is serving an error/placeholder page instead of video — a GENUINE problem affecting real viewers.`;
+    } else if (status === 200 && looksLikeManifest) {
+      result.failureDiagnosis = `🟡 HTTP 200 with a valid manifest — the playlist is fine, so the decode failure may be codec/player-specific (Playwright's headless Chromium), not necessarily user-facing.`;
+    } else {
+      result.failureDiagnosis = `HTTP ${status} (${contentType || 'no content-type'}).`;
+    }
+  } catch (e) {
+    result.httpStatus = null;
+    result.failureDiagnosis = `Could not reach the manifest at all (${e.message.slice(0, 80)}) — likely a network/DNS issue or the CDN is fully down.`;
+  }
+}
+
 function logResult(r, num, total) {
   const icon = r.status === STATUS.PASS ? '✅' : r.status === STATUS.FAIL ? '❌' : r.status === STATUS.TIMEOUT ? '⏱️' : '⚠️';
   const time = r.loadTimeMs ? `(${(r.loadTimeMs / 1000).toFixed(1)}s)` : '';
@@ -520,6 +591,10 @@ function logResult(r, num, total) {
   if (r.thumbnailMismatch) warns.push('⚠ thumb mismatch');
   const warnStr = warns.length ? ` ${warns.join(' ')}` : '';
   log(`   [${num}/${total}] ${icon} ${sec}${r.title}${dur} ${time}${warnStr}${err}`);
+  // On failure, surface the HTTP diagnosis (real status code + what it means)
+  if (r.failureDiagnosis && (r.status === STATUS.FAIL || r.status === STATUS.TIMEOUT)) {
+    log(`        ↳ ${r.failureDiagnosis}`);
+  }
 }
 
 /**
@@ -715,9 +790,9 @@ function generateReport(allResults) {
     timestamp: new Date().toISOString(),
     browser: BROWSER_NAME,
     summary: { total: allResults.length, passed: passed.length, failed: failed.length, timeouts: timeouts.length },
-    failedVideos: failed.map(r => ({ num: r.number, page: r.page, section: r.section, title: r.title, url: r.url, error: r.error })),
+    failedVideos: failed.map(r => ({ num: r.number, page: r.page, section: r.section, title: r.title, url: r.url, error: r.error, httpStatus: r.httpStatus, failureDiagnosis: r.failureDiagnosis })),
     performanceAlerts: perfAlerts,
-    outage: outage ? { detected: true, error: outage.error, checkedBeforeAbort: outage.checkedCount } : null,
+    outage: outage ? { detected: true, error: outage.error, checkedBeforeAbort: outage.checkedCount, diagnosis: outage.diagnosis, httpStatuses: outage.httpStatuses } : null,
     allResults,
   };
   emit({ type: 'complete', summary: report.summary, allResults: report.allResults });
@@ -741,6 +816,8 @@ function generateReport(allResults) {
       status: r.status,
       loadTimeMs: r.loadTimeMs || 0,
       error: r.error || '',
+      httpStatus: r.httpStatus != null ? r.httpStatus : undefined,
+      failureDiagnosis: r.failureDiagnosis || undefined,
     })),
   };
   let history = [];
@@ -798,9 +875,11 @@ function generateReport(allResults) {
       console.log('-'.repeat(60));
       console.log(`🚨 OUTAGE: ${outage.checkedCount} videos checked, all failed with the same error.`);
       console.log(`   "${outage.error}"`);
+      if (outage.diagnosis) console.log(`   Diagnosis: ${outage.diagnosis}`);
+      if (outage.httpStatuses && outage.httpStatuses.length) console.log(`   HTTP status(es) seen: ${outage.httpStatuses.join(', ')}`);
       console.log(`   Treated all ${allResults.length} videos as down. Per-video alerts suppressed.`);
     }
-    sendSlackOutageAlert(outage.error, outage.checkedCount, allResults.length)
+    sendSlackOutageAlert(outage.error, outage.checkedCount, allResults.length, outage.diagnosis)
       .catch(err => log(`Slack outage alert failed (non-critical): ${err.message}`));
   } else if (failed.length > 0 || perfAlerts.length > 0) {
     // Normal failure alert (only when NOT an outage)
@@ -912,12 +991,24 @@ async function main() {
 
     // Stash outage state for the report stage
     if (outageDetected) {
-      const firstError = (allResults.find(r => !r.outageSkipped) || {}).error || 'Unknown error';
+      const checked = allResults.filter(r => !r.outageSkipped);
+      const firstError = (checked[0] || {}).error || 'Unknown error';
+      // Most common HTTP diagnosis among the probed failures (tells us real cause)
+      const diagCounts = {};
+      checked.forEach(r => { if (r.failureDiagnosis) diagCounts[r.failureDiagnosis] = (diagCounts[r.failureDiagnosis] || 0) + 1; });
+      const topDiagnosis = Object.keys(diagCounts).sort((a, b) => diagCounts[b] - diagCounts[a])[0] || null;
+      const statuses = [...new Set(checked.map(r => r.httpStatus).filter(s => s != null))];
       global.__KL_OUTAGE__ = {
         error: firstError,
-        checkedCount: allResults.filter(r => !r.outageSkipped).length,
+        checkedCount: checked.length,
         totalCount: cards.length,
+        diagnosis: topDiagnosis,
+        httpStatuses: statuses,
       };
+      if (topDiagnosis) {
+        log('');
+        log(`   Diagnosis: ${topDiagnosis}`);
+      }
     }
 
   } catch (error) {

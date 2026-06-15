@@ -26,6 +26,7 @@ KL.renderIncidentBanner = function() {
             'This is almost certainly a CDN / streaming-server issue, not individual videos.' +
           '</div>' +
           '<div class="incident-error"><code>' + KL.escHtml(outage.error || 'Unknown error') + '</code></div>' +
+          (outage.diagnosis ? '<div class="incident-diagnosis">' + KL.escHtml(outage.diagnosis) + '</div>' : '') +
         '</div>' +
         '<button class="incident-investigate" onclick="KL.investigateLatestRun()">Investigate →</button>' +
       '</div>';

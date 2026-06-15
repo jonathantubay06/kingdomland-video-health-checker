@@ -165,7 +165,7 @@ export async function sendSlackDailySummary(
  * Send a SINGLE consolidated alert when a mass outage is detected
  * (most/all videos failing with the same error). Replaces per-video spam.
  */
-export async function sendSlackOutageAlert(error: string, checkedCount: number, totalCount: number): Promise<boolean> {
+export async function sendSlackOutageAlert(error: string, checkedCount: number, totalCount: number, diagnosis?: string): Promise<boolean> {
   const blocks: SlackBlock[] = [
     {
       type: 'header',
@@ -175,7 +175,7 @@ export async function sendSlackOutageAlert(error: string, checkedCount: number, 
       type: 'section',
       text: {
         type: 'mrkdwn',
-        text: `*All ${checkedCount} videos checked failed with the same error.* This is almost certainly a CDN / streaming-server outage, not individual video problems. Remaining checks were skipped to save time.`,
+        text: `*All ${checkedCount} videos checked failed with the same error.* Remaining checks were skipped to save time.`,
       },
     },
     {
@@ -185,13 +185,19 @@ export async function sendSlackOutageAlert(error: string, checkedCount: number, 
         { type: 'mrkdwn', text: `*Scope:*\n~${totalCount} videos affected` },
       ],
     },
-    {
-      type: 'context',
-      elements: [
-        { type: 'mrkdwn', text: `go.kingdomlandkids.com  |  ${new Date().toLocaleString()}` },
-      ],
-    },
   ];
+  if (diagnosis) {
+    blocks.push({
+      type: 'section',
+      text: { type: 'mrkdwn', text: `*Diagnosis:*\n${diagnosis}` },
+    });
+  }
+  blocks.push({
+    type: 'context',
+    elements: [
+      { type: 'mrkdwn', text: `go.kingdomlandkids.com  |  ${new Date().toLocaleString()}` },
+    ],
+  });
   const fallback = `:rotating_light: OUTAGE: all videos failing — ${error || 'unknown error'}`;
   return postToSlack(blocks, fallback);
 }

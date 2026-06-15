@@ -524,6 +524,23 @@ body {
 .incident-detail { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.45; }
 .incident-error { margin-top: 6px; }
 .incident-error code { font-size: 0.78rem; color: #b91c1c; word-break: break-word; }
+.incident-diagnosis {
+  margin-top: 8px;
+  padding: 8px 10px;
+  background: rgba(0,0,0,0.04);
+  border-radius: 6px;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--color-text);
+}
+[data-theme="dark"] .incident-diagnosis { background: rgba(255,255,255,0.06); }
+.ri-http-diagnosis {
+  background: rgba(0,0,0,0.04);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-weight: 500;
+}
+[data-theme="dark"] .ri-http-diagnosis { background: rgba(255,255,255,0.06); }
 .incident-investigate {
   flex-shrink: 0;
   align-self: center;
