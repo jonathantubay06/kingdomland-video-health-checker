@@ -49,6 +49,18 @@ const CONFIG = {
   retryFailures: true,
   maxRetries: 1,
 
+  // Throttle between video checks (#1) — avoids tripping the CDN's rate-limiting /
+  // bot-protection, which was the likely cause of the recurring "all videos 403"
+  // false outages. Base delay + random jitter makes traffic look less bot-like.
+  // Set THROTTLE_MS=0 to disable.
+  throttleBaseMs: parseInt(process.env.THROTTLE_MS, 10) >= 0 ? parseInt(process.env.THROTTLE_MS, 10) : 600,
+  throttleJitterMs: 500,
+
+  // Outage confirmation (#2) — before declaring an outage, pause and re-test a few
+  // failed videos. If any recover, it was a transient blip / rate-limit, not an outage.
+  outageConfirmPauseMs: parseInt(process.env.OUTAGE_CONFIRM_PAUSE_MS, 10) || 60000,
+  outageConfirmSamples: 3,
+
   // Screenshots on failure
   screenshotOnFailure: true,
   screenshotDir: 'screenshots',
@@ -89,6 +101,14 @@ function emit(obj) { if (JSON_STREAM) process.stdout.write(JSON.stringify(obj) +
 function log(msg) {
   if (JSON_STREAM) emit({ type: 'status', message: msg });
   else console.log(`[${new Date().toLocaleTimeString()}] ${msg}`);
+}
+
+// Throttle helper (#1): base delay + random jitter between video checks.
+function throttleDelay() {
+  const base = CONFIG.throttleBaseMs || 0;
+  if (base <= 0) return Promise.resolve();
+  const ms = base + Math.floor(Math.random() * (CONFIG.throttleJitterMs || 0));
+  return new Promise(r => setTimeout(r, ms));
 }
 
 // ============================================================
@@ -820,6 +840,104 @@ async function runIntegrityChecks(page, videoFrame, card, result, hlsSrc) {
 // REPORT GENERATION
 // ============================================================
 
+// Read the previous run's video total from history.json (for discovery sanity #3).
+function readPrevTotal() {
+  try {
+    if (!fs.existsSync('history.json')) return null;
+    const h = JSON.parse(fs.readFileSync('history.json', 'utf-8'));
+    if (!Array.isArray(h) || !h.length) return null;
+    // Walk back to the last run with a meaningful total (skip filtered rechecks / discovery fails)
+    for (let i = h.length - 1; i >= 0; i--) {
+      if (h[i].total && h[i].total > 20 && !h[i].discoveryFailure) return h[i].total;
+    }
+    return null;
+  } catch { return null; }
+}
+
+// #3 Write a minimal report flagging a discovery failure (0 videos found), so the
+// dashboard shows a clear "discovery failed" banner instead of looking healthy/empty.
+function writeDiscoveryFailureReport(expected) {
+  const report = {
+    timestamp: new Date().toISOString(),
+    browser: BROWSER_NAME,
+    summary: { total: 0, passed: 0, failed: 0, timeouts: 0 },
+    failedVideos: [],
+    performanceAlerts: [],
+    outage: null,
+    discoveryFailure: { detected: true, expected: expected || null },
+    allResults: [],
+  };
+  emit({ type: 'complete', summary: report.summary, allResults: [] });
+  try {
+    if (fs.existsSync('video-report.json')) fs.copyFileSync('video-report.json', 'previous-report.json');
+  } catch { /* ignore */ }
+  try { fs.writeFileSync('video-report.json', JSON.stringify(report, null, 2)); log('Saved: video-report.json (discovery failure)'); } catch { /* ignore */ }
+
+  // Append a history entry so the trend reflects the gap honestly
+  try {
+    let history = [];
+    if (fs.existsSync('history.json')) { try { history = JSON.parse(fs.readFileSync('history.json', 'utf-8')); } catch { history = []; } }
+    history.push({ timestamp: report.timestamp, total: 0, passed: 0, failed: 0, timeouts: 0, avgLoadTimeMs: 0, discoveryFailure: true, videos: [] });
+    if (history.length > 50) history = history.slice(-50);
+    fs.writeFileSync('history.json', JSON.stringify(history, null, 2));
+  } catch { /* ignore */ }
+
+  // Alert (Slack if configured; otherwise dashboard banner covers it)
+  sendSlackOutageAlert(
+    'Discovery failed — 0 videos found (login or site change?)',
+    0,
+    expected || 0,
+    `🚨 The checker logged in but found 0 videos on Home${expected ? ` (expected ~${expected})` : ''}. This is a login/site-structure problem, not a video-playback outage — the checker likely needs its selectors updated.`
+  ).catch(err => log(`Slack discovery alert failed (non-critical): ${err.message}`));
+}
+
+// #4 Detect per-video performance regressions: a PASSing video that's now much
+// slower than its own historical median. Needs >=3 past samples to be meaningful.
+function detectPerfRegressions(allResults) {
+  let history = [];
+  try {
+    if (fs.existsSync('history.json')) history = JSON.parse(fs.readFileSync('history.json', 'utf-8'));
+  } catch { history = []; }
+  if (!Array.isArray(history) || history.length < 3) return [];
+
+  // Build per-title list of past load times (PASS runs only)
+  const past = {};
+  for (const run of history) {
+    if (!run.videos) continue;
+    for (const v of run.videos) {
+      if (v.status === 'PASS' && v.loadTimeMs > 0) {
+        (past[v.title] = past[v.title] || []).push(v.loadTimeMs);
+      }
+    }
+  }
+
+  const median = (arr) => {
+    const s = [...arr].sort((a, b) => a - b);
+    const m = Math.floor(s.length / 2);
+    return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
+  };
+
+  const out = [];
+  for (const r of allResults) {
+    if (r.status !== STATUS.PASS || !r.loadTimeMs) continue;
+    const samples = past[r.title];
+    if (!samples || samples.length < 3) continue;
+    const med = median(samples);
+    // Regression = now ≥2.5× the historical median AND clearly slow in absolute terms
+    if (med > 0 && r.loadTimeMs >= med * 2.5 && r.loadTimeMs >= 8000) {
+      out.push({
+        title: r.title,
+        section: r.section || '',
+        nowMs: r.loadTimeMs,
+        medianMs: Math.round(med),
+        ratio: +(r.loadTimeMs / med).toFixed(1),
+        samples: samples.length,
+      });
+    }
+  }
+  return out.sort((a, b) => b.ratio - a.ratio);
+}
+
 function generateReport(allResults) {
   const passed = allResults.filter(r => r.status === STATUS.PASS);
   const failed = allResults.filter(r => r.status === STATUS.FAIL);
@@ -829,6 +947,14 @@ function generateReport(allResults) {
   const silentVideos      = allResults.filter(r => r.hasAudio === false);
   const titleMismatches   = allResults.filter(r => r.titleMismatch);
   const thumbMismatches   = allResults.filter(r => r.thumbnailMismatch);
+
+  // #4 Performance regression detection — compare each PASSing video's load time
+  // against its own historical median. Flag ones that have clearly degraded.
+  const regressions = detectPerfRegressions(allResults);
+
+  // Transient state captured during the run (declared early — used in console output below)
+  const outage = global.__KL_OUTAGE__ || null;
+  const discoveryWarning = global.__KL_DISCOVERY_WARNING__ || null;
 
   if (!JSON_STREAM) {
     console.log('\n' + '='.repeat(60));
@@ -871,6 +997,18 @@ function generateReport(allResults) {
     if (passed.length === allResults.length) {
       console.log('\nALL VIDEOS LOADED SUCCESSFULLY!');
     }
+
+    if (regressions.length > 0) {
+      console.log('-'.repeat(60));
+      console.log('⏳ PERFORMANCE REGRESSIONS (passing, but much slower than usual):');
+      regressions.slice(0, 10).forEach(r => {
+        console.log(`  ${r.title} — now ${(r.nowMs / 1000).toFixed(1)}s vs usual ${(r.medianMs / 1000).toFixed(1)}s (${r.ratio}× over ${r.samples} runs)`);
+      });
+    }
+    if (discoveryWarning) {
+      console.log('-'.repeat(60));
+      console.log(`⚠️ PARTIAL DISCOVERY: found ${discoveryWarning.found} videos (expected ~${discoveryWarning.expected}).`);
+    }
   }
 
   if (fs.existsSync('video-report.json')) {
@@ -887,15 +1025,15 @@ function generateReport(allResults) {
     }))
     .sort((a, b) => b.loadTimeMs - a.loadTimeMs);
 
-  const outage = global.__KL_OUTAGE__ || null;
-
   const report = {
     timestamp: new Date().toISOString(),
     browser: BROWSER_NAME,
     summary: { total: allResults.length, passed: passed.length, failed: failed.length, timeouts: timeouts.length },
     failedVideos: failed.map(r => ({ num: r.number, page: r.page, section: r.section, title: r.title, url: r.url, error: r.error, httpStatus: r.httpStatus, failureDiagnosis: r.failureDiagnosis })),
     performanceAlerts: perfAlerts,
+    regressions,
     outage: outage ? { detected: true, error: outage.error, checkedBeforeAbort: outage.checkedCount, diagnosis: outage.diagnosis, httpStatuses: outage.httpStatuses } : null,
+    discoveryWarning,
     allResults,
   };
   emit({ type: 'complete', summary: report.summary, allResults: report.allResults });
@@ -1000,8 +1138,34 @@ function generateReport(allResults) {
     }
   }
 
-  // Clear outage state so it doesn't leak into any subsequent run in the same process
+  // Clear transient state so it doesn't leak into a subsequent run in the same process
   global.__KL_OUTAGE__ = null;
+  global.__KL_DISCOVERY_WARNING__ = null;
+}
+
+/**
+ * #2 Confirm a suspected outage is real (not a transient blip / rate-limit).
+ * Pauses, then re-tests a sample of the failed videos. Returns:
+ *   true  → still failing after the pause  → REAL outage
+ *   false → at least one recovered          → transient, NOT an outage
+ */
+async function confirmOutageReal(page, sampleCards, outageError) {
+  const pauseSec = Math.round(CONFIG.outageConfirmPauseMs / 1000);
+  log('');
+  log(`   ⏸ ${sampleCards.length === 0 ? '' : ''}Suspected outage ("${outageError}"). Pausing ${pauseSec}s, then re-testing ${Math.min(sampleCards.length, CONFIG.outageConfirmSamples)} video(s) to rule out a transient blip / rate-limit...`);
+  await page.waitForTimeout(CONFIG.outageConfirmPauseMs);
+
+  const samples = sampleCards.slice(0, CONFIG.outageConfirmSamples);
+  let recovered = 0;
+  for (const c of samples) {
+    try {
+      const r = await checkVideo(page, c, 0, 'confirm');
+      if (r.status === STATUS.PASS) recovered++;
+    } catch { /* treat as still-failing */ }
+    await throttleDelay();
+  }
+  log(`   Re-test result: ${recovered}/${samples.length} recovered.`);
+  return recovered === 0; // real outage only if NONE recovered
 }
 
 // ============================================================
@@ -1034,7 +1198,39 @@ async function main() {
     }
 
     let cards = await discoverHomeVideos(page);
+    // Discovery can flake if the page hasn't finished rendering when the scroll runs.
+    // Retry (reload + re-scroll) before trusting a 0 result — prevents false discovery alarms.
+    let discAttempts = 0;
+    while (cards.length === 0 && discAttempts < 2) {
+      discAttempts++;
+      log(`   Discovery found 0 videos — reloading and retrying (${discAttempts}/2)...`);
+      try {
+        await page.goto(CONFIG.homeUrl, { waitUntil: 'networkidle', timeout: CONFIG.navigationTimeout });
+      } catch { /* fall through to scroll anyway */ }
+      await page.waitForTimeout(3000);
+      cards = await discoverHomeVideos(page);
+    }
     emit({ type: 'discovery-complete', page: PAGE.HOME, cards, total: cards.length });
+
+    // #3 Discovery sanity check — distinguish "login/UI broke" from "videos broke".
+    // Compare what we found against the previous run's total.
+    if (!TITLES_FILTER) {
+      const prevTotal = readPrevTotal();
+      if (cards.length === 0) {
+        log('');
+        log('🚨 DISCOVERY FAILED: 0 videos found on Home.');
+        log('   This is NOT a video-playback issue — login may have failed, or the site structure/selectors changed.');
+        writeDiscoveryFailureReport(prevTotal);
+        await browser.close();
+        return; // nothing to check
+      }
+      if (prevTotal && prevTotal > 20 && cards.length < prevTotal * 0.5) {
+        log('');
+        log(`⚠️ PARTIAL DISCOVERY: found ${cards.length} videos but previous run had ${prevTotal}.`);
+        log('   Possible lazy-load/scroll issue or a site change. Checking what was found, but flagging this.');
+        global.__KL_DISCOVERY_WARNING__ = { found: cards.length, expected: prevTotal };
+      }
+    }
 
     if (TITLES_FILTER) {
       cards = cards.filter(c => TITLES_FILTER.has(c.title));
@@ -1047,21 +1243,40 @@ async function main() {
     // outage-failures (saves ~24 min of pointless checking during an outage).
     const OUTAGE_THRESHOLD = 15;
     let outageDetected = false;
+    let outageRuledOut = false; // set if confirmation shows it was a transient blip
 
-    for (const card of cards) {
+    for (let ci = 0; ci < cards.length; ci++) {
+      const card = cards[ci];
       videoNum++;
       const result = await checkVideo(page, card, videoNum, totalStr);
       allResults.push(result);
 
+      // #1 Throttle between checks (skip after the last one)
+      if (ci < cards.length - 1) await throttleDelay();
+
       // Only evaluate while we have NOT yet seen a single pass
       const passedSoFar = allResults.filter(r => r.status === STATUS.PASS).length;
-      if (!outageDetected && passedSoFar === 0 && allResults.length >= OUTAGE_THRESHOLD) {
+      if (!outageDetected && !outageRuledOut && passedSoFar === 0 && allResults.length >= OUTAGE_THRESHOLD) {
         const errs = new Set(allResults.map(r => r.error || ''));
         if (errs.size === 1) {
           const outageError = [...errs][0];
+
+          // #2 Confirm before declaring an outage — pause and re-test a few of the
+          // failed videos. If any recover, it was a transient blip / rate-limit.
+          const sampleCards = [cards[0], cards[Math.floor(allResults.length / 2)], cards[allResults.length - 1]].filter(Boolean);
+          const isReal = await confirmOutageReal(page, sampleCards, outageError);
+
+          if (!isReal) {
+            outageRuledOut = true;
+            log('');
+            log(`   ✓ Re-test passed — this was a TRANSIENT blip (likely rate-limit/throttle), NOT an outage.`);
+            log(`   Continuing the normal run; the ${allResults.length} early failures will be retried at the end.`);
+            continue; // keep checking the rest of the library
+          }
+
           outageDetected = true;
           log('');
-          log(`🚨 OUTAGE DETECTED: first ${allResults.length} videos ALL failed with the same error:`);
+          log(`🚨 OUTAGE CONFIRMED: first ${allResults.length} videos ALL failed with the same error, and re-test still failed:`);
           log(`   "${outageError}"`);
           log(`   Aborting remaining ${cards.length - allResults.length} checks — this is a platform-wide issue, not individual videos.`);
 

@@ -9,6 +9,23 @@ KL.renderIncidentBanner = function() {
   if (!container) return;
   container.innerHTML = '';
 
+  // ---- 0. DISCOVERY FAILURE (top priority — checker itself couldn't find videos) ----
+  if (KL.state.discoveryFailure) {
+    var exp = KL.state.discoveryFailure.expected;
+    container.innerHTML =
+      '<div class="incident-banner incident-outage">' +
+        '<div class="incident-icon">🚨</div>' +
+        '<div class="incident-body">' +
+          '<div class="incident-title">Discovery failed — checker found 0 videos</div>' +
+          '<div class="incident-detail">' +
+            'The checker logged in but found no videos on Home' + (exp ? ' (expected ~' + exp + ')' : '') + '. ' +
+            'This is a login or site-structure problem, <strong>not</strong> a video-playback outage — the checker likely needs its selectors updated. The numbers below are not reliable.' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    return;
+  }
+
   // ---- 1. OUTAGE (highest priority) ----
   // Prefer the explicit flag from the report; fall back to a heuristic
   // (most videos failed with the same dominant error).
@@ -59,9 +76,46 @@ KL.renderIncidentBanner = function() {
     }
   }
 
-  // ---- 3. RECOVERY ----
+  // ---- 3. PARTIAL DISCOVERY (#3) ----
+  if (KL.state.discoveryWarning) {
+    var dw = KL.state.discoveryWarning;
+    container.innerHTML =
+      '<div class="incident-banner incident-stale">' +
+        '<div class="incident-icon">⚠️</div>' +
+        '<div class="incident-body">' +
+          '<div class="incident-title">Partial discovery — fewer videos than expected</div>' +
+          '<div class="incident-detail">' +
+            'Found <strong>' + dw.found + '</strong> videos but the previous run had <strong>' + dw.expected + '</strong>. ' +
+            'Could be a lazy-load/scroll hiccup or a site change. The results below may be incomplete.' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    return;
+  }
+
+  // ---- 4. PERFORMANCE REGRESSIONS (#4) ----
+  if (KL.state.regressions && KL.state.regressions.length) {
+    var regs = KL.state.regressions;
+    var top = regs.slice(0, 3).map(function(r) {
+      return '<li>' + KL.escHtml(r.title) + ' — now ' + (r.nowMs / 1000).toFixed(1) + 's vs usual ' + (r.medianMs / 1000).toFixed(1) + 's (' + r.ratio + '×)</li>';
+    }).join('');
+    container.innerHTML =
+      '<div class="incident-banner incident-perf">' +
+        '<div class="incident-icon">⏳</div>' +
+        '<div class="incident-body">' +
+          '<div class="incident-title">' + regs.length + ' video' + (regs.length === 1 ? '' : 's') + ' slower than usual</div>' +
+          '<div class="incident-detail">These pass, but load much slower than their historical average — worth watching:' +
+            '<ul style="margin:4px 0 0 16px">' + top + (regs.length > 3 ? '<li><em>…and ' + (regs.length - 3) + ' more</em></li>' : '') + '</ul>' +
+          '</div>' +
+        '</div>' +
+        '<button class="incident-dismiss" title="Dismiss" onclick="this.closest(\'.incident-banner\').remove()">✕</button>' +
+      '</div>';
+    // don't return — recovery can still show below if relevant (different container slot)
+  }
+
+  // ---- 5. RECOVERY ----
   // Compare the latest two history entries: prev had issues, current is clean.
-  KL._maybeShowRecoveryBanner(container);
+  if (!container.innerHTML) KL._maybeShowRecoveryBanner(container);
 };
 
 // Heuristic outage detection from the loaded results (for reports that

@@ -99,6 +99,9 @@ KL.loadPreviousReport = async function() {
     KL.state.status = 'complete';
     KL.state.reportTimestamp = report.timestamp || null;
     KL.state.outage = report.outage || null;
+    KL.state.discoveryFailure = report.discoveryFailure || null;
+    KL.state.discoveryWarning = report.discoveryWarning || null;
+    KL.state.regressions = report.regressions || [];
 
     KL.state.sectionMap = {};
     for (var i = 0; i < KL.state.results.length; i++) {

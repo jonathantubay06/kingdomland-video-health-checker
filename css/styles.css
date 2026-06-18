@@ -516,6 +516,18 @@ body {
   border-left: 5px solid #f59e0b;
 }
 .incident-stale .incident-title { color: #92400e; }
+.incident-perf {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border: 1px solid #93c5fd;
+  border-left: 5px solid #3b82f6;
+}
+.incident-perf .incident-title { color: #1e40af; }
+[data-theme="dark"] .incident-perf {
+  background: linear-gradient(135deg, #131f33 0%, #1a2a44 100%);
+  border-color: #2b4a6a;
+  border-left-color: #3b82f6;
+}
+[data-theme="dark"] .incident-perf .incident-title { color: #93c5fd; }
 .incident-icon { font-size: 1.5rem; flex-shrink: 0; line-height: 1.2; }
 .incident-body { flex: 1; min-width: 0; }
 .incident-title { font-weight: 800; font-size: 1rem; margin-bottom: 3px; }
