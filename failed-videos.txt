@@ -1,0 +1,8 @@
+FAILED VIDEOS — go.kingdomlandkids.com
+Generated: 6/19/2026, 6:00:14 PM
+Total failed: 1 | Timed out: 0
+============================================================
+
+[FAIL] #205 [HOME] Malar's Big House Read-Along
+  URL:   https://go.kingdomlandkids.com/subscription
+  Error: Did not land on /watch/ (got https://go.kingdomlandkids.com/subscription)
