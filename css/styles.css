@@ -598,6 +598,18 @@ body {
 [data-theme="dark"] .incident-stale .incident-title { color: #fbbf24; }
 [data-theme="dark"] .incident-error code { color: #f87171; }
 
+/* Uptime explanatory note (names the runs causing a sub-100% dip) */
+.uptime-note {
+  margin-top: 12px;
+  padding: 10px 12px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  background: rgba(245,166,35,0.08);
+  border: 1px solid rgba(245,166,35,0.25);
+  border-radius: 8px;
+}
+
 /* Clickable-bars hint under the Check History chart */
 .trend-chart-hint {
   font-size: 0.72rem;

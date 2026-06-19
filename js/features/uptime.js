@@ -31,6 +31,24 @@ KL.updateUptimeTracking = async function() {
     var uptime30 = calcUptime(last30);
     var totalChecks = history.length;
 
+    // Identify full-outage runs (0 passed of many) — these are what pull uptime
+    // below 100%. Name them so the dip is never a mystery (and note they may be
+    // rate-limit false alarms vs real outages — the Check History bars show which).
+    var outageRuns = history.filter(function(h) { return (h.total || 0) > 20 && (h.passed || 0) === 0; });
+    var outageNote = '';
+    if (outageRuns.length > 0) {
+      var dates = outageRuns.slice(-3).map(function(h) {
+        var d = new Date(h.timestamp);
+        return (d.getMonth() + 1) + '/' + d.getDate();
+      }).join(', ');
+      outageNote =
+        '<div class="uptime-note">' +
+          'ⓘ The dip is from <strong>' + outageRuns.length + ' full-outage run' + (outageRuns.length === 1 ? '' : 's') + '</strong> (' + dates + '), ' +
+          'where every video failed at once. Click the red bars in <strong>Check History</strong> below to see each cause — ' +
+          'some may be checker rate-limiting (not real downtime) rather than a true outage.' +
+        '</div>';
+    }
+
     var uptimeClass = function(val) {
       if (val === null) return '';
       if (val >= 99) return 'uptime-good';
@@ -47,7 +65,8 @@ KL.updateUptimeTracking = async function() {
         '<div class="uptime-card"><div class="uptime-card-label">7-Day Uptime</div><div class="uptime-card-value ' + uptimeClass(uptime7) + '">' + formatUptime(uptime7) + '</div><div class="uptime-card-sub">' + last7.length + ' checks</div></div>' +
         '<div class="uptime-card"><div class="uptime-card-label">30-Day Uptime</div><div class="uptime-card-value ' + uptimeClass(uptime30) + '">' + formatUptime(uptime30) + '</div><div class="uptime-card-sub">' + last30.length + ' checks</div></div>' +
         '<div class="uptime-card"><div class="uptime-card-label">All-Time Uptime</div><div class="uptime-card-value ' + uptimeClass(allUptime) + '">' + formatUptime(allUptime) + '</div><div class="uptime-card-sub">' + totalChecks + ' total checks</div></div>' +
-      '</div>';
+      '</div>' +
+      outageNote;
     section.style.display = 'block';
   } catch (e) {
     section.style.display = 'none';
