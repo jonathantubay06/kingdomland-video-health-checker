@@ -1,0 +1,8 @@
+FAILED VIDEOS — go.kingdomlandkids.com
+Generated: 6/22/2026, 5:17:44 PM
+Total failed: 1 | Timed out: 0
+============================================================
+
+[FAIL] #137 [HOME] Marvelous Light A Rotten Day: Finding Joy in God
+  URL:   https://go.kingdomlandkids.com/subscription
+  Error: Did not land on /watch/ (got https://go.kingdomlandkids.com/subscription)
