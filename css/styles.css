@@ -603,12 +603,27 @@ body {
   margin-top: 12px;
   padding: 10px 12px;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.7;
   color: var(--color-text-muted);
   background: rgba(245,166,35,0.08);
   border: 1px solid rgba(245,166,35,0.25);
   border-radius: 8px;
 }
+.uptime-outage-link {
+  display: inline-block;
+  background: rgba(239,68,68,0.12);
+  border: 1px solid rgba(239,68,68,0.35);
+  color: #b91c1c;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  margin: 0 2px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.uptime-outage-link:hover { background: rgba(239,68,68,0.22); }
+[data-theme="dark"] .uptime-outage-link { color: #f87171; background: rgba(239,68,68,0.18); border-color: rgba(239,68,68,0.4); }
 
 /* Clickable-bars hint under the Check History chart */
 .trend-chart-hint {

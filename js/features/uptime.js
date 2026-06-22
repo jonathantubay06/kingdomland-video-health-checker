@@ -32,19 +32,23 @@ KL.updateUptimeTracking = async function() {
     var totalChecks = history.length;
 
     // Identify full-outage runs (0 passed of many) — these are what pull uptime
-    // below 100%. Name them so the dip is never a mystery (and note they may be
-    // rate-limit false alarms vs real outages — the Check History bars show which).
+    // below 100%. Name them so the dip is never a mystery, and make each one
+    // CLICKABLE (opens its Run Investigation) — because the chart only shows the
+    // last 20 runs, so an outage dragging the 30-day number may have scrolled off.
     var outageRuns = history.filter(function(h) { return (h.total || 0) > 20 && (h.passed || 0) === 0; });
+    KL._uptimeOutageRuns = outageRuns; // stash for the click handler
     var outageNote = '';
     if (outageRuns.length > 0) {
-      var dates = outageRuns.slice(-3).map(function(h) {
+      var dateLinks = outageRuns.slice(-5).map(function(h) {
+        var idx = outageRuns.indexOf(h);
         var d = new Date(h.timestamp);
-        return (d.getMonth() + 1) + '/' + d.getDate();
-      }).join(', ');
+        var label = (d.getMonth() + 1) + '/' + d.getDate() + ' ' + d.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
+        return '<button class="uptime-outage-link" onclick="KL.investigateOutageRun(' + idx + ')">' + label + '</button>';
+      }).join(' ');
       outageNote =
         '<div class="uptime-note">' +
-          'ⓘ The dip is from <strong>' + outageRuns.length + ' full-outage run' + (outageRuns.length === 1 ? '' : 's') + '</strong> (' + dates + '), ' +
-          'where every video failed at once. Click the red bars in <strong>Check History</strong> below to see each cause — ' +
+          'ⓘ The dip is from <strong>' + outageRuns.length + ' full-outage run' + (outageRuns.length === 1 ? '' : 's') + '</strong>, ' +
+          'where every video failed at once. Click to investigate each: ' + dateLinks + ' — ' +
           'some may be checker rate-limiting (not real downtime) rather than a true outage.' +
         '</div>';
     }
@@ -71,4 +75,12 @@ KL.updateUptimeTracking = async function() {
   } catch (e) {
     section.style.display = 'none';
   }
+};
+
+// Open the Run Investigation modal for an outage run named in the uptime note.
+// Works even if that run's bar has scrolled off the Check History chart.
+KL.investigateOutageRun = function(idx) {
+  var runs = KL._uptimeOutageRuns || [];
+  var run = runs[idx];
+  if (run && window.openRunInvestigation) window.openRunInvestigation(run);
 };
