@@ -62,13 +62,35 @@ KL.updateUptimeTracking = async function() {
 
     var formatUptime = function(val) { return val !== null ? val.toFixed(1) + '%' : 'N/A'; };
 
+    // Per-window "imperfect" runs (any run that wasn't 100%) — what makes a card
+    // orange. Stashed so clicking a card can show exactly what dragged it down.
+    var imperfect = function(entries) {
+      return entries.filter(function(h) { return (h.total || 0) > 20 && (h.passed || 0) < (h.total || 0); })
+        .sort(function(a, b) { return new Date(b.timestamp) - new Date(a.timestamp); });
+    };
+    KL._uptimeWindows = { '7': imperfect(last7), '30': imperfect(last30), 'all': imperfect(history) };
+
+    // Build a card; if its window has imperfect runs and it's < 100, make it clickable.
+    var card = function(label, val, subText, windowKey) {
+      var issues = KL._uptimeWindows[windowKey] || [];
+      var clickable = val !== null && val < 100 && issues.length > 0;
+      var cls = 'uptime-card' + (clickable ? ' uptime-card-clickable' : '');
+      var attr = clickable ? ' onclick="KL.investigateWindow(\'' + windowKey + '\')" title="Click to see what dragged this down"' : '';
+      var hint = clickable ? '<div class="uptime-card-hint">ⓘ ' + issues.length + ' run' + (issues.length === 1 ? '' : 's') + ' below 100% — click to investigate</div>' : '';
+      return '<div class="' + cls + '"' + attr + '>' +
+        '<div class="uptime-card-label">' + label + '</div>' +
+        '<div class="uptime-card-value ' + uptimeClass(val) + '">' + formatUptime(val) + '</div>' +
+        '<div class="uptime-card-sub">' + subText + '</div>' + hint +
+      '</div>';
+    };
+
     section.innerHTML =
       '<div class="uptime-header">' +
         '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg> Uptime Tracking</div>' +
       '<div class="uptime-cards">' +
-        '<div class="uptime-card"><div class="uptime-card-label">7-Day Uptime</div><div class="uptime-card-value ' + uptimeClass(uptime7) + '">' + formatUptime(uptime7) + '</div><div class="uptime-card-sub">' + last7.length + ' checks</div></div>' +
-        '<div class="uptime-card"><div class="uptime-card-label">30-Day Uptime</div><div class="uptime-card-value ' + uptimeClass(uptime30) + '">' + formatUptime(uptime30) + '</div><div class="uptime-card-sub">' + last30.length + ' checks</div></div>' +
-        '<div class="uptime-card"><div class="uptime-card-label">All-Time Uptime</div><div class="uptime-card-value ' + uptimeClass(allUptime) + '">' + formatUptime(allUptime) + '</div><div class="uptime-card-sub">' + totalChecks + ' total checks</div></div>' +
+        card('7-Day Uptime', uptime7, last7.length + ' checks', '7') +
+        card('30-Day Uptime', uptime30, last30.length + ' checks', '30') +
+        card('All-Time Uptime', allUptime, totalChecks + ' total checks', 'all') +
       '</div>' +
       outageNote;
     section.style.display = 'block';
@@ -82,5 +104,43 @@ KL.updateUptimeTracking = async function() {
 KL.investigateOutageRun = function(idx) {
   var runs = KL._uptimeOutageRuns || [];
   var run = runs[idx];
+  if (run && window.openRunInvestigation) window.openRunInvestigation(run);
+};
+
+// Clicking an orange uptime card: show what dragged THAT window down.
+// 1 imperfect run → open it directly; multiple → list them (each clickable).
+KL.investigateWindow = function(windowKey) {
+  var runs = (KL._uptimeWindows && KL._uptimeWindows[windowKey]) || [];
+  if (runs.length === 0) return;
+  if (runs.length === 1) { if (window.openRunInvestigation) window.openRunInvestigation(runs[0]); return; }
+
+  // Multiple imperfect runs — render a chooser in the run-investigation modal.
+  var modal = document.getElementById('run-investigation-modal');
+  var body = document.getElementById('run-investigation-body');
+  var title = document.getElementById('run-investigation-title');
+  if (!modal || !body) { if (window.openRunInvestigation) window.openRunInvestigation(runs[0]); return; }
+
+  var label = windowKey === '7' ? '7-day' : windowKey === '30' ? '30-day' : 'all-time';
+  title.textContent = 'What dragged ' + label + ' uptime down';
+  KL._windowChooserRuns = runs;
+  var rows = runs.map(function(r, i) {
+    var d = new Date(r.timestamp);
+    var when = (d.getMonth() + 1) + '/' + d.getDate() + ' ' + d.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
+    var failed = (r.failed || 0) + (r.timeouts || 0);
+    var isOutage = (r.passed || 0) === 0;
+    return '<button class="ri-window-row" onclick="KL._openWindowRun(' + i + ')">' +
+      '<span class="ri-window-when">' + when + '</span>' +
+      '<span class="ri-window-stat">' + (r.passed || 0) + '/' + (r.total || 0) + ' passed</span>' +
+      '<span class="ri-window-tag' + (isOutage ? ' ri-window-outage' : '') + '">' + (isOutage ? 'full outage' : failed + ' failed') + '</span>' +
+    '</button>';
+  }).join('');
+  body.innerHTML = '<p class="ri-summary">' + runs.length + ' run' + (runs.length === 1 ? '' : 's') +
+    ' in this window were below 100%. Click any to see its full breakdown:</p>' +
+    '<div class="ri-window-list">' + rows + '</div>';
+  modal.style.display = 'flex';
+};
+
+KL._openWindowRun = function(i) {
+  var run = (KL._windowChooserRuns || [])[i];
   if (run && window.openRunInvestigation) window.openRunInvestigation(run);
 };

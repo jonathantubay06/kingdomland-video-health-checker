@@ -625,6 +625,45 @@ body {
 .uptime-outage-link:hover { background: rgba(239,68,68,0.22); }
 [data-theme="dark"] .uptime-outage-link { color: #f87171; background: rgba(239,68,68,0.18); border-color: rgba(239,68,68,0.4); }
 
+/* Clickable uptime card (when a window is below 100%) */
+.uptime-card-clickable { cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; }
+.uptime-card-clickable:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(245,166,35,0.25); }
+.uptime-card-hint {
+  margin-top: 6px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #b45309;
+}
+[data-theme="dark"] .uptime-card-hint { color: #fbbf24; }
+
+/* Window breakdown chooser (multiple imperfect runs in one window) */
+.ri-window-list { display: flex; flex-direction: column; gap: 8px; }
+.ri-window-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-bg);
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--color-text);
+  transition: background 0.15s;
+}
+.ri-window-row:hover { background: var(--color-surface); border-color: var(--color-primary); }
+.ri-window-when { font-weight: 700; min-width: 92px; }
+.ri-window-stat { flex: 1; color: var(--color-text-muted); }
+.ri-window-tag {
+  font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 10px;
+  background: #fef3c7; color: #b45309;
+}
+.ri-window-tag.ri-window-outage { background: #fee2e2; color: #b91c1c; }
+[data-theme="dark"] .ri-window-tag { background: #2a2410; color: #fbbf24; }
+[data-theme="dark"] .ri-window-tag.ri-window-outage { background: #2e1515; color: #f87171; }
+
 /* Clickable-bars hint under the Check History chart */
 .trend-chart-hint {
   font-size: 0.72rem;
