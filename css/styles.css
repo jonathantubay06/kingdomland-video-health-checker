@@ -567,6 +567,8 @@ body {
   transition: background 0.15s, transform 0.15s;
 }
 .incident-investigate:hover { background: #dc2626; transform: translateY(-1px); }
+.incident-investigate-ok { background: #16a34a; }
+.incident-investigate-ok:hover { background: #15803d; }
 .incident-dismiss {
   flex-shrink: 0;
   background: transparent;

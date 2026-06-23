@@ -159,20 +159,37 @@ KL._maybeShowRecoveryBanner = async function(container) {
     var dismissKey = 'kl_recovery_dismissed_' + (curr.timestamp || '');
     if (sessionStorage.getItem(dismissKey)) return;
 
+    // When did the failure happen? (the previous run's timestamp)
+    var prevDate = new Date(prev.timestamp);
+    var whenStr = isNaN(prevDate) ? '' :
+      prevDate.toLocaleDateString(undefined, { month: 'short', day: 'numeric' }) + ' at ' +
+      prevDate.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
+
+    // Stash the failed run so the Investigate button can open its breakdown.
+    KL._recoveryPrevRun = prev;
+    var canInvestigate = Array.isArray(prev.videos) && prev.videos.length > 0;
+
     container.innerHTML =
       '<div class="incident-banner incident-recovery">' +
         '<div class="incident-icon">✅</div>' +
         '<div class="incident-body">' +
           '<div class="incident-title">Recovered — videos are back online</div>' +
           '<div class="incident-detail">' +
-            'The previous check had ' + prevIssues + ' issue' + (prevIssues === 1 ? '' : 's') +
+            'The previous check' + (whenStr ? ' (<strong>' + whenStr + '</strong>)' : '') + ' had ' +
+            prevIssues + ' issue' + (prevIssues === 1 ? '' : 's') +
             '; this check is ' + (curr.passed || 0) + '/' + (curr.total || 0) + ' passing.' +
           '</div>' +
         '</div>' +
+        (canInvestigate ? '<button class="incident-investigate incident-investigate-ok" onclick="KL.investigateRecoveryRun()">View what failed →</button>' : '') +
         '<button class="incident-dismiss" title="Dismiss" ' +
           'onclick="sessionStorage.setItem(\'' + dismissKey + '\',\'1\');this.closest(\'.incident-banner\').remove()">✕</button>' +
       '</div>';
   } catch (e) { /* non-critical */ }
+};
+
+// Open the Run Investigation modal for the failed run referenced by the recovery banner.
+KL.investigateRecoveryRun = function() {
+  if (KL._recoveryPrevRun && window.openRunInvestigation) window.openRunInvestigation(KL._recoveryPrevRun);
 };
 
 // Open the Run Investigation modal for the most recent run (from the outage banner).
