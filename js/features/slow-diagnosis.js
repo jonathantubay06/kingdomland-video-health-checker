@@ -263,7 +263,10 @@ KL.renderSlowDiagnosis = function(diagnosis) {
  */
 KL.diagnoseRun = function(historyEntry) {
   if (!historyEntry || !historyEntry.videos) {
-    return { summary: 'No per-video data for this run.', isOutage: false, errorGroups: [], failedVideos: [] };
+    return {
+      summary: 'Detailed per-video breakdown isn\'t available for this run — it\'s older than the recent detail window (~12 days), though it still counts toward the uptime percentage above.',
+      isOutage: false, errorGroups: [], failedVideos: [],
+    };
   }
   const failed = historyEntry.videos.filter(v => v.status === 'FAIL' || v.status === 'TIMEOUT');
   const total = historyEntry.videos.length;
@@ -357,7 +360,11 @@ window.openRunInvestigation = function(historyEntry) {
   if (!modal || !body) return;
 
   const diagnosis = KL.diagnoseRun(historyEntry);
-  title.textContent = diagnosis.isOutage
+  // historyEntry.outage is the summary-log's own flag, set at check time — use it as
+  // a fallback so aged-out outage runs (no per-video detail left) still get an
+  // honest "Outage detected" title instead of a generic "N issues".
+  const isOutage = diagnosis.isOutage || !!historyEntry.outage;
+  title.textContent = isOutage
     ? 'Run Investigation — 🚨 Outage detected'
     : (historyEntry.failed > 0 || historyEntry.timeouts > 0
         ? 'Run Investigation — ' + (historyEntry.failed + historyEntry.timeouts) + ' issues'

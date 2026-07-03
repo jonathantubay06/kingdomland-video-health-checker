@@ -92,6 +92,14 @@ if (process.env.CHECK_TITLES) {
   try { TITLES_FILTER = new Set(JSON.parse(process.env.CHECK_TITLES)); } catch { TITLES_FILTER = null; }
 }
 
+// Long-term uptime log: summary-only (no per-video detail), so it can be kept for
+// years without the file getting huge — unlike history.json, which carries full
+// per-video detail and is capped at 50 runs (~12 days) for that reason. Without
+// this, "30-Day"/"All-Time" uptime were silently computed over whatever happened
+// to survive the 50-run cap, which could be well under 30 days.
+const UPTIME_LOG_FILE = 'uptime-log.json';
+const UPTIME_LOG_MAX = 5000; // ~3.4 years at 4 runs/day
+
 if (CONFIG.screenshotOnFailure) {
   const screenshotPath = require('path').join(__dirname, CONFIG.screenshotDir);
   if (!fs.existsSync(screenshotPath)) fs.mkdirSync(screenshotPath, { recursive: true });
@@ -854,6 +862,25 @@ function readPrevTotal() {
   } catch { return null; }
 }
 
+// Append a lightweight summary entry to the long-term uptime log. Deliberately
+// carries NO per-video detail (that's history.json's job) so it can be retained
+// for years without the file growing unreasonably large.
+function appendUptimeLog(entry) {
+  let uptimeLog = [];
+  if (fs.existsSync(UPTIME_LOG_FILE)) {
+    try { uptimeLog = JSON.parse(fs.readFileSync(UPTIME_LOG_FILE, 'utf-8')); } catch { uptimeLog = []; }
+  }
+  if (!Array.isArray(uptimeLog)) uptimeLog = [];
+  uptimeLog.push(entry);
+  if (uptimeLog.length > UPTIME_LOG_MAX) uptimeLog = uptimeLog.slice(-UPTIME_LOG_MAX);
+  try {
+    fs.writeFileSync(UPTIME_LOG_FILE, JSON.stringify(uptimeLog, null, 2));
+    log('Saved: ' + UPTIME_LOG_FILE);
+  } catch (e) {
+    log(`Failed to save ${UPTIME_LOG_FILE} (non-critical): ${e.message}`);
+  }
+}
+
 // #3 Write a minimal report flagging a discovery failure (0 videos found), so the
 // dashboard shows a clear "discovery failed" banner instead of looking healthy/empty.
 function writeDiscoveryFailureReport(expected) {
@@ -881,6 +908,11 @@ function writeDiscoveryFailureReport(expected) {
     if (history.length > 50) history = history.slice(-50);
     fs.writeFileSync('history.json', JSON.stringify(history, null, 2));
   } catch { /* ignore */ }
+
+  // Record in the long-term log too, so uptime math doesn't have a silent gap.
+  // total=0 contributes nothing to the passed/total ratio either way — a discovery
+  // failure means "we don't know", not "videos are down", and shouldn't move the number.
+  appendUptimeLog({ timestamp: report.timestamp, total: 0, passed: 0, failed: 0, timeouts: 0, discoveryFailure: true });
 
   // Alert (Slack if configured; otherwise dashboard banner covers it)
   sendSlackOutageAlert(
@@ -1071,6 +1103,18 @@ function generateReport(allResults) {
   if (history.length > 50) history = history.slice(-50);
   fs.writeFileSync('history.json', JSON.stringify(history, null, 2));
   log('Saved: history.json');
+
+  // Long-term summary log (#1) — kept far longer than history.json's 50-run cap,
+  // so "30-Day"/"All-Time" uptime reflect what actually happened in that window
+  // instead of whatever survived the recent-detail cap.
+  appendUptimeLog({
+    timestamp: historyEntry.timestamp,
+    total: historyEntry.total,
+    passed: historyEntry.passed,
+    failed: historyEntry.failed,
+    timeouts: historyEntry.timeouts,
+    outage: !!outage,
+  });
 
   const csv = 'Number,Page,Section,Title,Status,URL,Error,HLS Source,Duration,Resolution,Load Time (ms)\n' +
     allResults.map(r =>

@@ -258,6 +258,20 @@ app.get('/api/history', (req, res) => {
   res.json([]);
 });
 
+// Long-term uptime log (summary-only, no per-video detail) — powers 7/30-day/all-time uptime
+app.get('/api/uptime-log', (req, res) => {
+  const logPath = path.join(__dirname, 'uptime-log.json');
+  if (fs.existsSync(logPath)) {
+    try {
+      const data = JSON.parse(fs.readFileSync(logPath, 'utf-8'));
+      return res.json(data);
+    } catch {
+      return res.json([]);
+    }
+  }
+  res.json([]);
+});
+
 // Previous report for diff comparison
 app.get('/api/previous-report', (req, res) => {
   const prevPath = path.join(__dirname, 'previous-report.json');

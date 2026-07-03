@@ -55,6 +55,7 @@ KL.renderComplete = function(summary, allResults) {
   KL.startAutoRefresh();
 
   KL.updateUptimeTracking();
+  KL.renderProblemVideos();
   KL.renderWatchlist();
 
   var hasFailures = KL.state.failedCount > 0 || KL.state.timeoutCount > 0;

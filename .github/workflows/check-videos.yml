@@ -50,9 +50,11 @@ jobs:
           if git rev-parse --verify origin/data >/dev/null 2>&1; then
             # Pull existing history and previous report for diff comparison
             git show origin/data:history.json > history.json 2>/dev/null || echo "[]" > history.json
+            git show origin/data:uptime-log.json > uptime-log.json 2>/dev/null || echo "[]" > uptime-log.json
             git show origin/data:video-report.json > previous-report.json 2>/dev/null || true
           else
             echo "[]" > history.json
+            echo "[]" > uptime-log.json
           fi
 
       - name: Run video check
@@ -112,6 +114,7 @@ jobs:
           cp video-report.csv /tmp/reports/ 2>/dev/null || true
           cp failed-videos.txt /tmp/reports/ 2>/dev/null || true
           cp history.json /tmp/reports/ 2>/dev/null || true
+          cp uptime-log.json /tmp/reports/ 2>/dev/null || true
           cp previous-report.json /tmp/reports/ 2>/dev/null || true
 
           # Create status metadata
@@ -130,7 +133,7 @@ jobs:
           # Copy only report files
           cp /tmp/reports/* .
 
-          git add video-report.json video-report.csv failed-videos.txt status.json history.json previous-report.json 2>/dev/null || true
+          git add video-report.json video-report.csv failed-videos.txt status.json history.json uptime-log.json previous-report.json 2>/dev/null || true
           git add -A
           git commit -m "Update video report $(date -u +%Y-%m-%d)" || echo "No changes"
           git push origin data

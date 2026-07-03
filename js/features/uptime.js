@@ -6,11 +6,42 @@ KL.updateUptimeTracking = async function() {
   if (!section) return;
 
   try {
-    var url = KL.isLocal ? '/api/history' : '/api/get-report?file=history.json';
-    var res = await fetch(url);
-    if (!res.ok) { section.style.display = 'none'; return; }
-    var history = await res.json();
+    // Long-term summary log (kept for years) drives the 7/30-day/all-time percentages,
+    // so those windows are actually accurate instead of limited by history.json's
+    // 50-run detail cap. Fall back to history.json alone if the log doesn't exist yet
+    // (e.g. right after this feature ships, before the first run creates it).
+    var logUrl = KL.isLocal ? '/api/uptime-log' : '/api/get-report?file=uptime-log.json';
+    var detailUrl = KL.isLocal ? '/api/history' : '/api/get-report?file=history.json';
+    var results = await Promise.allSettled([fetch(logUrl), fetch(detailUrl)]);
+
+    var uptimeLog = [];
+    if (results[0].status === 'fulfilled' && results[0].value.ok) {
+      try { uptimeLog = await results[0].value.json(); } catch { uptimeLog = []; }
+    }
+    if (!Array.isArray(uptimeLog)) uptimeLog = [];
+
+    var detailLog = [];
+    if (results[1].status === 'fulfilled' && results[1].value.ok) {
+      try { detailLog = await results[1].value.json(); } catch { detailLog = []; }
+    }
+    if (!Array.isArray(detailLog)) detailLog = [];
+
+    // Backward-compatible fallback: no summary log yet, so use the detail log directly
+    // (matches the old behavior) until the next check run creates uptime-log.json.
+    var history = uptimeLog.length > 0 ? uptimeLog : detailLog;
     if (!Array.isArray(history) || history.length < 2) { section.style.display = 'none'; return; }
+
+    // Merge per-video detail onto summary entries where a matching run is still
+    // within the shorter detail window (by exact timestamp) — lets "investigate"
+    // still show a full breakdown for recent runs even though % now spans longer.
+    var detailByTimestamp = {};
+    detailLog.forEach(function(h) { if (h.timestamp) detailByTimestamp[h.timestamp] = h; });
+    if (uptimeLog.length > 0) {
+      history = history.map(function(h) {
+        var detail = detailByTimestamp[h.timestamp];
+        return detail && detail.videos ? Object.assign({}, h, { videos: detail.videos }) : h;
+      });
+    }
 
     var now = Date.now();
     var day7 = now - 7 * 24 * 60 * 60 * 1000;

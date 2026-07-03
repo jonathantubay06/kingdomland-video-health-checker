@@ -2270,6 +2270,69 @@ tbody td {
   margin-top: 2px;
 }
 
+/* ============== Problem Videos Panel ============== */
+.problem-videos-section {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+}
+.pv-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--color-fail);
+}
+.pv-subtitle {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 14px;
+}
+.pv-list { display: flex; flex-direction: column; gap: 8px; }
+.pv-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-bg);
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--color-text);
+  transition: background 0.15s, border-color 0.15s;
+}
+.pv-row:hover { background: var(--color-surface); border-color: var(--color-primary); }
+.pv-title {
+  font-weight: 700;
+  flex: 1 1 160px;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pv-section { font-size: 0.72rem; color: var(--color-text-light); flex-shrink: 0; }
+.pv-tag {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+.pv-tag-fail { background: #fee2e2; color: #b91c1c; }
+.pv-tag-slow { background: #dbeafe; color: #1e40af; }
+[data-theme="dark"] .pv-tag-fail { background: #2e1515; color: #f87171; }
+[data-theme="dark"] .pv-tag-slow { background: #131f33; color: #93c5fd; }
+
 /* ============== Watchlist Section ============== */
 .watchlist-section {
   background: var(--color-surface);

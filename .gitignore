@@ -4,6 +4,7 @@ video-report.csv
 failed-videos.txt
 previous-report.json
 history.json
+uptime-log.json
 screenshots/
 data/
 .env
