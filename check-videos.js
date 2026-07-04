@@ -1107,14 +1107,22 @@ function generateReport(allResults) {
   // Long-term summary log (#1) — kept far longer than history.json's 50-run cap,
   // so "30-Day"/"All-Time" uptime reflect what actually happened in that window
   // instead of whatever survived the recent-detail cap.
-  appendUptimeLog({
-    timestamp: historyEntry.timestamp,
-    total: historyEntry.total,
-    passed: historyEntry.passed,
-    failed: historyEntry.failed,
-    timeouts: historyEntry.timeouts,
-    outage: !!outage,
-  });
+  //
+  // Skip this for filtered/partial runs (Re-check Failed, Re-check a Section):
+  // those only check a handful of videos, not the whole library, so counting
+  // them as their own "check" would pollute the uptime ratio with a run of a
+  // totally different size/meaning — and a small run's failure wouldn't even
+  // be investigable (the outage/imperfect-run filters require total > 20).
+  if (!TITLES_FILTER) {
+    appendUptimeLog({
+      timestamp: historyEntry.timestamp,
+      total: historyEntry.total,
+      passed: historyEntry.passed,
+      failed: historyEntry.failed,
+      timeouts: historyEntry.timeouts,
+      outage: !!outage,
+    });
+  }
 
   const csv = 'Number,Page,Section,Title,Status,URL,Error,HLS Source,Duration,Resolution,Load Time (ms)\n' +
     allResults.map(r =>
