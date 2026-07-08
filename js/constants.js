@@ -1,5 +1,5 @@
 // Shared constants for Kingdomland Video Checker (browser)
-// Must be loaded before app.js in index.html
+// Must be loaded before the other js/*.js modules in index.html
 window.KL = window.KL || {};
 
 KL.STATUS = {

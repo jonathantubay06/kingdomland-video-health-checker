@@ -52,29 +52,6 @@ window.showToast = function(message, type, duration) {
   }, duration);
 };
 
-// ============== Counter Animation ==============
-// Counts a numeric element from 0 → target over ~600ms with ease-out feel.
-KL.animateCounter = function(el, target) {
-  if (!el || isNaN(target)) { if (el) el.textContent = target; return; }
-  if (target === 0) { el.textContent = 0; return; }
-  const duration = 1200;
-  const start = performance.now();
-  function step(now) {
-    const progress = Math.min((now - start) / duration, 1);
-    // Ease-out cubic: decelerates into the final value
-    const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.round(eased * target);
-    if (progress < 1) requestAnimationFrame(step);
-    else el.textContent = target;
-  }
-  requestAnimationFrame(step);
-  // After counting, do a quick scale-pop so the number feels like it "landed"
-  setTimeout(function() {
-    el.classList.add('counter-pop');
-    el.addEventListener('animationend', function() { el.classList.remove('counter-pop'); }, { once: true });
-  }, duration + 20);
-};
-
 // ============== Confetti Burst ==============
 // Fires ~55 tiny DOM pieces from the health banner on a perfect run (0 failures).
 // All pieces are removed from the DOM after their CSS animation ends — no memory leak.
@@ -118,15 +95,4 @@ KL.onEnterViewport = function(el, callback, threshold) {
     });
   }, { threshold: threshold || 0.08 });
   observer.observe(el);
-};
-
-// ============== Debounce ==============
-// Returns a debounced version of fn that waits `delay` ms after the last call.
-KL.debounce = function(fn, delay) {
-  var timer;
-  return function() {
-    var args = arguments;
-    clearTimeout(timer);
-    timer = setTimeout(function() { fn.apply(null, args); }, delay);
-  };
 };

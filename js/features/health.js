@@ -53,7 +53,7 @@ KL.updateHealthSummary = function() {
     '</div>';
   el.style.display = 'flex';
 
-  // Update slow videos pill here (not in app.js updateSummaryCards) because
+  // Update slow videos pill here (not in ui-updates.js's updateSummaryCards) because
   // KL.state.results is populated AFTER updateSummaryCards() runs — this is the
   // first reliable point where all results are available in KL.state.
   var slowPill = document.getElementById('slow-videos-pill');
