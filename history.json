@@ -83930,19 +83930,19 @@
     ]
   },
   {
-    "timestamp": "2026-07-08T17:19:44.437Z",
+    "timestamp": "2026-07-08T17:35:20.197Z",
     "total": 223,
     "passed": 223,
     "failed": 0,
     "timeouts": 0,
-    "avgLoadTimeMs": 2247,
+    "avgLoadTimeMs": 3478,
     "videos": [
       {
         "title": "Gabby Action Short",
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 4851,
+        "loadTimeMs": 3209,
         "error": ""
       },
       {
@@ -83950,7 +83950,7 @@
         "section": "ABC",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2602,
+        "loadTimeMs": 2868,
         "error": ""
       },
       {
@@ -83958,7 +83958,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2305,
+        "loadTimeMs": 3790,
         "error": ""
       },
       {
@@ -83966,7 +83966,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2642,
+        "loadTimeMs": 3227,
         "error": ""
       },
       {
@@ -83974,7 +83974,7 @@
         "section": "Life Skills",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2826,
+        "loadTimeMs": 3368,
         "error": ""
       },
       {
@@ -83982,7 +83982,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2185,
+        "loadTimeMs": 4067,
         "error": ""
       },
       {
@@ -83990,7 +83990,7 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2750,
+        "loadTimeMs": 3245,
         "error": ""
       },
       {
@@ -83998,7 +83998,7 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2111,
+        "loadTimeMs": 3177,
         "error": ""
       },
       {
@@ -84006,7 +84006,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2921,
+        "loadTimeMs": 3067,
         "error": ""
       },
       {
@@ -84014,7 +84014,7 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2193,
+        "loadTimeMs": 3658,
         "error": ""
       },
       {
@@ -84022,7 +84022,7 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2101,
+        "loadTimeMs": 3249,
         "error": ""
       },
       {
@@ -84030,7 +84030,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2474,
+        "loadTimeMs": 3826,
         "error": ""
       },
       {
@@ -84038,7 +84038,7 @@
         "section": "Marvelous Light Series",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2115,
+        "loadTimeMs": 3475,
         "error": ""
       },
       {
@@ -84046,7 +84046,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2585,
+        "loadTimeMs": 3084,
         "error": ""
       },
       {
@@ -84054,7 +84054,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2148,
+        "loadTimeMs": 2836,
         "error": ""
       },
       {
@@ -84062,7 +84062,7 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2071,
+        "loadTimeMs": 3927,
         "error": ""
       },
       {
@@ -84070,7 +84070,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2030,
+        "loadTimeMs": 2834,
         "error": ""
       },
       {
@@ -84078,7 +84078,7 @@
         "section": "Numbers",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2535,
+        "loadTimeMs": 3514,
         "error": ""
       },
       {
@@ -84086,7 +84086,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2611,
+        "loadTimeMs": 3631,
         "error": ""
       },
       {
@@ -84094,7 +84094,7 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2214,
+        "loadTimeMs": 3454,
         "error": ""
       },
       {
@@ -84102,7 +84102,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2004,
+        "loadTimeMs": 3942,
         "error": ""
       },
       {
@@ -84110,7 +84110,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2503,
+        "loadTimeMs": 3394,
         "error": ""
       },
       {
@@ -84118,7 +84118,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2670,
+        "loadTimeMs": 2718,
         "error": ""
       },
       {
@@ -84126,7 +84126,7 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1924,
+        "loadTimeMs": 3484,
         "error": ""
       },
       {
@@ -84134,7 +84134,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1975,
+        "loadTimeMs": 3870,
         "error": ""
       },
       {
@@ -84142,7 +84142,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2493,
+        "loadTimeMs": 3962,
         "error": ""
       },
       {
@@ -84150,7 +84150,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2854,
+        "loadTimeMs": 3358,
         "error": ""
       },
       {
@@ -84158,7 +84158,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2286,
+        "loadTimeMs": 3338,
         "error": ""
       },
       {
@@ -84166,7 +84166,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2043,
+        "loadTimeMs": 3514,
         "error": ""
       },
       {
@@ -84174,7 +84174,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2428,
+        "loadTimeMs": 3772,
         "error": ""
       },
       {
@@ -84182,7 +84182,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2656,
+        "loadTimeMs": 3241,
         "error": ""
       },
       {
@@ -84190,7 +84190,7 @@
         "section": "Bible Adventures",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2661,
+        "loadTimeMs": 2773,
         "error": ""
       },
       {
@@ -84198,7 +84198,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2101,
+        "loadTimeMs": 3722,
         "error": ""
       },
       {
@@ -84206,7 +84206,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2068,
+        "loadTimeMs": 3643,
         "error": ""
       },
       {
@@ -84214,7 +84214,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2047,
+        "loadTimeMs": 2840,
         "error": ""
       },
       {
@@ -84222,7 +84222,7 @@
         "section": "Marvelous Light Series",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2582,
+        "loadTimeMs": 3300,
         "error": ""
       },
       {
@@ -84230,7 +84230,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2122,
+        "loadTimeMs": 3570,
         "error": ""
       },
       {
@@ -84238,7 +84238,7 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2199,
+        "loadTimeMs": 3393,
         "error": ""
       },
       {
@@ -84246,7 +84246,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2494,
+        "loadTimeMs": 5107,
         "error": ""
       },
       {
@@ -84254,7 +84254,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2006,
+        "loadTimeMs": 3767,
         "error": ""
       },
       {
@@ -84262,7 +84262,7 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2521,
+        "loadTimeMs": 2968,
         "error": ""
       },
       {
@@ -84270,7 +84270,7 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2019,
+        "loadTimeMs": 2812,
         "error": ""
       },
       {
@@ -84278,7 +84278,7 @@
         "section": "Marvelous Light Series",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2087,
+        "loadTimeMs": 3810,
         "error": ""
       },
       {
@@ -84286,7 +84286,7 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2630,
+        "loadTimeMs": 3139,
         "error": ""
       },
       {
@@ -84294,7 +84294,7 @@
         "section": "Marvelous Light Series",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1953,
+        "loadTimeMs": 3803,
         "error": ""
       },
       {
@@ -84302,7 +84302,7 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1897,
+        "loadTimeMs": 2875,
         "error": ""
       },
       {
@@ -84310,7 +84310,7 @@
         "section": "Marvelous Light Series",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2109,
+        "loadTimeMs": 3394,
         "error": ""
       },
       {
@@ -84318,7 +84318,7 @@
         "section": "Marvelous Light Series",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2525,
+        "loadTimeMs": 2853,
         "error": ""
       },
       {
@@ -84326,7 +84326,7 @@
         "section": "Marvelous Light Series",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2089,
+        "loadTimeMs": 2909,
         "error": ""
       },
       {
@@ -84334,7 +84334,7 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1936,
+        "loadTimeMs": 3209,
         "error": ""
       },
       {
@@ -84342,7 +84342,7 @@
         "section": "Marvelous Light Series",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2267,
+        "loadTimeMs": 3449,
         "error": ""
       },
       {
@@ -84350,7 +84350,7 @@
         "section": "Marvelous Light Series",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2517,
+        "loadTimeMs": 3218,
         "error": ""
       },
       {
@@ -84358,7 +84358,7 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2068,
+        "loadTimeMs": 3603,
         "error": ""
       },
       {
@@ -84366,7 +84366,7 @@
         "section": "Marvelous Light Series",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2091,
+        "loadTimeMs": 3900,
         "error": ""
       },
       {
@@ -84374,7 +84374,7 @@
         "section": "Marvelous Light Series",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1969,
+        "loadTimeMs": 3447,
         "error": ""
       },
       {
@@ -84382,7 +84382,7 @@
         "section": "Marvelous Light Series",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2096,
+        "loadTimeMs": 3437,
         "error": ""
       },
       {
@@ -84390,7 +84390,7 @@
         "section": "Marvelous Light Series",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2483,
+        "loadTimeMs": 2988,
         "error": ""
       },
       {
@@ -84398,7 +84398,7 @@
         "section": "Marvelous Light Series",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1905,
+        "loadTimeMs": 3874,
         "error": ""
       },
       {
@@ -84406,7 +84406,7 @@
         "section": "Numbers",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2133,
+        "loadTimeMs": 3391,
         "error": ""
       },
       {
@@ -84414,7 +84414,7 @@
         "section": "Numbers",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2577,
+        "loadTimeMs": 3893,
         "error": ""
       },
       {
@@ -84422,7 +84422,7 @@
         "section": "Numbers",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2190,
+        "loadTimeMs": 3635,
         "error": ""
       },
       {
@@ -84430,7 +84430,7 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1951,
+        "loadTimeMs": 2913,
         "error": ""
       },
       {
@@ -84438,7 +84438,7 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2017,
+        "loadTimeMs": 3619,
         "error": ""
       },
       {
@@ -84446,7 +84446,7 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2021,
+        "loadTimeMs": 3538,
         "error": ""
       },
       {
@@ -84454,7 +84454,7 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2606,
+        "loadTimeMs": 3320,
         "error": ""
       },
       {
@@ -84462,7 +84462,7 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2048,
+        "loadTimeMs": 3394,
         "error": ""
       },
       {
@@ -84470,31 +84470,7 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2056,
-        "error": ""
-      },
-      {
-        "title": "Big History: Jackie Robinson",
-        "section": "Life Skills",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2026,
-        "error": ""
-      },
-      {
-        "title": "Big History: Duke Ellington",
-        "section": "Life Skills",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2352,
-        "error": ""
-      },
-      {
-        "title": "Big History: Albert Einstein",
-        "section": "Life Skills",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2010,
+        "loadTimeMs": 3884,
         "error": ""
       },
       {
@@ -84502,7 +84478,15 @@
         "section": "Bible Adventures",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1892,
+        "loadTimeMs": 2637,
+        "error": ""
+      },
+      {
+        "title": "Big History: Jackie Robinson",
+        "section": "Life Skills",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2958,
         "error": ""
       },
       {
@@ -84510,63 +84494,15 @@
         "section": "Life Skills",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2046,
+        "loadTimeMs": 2766,
         "error": ""
       },
       {
-        "title": "The Joseph Song",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2180,
-        "error": ""
-      },
-      {
-        "title": "Spark Lab: Where Puddles Go",
-        "section": "Fun Zone",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2597,
-        "error": ""
-      },
-      {
-        "title": "Bible Trivia: Daniel and The Lions Den",
-        "section": "Bible Adventures",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2188,
-        "error": ""
-      },
-      {
-        "title": "Big History: Ruby Bridges",
+        "title": "Big History: Duke Ellington",
         "section": "Life Skills",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2871,
-        "error": ""
-      },
-      {
-        "title": "The Bible Explained: The Joseph Story",
-        "section": "Bible Adventures",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2085,
-        "error": ""
-      },
-      {
-        "title": "God’s Creation: Eagles",
-        "section": "Fun Zone",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1967,
-        "error": ""
-      },
-      {
-        "title": "Spark Lab: Why Towers Fall",
-        "section": "Fun Zone",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2225,
+        "loadTimeMs": 2735,
         "error": ""
       },
       {
@@ -84574,15 +84510,55 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2466,
+        "loadTimeMs": 3017,
         "error": ""
       },
       {
-        "title": "Night Time Prayer Song",
+        "title": "Big History: Albert Einstein",
+        "section": "Life Skills",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3460,
+        "error": ""
+      },
+      {
+        "title": "Spark Lab: Where Puddles Go",
+        "section": "Fun Zone",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3439,
+        "error": ""
+      },
+      {
+        "title": "Spark Lab: Why Towers Fall",
+        "section": "Fun Zone",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3448,
+        "error": ""
+      },
+      {
+        "title": "God’s Creation: Eagles",
+        "section": "Fun Zone",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3439,
+        "error": ""
+      },
+      {
+        "title": "The Bible Explained: The Joseph Story",
+        "section": "Bible Adventures",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2909,
+        "error": ""
+      },
+      {
+        "title": "The Joseph Song",
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2057,
+        "loadTimeMs": 3400,
         "error": ""
       },
       {
@@ -84590,7 +84566,31 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1974,
+        "loadTimeMs": 3547,
+        "error": ""
+      },
+      {
+        "title": "Big History: Ruby Bridges",
+        "section": "Life Skills",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3894,
+        "error": ""
+      },
+      {
+        "title": "Bible Trivia: Daniel and The Lions Den",
+        "section": "Bible Adventures",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3364,
+        "error": ""
+      },
+      {
+        "title": "Night Time Prayer Song",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2781,
         "error": ""
       },
       {
@@ -84598,7 +84598,7 @@
         "section": "Bible Adventures",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1980,
+        "loadTimeMs": 3931,
         "error": ""
       },
       {
@@ -84606,127 +84606,7 @@
         "section": "Bible Adventures",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2085,
-        "error": ""
-      },
-      {
-        "title": "The Eagle",
-        "section": "Fun Zone",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2898,
-        "error": ""
-      },
-      {
-        "title": "Count Some More",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1858,
-        "error": ""
-      },
-      {
-        "title": "The Bible Explained: The Gospels",
-        "section": "Bible Adventures",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2783,
-        "error": ""
-      },
-      {
-        "title": "Jonah Song",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1928,
-        "error": ""
-      },
-      {
-        "title": "Bible In Clay: Creation",
-        "section": "Bible Adventures",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2110,
-        "error": ""
-      },
-      {
-        "title": "The Book Of Genesis Explained",
-        "section": "Bible Adventures",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2487,
-        "error": ""
-      },
-      {
-        "title": "God’s Creation: The Octopus",
-        "section": "Fun Zone",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1961,
-        "error": ""
-      },
-      {
-        "title": "God’s Creation: The Giraffe",
-        "section": "Fun Zone",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 3593,
-        "error": ""
-      },
-      {
-        "title": "The Ocean",
-        "section": "Fun Zone",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2132,
-        "error": ""
-      },
-      {
-        "title": "Bible Trivia: Noah and The Ark",
-        "section": "Bible Adventures",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1919,
-        "error": ""
-      },
-      {
-        "title": "The Book of Exodus Explained",
-        "section": "Bible Adventures",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2151,
-        "error": ""
-      },
-      {
-        "title": "Dr. Martin Luther King Jr.",
-        "section": "Life Skills",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2419,
-        "error": ""
-      },
-      {
-        "title": "The Miracle Song",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2097,
-        "error": ""
-      },
-      {
-        "title": "Rosa Parks",
-        "section": "Life Skills",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1864,
-        "error": ""
-      },
-      {
-        "title": "God's Creation: Polar Bears",
-        "section": "Fun Zone",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1856,
+        "loadTimeMs": 2915,
         "error": ""
       },
       {
@@ -84734,15 +84614,55 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2503,
+        "loadTimeMs": 3660,
         "error": ""
       },
       {
-        "title": "Animal Parade",
+        "title": "The Miracle Song",
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1963,
+        "loadTimeMs": 4100,
+        "error": ""
+      },
+      {
+        "title": "God’s Creation: The Octopus",
+        "section": "Fun Zone",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2706,
+        "error": ""
+      },
+      {
+        "title": "Count Some More",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3273,
+        "error": ""
+      },
+      {
+        "title": "The Book Of Genesis Explained",
+        "section": "Bible Adventures",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2870,
+        "error": ""
+      },
+      {
+        "title": "The Book of Exodus Explained",
+        "section": "Bible Adventures",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3018,
+        "error": ""
+      },
+      {
+        "title": "God's Creation: Polar Bears",
+        "section": "Fun Zone",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3271,
         "error": ""
       },
       {
@@ -84750,15 +84670,47 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2613,
+        "loadTimeMs": 3324,
         "error": ""
       },
       {
-        "title": "What Jesus Does",
+        "title": "Bible Trivia: Noah and The Ark",
+        "section": "Bible Adventures",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2915,
+        "error": ""
+      },
+      {
+        "title": "Bible In Clay: Creation",
+        "section": "Bible Adventures",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2785,
+        "error": ""
+      },
+      {
+        "title": "Jonah Song",
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2033,
+        "loadTimeMs": 3332,
+        "error": ""
+      },
+      {
+        "title": "The Bible Explained: The Gospels",
+        "section": "Bible Adventures",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2752,
+        "error": ""
+      },
+      {
+        "title": "Animal Parade",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2779,
         "error": ""
       },
       {
@@ -84766,7 +84718,7 @@
         "section": "Life Skills",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2023,
+        "loadTimeMs": 3612,
         "error": ""
       },
       {
@@ -84774,119 +84726,55 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1925,
+        "loadTimeMs": 2970,
         "error": ""
       },
       {
-        "title": "Bible in Clay: The Fiery Furnace",
-        "section": "Bible Adventures",
+        "title": "What Jesus Does",
+        "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2210,
+        "loadTimeMs": 3300,
         "error": ""
       },
       {
-        "title": "The Birds Job",
+        "title": "The Ocean",
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2274,
+        "loadTimeMs": 3929,
         "error": ""
       },
       {
-        "title": "Animal Groove",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2267,
-        "error": ""
-      },
-      {
-        "title": "Shape Song",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2100,
-        "error": ""
-      },
-      {
-        "title": "Psalms 23",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1960,
-        "error": ""
-      },
-      {
-        "title": "Behave In School",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2755,
-        "error": ""
-      },
-      {
-        "title": "Quick Math",
-        "section": "Numbers",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2419,
-        "error": ""
-      },
-      {
-        "title": "H3 Smile Kids",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1909,
-        "error": ""
-      },
-      {
-        "title": "Fish Shapes",
+        "title": "The Eagle",
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2482,
+        "loadTimeMs": 3642,
         "error": ""
       },
       {
-        "title": "H3 Teacher",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2585,
-        "error": ""
-      },
-      {
-        "title": "Little Lights Big God",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2156,
-        "error": ""
-      },
-      {
-        "title": "H3 Windshield",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2056,
-        "error": ""
-      },
-      {
-        "title": "Who is Jesus",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2062,
-        "error": ""
-      },
-      {
-        "title": "The Bird With Courage",
+        "title": "Rosa Parks",
         "section": "Life Skills",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2446,
+        "loadTimeMs": 2863,
+        "error": ""
+      },
+      {
+        "title": "God’s Creation: The Giraffe",
+        "section": "Fun Zone",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2840,
+        "error": ""
+      },
+      {
+        "title": "Dr. Martin Luther King Jr.",
+        "section": "Life Skills",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2846,
         "error": ""
       },
       {
@@ -84894,7 +84782,7 @@
         "section": "Bible Adventures",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2539,
+        "loadTimeMs": 3786,
         "error": ""
       },
       {
@@ -84902,39 +84790,39 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2166,
+        "loadTimeMs": 3149,
         "error": ""
       },
       {
-        "title": "God Loves Me",
+        "title": "Behave In School",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3622,
+        "error": ""
+      },
+      {
+        "title": "Who is Jesus",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3627,
+        "error": ""
+      },
+      {
+        "title": "Bible in Clay: The Fiery Furnace",
         "section": "Bible Adventures",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2313,
+        "loadTimeMs": 5212,
         "error": ""
       },
       {
-        "title": "Bible In Clay: David and Goliath",
-        "section": "Bible Adventures",
+        "title": "Quick Math",
+        "section": "Numbers",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2264,
-        "error": ""
-      },
-      {
-        "title": "The Elephant",
-        "section": "Fun Zone",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1879,
-        "error": ""
-      },
-      {
-        "title": "Bible in Clay: Daniel and The Lions Den",
-        "section": "Bible Adventures",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2058,
+        "loadTimeMs": 5394,
         "error": ""
       },
       {
@@ -84942,47 +84830,119 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2429,
+        "loadTimeMs": 4620,
         "error": ""
       },
       {
-        "title": "Little Light",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1974,
-        "error": ""
-      },
-      {
-        "title": "Marvelous Light Grandpa Moses",
-        "section": "Marvelous Light Series",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1943,
-        "error": ""
-      },
-      {
-        "title": "H3 Stretching 2",
+        "title": "Fish Shapes",
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2585,
+        "loadTimeMs": 3628,
         "error": ""
       },
       {
-        "title": "H3 Focused And Ready To Learn",
+        "title": "Bible In Clay: David and Goliath",
+        "section": "Bible Adventures",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3990,
+        "error": ""
+      },
+      {
+        "title": "Bible in Clay: Daniel and The Lions Den",
+        "section": "Bible Adventures",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3634,
+        "error": ""
+      },
+      {
+        "title": "Psalms 23",
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2101,
+        "loadTimeMs": 3343,
         "error": ""
       },
       {
-        "title": "Fire Safety School Drills",
+        "title": "Little Lights Big God",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3416,
+        "error": ""
+      },
+      {
+        "title": "The Birds Job",
+        "section": "Fun Zone",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3417,
+        "error": ""
+      },
+      {
+        "title": "H3 Teacher",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3361,
+        "error": ""
+      },
+      {
+        "title": "Animal Groove",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3044,
+        "error": ""
+      },
+      {
+        "title": "Shape Song",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3558,
+        "error": ""
+      },
+      {
+        "title": "H3 Smile Kids",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 4517,
+        "error": ""
+      },
+      {
+        "title": "H3 Windshield",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3334,
+        "error": ""
+      },
+      {
+        "title": "The Elephant",
+        "section": "Fun Zone",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2905,
+        "error": ""
+      },
+      {
+        "title": "The Bird With Courage",
         "section": "Life Skills",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2112,
+        "loadTimeMs": 4515,
+        "error": ""
+      },
+      {
+        "title": "God Loves Me",
+        "section": "Bible Adventures",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3622,
         "error": ""
       },
       {
@@ -84990,111 +84950,7 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2419,
-        "error": ""
-      },
-      {
-        "title": "H3 Bubble Head",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2502,
-        "error": ""
-      },
-      {
-        "title": "Wake Up Kid",
-        "section": "Fun Zone",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1864,
-        "error": ""
-      },
-      {
-        "title": "H3 Champion",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2119,
-        "error": ""
-      },
-      {
-        "title": "Jesus Miracles",
-        "section": "Bible Adventures",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2102,
-        "error": ""
-      },
-      {
-        "title": "H3 Born to Be Wild",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1924,
-        "error": ""
-      },
-      {
-        "title": "H3 Stretching 4",
-        "section": "Fun Zone",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2522,
-        "error": ""
-      },
-      {
-        "title": "H3 Stretching 3",
-        "section": "Fun Zone",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2009,
-        "error": ""
-      },
-      {
-        "title": "Marvelous Light Season 2 Episode 20 Paul and Saul",
-        "section": "Marvelous Light Series",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2055,
-        "error": ""
-      },
-      {
-        "title": "Marvelous Light Season 2 Episode 13 Daniel and The Lions Den",
-        "section": "Marvelous Light Series",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2030,
-        "error": ""
-      },
-      {
-        "title": "Easter",
-        "section": "Bible Adventures",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2496,
-        "error": ""
-      },
-      {
-        "title": "H3 Ring Around The Rosey",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2025,
-        "error": ""
-      },
-      {
-        "title": "John the Baptist",
-        "section": "Bible Adventures",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2153,
-        "error": ""
-      },
-      {
-        "title": "He Loves Me",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1957,
+        "loadTimeMs": 3336,
         "error": ""
       },
       {
@@ -85102,7 +84958,87 @@
         "section": "Marvelous Light Series",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2616,
+        "loadTimeMs": 5891,
+        "error": ""
+      },
+      {
+        "title": "Marvelous Light Season 2 Episode 20 Paul and Saul",
+        "section": "Marvelous Light Series",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3465,
+        "error": ""
+      },
+      {
+        "title": "H3 Stretching 3",
+        "section": "Fun Zone",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3724,
+        "error": ""
+      },
+      {
+        "title": "Little Light",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3845,
+        "error": ""
+      },
+      {
+        "title": "H3 Bubble Head",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3364,
+        "error": ""
+      },
+      {
+        "title": "H3 Stretching 2",
+        "section": "Fun Zone",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3399,
+        "error": ""
+      },
+      {
+        "title": "H3 Ring Around The Rosey",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3957,
+        "error": ""
+      },
+      {
+        "title": "H3 Stretching 4",
+        "section": "Fun Zone",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3739,
+        "error": ""
+      },
+      {
+        "title": "Marvelous Light Grandpa Moses",
+        "section": "Marvelous Light Series",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3289,
+        "error": ""
+      },
+      {
+        "title": "John the Baptist",
+        "section": "Bible Adventures",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3338,
+        "error": ""
+      },
+      {
+        "title": "H3 Champion",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3644,
         "error": ""
       },
       {
@@ -85110,159 +85046,71 @@
         "section": "Numbers",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2260,
+        "loadTimeMs": 3705,
         "error": ""
       },
       {
-        "title": "Mr. Prather Days of the Week",
+        "title": "H3 Focused And Ready To Learn",
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2197,
+        "loadTimeMs": 3603,
         "error": ""
       },
       {
-        "title": "Marvelous Light Grandpa 10 Commandments",
-        "section": "Marvelous Light Series",
+        "title": "Easter",
+        "section": "Bible Adventures",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1914,
+        "loadTimeMs": 3569,
         "error": ""
       },
       {
-        "title": "Disagreement of Occupations | ABCs",
-        "section": "ABC",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1910,
-        "error": ""
-      },
-      {
-        "title": "Sound it Out",
+        "title": "H3 Born to Be Wild",
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2568,
+        "loadTimeMs": 3333,
         "error": ""
       },
       {
-        "title": "Row Your Boat",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1956,
-        "error": ""
-      },
-      {
-        "title": "Marvelous Light Grandpa Hebrew Brothers",
-        "section": "Marvelous Light Series",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2121,
-        "error": ""
-      },
-      {
-        "title": "Baby Shark",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2131,
-        "error": ""
-      },
-      {
-        "title": "Clap Your Hands",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2686,
-        "error": ""
-      },
-      {
-        "title": "Believe",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2017,
-        "error": ""
-      },
-      {
-        "title": "Basketball",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1886,
-        "error": ""
-      },
-      {
-        "title": "H3 5 Vowels",
-        "section": "ABC",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1987,
-        "error": ""
-      },
-      {
-        "title": "Make it Out",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1904,
-        "error": ""
-      },
-      {
-        "title": "Rain Rain Go Away",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2607,
-        "error": ""
-      },
-      {
-        "title": "Wiggle",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2032,
-        "error": ""
-      },
-      {
-        "title": "Marvelous Light Grandpa David",
-        "section": "Marvelous Light Series",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2586,
-        "error": ""
-      },
-      {
-        "title": "Mental Health and God",
+        "title": "Fire Safety School Drills",
         "section": "Life Skills",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1986,
+        "loadTimeMs": 3295,
         "error": ""
       },
       {
-        "title": "Affirmation",
+        "title": "He Loves Me",
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2078,
+        "loadTimeMs": 3619,
         "error": ""
       },
       {
-        "title": "Marvelous Light A Rotten Day: Finding Joy in God",
+        "title": "Jesus Miracles",
+        "section": "Bible Adventures",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2769,
+        "error": ""
+      },
+      {
+        "title": "Wake Up Kid",
+        "section": "Fun Zone",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2704,
+        "error": ""
+      },
+      {
+        "title": "Marvelous Light Season 2 Episode 13 Daniel and The Lions Den",
         "section": "Marvelous Light Series",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2130,
-        "error": ""
-      },
-      {
-        "title": "School time Litty",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2166,
+        "loadTimeMs": 3312,
         "error": ""
       },
       {
@@ -85270,7 +85118,55 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2447,
+        "loadTimeMs": 4048,
+        "error": ""
+      },
+      {
+        "title": "Baby Shark",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3417,
+        "error": ""
+      },
+      {
+        "title": "Make it Out",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3412,
+        "error": ""
+      },
+      {
+        "title": "Rain Rain Go Away",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3454,
+        "error": ""
+      },
+      {
+        "title": "Basketball",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 4149,
+        "error": ""
+      },
+      {
+        "title": "Marvelous Light A Rotten Day: Finding Joy in God",
+        "section": "Marvelous Light Series",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3337,
+        "error": ""
+      },
+      {
+        "title": "Sound it Out",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3289,
         "error": ""
       },
       {
@@ -85278,79 +85174,111 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2113,
+        "loadTimeMs": 3397,
         "error": ""
       },
       {
-        "title": "Goodness",
-        "section": "Bible Adventures",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1951,
-        "error": ""
-      },
-      {
-        "title": "Down In My Heart",
+        "title": "Clap Your Hands",
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2049,
+        "loadTimeMs": 3914,
         "error": ""
       },
       {
-        "title": "Marvelous Light Season 2 Episode 14 Daniel and The Lions Den",
-        "section": "Marvelous Light Series",
+        "title": "H3 5 Vowels",
+        "section": "ABC",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2519,
+        "loadTimeMs": 3488,
         "error": ""
       },
       {
-        "title": "Love",
-        "section": "Bible Adventures",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2085,
-        "error": ""
-      },
-      {
-        "title": "Marvelous Light Season 2 Episode 15 Creation",
-        "section": "Marvelous Light Series",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2036,
-        "error": ""
-      },
-      {
-        "title": "Introduction Bible Fruits of Virtue",
-        "section": "Bible Adventures",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1959,
-        "error": ""
-      },
-      {
-        "title": "Marvelous Light Season 2 Episode 19 Paul and Saul",
-        "section": "Marvelous Light Series",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2529,
-        "error": ""
-      },
-      {
-        "title": "MFT Loopty Loo",
+        "title": "Wiggle",
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1931,
+        "loadTimeMs": 3556,
         "error": ""
       },
       {
-        "title": "Marvelous Light Season 2 Episode 17 Zacchaeus",
+        "title": "Mental Health and God",
+        "section": "Life Skills",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3207,
+        "error": ""
+      },
+      {
+        "title": "Believe",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3879,
+        "error": ""
+      },
+      {
+        "title": "Marvelous Light Grandpa David",
         "section": "Marvelous Light Series",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1996,
+        "loadTimeMs": 3257,
+        "error": ""
+      },
+      {
+        "title": "Marvelous Light Grandpa Hebrew Brothers",
+        "section": "Marvelous Light Series",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3487,
+        "error": ""
+      },
+      {
+        "title": "Row Your Boat",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3654,
+        "error": ""
+      },
+      {
+        "title": "Mr. Prather Days of the Week",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3491,
+        "error": ""
+      },
+      {
+        "title": "School time Litty",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3929,
+        "error": ""
+      },
+      {
+        "title": "Affirmation",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3593,
+        "error": ""
+      },
+      {
+        "title": "Marvelous Light Grandpa 10 Commandments",
+        "section": "Marvelous Light Series",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3301,
+        "error": ""
+      },
+      {
+        "title": "Disagreement of Occupations | ABCs",
+        "section": "ABC",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2856,
         "error": ""
       },
       {
@@ -85358,63 +85286,15 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2022,
+        "loadTimeMs": 4104,
         "error": ""
       },
       {
-        "title": "Gentleness",
+        "title": "Goodness",
         "section": "Bible Adventures",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2041,
-        "error": ""
-      },
-      {
-        "title": "In His Hand",
-        "section": "Bible Adventures",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2437,
-        "error": ""
-      },
-      {
-        "title": "Mr. Prather Days and Months",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2061,
-        "error": ""
-      },
-      {
-        "title": "Mr. Prather Opposites",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1952,
-        "error": ""
-      },
-      {
-        "title": "Faithfulness",
-        "section": "Bible Adventures",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2110,
-        "error": ""
-      },
-      {
-        "title": "Kids Just Want to Have Fun",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2517,
-        "error": ""
-      },
-      {
-        "title": "I'm a Princess | Sing-a-long",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2148,
+        "loadTimeMs": 2959,
         "error": ""
       },
       {
@@ -85422,7 +85302,15 @@
         "section": "Bible Adventures",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1993,
+        "loadTimeMs": 3604,
+        "error": ""
+      },
+      {
+        "title": "Love",
+        "section": "Bible Adventures",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2938,
         "error": ""
       },
       {
@@ -85430,7 +85318,71 @@
         "section": "Marvelous Light Series",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1969,
+        "loadTimeMs": 3946,
+        "error": ""
+      },
+      {
+        "title": "Mr. Prather Opposites",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2951,
+        "error": ""
+      },
+      {
+        "title": "In His Hand",
+        "section": "Bible Adventures",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3470,
+        "error": ""
+      },
+      {
+        "title": "Gentleness",
+        "section": "Bible Adventures",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3416,
+        "error": ""
+      },
+      {
+        "title": "Kids Just Want to Have Fun",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3505,
+        "error": ""
+      },
+      {
+        "title": "Mr. Prather Days and Months",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3962,
+        "error": ""
+      },
+      {
+        "title": "MFT Loopty Loo",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3933,
+        "error": ""
+      },
+      {
+        "title": "Marvelous Light Season 2 Episode 17 Zacchaeus",
+        "section": "Marvelous Light Series",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3226,
+        "error": ""
+      },
+      {
+        "title": "Marvelous Light Season 2 Episode 19 Paul and Saul",
+        "section": "Marvelous Light Series",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 4136,
         "error": ""
       },
       {
@@ -85438,7 +85390,55 @@
         "section": "Bible Adventures",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1979,
+        "loadTimeMs": 3994,
+        "error": ""
+      },
+      {
+        "title": "Faithfulness",
+        "section": "Bible Adventures",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3520,
+        "error": ""
+      },
+      {
+        "title": "Down In My Heart",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3423,
+        "error": ""
+      },
+      {
+        "title": "Introduction Bible Fruits of Virtue",
+        "section": "Bible Adventures",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2803,
+        "error": ""
+      },
+      {
+        "title": "I'm a Princess | Sing-a-long",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3517,
+        "error": ""
+      },
+      {
+        "title": "Marvelous Light Season 2 Episode 14 Daniel and The Lions Den",
+        "section": "Marvelous Light Series",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3515,
+        "error": ""
+      },
+      {
+        "title": "Marvelous Light Season 2 Episode 15 Creation",
+        "section": "Marvelous Light Series",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3864,
         "error": ""
       },
       {
@@ -85446,143 +85446,7 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2492,
-        "error": ""
-      },
-      {
-        "title": "5 Monkeys Lyric Video",
-        "section": "Numbers",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2031,
-        "error": ""
-      },
-      {
-        "title": "Computation and Algebraic Thinking",
-        "section": "Numbers",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2216,
-        "error": ""
-      },
-      {
-        "title": "Math With Money",
-        "section": "Numbers",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1953,
-        "error": ""
-      },
-      {
-        "title": "Lost in the Internet",
-        "section": "ABC",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1922,
-        "error": ""
-      },
-      {
-        "title": "Number Sense",
-        "section": "Numbers",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1993,
-        "error": ""
-      },
-      {
-        "title": "AlphaBots the Alphabet Part 1",
-        "section": "Fun Zone",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2288,
-        "error": ""
-      },
-      {
-        "title": "Grandmama | Sing-a-long",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1924,
-        "error": ""
-      },
-      {
-        "title": "Great | Sing-a-long",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2666,
-        "error": ""
-      },
-      {
-        "title": "H3 Count it Up",
-        "section": "Numbers",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2174,
-        "error": ""
-      },
-      {
-        "title": "Modeling Multiplication",
-        "section": "Numbers",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2373,
-        "error": ""
-      },
-      {
-        "title": "MFT ABC Song",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2881,
-        "error": ""
-      },
-      {
-        "title": "H3 Colors and Numbers",
-        "section": "Numbers",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1878,
-        "error": ""
-      },
-      {
-        "title": "AlphaBots the Alphabet Part 2",
-        "section": "Fun Zone",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2009,
-        "error": ""
-      },
-      {
-        "title": "Algebraic Thinking",
-        "section": "Numbers",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1971,
-        "error": ""
-      },
-      {
-        "title": "Good Juju | Sing-a-long |",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2339,
-        "error": ""
-      },
-      {
-        "title": "H3 ABC",
-        "section": "ABC",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2100,
-        "error": ""
-      },
-      {
-        "title": "I want to See My Friends | Sing-a-long",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2174,
+        "loadTimeMs": 3170,
         "error": ""
       },
       {
@@ -85590,7 +85454,71 @@
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1955,
+        "loadTimeMs": 3529,
+        "error": ""
+      },
+      {
+        "title": "Great | Sing-a-long",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3528,
+        "error": ""
+      },
+      {
+        "title": "5 Monkeys Lyric Video",
+        "section": "Numbers",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 4758,
+        "error": ""
+      },
+      {
+        "title": "Computation and Algebraic Thinking",
+        "section": "Numbers",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 4196,
+        "error": ""
+      },
+      {
+        "title": "Good Juju | Sing-a-long |",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 4152,
+        "error": ""
+      },
+      {
+        "title": "H3 Count it Up",
+        "section": "Numbers",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 4623,
+        "error": ""
+      },
+      {
+        "title": "Grandmama | Sing-a-long",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3442,
+        "error": ""
+      },
+      {
+        "title": "MFT ABC Song",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3932,
+        "error": ""
+      },
+      {
+        "title": "Lost in the Internet",
+        "section": "ABC",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2872,
         "error": ""
       },
       {
@@ -85598,7 +85526,7 @@
         "section": "Numbers",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2528,
+        "loadTimeMs": 3436,
         "error": ""
       },
       {
@@ -85606,7 +85534,23 @@
         "section": "Numbers",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 1910,
+        "loadTimeMs": 3477,
+        "error": ""
+      },
+      {
+        "title": "AlphaBots the Alphabet Part 2",
+        "section": "Fun Zone",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3515,
+        "error": ""
+      },
+      {
+        "title": "H3 Colors and Numbers",
+        "section": "Numbers",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3424,
         "error": ""
       },
       {
@@ -85614,95 +85558,63 @@
         "section": "Numbers",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2116,
+        "loadTimeMs": 3545,
         "error": ""
       },
       {
-        "title": "Go Get It",
+        "title": "Modeling Multiplication",
+        "section": "Numbers",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3327,
+        "error": ""
+      },
+      {
+        "title": "H3 ABC",
+        "section": "ABC",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3943,
+        "error": ""
+      },
+      {
+        "title": "AlphaBots the Alphabet Part 1",
+        "section": "Fun Zone",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3996,
+        "error": ""
+      },
+      {
+        "title": "Algebraic Thinking",
+        "section": "Numbers",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2726,
+        "error": ""
+      },
+      {
+        "title": "Number Sense",
+        "section": "Numbers",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3401,
+        "error": ""
+      },
+      {
+        "title": "I want to See My Friends | Sing-a-long",
         "section": "Sing-a-long",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2036,
+        "loadTimeMs": 3794,
         "error": ""
       },
       {
-        "title": "Alien In My House",
-        "section": "ABC",
+        "title": "Math With Money",
+        "section": "Numbers",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2103,
-        "error": ""
-      },
-      {
-        "title": "Ballin | Sing-a-long",
-        "section": "Sing-a-long",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2568,
-        "error": ""
-      },
-      {
-        "title": "Auntie Bois Gift Motion Book",
-        "section": "ABC",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2105,
-        "error": ""
-      },
-      {
-        "title": "Great Tidy up",
-        "section": "ABC",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2037,
-        "error": ""
-      },
-      {
-        "title": "AlphaBots Letter A",
-        "section": "Fun Zone",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 3047,
-        "error": ""
-      },
-      {
-        "title": "Brave Bora Motion Book",
-        "section": "ABC",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2286,
-        "error": ""
-      },
-      {
-        "title": "Meera and Ameera",
-        "section": "ABC",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 3896,
-        "error": ""
-      },
-      {
-        "title": "Malar's Big House Read-Along",
-        "section": "ABC",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 2668,
-        "error": ""
-      },
-      {
-        "title": "Alphabots OO Song",
-        "section": "Fun Zone",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 3393,
-        "error": ""
-      },
-      {
-        "title": "Alphabots Letter C",
-        "section": "Fun Zone",
-        "page": "HOME",
-        "status": "PASS",
-        "loadTimeMs": 1852,
+        "loadTimeMs": 2823,
         "error": ""
       },
       {
@@ -85710,7 +85622,23 @@
         "section": "Fun Zone",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 2126,
+        "loadTimeMs": 4071,
+        "error": ""
+      },
+      {
+        "title": "Alphabots OO Song",
+        "section": "Fun Zone",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3477,
+        "error": ""
+      },
+      {
+        "title": "Malar's Big House Read-Along",
+        "section": "ABC",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3488,
         "error": ""
       },
       {
@@ -85718,7 +85646,79 @@
         "section": "ABC",
         "page": "HOME",
         "status": "PASS",
-        "loadTimeMs": 3001,
+        "loadTimeMs": 3315,
+        "error": ""
+      },
+      {
+        "title": "Go Get It",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3542,
+        "error": ""
+      },
+      {
+        "title": "Brave Bora Motion Book",
+        "section": "ABC",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3433,
+        "error": ""
+      },
+      {
+        "title": "Meera and Ameera",
+        "section": "ABC",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 4198,
+        "error": ""
+      },
+      {
+        "title": "Great Tidy up",
+        "section": "ABC",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3407,
+        "error": ""
+      },
+      {
+        "title": "AlphaBots Letter A",
+        "section": "Fun Zone",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2903,
+        "error": ""
+      },
+      {
+        "title": "Ballin | Sing-a-long",
+        "section": "Sing-a-long",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3900,
+        "error": ""
+      },
+      {
+        "title": "Auntie Bois Gift Motion Book",
+        "section": "ABC",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3419,
+        "error": ""
+      },
+      {
+        "title": "Alphabots Letter C",
+        "section": "Fun Zone",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 2822,
+        "error": ""
+      },
+      {
+        "title": "Alien In My House",
+        "section": "ABC",
+        "page": "HOME",
+        "status": "PASS",
+        "loadTimeMs": 3492,
         "error": ""
       }
     ]
