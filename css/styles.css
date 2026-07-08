@@ -40,9 +40,6 @@
   --color-warning-bg: #fdf3de;
   --color-warning-border: #f5dda0;
   --color-warning-hover: #d49520;
-  --color-response-fast: #4caf76;
-  --color-response-medium: #e8a838;
-  --color-response-slow: #e05252;
 }
 
 body {
@@ -1561,86 +1558,6 @@ tbody td {
   color: var(--color-text-light);
 }
 
-/* ============== 6. Response Time Indicators ============== */
-.response-time {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.82rem;
-  font-weight: 500;
-  font-variant-numeric: tabular-nums;
-}
-.response-time .rt-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-/* Fast: under 3 seconds -- green */
-.response-time.rt-fast { color: var(--color-response-fast); }
-.response-time.rt-fast .rt-dot { background: var(--color-response-fast); }
-
-/* Medium: 3 to 8 seconds -- yellow/orange */
-.response-time.rt-medium { color: var(--color-response-medium); }
-.response-time.rt-medium .rt-dot { background: var(--color-response-medium); }
-
-/* Slow: over 8 seconds -- red */
-.response-time.rt-slow { color: var(--color-response-slow); }
-.response-time.rt-slow .rt-dot { background: var(--color-response-slow); }
-
-/* Response time column in table */
-.response-time-bar {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.response-time-bar .rt-bar-track {
-  flex: 1;
-  height: 6px;
-  background: var(--color-bg);
-  border-radius: 3px;
-  overflow: hidden;
-  max-width: 80px;
-}
-.response-time-bar .rt-bar-fill {
-  height: 100%;
-  border-radius: 3px;
-  transition: width 0.4s ease;
-}
-.response-time-bar .rt-bar-fill.rt-fill-fast { background: var(--color-response-fast); }
-.response-time-bar .rt-bar-fill.rt-fill-medium { background: var(--color-response-medium); }
-.response-time-bar .rt-bar-fill.rt-fill-slow { background: var(--color-response-slow); }
-
-/* Response time summary in stat cards area */
-.response-time-summary {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 10px 20px;
-  background: var(--color-surface);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border);
-  font-size: 0.82rem;
-  color: var(--color-text-muted);
-  box-shadow: var(--shadow-sm);
-  flex-wrap: wrap;
-}
-.response-time-summary .rts-item {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-.response-time-summary .rts-label {
-  font-weight: 500;
-}
-.response-time-summary .rts-value {
-  font-weight: 700;
-}
-.response-time-summary .rts-value.rts-fast { color: var(--color-response-fast); }
-.response-time-summary .rts-value.rts-medium { color: var(--color-response-medium); }
-.response-time-summary .rts-value.rts-slow { color: var(--color-response-slow); }
-
 /* ============== 7. Diff Report Section ============== */
 .diff-report {
   display: none;
@@ -1651,138 +1568,6 @@ tbody td {
   overflow: hidden;
 }
 .diff-report.visible { display: block; }
-
-.diff-report-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 24px;
-  border-bottom: 1px solid var(--color-border);
-}
-.diff-report-header h2 {
-  font-size: 1.15rem;
-  font-weight: 700;
-}
-.diff-report-header .diff-meta {
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
-}
-
-.diff-report-body {
-  padding: 20px 24px;
-}
-
-.diff-summary-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-bottom: 20px;
-}
-.diff-card {
-  padding: 14px 18px;
-  border-radius: var(--radius-sm);
-  border-left: 4px solid var(--color-border);
-}
-.diff-card-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 4px;
-}
-.diff-card-value {
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 1.1;
-}
-
-/* New failures: red theme */
-.diff-card.diff-new-failures {
-  background: var(--color-fail-bg);
-  border-left-color: var(--color-fail);
-}
-.diff-card.diff-new-failures .diff-card-label { color: #8b2020; }
-.diff-card.diff-new-failures .diff-card-value { color: var(--color-fail); }
-
-/* Fixed since last run: green theme */
-.diff-card.diff-fixed {
-  background: var(--color-pass-bg);
-  border-left-color: var(--color-pass);
-}
-.diff-card.diff-fixed .diff-card-label { color: #2d6629; }
-.diff-card.diff-fixed .diff-card-value { color: var(--color-pass); }
-
-/* Unchanged failures: neutral/gray theme */
-.diff-card.diff-unchanged {
-  background: var(--color-bg);
-  border-left-color: var(--color-text-light);
-}
-.diff-card.diff-unchanged .diff-card-label { color: var(--color-text-muted); }
-.diff-card.diff-unchanged .diff-card-value { color: var(--color-text-muted); }
-
-/* Diff detail lists */
-.diff-detail-group {
-  margin-bottom: 16px;
-}
-.diff-detail-group:last-child { margin-bottom: 0; }
-
-.diff-detail-group h4 {
-  font-size: 0.88rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.diff-detail-group h4 .diff-icon {
-  font-size: 0.95rem;
-}
-.diff-detail-group.diff-group-new h4 { color: var(--color-fail); }
-.diff-detail-group.diff-group-fixed h4 { color: var(--color-pass); }
-.diff-detail-group.diff-group-unchanged h4 { color: var(--color-text-muted); }
-
-.diff-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.diff-list li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 7px 12px;
-  font-size: 0.84rem;
-  border-bottom: 1px solid #f4f5f7;
-  transition: background 0.1s;
-}
-.diff-list li:last-child { border-bottom: none; }
-.diff-list li:hover { background: #f8fafc; }
-
-.diff-list .diff-status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.diff-list .diff-status-dot.dot-new-fail { background: var(--color-fail); }
-.diff-list .diff-status-dot.dot-fixed { background: var(--color-pass); }
-.diff-list .diff-status-dot.dot-unchanged { background: var(--color-text-light); }
-
-.diff-list .diff-video-name {
-  flex: 1;
-  color: var(--color-text);
-}
-.diff-list .diff-video-section {
-  font-size: 0.75rem;
-  color: var(--color-text-light);
-}
-
-.diff-empty {
-  font-size: 0.85rem;
-  color: var(--color-text-light);
-  font-style: italic;
-  padding: 12px 0;
-}
 
 /* ============== 8. Screenshot Thumbnail ============== */
 .screenshot-thumb {
@@ -1876,9 +1661,6 @@ tbody td {
     align-items: flex-start;
     gap: 8px;
   }
-  .diff-summary-cards {
-    grid-template-columns: 1fr;
-  }
   .trend-chart-canvas {
     min-height: 180px;
   }
@@ -1886,21 +1668,10 @@ tbody td {
     flex-direction: column;
     align-items: flex-start;
   }
-  .response-time-summary {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
   .pass-rate-bar { flex-wrap: wrap; }
 }
 
 @media (max-width: 480px) {
-  .diff-summary-cards {
-    grid-template-columns: 1fr;
-  }
-  .diff-card-value {
-    font-size: 1.4rem;
-  }
   .screenshot-thumb {
     max-width: 120px;
   }

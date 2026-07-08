@@ -27,9 +27,6 @@
   --color-warning-bg: #2e2a1a;
   --color-warning-border: #5a4e2b;
   --color-warning-hover: #d8a030;
-  --color-response-fast: #6ec968;
-  --color-response-medium: #f0b84d;
-  --color-response-slow: #f06565;
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
   --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.4), 0 2px 4px -2px rgba(0,0,0,0.3);
   --shadow-lg: 0 10px 20px -4px rgba(0,0,0,0.5), 0 4px 8px -4px rgba(0,0,0,0.4);
