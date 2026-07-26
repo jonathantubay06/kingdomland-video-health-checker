@@ -84,8 +84,43 @@ window.addEventListener('DOMContentLoaded', async function() {
   }, { passive: true });
 
   window.jumpToFirstFailure = function() {
-    var first = document.querySelector('tbody tr.row-fail, tbody tr.row-timeout');
-    if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    var results = KL.state.results || [];
+    var target = results.find(function(r) { return r.status === KL.STATUS.FAIL || r.status === KL.STATUS.TIMEOUT; });
+    if (!target) return;
+
+    // If an active filter is hiding this result (e.g. Status filter set to "Pass",
+    // or a search term), clear the filters — the button's whole purpose is to
+    // show a failure, so a stale filter shouldn't silently block it.
+    if (!KL.matchesFilters(target)) {
+      var statusEl = document.getElementById('filter-status');
+      var sectionEl = document.getElementById('filter-section');
+      var searchEl = document.getElementById('filter-search');
+      if (statusEl) statusEl.value = 'all';
+      if (sectionEl) sectionEl.value = 'all';
+      if (searchEl) searchEl.value = '';
+    }
+
+    // Results are paginated — only the current page's rows exist in the DOM, so
+    // querying the live table only works if the failure happens to be on the page
+    // already showing. Rebuild the filtered+sorted list (the same one
+    // renderResultsTable uses) to find which page this result actually lands on.
+    KL.renderResultsTable();
+    var filtered = KL.lastFilteredResults || [];
+    var idx = filtered.indexOf(target);
+    if (idx === -1) return;
+
+    if (KL.pageSize !== 'all') {
+      var targetPage = Math.floor(idx / KL.pageSize) + 1;
+      if (targetPage !== KL.currentPage) {
+        KL.currentPage = targetPage;
+        KL.renderResultsTable();
+      }
+    }
+
+    requestAnimationFrame(function() {
+      var row = document.querySelector('tbody tr.row-fail, tbody tr.row-timeout');
+      if (row) row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
   };
 
   // Initialize sound UI
