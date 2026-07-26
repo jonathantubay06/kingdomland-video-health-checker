@@ -1,8 +1,0 @@
-FAILED VIDEOS — go.kingdomlandkids.com
-Generated: 7/26/2026, 1:52:26 PM
-Total failed: 1 | Timed out: 0
-============================================================
-
-[FAIL] #72 [HOME] The Bible Explained: Noah’s Ark
-  URL:   https://go.kingdomlandkids.com/subscription
-  Error: Did not land on /watch/ (got https://go.kingdomlandkids.com/subscription)
