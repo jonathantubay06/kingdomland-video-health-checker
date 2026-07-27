@@ -28,15 +28,33 @@ KL.updateStat = function(id, value) {
       const startTime = performance.now();
       el.classList.remove('counting');
       void el.offsetWidth; // reflow to restart animation
+
+      // requestAnimationFrame is throttled (sometimes indefinitely) when the tab
+      // is backgrounded/not visible -- e.g. this dashboard sitting in an unfocused
+      // tab while an auto-refresh completes in the background. Without a fallback,
+      // the animation can get stuck forever on the stale starting value ("--" or
+      // an old count) since nothing ever writes the real number. `finish()` is
+      // idempotent and gets a hard backstop via setTimeout so the correct value
+      // always lands, whether or not the animation itself ever got to play.
+      let finished = false;
+      const finish = () => {
+        if (finished) return;
+        finished = true;
+        el.textContent = num;
+        el.classList.remove('counting');
+      };
+
       el.classList.add('counting');
       const tick = (now) => {
+        if (finished) return;
         const t = Math.min(1, (now - startTime) / duration);
         const ease = 1 - Math.pow(1 - t, 3);
         el.textContent = Math.round(start + diff * ease);
         if (t < 1) requestAnimationFrame(tick);
-        else { el.textContent = num; el.classList.remove('counting'); }
+        else finish();
       };
       requestAnimationFrame(tick);
+      setTimeout(finish, duration + 250);
     } else {
       el.textContent = num;
     }
