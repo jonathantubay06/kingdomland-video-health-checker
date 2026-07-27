@@ -120,20 +120,37 @@ jobs:
           # Create status metadata
           echo "{\"updatedAt\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\",\"runId\":\"${{ github.run_id }}\"}" > /tmp/reports/status.json
 
+          # Guard rail (belt-and-suspenders): the data branch must NEVER contain
+          # node_modules. Past bug -- `git add -A` below used to sweep up
+          # node_modules (installed by `npm ci` earlier in this job) because the
+          # orphan data branch has no .gitignore to exclude it. That silently
+          # bloated the branch for 600+ commits until a push finally got too
+          # large/slow and the runner lost communication with GitHub mid-push.
+          echo "node_modules/" > /tmp/reports/.gitignore
+
           # Switch to data branch (create if needed)
           git fetch origin data 2>/dev/null || true
           if git rev-parse --verify origin/data >/dev/null 2>&1; then
             git switch data
-            git rm -rf . 2>/dev/null || true
           else
             git checkout --orphan data
-            git rm -rf . 2>/dev/null || true
           fi
 
-          # Copy only report files
-          cp /tmp/reports/* .
+          # Clear the index too -- `git checkout --orphan` (and, on the branch's
+          # very first fixed run, its still-bloated last commit) can leave files
+          # staged that the working-tree wipe below won't touch on its own.
+          git rm -rf --cached . > /dev/null 2>&1 || true
 
-          git add video-report.json video-report.csv failed-videos.txt status.json history.json uptime-log.json previous-report.json 2>/dev/null || true
-          git add -A
+          # Wipe the working directory down to just .git, then restore ONLY the
+          # saved report files. More reliable than the old `git rm -rf . || true`,
+          # which only removed currently-TRACKED files and silently no-op'd on any
+          # error -- leaving untracked leftovers (like node_modules) on disk to be
+          # picked up by the git add that followed.
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          cp -a /tmp/reports/. .
+
+          # Explicit file list (not `git add -A`) so it's always exactly clear
+          # what ends up on this branch -- no ambiguity, no repeat of this bug.
+          git add video-report.json video-report.csv failed-videos.txt status.json history.json uptime-log.json previous-report.json .gitignore 2>/dev/null || true
           git commit -m "Update video report $(date -u +%Y-%m-%d)" || echo "No changes"
           git push origin data
