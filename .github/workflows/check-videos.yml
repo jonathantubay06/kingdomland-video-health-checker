@@ -161,6 +161,30 @@ jobs:
 
           # Explicit file list (not `git add -A`) so it's always exactly clear
           # what ends up on this branch -- no ambiguity, no repeat of this bug.
-          git add video-report.json video-report.csv failed-videos.txt status.json history.json uptime-log.json previous-report.json .gitignore 2>/dev/null || true
+          #
+          # Added ONE AT A TIME, not `git add file1 file2 ... || true` as a single
+          # command -- some of these files are conditional (e.g. failed-videos.txt
+          # only exists when there's at least one failure) and `git add` treats a
+          # multi-pathspec invocation atomically: if ANY pathspec matches nothing,
+          # it fails the WHOLE command and stages NOTHING, not just the missing one.
+          # On every fully-healthy run (historically the norm), that silently
+          # emptied the index -- already cleared by `git rm --cached` above -- and
+          # committed an empty tree. This is what actually wiped the branch on
+          # 2026-07-29 (run 30489952497), even after the first two fixes.
+          for f in video-report.json video-report.csv failed-videos.txt status.json history.json uptime-log.json previous-report.json .gitignore; do
+            [ -e "$f" ] && git add "$f"
+          done
           git commit -m "Update video report $(date -u +%Y-%m-%d)" || echo "No changes"
+
+          # Final check before pushing: whatever HEAD ends up being (this run's new
+          # commit, or the previous commit if there was "No changes"), it must
+          # actually contain video-report.json. Three separate bugs have each
+          # independently produced an empty-tree commit here -- this catches any of
+          # them, and any future variant, in one place instead of trusting upstream
+          # logic to have gotten it right.
+          if ! git cat-file -e HEAD:video-report.json 2>/dev/null; then
+            echo "::error::HEAD does not contain video-report.json after commit -- refusing to push."
+            exit 1
+          fi
+
           git push origin data
