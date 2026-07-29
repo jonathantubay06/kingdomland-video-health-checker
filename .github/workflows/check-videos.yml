@@ -128,6 +128,16 @@ jobs:
           # large/slow and the runner lost communication with GitHub mid-push.
           echo "node_modules/" > /tmp/reports/.gitignore
 
+          # Safety check: refuse to wipe the branch if this run produced no report.
+          # check-videos.js failing/crashing should already fail its own step and skip
+          # this one entirely (no `if: always()` here) -- but this is a second line of
+          # defense so a future bug can never again wipe the last good report down to
+          # an empty commit the way run 30310521189 did.
+          if [ ! -s /tmp/reports/video-report.json ]; then
+            echo "::error::video-report.json is missing or empty after the check run -- refusing to touch the data branch."
+            exit 1
+          fi
+
           # Switch to data branch (create if needed)
           git fetch origin data 2>/dev/null || true
           if git rev-parse --verify origin/data >/dev/null 2>&1; then

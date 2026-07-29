@@ -120,6 +120,7 @@ KL.loadCloudReport = async function() {
   KL.state.reportStale = report._stale || false;
   KL.state.outage = report.outage || null;
   KL.state.discoveryFailure = report.discoveryFailure || null;
+  KL.state.fatalError = report.fatalError || null;
   KL.state.discoveryWarning = report.discoveryWarning || null;
   KL.state.regressions = report.regressions || [];
   KL.state.results = report.allResults || [];

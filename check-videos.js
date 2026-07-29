@@ -923,6 +923,50 @@ function writeDiscoveryFailureReport(expected) {
   ).catch(err => log(`Slack discovery alert failed (non-critical): ${err.message}`));
 }
 
+// Write a minimal report flagging a fatal crash (e.g. login failure) that happened
+// before any video could be checked. Without this, a crash here produces ZERO output
+// files -- and since the data-branch push step wipes old files before restoring new
+// ones, a silent crash would wipe the last good report instead of just skipping an
+// update. Writing an honest report keeps the dashboard truthful and lets the push
+// step have something valid to commit.
+function writeFatalErrorReport(error) {
+  const report = {
+    timestamp: new Date().toISOString(),
+    browser: BROWSER_NAME,
+    summary: { total: 0, passed: 0, failed: 0, timeouts: 0 },
+    failedVideos: [],
+    performanceAlerts: [],
+    outage: null,
+    fatalError: { detected: true, message: error && error.message || String(error) },
+    allResults: [],
+  };
+  emit({ type: 'complete', summary: report.summary, allResults: [] });
+  try {
+    if (fs.existsSync('video-report.json')) fs.copyFileSync('video-report.json', 'previous-report.json');
+  } catch { /* ignore */ }
+  try { fs.writeFileSync('video-report.json', JSON.stringify(report, null, 2)); log('Saved: video-report.json (fatal error)'); } catch { /* ignore */ }
+
+  // Append a history entry so the trend reflects the gap honestly
+  try {
+    let history = [];
+    if (fs.existsSync('history.json')) { try { history = JSON.parse(fs.readFileSync('history.json', 'utf-8')); } catch { history = []; } }
+    history.push({ timestamp: report.timestamp, total: 0, passed: 0, failed: 0, timeouts: 0, avgLoadTimeMs: 0, fatalError: true, videos: [] });
+    if (history.length > 50) history = history.slice(-50);
+    fs.writeFileSync('history.json', JSON.stringify(history, null, 2));
+  } catch { /* ignore */ }
+
+  // total=0 contributes nothing to the passed/total ratio -- a crash means "we
+  // don't know", not "videos are down", and shouldn't move the uptime number.
+  appendUptimeLog({ timestamp: report.timestamp, total: 0, passed: 0, failed: 0, timeouts: 0, fatalError: true });
+
+  sendSlackOutageAlert(
+    'Checker crashed before checking any videos',
+    0,
+    0,
+    `🚨 The checker hit a fatal error before it could check any videos: ${report.fatalError.message}`
+  ).catch(err => log(`Slack fatal-error alert failed (non-critical): ${err.message}`));
+}
+
 // #4 Detect per-video performance regressions: a PASSing video that's now much
 // slower than its own historical median. Needs >=3 past samples to be meaningful.
 function detectPerfRegressions(allResults) {
@@ -1239,6 +1283,7 @@ async function main() {
   const page = await context.newPage();
   const allResults = [];
   let videoNum = 0;
+  let fatalError = null;
 
   try {
     await login(page);
@@ -1382,6 +1427,7 @@ async function main() {
     }
 
   } catch (error) {
+    fatalError = error;
     console.error(`\nFatal error: ${error.message}`);
     if (DEBUG) {
       console.error(error.stack);
@@ -1441,8 +1487,24 @@ async function main() {
     }
   }
 
-  if (allResults.length > 0) generateReport(allResults);
-  else log('\nNo videos checked. Run with --debug to troubleshoot.');
+  if (allResults.length > 0) {
+    generateReport(allResults);
+  } else if (fatalError) {
+    // Nothing got checked because of a crash (e.g. login failure) -- write an
+    // honest report instead of silently exiting 0 with no output files, and
+    // fail the CI step so the run shows as failed rather than looking clean.
+    writeFatalErrorReport(fatalError);
+    process.exitCode = 1;
+  } else {
+    log('\nNo videos checked. Run with --debug to troubleshoot.');
+  }
 }
 
-main().catch(console.error);
+main().catch(error => {
+  // Belt-and-suspenders: any error that escapes main() entirely (e.g. browser
+  // launch itself failing, before the inner try/catch even starts) must still
+  // fail the process. Without this, Node exits 0 by default and the crash is
+  // invisible to CI -- the exact bug that let a failed run wipe the data branch.
+  console.error(error);
+  process.exitCode = 1;
+});

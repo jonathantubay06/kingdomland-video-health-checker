@@ -9,6 +9,24 @@ KL.renderIncidentBanner = function() {
   if (!container) return;
   container.innerHTML = '';
 
+  // ---- -1. FATAL ERROR (highest priority — checker crashed before checking anything) ----
+  if (KL.state.fatalError) {
+    container.innerHTML =
+      '<div class="incident-banner incident-outage">' +
+        '<div class="incident-icon">🚨</div>' +
+        '<div class="incident-body">' +
+          '<div class="incident-title">Checker crashed — no videos were checked</div>' +
+          '<div class="incident-detail">' +
+            'The checker hit a fatal error before it could check any videos. ' +
+            'This run did not update your data — the numbers below are from the last successful check, ' +
+            '<strong>not</strong> this run.' +
+          '</div>' +
+          '<div class="incident-error"><code>' + KL.escHtml(KL.state.fatalError.message || 'Unknown error') + '</code></div>' +
+        '</div>' +
+      '</div>';
+    return;
+  }
+
   // ---- 0. DISCOVERY FAILURE (top priority — checker itself couldn't find videos) ----
   if (KL.state.discoveryFailure) {
     var exp = KL.state.discoveryFailure.expected;
