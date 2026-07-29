@@ -1,0 +1,8 @@
+FAILED VIDEOS — go.kingdomlandkids.com
+Generated: 7/29/2026, 7:07:52 PM
+Total failed: 1 | Timed out: 0
+============================================================
+
+[FAIL] #198 [HOME] 5 Monkeys Lyric Video
+  URL:   https://go.kingdomlandkids.com/subscription
+  Error: Did not land on /watch/ (got https://go.kingdomlandkids.com/subscription)
