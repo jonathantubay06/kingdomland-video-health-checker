@@ -1,0 +1,8 @@
+FAILED VIDEOS — go.kingdomlandkids.com
+Generated: 8/2/2026, 2:17:39 AM
+Total failed: 1 | Timed out: 0
+============================================================
+
+[FAIL] #162 [HOME] Sound it Out
+  URL:   https://go.kingdomlandkids.com/subscription
+  Error: Did not land on /watch/ (got https://go.kingdomlandkids.com/subscription)
