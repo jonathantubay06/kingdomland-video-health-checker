@@ -1551,8 +1551,6 @@ tbody td {
 }
 .trend-legend-dot.dot-pass { background: var(--color-pass); }
 .trend-legend-dot.dot-fail { background: var(--color-fail); }
-.trend-legend-dot.dot-timeout { background: var(--color-timeout); }
-.trend-legend-dot.dot-total { background: var(--color-info); }
 .trend-chart-summary {
   font-size: 0.78rem;
   color: var(--color-text-light);

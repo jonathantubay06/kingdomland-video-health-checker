@@ -85,7 +85,7 @@ self.addEventListener('push', (e) => {
       self.registration.showNotification(data.title || 'Video Checker', {
         body: data.body || '',
         icon: data.icon || '/icons/icon-192.png',
-        badge: '/icons/icon-96.png',
+        badge: '/icons/icon-192.png',
         tag: data.tag || 'video-checker',
         data: data.url || '/',
       })
