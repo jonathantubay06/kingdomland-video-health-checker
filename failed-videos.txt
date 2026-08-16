@@ -1,8 +1,0 @@
-FAILED VIDEOS — go.kingdomlandkids.com
-Generated: 8/16/2026, 1:00:18 PM
-Total failed: 1 | Timed out: 0
-============================================================
-
-[FAIL] #115 [HOME] Bible in Clay: Daniel and The Lions Den
-  URL:   https://go.kingdomlandkids.com/subscription
-  Error: Did not land on /watch/ (got https://go.kingdomlandkids.com/subscription)
