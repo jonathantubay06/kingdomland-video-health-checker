@@ -1,8 +1,0 @@
-FAILED VIDEOS — go.kingdomlandkids.com
-Generated: 8/20/2026, 1:09:06 PM
-Total failed: 1 | Timed out: 0
-============================================================
-
-[FAIL] #128 [HOME] H3 Whoa Challenge
-  URL:   https://go.kingdomlandkids.com/subscription
-  Error: Did not land on /watch/ (got https://go.kingdomlandkids.com/subscription)
