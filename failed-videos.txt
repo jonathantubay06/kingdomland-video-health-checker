@@ -1,0 +1,8 @@
+FAILED VIDEOS — go.kingdomlandkids.com
+Generated: 8/22/2026, 4:45:28 AM
+Total failed: 1 | Timed out: 0
+============================================================
+
+[FAIL] #47 [HOME] 12th Street Counting By 2s
+  URL:   https://go.kingdomlandkids.com/subscription
+  Error: Did not land on /watch/ (got https://go.kingdomlandkids.com/subscription)
