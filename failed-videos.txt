@@ -1,8 +1,0 @@
-FAILED VIDEOS — go.kingdomlandkids.com
-Generated: 8/26/2026, 1:06:01 AM
-Total failed: 1 | Timed out: 0
-============================================================
-
-[FAIL] #80 [HOME] Bible Explained: The Walls of Jericho
-  URL:   https://go.kingdomlandkids.com/subscription
-  Error: Did not land on /watch/ (got https://go.kingdomlandkids.com/subscription)
