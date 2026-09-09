@@ -1,8 +1,0 @@
-FAILED VIDEOS — go.kingdomlandkids.com
-Generated: 9/9/2026, 2:43:08 AM
-Total failed: 1 | Timed out: 0
-============================================================
-
-[FAIL] #2 [HOME] Unicatz Alphabet Song
-  URL:   https://go.kingdomlandkids.com/subscription
-  Error: Did not land on /watch/ (got https://go.kingdomlandkids.com/subscription)
