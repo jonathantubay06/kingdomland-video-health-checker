@@ -1,8 +1,0 @@
-FAILED VIDEOS — go.kingdomlandkids.com
-Generated: 9/10/2026, 2:42:24 AM
-Total failed: 1 | Timed out: 0
-============================================================
-
-[FAIL] #108 [HOME] Bible In Clay: Creation
-  URL:   https://go.kingdomlandkids.com/subscription
-  Error: Did not land on /watch/ (got https://go.kingdomlandkids.com/subscription)
