@@ -198,28 +198,37 @@ async function handleProfileSelection(page) {
 // HOME DISCOVERY — infinite scroll, no carousels, no tabs
 // ============================================================
 
+const CARD_SELECTOR = 'button[class*="KThumb_rootButton"], button[class*="KThumb_root"]';
+
 /**
- * Scroll patiently to the bottom — content lazy-loads as scrollHeight grows.
- * Returns when scrollHeight stops growing for 2 consecutive rounds.
+ * Scroll patiently to the bottom so lazy-loaded cards render.
+ * Stops only when BOTH the card count and page height are unchanged for 3 rounds.
+ * Height alone is not enough: on a slow runner a lazy-load batch can take longer
+ * than one round, and a flat height was being misread as "reached the bottom"
+ * (2026-09-22 run found 36 of 238).
  */
-async function fullScroll(page, maxRounds = 20) {
-  let lastHeight = 0;
+async function fullScroll(page, maxRounds = 40) {
+  let lastHeight = -1;
+  let lastCount = -1;
   let stableRounds = 0;
   for (let round = 0; round < maxRounds; round++) {
-    const h = await page.evaluate(() => document.body.scrollHeight).catch(() => 0);
-    if (h === lastHeight) {
+    const h = await page.evaluate(() => document.body.scrollHeight).catch(() => null);
+    const count = await page.evaluate(sel => document.querySelectorAll(sel).length, CARD_SELECTOR).catch(() => null);
+    if (h !== null && count !== null && h === lastHeight && count === lastCount) {
       stableRounds++;
-      if (stableRounds >= 2) break;
+      if (stableRounds >= 3) break;
     } else stableRounds = 0;
-    lastHeight = h;
+    if (h !== null) lastHeight = h;
+    if (count !== null) lastCount = count;
 
     for (let y = 0; y < h + 1000; y += 500) {
       await page.evaluate(s => window.scrollTo(0, s), y).catch(() => {});
       await page.waitForTimeout(180);
     }
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight)).catch(() => {});
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(1500);
   }
+  log(`   Scroll finished with ${lastCount} cards rendered.`);
   await page.evaluate(() => window.scrollTo(0, 0)).catch(() => {});
   await page.waitForTimeout(400);
 }
@@ -854,11 +863,14 @@ function readPrevTotal() {
     if (!fs.existsSync('history.json')) return null;
     const h = JSON.parse(fs.readFileSync('history.json', 'utf-8'));
     if (!Array.isArray(h) || !h.length) return null;
-    // Walk back to the last run with a meaningful total (skip filtered rechecks / discovery fails)
-    for (let i = h.length - 1; i >= 0; i--) {
-      if (h[i].total && h[i].total > 20 && !h[i].discoveryFailure) return h[i].total;
+    // Highest total among the last 10 trustworthy runs. Using the max (not the latest)
+    // means one partial run can't lower the bar and silence the next warning.
+    const totals = [];
+    for (let i = h.length - 1; i >= 0 && totals.length < 10; i--) {
+      const e = h[i];
+      if (e.total && e.total > 20 && !e.discoveryFailure && !e.partialDiscovery) totals.push(e.total);
     }
-    return null;
+    return totals.length ? Math.max(...totals) : null;
   } catch { return null; }
 }
 
@@ -1121,6 +1133,7 @@ function generateReport(allResults) {
 
   const historyEntry = {
     timestamp: report.timestamp,
+    ...(discoveryWarning ? { partialDiscovery: true, expectedTotal: discoveryWarning.expected } : {}),
     total: allResults.length,
     passed: passed.length,
     failed: failed.length,
@@ -1296,16 +1309,20 @@ async function main() {
 
     let cards = await discoverHomeVideos(page);
     // Discovery can flake if the page hasn't finished rendering when the scroll runs.
-    // Retry (reload + re-scroll) before trusting a 0 result — prevents false discovery alarms.
+    // Retry (reload + re-scroll) on 0 results AND on results well below the expected
+    // total, keeping the best attempt.
+    const expectedTotal = TITLES_FILTER ? null : readPrevTotal();
+    const looksPartial = n => n === 0 || (expectedTotal && expectedTotal > 20 && n < expectedTotal * 0.9);
     let discAttempts = 0;
-    while (cards.length === 0 && discAttempts < 2) {
+    while (looksPartial(cards.length) && discAttempts < 2) {
       discAttempts++;
-      log(`   Discovery found 0 videos — reloading and retrying (${discAttempts}/2)...`);
+      log(`   Discovery found ${cards.length} videos${expectedTotal ? ` (expected ~${expectedTotal})` : ''} — reloading and retrying (${discAttempts}/2)...`);
       try {
         await page.goto(CONFIG.homeUrl, { waitUntil: 'networkidle', timeout: CONFIG.navigationTimeout });
-      } catch { /* fall through to scroll anyway */ }
+      } catch (e) { log(`   Reload before retry failed: ${e.message}`); }
       await page.waitForTimeout(3000);
-      cards = await discoverHomeVideos(page);
+      const retry = await discoverHomeVideos(page);
+      if (retry.length > cards.length) cards = retry;
     }
     emit({ type: 'discovery-complete', page: PAGE.HOME, cards, total: cards.length });
 

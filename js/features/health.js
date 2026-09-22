@@ -16,7 +16,15 @@ KL.updateHealthSummary = function() {
   var level = 'green';
   var icon = '';
 
-  if (rate === 100) {
+  // A partial discovery must never render as a clean success: 36/36 passing
+  // says nothing about the videos that were never checked.
+  var dw = KL.state.discoveryWarning;
+  if (dw && dw.expected > total && failed + timeouts === 0) {
+    level = 'yellow';
+    message = 'Only ' + total + ' of ~' + dw.expected + ' videos were checked';
+    detail = 'All checked videos passed, but discovery was incomplete — the rest were not tested';
+    icon = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>';
+  } else if (rate === 100) {
     message = 'All ' + total + ' videos are working perfectly!';
     detail = '100% pass rate';
     level = 'green';
