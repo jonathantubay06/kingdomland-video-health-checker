@@ -1,0 +1,8 @@
+FAILED VIDEOS — go.kingdomlandkids.com
+Generated: 9/22/2026, 5:41:35 PM
+Total failed: 1 | Timed out: 0
+============================================================
+
+[FAIL] #14 [HOME] Three Little Words Jesus Loves Me This I Know
+  URL:   https://go.kingdomlandkids.com/subscription
+  Error: Did not land on /watch/ (got https://go.kingdomlandkids.com/subscription)
