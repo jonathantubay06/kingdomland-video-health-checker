@@ -51,7 +51,12 @@ app.get('/sw.js', (req, res) => {
 
 // Notification sound
 app.get('/sounds/:file', (req, res) => {
-  const filePath = path.join(__dirname, 'sounds', req.params.file);
+  const soundsDir = path.join(__dirname, 'sounds');
+  const filePath = path.resolve(soundsDir, req.params.file);
+  // Express decodes %2e%2e%2f into ../ so the param can escape soundsDir
+  if (filePath !== soundsDir && !filePath.startsWith(soundsDir + path.sep)) {
+    return res.status(403).end();
+  }
   if (fs.existsSync(filePath)) res.sendFile(filePath);
   else res.status(404).end();
 });
@@ -530,6 +535,10 @@ function applySchedule(config) {
     });
     child.stdout.on('data', d => process.stdout.write('[Scheduled] ' + d));
     child.stderr.on('data', d => process.stderr.write('[Scheduled] ' + d));
+    child.on('error', err => console.error('[Scheduled] Failed to start checker:', err.message));
+    child.on('close', code => {
+      if (code !== 0) console.error(`[Scheduled] Checker exited with code ${code}`);
+    });
   });
   console.log('Schedule active:', config.cron);
 }
@@ -708,8 +717,11 @@ app.post('/api/stop', (req, res) => {
 
 // ============== Start ==============
 const PORT = process.env.PORT || 3000;
+// Loopback by default: the dashboard serves local files and holds site credentials.
+// Set HOST=0.0.0.0 to deliberately expose it on the network.
+const HOST = process.env.HOST || '127.0.0.1';
 if (require.main === module) {
-  app.listen(PORT, () => {
+  app.listen(PORT, HOST, () => {
     console.log(`\n  Kingdomland Video Checker Dashboard`);
     console.log(`  ────────────────────────────────────`);
     console.log(`  Running at: http://localhost:${PORT}`);

@@ -9,17 +9,40 @@ describe('lib/auth', () => {
 
   afterEach(() => {
     delete process.env.API_KEY;
+    delete process.env.NETLIFY;
+    delete process.env.CONTEXT;
   });
+
+  // isLocalDev() keys off these; set them to simulate a deployed site.
+  function simulateDeployed() {
+    process.env.NETLIFY = 'true';
+    process.env.CONTEXT = 'production';
+  }
 
   function makeEvent(headers = {}) {
     return { headers };
   }
 
   describe('validateApiKey', () => {
-    it('allows all requests when API_KEY is not set', () => {
+    it('allows all requests in local dev when API_KEY is not set', () => {
       delete process.env.API_KEY;
       const result = auth.validateApiKey(makeEvent());
       expect(result.valid).toBe(true);
+    });
+
+    it('denies requests on a deployed site when API_KEY is not set', () => {
+      delete process.env.API_KEY;
+      simulateDeployed();
+      const result = auth.validateApiKey(makeEvent());
+      expect(result.valid).toBe(false);
+      expect(result.statusCode).toBe(503);
+    });
+
+    it('still authenticates normally on a deployed site when API_KEY is set', () => {
+      process.env.API_KEY = 'test-secret-key';
+      simulateDeployed();
+      expect(auth.validateApiKey(makeEvent({ 'x-api-key': 'test-secret-key' })).valid).toBe(true);
+      expect(auth.validateApiKey(makeEvent()).statusCode).toBe(401);
     });
 
     it('rejects missing X-API-Key header when API_KEY is set', () => {

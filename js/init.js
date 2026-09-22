@@ -132,6 +132,9 @@ window.addEventListener('DOMContentLoaded', async function() {
   // Initialize push notifications UI ("not available" state — VAPID keys not configured)
   if (KL.initPushUI) KL.initPushUI();
 
+  // Initialize API key UI (needed when hosted on Netlify with API_KEY set)
+  if (KL.initApiKeyUI) KL.initApiKeyUI();
+
   // Try local mode first — /api/status only exists when running server.js locally
   try {
     var res = await fetch('/api/status');

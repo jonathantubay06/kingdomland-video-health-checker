@@ -1,5 +1,9 @@
 // Returns an SVG health badge (like shields.io) based on latest report
 // Env vars needed: GITHUB_TOKEN, GITHUB_REPO
+//
+// Intentionally unauthenticated, unlike every other function here: a badge is
+// embedded in READMEs by anonymous <img> requests that cannot send X-API-Key.
+// It exposes only aggregate pass/fail counts, never per-video data or credentials.
 
 exports.handler = async (event) => {
   const token = process.env.GITHUB_TOKEN;
