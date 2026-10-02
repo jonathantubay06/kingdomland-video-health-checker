@@ -195,7 +195,7 @@ async function handleProfileSelection(page) {
 }
 
 // ============================================================
-// HOME DISCOVERY — infinite scroll, no carousels, no tabs
+// HOME DISCOVERY — catalog API first, Home-page scroll as fallback
 // ============================================================
 
 const CARD_SELECTOR = 'button[class*="KThumb_rootButton"], button[class*="KThumb_root"]';
@@ -238,6 +238,52 @@ async function fullScroll(page, maxRounds = 40) {
  * Pulls the video UUID from React fiber + thumbnail from img srcset.
  */
 async function discoverHomeVideos(page) {
+  // Home now shows short per-category carousels (~72 cards total), so the DOM
+  // can't see the whole catalog. The app's own paginated catalog endpoint can.
+  const fromApi = await discoverViaApi(page);
+  if (fromApi.length) return fromApi;
+  log('   Catalog API unavailable — falling back to scrolling Home.');
+  return discoverHomeVideosFromDom(page);
+}
+
+/**
+ * Pull the full catalog from /api/subscriptions/videos (the endpoint the app
+ * itself pages through), using the logged-in session's cookies.
+ */
+async function discoverViaApi(page) {
+  log('Fetching full video catalog from /api/subscriptions/videos...');
+  const res = await page.evaluate(async () => {
+    const all = [];
+    for (let pg = 1; pg <= 50; pg++) {
+      const r = await fetch(`/api/subscriptions/videos?page=${pg}&limit=100`, { credentials: 'include' });
+      if (!r.ok) return { error: `HTTP ${r.status}`, all };
+      const j = await r.json();
+      all.push(...(j.data || []));
+      if (!j.pagination || pg >= j.pagination.totalPages) return { total: j.pagination?.total, all };
+    }
+    return { all };
+  }).catch(err => ({ error: err.message, all: [] }));
+
+  if (res.error) log(`   Catalog API error: ${res.error}`);
+  const seen = new Set();
+  const cards = [];
+  for (const v of res.all) {
+    if (!v.id || seen.has(v.id)) continue;
+    seen.add(v.id);
+    const s = Math.round(v.durationSeconds || 0);
+    cards.push({
+      title: (v.title || '').trim(),
+      videoId: v.id,
+      thumbnailUrl: v.thumbnailUrl || '',
+      duration: s ? `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}` : '',
+    });
+  }
+  if (res.error && res.total && cards.length < res.total) return [];
+  log(`Found ${cards.length} unique videos via API${res.total ? ` (API total: ${res.total})` : ''}.`);
+  return cards;
+}
+
+async function discoverHomeVideosFromDom(page) {
   log('Scrolling Home page to lazy-load all videos...');
   await fullScroll(page);
 
