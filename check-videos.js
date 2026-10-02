@@ -20,7 +20,7 @@ try { require('dotenv').config(); } catch (_) {}
 const playwright = require('playwright');
 const fs = require('fs');
 const { STATUS, PAGE } = require('./lib/constants');
-const { sendSlackFailureAlert, sendSlackOutageAlert, sendSlackRecoveryAlert } = require('./lib/slack');
+const { sendSlackFailureAlert, sendSlackOutageAlert, sendSlackRecoveryAlert, sendSlackDiscoveryAlert } = require('./lib/slack');
 const db = require('./lib/db');
 
 // ============== CONFIG ==============
@@ -243,6 +243,7 @@ async function discoverHomeVideos(page) {
   const fromApi = await discoverViaApi(page);
   if (fromApi.length) return fromApi;
   log('   Catalog API unavailable — falling back to scrolling Home.');
+  global.__KL_DISCOVERY_META__ = { ...global.__KL_DISCOVERY_META__, source: 'dom' };
   return discoverHomeVideosFromDom(page);
 }
 
@@ -265,6 +266,7 @@ async function discoverViaApi(page) {
   }).catch(err => ({ error: err.message, all: [] }));
 
   if (res.error) log(`   Catalog API error: ${res.error}`);
+  global.__KL_DISCOVERY_META__ = { source: 'api', apiTotal: res.total || null, apiError: res.error || null };
   const seen = new Set();
   const cards = [];
   for (const v of res.all) {
@@ -1384,11 +1386,31 @@ async function main() {
         await browser.close();
         return; // nothing to check
       }
-      if (prevTotal && prevTotal > 20 && cards.length < prevTotal * 0.5) {
+      // Flag (and alert on) anything that means we didn't see the whole catalog,
+      // so a site/UI change can never pass as a clean, smaller run.
+      const meta = global.__KL_DISCOVERY_META__ || {};
+      const reasons = [];
+      if (meta.source === 'dom') {
+        reasons.push(`The video catalog API failed${meta.apiError ? ` (${meta.apiError})` : ''}, so the checker fell back to scrolling Home, which only shows part of the list.`);
+      }
+      if (meta.apiTotal && cards.length < meta.apiTotal) {
+        reasons.push(`The site reports ${meta.apiTotal} videos but only ${cards.length} were collected.`);
+      }
+      const fullApiList = meta.source === 'api' && meta.apiTotal && cards.length >= meta.apiTotal;
+      if (!fullApiList && prevTotal && prevTotal > 20 && cards.length < prevTotal * 0.95) {
+        reasons.push(`Found ${cards.length} videos, down from ${prevTotal} in recent runs.`);
+      }
+      if (reasons.length) {
         log('');
-        log(`⚠️ PARTIAL DISCOVERY: found ${cards.length} videos but previous run had ${prevTotal}.`);
-        log('   Possible lazy-load/scroll issue or a site change. Checking what was found, but flagging this.');
-        global.__KL_DISCOVERY_WARNING__ = { found: cards.length, expected: prevTotal };
+        log(`⚠️ PARTIAL DISCOVERY: found ${cards.length} videos${prevTotal ? ` (expected ~${prevTotal})` : ''}.`);
+        reasons.forEach(r => log(`   - ${r}`));
+        log('   Checking what was found, but flagging this.');
+        global.__KL_DISCOVERY_WARNING__ = { found: cards.length, expected: meta.apiTotal || prevTotal, reasons };
+        await sendSlackDiscoveryAlert(cards.length, meta.apiTotal || prevTotal, reasons)
+          .catch(err => log(`Slack discovery alert failed (non-critical): ${err.message}`));
+      } else if (fullApiList && prevTotal && prevTotal > 20 && cards.length < prevTotal * 0.95) {
+        // The site's own list is complete but smaller — videos were removed/hidden, not a checker problem.
+        log(`ℹ️ Catalog shrank: site now lists ${cards.length} videos (recent runs: ${prevTotal}).`);
       }
     }
 

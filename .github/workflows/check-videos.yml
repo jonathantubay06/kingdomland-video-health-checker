@@ -188,3 +188,13 @@ jobs:
           fi
 
           git push origin data
+
+      # Runs after the report is saved, so the dashboard still updates. Turning
+      # the run red makes GitHub email the repo owner when the checker couldn't
+      # see the full video list (usually a site/UI change, not a video outage).
+      - name: Fail run if the video list was incomplete
+        run: |
+          if [ -f video-report.json ] && node -e "const r=JSON.parse(require('fs').readFileSync('video-report.json','utf-8'));process.exit(r.discoveryWarning||(r.discoveryFailure&&r.discoveryFailure.detected)?0:1)"; then
+            echo "::error::Video checker did not get the full video list -- the site may have changed. See the 'Run video check' log for the reason."
+            exit 1
+          fi

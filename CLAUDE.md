@@ -24,3 +24,14 @@ The 8-video gap is intentional. Do not treat it as a discovery bug.
 `/api/subscriptions/videos?page=N&limit=100` using the logged-in session.
 Scrolling the Home page is only a fallback: Home shows short per-category
 carousels and only renders ~72 cards.
+
+## Alerts when the video list is incomplete
+
+If discovery can't see the whole catalog, the run is flagged as a partial
+discovery (`discoveryWarning` in `video-report.json`). That happens when the
+catalog API fails and Home scrolling is used, when fewer videos than the API's
+total are collected, or when the count drops >5% below recent runs without the
+API confirming the smaller total. The checker sends a Slack alert
+(`sendSlackDiscoveryAlert`), and the workflow's last step fails the run so GitHub
+emails the owner. A smaller count that the API itself confirms is logged as
+"Catalog shrank" and does not alert.
