@@ -1,8 +1,0 @@
-FAILED VIDEOS — go.kingdomlandkids.com
-Generated: 10/2/2026, 5:53:08 PM
-Total failed: 1 | Timed out: 0
-============================================================
-
-[FAIL] #77 [HOME] The Ocean
-  URL:   https://go.kingdomlandkids.com/subscription
-  Error: Did not land on /watch/ (got https://go.kingdomlandkids.com/subscription)
