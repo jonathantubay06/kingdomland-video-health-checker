@@ -1,0 +1,8 @@
+FAILED VIDEOS — go.kingdomlandkids.com
+Generated: 10/30/2026, 10:58:53 AM
+Total failed: 1 | Timed out: 0
+============================================================
+
+[FAIL] #137 [HOME] Marvelous Light Season 2 Episode 13 Daniel and The Lions Den
+  URL:   https://go.kingdomlandkids.com/subscription
+  Error: Did not land on /watch/ (got https://go.kingdomlandkids.com/subscription)
