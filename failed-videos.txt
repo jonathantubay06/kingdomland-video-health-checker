@@ -1,0 +1,12 @@
+FAILED VIDEOS — go.kingdomlandkids.com
+Generated: 11/16/2026, 4:35:51 AM
+Total failed: 2 | Timed out: 0
+============================================================
+
+[FAIL] #19 [HOME] Marvelous Light Series > Marvelous Light Season 2
+  URL:   https://go.kingdomlandkids.com/watch/7fe87928-5e50-4be5-8853-f4052ae0e9e5?from=home
+  Error: MediaError: SRC_NOT_SUPPORTED
+
+[FAIL] #22 [HOME] Marvelous Light Series > Marvelous Light Season 1
+  URL:   https://go.kingdomlandkids.com/watch/1d86c3dc-371d-4aad-8fdd-eb9749426b21?from=home
+  Error: MediaError: SRC_NOT_SUPPORTED
