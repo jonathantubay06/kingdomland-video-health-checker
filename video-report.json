@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-18T23:09:06.740Z",
+  "timestamp": "2026-11-19T06:10:48.201Z",
   "browser": "chromium",
   "summary": {
     "total": 245,
@@ -8,8 +8,3090 @@
     "timeouts": 0
   },
   "failedVideos": [],
-  "performanceAlerts": [],
-  "regressions": [],
+  "performanceAlerts": [
+    {
+      "title": "Three Little Words Little Crooked Man",
+      "section": "Sing-a-long",
+      "loadTimeMs": 14867,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Give Me a Smile",
+      "section": "Sing-a-long",
+      "loadTimeMs": 14859,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Oh How I Love Jesus",
+      "section": "Sing-a-long",
+      "loadTimeMs": 13489,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Arky Arky Song",
+      "section": "Sing-a-long",
+      "loadTimeMs": 13453,
+      "level": "WARNING"
+    },
+    {
+      "title": "MFT Colors of the Rainbow",
+      "section": "Sing-a-long",
+      "loadTimeMs": 13386,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Pillar Of Salt",
+      "section": "Sing-a-long",
+      "loadTimeMs": 13119,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Ninja Growth Ninja",
+      "section": "Life Skills",
+      "loadTimeMs": 12972,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Jesus Loves Me This I Know",
+      "section": "Sing-a-long",
+      "loadTimeMs": 12873,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Deep And Wide",
+      "section": "Sing-a-long",
+      "loadTimeMs": 12858,
+      "level": "WARNING"
+    },
+    {
+      "title": "Mr. Prather Opposites",
+      "section": "Sing-a-long",
+      "loadTimeMs": 12701,
+      "level": "WARNING"
+    },
+    {
+      "title": "The Birds Job",
+      "section": "Fun Zone",
+      "loadTimeMs": 12688,
+      "level": "WARNING"
+    },
+    {
+      "title": "Unicatz Homie Big Surprise",
+      "section": "Fun Zone",
+      "loadTimeMs": 12527,
+      "level": "WARNING"
+    },
+    {
+      "title": "Gabby Action Short",
+      "section": "Fun Zone",
+      "loadTimeMs": 12526,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Joy, Joy, Joy",
+      "section": "Sing-a-long",
+      "loadTimeMs": 12524,
+      "level": "WARNING"
+    },
+    {
+      "title": "Who is Jesus",
+      "section": "Sing-a-long",
+      "loadTimeMs": 12524,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Season 2",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 12473,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Zacchaeus Was a Wee Little Man",
+      "section": "Sing-a-long",
+      "loadTimeMs": 12462,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words I Am So Happy",
+      "section": "Sing-a-long",
+      "loadTimeMs": 12410,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Knock Knock Knock",
+      "section": "Sing-a-long",
+      "loadTimeMs": 12381,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words He's Got the Whole World in His Hands",
+      "section": "Sing-a-long",
+      "loadTimeMs": 12252,
+      "level": "WARNING"
+    },
+    {
+      "title": "AlphaBots the Alphabet Part 1",
+      "section": "Fun Zone",
+      "loadTimeMs": 12150,
+      "level": "WARNING"
+    },
+    {
+      "title": "MFT Loopty Loo",
+      "section": "Sing-a-long",
+      "loadTimeMs": 11979,
+      "level": "WARNING"
+    },
+    {
+      "title": "Music for Learn",
+      "section": "Sing-a-long",
+      "loadTimeMs": 11957,
+      "level": "WARNING"
+    },
+    {
+      "title": "Bible in Clay: The Fiery Furnace",
+      "section": "Bible Adventures",
+      "loadTimeMs": 11920,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Season 2 Episode 17 Zacchaeus",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 11843,
+      "level": "WARNING"
+    },
+    {
+      "title": "Unicatz Learning is Fun",
+      "section": "Fun Zone",
+      "loadTimeMs": 11795,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Happy Is the Home",
+      "section": "Sing-a-long",
+      "loadTimeMs": 11753,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Walking with Jesus",
+      "section": "Sing-a-long",
+      "loadTimeMs": 11715,
+      "level": "WARNING"
+    },
+    {
+      "title": "Unicatz Cross the Road",
+      "section": "Sing-a-long",
+      "loadTimeMs": 11692,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Lights Big God",
+      "section": "Sing-a-long",
+      "loadTimeMs": 11686,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Ninja Calm Ninja",
+      "section": "Life Skills",
+      "loadTimeMs": 11531,
+      "level": "WARNING"
+    },
+    {
+      "title": "Jesus Miracles",
+      "section": "Bible Adventures",
+      "loadTimeMs": 11498,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Every Move I Make",
+      "section": "Sing-a-long",
+      "loadTimeMs": 11473,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Ninja Feelings Ninja",
+      "section": "Life Skills",
+      "loadTimeMs": 11437,
+      "level": "WARNING"
+    },
+    {
+      "title": "Rosa Parks",
+      "section": "Life Skills",
+      "loadTimeMs": 11431,
+      "level": "WARNING"
+    },
+    {
+      "title": "MFT ABC Song",
+      "section": "Sing-a-long",
+      "loadTimeMs": 11392,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Season 2 Episode 16 Adam and Eve",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 11313,
+      "level": "WARNING"
+    },
+    {
+      "title": "Kembe Sight Words Part 3",
+      "section": "Fun Zone",
+      "loadTimeMs": 11276,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Soap Soap Soap",
+      "section": "Sing-a-long",
+      "loadTimeMs": 11264,
+      "level": "WARNING"
+    },
+    {
+      "title": "Poof!",
+      "section": "Fun Zone",
+      "loadTimeMs": 11201,
+      "level": "WARNING"
+    },
+    {
+      "title": "Bible in Clay: Daniel and The Lions Den",
+      "section": "Bible Adventures",
+      "loadTimeMs": 11183,
+      "level": "WARNING"
+    },
+    {
+      "title": "Dr. Martin Luther King Jr.",
+      "section": "Life Skills",
+      "loadTimeMs": 11130,
+      "level": "WARNING"
+    },
+    {
+      "title": "The Book of Exodus Explained",
+      "section": "Bible Adventures",
+      "loadTimeMs": 11123,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Great Big God",
+      "section": "Sing-a-long",
+      "loadTimeMs": 11108,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Season 1 Trailer",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 11080,
+      "level": "WARNING"
+    },
+    {
+      "title": "Mr. Prather Days and Months",
+      "section": "Sing-a-long",
+      "loadTimeMs": 11067,
+      "level": "WARNING"
+    },
+    {
+      "title": "Easter",
+      "section": "Bible Adventures",
+      "loadTimeMs": 11059,
+      "level": "WARNING"
+    },
+    {
+      "title": "Malar's Big House Read-Along",
+      "section": "ABC",
+      "loadTimeMs": 11042,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Hello",
+      "section": "Sing-a-long",
+      "loadTimeMs": 10988,
+      "level": "WARNING"
+    },
+    {
+      "title": "The Miracle Song",
+      "section": "Sing-a-long",
+      "loadTimeMs": 10971,
+      "level": "WARNING"
+    },
+    {
+      "title": "Unicatz Alphabet Song",
+      "section": "ABC",
+      "loadTimeMs": 10958,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Hallelujah",
+      "section": "Sing-a-long",
+      "loadTimeMs": 10947,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Joshua Fought The Battle Of Jericho",
+      "section": "Sing-a-long",
+      "loadTimeMs": 10943,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Miriam Danced",
+      "section": "Sing-a-long",
+      "loadTimeMs": 10934,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Ninja Positive Ninja",
+      "section": "Life Skills",
+      "loadTimeMs": 10914,
+      "level": "WARNING"
+    },
+    {
+      "title": "God Loves Me",
+      "section": "Bible Adventures",
+      "loadTimeMs": 10900,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 Smile Kids",
+      "section": "Sing-a-long",
+      "loadTimeMs": 10893,
+      "level": "WARNING"
+    },
+    {
+      "title": "The Bird With Courage",
+      "section": "Life Skills",
+      "loadTimeMs": 10876,
+      "level": "WARNING"
+    },
+    {
+      "title": "Unicatz Pause Dance",
+      "section": "Sing-a-long",
+      "loadTimeMs": 10862,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Season 1",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 10850,
+      "level": "WARNING"
+    },
+    {
+      "title": "Gabby Galactic Fire Cats Safety",
+      "section": "Fun Zone",
+      "loadTimeMs": 10848,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 Stretching 4",
+      "section": "Fun Zone",
+      "loadTimeMs": 10772,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Episode 1 Moses Part 1",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 10734,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Father Abraham",
+      "section": "Sing-a-long",
+      "loadTimeMs": 10711,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words When The Spirit Of The Lord",
+      "section": "Sing-a-long",
+      "loadTimeMs": 10666,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Ninja Anxious Ninja",
+      "section": "Life Skills",
+      "loadTimeMs": 10650,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Peter, James and John In a Sailboat",
+      "section": "Sing-a-long",
+      "loadTimeMs": 10570,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words God Made The Fishes",
+      "section": "Sing-a-long",
+      "loadTimeMs": 10514,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Season 2 Episode 12 Jonah and the Whale",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 10499,
+      "level": "WARNING"
+    },
+    {
+      "title": "Unicatz Joy of Learning",
+      "section": "Life Skills",
+      "loadTimeMs": 10432,
+      "level": "WARNING"
+    },
+    {
+      "title": "Quick Math",
+      "section": "Numbers",
+      "loadTimeMs": 10421,
+      "level": "WARNING"
+    },
+    {
+      "title": "Count Some More",
+      "section": "Sing-a-long",
+      "loadTimeMs": 10365,
+      "level": "WARNING"
+    },
+    {
+      "title": "Psalms 23",
+      "section": "Sing-a-long",
+      "loadTimeMs": 10363,
+      "level": "WARNING"
+    },
+    {
+      "title": "Black History Beats (BHB) Jackie Robinson",
+      "section": "Sing-a-long",
+      "loadTimeMs": 10361,
+      "level": "WARNING"
+    },
+    {
+      "title": "The Ocean",
+      "section": "Fun Zone",
+      "loadTimeMs": 10357,
+      "level": "WARNING"
+    },
+    {
+      "title": "AlphaBots the Alphabet Part 2",
+      "section": "Fun Zone",
+      "loadTimeMs": 10239,
+      "level": "WARNING"
+    },
+    {
+      "title": "I want to See My Friends | Sing-a-long",
+      "section": "Sing-a-long",
+      "loadTimeMs": 10222,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 Stretching 3",
+      "section": "Fun Zone",
+      "loadTimeMs": 10131,
+      "level": "WARNING"
+    },
+    {
+      "title": "The Bible Explained: The Joseph Story",
+      "section": "Bible Adventures",
+      "loadTimeMs": 10118,
+      "level": "WARNING"
+    },
+    {
+      "title": "Unicatz Strut Your Stuff",
+      "section": "Fun Zone",
+      "loadTimeMs": 10115,
+      "level": "WARNING"
+    },
+    {
+      "title": "Baby Shark",
+      "section": "Sing-a-long",
+      "loadTimeMs": 10112,
+      "level": "WARNING"
+    },
+    {
+      "title": "Fire Safety School Drills",
+      "section": "Life Skills",
+      "loadTimeMs": 10103,
+      "level": "WARNING"
+    },
+    {
+      "title": "The Bible Explained: Noah’s Ark",
+      "section": "Bible Adventures",
+      "loadTimeMs": 10092,
+      "level": "WARNING"
+    },
+    {
+      "title": "God’s Creation: Penguins",
+      "section": "Fun Zone",
+      "loadTimeMs": 10018,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 Colors and Numbers",
+      "section": "Numbers",
+      "loadTimeMs": 9978,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 Teacher",
+      "section": "Sing-a-long",
+      "loadTimeMs": 9974,
+      "level": "WARNING"
+    },
+    {
+      "title": "Memory Man Episode 1",
+      "section": "Fun Zone",
+      "loadTimeMs": 9961,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words A Slave In Egypt",
+      "section": "Sing-a-long",
+      "loadTimeMs": 9938,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Season 2 Trailer",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9928,
+      "level": "WARNING"
+    },
+    {
+      "title": "GREAT GOD",
+      "section": "Bible Adventures",
+      "loadTimeMs": 9928,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Little Flower & Little Soldier",
+      "section": "Sing-a-long",
+      "loadTimeMs": 9924,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Ninja Listening Ninja",
+      "section": "Life Skills",
+      "loadTimeMs": 9920,
+      "level": "WARNING"
+    },
+    {
+      "title": "In His Hand",
+      "section": "Bible Adventures",
+      "loadTimeMs": 9910,
+      "level": "WARNING"
+    },
+    {
+      "title": "Chiu's Power Read-Along | ABCs | KingdomLand",
+      "section": "ABC",
+      "loadTimeMs": 9910,
+      "level": "WARNING"
+    },
+    {
+      "title": "Auntie Bois Gift Motion Book",
+      "section": "ABC",
+      "loadTimeMs": 9894,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Season 2 Episode 13 Daniel and The Lions Den",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9891,
+      "level": "WARNING"
+    },
+    {
+      "title": "Great | Sing-a-long",
+      "section": "Sing-a-long",
+      "loadTimeMs": 9884,
+      "level": "WARNING"
+    },
+    {
+      "title": "God’s Creation: Eagles",
+      "section": "Fun Zone",
+      "loadTimeMs": 9853,
+      "level": "WARNING"
+    },
+    {
+      "title": "Unicatz Count to 20",
+      "section": "Numbers",
+      "loadTimeMs": 9835,
+      "level": "WARNING"
+    },
+    {
+      "title": "Behave In School",
+      "section": "Sing-a-long",
+      "loadTimeMs": 9831,
+      "level": "WARNING"
+    },
+    {
+      "title": "Mr. Prather Days of the Week",
+      "section": "Sing-a-long",
+      "loadTimeMs": 9820,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 Ring Around The Rosey",
+      "section": "Sing-a-long",
+      "loadTimeMs": 9818,
+      "level": "WARNING"
+    },
+    {
+      "title": "Animal Parade",
+      "section": "Sing-a-long",
+      "loadTimeMs": 9816,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words",
+      "section": "Sing-a-long",
+      "loadTimeMs": 9812,
+      "level": "WARNING"
+    },
+    {
+      "title": "Black History Beats (BHB) MLK",
+      "section": "Sing-a-long",
+      "loadTimeMs": 9703,
+      "level": "WARNING"
+    },
+    {
+      "title": "Wake Up Kid",
+      "section": "Fun Zone",
+      "loadTimeMs": 9676,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Episode 2 Moses Part 2",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9645,
+      "level": "WARNING"
+    },
+    {
+      "title": "12th Street Counting by 2s and 3s",
+      "section": "Fun Zone",
+      "loadTimeMs": 9629,
+      "level": "WARNING"
+    },
+    {
+      "title": "12th Street",
+      "section": "Fun Zone",
+      "loadTimeMs": 9626,
+      "level": "WARNING"
+    },
+    {
+      "title": "Unicatz Music Video",
+      "section": "Fun Zone",
+      "loadTimeMs": 9625,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Episode 7 Noah Part 2",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9620,
+      "level": "WARNING"
+    },
+    {
+      "title": "God's Creation: Polar Bears",
+      "section": "Fun Zone",
+      "loadTimeMs": 9608,
+      "level": "WARNING"
+    },
+    {
+      "title": "Gods Creation: Dolphins",
+      "section": "Fun Zone",
+      "loadTimeMs": 9596,
+      "level": "WARNING"
+    },
+    {
+      "title": "Kembe Tries Playing",
+      "section": "Fun Zone",
+      "loadTimeMs": 9589,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Season 2 Episode 11 Jonah and the Whale",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9560,
+      "level": "WARNING"
+    },
+    {
+      "title": "God’s Creation: The Giraffe",
+      "section": "Fun Zone",
+      "loadTimeMs": 9551,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Easter Episode",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9551,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 Whoa Challenge",
+      "section": "Sing-a-long",
+      "loadTimeMs": 9544,
+      "level": "WARNING"
+    },
+    {
+      "title": "12th Street Counting By 2s",
+      "section": "Fun Zone",
+      "loadTimeMs": 9527,
+      "level": "WARNING"
+    },
+    {
+      "title": "Big History: Ruby Bridges",
+      "section": "Life Skills",
+      "loadTimeMs": 9524,
+      "level": "WARNING"
+    },
+    {
+      "title": "Black History Beats (BHB) Bessie Coleman",
+      "section": "Sing-a-long",
+      "loadTimeMs": 9520,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Christmas Episode",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9513,
+      "level": "WARNING"
+    },
+    {
+      "title": "He Loves Me",
+      "section": "Sing-a-long",
+      "loadTimeMs": 9488,
+      "level": "WARNING"
+    },
+    {
+      "title": "Gabby Globber (GG) Counting by 5s and 10s",
+      "section": "Numbers",
+      "loadTimeMs": 9488,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Episode 4 David Vs Goliath Part 2",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9485,
+      "level": "WARNING"
+    },
+    {
+      "title": "12th Street Counting By 3s",
+      "section": "Fun Zone",
+      "loadTimeMs": 9461,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 Count it Up",
+      "section": "Numbers",
+      "loadTimeMs": 9426,
+      "level": "WARNING"
+    },
+    {
+      "title": "Shape Song",
+      "section": "Sing-a-long",
+      "loadTimeMs": 9391,
+      "level": "WARNING"
+    },
+    {
+      "title": "Gabby Globber (GG) Counts by 5s",
+      "section": "Numbers",
+      "loadTimeMs": 9390,
+      "level": "WARNING"
+    },
+    {
+      "title": "Unicatz Musical Chairs",
+      "section": "Fun Zone",
+      "loadTimeMs": 9377,
+      "level": "WARNING"
+    },
+    {
+      "title": "Alphabots OO Song",
+      "section": "Fun Zone",
+      "loadTimeMs": 9372,
+      "level": "WARNING"
+    },
+    {
+      "title": "The Lion's Power",
+      "section": "Fun Zone",
+      "loadTimeMs": 9358,
+      "level": "WARNING"
+    },
+    {
+      "title": "Bible In Clay: Creation",
+      "section": "Bible Adventures",
+      "loadTimeMs": 9357,
+      "level": "WARNING"
+    },
+    {
+      "title": "AlphaBots Letter D",
+      "section": "Fun Zone",
+      "loadTimeMs": 9356,
+      "level": "WARNING"
+    },
+    {
+      "title": "Disagreement of Occupations | ABCs",
+      "section": "ABC",
+      "loadTimeMs": 9350,
+      "level": "WARNING"
+    },
+    {
+      "title": "The Eagle",
+      "section": "Fun Zone",
+      "loadTimeMs": 9308,
+      "level": "WARNING"
+    },
+    {
+      "title": "The Elephant",
+      "section": "Fun Zone",
+      "loadTimeMs": 9300,
+      "level": "WARNING"
+    },
+    {
+      "title": "5 Monkeys Lyric Video",
+      "section": "Numbers",
+      "loadTimeMs": 9293,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Season 2 Episode 14 Daniel and The Lions Den",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9281,
+      "level": "WARNING"
+    },
+    {
+      "title": "Sound it Out",
+      "section": "Sing-a-long",
+      "loadTimeMs": 9268,
+      "level": "WARNING"
+    },
+    {
+      "title": "Introduction Bible Fruits of Virtue",
+      "section": "Bible Adventures",
+      "loadTimeMs": 9228,
+      "level": "WARNING"
+    },
+    {
+      "title": "Make it Out",
+      "section": "Sing-a-long",
+      "loadTimeMs": 9227,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 Bubble Head",
+      "section": "Sing-a-long",
+      "loadTimeMs": 9222,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light A Rotten Day: Finding Joy in God",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9222,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Season 2 Episode 20 Paul and Saul",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9206,
+      "level": "WARNING"
+    },
+    {
+      "title": "Spark Lab: Where Puddles Go",
+      "section": "Fun Zone",
+      "loadTimeMs": 9193,
+      "level": "WARNING"
+    },
+    {
+      "title": "Big History: Duke Ellington",
+      "section": "Life Skills",
+      "loadTimeMs": 9122,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Episode 8 Meet Jesus Part 1",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9117,
+      "level": "WARNING"
+    },
+    {
+      "title": "Kembe How Money Works",
+      "section": "Fun Zone",
+      "loadTimeMs": 9114,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Season 2 Episode 15 Creation",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9099,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words Inside Outside High And Low",
+      "section": "Sing-a-long",
+      "loadTimeMs": 9057,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Grandpa David",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 9057,
+      "level": "WARNING"
+    },
+    {
+      "title": "Faithfulness",
+      "section": "Bible Adventures",
+      "loadTimeMs": 9057,
+      "level": "WARNING"
+    },
+    {
+      "title": "Clap Your Hands",
+      "section": "Sing-a-long",
+      "loadTimeMs": 9034,
+      "level": "WARNING"
+    },
+    {
+      "title": "Three Little Words God Is So Good",
+      "section": "Sing-a-long",
+      "loadTimeMs": 9026,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 Born to Be Wild",
+      "section": "Sing-a-long",
+      "loadTimeMs": 9024,
+      "level": "WARNING"
+    },
+    {
+      "title": "Alphabots Letter C",
+      "section": "Fun Zone",
+      "loadTimeMs": 8934,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Episode 3 David Vs Goliath Part 1",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 8933,
+      "level": "WARNING"
+    },
+    {
+      "title": "Moses",
+      "section": "Bible Adventures",
+      "loadTimeMs": 8913,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Season 2 Episode 19 Paul and Saul",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 8902,
+      "level": "WARNING"
+    },
+    {
+      "title": "Great Tidy up",
+      "section": "ABC",
+      "loadTimeMs": 8898,
+      "level": "WARNING"
+    },
+    {
+      "title": "Jonah Song",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8891,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Ninja Frustrated Ninja",
+      "section": "Life Skills",
+      "loadTimeMs": 8877,
+      "level": "WARNING"
+    },
+    {
+      "title": "The Joseph Song",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8859,
+      "level": "WARNING"
+    },
+    {
+      "title": "Unicatz Transformations",
+      "section": "Fun Zone",
+      "loadTimeMs": 8847,
+      "level": "WARNING"
+    },
+    {
+      "title": "Kembe Water Cycles",
+      "section": "Fun Zone",
+      "loadTimeMs": 8843,
+      "level": "WARNING"
+    },
+    {
+      "title": "I'm a Princess | Sing-a-long",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8842,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 Stretching 2",
+      "section": "Fun Zone",
+      "loadTimeMs": 8840,
+      "level": "WARNING"
+    },
+    {
+      "title": "Number Lines",
+      "section": "Numbers",
+      "loadTimeMs": 8826,
+      "level": "WARNING"
+    },
+    {
+      "title": "Little Light",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8813,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Episode 6 Noah Part 1",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 8801,
+      "level": "WARNING"
+    },
+    {
+      "title": "Affirmation",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8786,
+      "level": "WARNING"
+    },
+    {
+      "title": "Rain Rain Go Away",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8778,
+      "level": "WARNING"
+    },
+    {
+      "title": "Ballin | Sing-a-long",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8771,
+      "level": "WARNING"
+    },
+    {
+      "title": "What Jesus Does",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8755,
+      "level": "WARNING"
+    },
+    {
+      "title": "God’s Creation: The Horse",
+      "section": "Fun Zone",
+      "loadTimeMs": 8731,
+      "level": "WARNING"
+    },
+    {
+      "title": "Noah",
+      "section": "Bible Adventures",
+      "loadTimeMs": 8710,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Episode 9 Meet Jesus Part 2",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 8689,
+      "level": "WARNING"
+    },
+    {
+      "title": "How To Talk to Jesus",
+      "section": "Life Skills",
+      "loadTimeMs": 8669,
+      "level": "WARNING"
+    },
+    {
+      "title": "Fish Shapes",
+      "section": "Fun Zone",
+      "loadTimeMs": 8660,
+      "level": "WARNING"
+    },
+    {
+      "title": "Gentleness",
+      "section": "Bible Adventures",
+      "loadTimeMs": 8640,
+      "level": "WARNING"
+    },
+    {
+      "title": "Wiggle",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8634,
+      "level": "WARNING"
+    },
+    {
+      "title": "Mary Had a Little Lamb",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8610,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 Focused And Ready To Learn",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8608,
+      "level": "WARNING"
+    },
+    {
+      "title": "Good Juju | Sing-a-long |",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8595,
+      "level": "WARNING"
+    },
+    {
+      "title": "Ice Cream Truck",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8592,
+      "level": "WARNING"
+    },
+    {
+      "title": "Mental Health and God",
+      "section": "Life Skills",
+      "loadTimeMs": 8586,
+      "level": "WARNING"
+    },
+    {
+      "title": "Bible In Clay: David and Goliath",
+      "section": "Bible Adventures",
+      "loadTimeMs": 8569,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Episode 5 Three Hebrew Boys",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 8529,
+      "level": "WARNING"
+    },
+    {
+      "title": "Bible Explained: The Walls of Jericho",
+      "section": "Bible Adventures",
+      "loadTimeMs": 8507,
+      "level": "WARNING"
+    },
+    {
+      "title": "Bible Trivia: Daniel and The Lions Den",
+      "section": "Bible Adventures",
+      "loadTimeMs": 8451,
+      "level": "WARNING"
+    },
+    {
+      "title": "The Book Of Genesis Explained",
+      "section": "Bible Adventures",
+      "loadTimeMs": 8363,
+      "level": "WARNING"
+    },
+    {
+      "title": "Spark Lab: Why Towers Fall",
+      "section": "Fun Zone",
+      "loadTimeMs": 8345,
+      "level": "WARNING"
+    },
+    {
+      "title": "Big History: Madam CJ Walker",
+      "section": "Life Skills",
+      "loadTimeMs": 8338,
+      "level": "WARNING"
+    },
+    {
+      "title": "Grandmama | Sing-a-long",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8319,
+      "level": "WARNING"
+    },
+    {
+      "title": "John the Baptist",
+      "section": "Bible Adventures",
+      "loadTimeMs": 8308,
+      "level": "WARNING"
+    },
+    {
+      "title": "The Bible Explained: The Gospels",
+      "section": "Bible Adventures",
+      "loadTimeMs": 8294,
+      "level": "WARNING"
+    },
+    {
+      "title": "Goodness",
+      "section": "Bible Adventures",
+      "loadTimeMs": 8294,
+      "level": "WARNING"
+    },
+    {
+      "title": "Lost in the Internet",
+      "section": "ABC",
+      "loadTimeMs": 8272,
+      "level": "WARNING"
+    },
+    {
+      "title": "Kembe Sight Words Part 1",
+      "section": "Fun Zone",
+      "loadTimeMs": 8271,
+      "level": "WARNING"
+    },
+    {
+      "title": "Big History: Jackie Robinson",
+      "section": "Life Skills",
+      "loadTimeMs": 8268,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 ABC",
+      "section": "ABC",
+      "loadTimeMs": 8266,
+      "level": "WARNING"
+    },
+    {
+      "title": "Gabby Globber (GG) Counts by 10s",
+      "section": "Numbers",
+      "loadTimeMs": 8264,
+      "level": "WARNING"
+    },
+    {
+      "title": "AlphaBots Letter B",
+      "section": "Fun Zone",
+      "loadTimeMs": 8255,
+      "level": "WARNING"
+    },
+    {
+      "title": "Animal Groove",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8248,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 Windshield",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8239,
+      "level": "WARNING"
+    },
+    {
+      "title": "Good Vibes | Sing-a-long",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8224,
+      "level": "WARNING"
+    },
+    {
+      "title": "AlphaBots Letter A",
+      "section": "Fun Zone",
+      "loadTimeMs": 8219,
+      "level": "WARNING"
+    },
+    {
+      "title": "Believe",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8209,
+      "level": "WARNING"
+    },
+    {
+      "title": "Row Your Boat",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8174,
+      "level": "WARNING"
+    },
+    {
+      "title": "Marvelous Light Grandpa 10 Commandments",
+      "section": "Marvelous Light Series",
+      "loadTimeMs": 8164,
+      "level": "WARNING"
+    },
+    {
+      "title": "Alien In My House",
+      "section": "ABC",
+      "loadTimeMs": 8159,
+      "level": "WARNING"
+    },
+    {
+      "title": "School time Litty",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8137,
+      "level": "WARNING"
+    },
+    {
+      "title": "Kembe Sight Words Part 2",
+      "section": "Fun Zone",
+      "loadTimeMs": 8115,
+      "level": "WARNING"
+    },
+    {
+      "title": "Ini Mini Miny Mo",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8097,
+      "level": "WARNING"
+    },
+    {
+      "title": "Down In My Heart",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8080,
+      "level": "WARNING"
+    },
+    {
+      "title": "H3 Stretching 5",
+      "section": "Fun Zone",
+      "loadTimeMs": 8059,
+      "level": "WARNING"
+    },
+    {
+      "title": "Love",
+      "section": "Bible Adventures",
+      "loadTimeMs": 8044,
+      "level": "WARNING"
+    },
+    {
+      "title": "Daniel in the Den Song",
+      "section": "Sing-a-long",
+      "loadTimeMs": 8031,
+      "level": "WARNING"
+    },
+    {
+      "title": "Meera and Ameera",
+      "section": "ABC",
+      "loadTimeMs": 8003,
+      "level": "WARNING"
+    }
+  ],
+  "regressions": [
+    {
+      "title": "Gabby Action Short",
+      "section": "Fun Zone",
+      "nowMs": 12526,
+      "medianMs": 2476,
+      "ratio": 5.1,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Pillar Of Salt",
+      "section": "Sing-a-long",
+      "nowMs": 13119,
+      "medianMs": 2703,
+      "ratio": 4.9,
+      "samples": 50
+    },
+    {
+      "title": "Mr. Prather Opposites",
+      "section": "Sing-a-long",
+      "nowMs": 12701,
+      "medianMs": 2580,
+      "ratio": 4.9,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Knock Knock Knock",
+      "section": "Sing-a-long",
+      "nowMs": 12381,
+      "medianMs": 2553,
+      "ratio": 4.8,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Little Crooked Man",
+      "section": "Sing-a-long",
+      "nowMs": 14867,
+      "medianMs": 3074,
+      "ratio": 4.8,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Give Me a Smile",
+      "section": "Sing-a-long",
+      "nowMs": 14859,
+      "medianMs": 3175,
+      "ratio": 4.7,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Arky Arky Song",
+      "section": "Sing-a-long",
+      "nowMs": 13453,
+      "medianMs": 2950,
+      "ratio": 4.6,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Happy Is the Home",
+      "section": "Sing-a-long",
+      "nowMs": 11753,
+      "medianMs": 2536,
+      "ratio": 4.6,
+      "samples": 50
+    },
+    {
+      "title": "Jesus Miracles",
+      "section": "Bible Adventures",
+      "nowMs": 11498,
+      "medianMs": 2475,
+      "ratio": 4.6,
+      "samples": 50
+    },
+    {
+      "title": "Unicatz Homie Big Surprise",
+      "section": "Fun Zone",
+      "nowMs": 12527,
+      "medianMs": 2738,
+      "ratio": 4.6,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words I Am So Happy",
+      "section": "Sing-a-long",
+      "nowMs": 12410,
+      "medianMs": 2753,
+      "ratio": 4.5,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Zacchaeus Was a Wee Little Man",
+      "section": "Sing-a-long",
+      "nowMs": 12462,
+      "medianMs": 2824,
+      "ratio": 4.4,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words He's Got the Whole World in His Hands",
+      "section": "Sing-a-long",
+      "nowMs": 12252,
+      "medianMs": 2785,
+      "ratio": 4.4,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Joy, Joy, Joy",
+      "section": "Sing-a-long",
+      "nowMs": 12524,
+      "medianMs": 2829,
+      "ratio": 4.4,
+      "samples": 50
+    },
+    {
+      "title": "The Birds Job",
+      "section": "Fun Zone",
+      "nowMs": 12688,
+      "medianMs": 2906,
+      "ratio": 4.4,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Jesus Loves Me This I Know",
+      "section": "Sing-a-long",
+      "nowMs": 12873,
+      "medianMs": 3001,
+      "ratio": 4.3,
+      "samples": 50
+    },
+    {
+      "title": "The Book of Exodus Explained",
+      "section": "Bible Adventures",
+      "nowMs": 11123,
+      "medianMs": 2571,
+      "ratio": 4.3,
+      "samples": 50
+    },
+    {
+      "title": "Rosa Parks",
+      "section": "Life Skills",
+      "nowMs": 11431,
+      "medianMs": 2680,
+      "ratio": 4.3,
+      "samples": 50
+    },
+    {
+      "title": "Little Lights Big God",
+      "section": "Sing-a-long",
+      "nowMs": 11686,
+      "medianMs": 2709,
+      "ratio": 4.3,
+      "samples": 50
+    },
+    {
+      "title": "Unicatz Alphabet Song",
+      "section": "ABC",
+      "nowMs": 10958,
+      "medianMs": 2571,
+      "ratio": 4.3,
+      "samples": 50
+    },
+    {
+      "title": "Music for Learn",
+      "section": "Sing-a-long",
+      "nowMs": 11957,
+      "medianMs": 2828,
+      "ratio": 4.2,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Miriam Danced",
+      "section": "Sing-a-long",
+      "nowMs": 10934,
+      "medianMs": 2629,
+      "ratio": 4.2,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Oh How I Love Jesus",
+      "section": "Sing-a-long",
+      "nowMs": 13489,
+      "medianMs": 3187,
+      "ratio": 4.2,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Season 2 Episode 16 Adam and Eve",
+      "section": "Marvelous Light Series",
+      "nowMs": 11313,
+      "medianMs": 2717,
+      "ratio": 4.2,
+      "samples": 50
+    },
+    {
+      "title": "MFT Colors of the Rainbow",
+      "section": "Sing-a-long",
+      "nowMs": 13386,
+      "medianMs": 3161,
+      "ratio": 4.2,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Season 2",
+      "section": "Marvelous Light Series",
+      "nowMs": 12473,
+      "medianMs": 3028,
+      "ratio": 4.1,
+      "samples": 49
+    },
+    {
+      "title": "Bible in Clay: The Fiery Furnace",
+      "section": "Bible Adventures",
+      "nowMs": 11920,
+      "medianMs": 2939,
+      "ratio": 4.1,
+      "samples": 50
+    },
+    {
+      "title": "Unicatz Pause Dance",
+      "section": "Sing-a-long",
+      "nowMs": 10862,
+      "medianMs": 2661,
+      "ratio": 4.1,
+      "samples": 50
+    },
+    {
+      "title": "Unicatz Cross the Road",
+      "section": "Sing-a-long",
+      "nowMs": 11692,
+      "medianMs": 2857,
+      "ratio": 4.1,
+      "samples": 50
+    },
+    {
+      "title": "Kembe Sight Words Part 3",
+      "section": "Fun Zone",
+      "nowMs": 11276,
+      "medianMs": 2771,
+      "ratio": 4.1,
+      "samples": 50
+    },
+    {
+      "title": "MFT ABC Song",
+      "section": "Sing-a-long",
+      "nowMs": 11392,
+      "medianMs": 2756,
+      "ratio": 4.1,
+      "samples": 50
+    },
+    {
+      "title": "Malar's Big House Read-Along",
+      "section": "ABC",
+      "nowMs": 11042,
+      "medianMs": 2676,
+      "ratio": 4.1,
+      "samples": 50
+    },
+    {
+      "title": "Who is Jesus",
+      "section": "Sing-a-long",
+      "nowMs": 12524,
+      "medianMs": 3169,
+      "ratio": 4,
+      "samples": 50
+    },
+    {
+      "title": "Psalms 23",
+      "section": "Sing-a-long",
+      "nowMs": 10363,
+      "medianMs": 2590,
+      "ratio": 4,
+      "samples": 50
+    },
+    {
+      "title": "Unicatz Learning is Fun",
+      "section": "Fun Zone",
+      "nowMs": 11795,
+      "medianMs": 2913,
+      "ratio": 4,
+      "samples": 50
+    },
+    {
+      "title": "Gabby Galactic Fire Cats Safety",
+      "section": "Fun Zone",
+      "nowMs": 10848,
+      "medianMs": 2712,
+      "ratio": 4,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Every Move I Make",
+      "section": "Sing-a-long",
+      "nowMs": 11473,
+      "medianMs": 2936,
+      "ratio": 3.9,
+      "samples": 50
+    },
+    {
+      "title": "The Bible Explained: The Joseph Story",
+      "section": "Bible Adventures",
+      "nowMs": 10118,
+      "medianMs": 2583,
+      "ratio": 3.9,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Season 1 Trailer",
+      "section": "Marvelous Light Series",
+      "nowMs": 11080,
+      "medianMs": 2856,
+      "ratio": 3.9,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Season 2 Episode 17 Zacchaeus",
+      "section": "Marvelous Light Series",
+      "nowMs": 11843,
+      "medianMs": 3039,
+      "ratio": 3.9,
+      "samples": 50
+    },
+    {
+      "title": "MFT Loopty Loo",
+      "section": "Sing-a-long",
+      "nowMs": 11979,
+      "medianMs": 3097,
+      "ratio": 3.9,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Episode 4 David Vs Goliath Part 2",
+      "section": "Marvelous Light Series",
+      "nowMs": 9485,
+      "medianMs": 2424,
+      "ratio": 3.9,
+      "samples": 50
+    },
+    {
+      "title": "Little Ninja Growth Ninja",
+      "section": "Life Skills",
+      "nowMs": 12972,
+      "medianMs": 3439,
+      "ratio": 3.8,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Walking with Jesus",
+      "section": "Sing-a-long",
+      "nowMs": 11715,
+      "medianMs": 3050,
+      "ratio": 3.8,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Father Abraham",
+      "section": "Sing-a-long",
+      "nowMs": 10711,
+      "medianMs": 2799,
+      "ratio": 3.8,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Hello",
+      "section": "Sing-a-long",
+      "nowMs": 10988,
+      "medianMs": 2905,
+      "ratio": 3.8,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Deep And Wide",
+      "section": "Sing-a-long",
+      "nowMs": 12858,
+      "medianMs": 3358,
+      "ratio": 3.8,
+      "samples": 50
+    },
+    {
+      "title": "God’s Creation: The Giraffe",
+      "section": "Fun Zone",
+      "nowMs": 9551,
+      "medianMs": 2490,
+      "ratio": 3.8,
+      "samples": 50
+    },
+    {
+      "title": "Gods Creation: Dolphins",
+      "section": "Fun Zone",
+      "nowMs": 9596,
+      "medianMs": 2499,
+      "ratio": 3.8,
+      "samples": 50
+    },
+    {
+      "title": "Bible In Clay: Creation",
+      "section": "Bible Adventures",
+      "nowMs": 9357,
+      "medianMs": 2486,
+      "ratio": 3.8,
+      "samples": 50
+    },
+    {
+      "title": "Bible in Clay: Daniel and The Lions Den",
+      "section": "Bible Adventures",
+      "nowMs": 11183,
+      "medianMs": 2925,
+      "ratio": 3.8,
+      "samples": 50
+    },
+    {
+      "title": "Wake Up Kid",
+      "section": "Fun Zone",
+      "nowMs": 9676,
+      "medianMs": 2568,
+      "ratio": 3.8,
+      "samples": 50
+    },
+    {
+      "title": "Fire Safety School Drills",
+      "section": "Life Skills",
+      "nowMs": 10103,
+      "medianMs": 2680,
+      "ratio": 3.8,
+      "samples": 50
+    },
+    {
+      "title": "12th Street Counting by 2s and 3s",
+      "section": "Fun Zone",
+      "nowMs": 9629,
+      "medianMs": 2547,
+      "ratio": 3.8,
+      "samples": 50
+    },
+    {
+      "title": "Baby Shark",
+      "section": "Sing-a-long",
+      "nowMs": 10112,
+      "medianMs": 2667,
+      "ratio": 3.8,
+      "samples": 50
+    },
+    {
+      "title": "Black History Beats (BHB) MLK",
+      "section": "Sing-a-long",
+      "nowMs": 9703,
+      "medianMs": 2553,
+      "ratio": 3.8,
+      "samples": 50
+    },
+    {
+      "title": "AlphaBots the Alphabet Part 1",
+      "section": "Fun Zone",
+      "nowMs": 12150,
+      "medianMs": 3234,
+      "ratio": 3.8,
+      "samples": 50
+    },
+    {
+      "title": "Little Ninja Calm Ninja",
+      "section": "Life Skills",
+      "nowMs": 11531,
+      "medianMs": 3157,
+      "ratio": 3.7,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Soap Soap Soap",
+      "section": "Sing-a-long",
+      "nowMs": 11264,
+      "medianMs": 3030,
+      "ratio": 3.7,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Season 1",
+      "section": "Marvelous Light Series",
+      "nowMs": 10850,
+      "medianMs": 2967,
+      "ratio": 3.7,
+      "samples": 49
+    },
+    {
+      "title": "Three Little Words Peter, James and John In a Sailboat",
+      "section": "Sing-a-long",
+      "nowMs": 10570,
+      "medianMs": 2851,
+      "ratio": 3.7,
+      "samples": 50
+    },
+    {
+      "title": "Memory Man Episode 1",
+      "section": "Fun Zone",
+      "nowMs": 9961,
+      "medianMs": 2684,
+      "ratio": 3.7,
+      "samples": 50
+    },
+    {
+      "title": "Animal Parade",
+      "section": "Sing-a-long",
+      "nowMs": 9816,
+      "medianMs": 2654,
+      "ratio": 3.7,
+      "samples": 50
+    },
+    {
+      "title": "Count Some More",
+      "section": "Sing-a-long",
+      "nowMs": 10365,
+      "medianMs": 2772,
+      "ratio": 3.7,
+      "samples": 50
+    },
+    {
+      "title": "The Ocean",
+      "section": "Fun Zone",
+      "nowMs": 10357,
+      "medianMs": 2809,
+      "ratio": 3.7,
+      "samples": 50
+    },
+    {
+      "title": "God Loves Me",
+      "section": "Bible Adventures",
+      "nowMs": 10900,
+      "medianMs": 2964,
+      "ratio": 3.7,
+      "samples": 50
+    },
+    {
+      "title": "The Elephant",
+      "section": "Fun Zone",
+      "nowMs": 9300,
+      "medianMs": 2488,
+      "ratio": 3.7,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Christmas Episode",
+      "section": "Marvelous Light Series",
+      "nowMs": 9513,
+      "medianMs": 2590,
+      "ratio": 3.7,
+      "samples": 50
+    },
+    {
+      "title": "12th Street",
+      "section": "Fun Zone",
+      "nowMs": 9626,
+      "medianMs": 2629,
+      "ratio": 3.7,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Season 2 Episode 12 Jonah and the Whale",
+      "section": "Marvelous Light Series",
+      "nowMs": 10499,
+      "medianMs": 2859,
+      "ratio": 3.7,
+      "samples": 50
+    },
+    {
+      "title": "Easter",
+      "section": "Bible Adventures",
+      "nowMs": 11059,
+      "medianMs": 2965,
+      "ratio": 3.7,
+      "samples": 50
+    },
+    {
+      "title": "Disagreement of Occupations | ABCs",
+      "section": "ABC",
+      "nowMs": 9350,
+      "medianMs": 2508,
+      "ratio": 3.7,
+      "samples": 50
+    },
+    {
+      "title": "12th Street Counting By 2s",
+      "section": "Fun Zone",
+      "nowMs": 9527,
+      "medianMs": 2577,
+      "ratio": 3.7,
+      "samples": 50
+    },
+    {
+      "title": "AlphaBots the Alphabet Part 2",
+      "section": "Fun Zone",
+      "nowMs": 10239,
+      "medianMs": 2732,
+      "ratio": 3.7,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Episode 1 Moses Part 1",
+      "section": "Marvelous Light Series",
+      "nowMs": 10734,
+      "medianMs": 2893,
+      "ratio": 3.7,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Hallelujah",
+      "section": "Sing-a-long",
+      "nowMs": 10947,
+      "medianMs": 3084,
+      "ratio": 3.6,
+      "samples": 50
+    },
+    {
+      "title": "Poof!",
+      "section": "Fun Zone",
+      "nowMs": 11201,
+      "medianMs": 3076,
+      "ratio": 3.6,
+      "samples": 50
+    },
+    {
+      "title": "God’s Creation: Eagles",
+      "section": "Fun Zone",
+      "nowMs": 9853,
+      "medianMs": 2710,
+      "ratio": 3.6,
+      "samples": 50
+    },
+    {
+      "title": "Jonah Song",
+      "section": "Sing-a-long",
+      "nowMs": 8891,
+      "medianMs": 2478,
+      "ratio": 3.6,
+      "samples": 50
+    },
+    {
+      "title": "Dr. Martin Luther King Jr.",
+      "section": "Life Skills",
+      "nowMs": 11130,
+      "medianMs": 3120,
+      "ratio": 3.6,
+      "samples": 50
+    },
+    {
+      "title": "Unicatz Joy of Learning",
+      "section": "Life Skills",
+      "nowMs": 10432,
+      "medianMs": 2876,
+      "ratio": 3.6,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Season 2 Episode 13 Daniel and The Lions Den",
+      "section": "Marvelous Light Series",
+      "nowMs": 9891,
+      "medianMs": 2766,
+      "ratio": 3.6,
+      "samples": 50
+    },
+    {
+      "title": "Unicatz Strut Your Stuff",
+      "section": "Fun Zone",
+      "nowMs": 10115,
+      "medianMs": 2846,
+      "ratio": 3.6,
+      "samples": 50
+    },
+    {
+      "title": "Unicatz Count to 20",
+      "section": "Numbers",
+      "nowMs": 9835,
+      "medianMs": 2755,
+      "ratio": 3.6,
+      "samples": 50
+    },
+    {
+      "title": "12th Street Counting By 3s",
+      "section": "Fun Zone",
+      "nowMs": 9461,
+      "medianMs": 2629,
+      "ratio": 3.6,
+      "samples": 50
+    },
+    {
+      "title": "Black History Beats (BHB) Jackie Robinson",
+      "section": "Sing-a-long",
+      "nowMs": 10361,
+      "medianMs": 2895,
+      "ratio": 3.6,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Episode 3 David Vs Goliath Part 1",
+      "section": "Marvelous Light Series",
+      "nowMs": 8933,
+      "medianMs": 2490,
+      "ratio": 3.6,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Episode 2 Moses Part 2",
+      "section": "Marvelous Light Series",
+      "nowMs": 9645,
+      "medianMs": 2706,
+      "ratio": 3.6,
+      "samples": 50
+    },
+    {
+      "title": "Little Ninja Positive Ninja",
+      "section": "Life Skills",
+      "nowMs": 10914,
+      "medianMs": 3151,
+      "ratio": 3.5,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Great Big God",
+      "section": "Sing-a-long",
+      "nowMs": 11108,
+      "medianMs": 3143,
+      "ratio": 3.5,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Joshua Fought The Battle Of Jericho",
+      "section": "Sing-a-long",
+      "nowMs": 10943,
+      "medianMs": 3090,
+      "ratio": 3.5,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Season 2 Trailer",
+      "section": "Marvelous Light Series",
+      "nowMs": 9928,
+      "medianMs": 2831,
+      "ratio": 3.5,
+      "samples": 50
+    },
+    {
+      "title": "God's Creation: Polar Bears",
+      "section": "Fun Zone",
+      "nowMs": 9608,
+      "medianMs": 2736,
+      "ratio": 3.5,
+      "samples": 50
+    },
+    {
+      "title": "God’s Creation: Penguins",
+      "section": "Fun Zone",
+      "nowMs": 10018,
+      "medianMs": 2898,
+      "ratio": 3.5,
+      "samples": 50
+    },
+    {
+      "title": "What Jesus Does",
+      "section": "Sing-a-long",
+      "nowMs": 8755,
+      "medianMs": 2527,
+      "ratio": 3.5,
+      "samples": 50
+    },
+    {
+      "title": "He Loves Me",
+      "section": "Sing-a-long",
+      "nowMs": 9488,
+      "medianMs": 2687,
+      "ratio": 3.5,
+      "samples": 50
+    },
+    {
+      "title": "H3 Stretching 4",
+      "section": "Fun Zone",
+      "nowMs": 10772,
+      "medianMs": 3050,
+      "ratio": 3.5,
+      "samples": 50
+    },
+    {
+      "title": "H3 Stretching 3",
+      "section": "Fun Zone",
+      "nowMs": 10131,
+      "medianMs": 2864,
+      "ratio": 3.5,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Easter Episode",
+      "section": "Marvelous Light Series",
+      "nowMs": 9551,
+      "medianMs": 2732,
+      "ratio": 3.5,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Season 2 Episode 11 Jonah and the Whale",
+      "section": "Marvelous Light Series",
+      "nowMs": 9560,
+      "medianMs": 2709,
+      "ratio": 3.5,
+      "samples": 50
+    },
+    {
+      "title": "Unicatz Music Video",
+      "section": "Fun Zone",
+      "nowMs": 9625,
+      "medianMs": 2764,
+      "ratio": 3.5,
+      "samples": 50
+    },
+    {
+      "title": "Gabby Globber (GG) Counting by 5s and 10s",
+      "section": "Numbers",
+      "nowMs": 9488,
+      "medianMs": 2731,
+      "ratio": 3.5,
+      "samples": 50
+    },
+    {
+      "title": "Mr. Prather Days of the Week",
+      "section": "Sing-a-long",
+      "nowMs": 9820,
+      "medianMs": 2778,
+      "ratio": 3.5,
+      "samples": 50
+    },
+    {
+      "title": "Introduction Bible Fruits of Virtue",
+      "section": "Bible Adventures",
+      "nowMs": 9228,
+      "medianMs": 2622,
+      "ratio": 3.5,
+      "samples": 50
+    },
+    {
+      "title": "Great | Sing-a-long",
+      "section": "Sing-a-long",
+      "nowMs": 9884,
+      "medianMs": 2856,
+      "ratio": 3.5,
+      "samples": 50
+    },
+    {
+      "title": "H3 Count it Up",
+      "section": "Numbers",
+      "nowMs": 9426,
+      "medianMs": 2692,
+      "ratio": 3.5,
+      "samples": 50
+    },
+    {
+      "title": "H3 Colors and Numbers",
+      "section": "Numbers",
+      "nowMs": 9978,
+      "medianMs": 2819,
+      "ratio": 3.5,
+      "samples": 50
+    },
+    {
+      "title": "Number Lines",
+      "section": "Numbers",
+      "nowMs": 8826,
+      "medianMs": 2529,
+      "ratio": 3.5,
+      "samples": 50
+    },
+    {
+      "title": "Black History Beats (BHB) Bessie Coleman",
+      "section": "Sing-a-long",
+      "nowMs": 9520,
+      "medianMs": 2751,
+      "ratio": 3.5,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words",
+      "section": "Sing-a-long",
+      "nowMs": 9812,
+      "medianMs": 2863,
+      "ratio": 3.4,
+      "samples": 50
+    },
+    {
+      "title": "Big History: Ruby Bridges",
+      "section": "Life Skills",
+      "nowMs": 9524,
+      "medianMs": 2794,
+      "ratio": 3.4,
+      "samples": 50
+    },
+    {
+      "title": "God’s Creation: The Horse",
+      "section": "Fun Zone",
+      "nowMs": 8731,
+      "medianMs": 2556,
+      "ratio": 3.4,
+      "samples": 50
+    },
+    {
+      "title": "GREAT GOD",
+      "section": "Bible Adventures",
+      "nowMs": 9928,
+      "medianMs": 2955,
+      "ratio": 3.4,
+      "samples": 50
+    },
+    {
+      "title": "H3 Ring Around The Rosey",
+      "section": "Sing-a-long",
+      "nowMs": 9818,
+      "medianMs": 2922,
+      "ratio": 3.4,
+      "samples": 50
+    },
+    {
+      "title": "H3 Bubble Head",
+      "section": "Sing-a-long",
+      "nowMs": 9222,
+      "medianMs": 2751,
+      "ratio": 3.4,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Episode 7 Noah Part 2",
+      "section": "Marvelous Light Series",
+      "nowMs": 9620,
+      "medianMs": 2819,
+      "ratio": 3.4,
+      "samples": 50
+    },
+    {
+      "title": "Unicatz Musical Chairs",
+      "section": "Fun Zone",
+      "nowMs": 9377,
+      "medianMs": 2745,
+      "ratio": 3.4,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Season 2 Episode 20 Paul and Saul",
+      "section": "Marvelous Light Series",
+      "nowMs": 9206,
+      "medianMs": 2727,
+      "ratio": 3.4,
+      "samples": 50
+    },
+    {
+      "title": "Kembe Tries Playing",
+      "section": "Fun Zone",
+      "nowMs": 9589,
+      "medianMs": 2799,
+      "ratio": 3.4,
+      "samples": 50
+    },
+    {
+      "title": "Gabby Globber (GG) Counts by 5s",
+      "section": "Numbers",
+      "nowMs": 9390,
+      "medianMs": 2732,
+      "ratio": 3.4,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Grandpa David",
+      "section": "Marvelous Light Series",
+      "nowMs": 9057,
+      "medianMs": 2637,
+      "ratio": 3.4,
+      "samples": 50
+    },
+    {
+      "title": "In His Hand",
+      "section": "Bible Adventures",
+      "nowMs": 9910,
+      "medianMs": 2934,
+      "ratio": 3.4,
+      "samples": 50
+    },
+    {
+      "title": "I want to See My Friends | Sing-a-long",
+      "section": "Sing-a-long",
+      "nowMs": 10222,
+      "medianMs": 2965,
+      "ratio": 3.4,
+      "samples": 50
+    },
+    {
+      "title": "Alphabots Letter C",
+      "section": "Fun Zone",
+      "nowMs": 8934,
+      "medianMs": 2607,
+      "ratio": 3.4,
+      "samples": 50
+    },
+    {
+      "title": "Auntie Bois Gift Motion Book",
+      "section": "ABC",
+      "nowMs": 9894,
+      "medianMs": 2946,
+      "ratio": 3.4,
+      "samples": 50
+    },
+    {
+      "title": "Little Ninja Feelings Ninja",
+      "section": "Life Skills",
+      "nowMs": 11437,
+      "medianMs": 3424,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words God Made The Fishes",
+      "section": "Sing-a-long",
+      "nowMs": 10514,
+      "medianMs": 3182,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "Big History: Madam CJ Walker",
+      "section": "Life Skills",
+      "nowMs": 8338,
+      "medianMs": 2539,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "AlphaBots Letter D",
+      "section": "Fun Zone",
+      "nowMs": 9356,
+      "medianMs": 2849,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "The Miracle Song",
+      "section": "Sing-a-long",
+      "nowMs": 10971,
+      "medianMs": 3349,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "The Eagle",
+      "section": "Fun Zone",
+      "nowMs": 9308,
+      "medianMs": 2864,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "H3 Whoa Challenge",
+      "section": "Sing-a-long",
+      "nowMs": 9544,
+      "medianMs": 2851,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "H3 Teacher",
+      "section": "Sing-a-long",
+      "nowMs": 9974,
+      "medianMs": 2993,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "H3 Smile Kids",
+      "section": "Sing-a-long",
+      "nowMs": 10893,
+      "medianMs": 3330,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "H3 Born to Be Wild",
+      "section": "Sing-a-long",
+      "nowMs": 9024,
+      "medianMs": 2746,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Episode 8 Meet Jesus Part 1",
+      "section": "Marvelous Light Series",
+      "nowMs": 9117,
+      "medianMs": 2768,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "Kembe How Money Works",
+      "section": "Fun Zone",
+      "nowMs": 9114,
+      "medianMs": 2783,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "Clap Your Hands",
+      "section": "Sing-a-long",
+      "nowMs": 9034,
+      "medianMs": 2775,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "Sound it Out",
+      "section": "Sing-a-long",
+      "nowMs": 9268,
+      "medianMs": 2810,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "Rain Rain Go Away",
+      "section": "Sing-a-long",
+      "nowMs": 8778,
+      "medianMs": 2643,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "Make it Out",
+      "section": "Sing-a-long",
+      "nowMs": 9227,
+      "medianMs": 2817,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "Goodness",
+      "section": "Bible Adventures",
+      "nowMs": 8294,
+      "medianMs": 2521,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "Moses",
+      "section": "Bible Adventures",
+      "nowMs": 8913,
+      "medianMs": 2721,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Season 2 Episode 15 Creation",
+      "section": "Marvelous Light Series",
+      "nowMs": 9099,
+      "medianMs": 2791,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Season 2 Episode 14 Daniel and The Lions Den",
+      "section": "Marvelous Light Series",
+      "nowMs": 9281,
+      "medianMs": 2790,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "Good Juju | Sing-a-long |",
+      "section": "Sing-a-long",
+      "nowMs": 8595,
+      "medianMs": 2644,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "Lost in the Internet",
+      "section": "ABC",
+      "nowMs": 8272,
+      "medianMs": 2484,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "Chiu's Power Read-Along | ABCs | KingdomLand",
+      "section": "ABC",
+      "nowMs": 9910,
+      "medianMs": 3006,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "AlphaBots Letter A",
+      "section": "Fun Zone",
+      "nowMs": 8219,
+      "medianMs": 2517,
+      "ratio": 3.3,
+      "samples": 50
+    },
+    {
+      "title": "Little Ninja Anxious Ninja",
+      "section": "Life Skills",
+      "nowMs": 10650,
+      "medianMs": 3358,
+      "ratio": 3.2,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words A Slave In Egypt",
+      "section": "Sing-a-long",
+      "nowMs": 9938,
+      "medianMs": 3075,
+      "ratio": 3.2,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Little Flower & Little Soldier",
+      "section": "Sing-a-long",
+      "nowMs": 9924,
+      "medianMs": 3109,
+      "ratio": 3.2,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words Inside Outside High And Low",
+      "section": "Sing-a-long",
+      "nowMs": 9057,
+      "medianMs": 2856,
+      "ratio": 3.2,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words God Is So Good",
+      "section": "Sing-a-long",
+      "nowMs": 9026,
+      "medianMs": 2782,
+      "ratio": 3.2,
+      "samples": 50
+    },
+    {
+      "title": "Spark Lab: Where Puddles Go",
+      "section": "Fun Zone",
+      "nowMs": 9193,
+      "medianMs": 2875,
+      "ratio": 3.2,
+      "samples": 50
+    },
+    {
+      "title": "The Joseph Song",
+      "section": "Sing-a-long",
+      "nowMs": 8859,
+      "medianMs": 2812,
+      "ratio": 3.2,
+      "samples": 50
+    },
+    {
+      "title": "Daniel in the Den Song",
+      "section": "Sing-a-long",
+      "nowMs": 8031,
+      "medianMs": 2542,
+      "ratio": 3.2,
+      "samples": 50
+    },
+    {
+      "title": "The Bible Explained: The Gospels",
+      "section": "Bible Adventures",
+      "nowMs": 8294,
+      "medianMs": 2605,
+      "ratio": 3.2,
+      "samples": 50
+    },
+    {
+      "title": "How To Talk to Jesus",
+      "section": "Life Skills",
+      "nowMs": 8669,
+      "medianMs": 2722,
+      "ratio": 3.2,
+      "samples": 50
+    },
+    {
+      "title": "The Lion's Power",
+      "section": "Fun Zone",
+      "nowMs": 9358,
+      "medianMs": 2931,
+      "ratio": 3.2,
+      "samples": 50
+    },
+    {
+      "title": "The Bird With Courage",
+      "section": "Life Skills",
+      "nowMs": 10876,
+      "medianMs": 3356,
+      "ratio": 3.2,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Episode 9 Meet Jesus Part 2",
+      "section": "Marvelous Light Series",
+      "nowMs": 8689,
+      "medianMs": 2743,
+      "ratio": 3.2,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Episode 6 Noah Part 1",
+      "section": "Marvelous Light Series",
+      "nowMs": 8801,
+      "medianMs": 2713,
+      "ratio": 3.2,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light A Rotten Day: Finding Joy in God",
+      "section": "Marvelous Light Series",
+      "nowMs": 9222,
+      "medianMs": 2845,
+      "ratio": 3.2,
+      "samples": 50
+    },
+    {
+      "title": "Affirmation",
+      "section": "Sing-a-long",
+      "nowMs": 8786,
+      "medianMs": 2783,
+      "ratio": 3.2,
+      "samples": 50
+    },
+    {
+      "title": "Love",
+      "section": "Bible Adventures",
+      "nowMs": 8044,
+      "medianMs": 2538,
+      "ratio": 3.2,
+      "samples": 50
+    },
+    {
+      "title": "Faithfulness",
+      "section": "Bible Adventures",
+      "nowMs": 9057,
+      "medianMs": 2796,
+      "ratio": 3.2,
+      "samples": 50
+    },
+    {
+      "title": "Noah",
+      "section": "Bible Adventures",
+      "nowMs": 8710,
+      "medianMs": 2717,
+      "ratio": 3.2,
+      "samples": 50
+    },
+    {
+      "title": "Mr. Prather Days and Months",
+      "section": "Sing-a-long",
+      "nowMs": 11067,
+      "medianMs": 3415,
+      "ratio": 3.2,
+      "samples": 50
+    },
+    {
+      "title": "Alphabots OO Song",
+      "section": "Fun Zone",
+      "nowMs": 9372,
+      "medianMs": 2912,
+      "ratio": 3.2,
+      "samples": 50
+    },
+    {
+      "title": "Three Little Words When The Spirit Of The Lord",
+      "section": "Sing-a-long",
+      "nowMs": 10666,
+      "medianMs": 3427,
+      "ratio": 3.1,
+      "samples": 50
+    },
+    {
+      "title": "Big History: Jackie Robinson",
+      "section": "Life Skills",
+      "nowMs": 8268,
+      "medianMs": 2657,
+      "ratio": 3.1,
+      "samples": 50
+    },
+    {
+      "title": "Bible Explained: The Walls of Jericho",
+      "section": "Bible Adventures",
+      "nowMs": 8507,
+      "medianMs": 2742,
+      "ratio": 3.1,
+      "samples": 50
+    },
+    {
+      "title": "The Book Of Genesis Explained",
+      "section": "Bible Adventures",
+      "nowMs": 8363,
+      "medianMs": 2695,
+      "ratio": 3.1,
+      "samples": 50
+    },
+    {
+      "title": "Behave In School",
+      "section": "Sing-a-long",
+      "nowMs": 9831,
+      "medianMs": 3124,
+      "ratio": 3.1,
+      "samples": 50
+    },
+    {
+      "title": "H3 Stretching 2",
+      "section": "Fun Zone",
+      "nowMs": 8840,
+      "medianMs": 2897,
+      "ratio": 3.1,
+      "samples": 50
+    },
+    {
+      "title": "Unicatz Transformations",
+      "section": "Fun Zone",
+      "nowMs": 8847,
+      "medianMs": 2826,
+      "ratio": 3.1,
+      "samples": 50
+    },
+    {
+      "title": "Kembe Water Cycles",
+      "section": "Fun Zone",
+      "nowMs": 8843,
+      "medianMs": 2826,
+      "ratio": 3.1,
+      "samples": 50
+    },
+    {
+      "title": "Mary Had a Little Lamb",
+      "section": "Sing-a-long",
+      "nowMs": 8610,
+      "medianMs": 2741,
+      "ratio": 3.1,
+      "samples": 50
+    },
+    {
+      "title": "Mental Health and God",
+      "section": "Life Skills",
+      "nowMs": 8586,
+      "medianMs": 2777,
+      "ratio": 3.1,
+      "samples": 50
+    },
+    {
+      "title": "Gentleness",
+      "section": "Bible Adventures",
+      "nowMs": 8640,
+      "medianMs": 2754,
+      "ratio": 3.1,
+      "samples": 50
+    },
+    {
+      "title": "Ice Cream Truck",
+      "section": "Sing-a-long",
+      "nowMs": 8592,
+      "medianMs": 2731,
+      "ratio": 3.1,
+      "samples": 50
+    },
+    {
+      "title": "I'm a Princess | Sing-a-long",
+      "section": "Sing-a-long",
+      "nowMs": 8842,
+      "medianMs": 2825,
+      "ratio": 3.1,
+      "samples": 50
+    },
+    {
+      "title": "Grandmama | Sing-a-long",
+      "section": "Sing-a-long",
+      "nowMs": 8319,
+      "medianMs": 2654,
+      "ratio": 3.1,
+      "samples": 50
+    },
+    {
+      "title": "5 Monkeys Lyric Video",
+      "section": "Numbers",
+      "nowMs": 9293,
+      "medianMs": 3046,
+      "ratio": 3.1,
+      "samples": 50
+    },
+    {
+      "title": "Great Tidy up",
+      "section": "ABC",
+      "nowMs": 8898,
+      "medianMs": 2861,
+      "ratio": 3.1,
+      "samples": 50
+    },
+    {
+      "title": "Ballin | Sing-a-long",
+      "section": "Sing-a-long",
+      "nowMs": 8771,
+      "medianMs": 2804,
+      "ratio": 3.1,
+      "samples": 50
+    },
+    {
+      "title": "Big History: Duke Ellington",
+      "section": "Life Skills",
+      "nowMs": 9122,
+      "medianMs": 3021,
+      "ratio": 3,
+      "samples": 50
+    },
+    {
+      "title": "Quick Math",
+      "section": "Numbers",
+      "nowMs": 10421,
+      "medianMs": 3477,
+      "ratio": 3,
+      "samples": 50
+    },
+    {
+      "title": "H3 Windshield",
+      "section": "Sing-a-long",
+      "nowMs": 8239,
+      "medianMs": 2728,
+      "ratio": 3,
+      "samples": 50
+    },
+    {
+      "title": "H3 Focused And Ready To Learn",
+      "section": "Sing-a-long",
+      "nowMs": 8608,
+      "medianMs": 2888,
+      "ratio": 3,
+      "samples": 50
+    },
+    {
+      "title": "Little Light",
+      "section": "Sing-a-long",
+      "nowMs": 8813,
+      "medianMs": 2923,
+      "ratio": 3,
+      "samples": 50
+    },
+    {
+      "title": "Kembe Sight Words Part 1",
+      "section": "Fun Zone",
+      "nowMs": 8271,
+      "medianMs": 2717,
+      "ratio": 3,
+      "samples": 50
+    },
+    {
+      "title": "Good Vibes | Sing-a-long",
+      "section": "Sing-a-long",
+      "nowMs": 8224,
+      "medianMs": 2743,
+      "ratio": 3,
+      "samples": 50
+    },
+    {
+      "title": "Spark Lab: Why Towers Fall",
+      "section": "Fun Zone",
+      "nowMs": 8345,
+      "medianMs": 2928,
+      "ratio": 2.9,
+      "samples": 50
+    },
+    {
+      "title": "Shape Song",
+      "section": "Sing-a-long",
+      "nowMs": 9391,
+      "medianMs": 3208,
+      "ratio": 2.9,
+      "samples": 50
+    },
+    {
+      "title": "Animal Groove",
+      "section": "Sing-a-long",
+      "nowMs": 8248,
+      "medianMs": 2844,
+      "ratio": 2.9,
+      "samples": 50
+    },
+    {
+      "title": "H3 Stretching 5",
+      "section": "Fun Zone",
+      "nowMs": 8059,
+      "medianMs": 2811,
+      "ratio": 2.9,
+      "samples": 50
+    },
+    {
+      "title": "John the Baptist",
+      "section": "Bible Adventures",
+      "nowMs": 8308,
+      "medianMs": 2906,
+      "ratio": 2.9,
+      "samples": 50
+    },
+    {
+      "title": "Wiggle",
+      "section": "Sing-a-long",
+      "nowMs": 8634,
+      "medianMs": 3023,
+      "ratio": 2.9,
+      "samples": 50
+    },
+    {
+      "title": "Ini Mini Miny Mo",
+      "section": "Sing-a-long",
+      "nowMs": 8097,
+      "medianMs": 2807,
+      "ratio": 2.9,
+      "samples": 50
+    },
+    {
+      "title": "Believe",
+      "section": "Sing-a-long",
+      "nowMs": 8209,
+      "medianMs": 2787,
+      "ratio": 2.9,
+      "samples": 50
+    },
+    {
+      "title": "School time Litty",
+      "section": "Sing-a-long",
+      "nowMs": 8137,
+      "medianMs": 2774,
+      "ratio": 2.9,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Season 2 Episode 19 Paul and Saul",
+      "section": "Marvelous Light Series",
+      "nowMs": 8902,
+      "medianMs": 3100,
+      "ratio": 2.9,
+      "samples": 50
+    },
+    {
+      "title": "Gabby Globber (GG) Counts by 10s",
+      "section": "Numbers",
+      "nowMs": 8264,
+      "medianMs": 2872,
+      "ratio": 2.9,
+      "samples": 50
+    },
+    {
+      "title": "H3 ABC",
+      "section": "ABC",
+      "nowMs": 8266,
+      "medianMs": 2855,
+      "ratio": 2.9,
+      "samples": 50
+    },
+    {
+      "title": "Kembe Sight Words Part 2",
+      "section": "Fun Zone",
+      "nowMs": 8115,
+      "medianMs": 2829,
+      "ratio": 2.9,
+      "samples": 50
+    },
+    {
+      "title": "Alien In My House",
+      "section": "ABC",
+      "nowMs": 8159,
+      "medianMs": 2775,
+      "ratio": 2.9,
+      "samples": 50
+    },
+    {
+      "title": "Bible Trivia: Daniel and The Lions Den",
+      "section": "Bible Adventures",
+      "nowMs": 8451,
+      "medianMs": 3011,
+      "ratio": 2.8,
+      "samples": 50
+    },
+    {
+      "title": "The Bible Explained: Noah’s Ark",
+      "section": "Bible Adventures",
+      "nowMs": 10092,
+      "medianMs": 3628,
+      "ratio": 2.8,
+      "samples": 50
+    },
+    {
+      "title": "Bible In Clay: David and Goliath",
+      "section": "Bible Adventures",
+      "nowMs": 8569,
+      "medianMs": 3086,
+      "ratio": 2.8,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Grandpa 10 Commandments",
+      "section": "Marvelous Light Series",
+      "nowMs": 8164,
+      "medianMs": 2929,
+      "ratio": 2.8,
+      "samples": 50
+    },
+    {
+      "title": "Row Your Boat",
+      "section": "Sing-a-long",
+      "nowMs": 8174,
+      "medianMs": 2877,
+      "ratio": 2.8,
+      "samples": 50
+    },
+    {
+      "title": "AlphaBots Letter B",
+      "section": "Fun Zone",
+      "nowMs": 8255,
+      "medianMs": 2932,
+      "ratio": 2.8,
+      "samples": 50
+    },
+    {
+      "title": "Meera and Ameera",
+      "section": "ABC",
+      "nowMs": 8003,
+      "medianMs": 2812,
+      "ratio": 2.8,
+      "samples": 50
+    },
+    {
+      "title": "Marvelous Light Episode 5 Three Hebrew Boys",
+      "section": "Marvelous Light Series",
+      "nowMs": 8529,
+      "medianMs": 3155,
+      "ratio": 2.7,
+      "samples": 50
+    },
+    {
+      "title": "Down In My Heart",
+      "section": "Sing-a-long",
+      "nowMs": 8080,
+      "medianMs": 2939,
+      "ratio": 2.7,
+      "samples": 50
+    },
+    {
+      "title": "Little Ninja Frustrated Ninja",
+      "section": "Life Skills",
+      "nowMs": 8877,
+      "medianMs": 3382,
+      "ratio": 2.6,
+      "samples": 50
+    },
+    {
+      "title": "Fish Shapes",
+      "section": "Fun Zone",
+      "nowMs": 8660,
+      "medianMs": 3293,
+      "ratio": 2.6,
+      "samples": 50
+    },
+    {
+      "title": "Little Ninja Listening Ninja",
+      "section": "Life Skills",
+      "nowMs": 9920,
+      "medianMs": 3942,
+      "ratio": 2.5,
+      "samples": 50
+    }
+  ],
   "outage": null,
   "discoveryWarning": null,
   "allResults": [
@@ -23,7 +3105,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4c53cc1e-dd94-4b78-9057-0750a502c9f9/ListeningNinja.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 6281,
+      "loadTimeMs": 9920,
       "duration": "229s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -46,7 +3128,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/e4c1f0d3-630e-4802-8731-7e460fd82348/FrustratedNinja.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4945,
+      "loadTimeMs": 8877,
       "duration": "247s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -69,9 +3151,9 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4adce1ff-032e-4511-97fd-e63e2b74d0f9/AnxiousNinja.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4954,
+      "loadTimeMs": 10650,
       "duration": "212s",
-      "resolution": "640x360",
+      "resolution": "1280x720",
       "hasAudio": true,
       "audioWarning": null,
       "titleMismatch": null,
@@ -92,7 +3174,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/afaf7494-cb7a-43e4-b831-d0ca58e9ba6d/GrowthNinja.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5038,
+      "loadTimeMs": 12972,
       "duration": "180s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -115,7 +3197,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/38851a8f-89a6-4103-a1ed-adbae510df59/CalmNinja.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5000,
+      "loadTimeMs": 11531,
       "duration": "186s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -138,7 +3220,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4cd3b58a-ce9a-4fd0-a45e-e4b84d22723f/PositiveNinja.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 6163,
+      "loadTimeMs": 10914,
       "duration": "150s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -161,7 +3243,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/fd83a282-2d87-4da3-bf31-55874e14268c/FeelingsNinja.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4910,
+      "loadTimeMs": 11437,
       "duration": "321s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -184,7 +3266,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/9f733fa5-2577-461d-891d-c7482eefe683/GiveMeASmile.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5894,
+      "loadTimeMs": 14859,
       "duration": "110s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -207,7 +3289,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/03b5883a-9c1d-4424-9ed8-f7c4d427094a/JesusLovesMeThisIKnow.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5528,
+      "loadTimeMs": 12873,
       "duration": "134s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -230,7 +3312,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/d20544c6-aaa4-4ca4-9b26-60a6ba9d8f6d/GodMadeTheFishes.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5457,
+      "loadTimeMs": 10514,
       "duration": "136s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -253,7 +3335,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/a34d7b59-cc4b-4eae-8de9-6c1a14be954f/ThreeLittleWords.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4668,
+      "loadTimeMs": 9812,
       "duration": "99s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -276,7 +3358,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/ba2fa46e-ba41-4461-bb5b-2ba09acf82ff/SoapSoapSoap.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5830,
+      "loadTimeMs": 11264,
       "duration": "138s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -299,7 +3381,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/44fd7a7e-c2f8-4186-bf8f-091988a6aaf4/walkingwithjesus.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4370,
+      "loadTimeMs": 11715,
       "duration": "181s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -322,7 +3404,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/37d3002d-07f5-4e76-b74b-66687aba5b97/ASlaveInEgypt.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5813,
+      "loadTimeMs": 9938,
       "duration": "169s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -345,7 +3427,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/431396dd-6a7d-4ecc-97e0-705f02145de3/GreatBigGod.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4653,
+      "loadTimeMs": 11108,
       "duration": "154s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -368,7 +3450,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/49e27866-fcb2-43cc-9dca-02c23db27067/Hallelujah.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 6275,
+      "loadTimeMs": 10947,
       "duration": "165s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -391,7 +3473,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/d7c2eac2-f383-4a48-8d26-2cfe8794bd43/IamSoHappy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5894,
+      "loadTimeMs": 12410,
       "duration": "170s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -414,7 +3496,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/836c7586-2d8a-444e-8291-01bc604babcb/PoofV2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5865,
+      "loadTimeMs": 11201,
       "duration": "309s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -437,7 +3519,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/7fe87928-5e50-4be5-8853-f4052ae0e9e5/Untitled.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5861,
+      "loadTimeMs": 12473,
       "duration": "4453s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -460,7 +3542,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/dcece694-9bd6-4304-b05f-8ef32944670f/Music for Learn.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4544,
+      "loadTimeMs": 11957,
       "duration": "1444s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -483,7 +3565,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/ace93d9d-d251-4d2b-998e-3327e9222f6a/Music for faith.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4131,
+      "loadTimeMs": 7781,
       "duration": "1304s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -506,7 +3588,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/1d86c3dc-371d-4aad-8fdd-eb9749426b21/Untitled.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 6372,
+      "loadTimeMs": 10850,
       "duration": "3814s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -529,9 +3611,9 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/8ffba7d1-25c9-465b-ba05-1e6c03958a4b/flowersoldier.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4906,
+      "loadTimeMs": 9924,
       "duration": "153s",
-      "resolution": "1280x720",
+      "resolution": "640x360",
       "hasAudio": true,
       "audioWarning": null,
       "titleMismatch": null,
@@ -552,7 +3634,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/dffca51f-8827-444d-b39a-69a7b6875859/highandlow.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5973,
+      "loadTimeMs": 9057,
       "duration": "119s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -575,7 +3657,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/379cba14-b7fc-49bc-be6f-4e682c550526/sailboat.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5968,
+      "loadTimeMs": 10570,
       "duration": "155s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -598,7 +3680,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/666160d2-d53f-4784-b5ee-a053aa73040e/pillarofsalt.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5235,
+      "loadTimeMs": 13119,
       "duration": "187s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -621,7 +3703,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/af2e8350-3937-4858-8f1b-bdbf6cd6f277/battleofjericho.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5897,
+      "loadTimeMs": 10943,
       "duration": "143s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -644,7 +3726,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/a80ef971-a819-4e72-91c8-688c120ab162/fatherabraham.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5037,
+      "loadTimeMs": 10711,
       "duration": "165s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -667,7 +3749,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/a084e22e-c92d-4e34-943a-dc2150ed94ec/miriam.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 6366,
+      "loadTimeMs": 10934,
       "duration": "135s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -690,7 +3772,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/5d542797-27f6-4888-9923-76d7f6a64ad0/knockknock.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4835,
+      "loadTimeMs": 12381,
       "duration": "125s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -713,7 +3795,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/d78bd862-caac-43b7-a36c-9280796e1c78/hello.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 6054,
+      "loadTimeMs": 10988,
       "duration": "151s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -736,7 +3818,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/f238da1b-6b28-43b8-9068-89c86b83aab8/ArkyArky.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5864,
+      "loadTimeMs": 13453,
       "duration": "197s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -759,7 +3841,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/22a66885-8ab7-4426-ab52-692ee3854239/zacchaeuswasaweelittleman.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5079,
+      "loadTimeMs": 12462,
       "duration": "153s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -782,7 +3864,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/2849c166-fd7e-4ea6-91ce-787c40eb90eb/hesgotthewholeworldinhishands.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5960,
+      "loadTimeMs": 12252,
       "duration": "192s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -805,7 +3887,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/1959145c-4fcb-4b2d-ba55-307095807a3c/joyjoyjoy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5372,
+      "loadTimeMs": 12524,
       "duration": "140s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -828,7 +3910,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/84e2b7b0-097c-42f2-a736-a42f3c412122/GodissoGood.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4731,
+      "loadTimeMs": 9026,
       "duration": "125s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -851,7 +3933,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/51ca0541-f467-4f0c-8f5b-925d96b54a4d/whenthespiritofthelord.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5074,
+      "loadTimeMs": 10666,
       "duration": "154s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -874,7 +3956,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/a376a3e3-328d-4dbd-87fc-5a0eefd31034/OhIloveJesus.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5823,
+      "loadTimeMs": 13489,
       "duration": "136s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -897,7 +3979,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/97e05375-1189-4fd1-ad5a-0cf97d292e4d/DeepAndWide.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5107,
+      "loadTimeMs": 12858,
       "duration": "121s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -920,7 +4002,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/24883265-eeb6-455e-a2a9-786f3a2840bc/Little CrookedMan.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5130,
+      "loadTimeMs": 14867,
       "duration": "122s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -943,7 +4025,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/be60120d-edbc-4923-a6f3-e46718ae750f/HappyIsTheHome.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5350,
+      "loadTimeMs": 11753,
       "duration": "120s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -966,7 +4048,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/d6bd391b-3897-44a9-b6bf-f3c51b3f96b2/EveryMoveIMake.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5829,
+      "loadTimeMs": 11473,
       "duration": "190s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -989,7 +4071,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/986e1bb6-faa3-4bb8-b52f-69c1795197d6/feeding 5000.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3724,
+      "loadTimeMs": 7083,
       "duration": "149s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1012,7 +4094,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/40d4b6c0-7a92-45a5-8c54-b36f28a3ce59/Duke Ellington.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5912,
+      "loadTimeMs": 9122,
       "duration": "160s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1035,7 +4117,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/61cd96b0-7de2-4bf7-a1a4-f057968b152e/madam cj walker.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4666,
+      "loadTimeMs": 8338,
       "duration": "186s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1058,7 +4140,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/bab088e9-e57b-41f7-8725-b5173bc2acd3/The burning bush.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3598,
+      "loadTimeMs": 7009,
       "duration": "99s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1081,7 +4163,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/6b70815b-682a-475f-8824-4d65d031953b/Ruby Bridges.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4727,
+      "loadTimeMs": 9524,
       "duration": "161s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1104,7 +4186,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/6271fa39-2bf0-4619-8452-a069cfa25bc4/Where do puddles go.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4701,
+      "loadTimeMs": 9193,
       "duration": "104s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1127,7 +4209,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/e5e7aed0-eb7d-4539-87db-45822d417b14/Why Towers Fall.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4238,
+      "loadTimeMs": 8345,
       "duration": "122s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1150,7 +4232,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/0de564cf-9cf6-46c4-b1cf-6e65b9915c0b/AlphaBots Letter D.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4693,
+      "loadTimeMs": 9356,
       "duration": "136s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1173,7 +4255,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/c63c35b0-c44b-4af2-8a37-0090677f90bc/memory man.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4507,
+      "loadTimeMs": 9961,
       "duration": "203s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1196,7 +4278,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/863edccb-d7b6-4996-9abc-b8f3158f8abf/daniel in lions den.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5204,
+      "loadTimeMs": 8451,
       "duration": "182s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1219,7 +4301,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/5e084c09-7ae1-43e3-ad9d-9551ade7bacb/bh jackie robinson.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4128,
+      "loadTimeMs": 8268,
       "duration": "179s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1242,7 +4324,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/3ac69751-fd46-4953-bbc4-4887a383acc7/Night Time Prayer Song.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4007,
+      "loadTimeMs": 7880,
       "duration": "205s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1265,7 +4347,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/3da22313-1170-4b97-8044-e47a5999e91b/God’s Creation Eagles.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5061,
+      "loadTimeMs": 9853,
       "duration": "159s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1288,7 +4370,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/c0d8d46d-b8e4-4148-a509-80036acdf592/Bible Explained The Walls of Jericho.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4787,
+      "loadTimeMs": 8507,
       "duration": "188s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1311,7 +4393,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/1bdfdf06-9d1d-4810-bd44-77ae9d50ea8d/The Bible Explained Noah’s Ark.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5260,
+      "loadTimeMs": 10092,
       "duration": "174s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1334,7 +4416,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/b57766e9-f3ea-4ef4-b04c-b3b0c8023d82/Big History Albert Einstein.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4512,
+      "loadTimeMs": 7663,
       "duration": "145s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1357,7 +4439,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/a98b0886-6912-46d0-8b55-3970bd698bcd/The Joseph Song.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4828,
+      "loadTimeMs": 8859,
       "duration": "147s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1380,7 +4462,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/1789b78e-5032-4a07-ad88-6d8ee842162a/Daniel in the Den Song.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4681,
+      "loadTimeMs": 8031,
       "duration": "146s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1403,7 +4485,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/ff6df5f6-dd4d-43de-84d3-71d4800505f9/The Bible Explained The Joseph Story.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4757,
+      "loadTimeMs": 10118,
       "duration": "128s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1426,7 +4508,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4549525c-cff7-45ad-8d35-f4fe98956f59/Bible Trivia Noah and The Ark.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4195,
+      "loadTimeMs": 7771,
       "duration": "201s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1449,7 +4531,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/2880fdae-9dd4-4ec2-a3bc-e194e9565218/God’s Creation The Octopus.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4243,
+      "loadTimeMs": 7669,
       "duration": "144s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1472,7 +4554,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/d00246ae-ce0b-4158-ab9e-89e799c84c21/The Bible Explained The Gospels.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4930,
+      "loadTimeMs": 8294,
       "duration": "117s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1495,7 +4577,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/98d31927-6ff8-4c4d-b506-caa289b62975/God’s Creation The Horse.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4697,
+      "loadTimeMs": 8731,
       "duration": "196s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1518,7 +4600,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/d4dc72da-697a-4868-af30-52534512cf2c/God’s Creation The Giraffe.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4205,
+      "loadTimeMs": 9551,
       "duration": "140s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1541,7 +4623,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/b35ad341-6926-4644-9fab-72ec46553dd2/Marvelous Light Season 2 Trailer.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4599,
+      "loadTimeMs": 9928,
       "duration": "79s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1564,7 +4646,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/d61e32fe-1abf-4226-85df-6fe4959fa67f/Marvelous Light Season 1 Trailer.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5948,
+      "loadTimeMs": 11080,
       "duration": "97s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1587,7 +4669,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/cc9ffad0-932c-4c78-ab65-a7a49f0fc7b3/God's Creation Polar Bears.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4698,
+      "loadTimeMs": 9608,
       "duration": "128s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1610,7 +4692,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/ba582624-7df9-453b-96c0-a47c12be0b94/Gods Creation Penguins.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5107,
+      "loadTimeMs": 10018,
       "duration": "151s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1633,7 +4715,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/2e73e7ca-d5d8-4bf3-a62c-976146e4fc04/Gods Creation Dolphins.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4393,
+      "loadTimeMs": 9596,
       "duration": "148s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1656,7 +4738,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/2eef4a49-c0cc-40d6-bfcb-1190f7658307/What Jesus Does.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4153,
+      "loadTimeMs": 8755,
       "duration": "200s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1679,7 +4761,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/3a993cce-7b32-485d-8a3e-d8d7ecf2e286/The Miracle Song.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 6109,
+      "loadTimeMs": 10971,
       "duration": "165s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1702,7 +4784,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/f8f39b9a-921b-408a-9f1f-55d30998cad3/The Book of Exodus Explained.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4316,
+      "loadTimeMs": 11123,
       "duration": "111s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1725,7 +4807,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/ba56b389-d4e8-4916-ac8a-9a4b7a04eb9b/The Book of Exodus Explained.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4211,
+      "loadTimeMs": 8363,
       "duration": "117s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1748,7 +4830,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/f28325cf-2e02-46f1-b59e-7f7668f61f2f/How To Talk to Jesus.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4248,
+      "loadTimeMs": 8669,
       "duration": "88s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1771,7 +4853,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/f254c5eb-683f-44a8-8549-21cb89e276c8/Jonah Song.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4799,
+      "loadTimeMs": 8891,
       "duration": "136s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1794,7 +4876,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/74910684-c7fc-43c4-9848-6b56e92efa8e/Bible In Clay Creation.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4348,
+      "loadTimeMs": 9357,
       "duration": "139s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1817,7 +4899,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/77fb8882-26b1-4cde-84c8-80eca5374429/Animal Parade.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4542,
+      "loadTimeMs": 9816,
       "duration": "164s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1840,7 +4922,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/89a8dd1a-fb4a-45be-bc60-e9bebb877bb9/Dr. Martin Luther King Jrpng",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5332,
+      "loadTimeMs": 11130,
       "duration": "97s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1863,7 +4945,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/b46a2954-0cda-4605-b548-a3904c612d06/Rosa Parks.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4517,
+      "loadTimeMs": 11431,
       "duration": "102s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1886,7 +4968,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/7c0e4993-1a6c-43bf-ae4f-2e49f4b00122/Count Some More.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4786,
+      "loadTimeMs": 10365,
       "duration": "113s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1909,7 +4991,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/c5dc3b25-3350-458a-848e-7dbd76110ea0/The Eagle.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4677,
+      "loadTimeMs": 9308,
       "duration": "83s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1932,7 +5014,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/cf1bb227-7722-43b1-bf77-c1adb298c6b8/The Ocean.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4997,
+      "loadTimeMs": 10357,
       "duration": "89s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1955,7 +5037,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/eb86608d-05db-4e55-b73f-4950194fbf65/Who is Jesus.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 6137,
+      "loadTimeMs": 12524,
       "duration": "167s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -1978,7 +5060,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/f1082eba-b36d-4f6b-ac2d-b941c9ef47e7/The Birds Job.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5838,
+      "loadTimeMs": 12688,
       "duration": "78s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2001,7 +5083,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/96b030b2-0738-4dfa-9b8f-de0a81807ce5/Psalms 23.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4893,
+      "loadTimeMs": 10363,
       "duration": "193s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2024,7 +5106,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/25fc48b0-c926-4300-a2b5-040e876f522c/The Lions Power.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4351,
+      "loadTimeMs": 9358,
       "duration": "146s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2047,7 +5129,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/a710d159-379a-4476-82d1-a0cef1de4e08/Quick Math.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4825,
+      "loadTimeMs": 10421,
       "duration": "77s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2070,7 +5152,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/5274b916-34ba-46af-916c-b4d3d749a071/Little Lights Big God.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5237,
+      "loadTimeMs": 11686,
       "duration": "167s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2093,7 +5175,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/9c555f80-2aac-4202-aad2-3b0a33330091/God Loves me.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4508,
+      "loadTimeMs": 10900,
       "duration": "189s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2116,7 +5198,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/7eef0094-0dea-4344-bd20-4c7cb732afc4/Fish Shapes.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4797,
+      "loadTimeMs": 8660,
       "duration": "82s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2139,7 +5221,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/51dbbee4-ffe5-4209-88d4-05030f94ca6c/The Elephant.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4616,
+      "loadTimeMs": 9300,
       "duration": "84s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2162,7 +5244,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/883659e0-d0ad-451e-a5d6-ad0c7d8324d3/The Bird With Courage.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5102,
+      "loadTimeMs": 10876,
       "duration": "119s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2185,7 +5267,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/b3d7a7b9-ba7f-4bb5-a758-e30d9a3ce138/Bible in Clay The Fiery Furnace .png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5951,
+      "loadTimeMs": 11920,
       "duration": "78s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2208,7 +5290,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/39cd7925-29a6-4231-80e3-f37562e6f8eb/David and Goliath.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4394,
+      "loadTimeMs": 8569,
       "duration": "92s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2231,7 +5313,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/b7fd5360-ff06-4d6c-a109-eaed4fc02339/Daniel in the Lion's Den.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5842,
+      "loadTimeMs": 11183,
       "duration": "84s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2254,7 +5336,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/14e63165-8bcb-4ee3-859c-a057da824db8/KINGDOM_SONGGreatGod_Thumb2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4507,
+      "loadTimeMs": 9928,
       "duration": "217s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2277,7 +5359,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/da00b9bc-56c8-4870-94a5-47e21f5fa32d/Shape song.jpeg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4754,
+      "loadTimeMs": 9391,
       "duration": "89s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2300,7 +5382,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/a71d30fd-a3dc-403d-a400-bfef3ef1158b/Behave In school.jpeg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4761,
+      "loadTimeMs": 9831,
       "duration": "95s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2323,7 +5405,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/f28bf741-f881-420a-b059-cc6ae871d831/Animal .jpeg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3574,
+      "loadTimeMs": 8248,
       "duration": "39s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2346,7 +5428,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4a5fe7d4-f436-404f-9f50-1bb42130148c/Whoa Title Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5418,
+      "loadTimeMs": 9544,
       "duration": "128s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2369,7 +5451,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/86d6a0a7-e639-4194-8806-c2ee81c56d6a/Windshield WipersTitle Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4571,
+      "loadTimeMs": 8239,
       "duration": "176s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2392,7 +5474,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/ae8329d3-a352-40d3-8504-849c451d1b6e/TEacher Title Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4847,
+      "loadTimeMs": 9974,
       "duration": "125s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2415,7 +5497,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/fb08a001-9fbd-4ab5-8731-4f272eb66779/SMILE KIDS Title Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5219,
+      "loadTimeMs": 10893,
       "duration": "189s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2438,7 +5520,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4c2d526f-5b6c-4a1e-bd4e-f4737acd37a3/Ring Around the Rosey  Title Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5005,
+      "loadTimeMs": 9818,
       "duration": "178s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2461,7 +5543,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/7dc61f58-c70a-43dd-a08d-c6c54685de1b/FR2L Title Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4511,
+      "loadTimeMs": 8608,
       "duration": "157s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2484,7 +5566,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/ebbc4628-14fa-429d-9a57-a34837dc5c59/CHAMPION Title Card copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4288,
+      "loadTimeMs": 7681,
       "duration": "151s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2507,7 +5589,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/986b7f31-1651-49a1-844a-f425dd5d27cb/Bobble heads Title Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4205,
+      "loadTimeMs": 9222,
       "duration": "125s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2530,7 +5612,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/a67e0f96-6278-4684-a586-04a1a0d4a387/Born 2 Be Wild Title Card copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4850,
+      "loadTimeMs": 9024,
       "duration": "168s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2553,9 +5635,9 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/6651775f-92b1-4154-959f-7bc567d23f72/KINGDOM_SONGLightofMine_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4695,
+      "loadTimeMs": 8813,
       "duration": "143s",
-      "resolution": "640x360",
+      "resolution": "1280x720",
       "hasAudio": true,
       "audioWarning": null,
       "titleMismatch": null,
@@ -2576,7 +5658,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/522acb5d-ea56-4719-8912-3490956465a6/KINGDOM_JesusLovesme_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4227,
+      "loadTimeMs": 9488,
       "duration": "151s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2599,7 +5681,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/c128f883-fd2c-4f72-87ee-091ed6ff4d7f/H3 Yoga 5.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4739,
+      "loadTimeMs": 8059,
       "duration": "408s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2622,7 +5704,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/8f758903-51eb-4766-9862-7993e58141a3/H3 Yoga 4.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4525,
+      "loadTimeMs": 10772,
       "duration": "267s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2645,7 +5727,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/c7cbac55-00db-4e83-8b9b-37bbccb898f5/H3 Yoga 3.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4294,
+      "loadTimeMs": 10131,
       "duration": "207s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2668,7 +5750,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/a9e12c6a-0f54-433e-9475-aff2f3fc425d/H3 Yoga 2.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4319,
+      "loadTimeMs": 8840,
       "duration": "340s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2691,7 +5773,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/87bc81c7-fa6d-4f5a-9c49-4ef0e1cd5c88/PLYWTCH-WakeupKid-Titles copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4729,
+      "loadTimeMs": 9676,
       "duration": "636s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2714,7 +5796,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/02b7eba5-06ac-4543-81fd-a5691dee7340/PLAYWATCH_NAME_FireSafety copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4513,
+      "loadTimeMs": 10103,
       "duration": "230s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2737,7 +5819,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/56ab3fea-b6c9-430c-92c2-38bc52fcd51f/homie Joy of Learning title (1).jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4955,
+      "loadTimeMs": 10432,
       "duration": "85s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2760,7 +5842,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/07d1e6f2-76b6-437d-b51f-08ed6332392c/homie Joy of Learning title.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5841,
+      "loadTimeMs": 11795,
       "duration": "100s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2783,7 +5865,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/8fdb17dc-2ad5-42fd-af0d-592f7c4cb14d/KINGDOM_MLEaster_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4395,
+      "loadTimeMs": 9551,
       "duration": "676s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2806,7 +5888,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/be3ee1b4-02e4-4f36-80d5-2cf4ebfe587d/Bible Heroes Ep 5b JESUS 2.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5207,
+      "loadTimeMs": 8689,
       "duration": "371s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2829,7 +5911,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/b57d0b33-1699-4a8e-9deb-add4d2ecf120/KINGDOM_MLJesusPt1_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4918,
+      "loadTimeMs": 9117,
       "duration": "443s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2852,7 +5934,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/739479bc-ba0e-4c88-9915-bb85961e53a1/KINGDOM_MLNoahPt2_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4395,
+      "loadTimeMs": 9620,
       "duration": "349s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2875,7 +5957,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/11ad7290-a7b1-465e-bc1a-18eff346fc28/KINGDOM_MLNoahPt1_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4955,
+      "loadTimeMs": 8801,
       "duration": "395s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2898,7 +5980,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/bc901b64-febc-4ace-af92-6f419cab026f/KINGDOM_MLChristmas_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4223,
+      "loadTimeMs": 9513,
       "duration": "302s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2921,7 +6003,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/d31a737b-5e14-48a6-b108-3b9956d4f0d7/3 Hebrew Brothers 2.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4312,
+      "loadTimeMs": 8529,
       "duration": "135s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2944,7 +6026,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/991b8193-96e1-4c66-85be-7efc47d12836/Around The Chairs We Go By Unicatz.JPEG",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4719,
+      "loadTimeMs": 9377,
       "duration": "149s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2967,7 +6049,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/595946c3-d135-4359-b6e2-b16c9d047a2c/PLYWTCH-12th street-Titles copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4838,
+      "loadTimeMs": 9626,
       "duration": "311s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -2990,7 +6072,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/d991ff04-d635-4f78-b5c6-ceeb236d0020/E8F650F7-053A-411A-A7F5-A3654D2735F5-scaled.jpeg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5278,
+      "loadTimeMs": 8847,
       "duration": "760s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3013,7 +6095,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/d12ae97b-1174-4517-8571-28d92c4318bd/KINGDOM_VID_MLJohna and theWhale_VidPreview (1).png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4749,
+      "loadTimeMs": 10499,
       "duration": "512s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3036,7 +6118,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/a16895cd-d0a5-430e-ab2b-95f4b014d55c/KINGDOM_VID_MLJohna and theWhale_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4329,
+      "loadTimeMs": 9560,
       "duration": "407s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3059,7 +6141,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/d0fda75a-c46e-4145-a42b-5f3c4f6b3cdb/KINGDOM_VID_MLPaulSaulPt2_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4740,
+      "loadTimeMs": 9206,
       "duration": "353s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3082,9 +6164,9 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/2b676607-574f-4997-80b5-596d6ef7f9d0/KINGDOM_BBSCreation_Thumb (1).png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4994,
+      "loadTimeMs": 11059,
       "duration": "182s",
-      "resolution": "1280x720",
+      "resolution": "640x360",
       "hasAudio": true,
       "audioWarning": null,
       "titleMismatch": null,
@@ -3105,7 +6187,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4303868d-a9c9-40fd-a25c-0892aab1a499/KINGDOM_JesusMiracles_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 6164,
+      "loadTimeMs": 11498,
       "duration": "150s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3128,7 +6210,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/7ed33ba6-5891-4525-95f6-8ef791f89c46/KINGDOM_BBSJohntheBaptist_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4257,
+      "loadTimeMs": 8308,
       "duration": "258s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3151,7 +6233,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/9613f537-ebb1-41a0-b98b-2bc2b3700a9e/Daniel 1.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5771,
+      "loadTimeMs": 9891,
       "duration": "487s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3174,7 +6256,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/211fcc4c-d3da-4900-9a10-e02b21e00824/PLAYWATCH_VID_Kembesitewords1_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4514,
+      "loadTimeMs": 8271,
       "duration": "214s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3197,7 +6279,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/bf0b3073-9b1c-4317-8514-f8ca826fb4b7/PLAYWATCH_MeasureAreaVolume_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3770,
+      "loadTimeMs": 6324,
       "duration": "43s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3220,7 +6302,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4fc58548-9731-4f95-9b24-3f2c72daeac2/PLAYWATCH_StrutYourStuff_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5869,
+      "loadTimeMs": 10115,
       "duration": "525s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3243,7 +6325,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/097b7f11-6a19-471f-9bf1-dcdc7ff159ae/Unicatz Music Video.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4715,
+      "loadTimeMs": 9625,
       "duration": "185s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3266,7 +6348,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/1d091d78-7310-4fde-8f53-08a98beca74b/5a33620b-7ec5-4e03-aea6-32aa4f2ed3fb.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4825,
+      "loadTimeMs": 10848,
       "duration": "646s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3289,7 +6371,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4cf1046b-bcdf-4107-ac19-5cf499782419/Gabby Galactic Episode Thumbnail (1).png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5856,
+      "loadTimeMs": 12526,
       "duration": "134s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3312,7 +6394,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/5b1e082f-97d0-4c7a-8541-bcfa36d034c6/LEVL_VID_JumpingMan_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4578,
+      "loadTimeMs": 9589,
       "duration": "265s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3335,7 +6417,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/9cf8562f-9214-4f34-8b64-4ac1e8aed89c/PLAYWATCH_UnicatzCountto20_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5769,
+      "loadTimeMs": 9835,
       "duration": "83s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3358,7 +6440,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/f6a510dd-d13f-45d5-a85b-56b8f7873e50/PLAYWATCH_GabbyCountby5sand10s_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4474,
+      "loadTimeMs": 9488,
       "duration": "204s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3381,7 +6463,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/c87012b5-2144-4493-ae0c-6adfb46b4957/PLAYWATCH_GabbyCount5s_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 6455,
+      "loadTimeMs": 9390,
       "duration": "134s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3404,7 +6486,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/fbaf7c54-b693-4a83-8f60-a55a1f5f42e5/Enders Title Cards copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4474,
+      "loadTimeMs": 7746,
       "duration": "77s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3427,7 +6509,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/b2367430-3e5c-402c-84ea-9a9b8c8a2efa/Enders Title Cards Hebrew Brothers (1).jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4594,
+      "loadTimeMs": 9057,
       "duration": "74s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3450,7 +6532,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/a267a5c5-93d7-49c2-972b-fb426033a521/Enders Title Cards copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4835,
+      "loadTimeMs": 7950,
       "duration": "135s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3473,7 +6555,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/5e7991d1-56fe-47c7-a610-44d1bdd9b713/Rotten Day.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4298,
+      "loadTimeMs": 9222,
       "duration": "184s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3496,7 +6578,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/2cb183fc-ce48-4244-9fa0-18a7e2e139ca/Enders Title Cards copy 10.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4799,
+      "loadTimeMs": 8164,
       "duration": "118s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3519,7 +6601,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/c3e380b8-57ea-4094-b312-7186b4182477/PLAYWATCH_VID_H3Vowels_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4526,
+      "loadTimeMs": 7945,
       "duration": "160s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3542,7 +6624,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/866ae349-9baf-4757-aa17-39247e8a4222/PLAYWATCH_UnicatsAlphabet_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4798,
+      "loadTimeMs": 10958,
       "duration": "95s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3565,7 +6647,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/a4e15e08-63a5-4021-b2fe-dc6a01ffd3cd/Dissagreement among Occupations Title.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4030,
+      "loadTimeMs": 9350,
       "duration": "76s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3588,7 +6670,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/2fa58b4d-d8bb-440f-977e-4966b437fbe0/PLAYWATCH_VID_GabbySolarSystem_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3871,
+      "loadTimeMs": 7384,
       "duration": "333s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3611,7 +6693,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/7e2fdf38-be4b-43f9-9764-dac6c88b7761/PLAYWATCH_12thStreet3s_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5139,
+      "loadTimeMs": 9461,
       "duration": "107s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3634,7 +6716,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/edae9ec4-18f4-47a4-9b65-467e10e14f28/PLAYWATCH_12thStreet2s_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5058,
+      "loadTimeMs": 9527,
       "duration": "114s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3657,7 +6739,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/9573c0a3-55c0-43f5-95a0-98817502ac0f/PLAYWATCH_12thStreet2sand3s_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5841,
+      "loadTimeMs": 9629,
       "duration": "186s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3680,7 +6762,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/d88966cc-8a4c-4eb9-89ac-a81215700b36/PLAYWATCH_VID_KembeWater_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4228,
+      "loadTimeMs": 8843,
       "duration": "104s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3703,7 +6785,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/aabd881e-f155-437a-9bfc-13bf9ba489cd/PLAYWATCH_KembeMoney_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5806,
+      "loadTimeMs": 9114,
       "duration": "175s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3726,7 +6808,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/73608d01-5e69-402b-b984-7d0f6f6ab991/PLAYWATCH_Wiggles_Thumb copy 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4475,
+      "loadTimeMs": 8634,
       "duration": "149s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3749,7 +6831,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/c37e431b-b298-4159-9190-6ad62e38ffaf/PLAYWATCH_RowYourBoat_Thumb copy 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4365,
+      "loadTimeMs": 8174,
       "duration": "96s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3772,7 +6854,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/fde9313a-7641-4798-9eef-cb3bd082775e/PLAYWATCH_MaryHadALittleLamb_Thumb copy 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4512,
+      "loadTimeMs": 8610,
       "duration": "108s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3795,7 +6877,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/005ab49b-8eaf-4ebb-89e6-831cdabb3a94/PLAYWATCH_VID_IniMiniMoe_VidPreview copy 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4695,
+      "loadTimeMs": 8097,
       "duration": "155s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3818,7 +6900,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/b595ec1a-b425-479e-8f54-b98d2155a681/PLAYWATCH_ClapThoseHands_Thumb copy 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4280,
+      "loadTimeMs": 9034,
       "duration": "168s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3841,7 +6923,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/7a7af214-a722-468d-9a7d-32596ef551bf/PLAYWATCH_Basketball_Thumb copy 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4560,
+      "loadTimeMs": 7824,
       "duration": "262s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3864,7 +6946,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/19ceb6fc-d588-40ef-90c5-9619a419b20d/PLAYWATCH_BabyShark_Thumb copy 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4655,
+      "loadTimeMs": 10112,
       "duration": "157s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3887,7 +6969,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/56718b15-6dd1-4865-8f62-2c78c5232ade/PLAYWATCH_VID_H3BELIEVE_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4210,
+      "loadTimeMs": 8209,
       "duration": "159s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3910,7 +6992,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/9a9b17a4-90ce-409d-ac17-530484e83196/PLAYWATCH_VID_H3AFFIRIMATIONS_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5060,
+      "loadTimeMs": 8786,
       "duration": "155s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3933,7 +7015,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4a9c9d00-18a2-4f89-8200-8611bd6e2a32/PLAYWATCH_PauseDance_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5230,
+      "loadTimeMs": 10862,
       "duration": "82s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3956,7 +7038,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/d8b5b1d5-ea75-4691-a319-ef1ad8c6ecd0/PLAYWATCH_CrosingStreet_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4969,
+      "loadTimeMs": 11692,
       "duration": "127s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -3979,7 +7061,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/ef960175-a650-4f5c-bec3-70fc2c4996ac/PLAYWATCH_SoundItOut_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4993,
+      "loadTimeMs": 9268,
       "duration": "142s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4002,7 +7084,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/7ceaff00-c99a-4b58-9092-8ab1e7791f51/PLAYWATCH_SchooltimeItty_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4554,
+      "loadTimeMs": 8137,
       "duration": "105s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4025,7 +7107,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/bf3d8981-2bdc-4fec-aabe-f1fe3b7a3820/PLAYWATCH_VID_RainRain_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4473,
+      "loadTimeMs": 8778,
       "duration": "147s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4048,7 +7130,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/36981665-54ff-40b6-af63-c6f3966ef8d8/PLAYWATCH_DaysOfTheWeek_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4593,
+      "loadTimeMs": 9820,
       "duration": "197s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4071,7 +7153,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/d608de21-c7de-483e-b58f-314f3f91b105/PLAYWATCH_MakeItOut_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3946,
+      "loadTimeMs": 9227,
       "duration": "184s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4094,7 +7176,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/5e4d922f-f256-453c-b524-ae29b659bbaf/KINGDOM_MentalHealthandGod_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4463,
+      "loadTimeMs": 8586,
       "duration": "212s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4117,7 +7199,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/47d91fd5-22da-4c57-ae99-6dd4484c7381/KINGDOM_SONGDowninHisHeart_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4377,
+      "loadTimeMs": 8080,
       "duration": "128s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4140,7 +7222,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/08c3a441-b389-4590-8e3d-588dcc363a70/KINGDOM_FOVLove_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4440,
+      "loadTimeMs": 8044,
       "duration": "169s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4163,7 +7245,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/fee8eb1b-ec50-48e9-9b12-5cafb197a3a9/KINGDOM_FOVFaithfullness_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5143,
+      "loadTimeMs": 9057,
       "duration": "137s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4186,7 +7268,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/64e95279-c998-41d5-9488-b95fca9d672b/KINGDOM_FOVGoodness_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4254,
+      "loadTimeMs": 8294,
       "duration": "115s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4209,7 +7291,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/67b07475-78a7-4515-a23a-bd39e36b3235/KINGDOM_FOVGentleness_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4166,
+      "loadTimeMs": 8640,
       "duration": "121s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4232,7 +7314,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/49123b8f-66c7-4555-a2a9-2e9ee20f9c33/Intro title copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4545,
+      "loadTimeMs": 9228,
       "duration": "141s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4255,7 +7337,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/1430c542-bb99-4b58-99e7-128b1030fb06/KINGDOM_SONGHisHands_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4477,
+      "loadTimeMs": 9910,
       "duration": "108s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4278,7 +7360,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/1d3177fe-7046-4d74-ba2c-edc330f2b313/KINGDOM_BBSMoses_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4756,
+      "loadTimeMs": 8913,
       "duration": "224s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4301,7 +7383,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/1760b966-7558-45c3-89bd-8826a716f0ed/KINGDOM_VID_PaulSaulPt1_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5305,
+      "loadTimeMs": 8902,
       "duration": "451s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4324,7 +7406,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/bb3ff059-4e31-4895-85a6-e5808e87067c/KINGDOM_VID_MLZacchausPt1_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4960,
+      "loadTimeMs": 11843,
       "duration": "604s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4347,7 +7429,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/947510c6-4115-4719-9c12-0fb244d39e3a/KINGDOM_MLAdamEve_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5098,
+      "loadTimeMs": 11313,
       "duration": "501s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4370,7 +7452,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/1f34576d-c7af-4cae-b9be-258d97aa4c91/KINGDOM_MLCreation_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5818,
+      "loadTimeMs": 9099,
       "duration": "435s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4393,7 +7475,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/2734beba-d3b4-4a5c-afdf-b3785d105269/Daniel 2.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4743,
+      "loadTimeMs": 9281,
       "duration": "434s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4416,7 +7498,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/72c7e315-206d-4443-a4fb-ec171f5e3824/KINGDOM_BBSNoahArk_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4079,
+      "loadTimeMs": 8710,
       "duration": "158s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4439,7 +7521,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/f298f79f-d99f-41bb-9814-edc331bfe9ec/PLAYWATCH_KidsJustwantFun_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4548,
+      "loadTimeMs": 7978,
       "duration": "196s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4462,7 +7544,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/cd00ba8a-4ace-440e-9e25-4e03d0160387/PLAYWATCH_VID_IceCreamTruck_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4098,
+      "loadTimeMs": 8592,
       "duration": "96s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4485,7 +7567,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/200efedf-c802-4fd8-ab28-faffbe5d4cc3/PLAYWATCH_VID_PRATHERDAYS_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5109,
+      "loadTimeMs": 11067,
       "duration": "185s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4508,7 +7590,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4780be1a-cf12-4208-889f-64ec142dab8f/PLAYWATCH_VID_PRATHEROPPOSITES_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4514,
+      "loadTimeMs": 12701,
       "duration": "198s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4531,7 +7613,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/03a156fb-9c97-499b-b862-bf0556dbdc64/PLAYWATCH_VID_MFTLOOPYLOO_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 6264,
+      "loadTimeMs": 11979,
       "duration": "200s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4554,7 +7636,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/daa4c238-2ffb-405c-9d13-ec27c1019158/PLAYWATCH_VID_MFTCOLORS_VidPreview (1).png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5824,
+      "loadTimeMs": 13386,
       "duration": "165s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4577,7 +7659,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/50875106-c0bb-437d-bac7-4329047aa784/PLAYWATCH_VID_HomieBigSurprise_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4683,
+      "loadTimeMs": 12527,
       "duration": "85s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4600,7 +7682,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/9ec30bd4-0745-402c-9031-86fdf956c8b3/PLAYWATCH_VID_ImPrinces_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4181,
+      "loadTimeMs": 8842,
       "duration": "134s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4623,9 +7705,9 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/811021ba-ef54-4de6-8dee-217be1a47b64/PLAYWATCH_VID_I wantoSeeMyFriends_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4805,
+      "loadTimeMs": 10222,
       "duration": "122s",
-      "resolution": "1280x720",
+      "resolution": "640x360",
       "hasAudio": true,
       "audioWarning": null,
       "titleMismatch": null,
@@ -4646,7 +7728,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/38a5371c-c8f3-4e32-823b-428f17025f3c/PLAYWATCH_Great_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4625,
+      "loadTimeMs": 9884,
       "duration": "216s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4669,7 +7751,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/6eebf6d0-36d0-4dcc-8a12-d72b84eb0e18/PLAYWATCH_GrandMa_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4057,
+      "loadTimeMs": 8319,
       "duration": "129s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4692,7 +7774,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/e4dc36c7-978f-4994-9c72-9ef3ec9b772d/PLAYWATCH_Goodvibes_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4813,
+      "loadTimeMs": 8224,
       "duration": "158s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4715,7 +7797,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/ace3209d-784d-47f4-b441-afa566228739/PLAYWATCH_GoodJuJu_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4322,
+      "loadTimeMs": 8595,
       "duration": "144s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4738,7 +7820,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/cc438094-dbd9-48e5-a966-d901f9f49b13/PLAYWATCH_LostInternet_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4268,
+      "loadTimeMs": 8272,
       "duration": "379s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4761,7 +7843,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/597b370a-d70f-46cf-a882-4fc0a930f265/PLAYWATCH_VID_KembeGreatLess_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3966,
+      "loadTimeMs": 7963,
       "duration": "167s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4784,7 +7866,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/75a48dfd-1d3a-4d4a-ac6a-f708d82d8fcc/PLAYWATCH_GabbyCount10s_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5193,
+      "loadTimeMs": 8264,
       "duration": "213s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4807,7 +7889,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/7108df62-4c23-4990-b2ef-57ddd709371b/PLAYWATCH_H3CountitUP_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5772,
+      "loadTimeMs": 9426,
       "duration": "164s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4830,7 +7912,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/94b300e1-d14a-47dc-87f0-f022ed6476bc/PLAYWATCH_H3COLORNUMBERS_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4605,
+      "loadTimeMs": 9978,
       "duration": "124s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4853,7 +7935,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/c16a1a0f-2c9e-46f5-a966-e80f3cd76410/PLAYWATCH_VID_NumberSense_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5052,
+      "loadTimeMs": 7522,
       "duration": "72s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4876,7 +7958,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/2e3eadcc-ae4b-42b7-ae54-9aec7ff550f7/PLAYWATCH_VID_NumberLines_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4614,
+      "loadTimeMs": 8826,
       "duration": "73s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4899,7 +7981,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/6e74aba2-2133-4d87-bf4d-8cdd991ec27b/PLAYWATCH_ModelingMultiples_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3513,
+      "loadTimeMs": 6030,
       "duration": "33s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4922,7 +8004,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/782ad9b1-5cd5-42cc-b8c5-3c28b3077726/PLAYWATCH_MathWithMoney_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4005,
+      "loadTimeMs": 7796,
       "duration": "52s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4945,7 +8027,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/561d091b-276e-4784-aea7-f34632681697/PLAYWATCH_VID_CompAlgebraThinking_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4831,
+      "loadTimeMs": 7453,
       "duration": "63s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4968,7 +8050,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/7fd6c669-0c47-454e-ba56-d33e411ce106/PLAYWATCH_VID_CompFractions_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3268,
+      "loadTimeMs": 6470,
       "duration": "46s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -4991,7 +8073,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/3b529378-7a47-47da-a3c5-4c21042ddce4/PLAYWATCH_VID_AlgebraThinking_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3907,
+      "loadTimeMs": 7000,
       "duration": "47s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5014,7 +8096,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/33496e0c-01f3-4b8e-9a09-b3da2c8ac0c5/PLAYWATCH_VID_AddingMixedNumbers_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 3703,
+      "loadTimeMs": 6984,
       "duration": "37s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5037,7 +8119,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/972c77e5-9877-42f7-bce4-702e50fe391a/PLAYWATCH_5Monkeys_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4468,
+      "loadTimeMs": 9293,
       "duration": "116s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5060,7 +8142,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/58a6703a-fc50-46e9-b2b1-b36949a78246/PLAYWATCH_VID_MLK_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5775,
+      "loadTimeMs": 9703,
       "duration": "162s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5083,7 +8165,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/f61a23eb-c690-4283-9311-5e9a574e1be1/PLAYWATCH_VID_BessieColeman_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5217,
+      "loadTimeMs": 9520,
       "duration": "181s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5106,7 +8188,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/5ed8064b-e9d5-4e5b-bb86-bb795e2b1c7a/PLWTCH-BHBJackieRobinson-BannerMobile copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4548,
+      "loadTimeMs": 10361,
       "duration": "208s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5129,7 +8211,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/409f00e2-5336-4ec8-8b9e-e8fef82cfdef/PLAYWATCH_VID_H3ABC_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4460,
+      "loadTimeMs": 8266,
       "duration": "109s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5152,7 +8234,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/8650e80f-132c-4cd1-a562-9317a91a05c0/PLAYWATCH_ALPHALetterL-Z_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5067,
+      "loadTimeMs": 10239,
       "duration": "205s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5175,7 +8257,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/e9635d39-19b0-42db-9be6-11bc1defd3ed/PLAYWATCH_ALPHALetterA-K_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5827,
+      "loadTimeMs": 12150,
       "duration": "157s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5198,7 +8280,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/4d3b7355-6d2d-4535-bbca-4c73a66f81de/PLAYWATCH_VID_Kembesitewords3_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4279,
+      "loadTimeMs": 11276,
       "duration": "291s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5221,7 +8303,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/6e33429c-f079-4e86-bd8d-af6a97e8be3a/PLAYWATCH_VID_Kembesitewords2_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4807,
+      "loadTimeMs": 8115,
       "duration": "225s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5244,7 +8326,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/9ae01ae1-ec60-4b68-8237-1b8484837d7f/PLAYWATCH_MFTABC_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5181,
+      "loadTimeMs": 11392,
       "duration": "204s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5267,7 +8349,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/6884d622-637e-4168-a1a0-c6d2c02aad06/PLAYWATCH_Malar_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4491,
+      "loadTimeMs": 11042,
       "duration": "105s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5290,9 +8372,9 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/899e5572-e6df-4dcd-8263-ceca77877975/PLAYWATCH_Chiu_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4474,
+      "loadTimeMs": 9910,
       "duration": "125s",
-      "resolution": "1280x720",
+      "resolution": "640x360",
       "hasAudio": true,
       "audioWarning": null,
       "titleMismatch": null,
@@ -5313,7 +8395,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/dbb4afee-fe54-4c86-b571-27675b27e4e8/PLAYWATCH_VID_ALPHALetterC_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4720,
+      "loadTimeMs": 8934,
       "duration": "189s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5336,7 +8418,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/5e64fb0f-97d7-4b95-98f6-7fea53e33dfd/PLAYWATCH_VID_ALPHALetterB_VidPreview.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4334,
+      "loadTimeMs": 8255,
       "duration": "189s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5359,7 +8441,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/3f8139b3-f895-4228-98ac-be010862d8ab/PLAYWATCH_VID_ALPHALetterA_VidPreview (1).png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4011,
+      "loadTimeMs": 8219,
       "duration": "173s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5382,7 +8464,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/91b9c45f-1472-4794-a534-14ccda5d750f/PLAYWATCH_Meera_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5778,
+      "loadTimeMs": 8003,
       "duration": "127s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5405,7 +8487,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/f0c9560b-17d8-45a5-a87b-1b89082f9705/PLAYWATCH_GreatTidy_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4339,
+      "loadTimeMs": 8898,
       "duration": "101s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5428,7 +8510,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/adea5180-0077-4b6f-90f7-fe53ce334710/PLAYWATCH_VID_BraveBoa_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4862,
+      "loadTimeMs": 7984,
       "duration": "113s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5451,9 +8533,9 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/3820a4b0-b2de-42de-9614-6719fba36287/PLAYWATCH_VID_AuntieGift_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4582,
+      "loadTimeMs": 9894,
       "duration": "174s",
-      "resolution": "1280x720",
+      "resolution": "640x360",
       "hasAudio": true,
       "audioWarning": null,
       "titleMismatch": null,
@@ -5474,7 +8556,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/fff66fea-6510-4391-89a0-ff3af6ecbfc0/PLAYWATCH_VID_AlienHouse_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4266,
+      "loadTimeMs": 8159,
       "duration": "95s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5497,7 +8579,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/b8b902af-41c4-44f4-b75d-2edd354d5e62/PLAYWATCH_VID_ALPHAoo_VidPreview (1).png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4913,
+      "loadTimeMs": 9372,
       "duration": "115s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5520,7 +8602,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/15a864f7-716b-4e24-97ca-c21537bae9f3/PLAYWATCH_GoGetIt_Thumb copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4385,
+      "loadTimeMs": 7702,
       "duration": "140s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5543,7 +8625,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/6b31a1a1-2fb6-470e-9645-a93b4eaa4349/PLAYWATCH_VID_Ballin_VidPreview copy.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5039,
+      "loadTimeMs": 8771,
       "duration": "203s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5566,7 +8648,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/996b762c-9869-4614-85ed-41464b315fdc/KINGDOM_MLDavidGoliathPt2_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4370,
+      "loadTimeMs": 9485,
       "duration": "408s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5589,7 +8671,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/f436884d-488e-4e9a-9316-26c81cda9f96/KINGDOM_MLDavidGoliathPt1_Thumb.png",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4677,
+      "loadTimeMs": 8933,
       "duration": "472s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5612,7 +8694,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/187d2637-f389-440f-bdbf-b8082681729a/1 full moses story copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 4393,
+      "loadTimeMs": 9645,
       "duration": "625s",
       "resolution": "1280x720",
       "hasAudio": true,
@@ -5635,7 +8717,7 @@
       "thumbnailUrl": "https://d394daiw0g5hmq.cloudfront.net/uploads/thumbnails/1d0ec518-70f3-4c8b-b389-26545945675b/Episode 1 and 2 titles copy.jpg",
       "status": "PASS",
       "error": null,
-      "loadTimeMs": 5188,
+      "loadTimeMs": 10734,
       "duration": "658s",
       "resolution": "1280x720",
       "hasAudio": true,
