@@ -1,0 +1,8 @@
+FAILED VIDEOS — go.kingdomlandkids.com
+Generated: 11/24/2026, 12:12:59 AM
+Total failed: 1 | Timed out: 0
+============================================================
+
+[FAIL] #28 [HOME] Three Little Words Father Abraham
+  URL:   https://go.kingdomlandkids.com/subscription
+  Error: Did not land on /watch/ (got https://go.kingdomlandkids.com/subscription)
