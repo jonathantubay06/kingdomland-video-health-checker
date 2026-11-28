@@ -1,0 +1,8 @@
+FAILED VIDEOS — go.kingdomlandkids.com
+Generated: 11/28/2026, 12:59:54 PM
+Total failed: 1 | Timed out: 0
+============================================================
+
+[FAIL] #59 [HOME] Big History: Duke Ellington
+  URL:   https://go.kingdomlandkids.com/subscription
+  Error: Did not land on /watch/ (got https://go.kingdomlandkids.com/subscription)
